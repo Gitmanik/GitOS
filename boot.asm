@@ -10,27 +10,32 @@ setup:
     jmp 0x7c0:.setup2 ; set code segment
 .setup2:
     cli
-
     mov ax, 0x7c0 ; data is stored in 0x7c00 (BIOS loads this code to 0x7c00 )
     mov ds, ax 
     mov es, ax
-
     mov ax, 0x00
     mov ss, ax
     mov sp, 0x7c00 ; set stack below this code
-
     sti
 
-    ; setting up int0 on IVT (interrupt vector table)
-    mov word[ss:0x00], int0_handler ; offset
-    mov word[ss:0x02], 0x7c0 ; segment
+    ;HDD reading
+    mov ah, 2 ; read sector cmd
+    mov al, 1 ; one sector
+    mov ch, 0 ; cylinder number, can be left zero
+    mov cl, 2 ; read sector nmbr 2
+    mov dh, 0 ; head number, can be left zero
+    mov bx, buffer
+    int 0x13
+    jc error
 
 start:
-    mov si, message
+    mov si, buffer
     call print_string
+    jmp $
 
-    int 0
-
+error:
+    mov si, error_message
+    call print_string
     jmp $
 
 print_string:
@@ -50,14 +55,10 @@ print_char:
     int 0x10
     ret
 
-int0_handler:
-    mov al, 'G'
-    call print_char
-    iret
-
-message: db 'gitmania.pl', 0
+error_message: db 'Failed to read sector', 0
 
 times 510 - ($ - $$) db 0
 db 0x55
 db 0xaa
 
+buffer:

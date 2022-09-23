@@ -1,7 +1,5 @@
 [BITS 32]
 
-global start
-
 start:
     mov ax, 0x10
     mov ds, ax

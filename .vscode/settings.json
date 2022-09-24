@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "text_mode.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "stddef.h": "c"
     }
 }

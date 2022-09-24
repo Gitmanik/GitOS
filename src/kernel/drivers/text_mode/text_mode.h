@@ -1,6 +1,6 @@
 #pragma once
 
-enum TEXT_MODE_COLOURS
+enum TEXT_MODE_COLORS
 {
     BLACK,
     BLUE,
@@ -19,5 +19,10 @@ enum TEXT_MODE_COLOURS
     WHITE
 };
 
-void print_char(char c, enum TEXT_MODE_COLOURS fg);
-void print_string(char* str);
+#define VGA_TEXT_WIDTH  80
+#define VGA_TEXT_HEIGHT 25
+
+void print_char(char c, enum TEXT_MODE_COLORS fg);
+void print_string(const char* str);
+void clear_screen();
+void set_fg(enum TEXT_MODE_COLORS col);

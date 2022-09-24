@@ -3,7 +3,9 @@
 
 void kernel_main()
 {
-    print_char('g', LIGHT_BLUE);
+    clear_screen();
+    set_fg(LIGHT_GREEN);
+    print_string("GitOS - operating system as exercise. Pawel Reich 2022\nLoading..");
     kernel_halt();
 }
 

@@ -49,7 +49,7 @@ build: kernel stage1
 
 # ASM_OBJECTS need to be first because of pm_entry.asm
 ${KERNEL_ELF}: ${C_OBJECTS} ${ASM_OBJECTS}
-	${GCC} -g -T ./src/linker.ld  -nostdlib  -o ${KERNEL_ELF} ${ASM_OBJECTS} $(C_OBJECTS)
+	${GCC} -g -T ./src/linker.ld -ffreestanding -nostdlib -o ${KERNEL_ELF} ${ASM_OBJECTS} $(C_OBJECTS)
 
 ${KERNEL_BIN}: ${KERNEL_ELF}
 	${OBJCOPY} -O binary ${KERNEL_ELF} ${KERNEL_BIN}

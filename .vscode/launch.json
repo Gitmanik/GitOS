@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch with GDB",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/bin/disk.bin",
+            "cwd": "${workspaceRoot}",
+            "args": [],
+            // "sourceFileMap": {
+            //     "<source-path>": "<target-path>"
+            // },
+            "targetArchitecture": "x86",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "miDebuggerArgs": "",
+            "customLaunchSetupCommands": [
+                {
+                    "text": "target remote localhost:1234",
+                    "description": "Connect to QEMU remote debugger",
+                    "ignoreFailures":  true
+                }
+            ],
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "text": "file ${workspaceFolder}/bin/kernel.elf",
+                    "description": "Load ELF."
+                },
+                {
+                    "text": "break kernel_halt",
+                    "description": "Break on when kernel is halting."
+                }
+            ],
+            "preLaunchTask": "Launch QEMU"
+        }
+    ]
+}

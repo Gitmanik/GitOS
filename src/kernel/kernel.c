@@ -1,8 +1,9 @@
+#include "kernel.h"
+#include "drivers/text_mode/text_mode.h"
+
 void kernel_main()
 {
-    volatile char* video_mem = (volatile char*) 0xb8000;
-    *video_mem = 'G';
-    video_mem[1] = 2;
+    print_char('g', LIGHT_BLUE);
     kernel_halt();
 }
 

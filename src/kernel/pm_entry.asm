@@ -1,6 +1,12 @@
-[BITS 32]
+BITS 32
 
+extern kernel_main
+
+global start
+global _start
+_start:
 start:
+.setup_pm_registers:
     mov ax, 0x10
     mov ds, ax
     mov es, ax
@@ -13,4 +19,5 @@ start:
     in al, 0x92
     or al, 2
     out 0x92, al
-    jmp $
+.jump_to_kernel:
+    jmp 0x08:kernel_main

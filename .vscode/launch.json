@@ -8,9 +8,6 @@
             "program": "${workspaceRoot}/bin/disk.bin",
             "cwd": "${workspaceRoot}",
             "args": [],
-            // "sourceFileMap": {
-            //     "<source-path>": "<target-path>"
-            // },
             "targetArchitecture": "x86",
             "MIMode": "gdb",
             "miDebuggerPath": "/usr/bin/gdb",
@@ -34,7 +31,7 @@
                 },
                 {
                     "text": "break kernel_halt",
-                    "description": "Break on when kernel is halting."
+                    "description": "Break when kernel is halting."
                 }
             ],
             "preLaunchTask": "Launch QEMU"

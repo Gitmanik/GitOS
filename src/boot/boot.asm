@@ -30,7 +30,7 @@ setup:
 [BITS 32]
 load32:
     mov eax, 1 ; LBA
-    mov ecx, 16 ; sectors number
+    mov ecx, 100 ; sectors number
     mov edi, 0x0100000 ; load into
     call ata_lba_read
     jmp 0x08:0x0100000

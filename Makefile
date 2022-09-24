@@ -4,6 +4,7 @@ TARGET = i686-elf
 GCC = ${TOOLS_DIR}/${TARGET}-gcc
 LD = ${TOOLS_DIR}/${TARGET}-ld
 OBJCOPY = ${TOOLS_DIR}/${TARGET}-objcopy
+OBJDUMP = ${TOOLS_DIR}/${TARGET}-objdump
 
 STAGE1_ASM = ./src/boot/boot.asm
 STAGE1_BIN = ./bin/stage1.bin
@@ -44,7 +45,7 @@ build: kernel stage1
 	dd if=${STAGE1_BIN} >> ${DISK_BIN}
 	dd if=${KERNEL_BIN} >> ${DISK_BIN}
 
-	dd if=/dev/zero count=10 bs=512 >> ${DISK_BIN}
+	dd if=/dev/zero count=100 bs=512 >> ${DISK_BIN}
 
 # ASM_OBJECTS need to be first because of pm_entry.asm
 ${KERNEL_ELF}: ${C_OBJECTS} ${ASM_OBJECTS}
@@ -61,3 +62,6 @@ ${STAGE1_BIN}:
 
 %.o: %.c
 	${GCC} -g -c -nostdlib -ffreestanding -O0 -Wall -Wextra $< -o $@
+
+dump:
+	${OBJDUMP} --visualize-jumps=extended-color --prefix-addresses -d -f -t -s ${KERNEL_ELF}

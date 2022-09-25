@@ -15,8 +15,8 @@ uint16_t make_char(char c, enum TEXT_MODE_COLORS col)
 void tm_ClearScreen()
 {
     current_x = current_y = 0;
-    for (int y = 0; y < VGA_TEXT_HEIGHT; y++)
-        for (int x = 0; x < VGA_TEXT_WIDTH; x++)
+    for (int y = 0; y < TEXT_MODE_HEIGHT; y++)
+        for (int x = 0; x < TEXT_MODE_WIDTH; x++)
         tm_PrintChar(' ', BLACK);
 
     current_x = current_y = 0;
@@ -31,19 +31,19 @@ void tm_PrintChar(char c, enum TEXT_MODE_COLORS fg)
         current_x = 0;
         return;
     }
-    if (current_x == VGA_TEXT_WIDTH)
+    if (current_x == TEXT_MODE_WIDTH)
     {
         current_x = 0;
         current_y++;
     }
 
-    if (current_y == VGA_TEXT_HEIGHT)
+    if (current_y == TEXT_MODE_HEIGHT)
     {
         current_y = 0;
         current_x = 0;
     }
 
-    video_mem[current_y * VGA_TEXT_WIDTH + current_x] = make_char(c, fg);
+    video_mem[current_y * TEXT_MODE_WIDTH + current_x] = make_char(c, fg);
     current_x++;
 }
 

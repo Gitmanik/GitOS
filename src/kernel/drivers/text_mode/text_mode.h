@@ -20,8 +20,8 @@ enum TEXT_MODE_COLORS
     WHITE
 };
 
-#define VGA_TEXT_WIDTH  80
-#define VGA_TEXT_HEIGHT 25
+#define TEXT_MODE_WIDTH  80
+#define TEXT_MODE_HEIGHT 25
 
 void tm_PrintChar(char c, enum TEXT_MODE_COLORS fg);
 void tm_PrintString(const char* str);

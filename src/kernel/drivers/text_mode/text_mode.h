@@ -13,6 +13,7 @@ enum TEXT_MODE_COLORS
     DARK_GREY,
     LIGHT_BLUE,
     LIGHT_GREEN,
+    LIGHT_CYAN,
     LIGHT_RED,
     LIGHT_PURPLE,
     YELLOW,
@@ -22,7 +23,8 @@ enum TEXT_MODE_COLORS
 #define VGA_TEXT_WIDTH  80
 #define VGA_TEXT_HEIGHT 25
 
-void print_char(char c, enum TEXT_MODE_COLORS fg);
-void print_string(const char* str);
-void clear_screen();
-void set_fg(enum TEXT_MODE_COLORS col);
+void tm_PrintChar(char c, enum TEXT_MODE_COLORS fg);
+void tm_PrintString(const char* str);
+void tm_ClearScreen();
+void tm_SetColor(enum TEXT_MODE_COLORS col);
+void tm_SetCursor(int new_x, int new_y);

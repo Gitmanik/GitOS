@@ -3,9 +3,12 @@
 
 void kernel_main()
 {
-    clear_screen();
-    set_fg(LIGHT_GREEN);
-    print_string("GitOS - operating system as exercise. Pawel Reich 2022\nLoading..");
+    tm_ClearScreen();
+    tm_SetColor(LIGHT_GREEN);
+    tm_PrintString("GitOS - operating system as exercise. Pawel Reich 2022\nLoading..");
+
+    tm_SetCursor(10,10);
+    tm_PrintChar('c', LIGHT_RED);
     kernel_halt();
 }
 

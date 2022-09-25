@@ -16,7 +16,8 @@
                 "-nostdlib",
                 "-Wall",
                 "-Wextra"
-            ]
+            ],
+            "configurationProvider": "ms-vscode.makefile-tools"
         }
     ],
     "version": 4

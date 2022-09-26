@@ -1,6 +1,7 @@
 #include "text_mode.h"
 #include <stdint.h>
 #include <stddef.h>
+#include "../../common/string.h"
 
 int current_x = 0, current_y = 0;
 enum TEXT_MODE_COLORS current_fg = GREY;
@@ -49,9 +50,7 @@ void tm_PrintChar(char c, enum TEXT_MODE_COLORS fg)
 
 void tm_PrintString(const char* str)
 {
-    size_t len = strlen(str);
-
-    for (int idx = 0; idx < len; idx++)
+    for (size_t idx = 0; idx < strlen(str); idx++)
     {
         tm_PrintChar(str[idx], current_fg);
     }

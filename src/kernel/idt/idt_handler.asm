@@ -1,5 +1,5 @@
 extern int21h_handler
-extern no_int_handler
+extern ignore_int_handler
 
 global int21h
 int21h:
@@ -10,11 +10,11 @@ int21h:
     sti
     iret
 
-global no_int
-no_int:
+global ignore_int
+ignore_int:
     cli
     pushad
-    call no_int_handler
+    call ignore_int_handler
     popad
     sti
     iret

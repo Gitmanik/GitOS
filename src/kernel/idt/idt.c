@@ -5,7 +5,7 @@
 idt_desc idt_descriptors[512];
 idtr_desc idtr_descriptor;
 
-extern void no_int();
+extern void ignore_int();
 
 // __attribute__((interrupt)) void no_int_handler(struct interrupt_frame* frame)
 // {
@@ -37,6 +37,11 @@ void idt_Init()
     idtr_descriptor.base = (uint32_t) idt_descriptors;
 
     for (int i = 0; i < 512; i++)
-        idt_SetDescriptor(i, no_int);
+        idt_SetDescriptor(i, ignore_int);
+}
+
+void ignore_int_handler()
+{
+    pic_EOI(0);
 }
 

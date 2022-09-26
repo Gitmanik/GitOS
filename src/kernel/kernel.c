@@ -11,14 +11,10 @@ void divide_by_zero()
     for (;;);
 }
 
-extern void int21h();
+extern void int21h(); 
 void int21h_handler()
 {
     kernel_message("Keyboard pressed!", GREY);
-    pic_EOI(0);
-}
-void no_int_handler()
-{
     pic_EOI(0);
 }
 

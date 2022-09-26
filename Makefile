@@ -35,7 +35,8 @@ clean:
 	find . -name \*.bin -type f -delete
 
 run_debug: all
-	qemu-system-i386 -S -gdb tcp::1234 -drive file=${DISK_BIN},format=raw,index=0,media=disk
+	putty telnet://localhost:4321 &
+	qemu-system-i386 -S -serial telnet:localhost:4321,server -gdb tcp::1234 -drive file=${DISK_BIN},format=raw,index=0,media=disk
 
 run:
 	qemu-system-i386 -drive file=${DISK_BIN},format=raw,index=0,media=disk
@@ -64,4 +65,4 @@ ${STAGE1_BIN}:
 	${GCC} -g -c -nostdlib -std=gnu99 -ffreestanding -O0 -Wall -Wextra $< -o $@
 
 dump:
-	${OBJDUMP} --visualize-jumps=extended-color --prefix-addresses -d -f -t -s ${KERNEL_ELF}
+	${OBJDUMP} --visualize-jumps=extended-color -Mintel --prefix-addresses -d -f -t -s ${KERNEL_ELF}

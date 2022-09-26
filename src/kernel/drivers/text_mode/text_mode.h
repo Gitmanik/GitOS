@@ -25,6 +25,13 @@ enum TEXT_MODE_COLORS
 
 void tm_PrintChar(char c, enum TEXT_MODE_COLORS fg);
 void tm_PrintString(const char* str);
+
 void tm_ClearScreen();
-void tm_SetColor(enum TEXT_MODE_COLORS col);
+
 void tm_SetCursor(int new_x, int new_y);
+
+void tm_SetColor(enum TEXT_MODE_COLORS col);
+int tm_GetColor();
+
+int tm_GetX();
+int tm_GetY();

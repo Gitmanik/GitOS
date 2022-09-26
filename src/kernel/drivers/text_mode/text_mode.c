@@ -32,6 +32,12 @@ void tm_PrintChar(char c, enum TEXT_MODE_COLORS fg)
         current_x = 0;
         return;
     }
+    if (c == '\r')
+    {
+        current_x = 0;
+        return;
+    }
+    
     if (current_x == TEXT_MODE_WIDTH)
     {
         current_x = 0;
@@ -61,8 +67,23 @@ void tm_SetColor(enum TEXT_MODE_COLORS new_fg)
     current_fg = new_fg;
 }
 
+int tm_GetColor()
+{
+    return current_fg;
+}
+
 void tm_SetCursor(int new_x, int new_y)
 {
     current_x = new_x;
     current_y = new_y;
+}
+
+int tm_GetX()
+{
+    return current_x;
+}
+
+int tm_GetY()
+{
+    return current_y;
 }

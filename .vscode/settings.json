@@ -5,6 +5,7 @@
         "stddef.h": "c",
         "idt.h": "c",
         "io.h": "c",
-        "serial.h": "c"
+        "serial.h": "c",
+        "kernel.h": "c"
     }
 }

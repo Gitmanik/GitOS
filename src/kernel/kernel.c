@@ -9,8 +9,6 @@ void divide_by_zero()
     for (;;);
 }
 
-void kernel_message(char* message, enum TEXT_MODE_COLORS col);
-
 void kernel_main()
 {
     ser_Init(COM1, 1);
@@ -27,7 +25,10 @@ void kernel_main()
     while (1)
     {
         while (!ser_IsAvailable(COM1));
-        tm_PrintChar(ser_ReadChar(COM1), LIGHT_PURPLE);
+        char c = ser_ReadChar(COM1);
+        tm_PrintChar(c, LIGHT_PURPLE);
+        if (c == '\r')
+            tm_PrintChar('\n', LIGHT_PURPLE);
     }
 
     kernel_halt();

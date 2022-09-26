@@ -5,6 +5,14 @@
 idt_desc idt_descriptors[512];
 idtr_desc idtr_descriptor;
 
+extern void no_int();
+
+// __attribute__((interrupt)) void no_int_handler(struct interrupt_frame* frame)
+// {
+//     outb(0x20,0x20);
+// }
+
+
 void idt_Load()
 {
     asm volatile ("lidt %0" : : "m" (idtr_descriptor));
@@ -27,4 +35,8 @@ void idt_Init()
 
     idtr_descriptor.limit = sizeof(idt_descriptors)-1;
     idtr_descriptor.base = (uint32_t) idt_descriptors;
+
+    for (int i = 0; i < 512; i++)
+        idt_SetDescriptor(i, no_int);
 }
+

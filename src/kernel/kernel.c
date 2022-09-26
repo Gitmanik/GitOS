@@ -1,7 +1,9 @@
 #include "kernel.h"
-#include "drivers/text_mode/text_mode.h"
+#include <stdint.h>
 #include "idt/idt.h"
+#include "drivers/text_mode/text_mode.h"
 #include "drivers/serial/serial.h"
+#include "drivers/pic/pic.h"
 
 void divide_by_zero()
 {
@@ -9,15 +11,35 @@ void divide_by_zero()
     for (;;);
 }
 
+extern void int21h();
+void int21h_handler()
+{
+    kernel_message("Keyboard pressed!", GREY);
+    pic_EOI(0);
+}
+void no_int_handler()
+{
+    pic_EOI(0);
+}
+
 void kernel_main()
 {
     ser_Init(COM1, 1);
     tm_ClearScreen();
+
     kernel_message("GitOS - operating system as exercise. Pawel Reich 2022\r\n", GREY);
+
+    kernel_message("Remapping PIC..", GREY);
+
+    pic_Remap(0x20, 0x28);
+    asm("sti");
+    kernel_message("OK\r\n",LIGHT_GREEN);
+
     kernel_message("Initializing IDT..", GREY);
 
     idt_Init();
     idt_SetDescriptor(0, divide_by_zero);
+    idt_SetDescriptor(0x21, int21h);
     idt_Load();
 
     kernel_message("OK\r\n",LIGHT_GREEN);

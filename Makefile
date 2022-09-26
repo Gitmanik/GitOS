@@ -6,6 +6,8 @@ LD = ${TOOLS_DIR}/${TARGET}-ld
 OBJCOPY = ${TOOLS_DIR}/${TARGET}-objcopy
 OBJDUMP = ${TOOLS_DIR}/${TARGET}-objdump
 
+GCC_ARGUMENTS = -g -std=gnu99 -ffreestanding -nostdlib -O0 -Wall -Wextra
+
 STAGE1_ASM = ./src/boot/boot.asm
 STAGE1_BIN = ./bin/stage1.bin
 
@@ -33,6 +35,7 @@ clean:
 	find . -name \*.o -type f -delete
 	find . -name \*.elf -type f -delete
 	find . -name \*.bin -type f -delete
+	rm -rf dump.ans
 
 run_debug: all
 	putty telnet://localhost:4321 &
@@ -50,7 +53,7 @@ build: kernel stage1
 
 # ASM_OBJECTS need to be first because of pm_entry.asm
 ${KERNEL_ELF}: ${C_OBJECTS} ${ASM_OBJECTS}
-	${GCC} -g -T ./src/linker.ld -std=gnu99 -ffreestanding -nostdlib -o ${KERNEL_ELF} ${ASM_OBJECTS} $(C_OBJECTS)
+	${GCC} -T ./src/linker.ld ${GCC_ARGUMENTS} -o ${KERNEL_ELF} ${ASM_OBJECTS} $(C_OBJECTS)
 
 ${KERNEL_BIN}: ${KERNEL_ELF}
 	${OBJCOPY} -O binary ${KERNEL_ELF} ${KERNEL_BIN}
@@ -62,7 +65,8 @@ ${STAGE1_BIN}:
 	nasm -g -f elf $< -o $@
 
 %.o: %.c
-	${GCC} -g -c -nostdlib -std=gnu99 -ffreestanding -O0 -Wall -Wextra $< -o $@
+	${GCC} -c ${GCC_ARGUMENTS} $< -o $@
 
 dump:
-	${OBJDUMP} --visualize-jumps=extended-color -Mintel --prefix-addresses -d -f -t -s ${KERNEL_ELF}
+	rm -rf dump.ans
+	${OBJDUMP} --demangle -w --visualize-jumps=extended-color -Mintel --prefix-addresses -d -f -t -s ${KERNEL_ELF} > dump.ans

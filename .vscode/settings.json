@@ -6,6 +6,7 @@
         "idt.h": "c",
         "io.h": "c",
         "serial.h": "c",
-        "kernel.h": "c"
+        "kernel.h": "c",
+        "pic.h": "c"
     }
 }

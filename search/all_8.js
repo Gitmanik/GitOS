@@ -27,5 +27,5 @@ var searchData=
   ['inw_58',['inw',['../io_8c.html#ad6e8f0e0260d783b7301e63933d4e490',1,'inw(uint16_t port):&#160;io.c'],['../io_8h.html#ad6e8f0e0260d783b7301e63933d4e490',1,'inw(uint16_t port):&#160;io.c']]],
   ['io_2ec_59',['io.c',['../io_8c.html',1,'']]],
   ['io_2eh_60',['io.h',['../io_8h.html',1,'']]],
-  ['itoa_61',['itoa',['../string_8c.html#ae19bd40ad70d698198d020500fc66988',1,'itoa(int num, char *str, int base):&#160;string.c'],['../string_8h.html#ae19bd40ad70d698198d020500fc66988',1,'itoa(int num, char *str, int base):&#160;string.c']]]
+  ['itoa_61',['itoa',['../string_8c.html#a7ecda6e9a4ad5c1d1181bf064db143e9',1,'itoa(long num, char *str, int base):&#160;string.c'],['../string_8h.html#a7ecda6e9a4ad5c1d1181bf064db143e9',1,'itoa(long num, char *str, int base):&#160;string.c']]]
 ];

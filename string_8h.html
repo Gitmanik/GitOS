@@ -97,69 +97,22 @@ Functions</h2></td></tr>
 <tr class="memitem:a008e171a518fe0e0352f31b245e03875"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a008e171a518fe0e0352f31b245e03875">strlen</a> (const char *str)</td></tr>
 <tr class="memdesc:a008e171a518fe0e0352f31b245e03875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates length of specified string.  <a href="string_8h.html#a008e171a518fe0e0352f31b245e03875">More...</a><br /></td></tr>
 <tr class="separator:a008e171a518fe0e0352f31b245e03875"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18454f93db1bdf9866a682b509d6858e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a18454f93db1bdf9866a682b509d6858e">ltoa</a> (long num, char *str, int base)</td></tr>
-<tr class="memdesc:a18454f93db1bdf9866a682b509d6858e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts long to string.  <a href="string_8h.html#a18454f93db1bdf9866a682b509d6858e">More...</a><br /></td></tr>
-<tr class="separator:a18454f93db1bdf9866a682b509d6858e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae19bd40ad70d698198d020500fc66988"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#ae19bd40ad70d698198d020500fc66988">itoa</a> (int num, char *str, int base)</td></tr>
-<tr class="memdesc:ae19bd40ad70d698198d020500fc66988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts long to string.  <a href="string_8h.html#ae19bd40ad70d698198d020500fc66988">More...</a><br /></td></tr>
-<tr class="separator:ae19bd40ad70d698198d020500fc66988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ecda6e9a4ad5c1d1181bf064db143e9"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a7ecda6e9a4ad5c1d1181bf064db143e9">itoa</a> (long num, char *str, int base)</td></tr>
+<tr class="memdesc:a7ecda6e9a4ad5c1d1181bf064db143e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts number to string.  <a href="string_8h.html#a7ecda6e9a4ad5c1d1181bf064db143e9">More...</a><br /></td></tr>
+<tr class="separator:a7ecda6e9a4ad5c1d1181bf064db143e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b9caf068b045bb5cb5c38f54cf82367"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a8b9caf068b045bb5cb5c38f54cf82367">ksprintf</a> (char *buf, char *fmt,...)</td></tr>
+<tr class="memdesc:a8b9caf068b045bb5cb5c38f54cf82367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kernel sprintf.  <a href="string_8h.html#a8b9caf068b045bb5cb5c38f54cf82367">More...</a><br /></td></tr>
+<tr class="separator:a8b9caf068b045bb5cb5c38f54cf82367"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae19bd40ad70d698198d020500fc66988"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae19bd40ad70d698198d020500fc66988">&#9670;&nbsp;</a></span>itoa()</h2>
+<a id="a7ecda6e9a4ad5c1d1181bf064db143e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ecda6e9a4ad5c1d1181bf064db143e9">&#9670;&nbsp;</a></span>itoa()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">char* itoa </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>num</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>base</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Converts long to string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">num</td><td>Long to convert </td></tr>
-    <tr><td class="paramname">str</td><td>Buffer </td></tr>
-    <tr><td class="paramname">base</td><td>Base to use when converting the number </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>char* Buffer </dd></dl>
-
-<p class="reference">References <a class="el" href="string_8c.html#a44060611134f89c400f1a05962f23350">strrev()</a>.</p>
-
-</div>
-</div>
-<a id="a18454f93db1bdf9866a682b509d6858e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18454f93db1bdf9866a682b509d6858e">&#9670;&nbsp;</a></span>ltoa()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* ltoa </td>
           <td>(</td>
           <td class="paramtype">long&#160;</td>
           <td class="paramname"><em>num</em>, </td>
@@ -184,7 +137,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Converts long to string. </p>
+<p>Converts number to string. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">num</td><td>Long to convert </td></tr>
@@ -196,6 +149,53 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>char* Buffer </dd></dl>
 
 <p class="reference">References <a class="el" href="string_8c.html#a44060611134f89c400f1a05962f23350">strrev()</a>.</p>
+
+</div>
+</div>
+<a id="a8b9caf068b045bb5cb5c38f54cf82367"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b9caf068b045bb5cb5c38f54cf82367">&#9670;&nbsp;</a></span>ksprintf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* ksprintf </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Kernel sprintf. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>Buffer </td></tr>
+    <tr><td class="paramname">fmt</td><td>Text to format </td></tr>
+    <tr><td class="paramname">...</td><td>Args </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char* Buffer </dd></dl>
+
+<p class="reference">References <a class="el" href="string_8c.html#a7ecda6e9a4ad5c1d1181bf064db143e9">itoa()</a>, <a class="el" href="memory_8c.html#a113a42d20ee587a79f71464089007387">memcpy()</a>, <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>, and <a class="el" href="string_8c.html#a008e171a518fe0e0352f31b245e03875">strlen()</a>.</p>
 
 </div>
 </div>

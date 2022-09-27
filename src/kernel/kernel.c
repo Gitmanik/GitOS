@@ -40,16 +40,17 @@ void int21h_handler()
 void kernel_main()
 {
     int res = 0;
-
     tm_ClearScreen();
     tm_SetColor(GREY);
-    kernel_message("GitOS - operating system as exercise. Pawel Reich 2022\r\n", GREY);
 
     res = ser_Init(COM1, 1);
     if (res < 0)
     {
         kernel_panic("Panic: Could not initialize Serial port!");
     }
+    
+    kernel_message("GitOS - operating system as exercise. Pawel Reich 2022\r\n", GREY);
+
     
     kernel_message("Usable memory map:\r\n",GREY);
 
@@ -81,6 +82,7 @@ void kernel_main()
         idx++;
     }
 
+    //Kernel is located at 0x100000
     if (heap_entry.length_in_bytes < 0x100000)
     {
         kernel_message("Not enough memory to place kernel heap!", RED);
@@ -121,7 +123,7 @@ void kernel_main()
     tm_SetColor(LIGHT_PURPLE);
     while (1)
     {
-        while (!ser_IsAvailable(COM1));
+        while (!ser_Received(COM1));
         char c = ser_ReadChar(COM1);
         tm_PrintChar(c);
         if (c == '\r')

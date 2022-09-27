@@ -33,25 +33,33 @@ stage1: ${STAGE1_BIN}
 kernel: ${KERNEL_BIN}
 
 clean:
+	rm -rf docs
+	-pkill -f bochs
 	-pkill -f qemu
 	find . -name \*.o -type f -delete
 	find . -name \*.elf -type f -delete
 	find . -name \*.bin -type f -delete
-	rm -rf dump.ans
+	rm -rf *.ans
+	rm -rf *.out
+	rm -rf *.lock
+	rm -rf *.sym
 
-run_debug: all
-	putty telnet://localhost:4321 &
-	qemu-system-i386 ${QEMU_ARGUMENTS} -S -serial telnet:localhost:4321,server -gdb tcp::1234 
+debug_qemu:
+	qemu-system-i386 ${QEMU_ARGUMENTS} -S -serial /dev/ttyS0 -gdb tcp::1234 
+
+debug_bochs:
+	bochs -q
 
 run:
 	qemu-system-i386 ${QEMU_ARGUMENTS}
 
 build: kernel stage1
+	rm -rf ${DISK_BIN}.lock
 	rm -rf ${DISK_BIN}
 	dd if=${STAGE1_BIN} >> ${DISK_BIN}
 	dd if=${KERNEL_BIN} >> ${DISK_BIN}
 
-	dd if=/dev/zero count=100 bs=512 >> ${DISK_BIN}
+	dd if=/dev/zero of=${DISK_BIN} seek=4194303 bs=1 count=1
 
 # ASM_OBJECTS need to be first because of pm_entry.asm
 ${KERNEL_ELF}: ${C_OBJECTS} ${ASM_OBJECTS}
@@ -59,6 +67,7 @@ ${KERNEL_ELF}: ${C_OBJECTS} ${ASM_OBJECTS}
 
 ${KERNEL_BIN}: ${KERNEL_ELF}
 	${OBJCOPY} -O binary ${KERNEL_ELF} ${KERNEL_BIN}
+	nm ${KERNEL_ELF} | sort | sed 's/\ A\ /\ /g' > bochs_symbols.sym
 
 ${STAGE1_BIN}: 
 	nasm -f bin ${STAGE1_ASM} -o ${STAGE1_BIN}
@@ -72,3 +81,6 @@ ${STAGE1_BIN}:
 dump:
 	rm -rf dump.ans
 	${OBJDUMP} --demangle -w --visualize-jumps=extended-color -Mintel --prefix-addresses -d -f -t -s ${KERNEL_ELF} > dump.ans
+
+docs: ./docs
+	doxygen Doxyfile

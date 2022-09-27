@@ -30,10 +30,26 @@ setup:
 
 [BITS 32]
 load32:
+    .setup_pm_registers:
+    mov ax, 0x10
+    mov ds, ax
+    mov es, ax
+    mov fs, ax
+    mov gs, ax
+    mov ss, ax
+    mov ebp, 0x00200000
+    mov esp, ebp
+
     mov eax, 1 ; LBA
     mov ecx, 100 ; sectors number
     mov edi, 0x0100000 ; load into
     call ata_lba_read
+
+    .enable_a20:
+    in al, 0x92
+    or al, 2
+    out 0x92, al
+    
     jmp 0x08:0x0100000
 
 [BITS 16]

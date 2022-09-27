@@ -95,6 +95,7 @@ $(document).ready(function(){initNavTree('kheap_8h.html',''); initResizable(); }
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:adf384b2e867b567a531f37e258b855d3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kheap_8h.html#adf384b2e867b567a531f37e258b855d3">kheap_init</a> (void *start_address, uint32_t size)</td></tr>
+<tr class="memdesc:adf384b2e867b567a531f37e258b855d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes kernel heap.  <a href="kheap_8h.html#adf384b2e867b567a531f37e258b855d3">More...</a><br /></td></tr>
 <tr class="separator:adf384b2e867b567a531f37e258b855d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f52d7c56b7d67dc2f96b2e93dfdc7be"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kheap_8h.html#a5f52d7c56b7d67dc2f96b2e93dfdc7be">kmalloc</a> (size_t size)</td></tr>
 <tr class="memdesc:a5f52d7c56b7d67dc2f96b2e93dfdc7be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates specified size in heap.  <a href="kheap_8h.html#a5f52d7c56b7d67dc2f96b2e93dfdc7be">More...</a><br /></td></tr>
@@ -157,6 +158,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initializes kernel heap. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start_address</td><td>Starting address for heap allocation </td></tr>
+    <tr><td class="paramname">size</td><td>Size of heap in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Status </dd></dl>
 
 <p class="reference">References <a class="el" href="structheap__table.html#a226442f2a9ac2c4badcf07cb0eec041a">heap_table::entries</a>, <a class="el" href="heap_8h.html#a64c19d60b1d49b42806e90615ed21bc5">HEAP_BLOCK_SIZE</a>, <a class="el" href="heap_8c.html#a98974982a9a4b22cbdaba4db00431a57">heap_create()</a>, <a class="el" href="heap_8h.html#a955fbd45a7b04a70e457936a4d555f00">HEAP_TABLE_ADDRESS</a>, <a class="el" href="hkeap_8c.html#ad6120fe96d96d8fe0fd0e0b184f79a22">kernel_heap</a>, <a class="el" href="hkeap_8c.html#a77407aa4a3d4413e86ed0728fef3d408">kernel_heap_table</a>, and <a class="el" href="structheap__table.html#a3fab45bb4d7cd7e889bdf00080096e8e">heap_table::total</a>.</p>
 

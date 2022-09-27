@@ -11,6 +11,7 @@
         "bios_memory_map.h": "c",
         "heap.h": "c",
         "status.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "kheap.h": "c"
     }
 }

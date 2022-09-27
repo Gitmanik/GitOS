@@ -25,6 +25,6 @@ typedef struct
 #define HEAP_TABLE_ADDRESS 0x00007e00
 #define HEAP_BLOCK_SIZE 4096
 
-int heap_create(heap* heap, void* ptr, void* end, heap_table* table);
+int heap_create(heap* heap, heap_table* table, void* ptr, void* end);
 void* heap_malloc(heap* heap, size_t size);
 void heap_free(heap* heap, void* ptr);

@@ -1,6 +1,12 @@
 #include "string.h"
 #include <stddef.h>
 
+/**
+ * @brief Calculates length of specified string
+ * 
+ * @param str String
+ * @return size_t Length
+ */
 size_t strlen(const char* str)
 {
     size_t len = 0;
@@ -11,6 +17,12 @@ size_t strlen(const char* str)
     return len;
 }
 
+/**
+ * @brief Reverses string
+ * 
+ * @param str String to reverse
+ * @return char* str
+ */
 char *strrev(char *str)
 {
     if (!str || ! *str)
@@ -30,6 +42,14 @@ char *strrev(char *str)
     return str;
 }
 
+/**
+ * @brief Converts long to string
+ * 
+ * @param num Long to convert
+ * @param str Buffer
+ * @param base Base to use when converting the number
+ * @return char* Buffer
+ */
 char* itoa(int num, char* str, int base)
 {
 	int idx = 0;
@@ -62,9 +82,16 @@ char* itoa(int num, char* str, int base)
 	strrev(str);
 
 	return str;
-
 }
 
+/**
+ * @brief Converts long to string
+ * 
+ * @param num Long to convert
+ * @param str Buffer
+ * @param base Base to use when converting the number
+ * @return char* Buffer
+ */
 char* ltoa(long num, char* str, int base)
 {
 	long idx = 0;
@@ -97,5 +124,4 @@ char* ltoa(long num, char* str, int base)
 	strrev(str);
 
 	return str;
-
 }

@@ -8,26 +8,49 @@
 #include "memory/bios_memory_map.h"
 #include "memory/heap/kheap.h"
 
+/**
+ * @brief Temporary int 0x0 handler
+ * 
+ */
 void divide_by_zero()
 {
-    tm_PrintString("Division by zero!");
-    for (;;);
+    kernel_panic("Division by zero error!");
 }
 
+/**
+ * @brief Located in idt_handler.asm entry point for interrupt 0x0
+ * 
+ */
+
 extern void int21h(); 
+/**
+ * @brief Temporary int 0x21 handler
+ * 
+ */
 void int21h_handler()
 {
     kernel_message("Keyboard pressed!", GREY);
     pic_EOI(0);
 }
 
+/**
+ * @brief Kernel C entry point
+ * 
+ */
 void kernel_main()
 {
-    ser_Init(COM1, 1);
-    tm_ClearScreen();
+    int res = 0;
 
+    tm_ClearScreen();
+    tm_SetColor(GREY);
     kernel_message("GitOS - operating system as exercise. Pawel Reich 2022\r\n", GREY);
 
+    res = ser_Init(COM1, 1);
+    if (res < 0)
+    {
+        kernel_panic("Panic: Could not initialize Serial port!");
+    }
+    
     kernel_message("Usable memory map:\r\n",GREY);
 
     //Finding biggest usable memory chunk to use as heap
@@ -58,8 +81,16 @@ void kernel_main()
         idx++;
     }
 
+    if (heap_entry.length_in_bytes < 0x100000)
+    {
+        kernel_message("Not enough memory to place kernel heap!", RED);
+        kernel_halt();
+    }
+    heap_entry.base_address += 0x100000;
+    heap_entry.length_in_bytes -= 0x100000;
+
     char buf[16];
-    kernel_message("Heap address: 0x", GREY);
+    kernel_message("\r\nHeap address: 0x", GREY);
     ltoa(heap_entry.base_address, buf, 16);
     kernel_message(buf, GREY);
     kernel_message("\r\nHeap size: ", GREY);
@@ -67,24 +98,11 @@ void kernel_main()
     kernel_message(buf, GREY);
     kernel_message("KB\r\n", GREY);
 
-    kheap_init((void*) (uint32_t) heap_entry.base_address, heap_entry.length_in_bytes);
-
-    kernel_message("kmalloc test:\r\n", GREY);
-
-    void* x = kmalloc(5000);
-    ltoa(x, buf, 16);
-    kernel_message("0x", GREY);
-    kernel_message(buf, GREY);
-    kernel_message("\r\n", GREY);
-
-    kfree(x);
-
-    void* y = kmalloc(50);
-    ltoa(y, buf, 16);
-    kernel_message("0x", GREY);
-    kernel_message(buf, GREY);
-    kernel_message("\r\n", GREY);
-
+    res = kheap_init((void*) (uint32_t) heap_entry.base_address, heap_entry.length_in_bytes);
+    if (res < 0)
+    {
+        kernel_panic("Panic: Failed to create heap!");
+    }
     kernel_message("Remapping PIC..", GREY);
 
     pic_Remap(0x20, 0x28);
@@ -100,15 +118,28 @@ void kernel_main()
 
     kernel_message("OK\r\n",LIGHT_GREEN);
 
+    tm_SetColor(LIGHT_PURPLE);
     while (1)
     {
         while (!ser_IsAvailable(COM1));
         char c = ser_ReadChar(COM1);
-        tm_PrintChar(c, LIGHT_PURPLE);
+        tm_PrintChar(c);
         if (c == '\r')
-            tm_PrintChar('\n', LIGHT_PURPLE);
+            tm_PrintChar('\n');
     }
 
+    kernel_halt();
+}
+
+/**
+ * @brief (Temporary) Prints kernel_message and halts the kernel.
+ * 
+ * @param message Reason of the panic
+ */
+void kernel_panic(char* message)
+{
+    kernel_message("Kernel panic!\r\n", LIGHT_RED);
+    kernel_message(message, LIGHT_RED);
     kernel_halt();
 }
 
@@ -117,6 +148,12 @@ void kernel_halt()
     for (;;);
 }
 
+/**
+ * @brief Prints message onto Framebuffer and Serial
+ * 
+ * @param message Message
+ * @param col Color
+ */
 void kernel_message(char* message, enum TEXT_MODE_COLORS col)
 {
     enum TEXT_MODE_COLORS x = tm_GetColor();

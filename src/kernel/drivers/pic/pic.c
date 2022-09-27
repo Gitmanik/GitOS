@@ -1,6 +1,6 @@
 #include "pic.h"
-#include "../../common/io.h"
 #include <stdint.h>
+#include "../../common/io.h"
 
 #define ICW1_ICW4	0x01		/* ICW4 (not) needed */
 #define ICW1_SINGLE	0x02		/* Single (cascade) mode */
@@ -16,6 +16,12 @@
 
 #define END_OF_INTERRUPT 0x20
 
+/**
+ * @brief Remaps master PIC and slave PIC to specified interupts numbers
+ * 
+ * @param offset1 New starting interrupt number for master PIC (IRQ 0-7)
+ * @param offset2 New starting interrupt number for slave PIC (IRQ 8-15)
+ */
 void pic_Remap(uint8_t offset1, uint8_t offset2)
 {
     outb(PIC1_COMMAND, ICW1_INIT | ICW1_ICW4);
@@ -31,6 +37,11 @@ void pic_Remap(uint8_t offset1, uint8_t offset2)
     outb(PIC2_DATA, ICW4_8086);
 }
 
+/**
+ * @brief Sends End Of Interrupt to PIC
+ * 
+ * @param irq Number of IRQ to EOI
+ */
 void pic_EOI(unsigned char irq)
 {
     if (irq >= 8) // Reset slave

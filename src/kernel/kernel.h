@@ -4,3 +4,4 @@
 void kernel_main();
 void kernel_halt();
 void kernel_message(char* message, enum TEXT_MODE_COLORS col);
+void kernel_panic(char* message);

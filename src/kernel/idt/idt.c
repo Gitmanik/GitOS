@@ -6,19 +6,27 @@
 idt_desc idt_descriptors[512];
 idtr_desc idtr_descriptor;
 
+/**
+ * @brief Default interrupt handler lccated in idt_handler.asm
+ * 
+ */
 extern void ignore_int();
 
-// __attribute__((interrupt)) void no_int_handler(struct interrupt_frame* frame)
-// {
-//     outb(0x20,0x20);
-// }
-
-
+/**
+ * @brief Loads Interrupt Descriptor Table
+ * 
+ */
 void idt_Load()
 {
     asm volatile ("lidt %0" : : "m" (idtr_descriptor));
 }
 
+/**
+ * @brief Fills entry in IDT for specified Interrupt number
+ * Use before idt_Load()
+ * @param int_no Interrupt number
+ * @param address Pointer to interrupt handler
+ */
 void idt_SetDescriptor(int int_no, void* address)
 {
     idt_desc* desc = &idt_descriptors[int_no];
@@ -30,6 +38,10 @@ void idt_SetDescriptor(int int_no, void* address)
     desc->type_attr = 0b11101110; // P 1b, DPL 2b, S 1b, Type 4b
 }
 
+/**
+ * @brief Initializes memory for IDT struct
+ * Sets default for all interrupts
+ */
 void idt_Init()
 {
     memset(idt_descriptors, 0, sizeof(idt_descriptors));
@@ -41,6 +53,10 @@ void idt_Init()
         idt_SetDescriptor(i, ignore_int);
 }
 
+/**
+ * @brief Default handler for all interrupts
+ * 
+ */
 void ignore_int_handler()
 {
     pic_EOI(0);

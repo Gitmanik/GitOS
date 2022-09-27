@@ -23,8 +23,10 @@ enum TEXT_MODE_COLORS
 #define TEXT_MODE_WIDTH  80
 #define TEXT_MODE_HEIGHT 25
 
-void tm_PrintChar(char c, enum TEXT_MODE_COLORS fg);
+void tm_PrintChar(char c);
+void tm_PrintCharColor(char c, enum TEXT_MODE_COLORS fg);
 void tm_PrintString(const char* str);
+void tm_PrintStringColor(const char* str, enum TEXT_MODE_COLORS fg);
 
 void tm_ClearScreen();
 

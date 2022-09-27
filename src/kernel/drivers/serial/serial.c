@@ -2,8 +2,16 @@
 #include <stddef.h>
 #include "../../common/io.h"
 #include "../../common/string.h"
+#include "../../common/status.h"
 // https://wiki.osdev.org/Serial_Ports
 
+/**
+ * @brief Initializes specified Serial port
+ * 
+ * @param port Serial port address pointer
+ * @param divisor 0-65535 divisor for 115200 base speed
+ * @return int Status
+ */
 int ser_Init(uint16_t port, uint16_t divisor)
 {
     outb(port + 1, 0); // Disable interrupts
@@ -18,17 +26,30 @@ int ser_Init(uint16_t port, uint16_t divisor)
 
     if (inb(port + 0) != 0xAE)
     {
-        return 1;
+        return -EIO;
     }
 
     outb(port + 4, 0x0f);
-    return 0;
+    return ALL_OK;
 }
 
+/**
+ * @brief Prints single character to Serial port
+ * 
+ * @param port Serial port pointer
+ * @param c Character to write
+ */
 void ser_PrintChar(uint16_t port, char c)
 {
     outb(port, c);
 }
+
+/**
+ * @brief Prints string to specified Serial port
+ * 
+ * @param port Serial port pointer
+ * @param str String to write
+ */
 void ser_PrintString(uint16_t port, const char* str)
 {
     size_t sz = strlen(str);
@@ -36,11 +57,23 @@ void ser_PrintString(uint16_t port, const char* str)
         ser_PrintChar(port, str[idx]);
 }
 
+/**
+ * @brief Checks if port has unread value
+ * 
+ * @param port Serial port pointer
+ * @return int 1 if can read
+ */
 int ser_IsAvailable(uint16_t port)
 {
     return inb(port + 5) & 0x1;
 }
 
+/**
+ * @brief Reads single character from Serial port
+ * 
+ * @param port Serial port pointer
+ * @return char Read character
+ */
 char ser_ReadChar(uint16_t port)
 {
     return inb(port);

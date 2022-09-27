@@ -6,6 +6,7 @@
 #include "drivers/pic/pic.h"
 #include "common/string.h"
 #include "memory/bios_memory_map.h"
+#include "memory/heap/kheap.h"
 
 void divide_by_zero()
 {
@@ -29,6 +30,7 @@ void kernel_main()
 
     kernel_message("Usable memory map:\r\n",GREY);
 
+    //Finding biggest usable memory chunk to use as heap
     memory_map_entry heap_entry;
     int idx = 0;
     while (bios_memory_map[idx].length_in_bytes > 0)
@@ -51,11 +53,37 @@ void kernel_main()
         kernel_message("\r\n", YELLOW);
         if (bios_memory_map[idx].length_in_bytes > heap_entry.length_in_bytes)
             heap_entry = bios_memory_map[idx];
+
         skip:
         idx++;
     }
 
-    ser_PrintChar(bios_memory_map[0].type, YELLOW);
+    char buf[16];
+    kernel_message("Heap address: 0x", GREY);
+    ltoa(heap_entry.base_address, buf, 16);
+    kernel_message(buf, GREY);
+    kernel_message("\r\nHeap size: ", GREY);
+    ltoa(heap_entry.length_in_bytes / 1024, buf, 10);
+    kernel_message(buf, GREY);
+    kernel_message("KB\r\n", GREY);
+
+    kheap_init((void*) (uint32_t) heap_entry.base_address, heap_entry.length_in_bytes);
+
+    kernel_message("kmalloc test:\r\n", GREY);
+
+    void* x = kmalloc(5000);
+    ltoa(x, buf, 16);
+    kernel_message("0x", GREY);
+    kernel_message(buf, GREY);
+    kernel_message("\r\n", GREY);
+
+    kfree(x);
+
+    void* y = kmalloc(50);
+    ltoa(y, buf, 16);
+    kernel_message("0x", GREY);
+    kernel_message(buf, GREY);
+    kernel_message("\r\n", GREY);
 
     kernel_message("Remapping PIC..", GREY);
 

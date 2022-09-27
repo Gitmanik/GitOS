@@ -7,6 +7,10 @@
         "io.h": "c",
         "serial.h": "c",
         "kernel.h": "c",
-        "pic.h": "c"
+        "pic.h": "c",
+        "bios_memory_map.h": "c",
+        "heap.h": "c",
+        "status.h": "c",
+        "string.h": "c"
     }
 }

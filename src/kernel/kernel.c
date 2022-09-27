@@ -98,14 +98,13 @@ void kernel_main()
     //Kernel is located at 0x100000
     if (heap_entry.length_in_bytes < 0x100000)
     {
-        kernel_message("Not enough memory to place kernel heap!", RED);
-        kernel_halt();
+        kernel_panic("Panic: Not enough memory to place kernel heap!");
     }
     heap_entry.base_address += 0x100000;
     heap_entry.length_in_bytes -= 0x100000;
     
     memset(buf, 0, 64);
-    kernel_message(ksprintf(buf, "Heap address: 0x%p, Size: %pKB\r\n", (long) heap_entry.base_address, (long) heap_entry.length_in_bytes / 1024), GREY);
+    kernel_message(ksprintf(buf, "Heap address: 0x%p, Size: %ldKB\r\n", (long) heap_entry.base_address, (long) heap_entry.length_in_bytes / 1024), GREY);
 
     res = kheap_init((void*) (uint32_t) heap_entry.base_address, heap_entry.length_in_bytes);
     if (res < 0)

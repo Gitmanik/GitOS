@@ -7,6 +7,8 @@
 #include "common/string.h"
 #include "memory/bios_memory_map.h"
 #include "memory/heap/kheap.h"
+#include "memory/memory.h"
+#include "common/io.h"
 
 /**
  * @brief Temporary int 0x0 handler
@@ -29,7 +31,8 @@ extern void int21h();
  */
 void int21h_handler()
 {
-    kernel_message("Keyboard pressed!", GREY);
+    char scan_code = inb(0x60);
+    tm_PrintChar(scan_code);
     pic_EOI(0);
 }
 
@@ -40,9 +43,9 @@ void int21h_handler()
 void kernel_main()
 {
     int res = 0;
+
     tm_ClearScreen();
     tm_SetColor(GREY);
-
     res = ser_Init(COM1, 1);
     if (res < 0)
     {
@@ -51,30 +54,40 @@ void kernel_main()
     
     kernel_message("GitOS - operating system as exercise. Pawel Reich 2022\r\n", GREY);
 
-    
-    kernel_message("Usable memory map:\r\n",GREY);
+    //Initialize IDT
+    kernel_message("Initializing IDT..", GREY);
+
+    idt_Init();
+    idt_SetDescriptor(0, divide_by_zero);
+    idt_SetDescriptor(0x21, int21h);
+    idt_Load();
+
+    kernel_message("OK\r\n",LIGHT_GREEN);
+    //
+
 
     //Finding biggest usable memory chunk to use as heap
+
     memory_map_entry heap_entry;
     int idx = 0;
+    char buf[64];
+
+    memset(buf, 0, 64);
+    kernel_message(ksprintf(buf, "ksprintf test: %p %x %i %s %c %ld %%\r\n", bios_memory_map, 0x41424344, -1234, "gitmania.pl", 'X',  __LONG_MAX__), CYAN);
+    
+    kernel_message("Usable memory map:\r\n",GREY);
     while (bios_memory_map[idx].length_in_bytes > 0)
     {
         if ( bios_memory_map[idx].type != 1)
             goto skip;
-        char buf[16];
-        kernel_message("0x", YELLOW);
-        ltoa(bios_memory_map[idx].base_address, buf, 16);
-        kernel_message(buf, YELLOW);
-        kernel_message(" -> ", YELLOW);
 
-        kernel_message("0x", YELLOW);
-        ltoa(bios_memory_map[idx].base_address + bios_memory_map[idx].length_in_bytes, buf, 16);
-        kernel_message(buf, YELLOW);
-        kernel_message(" Size: ", YELLOW);
+        memset(buf, 0, 64);
+        kernel_message(ksprintf(buf, "0x%p -> 0x%p, Size: %ldKB\r\n", 
+                    (long) bios_memory_map[idx].base_address, 
+                    (long) bios_memory_map[idx].base_address + (long) bios_memory_map[idx].length_in_bytes, 
+                    (long) bios_memory_map[idx].length_in_bytes / 1024), 
+                    YELLOW);
 
-        itoa(bios_memory_map[idx].length_in_bytes, buf, 10);
-        kernel_message(buf, YELLOW);
-        kernel_message("\r\n", YELLOW);
         if (bios_memory_map[idx].length_in_bytes > heap_entry.length_in_bytes)
             heap_entry = bios_memory_map[idx];
 
@@ -90,35 +103,25 @@ void kernel_main()
     }
     heap_entry.base_address += 0x100000;
     heap_entry.length_in_bytes -= 0x100000;
-
-    char buf[16];
-    kernel_message("\r\nHeap address: 0x", GREY);
-    ltoa(heap_entry.base_address, buf, 16);
-    kernel_message(buf, GREY);
-    kernel_message("\r\nHeap size: ", GREY);
-    ltoa(heap_entry.length_in_bytes / 1024, buf, 10);
-    kernel_message(buf, GREY);
-    kernel_message("KB\r\n", GREY);
+    
+    memset(buf, 0, 64);
+    kernel_message(ksprintf(buf, "Heap address: 0x%p, Size: %pKB\r\n", (long) heap_entry.base_address, (long) heap_entry.length_in_bytes / 1024), GREY);
 
     res = kheap_init((void*) (uint32_t) heap_entry.base_address, heap_entry.length_in_bytes);
     if (res < 0)
     {
         kernel_panic("Panic: Failed to create heap!");
     }
+    //
+
+    //Remap PIC
     kernel_message("Remapping PIC..", GREY);
 
     pic_Remap(0x20, 0x28);
+    
+    kernel_message("OK\r\n",LIGHT_GREEN);
+    //
     asm("sti");
-    kernel_message("OK\r\n",LIGHT_GREEN);
-
-    kernel_message("Initializing IDT..", GREY);
-
-    idt_Init();
-    idt_SetDescriptor(0, divide_by_zero);
-    idt_SetDescriptor(0x21, int21h);
-    idt_Load();
-
-    kernel_message("OK\r\n",LIGHT_GREEN);
 
     tm_SetColor(LIGHT_PURPLE);
     while (1)

@@ -1,6 +1,7 @@
 #include "idt.h"
 #include <stdint.h>
 #include "../memory/memory.h"
+#include "../drivers/pic/pic.h"
 
 idt_desc idt_descriptors[512];
 idtr_desc idtr_descriptor;

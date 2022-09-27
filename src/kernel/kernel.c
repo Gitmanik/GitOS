@@ -4,6 +4,8 @@
 #include "drivers/text_mode/text_mode.h"
 #include "drivers/serial/serial.h"
 #include "drivers/pic/pic.h"
+#include "common/string.h"
+#include "memory/bios_memory_map.h"
 
 void divide_by_zero()
 {
@@ -24,6 +26,36 @@ void kernel_main()
     tm_ClearScreen();
 
     kernel_message("GitOS - operating system as exercise. Pawel Reich 2022\r\n", GREY);
+
+    kernel_message("Usable memory map:\r\n",GREY);
+
+    memory_map_entry heap_entry;
+    int idx = 0;
+    while (bios_memory_map[idx].length_in_bytes > 0)
+    {
+        if ( bios_memory_map[idx].type != 1)
+            goto skip;
+        char buf[16];
+        kernel_message("0x", YELLOW);
+        ltoa(bios_memory_map[idx].base_address, buf, 16);
+        kernel_message(buf, YELLOW);
+        kernel_message(" -> ", YELLOW);
+
+        kernel_message("0x", YELLOW);
+        ltoa(bios_memory_map[idx].base_address + bios_memory_map[idx].length_in_bytes, buf, 16);
+        kernel_message(buf, YELLOW);
+        kernel_message(" Size: ", YELLOW);
+
+        itoa(bios_memory_map[idx].length_in_bytes, buf, 10);
+        kernel_message(buf, YELLOW);
+        kernel_message("\r\n", YELLOW);
+        if (bios_memory_map[idx].length_in_bytes > heap_entry.length_in_bytes)
+            heap_entry = bios_memory_map[idx];
+        skip:
+        idx++;
+    }
+
+    ser_PrintChar(bios_memory_map[0].type, YELLOW);
 
     kernel_message("Remapping PIC..", GREY);
 

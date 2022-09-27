@@ -5,7 +5,7 @@
             "name": "Launch with GDB",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceRoot}/bin/disk.bin",
+            "program": "/usr/bin/gdb",
             "cwd": "${workspaceRoot}",
             "args": [],
             "targetArchitecture": "x86",

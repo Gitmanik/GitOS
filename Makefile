@@ -7,6 +7,7 @@ OBJCOPY = ${TOOLS_DIR}/${TARGET}-objcopy
 OBJDUMP = ${TOOLS_DIR}/${TARGET}-objdump
 
 GCC_ARGUMENTS = -g -std=gnu99 -ffreestanding -nostdlib -O0 -Wall -Wextra
+QEMU_ARGUMENTS = -drive file=${DISK_BIN},format=raw,index=0,media=disk -m 32M
 
 STAGE1_ASM = ./src/boot/boot.asm
 STAGE1_BIN = ./bin/stage1.bin
@@ -32,6 +33,7 @@ stage1: ${STAGE1_BIN}
 kernel: ${KERNEL_BIN}
 
 clean:
+	-pkill -f qemu
 	find . -name \*.o -type f -delete
 	find . -name \*.elf -type f -delete
 	find . -name \*.bin -type f -delete
@@ -39,10 +41,10 @@ clean:
 
 run_debug: all
 	putty telnet://localhost:4321 &
-	qemu-system-i386 -S -serial telnet:localhost:4321,server -gdb tcp::1234 -drive file=${DISK_BIN},format=raw,index=0,media=disk
+	qemu-system-i386 ${QEMU_ARGUMENTS} -S -serial telnet:localhost:4321,server -gdb tcp::1234 
 
 run:
-	qemu-system-i386 -drive file=${DISK_BIN},format=raw,index=0,media=disk
+	qemu-system-i386 ${QEMU_ARGUMENTS}
 
 build: kernel stage1
 	rm -rf ${DISK_BIN}

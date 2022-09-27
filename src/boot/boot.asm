@@ -16,6 +16,7 @@ setup:
     mov ax, 0x00
     mov ss, ax
     mov sp, 0x7c00 ; set stack below this code
+    call get_memory_map ; Load RAM info into 0x500
     sti
 .load_protected_mode:
     cli
@@ -36,8 +37,8 @@ load32:
     jmp 0x08:0x0100000
 
 [BITS 16]
+%include "./src/boot/memmap.asm"
 %include "./src/boot/gdt.asm"
-
 ; Aligning to 512 bytes
 times 510 - ($ - $$) db 0
 db 0x55

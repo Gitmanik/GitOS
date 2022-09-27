@@ -141,7 +141,7 @@ void heap_mark_blocks_taken(heap* heap, int start_block, int total_blocks)
  */
 static void heap_mark_blocks_free(heap* heap, int start_block)
 {
-    for (int i = start_block; i < heap->table->total; i++)
+    for (size_t i = start_block; i < heap->table->total; i++)
     {
         HEAP_BLOCK_TABLE_ENTRY entry = heap->table->entries[i];
 
@@ -223,5 +223,4 @@ void* heap_malloc(heap* heap, uint32_t size)
 void heap_free(heap* heap, void* ptr)
 {
     heap_mark_blocks_free(heap, heap_address_to_block(heap, ptr));
-    return 0;
 }

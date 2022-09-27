@@ -10,7 +10,7 @@ heap_table kernel_heap_table;
  * 
  * @param start_address Starting address for heap allocation
  * @param size Size of heap in bytes
- * @return int Status \file "common/status.h"
+ * @return int Status
  */
 int kheap_init(void* start_address, uint32_t size)
 {

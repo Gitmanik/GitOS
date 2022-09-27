@@ -18,3 +18,20 @@ void* memset(void* ptr, int c, size_t size)
     }
     return ptr;
 }
+
+/**
+ * @brief Copies memory from one place to another
+ * 
+ * @param dstptr Destination pointer
+ * @param srcptr Source pointer
+ * @param size Length of copied memory
+ * @return void* Destination pointer
+ */
+void* memcpy(void* restrict dstptr, const void* restrict srcptr, size_t size)
+{
+ 	unsigned char* dst = (unsigned char*) dstptr;
+ 	const unsigned char* src = (const unsigned char*) srcptr;
+	for (size_t i = 0; i < size; i++)
+		dst[i] = src[i];
+	return dstptr;
+}

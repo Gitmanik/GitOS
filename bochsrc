@@ -6,3 +6,4 @@ debug_symbols: file="bochs_symbols.sym"
 cpu: count=1, ips=10000000, reset_on_triple_fault=0
 com1: enabled=1, mode=term, dev=/dev/ttyS0
 gdbstub: enabled=1, port=1234
+mouse: enabled=0

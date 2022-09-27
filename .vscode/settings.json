@@ -12,6 +12,7 @@
         "heap.h": "c",
         "status.h": "c",
         "string.h": "c",
-        "kheap.h": "c"
+        "kheap.h": "c",
+        "memory.h": "c"
     }
 }

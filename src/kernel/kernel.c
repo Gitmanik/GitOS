@@ -9,6 +9,9 @@
 #include "memory/heap/kheap.h"
 #include "memory/memory.h"
 #include "common/io.h"
+#include "memory/paging/paging.h"
+
+static paging_chunk* kernel_paging_chunk;
 
 /**
  * @brief Temporary int 0x0 handler
@@ -43,6 +46,7 @@ void int21h_handler()
 void kernel_main()
 {
     int res = 0;
+    char buf[128];
 
     tm_ClearScreen();
     tm_SetColor(GREY);
@@ -56,32 +60,29 @@ void kernel_main()
 
     //Initialize IDT
     kernel_message("Initializing IDT..", GREY);
-
     idt_Init();
     idt_SetDescriptor(0, divide_by_zero);
     idt_SetDescriptor(0x21, int21h);
     idt_Load();
-
     kernel_message("OK\r\n",LIGHT_GREEN);
     //
 
+    //ksprintf test
+    memset(buf, 0, 128);
+    kernel_message(ksprintf(buf, "ksprintf test: %p %x %i %s %c %ld %%\r\n", bios_memory_map, 0x41424344, -1234, "gitmanik.dev", 'X',  __LONG_MAX__), CYAN);
+    
 
     //Finding biggest usable memory chunk to use as heap
-
     memory_map_entry heap_entry;
     int idx = 0;
-    char buf[64];
 
-    memset(buf, 0, 64);
-    kernel_message(ksprintf(buf, "ksprintf test: %p %x %i %s %c %ld %%\r\n", bios_memory_map, 0x41424344, -1234, "gitmania.pl", 'X',  __LONG_MAX__), CYAN);
-    
     kernel_message("Usable memory map:\r\n",GREY);
     while (bios_memory_map[idx].length_in_bytes > 0)
     {
         if ( bios_memory_map[idx].type != 1)
             goto skip;
 
-        memset(buf, 0, 64);
+        memset(buf, 0, 128);
         kernel_message(ksprintf(buf, "0x%p -> 0x%p, Size: %ldKB\r\n", 
                     (long) bios_memory_map[idx].base_address, 
                     (long) bios_memory_map[idx].base_address + (long) bios_memory_map[idx].length_in_bytes, 
@@ -103,7 +104,7 @@ void kernel_main()
     heap_entry.base_address += 0x100000;
     heap_entry.length_in_bytes -= 0x100000;
     
-    memset(buf, 0, 64);
+    memset(buf, 0, 128);
     kernel_message(ksprintf(buf, "Heap address: 0x%p, Size: %ldKB\r\n", (long) heap_entry.base_address, (long) heap_entry.length_in_bytes / 1024), GREY);
 
     res = kheap_init((void*) (uint32_t) heap_entry.base_address, heap_entry.length_in_bytes);
@@ -113,12 +114,36 @@ void kernel_main()
     }
     //
 
+
+    kernel_message("Enabling paging..", GREY);
+    kernel_paging_chunk = paging_new_directory(PAGING_IS_WRITEABLE | PAGING_IS_PRESENT | PAGING_ACCESS_FROM_ALL);
+    paging_switch(paging_get_directory(kernel_paging_chunk));
+    paging_enable();
+    kernel_message("OK\r\n", LIGHT_GREEN);
+
+    char* ptr = kzalloc(4096);
+    res = paging_set_page(paging_get_directory(kernel_paging_chunk), (void*) 0x1000, (uint32_t) ptr | PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
+    if (res < 0)
+    {
+        kernel_panic("Panic: Could not sect page!");
+    }
+    char* ptr2 = (char*) 0x1000;
+
+    ptr2[0] = 'A';
+    ptr2[1] = 'B';
+    
+    kfree(ptr);
+
+    memset(buf, 0, 128);
+    kernel_message(ksprintf(buf, "If paging works, these should be the same: 0x%p:'%s' 0x%p:'%s'\r\n", (uint32_t)ptr, ptr, (uint32_t) ptr2, ptr2), LIGHT_GREEN);
+
     //Remap PIC
     kernel_message("Remapping PIC..", GREY);
 
     pic_Remap(0x20, 0x28);
     
     kernel_message("OK\r\n",LIGHT_GREEN);
+    
     //
     asm("sti");
 

@@ -87,7 +87,7 @@ char* itoa(long num, char* str, int base)
 
 /**
  * @brief Kernel sprintf
- * 
+ * params: %% %c %s %p %l(mod) %d %i %x
  * @param buf Buffer
  * @param fmt Text to format
  * @param ... Args

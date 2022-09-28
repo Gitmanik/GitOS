@@ -23,7 +23,7 @@ C_OBJECTS = ${C_SOURCES:.c=.o}
 
 # pm_entry.asm needs to be first linked because of hard-copying bytes in the last step
 ASM_SOURCES = ./src/kernel/pm_entry.asm $(shell find ./src/kernel -name "*.asm" ! -wholename "./src/kernel/pm_entry.asm") 
-ASM_OBJECTS = ${ASM_SOURCES:.asm=.o}
+ASM_OBJECTS = ${ASM_SOURCES:.asm=.asm.o}
 
 
 all: clean build
@@ -72,7 +72,7 @@ ${KERNEL_BIN}: ${KERNEL_ELF}
 ${STAGE1_BIN}: 
 	nasm -f bin ${STAGE1_ASM} -o ${STAGE1_BIN}
 
-%.o: %.asm
+%.asm.o: %.asm
 	nasm -g -f elf $< -o $@
 
 %.o: %.c

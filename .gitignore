@@ -5,4 +5,4 @@
 docs
 *.lock
 *.sym
-.vscode\settings.json
+settings.json

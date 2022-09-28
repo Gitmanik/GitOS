@@ -12,5 +12,6 @@ var searchData=
   ['kheap_2eh_71',['kheap.h',['../kheap_8h.html',1,'']]],
   ['kheap_5finit_72',['kheap_init',['../hkeap_8c.html#adf384b2e867b567a531f37e258b855d3',1,'kheap_init(void *start_address, uint32_t size):&#160;hkeap.c'],['../kheap_8h.html#adf384b2e867b567a531f37e258b855d3',1,'kheap_init(void *start_address, uint32_t size):&#160;hkeap.c']]],
   ['kmalloc_73',['kmalloc',['../hkeap_8c.html#a5f52d7c56b7d67dc2f96b2e93dfdc7be',1,'kmalloc(size_t size):&#160;hkeap.c'],['../kheap_8h.html#a5f52d7c56b7d67dc2f96b2e93dfdc7be',1,'kmalloc(size_t size):&#160;hkeap.c']]],
-  ['ksprintf_74',['ksprintf',['../string_8c.html#a8b9caf068b045bb5cb5c38f54cf82367',1,'ksprintf(char *buf, char *fmt,...):&#160;string.c'],['../string_8h.html#a8b9caf068b045bb5cb5c38f54cf82367',1,'ksprintf(char *buf, char *fmt,...):&#160;string.c']]]
+  ['ksprintf_74',['ksprintf',['../string_8c.html#a8b9caf068b045bb5cb5c38f54cf82367',1,'ksprintf(char *buf, char *fmt,...):&#160;string.c'],['../string_8h.html#a8b9caf068b045bb5cb5c38f54cf82367',1,'ksprintf(char *buf, char *fmt,...):&#160;string.c']]],
+  ['kzalloc_75',['kzalloc',['../hkeap_8c.html#a913f2de31558b9cca9405d2cd05a402a',1,'kzalloc(size_t size):&#160;hkeap.c'],['../kheap_8h.html#a913f2de31558b9cca9405d2cd05a402a',1,'kzalloc(size_t size):&#160;hkeap.c']]]
 ];

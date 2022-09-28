@@ -100,6 +100,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a5f52d7c56b7d67dc2f96b2e93dfdc7be"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kheap_8h.html#a5f52d7c56b7d67dc2f96b2e93dfdc7be">kmalloc</a> (size_t size)</td></tr>
 <tr class="memdesc:a5f52d7c56b7d67dc2f96b2e93dfdc7be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates specified size in heap.  <a href="kheap_8h.html#a5f52d7c56b7d67dc2f96b2e93dfdc7be">More...</a><br /></td></tr>
 <tr class="separator:a5f52d7c56b7d67dc2f96b2e93dfdc7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a913f2de31558b9cca9405d2cd05a402a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kheap_8h.html#a913f2de31558b9cca9405d2cd05a402a">kzalloc</a> (size_t size)</td></tr>
+<tr class="memdesc:a913f2de31558b9cca9405d2cd05a402a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocated specified size in heap and zeroes it.  <a href="kheap_8h.html#a913f2de31558b9cca9405d2cd05a402a">More...</a><br /></td></tr>
+<tr class="separator:a913f2de31558b9cca9405d2cd05a402a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a069f85a5001d71bc44d8be6532a4e432"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kheap_8h.html#a069f85a5001d71bc44d8be6532a4e432">kfree</a> (void *ptr)</td></tr>
 <tr class="memdesc:a069f85a5001d71bc44d8be6532a4e432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees specified pointer.  <a href="kheap_8h.html#a069f85a5001d71bc44d8be6532a4e432">More...</a><br /></td></tr>
 <tr class="separator:a069f85a5001d71bc44d8be6532a4e432"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,6 +202,35 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>void* Pointer to allocated memory, 0 if errored </dd></dl>
 
 <p class="reference">References <a class="el" href="heap_8c.html#ab862bb43759ff08ff8848b22b0e6d6b0">heap_malloc()</a>, and <a class="el" href="hkeap_8c.html#ad6120fe96d96d8fe0fd0e0b184f79a22">kernel_heap</a>.</p>
+
+</div>
+</div>
+<a id="a913f2de31558b9cca9405d2cd05a402a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a913f2de31558b9cca9405d2cd05a402a">&#9670;&nbsp;</a></span>kzalloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* kzalloc </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocated specified size in heap and zeroes it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>Requested allocation swize </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void* Pointer to allocated memory, 0 if errored </dd></dl>
+
+<p class="reference">References <a class="el" href="hkeap_8c.html#a5f52d7c56b7d67dc2f96b2e93dfdc7be">kmalloc()</a>, and <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>.</p>
 
 </div>
 </div>

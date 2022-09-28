@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['start_5faddress_215',['start_address',['../structheap.html#ad515ea1aae3191d87e6e737b848374a4',1,'heap']]]
+  ['memory_5fmap_5fentry_239',['memory_map_entry',['../bios__memory__map_8h.html#a69ee9415479e1704667a452f1d715987',1,'bios_memory_map.h']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['entries_207',['entries',['../structheap__table.html#a226442f2a9ac2c4badcf07cb0eec041a',1,'heap_table']]]
+  ['directory_5fentry_231',['directory_entry',['../structpaging__chunk.html#a7abe8d9cbf8d303b43dc85b868b4eb93',1,'paging_chunk']]]
 ];

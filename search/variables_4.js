@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['memory_5fmap_5fentry_214',['memory_map_entry',['../bios__memory__map_8h.html#a69ee9415479e1704667a452f1d715987',1,'bios_memory_map.h']]]
+  ['kernel_5fheap_237',['kernel_heap',['../hkeap_8c.html#ad6120fe96d96d8fe0fd0e0b184f79a22',1,'hkeap.c']]],
+  ['kernel_5fheap_5ftable_238',['kernel_heap_table',['../hkeap_8c.html#a77407aa4a3d4413e86ed0728fef3d408',1,'hkeap.c']]]
 ];

@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include "kheap.h"
 #include "heap.h"
+#include "../memory.h"
 
 heap kernel_heap;
 heap_table kernel_heap_table;
@@ -31,6 +32,23 @@ int kheap_init(void* start_address, uint32_t size)
 void* kmalloc(size_t size)
 {
     return heap_malloc(&kernel_heap, size);
+}
+
+/**
+ * @brief Allocated specified size in heap and zeroes it.
+ * 
+ * @param size Requested allocation swize
+ * @return void* Pointer to allocated memory, 0 if errored
+ */
+void* kzalloc(size_t size)
+{
+    void* ptr = kmalloc(size);
+
+    if (!ptr)
+        return 0;
+
+    memset(ptr, 0, size);
+    return ptr;
 }
 
 /**

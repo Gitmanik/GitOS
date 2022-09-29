@@ -1,6 +1,7 @@
 var annotated_dup =
 [
     [ "disk", "structdisk.html", "structdisk" ],
+    [ "disk_stream", "structdisk__stream.html", "structdisk__stream" ],
     [ "heap", "structheap.html", "structheap" ],
     [ "heap_table", "structheap__table.html", "structheap__table" ],
     [ "paging_chunk", "structpaging__chunk.html", "structpaging__chunk" ],

@@ -1,7 +1,7 @@
 #include <stdint.h>
 #include "kheap.h"
 #include "heap.h"
-#include "../memory.h"
+#include "memory/memory.h"
 
 heap kernel_heap;
 heap_table kernel_heap_table;
@@ -20,7 +20,7 @@ int kheap_init(void* start_address, uint32_t size)
     kernel_heap_table.total = total_table_entries;
 
     void* end = start_address + size;
-    return  heap_create(&kernel_heap, &kernel_heap_table, start_address, end);
+    return heap_create(&kernel_heap, &kernel_heap_table, start_address, end);
 }
 
 /**

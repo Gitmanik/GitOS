@@ -44,6 +44,8 @@ clean:
 	rm -rf *.lock
 	rm -rf *.sym
 
+	rm -rf mnt
+
 debug_qemu:
 	qemu-system-i386 ${QEMU_ARGUMENTS} -S -serial /dev/ttyS0 -gdb tcp::1234 
 
@@ -59,7 +61,14 @@ build: kernel stage1
 	dd if=${STAGE1_BIN} >> ${DISK_BIN}
 	dd if=${KERNEL_BIN} >> ${DISK_BIN}
 
-	dd if=/dev/zero of=${DISK_BIN} seek=4194303 bs=1 count=1
+# 										16MB
+	dd if=/dev/zero of=${DISK_BIN} seek=16777216 bs=1 count=1
+
+	-mkdir mnt
+	sudo mount -t vfat ./bin/disk.bin ./mnt
+	sudo cp -r ./fs ./mnt
+	sudo umount ./mnt
+	rm -rf ./mnt
 
 # ASM_OBJECTS need to be first because of pm_entry.asm
 ${KERNEL_ELF}: ${C_OBJECTS} ${ASM_OBJECTS}

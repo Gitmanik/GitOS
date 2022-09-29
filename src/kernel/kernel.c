@@ -139,11 +139,12 @@ void kernel_main()
     
     kernel_message("OK\r\n", LIGHT_GREEN);
     memset(buf, 0, 128);
-    kernel_message(ksprintf(buf, "Paging self-test: 0x%p:'%s' 0x%p:'%s'\r\n", (uint32_t)ptr_real, ptr_real, (uint32_t) ptr_virt, ptr_virt), GREY);
+    kernel_message(ksprintf(buf, "Paging self-test: 0x%p:'%s' 0x%p:'%s'", (uint32_t)ptr_real, ptr_real, (uint32_t) ptr_virt, ptr_virt), GREY);
     if (memcmp(ptr_real, ptr_virt, 2) != 0)
     {
-        kernel_panic("Panic: Paging self-test unsuccessful!");
+        kernel_panic("\r\nPanic: Paging self-test unsuccessful!");
     }
+    kernel_message(" OK\r\n", LIGHT_GREEN);
     kfree(ptr_real);
     //
 

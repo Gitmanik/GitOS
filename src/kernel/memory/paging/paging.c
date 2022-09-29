@@ -1,7 +1,8 @@
 #include "paging.h"
 #include <stdint.h>
-#include "../heap/kheap.h"
-#include "../../common/status.h"
+#include <stdbool.h>
+#include "memory/heap/kheap.h"
+#include "common/status.h"
 
 static uint32_t* current_directory = 0;
 
@@ -9,9 +10,9 @@ static uint32_t* current_directory = 0;
  * @brief Ensures provided address is aligned
  * 
  * @param addr Address
- * @return int Result: 1 if aligned
+ * @return bool Address is aligned
  */
-static int paging_is_aligned(void* addr)
+static bool paging_is_aligned(void* addr)
 {
     return ((uint32_t) addr % PAGING_PAGE_SIZE) == 0;
 }
@@ -36,12 +37,22 @@ static int paging_get_indexes(void* virtual_address, uint32_t* directory_index_o
 }
 
 /**
+ * @brief Loads given page directory pointer to cr3 CPU register
+ * 
+ * @param directory Page directory pointer
+ */
+static void paging_load_directory(uint32_t* directory)
+{
+    asm volatile ("mov %0, %%cr3" : : "r" (directory));
+}
+
+/**
  * @brief Returns directory entry pointer for given chunk
  * 
  * @param chunk Chunk
  * @return uint32_t* Page directory pointer
  */
-uint32_t* paging_get_directory(paging_chunk* chunk)
+uint32_t* paging_get_directory(struct paging_chunk* chunk)
 {
     return chunk->directory_entry;
 }
@@ -52,7 +63,7 @@ uint32_t* paging_get_directory(paging_chunk* chunk)
  * @param flags Flags for each page table
  * @return paging_chunk* Pointer to new paging chunk
  */
-paging_chunk* paging_new_directory(uint8_t flags)
+struct paging_chunk* paging_new_directory(uint8_t flags)
 {
     uint32_t* page_directories = kzalloc(sizeof(uint32_t) * PAGING_TOTAL_ENTRIES_PER_TABLE);
     int offset = 0;
@@ -67,20 +78,9 @@ paging_chunk* paging_new_directory(uint8_t flags)
         offset += (PAGING_TOTAL_ENTRIES_PER_TABLE * PAGING_PAGE_SIZE);
     }
 
-    paging_chunk* chunk = kzalloc(sizeof(paging_chunk));
+    struct paging_chunk* chunk = kzalloc(sizeof(struct paging_chunk));
     chunk->directory_entry = page_directories;
     return chunk;
-}
-
-
-/**
- * @brief Loads given page directory pointer to cr3 CPU register
- * 
- * @param directory Page directory pointer
- */
-static void paging_load_directory(uint32_t* directory)
-{
-    asm volatile ("mov %0, %%cr3" : : "r" (directory));
 }
 
 /**

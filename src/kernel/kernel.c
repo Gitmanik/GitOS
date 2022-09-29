@@ -12,7 +12,7 @@
 #include "memory/paging/paging.h"
 #include "drivers/disk/disk.h"
 
-static paging_chunk* kernel_paging_chunk;
+static struct paging_chunk* kernel_paging_chunk;
 
 /**
  * @brief Temporary int 0x0 handler

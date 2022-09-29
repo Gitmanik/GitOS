@@ -10,14 +10,13 @@
 #define PAGING_TOTAL_ENTRIES_PER_TABLE 1024
 #define PAGING_PAGE_SIZE 4096
 
-typedef struct
+struct paging_chunk
 {
     uint32_t* directory_entry;
+};
 
-} paging_chunk;
-
-paging_chunk* paging_new_directory(uint8_t flags);
+struct paging_chunk* paging_new_directory(uint8_t flags);
 void paging_switch(uint32_t* directory);
 void paging_enable();
-uint32_t* paging_get_directory(paging_chunk* chunk);
+uint32_t* paging_get_directory(struct paging_chunk* chunk);
 int paging_set_page(uint32_t* directory, void* virtual_address, uint32_t value);

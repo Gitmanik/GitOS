@@ -1,4 +1,8 @@
 var disk_8h =
 [
-    [ "disk_read_sector", "disk_8h.html#a685b0eddd446d4a8cf49e7e5f54a24d6", null ]
+    [ "disk", "structdisk.html", "structdisk" ],
+    [ "DISK_TYPE_REAL", "disk_8h.html#aead175973db76ad60f641e9ac49be6f9", null ],
+    [ "disk_get", "disk_8h.html#a10a9768a9f549ad766ce7e19b3179944", null ],
+    [ "disk_read_block", "disk_8h.html#a7a2e4d8dd685931a0282ea66a561ae88", null ],
+    [ "disk_search_and_init", "disk_8h.html#a3f37d7034065e7836aaeeab8be7b72ba", null ]
 ];

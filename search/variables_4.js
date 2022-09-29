@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['kernel_5fheap_245',['kernel_heap',['../hkeap_8c.html#ad6120fe96d96d8fe0fd0e0b184f79a22',1,'hkeap.c']]],
-  ['kernel_5fheap_5ftable_246',['kernel_heap_table',['../hkeap_8c.html#a77407aa4a3d4413e86ed0728fef3d408',1,'hkeap.c']]]
+  ['idt_5fdesc_279',['idt_desc',['../idt_8h.html#a830cd7b0a812b38e7052aab635cf8487',1,'idt.h']]],
+  ['idt_5fdescriptors_280',['idt_descriptors',['../idt_8c.html#adf094f238e70a027d44afe9fbb5092b8',1,'idt.c']]],
+  ['idtr_5fdesc_281',['idtr_desc',['../idt_8h.html#a47e422e5167f03378f7565816e29d05a',1,'idt.h']]],
+  ['idtr_5fdescriptor_282',['idtr_descriptor',['../idt_8c.html#a6a8d2dcfd1f1f83c2f5df272ac639086',1,'idt.c']]]
 ];

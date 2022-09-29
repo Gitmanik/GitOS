@@ -83,31 +83,68 @@ $(document).ready(function(){initNavTree('disk_8c.html',''); initResizable(); })
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">disk.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="disk_8h_source.html">disk.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="io_8h_source.html">../../common/io.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="io_8h_source.html">common/io.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="memory_8h_source.html">memory/memory.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="status_8h_source.html">common/status.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a685b0eddd446d4a8cf49e7e5f54a24d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disk_8c.html#a685b0eddd446d4a8cf49e7e5f54a24d6">disk_read_sector</a> (int lba, int total, void *buf)</td></tr>
-<tr class="memdesc:a685b0eddd446d4a8cf49e7e5f54a24d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads sectors into memory.  <a href="disk_8c.html#a685b0eddd446d4a8cf49e7e5f54a24d6">More...</a><br /></td></tr>
-<tr class="separator:a685b0eddd446d4a8cf49e7e5f54a24d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f37d7034065e7836aaeeab8be7b72ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disk_8c.html#a3f37d7034065e7836aaeeab8be7b72ba">disk_search_and_init</a> ()</td></tr>
+<tr class="separator:a3f37d7034065e7836aaeeab8be7b72ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10a9768a9f549ad766ce7e19b3179944"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structdisk.html">disk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disk_8c.html#a10a9768a9f549ad766ce7e19b3179944">disk_get</a> (int index)</td></tr>
+<tr class="separator:a10a9768a9f549ad766ce7e19b3179944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a2e4d8dd685931a0282ea66a561ae88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disk_8c.html#a7a2e4d8dd685931a0282ea66a561ae88">disk_read_block</a> (struct <a class="el" href="structdisk.html">disk</a> *<a class="el" href="structdisk.html">disk</a>, unsigned int lba, int total, void *buf)</td></tr>
+<tr class="separator:a7a2e4d8dd685931a0282ea66a561ae88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a9634a02aa962b2df71b6b9f38f29d3d4"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structdisk.html">disk</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disk_8c.html#a9634a02aa962b2df71b6b9f38f29d3d4">primary_disk</a></td></tr>
+<tr class="separator:a9634a02aa962b2df71b6b9f38f29d3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a685b0eddd446d4a8cf49e7e5f54a24d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a685b0eddd446d4a8cf49e7e5f54a24d6">&#9670;&nbsp;</a></span>disk_read_sector()</h2>
+<a id="a10a9768a9f549ad766ce7e19b3179944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10a9768a9f549ad766ce7e19b3179944">&#9670;&nbsp;</a></span>disk_get()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int disk_read_sector </td>
+          <td class="memname">struct <a class="el" href="structdisk.html">disk</a>* disk_get </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="disk_8c.html#a9634a02aa962b2df71b6b9f38f29d3d4">primary_disk</a>.</p>
+
+</div>
+</div>
+<a id="a7a2e4d8dd685931a0282ea66a561ae88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a2e4d8dd685931a0282ea66a561ae88">&#9670;&nbsp;</a></span>disk_read_block()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int disk_read_block </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structdisk.html">disk</a> *&#160;</td>
+          <td class="paramname"><em>disk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>lba</em>, </td>
         </tr>
         <tr>
@@ -130,18 +167,41 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reads sectors into memory. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lba</td><td>Starting LBA </td></tr>
-    <tr><td class="paramname">total</td><td>Count of sectors to read </td></tr>
-    <tr><td class="paramname">buf</td><td>Destination buffer </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int Status </dd></dl>
+<p class="reference">References <a class="el" href="status_8h.html#a70979f50f9c83e5aebab3d6a1bd4cf35">EIO</a>, and <a class="el" href="disk_8c.html#a9634a02aa962b2df71b6b9f38f29d3d4">primary_disk</a>.</p>
 
-<p class="reference">References <a class="el" href="io_8c.html#a2e1e8e2c5724c1e8fd2dff2eada06479">inb()</a>, <a class="el" href="io_8c.html#ad6e8f0e0260d783b7301e63933d4e490">inw()</a>, and <a class="el" href="io_8c.html#a8bf7a9af91c08e6f876aaffeccd48ff3">outb()</a>.</p>
+</div>
+</div>
+<a id="a3f37d7034065e7836aaeeab8be7b72ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f37d7034065e7836aaeeab8be7b72ba">&#9670;&nbsp;</a></span>disk_search_and_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void disk_search_and_init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="structdisk.html#afe2206478d1b792c18c43f982885dc6b">disk::disk_type</a>, <a class="el" href="disk_8h.html#aead175973db76ad60f641e9ac49be6f9">DISK_TYPE_REAL</a>, <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>, <a class="el" href="disk_8c.html#a9634a02aa962b2df71b6b9f38f29d3d4">primary_disk</a>, and <a class="el" href="structdisk.html#a8757e22014def44e38fa7e213f1a6300">disk::sector_size</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a9634a02aa962b2df71b6b9f38f29d3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9634a02aa962b2df71b6b9f38f29d3d4">&#9670;&nbsp;</a></span>primary_disk</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structdisk.html">disk</a> primary_disk</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

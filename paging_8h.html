@@ -118,17 +118,17 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2210b839194d4dc0f003bde6b25e17b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpaging__chunk.html">paging_chunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8h.html#a2210b839194d4dc0f003bde6b25e17b8">paging_new_directory</a> (uint8_t flags)</td></tr>
-<tr class="memdesc:a2210b839194d4dc0f003bde6b25e17b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates and creates new page directory with specified flags.  <a href="paging_8h.html#a2210b839194d4dc0f003bde6b25e17b8">More...</a><br /></td></tr>
-<tr class="separator:a2210b839194d4dc0f003bde6b25e17b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79699e43f28673ac9ba6933be1cf011a"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8h.html#a79699e43f28673ac9ba6933be1cf011a">paging_new_directory</a> (uint8_t flags)</td></tr>
+<tr class="memdesc:a79699e43f28673ac9ba6933be1cf011a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates and creates new page directory with specified flags.  <a href="paging_8h.html#a79699e43f28673ac9ba6933be1cf011a">More...</a><br /></td></tr>
+<tr class="separator:a79699e43f28673ac9ba6933be1cf011a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a850f8e4f83800436f132570f9faf1c40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8h.html#a850f8e4f83800436f132570f9faf1c40">paging_switch</a> (uint32_t *directory)</td></tr>
 <tr class="memdesc:a850f8e4f83800436f132570f9faf1c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switches to given page directory pointer.  <a href="paging_8h.html#a850f8e4f83800436f132570f9faf1c40">More...</a><br /></td></tr>
 <tr class="separator:a850f8e4f83800436f132570f9faf1c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6d520f99ef8596febe3285e50e79880"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8h.html#ad6d520f99ef8596febe3285e50e79880">paging_enable</a> ()</td></tr>
 <tr class="separator:ad6d520f99ef8596febe3285e50e79880"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fe3037d3845c584b8c764b75c036508"><td class="memItemLeft" align="right" valign="top">uint32_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8h.html#a4fe3037d3845c584b8c764b75c036508">paging_get_directory</a> (<a class="el" href="structpaging__chunk.html">paging_chunk</a> *chunk)</td></tr>
-<tr class="memdesc:a4fe3037d3845c584b8c764b75c036508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns directory entry pointer for given chunk.  <a href="paging_8h.html#a4fe3037d3845c584b8c764b75c036508">More...</a><br /></td></tr>
-<tr class="separator:a4fe3037d3845c584b8c764b75c036508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14a82d17b3c9b1a7b39bb55daeef5462"><td class="memItemLeft" align="right" valign="top">uint32_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8h.html#a14a82d17b3c9b1a7b39bb55daeef5462">paging_get_directory</a> (struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *chunk)</td></tr>
+<tr class="memdesc:a14a82d17b3c9b1a7b39bb55daeef5462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns directory entry pointer for given chunk.  <a href="paging_8h.html#a14a82d17b3c9b1a7b39bb55daeef5462">More...</a><br /></td></tr>
+<tr class="separator:a14a82d17b3c9b1a7b39bb55daeef5462"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a040900b1b1eec0f5ce8027a31a25c1d9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8h.html#a040900b1b1eec0f5ce8027a31a25c1d9">paging_set_page</a> (uint32_t *directory, void *virtual_address, uint32_t value)</td></tr>
 <tr class="memdesc:a040900b1b1eec0f5ce8027a31a25c1d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets page table entry.  <a href="paging_8h.html#a040900b1b1eec0f5ce8027a31a25c1d9">More...</a><br /></td></tr>
 <tr class="separator:a040900b1b1eec0f5ce8027a31a25c1d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -250,8 +250,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4fe3037d3845c584b8c764b75c036508"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fe3037d3845c584b8c764b75c036508">&#9670;&nbsp;</a></span>paging_get_directory()</h2>
+<a id="a14a82d17b3c9b1a7b39bb55daeef5462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14a82d17b3c9b1a7b39bb55daeef5462">&#9670;&nbsp;</a></span>paging_get_directory()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -259,7 +259,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">uint32_t* paging_get_directory </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structpaging__chunk.html">paging_chunk</a> *&#160;</td>
+          <td class="paramtype">struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *&#160;</td>
           <td class="paramname"><em>chunk</em></td><td>)</td>
           <td></td>
         </tr>
@@ -279,14 +279,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2210b839194d4dc0f003bde6b25e17b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2210b839194d4dc0f003bde6b25e17b8">&#9670;&nbsp;</a></span>paging_new_directory()</h2>
+<a id="a79699e43f28673ac9ba6933be1cf011a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79699e43f28673ac9ba6933be1cf011a">&#9670;&nbsp;</a></span>paging_new_directory()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structpaging__chunk.html">paging_chunk</a>* paging_new_directory </td>
+          <td class="memname">struct <a class="el" href="structpaging__chunk.html">paging_chunk</a>* paging_new_directory </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>flags</em></td><td>)</td>

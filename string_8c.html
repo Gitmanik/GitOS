@@ -96,8 +96,11 @@ $(document).ready(function(){initNavTree('string_8c.html',''); initResizable(); 
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a008e171a518fe0e0352f31b245e03875"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a008e171a518fe0e0352f31b245e03875">strlen</a> (const char *str)</td></tr>
-<tr class="memdesc:a008e171a518fe0e0352f31b245e03875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates length of specified string.  <a href="string_8c.html#a008e171a518fe0e0352f31b245e03875">More...</a><br /></td></tr>
+<tr class="memdesc:a008e171a518fe0e0352f31b245e03875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the length of a string.  <a href="string_8c.html#a008e171a518fe0e0352f31b245e03875">More...</a><br /></td></tr>
 <tr class="separator:a008e171a518fe0e0352f31b245e03875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ac44bf20eb0770c1788f29d7bcc2866"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a0ac44bf20eb0770c1788f29d7bcc2866">strnlen</a> (const char *str, size_t max_len)</td></tr>
+<tr class="memdesc:a0ac44bf20eb0770c1788f29d7bcc2866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the length of a fixed-size string.  <a href="string_8c.html#a0ac44bf20eb0770c1788f29d7bcc2866">More...</a><br /></td></tr>
+<tr class="separator:a0ac44bf20eb0770c1788f29d7bcc2866"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44060611134f89c400f1a05962f23350"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a44060611134f89c400f1a05962f23350">strrev</a> (char *str)</td></tr>
 <tr class="memdesc:a44060611134f89c400f1a05962f23350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses string.  <a href="string_8c.html#a44060611134f89c400f1a05962f23350">More...</a><br /></td></tr>
 <tr class="separator:a44060611134f89c400f1a05962f23350"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -107,8 +110,41 @@ Functions</h2></td></tr>
 <tr class="memitem:a8b9caf068b045bb5cb5c38f54cf82367"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a8b9caf068b045bb5cb5c38f54cf82367">ksprintf</a> (char *buf, char *fmt,...)</td></tr>
 <tr class="memdesc:a8b9caf068b045bb5cb5c38f54cf82367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kernel sprintf params: %% c s p l(mod) d i x.  <a href="string_8c.html#a8b9caf068b045bb5cb5c38f54cf82367">More...</a><br /></td></tr>
 <tr class="separator:a8b9caf068b045bb5cb5c38f54cf82367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcb8cf4ba18ad43ea5c643b027cf0170"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#afcb8cf4ba18ad43ea5c643b027cf0170">is_digit</a> (char c)</td></tr>
+<tr class="memdesc:afcb8cf4ba18ad43ea5c643b027cf0170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if given char is an ASCII digit.  <a href="string_8c.html#afcb8cf4ba18ad43ea5c643b027cf0170">More...</a><br /></td></tr>
+<tr class="separator:afcb8cf4ba18ad43ea5c643b027cf0170"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4fad8c232814085ca883c3e271aea0d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#aa4fad8c232814085ca883c3e271aea0d">to_numeric_digit</a> (char c)</td></tr>
+<tr class="memdesc:aa4fad8c232814085ca883c3e271aea0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts ASCII digit to numeric.  <a href="string_8c.html#aa4fad8c232814085ca883c3e271aea0d">More...</a><br /></td></tr>
+<tr class="separator:aa4fad8c232814085ca883c3e271aea0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="afcb8cf4ba18ad43ea5c643b027cf0170"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcb8cf4ba18ad43ea5c643b027cf0170">&#9670;&nbsp;</a></span>is_digit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int is_digit </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determines if given char is an ASCII digit. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Character to test </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 1 if given char is digit </dd></dl>
+
+</div>
+</div>
 <a id="a7ecda6e9a4ad5c1d1181bf064db143e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7ecda6e9a4ad5c1d1181bf064db143e9">&#9670;&nbsp;</a></span>itoa()</h2>
 
@@ -219,7 +255,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Calculates length of specified string. </p>
+<p>Determine the length of a string. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>String </td></tr>
@@ -227,6 +263,44 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>size_t Length </dd></dl>
+
+</div>
+</div>
+<a id="a0ac44bf20eb0770c1788f29d7bcc2866"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ac44bf20eb0770c1788f29d7bcc2866">&#9670;&nbsp;</a></span>strnlen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t strnlen </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>max_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determine the length of a fixed-size string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td></td></tr>
+    <tr><td class="paramname">max_len</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
 
 </div>
 </div>
@@ -256,6 +330,33 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>char* str </dd></dl>
 
 <p class="reference">References <a class="el" href="string_8c.html#a008e171a518fe0e0352f31b245e03875">strlen()</a>.</p>
+
+</div>
+</div>
+<a id="aa4fad8c232814085ca883c3e271aea0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4fad8c232814085ca883c3e271aea0d">&#9670;&nbsp;</a></span>to_numeric_digit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int to_numeric_digit </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts ASCII digit to numeric. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>ASCII digit </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Numeric digit </dd></dl>
 
 </div>
 </div>

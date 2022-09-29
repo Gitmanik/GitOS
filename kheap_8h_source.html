@@ -88,11 +88,12 @@ $(document).ready(function(){initNavTree('kheap_8h_source.html',''); initResizab
 <div class="contents">
 <a href="kheap_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keywordtype">int</span> <a class="code" href="kheap_8h.html#adf384b2e867b567a531f37e258b855d3">kheap_init</a>(<span class="keywordtype">void</span>* start_address, uint32_t size);</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keywordtype">void</span>* <a class="code" href="kheap_8h.html#a5f52d7c56b7d67dc2f96b2e93dfdc7be">kmalloc</a>(<span class="keywordtype">size_t</span> size);</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keywordtype">void</span>* <a class="code" href="kheap_8h.html#a913f2de31558b9cca9405d2cd05a402a">kzalloc</a>(<span class="keywordtype">size_t</span> size);</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">void</span> <a class="code" href="kheap_8h.html#a069f85a5001d71bc44d8be6532a4e432">kfree</a>(<span class="keywordtype">void</span>* ptr);</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keywordtype">int</span> <a class="code" href="kheap_8h.html#adf384b2e867b567a531f37e258b855d3">kheap_init</a>(<span class="keywordtype">void</span>* start_address, uint32_t size);</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keywordtype">void</span>* <a class="code" href="kheap_8h.html#a5f52d7c56b7d67dc2f96b2e93dfdc7be">kmalloc</a>(<span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">void</span>* <a class="code" href="kheap_8h.html#a913f2de31558b9cca9405d2cd05a402a">kzalloc</a>(<span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordtype">void</span> <a class="code" href="kheap_8h.html#a069f85a5001d71bc44d8be6532a4e432">kfree</a>(<span class="keywordtype">void</span>* ptr);</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="akheap_8h_html_adf384b2e867b567a531f37e258b855d3"><div class="ttname"><a href="kheap_8h.html#adf384b2e867b567a531f37e258b855d3">kheap_init</a></div><div class="ttdeci">int kheap_init(void *start_address, uint32_t size)</div><div class="ttdoc">Initializes kernel heap.</div><div class="ttdef"><b>Definition:</b> hkeap.c:16</div></div>
@@ -116,6 +117,7 @@ $(document).ready(function(){initNavTree('kheap_8h_source.html',''); initResizab
 <div class="ttc" id="ahkeap_8c_html_a913f2de31558b9cca9405d2cd05a402a"><div class="ttname"><a href="hkeap_8c.html#a913f2de31558b9cca9405d2cd05a402a">kzalloc</a></div><div class="ttdeci">void * kzalloc(size_t size)</div><div class="ttdoc">Allocated specified size in heap and zeroes it.</div><div class="ttdef"><b>Definition:</b> hkeap.c:43</div></div>
 <div class="ttc" id="astructheap__table_html_a3fab45bb4d7cd7e889bdf00080096e8e"><div class="ttname"><a href="structheap__table.html#a3fab45bb4d7cd7e889bdf00080096e8e">heap_table::total</a></div><div class="ttdeci">size_t total</div><div class="ttdef"><b>Definition:</b> heap.h:16</div></div>
 <div class="ttc" id="akheap_8h_html_a069f85a5001d71bc44d8be6532a4e432"><div class="ttname"><a href="kheap_8h.html#a069f85a5001d71bc44d8be6532a4e432">kfree</a></div><div class="ttdeci">void kfree(void *ptr)</div><div class="ttdoc">Frees specified pointer.</div><div class="ttdef"><b>Definition:</b> hkeap.c:59</div></div>
+<div class="ttc" id="amemory_8h_html"><div class="ttname"><a href="memory_8h.html">memory.h</a></div></div>
 <div class="ttc" id="astructheap_html"><div class="ttname"><a href="structheap.html">heap</a></div><div class="ttdef"><b>Definition:</b> heap.h:19</div></div>
 <div class="ttc" id="aheap_8h_html"><div class="ttname"><a href="heap_8h.html">heap.h</a></div></div>
 <!-- start footer part -->

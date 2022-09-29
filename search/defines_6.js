@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['text_5fmode_5fheight_304',['TEXT_MODE_HEIGHT',['../text__mode_8h.html#af20ac24c92adb1ce73379060a415d168',1,'text_mode.h']]],
-  ['text_5fmode_5fwidth_305',['TEXT_MODE_WIDTH',['../text__mode_8h.html#a8338466047afbbff8b662daed1d4c5ae',1,'text_mode.h']]]
+  ['max_5fpath_334',['MAX_PATH',['../pathparser_8h.html#ab99ded389af74001a6298fc9e44e74e5',1,'pathparser.h']]]
 ];

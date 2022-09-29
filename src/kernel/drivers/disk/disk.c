@@ -1,5 +1,9 @@
 #include "disk.h"
-#include "../../common/io.h"
+#include "common/io.h"
+#include "memory/memory.h"
+#include "common/status.h"
+
+struct disk primary_disk;
 
 /**
  * @brief Reads sectors into memory
@@ -9,7 +13,7 @@
  * @param buf Destination buffer
  * @return int Status
  */
-int disk_read_sector(int lba, int total, void* buf)
+static int disk_read_sector(int lba, int total, void* buf)
 {
     outb(0x1F6, (lba >> 24) | 0xE0);
     outb(0x1F2 , total);
@@ -36,4 +40,29 @@ int disk_read_sector(int lba, int total, void* buf)
         }
     }
     return 0;
+}
+
+void disk_search_and_init()
+{
+    memset(&primary_disk, 0, sizeof(struct disk));
+    primary_disk.disk_type = DISK_TYPE_REAL;
+    primary_disk.sector_size = 512;
+}
+
+struct disk* disk_get(int index)
+{
+    if (index != 0) //TODO Make an array
+        index = 0;
+
+    return &primary_disk;
+}
+
+int disk_read_block(struct disk* disk, unsigned int lba, int total, void* buf)
+{
+    if (disk != &primary_disk)
+    {
+        return -EIO;
+    }
+
+    return disk_read_sector(lba, total, buf);
 }

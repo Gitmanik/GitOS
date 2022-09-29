@@ -148,8 +148,11 @@ void kernel_main()
     
     kernel_message("OK\r\n",LIGHT_GREEN);
     
+
+    disk_search_and_init();
+    struct disk* primary = disk_get(0);
     char disk_buf[512];
-    disk_read_sector(0, 1, disk_buf);
+    disk_read_block(primary, 0, 1, disk_buf);
 
     if (((uint8_t*) disk_buf)[510] != 0x55 || ((uint8_t*) disk_buf)[511] != 0xAA)
     {

@@ -10,6 +10,7 @@
 #include "memory/memory.h"
 #include "common/io.h"
 #include "memory/paging/paging.h"
+#include "drivers/disk/disk.h"
 
 static paging_chunk* kernel_paging_chunk;
 
@@ -121,6 +122,7 @@ void kernel_main()
     paging_enable();
     kernel_message("OK\r\n", LIGHT_GREEN);
 
+    //Paging test
     char* ptr = kzalloc(4096);
     res = paging_set_page(paging_get_directory(kernel_paging_chunk), (void*) 0x1000, (uint32_t) ptr | PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
     if (res < 0)
@@ -133,7 +135,9 @@ void kernel_main()
     ptr2[1] = 'B';
     
     kfree(ptr);
+    //
 
+    //ksprintf test
     memset(buf, 0, 128);
     kernel_message(ksprintf(buf, "If paging works, these should be the same: 0x%p:'%s' 0x%p:'%s'\r\n", (uint32_t)ptr, ptr, (uint32_t) ptr2, ptr2), LIGHT_GREEN);
 
@@ -144,6 +148,14 @@ void kernel_main()
     
     kernel_message("OK\r\n",LIGHT_GREEN);
     
+    char disk_buf[512];
+    disk_read_sector(0, 1, disk_buf);
+
+    if (((uint8_t*) disk_buf)[510] != 0x55 || ((uint8_t*) disk_buf)[511] != 0xAA)
+    {
+        kernel_panic("Panic: Disk has been read wrongly!");
+    }
+
     //
     asm("sti");
 

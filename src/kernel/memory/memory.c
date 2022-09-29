@@ -1,5 +1,6 @@
 #include "memory.h"
 #include <stddef.h>
+#include <stdbool.h>
 
 /**
  * @brief Sets first bytes of memory pointed to specified value
@@ -34,4 +35,27 @@ void* memcpy(void* restrict dstptr, const void* restrict srcptr, size_t size)
 	for (size_t i = 0; i < size; i++)
 		dst[i] = src[i];
 	return dstptr;
+}
+
+/**
+ * @brief Compares the first num bytes of the block of memory pointed by ptr1 to the first num bytes pointed by ptr2.
+ * 
+ * @param ptr1 Pointer to block of memory
+ * @param ptr2 Pointer to block of memory
+ * @param len Number of bytes to compare
+ * @return int 0 if matches, 
+ * -1 the first byte that does not match in both memory blocks has a lower value in ptr1 than in ptr2
+ * 	1 the first byte that does not match in both memory blocks has a greater value in ptr1 than in ptr2
+ */
+int memcmp(void* ptr1, void* ptr2, size_t len)
+{
+    unsigned char* c1 = ptr1;
+    unsigned char* c2 = ptr2;
+    
+    while (len-- > 0)
+    {
+        if (*c1++ != *c2++)
+            return c1[-1] < c2[-1] ? -1 : 1;
+    }
+    return 0;
 }

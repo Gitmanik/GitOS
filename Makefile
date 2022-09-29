@@ -76,7 +76,7 @@ ${STAGE1_BIN}:
 	nasm -g -f elf $< -o $@
 
 %.o: %.c
-	${GCC} -c ${GCC_ARGUMENTS} $< -o $@
+	${GCC} -I "src/kernel" -c ${GCC_ARGUMENTS} $< -o $@
 
 dump:
 	rm -rf dump.ans

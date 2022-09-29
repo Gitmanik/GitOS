@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['kernel_2ec_160',['kernel.c',['../kernel_8c.html',1,'']]],
-  ['kernel_2eh_161',['kernel.h',['../kernel_8h.html',1,'']]],
-  ['kheap_2eh_162',['kheap.h',['../kheap_8h.html',1,'']]]
+  ['idt_2ec_161',['idt.c',['../idt_8c.html',1,'']]],
+  ['idt_2eh_162',['idt.h',['../idt_8h.html',1,'']]],
+  ['io_2ec_163',['io.c',['../io_8c.html',1,'']]],
+  ['io_2eh_164',['io.h',['../io_8h.html',1,'']]]
 ];

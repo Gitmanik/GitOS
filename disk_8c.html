@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GitOS: src/kernel/drivers Directory Reference</title>
+<title>GitOS: src/kernel/drivers/disk/disk.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('dir_aee9ab6fedb00380c94a3a6c6b09f99a.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('disk_8c.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -82,28 +82,75 @@ $(document).ready(function(){initNavTree('dir_aee9ab6fedb00380c94a3a6c6b09f99a.h
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">drivers Directory Reference</div>  </div>
+<div class="title">disk.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="subdirs"></a>
-Directories</h2></td></tr>
-<tr class="memitem:dir_19e143b479cb2e79f7eeb3e58e551868"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_19e143b479cb2e79f7eeb3e58e551868.html">disk</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:dir_605f0d8189de7b0b9065901e4c2af2d9"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_605f0d8189de7b0b9065901e4c2af2d9.html">pic</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:dir_1e4b4a645210dfc0e8dbad6c9bb08618"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_1e4b4a645210dfc0e8dbad6c9bb08618.html">serial</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:dir_2e9ffaad78c3007c3947728782199e58"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_2e9ffaad78c3007c3947728782199e58.html">text_mode</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<div class="textblock"><code>#include &quot;<a class="el" href="disk_8h_source.html">disk.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="io_8h_source.html">../../common/io.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a685b0eddd446d4a8cf49e7e5f54a24d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disk_8c.html#a685b0eddd446d4a8cf49e7e5f54a24d6">disk_read_sector</a> (int lba, int total, void *buf)</td></tr>
+<tr class="memdesc:a685b0eddd446d4a8cf49e7e5f54a24d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads sectors into memory.  <a href="disk_8c.html#a685b0eddd446d4a8cf49e7e5f54a24d6">More...</a><br /></td></tr>
+<tr class="separator:a685b0eddd446d4a8cf49e7e5f54a24d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a685b0eddd446d4a8cf49e7e5f54a24d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a685b0eddd446d4a8cf49e7e5f54a24d6">&#9670;&nbsp;</a></span>disk_read_sector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int disk_read_sector </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lba</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>total</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads sectors into memory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lba</td><td>Starting LBA </td></tr>
+    <tr><td class="paramname">total</td><td>Count of sectors to read </td></tr>
+    <tr><td class="paramname">buf</td><td>Destination buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Status </dd></dl>
+
+<p class="reference">References <a class="el" href="io_8c.html#a2e1e8e2c5724c1e8fd2dff2eada06479">inb()</a>, <a class="el" href="io_8c.html#ad6e8f0e0260d783b7301e63933d4e490">inw()</a>, and <a class="el" href="io_8c.html#a8bf7a9af91c08e6f876aaffeccd48ff3">outb()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_cbd7f246bdf7dc0a50281a272327e6ed.html">kernel</a></li><li class="navelem"><a class="el" href="dir_aee9ab6fedb00380c94a3a6c6b09f99a.html">drivers</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_cbd7f246bdf7dc0a50281a272327e6ed.html">kernel</a></li><li class="navelem"><a class="el" href="dir_aee9ab6fedb00380c94a3a6c6b09f99a.html">drivers</a></li><li class="navelem"><a class="el" href="dir_19e143b479cb2e79f7eeb3e58e551868.html">disk</a></li><li class="navelem"><a class="el" href="disk_8c.html">disk.c</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

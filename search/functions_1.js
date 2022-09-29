@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['divide_5fby_5fzero_177',['divide_by_zero',['../kernel_8c.html#adfda00749bbf6fed5c6596a7896b062c',1,'kernel.c']]]
+  ['disk_5fread_5fsector_182',['disk_read_sector',['../disk_8c.html#a685b0eddd446d4a8cf49e7e5f54a24d6',1,'disk_read_sector(int lba, int total, void *buf):&#160;disk.c'],['../disk_8h.html#a685b0eddd446d4a8cf49e7e5f54a24d6',1,'disk_read_sector(int lba, int total, void *buf):&#160;disk.c']]],
+  ['divide_5fby_5fzero_183',['divide_by_zero',['../kernel_8c.html#adfda00749bbf6fed5c6596a7896b062c',1,'kernel.c']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['memory_2ec_163',['memory.c',['../memory_8c.html',1,'']]],
-  ['memory_2eh_164',['memory.h',['../memory_8h.html',1,'']]]
+  ['kernel_2ec_165',['kernel.c',['../kernel_8c.html',1,'']]],
+  ['kernel_2eh_166',['kernel.h',['../kernel_8h.html',1,'']]],
+  ['kheap_2eh_167',['kheap.h',['../kheap_8h.html',1,'']]]
 ];

@@ -11,6 +11,7 @@
 #include "common/io.h"
 #include "memory/paging/paging.h"
 #include "drivers/disk/disk.h"
+#include "fs/pathparser.h"
 
 static struct paging_chunk* kernel_paging_chunk;
 
@@ -161,6 +162,19 @@ void kernel_main()
 
     //
     asm("sti");
+
+    struct path_root* out = 0;
+    pathparser_parse(&out, "0:/bin/shell.elf", NULL);
+
+    if (out)
+    {
+        memset(buf, 0, 128);
+        kernel_message(ksprintf(buf, "Path parser drive number: %d, first folder: %s", out->drive_no, out->first->part), CYAN);
+    }
+    else
+    {
+        kernel_panic("Path parser errored");
+    }
 
     tm_SetColor(LIGHT_PURPLE);
     while (1)

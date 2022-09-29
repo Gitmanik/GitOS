@@ -90,6 +90,7 @@ $(document).ready(function(){initNavTree('memory_8c.html',''); initResizable(); 
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="memory_8h_source.html">memory.h</a>&quot;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -99,8 +100,56 @@ Functions</h2></td></tr>
 <tr class="memitem:a113a42d20ee587a79f71464089007387"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#a113a42d20ee587a79f71464089007387">memcpy</a> (void *restrict dstptr, const void *restrict srcptr, size_t size)</td></tr>
 <tr class="memdesc:a113a42d20ee587a79f71464089007387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies memory from one place to another.  <a href="memory_8c.html#a113a42d20ee587a79f71464089007387">More...</a><br /></td></tr>
 <tr class="separator:a113a42d20ee587a79f71464089007387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7710a54c06a0782c5762fcc849b71603"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#a7710a54c06a0782c5762fcc849b71603">memcmp</a> (void *ptr1, void *ptr2, size_t len)</td></tr>
+<tr class="memdesc:a7710a54c06a0782c5762fcc849b71603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the first num bytes of the block of memory pointed by ptr1 to the first num bytes pointed by ptr2.  <a href="memory_8c.html#a7710a54c06a0782c5762fcc849b71603">More...</a><br /></td></tr>
+<tr class="separator:a7710a54c06a0782c5762fcc849b71603"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a7710a54c06a0782c5762fcc849b71603"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7710a54c06a0782c5762fcc849b71603">&#9670;&nbsp;</a></span>memcmp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int memcmp </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ptr1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ptr2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compares the first num bytes of the block of memory pointed by ptr1 to the first num bytes pointed by ptr2. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ptr1</td><td>Pointer to block of memory </td></tr>
+    <tr><td class="paramname">ptr2</td><td>Pointer to block of memory </td></tr>
+    <tr><td class="paramname">len</td><td>Number of bytes to compare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 if matches, -1 the first byte that does not match in both memory blocks has a lower value in ptr1 than in ptr2 1 the first byte that does not match in both memory blocks has a greater value in ptr1 than in ptr2 </dd></dl>
+
+</div>
+</div>
 <a id="a113a42d20ee587a79f71464089007387"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a113a42d20ee587a79f71464089007387">&#9670;&nbsp;</a></span>memcpy()</h2>
 

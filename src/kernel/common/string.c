@@ -3,7 +3,7 @@
 #include <stdarg.h>
 #include "../memory/memory.h"
 /**
- * @brief Calculates length of specified string
+ * @brief Determine the length of a string
  * 
  * @param str String
  * @return size_t Length
@@ -16,6 +16,23 @@ size_t strlen(const char* str)
         len++;
     }
     return len;
+}
+
+/**
+ * @brief Determine the length of a fixed-size string
+ * 
+ * @param str 
+ * @param max_len 
+ * @return size_t 
+ */
+size_t strnlen(const char* str, size_t max_len)
+{
+	for (size_t len = 0; len < max_len; len++)
+	{
+		if (str[len] == 0)
+			return len;
+	}
+	return max_len;
 }
 
 /**
@@ -201,4 +218,26 @@ char* ksprintf(char* buf, char* fmt, ...)
 	}
 	va_end(args);
 	return org_buf;
+}
+
+/**
+ * @brief Determines if given char is an ASCII digit
+ * 
+ * @param c Character to test
+ * @return int 1 if given char is digit
+ */
+int is_digit(char c)
+{
+	return c >= 48 && c <= 57;
+}
+
+/**
+ * @brief Converts ASCII digit to numeric
+ * 
+ * @param c ASCII digit
+ * @return int Numeric digit
+ */
+int to_numeric_digit(char c)
+{
+	return c - 48;
 }

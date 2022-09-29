@@ -11,6 +11,7 @@
 #include "common/io.h"
 #include "memory/paging/paging.h"
 #include "drivers/disk/disk.h"
+#include "drivers/disk/disk_streamer.h"
 #include "fs/pathparser.h"
 
 static struct paging_chunk* kernel_paging_chunk;
@@ -124,23 +125,27 @@ void kernel_main()
     kernel_message("OK\r\n", LIGHT_GREEN);
 
     //Paging test
-    char* ptr = kzalloc(4096);
-    res = paging_set_page(paging_get_directory(kernel_paging_chunk), (void*) 0x1000, (uint32_t) ptr | PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
+    kernel_message("Setting up paging..", GREY);
+    char* ptr_real = kzalloc(4096);
+    res = paging_set_page(paging_get_directory(kernel_paging_chunk), (void*) 0x1000, (uint32_t) ptr_real | PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
     if (res < 0)
     {
         kernel_panic("Panic: Could not sect page!");
     }
-    char* ptr2 = (char*) 0x1000;
+    char* ptr_virt = (char*) 0x1000;
 
-    ptr2[0] = 'A';
-    ptr2[1] = 'B';
+    ptr_virt[0] = 'O';
+    ptr_virt[1] = 'K';
     
-    kfree(ptr);
-    //
-
-    //ksprintf test
+    kernel_message("OK\r\n", LIGHT_GREEN);
     memset(buf, 0, 128);
-    kernel_message(ksprintf(buf, "If paging works, these should be the same: 0x%p:'%s' 0x%p:'%s'\r\n", (uint32_t)ptr, ptr, (uint32_t) ptr2, ptr2), LIGHT_GREEN);
+    kernel_message(ksprintf(buf, "Paging self-test: 0x%p:'%s' 0x%p:'%s'\r\n", (uint32_t)ptr_real, ptr_real, (uint32_t) ptr_virt, ptr_virt), GREY);
+    if (memcmp(ptr_real, ptr_virt, 2) != 0)
+    {
+        kernel_panic("Panic: Paging self-test unsuccessful!");
+    }
+    kfree(ptr_real);
+    //
 
     //Remap PIC
     kernel_message("Remapping PIC..", GREY);
@@ -148,33 +153,27 @@ void kernel_main()
     pic_Remap(0x20, 0x28);
     
     kernel_message("OK\r\n",LIGHT_GREEN);
-    
+    //
 
+    // Disk self-test
+    kernel_message("Disk self-test..", GREY);
     disk_search_and_init();
-    struct disk* primary = disk_get(0);
-    char disk_buf[512];
-    disk_read_block(primary, 0, 1, disk_buf);
+    char disk_buf[2];
+    struct disk_stream* disk_io  = diskstreamer_new(0);
 
-    if (((uint8_t*) disk_buf)[510] != 0x55 || ((uint8_t*) disk_buf)[511] != 0xAA)
+    diskstreamer_seek(disk_io, 510);
+    diskstreamer_read(disk_io, disk_buf, 2);
+
+    if (*(uint16_t*) disk_buf != 0xAA55)
     {
-        kernel_panic("Panic: Disk has been read wrongly!");
+        kernel_panic("Panic: Disk read wrongly!");
     }
+
+    kernel_message("OK\r\n", LIGHT_GREEN);
+    //
 
     //
     asm("sti");
-
-    struct path_root* out = 0;
-    pathparser_parse(&out, "0:/bin/shell.elf", NULL);
-
-    if (out)
-    {
-        memset(buf, 0, 128);
-        kernel_message(ksprintf(buf, "Path parser drive number: %d, first folder: %s", out->drive_no, out->first->part), CYAN);
-    }
-    else
-    {
-        kernel_panic("Path parser errored");
-    }
 
     tm_SetColor(LIGHT_PURPLE);
     while (1)

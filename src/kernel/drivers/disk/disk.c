@@ -46,7 +46,7 @@ void disk_search_and_init()
 {
     memset(&primary_disk, 0, sizeof(struct disk));
     primary_disk.disk_type = DISK_TYPE_REAL;
-    primary_disk.sector_size = 512;
+    primary_disk.sector_size = DISK_SECTOR_SIZE;
 }
 
 struct disk* disk_get(int index)

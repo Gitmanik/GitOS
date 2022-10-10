@@ -222,3 +222,15 @@ void kernel_message(char* message, enum TEXT_MODE_COLORS col)
 
     ser_PrintString(COM1, message);
 }
+
+void kernel_debug(char* message)
+{
+    enum TEXT_MODE_COLORS x = tm_GetColor();
+    tm_SetColor(GREY);
+    tm_PrintString(message);
+    tm_PrintString("\r\n");
+    tm_SetColor(x);
+
+    ser_PrintString(COM1, message);
+    ser_PrintString(COM1, "\r\n");
+}

@@ -100,6 +100,19 @@ Functions</h2></td></tr>
 <tr class="memitem:a0ac44bf20eb0770c1788f29d7bcc2866"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a0ac44bf20eb0770c1788f29d7bcc2866">strnlen</a> (const char *str, size_t max_len)</td></tr>
 <tr class="memdesc:a0ac44bf20eb0770c1788f29d7bcc2866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the length of a fixed-size string.  <a href="string_8h.html#a0ac44bf20eb0770c1788f29d7bcc2866">More...</a><br /></td></tr>
 <tr class="separator:a0ac44bf20eb0770c1788f29d7bcc2866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a82515b5d377be04817715c5465b647"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a7a82515b5d377be04817715c5465b647">strcpy</a> (char *dest, const char *src)</td></tr>
+<tr class="separator:a7a82515b5d377be04817715c5465b647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44060611134f89c400f1a05962f23350"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a44060611134f89c400f1a05962f23350">strrev</a> (char *str)</td></tr>
+<tr class="memdesc:a44060611134f89c400f1a05962f23350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses string.  <a href="string_8h.html#a44060611134f89c400f1a05962f23350">More...</a><br /></td></tr>
+<tr class="separator:a44060611134f89c400f1a05962f23350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a444d2c3bbff8fb8a410d51a22b6339d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a444d2c3bbff8fb8a410d51a22b6339d8">strncmp</a> (const char *str1, const char *str2, int n)</td></tr>
+<tr class="separator:a444d2c3bbff8fb8a410d51a22b6339d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50ba706f06bf4485284b720a04c369d1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a50ba706f06bf4485284b720a04c369d1">strnlen_terminator</a> (const char *str, int max, char terminator)</td></tr>
+<tr class="separator:a50ba706f06bf4485284b720a04c369d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a733f9adc8e09d0dcf0bd083cbcf34a33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a733f9adc8e09d0dcf0bd083cbcf34a33">istrncmp</a> (const char *str1, const char *str2, int n)</td></tr>
+<tr class="separator:a733f9adc8e09d0dcf0bd083cbcf34a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a207391fc2c5fa7786d5e0b9ef8ba5e80"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a207391fc2c5fa7786d5e0b9ef8ba5e80">tolower</a> (char c)</td></tr>
+<tr class="separator:a207391fc2c5fa7786d5e0b9ef8ba5e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ecda6e9a4ad5c1d1181bf064db143e9"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a7ecda6e9a4ad5c1d1181bf064db143e9">itoa</a> (long num, char *str, int base)</td></tr>
 <tr class="memdesc:a7ecda6e9a4ad5c1d1181bf064db143e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts number to string.  <a href="string_8h.html#a7ecda6e9a4ad5c1d1181bf064db143e9">More...</a><br /></td></tr>
 <tr class="separator:a7ecda6e9a4ad5c1d1181bf064db143e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +151,42 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int 1 if given char is digit </dd></dl>
+
+</div>
+</div>
+<a id="a733f9adc8e09d0dcf0bd083cbcf34a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a733f9adc8e09d0dcf0bd083cbcf34a33">&#9670;&nbsp;</a></span>istrncmp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int istrncmp </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="string_8c.html#a207391fc2c5fa7786d5e0b9ef8ba5e80">tolower()</a>.</p>
 
 </div>
 </div>
@@ -235,6 +284,34 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a7a82515b5d377be04817715c5465b647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a82515b5d377be04817715c5465b647">&#9670;&nbsp;</a></span>strcpy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* strcpy </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>src</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a008e171a518fe0e0352f31b245e03875"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a008e171a518fe0e0352f31b245e03875">&#9670;&nbsp;</a></span>strlen()</h2>
 
@@ -259,6 +336,40 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>size_t Length </dd></dl>
+
+</div>
+</div>
+<a id="a444d2c3bbff8fb8a410d51a22b6339d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a444d2c3bbff8fb8a410d51a22b6339d8">&#9670;&nbsp;</a></span>strncmp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int strncmp </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -300,6 +411,69 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a50ba706f06bf4485284b720a04c369d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50ba706f06bf4485284b720a04c369d1">&#9670;&nbsp;</a></span>strnlen_terminator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int strnlen_terminator </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>terminator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a44060611134f89c400f1a05962f23350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44060611134f89c400f1a05962f23350">&#9670;&nbsp;</a></span>strrev()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* strrev </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reverses string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to reverse </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char* str </dd></dl>
+
+<p class="reference">References <a class="el" href="string_8c.html#a008e171a518fe0e0352f31b245e03875">strlen()</a>.</p>
+
+</div>
+</div>
 <a id="aa4fad8c232814085ca883c3e271aea0d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa4fad8c232814085ca883c3e271aea0d">&#9670;&nbsp;</a></span>to_numeric_digit()</h2>
 
@@ -324,6 +498,24 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Numeric digit </dd></dl>
+
+</div>
+</div>
+<a id="a207391fc2c5fa7786d5e0b9ef8ba5e80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a207391fc2c5fa7786d5e0b9ef8ba5e80">&#9670;&nbsp;</a></span>tolower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char tolower </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

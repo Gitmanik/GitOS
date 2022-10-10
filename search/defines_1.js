@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['com1_330',['COM1',['../serial_8h.html#a00dbb3ab1c59e14699be9393693e2248',1,'serial.h']]]
+  ['bochsbreak_571',['BochsBreak',['../kernel_8h.html#aef9e7d5ae531e4004885f5a5cc002143',1,'kernel.h']]]
 ];

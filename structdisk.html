@@ -93,34 +93,82 @@ $(document).ready(function(){initNavTree('structdisk.html',''); initResizable();
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:afe2206478d1b792c18c43f982885dc6b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdisk.html#afe2206478d1b792c18c43f982885dc6b">disk_type</a></td></tr>
-<tr class="separator:afe2206478d1b792c18c43f982885dc6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8757e22014def44e38fa7e213f1a6300"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdisk.html#a8757e22014def44e38fa7e213f1a6300">sector_size</a></td></tr>
-<tr class="separator:a8757e22014def44e38fa7e213f1a6300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e73718a47f61fdca0413918f654d471"><td class="memItemLeft" align="right" valign="top"><a class="el" href="disk_8h.html#a4e3fa02c8adebb0af46e1f6749fe8b4a">DISK_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdisk.html#a1e73718a47f61fdca0413918f654d471">disk_type</a></td></tr>
+<tr class="separator:a1e73718a47f61fdca0413918f654d471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accbd02759a995a4ec4ee9813d9bde5af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdisk.html#accbd02759a995a4ec4ee9813d9bde5af">sector_size</a></td></tr>
+<tr class="separator:accbd02759a995a4ec4ee9813d9bde5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7441ef0865bcb3db9b8064dd7375c1ea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdisk.html#a7441ef0865bcb3db9b8064dd7375c1ea">id</a></td></tr>
+<tr class="separator:a7441ef0865bcb3db9b8064dd7375c1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bce4c67c8c2fc4f8e3c0182f4afa586"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structfilesystem.html">filesystem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdisk.html#a4bce4c67c8c2fc4f8e3c0182f4afa586">filesystem</a></td></tr>
+<tr class="separator:a4bce4c67c8c2fc4f8e3c0182f4afa586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4853d13c26ce9af3bbb484e0bee8bf2"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdisk.html#aa4853d13c26ce9af3bbb484e0bee8bf2">fs_private</a></td></tr>
+<tr class="separator:aa4853d13c26ce9af3bbb484e0bee8bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Field Documentation</h2>
-<a id="afe2206478d1b792c18c43f982885dc6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe2206478d1b792c18c43f982885dc6b">&#9670;&nbsp;</a></span>disk_type</h2>
+<a id="a1e73718a47f61fdca0413918f654d471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e73718a47f61fdca0413918f654d471">&#9670;&nbsp;</a></span>disk_type</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int disk_type</td>
+          <td class="memname"><a class="el" href="disk_8h.html#a4e3fa02c8adebb0af46e1f6749fe8b4a">DISK_TYPE</a> disk_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a8757e22014def44e38fa7e213f1a6300"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8757e22014def44e38fa7e213f1a6300">&#9670;&nbsp;</a></span>sector_size</h2>
+<a id="a4bce4c67c8c2fc4f8e3c0182f4afa586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bce4c67c8c2fc4f8e3c0182f4afa586">&#9670;&nbsp;</a></span>filesystem</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long sector_size</td>
+          <td class="memname">struct <a class="el" href="structfilesystem.html">filesystem</a>* <a class="el" href="structfilesystem.html">filesystem</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4853d13c26ce9af3bbb484e0bee8bf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4853d13c26ce9af3bbb484e0bee8bf2">&#9670;&nbsp;</a></span>fs_private</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* fs_private</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7441ef0865bcb3db9b8064dd7375c1ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7441ef0865bcb3db9b8064dd7375c1ea">&#9670;&nbsp;</a></span>id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="accbd02759a995a4ec4ee9813d9bde5af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accbd02759a995a4ec4ee9813d9bde5af">&#9670;&nbsp;</a></span>sector_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sector_size</td>
         </tr>
       </table>
 </div><div class="memdoc">

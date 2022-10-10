@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['kernel_5fheap_300',['kernel_heap',['../hkeap_8c.html#ad6120fe96d96d8fe0fd0e0b184f79a22',1,'hkeap.c']]],
-  ['kernel_5fheap_5ftable_301',['kernel_heap_table',['../hkeap_8c.html#a77407aa4a3d4413e86ed0728fef3d408',1,'hkeap.c']]]
+  ['ending_5fsector_5fpos_472',['ending_sector_pos',['../structfat__directory.html#a54edc387e5303d402be2cedc9f0205b1',1,'fat_directory']]],
+  ['entries_473',['entries',['../structheap__table.html#a226442f2a9ac2c4badcf07cb0eec041a',1,'heap_table']]],
+  ['ext_474',['ext',['../structfat__directory__item.html#a8084a9722dcfd93be209f51828b9e3ea',1,'fat_directory_item::ext()'],['../fat16_8h.html#a8084a9722dcfd93be209f51828b9e3ea',1,'ext():&#160;fat16.h']]],
+  ['extended_475',['extended',['../unionfat__header_1_1fat__header__extended.html#a219c77a5a9b9c6a48bb5e8dd5d9cd161',1,'fat_header::fat_header_extended']]]
 ];

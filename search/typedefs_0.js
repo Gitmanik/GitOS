@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['heap_5fblock_5ftable_5fentry_311',['HEAP_BLOCK_TABLE_ENTRY',['../heap_8h.html#a9d0a6e6d9ffe25ff7cd0fdb48860caca',1,'heap.h']]]
+  ['disk_5ftype_538',['DISK_TYPE',['../disk_8h.html#a4e3fa02c8adebb0af46e1f6749fe8b4a',1,'disk.h']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['sector_5fsize_307',['sector_size',['../structdisk.html#a8757e22014def44e38fa7e213f1a6300',1,'disk']]],
-  ['start_5faddress_308',['start_address',['../structheap.html#ad515ea1aae3191d87e6e737b848374a4',1,'heap']]]
+  ['jmp_5fshort_496',['jmp_short',['../structfat16__header__primary.html#a2464b8f23508db1d894fff3f267c46bc',1,'fat16_header_primary::jmp_short()'],['../fat16_8h.html#a2464b8f23508db1d894fff3f267c46bc',1,'jmp_short():&#160;fat16.h']]]
 ];

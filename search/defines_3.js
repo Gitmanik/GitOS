@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['einvarg_333',['EINVARG',['../status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83',1,'status.h']]],
-  ['eio_334',['EIO',['../status_8h.html#a70979f50f9c83e5aebab3d6a1bd4cf35',1,'status.h']]],
-  ['end_5fof_5finterrupt_335',['END_OF_INTERRUPT',['../pic_8c.html#a8082b452d0212b6109ee0961ea255809',1,'pic.c']]],
-  ['enomem_336',['ENOMEM',['../serial_8c.html#a6a05c923dad0c1208043e9c20a58c8e5',1,'status.h']]]
+  ['disk_5fsector_5fsize_573',['DISK_SECTOR_SIZE',['../disk_8h.html#ac41b8d39d8756a1e15f00c1c8a2b7529',1,'disk.h']]],
+  ['disk_5ftype_5freal_574',['DISK_TYPE_REAL',['../disk_8h.html#aead175973db76ad60f641e9ac49be6f9',1,'disk.h']]]
 ];

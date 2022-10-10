@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['idt_5fdesc_296',['idt_desc',['../idt_8h.html#a830cd7b0a812b38e7052aab635cf8487',1,'idt.h']]],
-  ['idt_5fdescriptors_297',['idt_descriptors',['../idt_8c.html#adf094f238e70a027d44afe9fbb5092b8',1,'idt.c']]],
-  ['idtr_5fdesc_298',['idtr_desc',['../idt_8h.html#a47e422e5167f03378f7565816e29d05a',1,'idt.h']]],
-  ['idtr_5fdescriptor_299',['idtr_descriptor',['../idt_8c.html#a6a8d2dcfd1f1f83c2f5df272ac639086',1,'idt.c']]]
+  ['directory_465',['directory',['../structfat__item.html#aa4db22ceecee9d81668b06ee9e49465d',1,'fat_item']]],
+  ['directory_5fentry_466',['directory_entry',['../structpaging__chunk.html#a7abe8d9cbf8d303b43dc85b868b4eb93',1,'paging_chunk']]],
+  ['directory_5fstream_467',['directory_stream',['../structfat__private.html#ae799795576f3601d20bd7d10df3a9d93',1,'fat_private']]],
+  ['disk_468',['disk',['../structdisk__stream.html#abdbae93c1fd15f90751a02563d87b8f7',1,'disk_stream::disk()'],['../structfile__descriptor.html#abdbae93c1fd15f90751a02563d87b8f7',1,'file_descriptor::disk()']]],
+  ['disk_5ftype_469',['disk_type',['../structdisk.html#a1e73718a47f61fdca0413918f654d471',1,'disk']]],
+  ['drive_5fno_470',['drive_no',['../structpath__root.html#a44057b89a20883587ec7bdc59cce57d2',1,'path_root']]],
+  ['drive_5fnumber_471',['drive_number',['../structfat16__header__extended.html#a72aedf7609ef652851878e7a1a802c40',1,'fat16_header_extended::drive_number()'],['../fat16_8h.html#a72aedf7609ef652851878e7a1a802c40',1,'drive_number():&#160;fat16.h']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['table_309',['table',['../structheap.html#a4c45dc1b862c2349d0854d74e2269511',1,'heap']]],
-  ['total_310',['total',['../structheap__table.html#a3fab45bb4d7cd7e889bdf00080096e8e',1,'heap_table']]]
+  ['kernel_5fheap_497',['kernel_heap',['../hkeap_8c.html#ad6120fe96d96d8fe0fd0e0b184f79a22',1,'hkeap.c']]],
+  ['kernel_5fheap_5ftable_498',['kernel_heap_table',['../hkeap_8c.html#a77407aa4a3d4413e86ed0728fef3d408',1,'hkeap.c']]]
 ];

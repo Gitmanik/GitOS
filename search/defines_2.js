@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['disk_5fsector_5fsize_331',['DISK_SECTOR_SIZE',['../disk_8h.html#ac41b8d39d8756a1e15f00c1c8a2b7529',1,'disk.h']]],
-  ['disk_5ftype_5freal_332',['DISK_TYPE_REAL',['../disk_8h.html#aead175973db76ad60f641e9ac49be6f9',1,'disk.h']]]
+  ['com1_572',['COM1',['../serial_8h.html#a00dbb3ab1c59e14699be9393693e2248',1,'serial.h']]]
 ];

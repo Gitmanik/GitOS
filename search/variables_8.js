@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['part_304',['part',['../structpath__part.html#a6aba54109422e4290881c54e5da68026',1,'path_part']]],
-  ['pos_305',['pos',['../structdisk__stream.html#a1910d262855b71da353ed0d07a6c7823',1,'disk_stream']]],
-  ['primary_5fdisk_306',['primary_disk',['../disk_8c.html#a9634a02aa962b2df71b6b9f38f29d3d4',1,'disk.c']]]
+  ['id_489',['id',['../structdisk.html#a7441ef0865bcb3db9b8064dd7375c1ea',1,'disk']]],
+  ['idt_5fdesc_490',['idt_desc',['../idt_8h.html#a830cd7b0a812b38e7052aab635cf8487',1,'idt.h']]],
+  ['idt_5fdescriptors_491',['idt_descriptors',['../idt_8c.html#adf094f238e70a027d44afe9fbb5092b8',1,'idt.c']]],
+  ['idtr_5fdesc_492',['idtr_desc',['../idt_8h.html#a47e422e5167f03378f7565816e29d05a',1,'idt.h']]],
+  ['idtr_5fdescriptor_493',['idtr_descriptor',['../idt_8c.html#a6a8d2dcfd1f1f83c2f5df272ac639086',1,'idt.c']]],
+  ['index_494',['index',['../structfile__descriptor.html#a750b5d744c39a06bfb13e6eb010e35d0',1,'file_descriptor']]],
+  ['item_495',['item',['../structfat__directory.html#a207f93ffca1de04bdb4ad94e6c16d264',1,'fat_directory::item()'],['../structfat__item.html#a207f93ffca1de04bdb4ad94e6c16d264',1,'fat_item::item()'],['../structfat__file__descriptor.html#a8fd200b64c5abf7b8c8f21db64aa53ac',1,'fat_file_descriptor::item()']]]
 ];

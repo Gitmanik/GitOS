@@ -83,15 +83,22 @@ $(document).ready(function(){initNavTree('kernel_8h.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">kernel.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="text__mode_8h_source.html">drivers/text_mode/text_mode.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="io_8h_source.html">common/io.h</a>&quot;</code><br />
 </div>
 <p><a href="kernel_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:aef9e7d5ae531e4004885f5a5cc002143"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8h.html#aef9e7d5ae531e4004885f5a5cc002143">BochsBreak</a>()&#160;&#160;&#160;<a class="el" href="io_8h.html#a3105e202829cfca8b5757df9351f96e1">outw</a>(0x8A00,0x8A00); <a class="el" href="io_8h.html#a3105e202829cfca8b5757df9351f96e1">outw</a>(0x8A00,0x08AE0);</td></tr>
+<tr class="separator:aef9e7d5ae531e4004885f5a5cc002143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ada8402e0c504af8cafef5cc76c076003"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8h.html#ada8402e0c504af8cafef5cc76c076003">kernel_main</a> ()</td></tr>
@@ -102,11 +109,51 @@ Functions</h2></td></tr>
 <tr class="memitem:adb2992c5a07d430e2a298db6a8afbc22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8h.html#adb2992c5a07d430e2a298db6a8afbc22">kernel_message</a> (char *message, enum <a class="el" href="text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3">TEXT_MODE_COLORS</a> col)</td></tr>
 <tr class="memdesc:adb2992c5a07d430e2a298db6a8afbc22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints message onto Framebuffer and Serial.  <a href="kernel_8h.html#adb2992c5a07d430e2a298db6a8afbc22">More...</a><br /></td></tr>
 <tr class="separator:adb2992c5a07d430e2a298db6a8afbc22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9df2ec5242f7a42f448413662fdd413"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8h.html#af9df2ec5242f7a42f448413662fdd413">kernel_debug</a> (char *message)</td></tr>
+<tr class="separator:af9df2ec5242f7a42f448413662fdd413"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a00d0635c4d4946c2490fa636a719d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8h.html#a9a00d0635c4d4946c2490fa636a719d3">kernel_panic</a> (char *message)</td></tr>
 <tr class="memdesc:a9a00d0635c4d4946c2490fa636a719d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">(Temporary) Prints kernel_message and halts the kernel.  <a href="kernel_8h.html#a9a00d0635c4d4946c2490fa636a719d3">More...</a><br /></td></tr>
 <tr class="separator:a9a00d0635c4d4946c2490fa636a719d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aef9e7d5ae531e4004885f5a5cc002143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef9e7d5ae531e4004885f5a5cc002143">&#9670;&nbsp;</a></span>BochsBreak</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BochsBreak</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="io_8h.html#a3105e202829cfca8b5757df9351f96e1">outw</a>(0x8A00,0x8A00); <a class="el" href="io_8h.html#a3105e202829cfca8b5757df9351f96e1">outw</a>(0x8A00,0x08AE0);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="af9df2ec5242f7a42f448413662fdd413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9df2ec5242f7a42f448413662fdd413">&#9670;&nbsp;</a></span>kernel_debug()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void kernel_debug </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="serial_8h.html#a00dbb3ab1c59e14699be9393693e2248">COM1</a>, <a class="el" href="text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a38566822dbd9408c447abfd3ed4a85d2">GREY</a>, <a class="el" href="serial_8c.html#a4c091f828571492ebd73ebf301658a9c">ser_PrintString()</a>, <a class="el" href="text__mode_8c.html#ab026971e8c2ef0a3a36808deca7b8fd4">tm_GetColor()</a>, <a class="el" href="text__mode_8c.html#af141ddd7749219b2c02e37a0df9ed067">tm_PrintString()</a>, and <a class="el" href="text__mode_8c.html#ae96ec3266b8e9844c2932b97e7277c21">tm_SetColor()</a>.</p>
+
+</div>
+</div>
 <a id="aa0feb8fe21f2712340bcfe8777e9860b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa0feb8fe21f2712340bcfe8777e9860b">&#9670;&nbsp;</a></span>kernel_halt()</h2>
 

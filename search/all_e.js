@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['outb_109',['outb',['../io_8c.html#a8bf7a9af91c08e6f876aaffeccd48ff3',1,'outb(uint16_t port, uint8_t val):&#160;io.c'],['../io_8h.html#a8bf7a9af91c08e6f876aaffeccd48ff3',1,'outb(uint16_t port, uint8_t val):&#160;io.c']]],
-  ['outw_110',['outw',['../io_8c.html#a3105e202829cfca8b5757df9351f96e1',1,'outw(uint16_t port, uint16_t val):&#160;io.c'],['../io_8h.html#a3105e202829cfca8b5757df9351f96e1',1,'outw(uint16_t port, uint16_t val):&#160;io.c']]]
+  ['name_204',['name',['../structfilesystem.html#a32a40b0f5bd31c570ff3b4c515d6725f',1,'filesystem']]],
+  ['next_205',['next',['../structpath__part.html#ad5d8ed0c4183f4e1bbef6d0250b02c37',1,'path_part']]],
+  ['number_5fof_5fheads_206',['number_of_heads',['../structfat16__header__primary.html#ac2f425c61a49cd29d409c842cf522def',1,'fat16_header_primary::number_of_heads()'],['../fat16_8h.html#ac2f425c61a49cd29d409c842cf522def',1,'number_of_heads():&#160;fat16.h']]],
+  ['numeber_5fof_5fsectors_207',['numeber_of_sectors',['../structfat16__header__primary.html#ad67dc0a93ab59765a12a944809c38564',1,'fat16_header_primary::numeber_of_sectors()'],['../fat16_8h.html#ad67dc0a93ab59765a12a944809c38564',1,'numeber_of_sectors():&#160;fat16.h']]]
 ];

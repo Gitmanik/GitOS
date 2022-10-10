@@ -1,5 +1,6 @@
 #include "kernel.h"
 #include <stdint.h>
+#include <stdarg.h>
 #include "idt/idt.h"
 #include "drivers/text_mode/text_mode.h"
 #include "drivers/serial/serial.h"
@@ -51,48 +52,45 @@ void int21h_handler()
 void kernel_main()
 {
     int res = 0;
-    char buf[128];
 
     tm_ClearScreen();
     tm_SetColor(GREY);
     res = ser_Init(COM1, 1);
     if (res < 0)
     {
-        kernel_panic("Panic: Could not initialize Serial port!");
+        kernel_panic("Could not initialize Serial port!");
     }
     
-    kernel_message("GitOS - operating system as exercise. Pawel Reich 2022\r\n", GREY);
+    kprintf("GitOS - operating system as exercise. Pawel Reich 2022\r\n");
 
     //Initialize IDT
-    kernel_message("Initializing IDT..", GREY);
+    kprintf("Initializing IDT..");
     idt_Init();
     idt_SetDescriptor(0, divide_by_zero);
     idt_SetDescriptor(0x21, int21h);
     idt_Load();
-    kernel_message("OK\r\n",LIGHT_GREEN);
+    kprintf("OK\r\n");
     //
 
     //ksprintf test
-    memset(buf, 0, 128);
-    kernel_message(ksprintf(buf, "ksprintf test: %p %x %i %s %c %ld %%\r\n", bios_memory_map, 0x41424344, -1234, "gitmanik.dev", 'X',  __LONG_MAX__), CYAN);
-    
+    kprintf("kprintf test: %p %x %i %s %c %ld %%\r\n", bios_memory_map, 0x41424344, -1234, "gitmanik.dev", 'X',  __LONG_MAX__);
+    kdebug("kdebug test: %p %x %i %s %c %ld %%\r\n", bios_memory_map, 0x41424344, -1234, "gitmanik.dev", 'X',  __LONG_MAX__);
+    //
 
     //Finding biggest usable memory chunk to use as heap
     memory_map_entry heap_entry;
     int idx = 0;
 
-    kernel_message("Usable memory map:\r\n",GREY);
+    kprintf("Usable memory map:\r\n");
     while (bios_memory_map[idx].length_in_bytes > 0)
     {
         if ( bios_memory_map[idx].type != 1)
             goto skip;
 
-        memset(buf, 0, 128);
-        kernel_message(ksprintf(buf, "0x%p -> 0x%p, Size: %ldKB\r\n", 
+        kprintf("0x%p -> 0x%p, Size: %ldKB\r\n", 
                     (long) bios_memory_map[idx].base_address, 
                     (long) bios_memory_map[idx].base_address + (long) bios_memory_map[idx].length_in_bytes, 
-                    (long) bios_memory_map[idx].length_in_bytes / 1024), 
-                    YELLOW);
+                    (long) bios_memory_map[idx].length_in_bytes / 1024);
 
         if (bios_memory_map[idx].length_in_bytes > heap_entry.length_in_bytes)
             heap_entry = bios_memory_map[idx];
@@ -104,30 +102,28 @@ void kernel_main()
     //Kernel is located at 0x100000
     if (heap_entry.length_in_bytes < 0x100000)
     {
-        kernel_panic("Panic: Not enough memory to place kernel heap!");
+        kernel_panic("Not enough memory to place kernel heap!");
     }
     heap_entry.base_address += 0x100000;
     heap_entry.length_in_bytes -= 0x100000;
     
-    memset(buf, 0, 128);
-    kernel_message(ksprintf(buf, "Heap address: 0x%p, Size: %ldKB\r\n", (long) heap_entry.base_address, (long) heap_entry.length_in_bytes / 1024), GREY);
+    kprintf("Heap address: 0x%p, Size: %ldKB\r\n", (long) heap_entry.base_address, (long) heap_entry.length_in_bytes / 1024);
 
     res = kheap_init((void*) (uint32_t) heap_entry.base_address, heap_entry.length_in_bytes);
     if (res < 0)
     {
-        kernel_panic("Panic: Failed to create heap!");
+        kernel_panic("Failed to create heap!");
     }
     //
 
-
-    kernel_message("Enabling paging..", GREY);
+    kprintf("Enabling paging..");
     kernel_paging_chunk = paging_new_directory(PAGING_IS_WRITEABLE | PAGING_IS_PRESENT | PAGING_ACCESS_FROM_ALL);
     paging_switch(paging_get_directory(kernel_paging_chunk));
     paging_enable();
-    kernel_message("OK\r\n", LIGHT_GREEN);
+    kprintf("OK\r\n");
 
     //Paging test
-    kernel_message("Setting up paging..", GREY);
+    kprintf("Setting up paging..");
     char* ptr_real = kzalloc(4096);
     res = paging_set_page(paging_get_directory(kernel_paging_chunk), (void*) 0x1000, (uint32_t) ptr_real | PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
     if (res < 0)
@@ -139,23 +135,22 @@ void kernel_main()
     ptr_virt[0] = 'O';
     ptr_virt[1] = 'K';
     
-    kernel_message("OK\r\n", LIGHT_GREEN);
-    memset(buf, 0, 128);
-    kernel_message(ksprintf(buf, "Paging self-test: 0x%p:'%s' 0x%p:'%s'", (uint32_t)ptr_real, ptr_real, (uint32_t) ptr_virt, ptr_virt), GREY);
+    kprintf("OK\r\n", LIGHT_GREEN);
+    kprintf("Paging self-test: 0x%p:'%s' 0x%p:'%s'", (uint32_t)ptr_real, ptr_real, (uint32_t) ptr_virt, ptr_virt);
     if (memcmp(ptr_real, ptr_virt, 2) != 0)
     {
         kernel_panic("\r\nPanic: Paging self-test unsuccessful!");
     }
-    kernel_message(" OK\r\n", LIGHT_GREEN);
+    kprintf("OK\r\n");
     kfree(ptr_real);
     //
 
     //Remap PIC
-    kernel_message("Remapping PIC..", GREY);
+    kprintf("Remapping PIC..");
 
     pic_Remap(0x20, 0x28);
     
-    kernel_message("OK\r\n",LIGHT_GREEN);
+    kprintf(" OK\r\n");
     //
 
     //
@@ -168,7 +163,7 @@ void kernel_main()
     //
 
     //Read test file
-    kernel_message("Opening \"0:/HELLO.TXT\"..", GREY);
+    kprintf("Opening \"0:/HELLO.TXT\"..");
     int fd = fopen("0:/HELLO.TXT", "r");
     if (!fd)
     {
@@ -181,12 +176,10 @@ void kernel_main()
 
         if (res < 0)
         {
-            memset(buf, 0, sizeof(buf));
-            kernel_panic(ksprintf(buf, "fstat error: %d", res));
+            kernel_panic("fstat error: %d", res);
         }
 
-        memset(buf, 0, sizeof(buf));
-        kernel_debug(ksprintf(buf, "File size: %d, Flags: %d", stat->filesize, stat->flags));
+        kprintf("File size: %d, Flags: %d\r\n", stat->filesize, stat->flags);
 
         char* file_content = kzalloc(stat->filesize);
 
@@ -196,8 +189,8 @@ void kernel_main()
         int res = fread(file_content, stat->filesize, 1, fd);
         if (res < 0)
             kernel_panic("fread error");
-        kernel_message(file_content, LIGHT_CYAN);
-        kernel_message("\r\nOK\r\n", LIGHT_GREEN);
+        kprintf(file_content);
+        kprintf("\r\nOK\r\n");
 
         kfree(file_content);
         fclose(fd);
@@ -221,12 +214,17 @@ void kernel_main()
 /**
  * @brief (Temporary) Prints kernel_message and halts the kernel.
  * 
- * @param message Reason of the panic
+ * @param fmt Reason of the panic
+ * @param ... Arguments
  */
-void kernel_panic(char* message)
+void kernel_panic(char* fmt, ...)
 {
-    kernel_message("Kernel panic!\r\n", LIGHT_RED);
-    kernel_message(message, LIGHT_RED);
+    va_list args;
+	va_start(args, fmt);
+	char internal_buf[1024];
+
+    tm_PrintStringColor("Kernel panic!\r\n", LIGHT_RED);
+    tm_PrintStringColor(ksprintf(internal_buf, fmt, args), LIGHT_RED);
     kernel_halt();
 }
 
@@ -236,30 +234,24 @@ void kernel_halt()
 }
 
 /**
- * @brief Prints message onto Framebuffer and Serial
+ * @brief Prints to kernel debug channels. Max length of processed message is 1024 characters.
  * 
- * @param message Message
- * @param col Color
+ * @param fmt Message to format and print. 
+ * @param ... Arguments
  */
-void kernel_message(char* message, enum TEXT_MODE_COLORS col)
+void kprintf(char* fmt, ...)
 {
-    enum TEXT_MODE_COLORS x = tm_GetColor();
+	va_list args;
+	va_start(args, fmt);
 
-    tm_SetColor(col);
-    tm_PrintString(message);
-    tm_SetColor(x);
+	char internal_buf[1024];
+    memset(internal_buf, 0, sizeof(internal_buf));
 
-    ser_PrintString(COM1, message);
-}
+	kvsprintf(internal_buf, fmt, args);
+    ser_PrintString(COM1, internal_buf);
 
-void kernel_debug(char* message)
-{
     enum TEXT_MODE_COLORS x = tm_GetColor();
     tm_SetColor(GREY);
-    tm_PrintString(message);
-    tm_PrintString("\r\n");
+    tm_PrintString(internal_buf);
     tm_SetColor(x);
-
-    ser_PrintString(COM1, message);
-    ser_PrintString(COM1, "\r\n");
 }

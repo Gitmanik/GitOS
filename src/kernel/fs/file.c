@@ -73,6 +73,7 @@ static int file_free_descriptor(struct file_descriptor* desc)
 {
     file_descriptors[desc->index - 1] = 0;
     kfree(desc);
+    return ALL_OK;
 }
 
 
@@ -94,9 +95,7 @@ void fs_insert_filesystem(struct filesystem* filesystem)
     }
     *fs = filesystem;
     
-    char message[] = "Filesystem %s registered\r\n";
-    char buf[sizeof(message) + MAX_FILESYSTEM_NAME];
-    kernel_message(ksprintf(buf, message, filesystem->name), GREY);
+    kprintf("Filesystem %s registered\r\n", filesystem->name);
 }
 
 /**
@@ -121,6 +120,7 @@ struct filesystem* fs_resolve(struct disk* disk)
     {
         if (filesystems[i] != 0 && filesystems[i]->resolve(disk) == ALL_OK)
         {
+            kprintf("Resolved filesystem for disk %d: %s\r\n", disk->id, filesystems[i]->name);
             return filesystems[i];
         }
     }

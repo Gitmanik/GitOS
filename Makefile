@@ -6,7 +6,10 @@ LD = ${TOOLS_DIR}/${TARGET}-ld
 OBJCOPY = ${TOOLS_DIR}/${TARGET}-objcopy
 OBJDUMP = ${TOOLS_DIR}/${TARGET}-objdump
 
+SOURCE_PREFIX = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 GCC_ARGUMENTS = -g -std=gnu99 -ffreestanding -nostdlib -O0 -Wall -Wextra
+#  -D__FILENAME__=\"$(notdir $<)\"
+
 QEMU_ARGUMENTS = -drive file=${DISK_BIN},format=raw,index=0,media=disk -m 32M
 
 STAGE1_ASM = ./src/boot/boot.asm

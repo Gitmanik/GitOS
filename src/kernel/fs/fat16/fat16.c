@@ -67,9 +67,7 @@ static int fat16_get_total_items_for_directory(struct disk* disk, int start_sect
         if (diskstreamer_read(fat_private->directory_stream, &item, sizeof(item)) !=ALL_OK)
             return -EIO;
 
-        // char buf[512];
-        // memset(buf, 0, sizeof(buf));
-        // kernel_debug(ksprintf(buf, "%s, size: %d", (char*) item.filename, item.filesize));
+        kprintf("%s, size: %d\r\n", (char*) item.filename, item.filesize);
 
         if (item.filename[0] == 0x00)  
         {
@@ -453,7 +451,6 @@ void* fat16_open(struct disk* disk, struct path_part* path, FILE_MODE mode)
 
 int fat16_resolve(struct disk* disk)
 {
-    kernel_debug("Resolving FAT16..");
     int result = ALL_OK;
 
     struct fat_private* fat_private = kzalloc(sizeof(struct fat_private));
@@ -477,14 +474,14 @@ int fat16_resolve(struct disk* disk)
 
     if (fat_private->header.shared.extended.signature != 0x29)
     {
-        kernel_debug("FAT Header Signature did not match!");
+        kprintf("FAT Header Signature did not match! Expected 0x29, found 0x%x\r\n", fat_private->header.shared.extended.signature);
         result = -EIO;
         goto out;
     }
 
     if (fat16_get_root_directory(disk, fat_private, &fat_private->root_directory) != ALL_OK)
     {
-        kernel_debug("Could not read root directory!");
+        kprintf("Could not read root directory!\r\n");
         result = -EIO;
         goto out;
     }

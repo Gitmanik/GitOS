@@ -1,5 +1,6 @@
 #pragma once
 #include <stddef.h>
+#include <stdarg.h>
 
 size_t strlen(const char* str);
 size_t strnlen(const char* str, size_t max_len);
@@ -13,6 +14,7 @@ char tolower(char c);
 
 char* itoa(long num, char* str, int base);
 char* ksprintf(char* buf, char* fmt, ...);
+char* kvsprintf(char* buf, char* fmt, va_list args);
 
 int is_digit(char c);
 int to_numeric_digit(char c);

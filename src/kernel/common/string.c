@@ -170,18 +170,15 @@ char* itoa(long num, char* str, int base)
 }
 
 /**
- * @brief Kernel sprintf
+ * @brief Kernel vsprintf
  * params: %% %c %s %p %l(mod) %d %i %x
  * @param buf Buffer
  * @param fmt Text to format
- * @param ... Args
+ * @param va_list arguments
  * @return char* Buffer
  */
-char* ksprintf(char* buf, char* fmt, ...)
+char* kvsprintf(char* buf, char* fmt, va_list args)
 {
-	va_list args;
-	va_start(args, fmt);
-
 	char* org_buf = buf;
 
 	char internal_buffer[512];
@@ -285,6 +282,23 @@ char* ksprintf(char* buf, char* fmt, ...)
 	}
 	va_end(args);
 	return org_buf;
+}
+
+/**
+ * @brief Kernel sprintf
+ * params: %% %c %s %p %l(mod) %d %i %x
+ * @param buf Buffer
+ * @param fmt Text to format
+ * @param ... Args
+ * @return char* Buffer
+ */
+char* ksprintf(char* buf, char* fmt, ...)
+{
+	va_list args;
+	va_start(args, fmt);
+
+	kvsprintf(buf, fmt, args);
+	return buf;
 }
 
 /**

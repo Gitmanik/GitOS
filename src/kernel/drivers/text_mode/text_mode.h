@@ -29,6 +29,7 @@ void tm_PrintString(const char* str);
 void tm_PrintStringColor(const char* str, enum TEXT_MODE_COLORS fg);
 
 void tm_ClearScreen();
+void tm_ScrollScreen(int amount);
 
 void tm_SetCursor(int new_x, int new_y);
 

@@ -55,12 +55,10 @@ void tm_PrintCharColor(char c, enum TEXT_MODE_COLORS fg)
     {
         current_y++;
         current_x = 0;
-        return;
     }
     if (c == '\r')
     {
         current_x = 0;
-        return;
     }
     
     if (current_x == TEXT_MODE_WIDTH)
@@ -71,9 +69,12 @@ void tm_PrintCharColor(char c, enum TEXT_MODE_COLORS fg)
 
     if (current_y == TEXT_MODE_HEIGHT)
     {
-        current_y = 0;
+        current_y = TEXT_MODE_HEIGHT - 1;
         current_x = 0;
+        tm_ScrollScreen(1);
     }
+    if (c == '\n' || c == '\r')
+        return;
 
     video_mem[current_y * TEXT_MODE_WIDTH + current_x] = make_char(c, fg);
     current_x++;
@@ -123,6 +124,17 @@ void tm_SetCursor(int new_x, int new_y)
 {
     current_x = new_x;
     current_y = new_y;
+}
+
+/**
+ * @brief Scrolls framebuffer
+ * 
+ * @param amount Amount of lines to scroll
+ */
+void tm_ScrollScreen(int amount)
+{
+    memcpy((void*)video_mem, (void*) video_mem + 2 * TEXT_MODE_WIDTH * amount, 2 * TEXT_MODE_WIDTH * (TEXT_MODE_HEIGHT - amount));
+    memset((void*) video_mem + 2 * TEXT_MODE_WIDTH * (TEXT_MODE_HEIGHT - amount), 0, 2 * TEXT_MODE_WIDTH * amount);
 }
 
 /**

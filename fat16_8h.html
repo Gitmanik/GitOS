@@ -168,6 +168,12 @@ Functions</h2></td></tr>
 <tr class="separator:a7585d71c4c4592b36d5a38fc76c00213"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e75641aa5ecbaa93a68617aef637aaf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8h.html#a9e75641aa5ecbaa93a68617aef637aaf">fat16_read</a> (struct <a class="el" href="structdisk.html">disk</a> *<a class="el" href="structdisk.html">disk</a>, void *descriptor_buffer, uint32_t size, uint32_t nmemb, char *out)</td></tr>
 <tr class="separator:a9e75641aa5ecbaa93a68617aef637aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b0b5b05ddc9a1f349bc10b92b0a71b0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8h.html#a1b0b5b05ddc9a1f349bc10b92b0a71b0">fat16_seek</a> (void *private_buffer, uint32_t offset, <a class="el" href="file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a> seek_mode)</td></tr>
+<tr class="separator:a1b0b5b05ddc9a1f349bc10b92b0a71b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ceb88744ae452225cdff04e259b54c7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8h.html#a6ceb88744ae452225cdff04e259b54c7">fat16_stat</a> (void *private, struct <a class="el" href="structfile__stat.html">file_stat</a> *stat)</td></tr>
+<tr class="separator:a6ceb88744ae452225cdff04e259b54c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6ca4776c5a609bfb9c7f1b10f2e7e03"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8h.html#ae6ca4776c5a609bfb9c7f1b10f2e7e03">fat16_close</a> (void *private)</td></tr>
+<tr class="separator:ae6ca4776c5a609bfb9c7f1b10f2e7e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -471,6 +477,24 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ae6ca4776c5a609bfb9c7f1b10f2e7e03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6ca4776c5a609bfb9c7f1b10f2e7e03">&#9670;&nbsp;</a></span>fat16_close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fat16_close </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>private</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae1e04408cafa8434e5b7bef3d4843d18"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae1e04408cafa8434e5b7bef3d4843d18">&#9670;&nbsp;</a></span>fat16_init()</h2>
 
@@ -522,7 +546,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="kernel_8h.html#aef9e7d5ae531e4004885f5a5cc002143">BochsBreak</a>, <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>, <a class="el" href="status_8h.html#a70979f50f9c83e5aebab3d6a1bd4cf35">EIO</a>, <a class="el" href="serial_8c.html#a6a05c923dad0c1208043e9c20a58c8e5">ENOMEM</a>, <a class="el" href="fat16_8c.html#a59ee87cc519524cac3b86c01396e247b">fat16_get_directory_entry()</a>, <a class="el" href="file_8h.html#abc6126af1d45847bc59afa0aa3216b04a89cf567f3e692c97873d7a795c17feca">FILE_MODE_READ</a>, <a class="el" href="structfat__file__descriptor.html#a8fd200b64c5abf7b8c8f21db64aa53ac">fat_file_descriptor::item</a>, <a class="el" href="hkeap_8c.html#a913f2de31558b9cca9405d2cd05a402a">kzalloc()</a>, and <a class="el" href="structfat__file__descriptor.html#af09611129dedc89382e4d7b6427bdb27">fat_file_descriptor::pos</a>.</p>
+<p class="reference">References <a class="el" href="kernel_8h.html#aef9e7d5ae531e4004885f5a5cc002143">BochsBreak</a>, <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>, <a class="el" href="status_8h.html#a70979f50f9c83e5aebab3d6a1bd4cf35">EIO</a>, <a class="el" href="status_8h.html#a6a05c923dad0c1208043e9c20a58c8e5">ENOMEM</a>, <a class="el" href="fat16_8c.html#a59ee87cc519524cac3b86c01396e247b">fat16_get_directory_entry()</a>, <a class="el" href="file_8h.html#abc6126af1d45847bc59afa0aa3216b04a89cf567f3e692c97873d7a795c17feca">FILE_MODE_READ</a>, <a class="el" href="structfat__file__descriptor.html#a8fd200b64c5abf7b8c8f21db64aa53ac">fat_file_descriptor::item</a>, <a class="el" href="hkeap_8c.html#a913f2de31558b9cca9405d2cd05a402a">kzalloc()</a>, and <a class="el" href="structfat__file__descriptor.html#af09611129dedc89382e4d7b6427bdb27">fat_file_descriptor::pos</a>.</p>
 
 </div>
 </div>
@@ -590,7 +614,73 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="status_8h.html#ae34bccefcb5925f2ccd27bc3a0b4731d">ALL_OK</a>, <a class="el" href="disk__streamer_8c.html#aceb1f3074a2fa2359ec3e9a9893366a2">diskstreamer_new()</a>, <a class="el" href="disk__streamer_8c.html#a7b9f236b0c4aba1e672d8dc8b63e934f">diskstreamer_read()</a>, <a class="el" href="status_8h.html#a70979f50f9c83e5aebab3d6a1bd4cf35">EIO</a>, <a class="el" href="serial_8c.html#a6a05c923dad0c1208043e9c20a58c8e5">ENOMEM</a>, <a class="el" href="unionfat__header_1_1fat__header__extended.html#a219c77a5a9b9c6a48bb5e8dd5d9cd161">fat_header::fat_header_extended::extended</a>, <a class="el" href="fat16_8c.html#a07d7abfd52bdc433cb68fc610ee580b2">fat16_fs</a>, <a class="el" href="fat16_8c.html#ab127e474089895a757a7819207fa7331">fat16_init_private()</a>, <a class="el" href="structdisk.html#a4bce4c67c8c2fc4f8e3c0182f4afa586">disk::filesystem</a>, <a class="el" href="structdisk.html#aa4853d13c26ce9af3bbb484e0bee8bf2">disk::fs_private</a>, <a class="el" href="structfat__private.html#af189636d10af1cda73cb226033b4d964">fat_private::header</a>, <a class="el" href="structdisk.html#a7441ef0865bcb3db9b8064dd7375c1ea">disk::id</a>, <a class="el" href="kernel_8c.html#af9df2ec5242f7a42f448413662fdd413">kernel_debug()</a>, <a class="el" href="hkeap_8c.html#a913f2de31558b9cca9405d2cd05a402a">kzalloc()</a>, <a class="el" href="structfat__header.html#ae59cdbb76c023af3663f023dc5d412bc">fat_header::shared</a>, and <a class="el" href="structfat16__header__extended.html#af27e6d4ea3add14cd8cc9aa275d716ad">fat16_header_extended::signature</a>.</p>
+<p class="reference">References <a class="el" href="status_8h.html#ae34bccefcb5925f2ccd27bc3a0b4731d">ALL_OK</a>, <a class="el" href="kernel_8c.html#af9df2ec5242f7a42f448413662fdd413">kernel_debug()</a>, and <a class="el" href="hkeap_8c.html#a913f2de31558b9cca9405d2cd05a402a">kzalloc()</a>.</p>
+
+</div>
+</div>
+<a id="a1b0b5b05ddc9a1f349bc10b92b0a71b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b0b5b05ddc9a1f349bc10b92b0a71b0">&#9670;&nbsp;</a></span>fat16_seek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fat16_seek </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>private_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a>&#160;</td>
+          <td class="paramname"><em>seek_mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="status_8h.html#ae34bccefcb5925f2ccd27bc3a0b4731d">ALL_OK</a>, <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>, <a class="el" href="serial_8c.html#a0e9e819f6f5a649e0dcb3e7d00c54e91">ENOTIMPL</a>, <a class="el" href="fat16_8h.html#aaf8239a44b00b6f88cf993e0a0578e18">FAT_ITEM_TYPE_FILE</a>, <a class="el" href="structfat__directory__item.html#a0532db3d21cdd9e862560340b97d8e05">fat_directory_item::filesize</a>, <a class="el" href="structfat__item.html#a207f93ffca1de04bdb4ad94e6c16d264">fat_item::item</a>, <a class="el" href="structfat__file__descriptor.html#a8fd200b64c5abf7b8c8f21db64aa53ac">fat_file_descriptor::item</a>, <a class="el" href="structfat__file__descriptor.html#af09611129dedc89382e4d7b6427bdb27">fat_file_descriptor::pos</a>, <a class="el" href="file_8h.html#a99fb83031ce9923c84392b4e92f956b5af3091144c125782cf17bcd3eb84e454c">SEEK_CUR</a>, <a class="el" href="file_8h.html#a99fb83031ce9923c84392b4e92f956b5a060e45245be703e272d7264bafcfdc63">SEEK_END</a>, <a class="el" href="file_8h.html#a99fb83031ce9923c84392b4e92f956b5a7f53e3798ec48e79c0897ba5138f9b05">SEEK_SET</a>, and <a class="el" href="structfat__item.html#a8f518c5a61a32a6ebb8d9a1de98c3b0b">fat_item::type</a>.</p>
+
+</div>
+</div>
+<a id="a6ceb88744ae452225cdff04e259b54c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ceb88744ae452225cdff04e259b54c7">&#9670;&nbsp;</a></span>fat16_stat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fat16_stat </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>private</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structfile__stat.html">file_stat</a> *&#160;</td>
+          <td class="paramname"><em>stat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="status_8h.html#ae34bccefcb5925f2ccd27bc3a0b4731d">ALL_OK</a>, <a class="el" href="structfat__directory__item.html#ae99e080fe352a99a12cf5b9b260ef734">fat_directory_item::attribute</a>, <a class="el" href="serial_8c.html#a0e9e819f6f5a649e0dcb3e7d00c54e91">ENOTIMPL</a>, <a class="el" href="fat16_8h.html#a1dc3c912daef934481164d4b8691bef4">FAT_FILE_READONLY</a>, <a class="el" href="fat16_8h.html#aaf8239a44b00b6f88cf993e0a0578e18">FAT_ITEM_TYPE_FILE</a>, <a class="el" href="file_8h.html#adc29c2ff13d900c2f185ee95427fb06ca149a2651f7604176c2bf9bd76b666472">FILE_STAT_READ_ONLY</a>, <a class="el" href="structfile__stat.html#a0532db3d21cdd9e862560340b97d8e05">file_stat::filesize</a>, <a class="el" href="structfat__directory__item.html#a0532db3d21cdd9e862560340b97d8e05">fat_directory_item::filesize</a>, <a class="el" href="structfile__stat.html#a15883273c251db75429f281f77b26394">file_stat::flags</a>, <a class="el" href="structfat__item.html#a207f93ffca1de04bdb4ad94e6c16d264">fat_item::item</a>, <a class="el" href="structfat__file__descriptor.html#a8fd200b64c5abf7b8c8f21db64aa53ac">fat_file_descriptor::item</a>, and <a class="el" href="structfat__item.html#a8f518c5a61a32a6ebb8d9a1de98c3b0b">fat_item::type</a>.</p>
 
 </div>
 </div>

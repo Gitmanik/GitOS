@@ -11,6 +11,7 @@ var annotated_dup =
     [ "fat_item", "structfat__item.html", "structfat__item" ],
     [ "fat_private", "structfat__private.html", "structfat__private" ],
     [ "file_descriptor", "structfile__descriptor.html", "structfile__descriptor" ],
+    [ "file_stat", "structfile__stat.html", "structfile__stat" ],
     [ "filesystem", "structfilesystem.html", "structfilesystem" ],
     [ "heap", "structheap.html", "structheap" ],
     [ "heap_table", "structheap__table.html", "structheap__table" ],

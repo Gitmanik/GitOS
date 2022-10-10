@@ -13,6 +13,8 @@
 #include "drivers/disk/disk.h"
 #include "drivers/disk/disk_streamer.h"
 #include "fs/pathparser.h"
+#include "fs/file.h"
+#include "fs/fat16/fat16.h"
 
 static struct paging_chunk* kernel_paging_chunk;
 
@@ -156,25 +158,33 @@ void kernel_main()
     kernel_message("OK\r\n",LIGHT_GREEN);
     //
 
-    // Disk self-test
-    kernel_message("Disk self-test..", GREY);
-    disk_search_and_init();
-    char disk_buf[2];
-    struct disk_stream* disk_io  = diskstreamer_new(0);
-
-    diskstreamer_seek(disk_io, 510);
-    diskstreamer_read(disk_io, disk_buf, 2);
-
-    if (*(uint16_t*) disk_buf != 0xAA55)
-    {
-        kernel_panic("Panic: Disk read wrongly!");
-    }
-
-    kernel_message("OK\r\n", LIGHT_GREEN);
-    //
-
     //
     asm("sti");
+
+    //Initializing FS
+    fs_init();
+    fs_insert_filesystem(fat16_init());
+    disk_search_and_init();
+    //
+
+    //Read test file
+    kernel_message("Opening \"0:/HELLO.TXT\"..", GREY);
+    int fd = fopen("0:/HELLO.TXT", "r");
+    if (!fd)
+    {
+        kernel_panic("Could not open 0:/HELLO.TXT");
+    }
+    else
+    {
+        char file_content[512];
+        int res = fread(file_content, 512, 1, fd);
+        if (res < 0)
+            kernel_panic("fread error");
+        kernel_message(file_content, LIGHT_CYAN);
+        kernel_message("\r\nOK\r\n", LIGHT_GREEN);
+    }
+    //
+
 
     tm_SetColor(LIGHT_PURPLE);
     while (1)

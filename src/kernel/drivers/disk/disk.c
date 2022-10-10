@@ -2,6 +2,7 @@
 #include "common/io.h"
 #include "memory/memory.h"
 #include "common/status.h"
+#include "fs/file.h"
 
 struct disk primary_disk;
 
@@ -47,6 +48,8 @@ void disk_search_and_init()
     memset(&primary_disk, 0, sizeof(struct disk));
     primary_disk.disk_type = DISK_TYPE_REAL;
     primary_disk.sector_size = DISK_SECTOR_SIZE;
+    primary_disk.filesystem = fs_resolve(&primary_disk);
+    primary_disk.id = 0;
 }
 
 struct disk* disk_get(int index)

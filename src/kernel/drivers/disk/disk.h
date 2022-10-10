@@ -6,12 +6,22 @@
  */
 #define DISK_TYPE_REAL 0
 
+/**
+ * @brief Represents disk sector size
+ * 
+ */
 #define DISK_SECTOR_SIZE 512
+
+typedef unsigned int DISK_TYPE;
 
 struct disk
 {
-    unsigned int disk_type;
-    unsigned long sector_size;
+    DISK_TYPE disk_type;
+    int sector_size;
+    int id;
+
+    struct filesystem* filesystem;
+    void* fs_private; 
 };
 
 void disk_search_and_init();

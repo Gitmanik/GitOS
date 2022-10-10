@@ -28,6 +28,7 @@ var text__mode_8h =
     [ "tm_PrintCharColor", "text__mode_8h.html#a8afdb6ae911de36c44009b2126a43f13", null ],
     [ "tm_PrintString", "text__mode_8h.html#af141ddd7749219b2c02e37a0df9ed067", null ],
     [ "tm_PrintStringColor", "text__mode_8h.html#a5281f10601cca8d8e1946a1733ffd63c", null ],
+    [ "tm_ScrollScreen", "text__mode_8h.html#a78040333df78235651318a5267734639", null ],
     [ "tm_SetColor", "text__mode_8h.html#a3fb4d5641bd9df865ecf170f8fe89122", null ],
     [ "tm_SetCursor", "text__mode_8h.html#aec2803ccb6a9b5e974cf8cf12df8a56a", null ]
 ];

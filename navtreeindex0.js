@@ -247,7 +247,7 @@ var NAVTREEINDEX0 =
 "io_8h_source.html":[1,0,0,0,0,1],
 "kernel_8c.html":[1,0,0,0,5],
 "kernel_8c.html#a6d1c06ba63ac325cde9056255a24ee7a":[1,0,0,0,5,2],
-"kernel_8c.html#a9a00d0635c4d4946c2490fa636a719d3":[1,0,0,0,5,7],
-"kernel_8c.html#aa0feb8fe21f2712340bcfe8777e9860b":[1,0,0,0,5,4],
+"kernel_8c.html#a8d209f2439b73fa38517f599a1904a99":[1,0,0,0,5,5],
+"kernel_8c.html#aa0feb8fe21f2712340bcfe8777e9860b":[1,0,0,0,5,3],
 "kernel_8c.html#ac86840e98faa2e3f4509025a6bff1382":[1,0,0,0,5,1]
 };

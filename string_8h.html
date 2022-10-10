@@ -89,6 +89,7 @@ $(document).ready(function(){initNavTree('string_8h.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;stdarg.h&gt;</code><br />
 </div>
 <p><a href="string_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -119,6 +120,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8b9caf068b045bb5cb5c38f54cf82367"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a8b9caf068b045bb5cb5c38f54cf82367">ksprintf</a> (char *buf, char *fmt,...)</td></tr>
 <tr class="memdesc:a8b9caf068b045bb5cb5c38f54cf82367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kernel sprintf params: %% c s p l(mod) d i x.  <a href="string_8h.html#a8b9caf068b045bb5cb5c38f54cf82367">More...</a><br /></td></tr>
 <tr class="separator:a8b9caf068b045bb5cb5c38f54cf82367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac193243152e2c541c49fbe5548d7d65c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#ac193243152e2c541c49fbe5548d7d65c">kvsprintf</a> (char *buf, char *fmt, va_list args)</td></tr>
+<tr class="memdesc:ac193243152e2c541c49fbe5548d7d65c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kernel vsprintf params: %% c s p l(mod) d i x.  <a href="string_8h.html#ac193243152e2c541c49fbe5548d7d65c">More...</a><br /></td></tr>
+<tr class="separator:ac193243152e2c541c49fbe5548d7d65c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcb8cf4ba18ad43ea5c643b027cf0170"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#afcb8cf4ba18ad43ea5c643b027cf0170">is_digit</a> (char c)</td></tr>
 <tr class="memdesc:afcb8cf4ba18ad43ea5c643b027cf0170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if given char is an ASCII digit.  <a href="string_8h.html#afcb8cf4ba18ad43ea5c643b027cf0170">More...</a><br /></td></tr>
 <tr class="separator:afcb8cf4ba18ad43ea5c643b027cf0170"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -275,6 +279,53 @@ Functions</h2></td></tr>
     <tr><td class="paramname">buf</td><td>Buffer </td></tr>
     <tr><td class="paramname">fmt</td><td>Text to format </td></tr>
     <tr><td class="paramname">...</td><td>Args </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char* Buffer </dd></dl>
+
+<p class="reference">References <a class="el" href="string_8c.html#ac193243152e2c541c49fbe5548d7d65c">kvsprintf()</a>.</p>
+
+</div>
+</div>
+<a id="ac193243152e2c541c49fbe5548d7d65c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac193243152e2c541c49fbe5548d7d65c">&#9670;&nbsp;</a></span>kvsprintf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* kvsprintf </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Kernel vsprintf params: %% c s p l(mod) d i x. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>Buffer </td></tr>
+    <tr><td class="paramname">fmt</td><td>Text to format </td></tr>
+    <tr><td class="paramname">va_list</td><td>arguments </td></tr>
   </table>
   </dd>
 </dl>

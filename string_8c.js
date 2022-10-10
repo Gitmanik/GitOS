@@ -4,6 +4,7 @@ var string_8c =
     [ "istrncmp", "string_8c.html#a733f9adc8e09d0dcf0bd083cbcf34a33", null ],
     [ "itoa", "string_8c.html#a7ecda6e9a4ad5c1d1181bf064db143e9", null ],
     [ "ksprintf", "string_8c.html#a8b9caf068b045bb5cb5c38f54cf82367", null ],
+    [ "kvsprintf", "string_8c.html#ac193243152e2c541c49fbe5548d7d65c", null ],
     [ "strcpy", "string_8c.html#a7a82515b5d377be04817715c5465b647", null ],
     [ "strlen", "string_8c.html#a008e171a518fe0e0352f31b245e03875", null ],
     [ "strncmp", "string_8c.html#a444d2c3bbff8fb8a410d51a22b6339d8", null ],

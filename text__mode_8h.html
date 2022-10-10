@@ -143,6 +143,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a0ce4b7080788f46ff10075c9c69418c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__mode_8h.html#a0ce4b7080788f46ff10075c9c69418c4">tm_ClearScreen</a> ()</td></tr>
 <tr class="memdesc:a0ce4b7080788f46ff10075c9c69418c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears screen.  <a href="text__mode_8h.html#a0ce4b7080788f46ff10075c9c69418c4">More...</a><br /></td></tr>
 <tr class="separator:a0ce4b7080788f46ff10075c9c69418c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78040333df78235651318a5267734639"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__mode_8h.html#a78040333df78235651318a5267734639">tm_ScrollScreen</a> (int amount)</td></tr>
+<tr class="memdesc:a78040333df78235651318a5267734639"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scrolls framebuffer.  <a href="text__mode_8h.html#a78040333df78235651318a5267734639">More...</a><br /></td></tr>
+<tr class="separator:a78040333df78235651318a5267734639"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec2803ccb6a9b5e974cf8cf12df8a56a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__mode_8h.html#aec2803ccb6a9b5e974cf8cf12df8a56a">tm_SetCursor</a> (int new_x, int new_y)</td></tr>
 <tr class="memdesc:aec2803ccb6a9b5e974cf8cf12df8a56a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets framebuffer cursor to specified values.  <a href="text__mode_8h.html#aec2803ccb6a9b5e974cf8cf12df8a56a">More...</a><br /></td></tr>
 <tr class="separator:aec2803ccb6a9b5e974cf8cf12df8a56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -423,6 +426,34 @@ Functions</h2></td></tr>
 </dl>
 
 <p class="reference">References <a class="el" href="string_8c.html#a008e171a518fe0e0352f31b245e03875">strlen()</a>, and <a class="el" href="text__mode_8c.html#a8afdb6ae911de36c44009b2126a43f13">tm_PrintCharColor()</a>.</p>
+
+</div>
+</div>
+<a id="a78040333df78235651318a5267734639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78040333df78235651318a5267734639">&#9670;&nbsp;</a></span>tm_ScrollScreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tm_ScrollScreen </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>amount</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scrolls framebuffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amount</td><td>Amount of lines to scroll </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="memory_8c.html#a113a42d20ee587a79f71464089007387">memcpy()</a>.</p>
 
 </div>
 </div>

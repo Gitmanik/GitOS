@@ -26,7 +26,7 @@ ASM_SOURCES = ./src/kernel/pm_entry.asm $(shell find ./src/kernel -name "*.asm" 
 ASM_OBJECTS = ${ASM_SOURCES:.asm=.asm.o}
 
 
-all: clean build
+all: clean build disk
 test: all run
 
 stage1: ${STAGE1_BIN}
@@ -56,17 +56,18 @@ run:
 	qemu-system-i386 ${QEMU_ARGUMENTS}
 
 build: kernel stage1
+
+disk: build
 	rm -rf ${DISK_BIN}.lock
 	rm -rf ${DISK_BIN}
 	dd if=${STAGE1_BIN} >> ${DISK_BIN}
 	dd if=${KERNEL_BIN} >> ${DISK_BIN}
 
-# 										16MB
-	dd if=/dev/zero of=${DISK_BIN} seek=16777216 bs=1 count=1
-
+# 										16MB = 16777216 - 1
+	 dd if=/dev/zero of=${DISK_BIN} seek=16777215 bs=1 count=1
 	-mkdir mnt
-	sudo mount -t vfat ./bin/disk.bin ./mnt
-	sudo cp -r ./fs ./mnt
+	sudo /usr/bin/mount -t vfat -o fat=16 ./bin/disk.bin ./mnt
+	sudo cp -r ./fs/. ./mnt/.
 	sudo umount ./mnt
 	rm -rf ./mnt
 

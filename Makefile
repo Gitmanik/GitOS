@@ -34,8 +34,8 @@ kernel: ${KERNEL_BIN}
 
 clean:
 	rm -rf docs
-	-pkill -f bochs
-	-pkill -f qemu
+	-pkill -9 bochs
+	-pkill -9 qemu
 	find . -name \*.o -type f -delete
 	find . -name \*.elf -type f -delete
 	find . -name \*.bin -type f -delete

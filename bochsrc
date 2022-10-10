@@ -7,3 +7,5 @@ cpu: count=1, ips=10000000, reset_on_triple_fault=0
 com1: enabled=1, mode=term, dev=/dev/ttyS0
 gdbstub: enabled=1, port=1234
 mouse: enabled=0
+magic_break: enabled=1
+port_e9_hack: enabled=1

@@ -3,6 +3,13 @@
 
 size_t strlen(const char* str);
 size_t strnlen(const char* str, size_t max_len);
+char* strcpy(char* dest, const char* src);
+char* strrev(char *str);
+int strncmp(const char* str1, const char* str2, int n);
+int strnlen_terminator(const char* str, int max, char terminator);
+int istrncmp(const char* str1, const char* str2, int n);
+char tolower(char c);
+
 
 char* itoa(long num, char* str, int base);
 char* ksprintf(char* buf, char* fmt, ...);

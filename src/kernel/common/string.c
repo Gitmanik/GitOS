@@ -41,7 +41,7 @@ size_t strnlen(const char* str, size_t max_len)
  * @param str String to reverse
  * @return char* str
  */
-char *strrev(char *str)
+char* strrev(char *str)
 {
     if (!str || ! *str)
         return str;
@@ -59,6 +59,73 @@ char *strrev(char *str)
     }
     return str;
 }
+
+char* strcpy(char* dest, const char* src)
+{
+	char* dest_org = dest;
+	while (*src != 0)
+	{
+		*dest = *src;
+		src++;
+		dest++;
+	}
+	*dest = '\0';
+	return dest_org;
+}
+
+int strncmp(const char* str1, const char* str2, int n)
+{
+    unsigned char u1, u2;
+
+    while(n-- > 0)
+    {
+        u1 = (unsigned char)*str1++;
+        u2 = (unsigned char)*str2++;
+        if (u1 != u2)
+            return u1 - u2;
+        if (u1 == '\0')
+            return 0;
+    }
+
+    return 0;
+}
+
+char tolower(char c)
+{
+	if (c >= 65 && c <= 90)
+		c += 32;
+	return c;
+}
+
+int istrncmp(const char* str1, const char* str2, int n)
+{
+    unsigned char u1, u2;
+
+    while(n-- > 0)
+    {
+        u1 = (unsigned char)*str1++;
+        u2 = (unsigned char)*str2++;
+        if (u1 != u2 && tolower(u1) != tolower(u2))
+            return u1 - u2;
+        if (u1 == '\0')
+            return 0;
+    }
+
+    return 0;
+}
+
+int strnlen_terminator(const char* str, int max, char terminator)
+{
+	int i;
+	for (i = 0; i < max; i++)
+	{
+		if (str[i] == 0 || str[i] == terminator)
+			break;
+	}
+	return i;
+}
+
+
 
 /**
  * @brief Converts number to string

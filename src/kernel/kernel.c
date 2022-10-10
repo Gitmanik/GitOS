@@ -176,12 +176,31 @@ void kernel_main()
     }
     else
     {
-        char file_content[512];
-        int res = fread(file_content, 512, 1, fd);
+        struct file_stat* stat = 0;
+        res = fstat(fd, stat);
+
+        if (res < 0)
+        {
+            memset(buf, 0, sizeof(buf));
+            kernel_panic(ksprintf(buf, "fstat error: %d", res));
+        }
+
+        memset(buf, 0, sizeof(buf));
+        kernel_debug(ksprintf(buf, "File size: %d, Flags: %d", stat->filesize, stat->flags));
+
+        char* file_content = kzalloc(stat->filesize);
+
+        res = fseek(fd, 22, SEEK_SET);
+        if (res < 0)
+            kernel_panic("fseek error");
+        int res = fread(file_content, stat->filesize, 1, fd);
         if (res < 0)
             kernel_panic("fread error");
         kernel_message(file_content, LIGHT_CYAN);
         kernel_message("\r\nOK\r\n", LIGHT_GREEN);
+
+        kfree(file_content);
+        fclose(fd);
     }
     //
 

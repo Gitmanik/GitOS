@@ -64,6 +64,19 @@ static struct file_descriptor* file_get_descriptor(int fd)
 }
 
 /**
+ * @brief Frees memory allocated by file descriptor
+ * 
+ * @param desc 
+ * @return int 
+ */
+static int file_free_descriptor(struct file_descriptor* desc)
+{
+    file_descriptors[desc->index - 1] = 0;
+    kfree(desc);
+}
+
+
+/**
  * @brief Inserts filesystem struct into internal array
  * 
  * @param filesystem 
@@ -178,4 +191,33 @@ int fread(void* ptr, uint32_t size, uint32_t nmemb, int fd)
     struct file_descriptor* desc = file_get_descriptor(fd);
 
     return desc->filesystem->read(desc->disk, desc->private_buffer, size, nmemb, (char*) ptr);
+}
+
+int fseek(int fd, int offset, FILE_SEEK_MODE whence)
+{
+    struct file_descriptor* desc = file_get_descriptor(fd);
+    if (!desc)
+        return -EIO;
+
+    return desc->filesystem->seek(desc->private_buffer, offset, whence);
+}
+
+int fstat(int fd, struct file_stat* stat)
+{
+    struct file_descriptor* desc = file_get_descriptor(fd);
+    if (!desc)
+        return -EIO;
+
+    return desc->filesystem->stat(desc->private_buffer, stat);
+}
+
+int fclose(int fd)
+{
+    struct file_descriptor* desc = file_get_descriptor(fd);
+    if (!desc)
+        return -EIO;
+
+    int res = desc->filesystem->close(desc->private_buffer);
+    file_free_descriptor(desc);
+    return res;
 }

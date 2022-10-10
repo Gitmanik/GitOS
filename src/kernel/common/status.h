@@ -23,3 +23,9 @@
  * 
  */
 #define ENOMEM 3
+
+/**
+ * @brief Not implemented
+ * 
+ */
+#define ENOTIMPL 4

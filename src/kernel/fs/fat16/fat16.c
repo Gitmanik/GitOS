@@ -5,12 +5,14 @@
 #include "memory/heap/kheap.h"
 #include "kernel.h"
 
-
 struct filesystem fat16_fs = 
 {
     .resolve = fat16_resolve,
     .open = fat16_open,
-    .read = fat16_read
+    .read = fat16_read,
+    .seek = fat16_seek,
+    .stat = fat16_stat,
+    .close = fat16_close
 };
 
 static uint32_t fat16_get_first_cluster(struct fat_directory_item* item)
@@ -115,13 +117,7 @@ static int fat16_get_root_directory(struct disk* disk, struct fat_private* fat_p
     return ALL_OK;
 }
 
-struct filesystem* fat16_init()
-{
-    strcpy(fat16_fs.name, "FAT16");
-    return &fat16_fs;
-}
-
-int fat16_init_private(struct disk* disk, struct fat_private* private)
+static int fat16_init_private(struct disk* disk, struct fat_private* private)
 {
     memset(private, 0, sizeof(private));
     private->cluster_read_stream = diskstreamer_new(disk->id);
@@ -130,12 +126,42 @@ int fat16_init_private(struct disk* disk, struct fat_private* private)
     return ALL_OK;
 }
 
-void fat16_free_private(struct fat_private* private)
+static void fat16_free_private(struct fat_private* private)
 {
     if (private->cluster_read_stream) diskstreamer_close(private->cluster_read_stream);
     if (private->fat_read_stream)     diskstreamer_close(private->fat_read_stream);
     if (private->directory_stream)    diskstreamer_close(private->directory_stream);
     kfree(private);
+}
+
+static void fat16_free_directory(struct fat_directory* directory)
+{
+    if (!directory)
+        return;
+    kfree(directory->item);
+    kfree(directory);
+}
+
+static void fat16_fat_item_free(struct fat_item* item)
+{
+    if (item->type == FAT_ITEM_TYPE_DIRECTORY)
+    {
+        fat16_free_directory(item->directory);
+    }
+    else if (item->type == FAT_ITEM_TYPE_FILE)
+    {
+        kfree(item->item);
+    }
+    else
+    {
+        kernel_panic("Tried to free invalid fat_item!");
+    }
+}
+
+static void fat16_free_file_descriptor(struct fat_file_descriptor* desc)
+{
+    fat16_fat_item_free(desc->item);
+    kfree(desc);
 }
 
 static struct fat_directory_item* fat16_clone_directory_item(struct fat_directory_item* item, int size)
@@ -281,30 +307,6 @@ void fat16_get_full_relative_filename(struct fat_directory_item* item, char* out
     }
 }
 
-void fat16_free_directory(struct fat_directory* directory)
-{
-    if (!directory)
-        return;
-    kfree(directory->item);
-    kfree(directory);
-}
-
-void fat16_fat_item_free(struct fat_item* item)
-{
-    if (item->type == FAT_ITEM_TYPE_DIRECTORY)
-    {
-        fat16_free_directory(item->directory);
-    }
-    else if (item->type == FAT_ITEM_TYPE_FILE)
-    {
-        kfree(item->item);
-    }
-    else
-    {
-        kernel_panic("Tried to free invalid fat_item!");
-    }
-}
-
 struct fat_directory* fat16_load_fat_directory(struct disk* disk, struct fat_directory_item* item)
 {
     int result = 0;
@@ -416,6 +418,12 @@ out:
     return current_item;
 }
 
+struct filesystem* fat16_init()
+{
+    strcpy(fat16_fs.name, "FAT16");
+    return &fat16_fs;
+}
+
 void* fat16_open(struct disk* disk, struct path_part* path, FILE_MODE mode)
 {
     if (mode != FILE_MODE_READ) //TODO: Todo writing
@@ -508,4 +516,55 @@ int fat16_read(struct disk* disk, void* descriptor_buffer, uint32_t size, uint32
         offset += size;
     }
     return nmemb;
+}
+
+int fat16_seek(void* private_buffer, uint32_t offset, FILE_SEEK_MODE seek_mode)
+{
+    struct fat_file_descriptor* fat_desc = private_buffer;
+
+    if (fat_desc->item->type != FAT_ITEM_TYPE_FILE)
+        return -EINVARG;
+
+    struct fat_directory_item* item = fat_desc->item->item;
+    
+    if (offset >= item->filesize)
+        return -EINVARG;
+
+    switch (seek_mode)
+    {
+        case SEEK_SET:
+            fat_desc->pos = offset;
+            break;
+
+        case SEEK_CUR:
+            fat_desc->pos += offset;
+            break;
+        case SEEK_END:
+            return -ENOTIMPL; 
+    }
+    return ALL_OK;
+}
+
+int fat16_stat(void* private, struct file_stat* stat)
+{
+    struct fat_file_descriptor* fat_desc = private;
+    struct fat_item* desc_item = fat_desc->item;
+    if (desc_item->type != FAT_ITEM_TYPE_FILE)
+        return -ENOTIMPL;
+    
+    struct fat_directory_item* item = desc_item->item;
+
+    stat->filesize = item->filesize;
+    stat->flags = 0;
+
+    if (item->attribute & FAT_FILE_READONLY)
+        stat->flags |= FILE_STAT_READ_ONLY;
+
+    return ALL_OK;
+} 
+
+int fat16_close(void* private)
+{
+    fat16_free_file_descriptor((struct fat_file_descriptor*) private);
+    return ALL_OK;
 }

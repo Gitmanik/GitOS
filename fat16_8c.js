@@ -3,7 +3,6 @@ var fat16_8c =
     [ "fat16_close", "fat16_8c.html#ae6ca4776c5a609bfb9c7f1b10f2e7e03", null ],
     [ "fat16_find_item_in_directory", "fat16_8c.html#ab4b57dd172eb16d9d1923ace2567f954", null ],
     [ "fat16_get_directory_entry", "fat16_8c.html#a59ee87cc519524cac3b86c01396e247b", null ],
-    [ "fat16_get_full_relative_filename", "fat16_8c.html#a76f3bc9e9d89090c481a6c05681eaedd", null ],
     [ "fat16_init", "fat16_8c.html#ae1e04408cafa8434e5b7bef3d4843d18", null ],
     [ "fat16_load_fat_directory", "fat16_8c.html#a8782ee92f41de5d1d61d188fe4bb6b24", null ],
     [ "fat16_new_fat_item_for_directory_item", "fat16_8c.html#af5a17aa6b8e3bd75fd33eaffa11c6796", null ],

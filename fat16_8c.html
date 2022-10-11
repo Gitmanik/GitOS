@@ -98,8 +98,6 @@ $(document).ready(function(){initNavTree('fat16_8c.html',''); initResizable(); }
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a76f3bc9e9d89090c481a6c05681eaedd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8c.html#a76f3bc9e9d89090c481a6c05681eaedd">fat16_get_full_relative_filename</a> (struct <a class="el" href="structfat__directory__item.html">fat_directory_item</a> *item, char *out, int max_len)</td></tr>
-<tr class="separator:a76f3bc9e9d89090c481a6c05681eaedd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8782ee92f41de5d1d61d188fe4bb6b24"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structfat__directory.html">fat_directory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8c.html#a8782ee92f41de5d1d61d188fe4bb6b24">fat16_load_fat_directory</a> (struct <a class="el" href="structdisk.html">disk</a> *<a class="el" href="structdisk.html">disk</a>, struct <a class="el" href="structfat__directory__item.html">fat_directory_item</a> *item)</td></tr>
 <tr class="separator:a8782ee92f41de5d1d61d188fe4bb6b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5a17aa6b8e3bd75fd33eaffa11c6796"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structfat__item.html">fat_item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8c.html#af5a17aa6b8e3bd75fd33eaffa11c6796">fat16_new_fat_item_for_directory_item</a> (struct <a class="el" href="structdisk.html">disk</a> *<a class="el" href="structdisk.html">disk</a>, struct <a class="el" href="structfat__directory__item.html">fat_directory_item</a> *item)</td></tr>
@@ -179,7 +177,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="structfat__item.html#aa4db22ceecee9d81668b06ee9e49465d">fat_item::directory</a>, <a class="el" href="fat16_8c.html#a76f3bc9e9d89090c481a6c05681eaedd">fat16_get_full_relative_filename()</a>, <a class="el" href="fat16_8c.html#af5a17aa6b8e3bd75fd33eaffa11c6796">fat16_new_fat_item_for_directory_item()</a>, <a class="el" href="string_8c.html#a733f9adc8e09d0dcf0bd083cbcf34a33">istrncmp()</a>, <a class="el" href="structfat__directory.html#a207f93ffca1de04bdb4ad94e6c16d264">fat_directory::item</a>, <a class="el" href="pathparser_8h.html#ab99ded389af74001a6298fc9e44e74e5">MAX_PATH</a>, and <a class="el" href="structfat__directory.html#ac7af894858cf396a219d632f40afdc8d">fat_directory::total</a>.</p>
+<p class="reference">References <a class="el" href="structfat__item.html#aa4db22ceecee9d81668b06ee9e49465d">fat_item::directory</a>, <a class="el" href="pathparser_8h.html#ab99ded389af74001a6298fc9e44e74e5">MAX_PATH</a>, and <a class="el" href="structfat__directory.html#ac7af894858cf396a219d632f40afdc8d">fat_directory::total</a>.</p>
 
 </div>
 </div>
@@ -210,42 +208,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="structfat__item.html#aa4db22ceecee9d81668b06ee9e49465d">fat_item::directory</a>, <a class="el" href="fat16_8c.html#ab4b57dd172eb16d9d1923ace2567f954">fat16_find_item_in_directory()</a>, <a class="el" href="fat16_8h.html#a8af4b417957bae394d8eaad3056dd2a3">FAT_ITEM_TYPE_DIRECTORY</a>, <a class="el" href="structdisk.html#aa4853d13c26ce9af3bbb484e0bee8bf2">disk::fs_private</a>, <a class="el" href="structpath__part.html#ad5d8ed0c4183f4e1bbef6d0250b02c37">path_part::next</a>, <a class="el" href="structpath__part.html#a6aba54109422e4290881c54e5da68026">path_part::part</a>, <a class="el" href="structfat__private.html#a3ac6f1d4c311f029ae711ba2232c0725">fat_private::root_directory</a>, and <a class="el" href="structfat__item.html#a8f518c5a61a32a6ebb8d9a1de98c3b0b">fat_item::type</a>.</p>
-
-</div>
-</div>
-<a id="a76f3bc9e9d89090c481a6c05681eaedd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76f3bc9e9d89090c481a6c05681eaedd">&#9670;&nbsp;</a></span>fat16_get_full_relative_filename()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fat16_get_full_relative_filename </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structfat__directory__item.html">fat_directory_item</a> *&#160;</td>
-          <td class="paramname"><em>item</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>out</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>max_len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>.</p>
 
 </div>
 </div>
@@ -524,12 +486,12 @@ Variables</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="afat16_8c_html_ae6ca4776c5a609bfb9c7f1b10f2e7e03"><div class="ttname"><a href="fat16_8c.html#ae6ca4776c5a609bfb9c7f1b10f2e7e03">fat16_close</a></div><div class="ttdeci">int fat16_close(void *private)</div><div class="ttdef"><b>Definition:</b> fat16.c:566</div></div>
-<div class="ttc" id="afat16_8c_html_a1b0b5b05ddc9a1f349bc10b92b0a71b0"><div class="ttname"><a href="fat16_8c.html#a1b0b5b05ddc9a1f349bc10b92b0a71b0">fat16_seek</a></div><div class="ttdeci">int fat16_seek(void *private_buffer, uint32_t offset, FILE_SEEK_MODE seek_mode)</div><div class="ttdef"><b>Definition:</b> fat16.c:521</div></div>
-<div class="ttc" id="afat16_8c_html_a7585d71c4c4592b36d5a38fc76c00213"><div class="ttname"><a href="fat16_8c.html#a7585d71c4c4592b36d5a38fc76c00213">fat16_open</a></div><div class="ttdeci">void * fat16_open(struct disk *disk, struct path_part *path, FILE_MODE mode)</div><div class="ttdef"><b>Definition:</b> fat16.c:428</div></div>
-<div class="ttc" id="afat16_8c_html_a7cd0b930003f5667057bd2e2e286c6e4"><div class="ttname"><a href="fat16_8c.html#a7cd0b930003f5667057bd2e2e286c6e4">fat16_resolve</a></div><div class="ttdeci">int fat16_resolve(struct disk *disk)</div><div class="ttdef"><b>Definition:</b> fat16.c:455</div></div>
-<div class="ttc" id="afat16_8c_html_a9e75641aa5ecbaa93a68617aef637aaf"><div class="ttname"><a href="fat16_8c.html#a9e75641aa5ecbaa93a68617aef637aaf">fat16_read</a></div><div class="ttdeci">int fat16_read(struct disk *disk, void *descriptor_buffer, uint32_t size, uint32_t nmemb, char *out)</div><div class="ttdef"><b>Definition:</b> fat16.c:505</div></div>
-<div class="ttc" id="afat16_8c_html_a6ceb88744ae452225cdff04e259b54c7"><div class="ttname"><a href="fat16_8c.html#a6ceb88744ae452225cdff04e259b54c7">fat16_stat</a></div><div class="ttdeci">int fat16_stat(void *private, struct file_stat *stat)</div><div class="ttdef"><b>Definition:</b> fat16.c:548</div></div>
+<div class="ttc" id="afat16_8c_html_ae6ca4776c5a609bfb9c7f1b10f2e7e03"><div class="ttname"><a href="fat16_8c.html#ae6ca4776c5a609bfb9c7f1b10f2e7e03">fat16_close</a></div><div class="ttdeci">int fat16_close(void *private)</div><div class="ttdef"><b>Definition:</b> fat16.c:570</div></div>
+<div class="ttc" id="afat16_8c_html_a1b0b5b05ddc9a1f349bc10b92b0a71b0"><div class="ttname"><a href="fat16_8c.html#a1b0b5b05ddc9a1f349bc10b92b0a71b0">fat16_seek</a></div><div class="ttdeci">int fat16_seek(void *private_buffer, uint32_t offset, FILE_SEEK_MODE seek_mode)</div><div class="ttdef"><b>Definition:</b> fat16.c:525</div></div>
+<div class="ttc" id="afat16_8c_html_a7585d71c4c4592b36d5a38fc76c00213"><div class="ttname"><a href="fat16_8c.html#a7585d71c4c4592b36d5a38fc76c00213">fat16_open</a></div><div class="ttdeci">void * fat16_open(struct disk *disk, struct path_part *path, FILE_MODE mode)</div><div class="ttdef"><b>Definition:</b> fat16.c:432</div></div>
+<div class="ttc" id="afat16_8c_html_a7cd0b930003f5667057bd2e2e286c6e4"><div class="ttname"><a href="fat16_8c.html#a7cd0b930003f5667057bd2e2e286c6e4">fat16_resolve</a></div><div class="ttdeci">int fat16_resolve(struct disk *disk)</div><div class="ttdef"><b>Definition:</b> fat16.c:459</div></div>
+<div class="ttc" id="afat16_8c_html_a9e75641aa5ecbaa93a68617aef637aaf"><div class="ttname"><a href="fat16_8c.html#a9e75641aa5ecbaa93a68617aef637aaf">fat16_read</a></div><div class="ttdeci">int fat16_read(struct disk *disk, void *descriptor_buffer, uint32_t size, uint32_t nmemb, char *out)</div><div class="ttdef"><b>Definition:</b> fat16.c:509</div></div>
+<div class="ttc" id="afat16_8c_html_a6ceb88744ae452225cdff04e259b54c7"><div class="ttname"><a href="fat16_8c.html#a6ceb88744ae452225cdff04e259b54c7">fat16_stat</a></div><div class="ttdeci">int fat16_stat(void *private, struct file_stat *stat)</div><div class="ttdef"><b>Definition:</b> fat16.c:552</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -128,7 +128,7 @@ void kernel_main()
     res = paging_set_page(paging_get_directory(kernel_paging_chunk), (void*) 0x1000, (uint32_t) ptr_real | PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
     if (res < 0)
     {
-        kernel_panic("Panic: Could not sect page!");
+        kernel_panic("Could not sect page!");
     }
     char* ptr_virt = (char*) 0x1000;
 
@@ -139,7 +139,7 @@ void kernel_main()
     kprintf("Paging self-test: 0x%p:'%s' 0x%p:'%s'", (uint32_t)ptr_real, ptr_real, (uint32_t) ptr_virt, ptr_virt);
     if (memcmp(ptr_real, ptr_virt, 2) != 0)
     {
-        kernel_panic("\r\nPanic: Paging self-test unsuccessful!");
+        kernel_panic("\r\nPaging self-test unsuccessful!");
     }
     kprintf("OK\r\n");
     kfree(ptr_real);

@@ -164,7 +164,7 @@ void kernel_main()
 
     //Read test file
     kprintf("Opening \"0:/HELLO.TXT\"..");
-    int fd = fopen("0:/HELLO.TXT", "r");
+    int fd = fopen("0:/DIR/FILE.TXT", "r");
     if (!fd)
     {
         kernel_panic("Could not open 0:/HELLO.TXT");
@@ -183,9 +183,12 @@ void kernel_main()
 
         char* file_content = kzalloc(stat->filesize);
 
+        if (stat->filesize > 22)
+        {
         res = fseek(fd, 22, SEEK_SET);
         if (res < 0)
             kernel_panic("fseek error");
+        }
         int res = fread(file_content, stat->filesize, 1, fd);
         if (res < 0)
             kernel_panic("fread error");

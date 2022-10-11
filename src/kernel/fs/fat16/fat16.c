@@ -67,7 +67,6 @@ static int fat16_get_total_items_for_directory(struct disk* disk, int start_sect
         if (diskstreamer_read(fat_private->directory_stream, &item, sizeof(item)) !=ALL_OK)
             return -EIO;
 
-        kprintf("%s, size: %d\r\n", (char*) item.filename, item.filesize);
 
         if (item.filename[0] == 0x00)  
         {
@@ -78,6 +77,7 @@ static int fat16_get_total_items_for_directory(struct disk* disk, int start_sect
         if (item.filename[0] == 0xE5) //Entry free
             continue;
 
+        kprintf("%s, %s, size: %d\r\n", item.attribute & FAT_FILE_SUBDIRECTORY ? "Dir " : "File", (char*) item.filename, item.filesize);
         i++;
     }
 
@@ -365,9 +365,12 @@ struct fat_item* fat16_new_fat_item_for_directory_item(struct disk* disk, struct
         f_item->directory = fat16_load_fat_directory(disk, item);
         f_item->type = FAT_ITEM_TYPE_DIRECTORY;
     }
+    else
+    {
+        f_item->type = FAT_ITEM_TYPE_FILE;
+        f_item->item = fat16_clone_directory_item(item, sizeof(struct fat_directory_item));
+    }
 
-    f_item->type = FAT_ITEM_TYPE_FILE;
-    f_item->item = fat16_clone_directory_item(item, sizeof(struct fat_directory_item));
     return f_item;
 }
 
@@ -401,7 +404,7 @@ struct fat_item* fat16_get_directory_entry(struct disk* disk, struct path_part* 
     current_item = root_item;
     while (next_part != 0)
     {
-        if (current_item-> type != FAT_ITEM_TYPE_DIRECTORY)
+        if (current_item->type != FAT_ITEM_TYPE_DIRECTORY)
         {
             current_item = 0;
             break;

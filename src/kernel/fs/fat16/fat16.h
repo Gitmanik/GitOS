@@ -23,6 +23,7 @@ typedef unsigned int FAT_ITEM_TYPE;
 #define FAT_FILE_ARCHVED      0x20
 #define FAT_FILE_DEVICE       0x40
 #define FAT_FILE_RESERVED     0x80
+#define FAT_FILE_LONGNAME     (FAT_FILE_READONLY | FAT_FILE_HIDDEN | FAT_FILE_SYSTEM | FAT_FILE_VOLUME_LABEL) 
 
 struct fat16_header_primary
 {

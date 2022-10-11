@@ -16,6 +16,7 @@ var fat16_8h =
     [ "FAT_FILE_ARCHVED", "fat16_8h.html#ae1f0c2f1ee928ba117874e3fac6d9846", null ],
     [ "FAT_FILE_DEVICE", "fat16_8h.html#a586642385ed1ff54e0cbfba8bb1465f4", null ],
     [ "FAT_FILE_HIDDEN", "fat16_8h.html#aac142686ae2d7734065185787e01298a", null ],
+    [ "FAT_FILE_LONGNAME", "fat16_8h.html#a58266bb91f9f52ac540fbd67e9fcb1d7", null ],
     [ "FAT_FILE_READONLY", "fat16_8h.html#a1dc3c912daef934481164d4b8691bef4", null ],
     [ "FAT_FILE_RESERVED", "fat16_8h.html#a70f581bf4988cce4e83f02e9f047f9d6", null ],
     [ "FAT_FILE_SUBDIRECTORY", "fat16_8h.html#a9fa69b72c9876339d940d7c5b156589e", null ],

@@ -124,12 +124,12 @@ Typedefs</h2></td></tr>
 <tr class="separator:a83452b48fc3d8fdbc81f52de7217fa68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28336e6c2f5eea087e30e2177a7ea5a0"><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a28336e6c2f5eea087e30e2177a7ea5a0">FILE_STAT_FLAGS</a></td></tr>
 <tr class="separator:a28336e6c2f5eea087e30e2177a7ea5a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9896418ee48134e021a1c69bc7a55e91"><td class="memItemLeft" align="right" valign="top">typedef void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a9896418ee48134e021a1c69bc7a55e91">FS_OPEN_FUNCTION</a>) (struct <a class="el" href="structdisk.html">disk</a> *<a class="el" href="structdisk.html">disk</a>, struct <a class="el" href="structpath__part.html">path_part</a> *path, <a class="el" href="file_8h.html#a83452b48fc3d8fdbc81f52de7217fa68">FILE_MODE</a> mode)</td></tr>
-<tr class="separator:a9896418ee48134e021a1c69bc7a55e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50f0854d03faf58b1ea878104897064b"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a50f0854d03faf58b1ea878104897064b">FS_READ_FUNCTION</a>) (struct <a class="el" href="structdisk.html">disk</a> *<a class="el" href="structdisk.html">disk</a>, void *descriptor, uint32_t size, uint32_t nmemb, char *out)</td></tr>
-<tr class="separator:a50f0854d03faf58b1ea878104897064b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08dac86aa376c5e0b39e9b495222ca5b"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a08dac86aa376c5e0b39e9b495222ca5b">FS_RESOLVE_FUNCTION</a>) (struct <a class="el" href="structdisk.html">disk</a> *<a class="el" href="structdisk.html">disk</a>)</td></tr>
 <tr class="separator:a08dac86aa376c5e0b39e9b495222ca5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53232da3f6880dab0e93af658e0d6fc3"><td class="memItemLeft" align="right" valign="top">typedef void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a53232da3f6880dab0e93af658e0d6fc3">FS_OPEN_FUNCTION</a>) (void *private, struct <a class="el" href="structpath__part.html">path_part</a> *path, <a class="el" href="file_8h.html#a83452b48fc3d8fdbc81f52de7217fa68">FILE_MODE</a> mode)</td></tr>
+<tr class="separator:a53232da3f6880dab0e93af658e0d6fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabb0ac3c9daa03550b7fec98228b4f75"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#aabb0ac3c9daa03550b7fec98228b4f75">FS_READ_FUNCTION</a>) (void *private, void *descriptor, uint32_t size, uint32_t nmemb, char *out)</td></tr>
+<tr class="separator:aabb0ac3c9daa03550b7fec98228b4f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a316e448536e6d1f11f4c086ec0611afb"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a316e448536e6d1f11f4c086ec0611afb">FS_SEEK_FUNCTION</a>) (void *private, uint32_t offset, <a class="el" href="file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a> seek_mode)</td></tr>
 <tr class="separator:a316e448536e6d1f11f4c086ec0611afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee987ceca1f650c2887ee57f40679f30"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#aee987ceca1f650c2887ee57f40679f30">FS_STAT_FUNCTION</a>) (void *private, struct <a class="el" href="structfile__stat.html">file_stat</a> *stat)</td></tr>
@@ -166,14 +166,19 @@ Functions</h2></td></tr>
 <tr class="memdesc:a38c40b249ade55449e2ef4356fdb2aa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves filesystem for given disk.  <a href="file_8h.html#a38c40b249ade55449e2ef4356fdb2aa9">More...</a><br /></td></tr>
 <tr class="separator:a38c40b249ade55449e2ef4356fdb2aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa01c104dbdab4c93c40a96f0c705a3e1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#aa01c104dbdab4c93c40a96f0c705a3e1">fopen</a> (const char *<a class="el" href="fat16_8h.html#a36126364ff9f56a16488e5c2b8d1206e">filename</a>, const char *mode)</td></tr>
+<tr class="memdesc:aa01c104dbdab4c93c40a96f0c705a3e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens file.  <a href="file_8h.html#aa01c104dbdab4c93c40a96f0c705a3e1">More...</a><br /></td></tr>
 <tr class="separator:aa01c104dbdab4c93c40a96f0c705a3e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adee556231b2610f1807f3dd2f2dd0f6a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#adee556231b2610f1807f3dd2f2dd0f6a">fread</a> (void *ptr, uint32_t size, uint32_t nmemb, int fd)</td></tr>
+<tr class="memdesc:adee556231b2610f1807f3dd2f2dd0f6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads from file.  <a href="file_8h.html#adee556231b2610f1807f3dd2f2dd0f6a">More...</a><br /></td></tr>
 <tr class="separator:adee556231b2610f1807f3dd2f2dd0f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4afef177a56ef89821691c7c4df374c3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a4afef177a56ef89821691c7c4df374c3">fseek</a> (int fd, int offset, <a class="el" href="file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a> whence)</td></tr>
+<tr class="memdesc:a4afef177a56ef89821691c7c4df374c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seeks into file.  <a href="file_8h.html#a4afef177a56ef89821691c7c4df374c3">More...</a><br /></td></tr>
 <tr class="separator:a4afef177a56ef89821691c7c4df374c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ed36033dca44a4c90f733ed5ef33500"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a0ed36033dca44a4c90f733ed5ef33500">fstat</a> (int fd, struct <a class="el" href="structfile__stat.html">file_stat</a> *stat)</td></tr>
+<tr class="memdesc:a0ed36033dca44a4c90f733ed5ef33500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns file status.  <a href="file_8h.html#a0ed36033dca44a4c90f733ed5ef33500">More...</a><br /></td></tr>
 <tr class="separator:a0ed36033dca44a4c90f733ed5ef33500"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a575cfdaca3a77c3f910df16d56d7240c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a575cfdaca3a77c3f910df16d56d7240c">fclose</a> (int fd)</td></tr>
+<tr class="memdesc:a575cfdaca3a77c3f910df16d56d7240c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes file descriptor.  <a href="file_8h.html#a575cfdaca3a77c3f910df16d56d7240c">More...</a><br /></td></tr>
 <tr class="separator:a575cfdaca3a77c3f910df16d56d7240c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -276,28 +281,28 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9896418ee48134e021a1c69bc7a55e91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9896418ee48134e021a1c69bc7a55e91">&#9670;&nbsp;</a></span>FS_OPEN_FUNCTION</h2>
+<a id="a53232da3f6880dab0e93af658e0d6fc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53232da3f6880dab0e93af658e0d6fc3">&#9670;&nbsp;</a></span>FS_OPEN_FUNCTION</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void*(* FS_OPEN_FUNCTION) (struct <a class="el" href="structdisk.html">disk</a> *<a class="el" href="structdisk.html">disk</a>, struct <a class="el" href="structpath__part.html">path_part</a> *path, <a class="el" href="file_8h.html#a83452b48fc3d8fdbc81f52de7217fa68">FILE_MODE</a> mode)</td>
+          <td class="memname">typedef void*(* FS_OPEN_FUNCTION) (void *private, struct <a class="el" href="structpath__part.html">path_part</a> *path, <a class="el" href="file_8h.html#a83452b48fc3d8fdbc81f52de7217fa68">FILE_MODE</a> mode)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a50f0854d03faf58b1ea878104897064b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50f0854d03faf58b1ea878104897064b">&#9670;&nbsp;</a></span>FS_READ_FUNCTION</h2>
+<a id="aabb0ac3c9daa03550b7fec98228b4f75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabb0ac3c9daa03550b7fec98228b4f75">&#9670;&nbsp;</a></span>FS_READ_FUNCTION</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int(* FS_READ_FUNCTION) (struct <a class="el" href="structdisk.html">disk</a> *<a class="el" href="structdisk.html">disk</a>, void *descriptor, uint32_t size, uint32_t nmemb, char *out)</td>
+          <td class="memname">typedef int(* FS_READ_FUNCTION) (void *private, void *descriptor, uint32_t size, uint32_t nmemb, char *out)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -420,6 +425,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Closes file descriptor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fd</td><td>File descriptor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Status </dd></dl>
+
 </div>
 </div>
 <a id="aa01c104dbdab4c93c40a96f0c705a3e1"></a>
@@ -438,7 +452,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>mode</em>&#160;</td>
+          <td class="paramname"><em>str_mode</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -448,7 +462,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="disk_8c.html#a10a9768a9f549ad766ce7e19b3179944">disk_get()</a>, <a class="el" href="structpath__root.html#a44057b89a20883587ec7bdc59cce57d2">path_root::drive_no</a>, <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>, <a class="el" href="status_8h.html#a70979f50f9c83e5aebab3d6a1bd4cf35">EIO</a>, <a class="el" href="file_8c.html#aeed1b6c73f47f958a06fe3a6dde49fe8">file_get_mode_by_string()</a>, <a class="el" href="file_8h.html#abc6126af1d45847bc59afa0aa3216b04a76d7563fa72e13aebbb9b43e25ce93d9">FILE_MODE_INVALID</a>, <a class="el" href="fat16_8h.html#a36126364ff9f56a16488e5c2b8d1206e">filename</a>, <a class="el" href="structdisk.html#a4bce4c67c8c2fc4f8e3c0182f4afa586">disk::filesystem</a>, <a class="el" href="structpath__root.html#ac5622a8973d91afac63f4c3e5441af37">path_root::first</a>, <a class="el" href="structfilesystem.html#ad0a025f59368517e7afd05a4ac2152c7">filesystem::open</a>, and <a class="el" href="pathparser_8c.html#a3ed8d97fc16b74692268a36de686b7c4">pathparser_parse()</a>.</p>
+<p>Opens file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>File to open </td></tr>
+    <tr><td class="paramname">str_mode</td><td>Open mode </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Status </dd></dl>
+
+<p class="reference">References <a class="el" href="disk_8c.html#a10a9768a9f549ad766ce7e19b3179944">disk_get()</a>, <a class="el" href="structpath__root.html#a44057b89a20883587ec7bdc59cce57d2">path_root::drive_no</a>, <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>, <a class="el" href="status_8h.html#a70979f50f9c83e5aebab3d6a1bd4cf35">EIO</a>, <a class="el" href="fat16_8h.html#a36126364ff9f56a16488e5c2b8d1206e">filename</a>, <a class="el" href="structdisk.html#a4bce4c67c8c2fc4f8e3c0182f4afa586">disk::filesystem</a>, <a class="el" href="structpath__root.html#ac5622a8973d91afac63f4c3e5441af37">path_root::first</a>, and <a class="el" href="pathparser_8c.html#a3ed8d97fc16b74692268a36de686b7c4">pathparser_parse()</a>.</p>
 
 </div>
 </div>
@@ -489,6 +513,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Reads from file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ptr</td><td>Output buffer </td></tr>
+    <tr><td class="paramname">size</td><td>Size in bytes of block </td></tr>
+    <tr><td class="paramname">nmemb</td><td>Number of blocks to read </td></tr>
+    <tr><td class="paramname">fd</td><td>File descriptor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Status </dd></dl>
 
 <p class="reference">References <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>.</p>
 
@@ -604,6 +640,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Seeks into file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fd</td><td>File descriptor </td></tr>
+    <tr><td class="paramname">offset</td><td>Seek offset </td></tr>
+    <tr><td class="paramname">whence</td><td>File seek mode (SEEK_SET for absolute, SEEK_CUR for relative) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Status </dd></dl>
+
 </div>
 </div>
 <a id="a0ed36033dca44a4c90f733ed5ef33500"></a>
@@ -631,6 +678,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns file status. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fd</td><td>File descriptor </td></tr>
+    <tr><td class="paramname">stat</td><td>Output file status struct </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Status </dd></dl>
 
 </div>
 </div>

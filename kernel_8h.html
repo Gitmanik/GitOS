@@ -96,6 +96,8 @@ $(document).ready(function(){initNavTree('kernel_8h.html',''); initResizable(); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:ac80a3592e72fd96b772ee47a7d8e0d0a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8h.html#ac80a3592e72fd96b772ee47a7d8e0d0a">DEBUG_MODE</a></td></tr>
+<tr class="separator:ac80a3592e72fd96b772ee47a7d8e0d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef9e7d5ae531e4004885f5a5cc002143"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8h.html#aef9e7d5ae531e4004885f5a5cc002143">BochsBreak</a>()&#160;&#160;&#160;<a class="el" href="io_8h.html#a3105e202829cfca8b5757df9351f96e1">outw</a>(0x8A00,0x8A00); <a class="el" href="io_8h.html#a3105e202829cfca8b5757df9351f96e1">outw</a>(0x8A00,0x08AE0);</td></tr>
 <tr class="separator:aef9e7d5ae531e4004885f5a5cc002143"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8e98b2d78ed2a7ff3e2af66009fbe27"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8h.html#ab8e98b2d78ed2a7ff3e2af66009fbe27">kdebug</a>(fmt, ...)&#160;&#160;&#160;<a class="el" href="kernel_8h.html#ac9d768b4772cc87fc88afbbbd805f96a">kprintf</a>(&quot;%s:%d: &quot;, __FILE__, __LINE__); <a class="el" href="kernel_8h.html#ac9d768b4772cc87fc88afbbbd805f96a">kprintf</a>(fmt, __VA_ARGS__);</td></tr>
@@ -127,6 +129,20 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td>&#160;&#160;&#160;<a class="el" href="io_8h.html#a3105e202829cfca8b5757df9351f96e1">outw</a>(0x8A00,0x8A00); <a class="el" href="io_8h.html#a3105e202829cfca8b5757df9351f96e1">outw</a>(0x8A00,0x08AE0);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac80a3592e72fd96b772ee47a7d8e0d0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac80a3592e72fd96b772ee47a7d8e0d0a">&#9670;&nbsp;</a></span>DEBUG_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEBUG_MODE</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -235,7 +251,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">References <a class="el" href="serial_8h.html#a00dbb3ab1c59e14699be9393693e2248">COM1</a>, <a class="el" href="kernel_8c.html#aa0feb8fe21f2712340bcfe8777e9860b">kernel_halt()</a>, <a class="el" href="string_8c.html#a8b9caf068b045bb5cb5c38f54cf82367">ksprintf()</a>, <a class="el" href="text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a03e13fc6dc3ba439104021a816e6c55d">LIGHT_RED</a>, <a class="el" href="serial_8c.html#a4c091f828571492ebd73ebf301658a9c">ser_PrintString()</a>, and <a class="el" href="text__mode_8c.html#ac2f15634d7efa8beb886be55fde8f1eb">tm_PrintStringColor()</a>.</p>
+<p class="reference">References <a class="el" href="serial_8h.html#a00dbb3ab1c59e14699be9393693e2248">COM1</a>, <a class="el" href="kernel_8c.html#aa0feb8fe21f2712340bcfe8777e9860b">kernel_halt()</a>, <a class="el" href="string_8c.html#ac193243152e2c541c49fbe5548d7d65c">kvsprintf()</a>, <a class="el" href="text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a03e13fc6dc3ba439104021a816e6c55d">LIGHT_RED</a>, <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>, <a class="el" href="serial_8c.html#a4c091f828571492ebd73ebf301658a9c">ser_PrintString()</a>, and <a class="el" href="text__mode_8c.html#ac2f15634d7efa8beb886be55fde8f1eb">tm_PrintStringColor()</a>.</p>
 
 </div>
 </div>

@@ -105,14 +105,18 @@ Functions</h2></td></tr>
 <tr class="memdesc:a44060611134f89c400f1a05962f23350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses string.  <a href="string_8c.html#a44060611134f89c400f1a05962f23350">More...</a><br /></td></tr>
 <tr class="separator:a44060611134f89c400f1a05962f23350"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a82515b5d377be04817715c5465b647"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a7a82515b5d377be04817715c5465b647">strcpy</a> (char *dest, const char *src)</td></tr>
+<tr class="memdesc:a7a82515b5d377be04817715c5465b647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies string.  <a href="string_8c.html#a7a82515b5d377be04817715c5465b647">More...</a><br /></td></tr>
 <tr class="separator:a7a82515b5d377be04817715c5465b647"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a444d2c3bbff8fb8a410d51a22b6339d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a444d2c3bbff8fb8a410d51a22b6339d8">strncmp</a> (const char *str1, const char *str2, int n)</td></tr>
+<tr class="memdesc:a444d2c3bbff8fb8a410d51a22b6339d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two strings with maximum length.  <a href="string_8c.html#a444d2c3bbff8fb8a410d51a22b6339d8">More...</a><br /></td></tr>
 <tr class="separator:a444d2c3bbff8fb8a410d51a22b6339d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a207391fc2c5fa7786d5e0b9ef8ba5e80"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a207391fc2c5fa7786d5e0b9ef8ba5e80">tolower</a> (char c)</td></tr>
+<tr class="memdesc:a207391fc2c5fa7786d5e0b9ef8ba5e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts ASCII letter to lowercase.  <a href="string_8c.html#a207391fc2c5fa7786d5e0b9ef8ba5e80">More...</a><br /></td></tr>
 <tr class="separator:a207391fc2c5fa7786d5e0b9ef8ba5e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a733f9adc8e09d0dcf0bd083cbcf34a33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a733f9adc8e09d0dcf0bd083cbcf34a33">istrncmp</a> (const char *str1, const char *str2, int n)</td></tr>
 <tr class="separator:a733f9adc8e09d0dcf0bd083cbcf34a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50ba706f06bf4485284b720a04c369d1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a50ba706f06bf4485284b720a04c369d1">strnlen_terminator</a> (const char *str, int max, char terminator)</td></tr>
+<tr class="memdesc:a50ba706f06bf4485284b720a04c369d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates string length with custom terminator.  <a href="string_8c.html#a50ba706f06bf4485284b720a04c369d1">More...</a><br /></td></tr>
 <tr class="separator:a50ba706f06bf4485284b720a04c369d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ecda6e9a4ad5c1d1181bf064db143e9"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a7ecda6e9a4ad5c1d1181bf064db143e9">itoa</a> (long num, char *str, int base)</td></tr>
 <tr class="memdesc:a7ecda6e9a4ad5c1d1181bf064db143e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts number to string.  <a href="string_8c.html#a7ecda6e9a4ad5c1d1181bf064db143e9">More...</a><br /></td></tr>
@@ -361,6 +365,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Copies string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dest</td><td>Destination buffer </td></tr>
+    <tr><td class="paramname">src</td><td>Input buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char* Pointer to destination buffer </dd></dl>
+
 </div>
 </div>
 <a id="a008e171a518fe0e0352f31b245e03875"></a>
@@ -421,6 +435,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Compares two strings with maximum length. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str1</td><td>String </td></tr>
+    <tr><td class="paramname">str2</td><td>String </td></tr>
+    <tr><td class="paramname">n</td><td>Max length </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 -&gt; str1==str2, &lt;0 -&gt; str1&lt;str2, &gt;0 -&gt;str1&gt;str2 </dd></dl>
 
 </div>
 </div>
@@ -493,6 +518,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Calculates string length with custom terminator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String to measure length </td></tr>
+    <tr><td class="paramname">max</td><td>Max length of string </td></tr>
+    <tr><td class="paramname">terminator</td><td>Custom terminator </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Length </dd></dl>
 
 </div>
 </div>
@@ -567,6 +603,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Converts ASCII letter to lowercase. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Input letter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char Lowercase letter </dd></dl>
 
 </div>
 </div>

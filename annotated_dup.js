@@ -5,7 +5,7 @@ var annotated_dup =
     [ "fat16_header_extended", "structfat16__header__extended.html", "structfat16__header__extended" ],
     [ "fat16_header_primary", "structfat16__header__primary.html", "structfat16__header__primary" ],
     [ "fat_directory", "structfat__directory.html", "structfat__directory" ],
-    [ "fat_directory_item", "structfat__directory__item.html", "structfat__directory__item" ],
+    [ "fat_file", "structfat__file.html", "structfat__file" ],
     [ "fat_file_descriptor", "structfat__file__descriptor.html", "structfat__file__descriptor" ],
     [ "fat_header", "structfat__header.html", "structfat__header" ],
     [ "fat_item", "structfat__item.html", "structfat__item" ],

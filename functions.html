@@ -86,7 +86,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_a"></a>- a -</h3><ul>
 <li>attribute
-: <a class="el" href="structfat__directory__item.html#ae99e080fe352a99a12cf5b9b260ef734">fat_directory_item</a>
+: <a class="el" href="structfat__file.html#ae99e080fe352a99a12cf5b9b260ef734">fat_file</a>
 </li>
 </ul>
 
@@ -106,13 +106,13 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="structfat__private.html#ad79e9ed585aa8e4ed9f5b2abb8302dd3">fat_private</a>
 </li>
 <li>creation_date
-: <a class="el" href="structfat__directory__item.html#af720492f0576616c43ffc1324f8d4592">fat_directory_item</a>
+: <a class="el" href="structfat__file.html#af720492f0576616c43ffc1324f8d4592">fat_file</a>
 </li>
 <li>creation_time
-: <a class="el" href="structfat__directory__item.html#a95650faad49780e62ace0e0655e24632">fat_directory_item</a>
+: <a class="el" href="structfat__file.html#a95650faad49780e62ace0e0655e24632">fat_file</a>
 </li>
 <li>creation_time_tenths_of_a_sec
-: <a class="el" href="structfat__directory__item.html#ab8ef9359fbb1d818500d1145d1abebca">fat_directory_item</a>
+: <a class="el" href="structfat__file.html#ab8ef9359fbb1d818500d1145d1abebca">fat_file</a>
 </li>
 </ul>
 
@@ -129,6 +129,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>disk
 : <a class="el" href="structdisk__stream.html#abdbae93c1fd15f90751a02563d87b8f7">disk_stream</a>
+, <a class="el" href="structfat__private.html#abdbae93c1fd15f90751a02563d87b8f7">fat_private</a>
 , <a class="el" href="structfile__descriptor.html#abdbae93c1fd15f90751a02563d87b8f7">file_descriptor</a>
 </li>
 <li>disk_type
@@ -151,7 +152,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="structheap__table.html#a226442f2a9ac2c4badcf07cb0eec041a">heap_table</a>
 </li>
 <li>ext
-: <a class="el" href="structfat__directory__item.html#a8084a9722dcfd93be209f51828b9e3ea">fat_directory_item</a>
+: <a class="el" href="structfat__file.html#a8084a9722dcfd93be209f51828b9e3ea">fat_file</a>
 </li>
 <li>extended
 : <a class="el" href="unionfat__header_1_1fat__header__extended.html#a219c77a5a9b9c6a48bb5e8dd5d9cd161">fat_header::fat_header_extended</a>
@@ -166,11 +167,15 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>fat_read_stream
 : <a class="el" href="structfat__private.html#ae1295383f350da92c487db4e9504fb58">fat_private</a>
 </li>
+<li>file
+: <a class="el" href="structfat__file__descriptor.html#a07b70464e2367737c6d580bdd45cdb88">fat_file_descriptor</a>
+, <a class="el" href="structfat__item.html#a1930004bd9b7408b642997a7909ff5e1">fat_item</a>
+</li>
 <li>filename
-: <a class="el" href="structfat__directory__item.html#a36126364ff9f56a16488e5c2b8d1206e">fat_directory_item</a>
+: <a class="el" href="structfat__file.html#a36126364ff9f56a16488e5c2b8d1206e">fat_file</a>
 </li>
 <li>filesize
-: <a class="el" href="structfat__directory__item.html#a0532db3d21cdd9e862560340b97d8e05">fat_directory_item</a>
+: <a class="el" href="structfat__file.html#a0532db3d21cdd9e862560340b97d8e05">fat_file</a>
 , <a class="el" href="structfile__stat.html#a0532db3d21cdd9e862560340b97d8e05">file_stat</a>
 </li>
 <li>filesystem
@@ -197,7 +202,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="structfat16__header__primary.html#ad4f0ed516a7d627aa96fd773f27a03a7">fat16_header_primary</a>
 </li>
 <li>high_16bits_first_cluster
-: <a class="el" href="structfat__directory__item.html#a2849a9d32db60871eed12a088d7857fa">fat_directory_item</a>
+: <a class="el" href="structfat__file.html#a2849a9d32db60871eed12a088d7857fa">fat_file</a>
 </li>
 </ul>
 
@@ -210,9 +215,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="structfile__descriptor.html#a750b5d744c39a06bfb13e6eb010e35d0">file_descriptor</a>
 </li>
 <li>item
-: <a class="el" href="structfat__directory.html#a207f93ffca1de04bdb4ad94e6c16d264">fat_directory</a>
-, <a class="el" href="structfat__file__descriptor.html#a8fd200b64c5abf7b8c8f21db64aa53ac">fat_file_descriptor</a>
-, <a class="el" href="structfat__item.html#a207f93ffca1de04bdb4ad94e6c16d264">fat_item</a>
+: <a class="el" href="structfat__directory.html#a4eea561a2e67f0911c1676eae55f5c63">fat_directory</a>
 </li>
 </ul>
 
@@ -226,16 +229,16 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_l"></a>- l -</h3><ul>
 <li>last_access
-: <a class="el" href="structfat__directory__item.html#a45509a978803268a0b3073ce042d1a3b">fat_directory_item</a>
+: <a class="el" href="structfat__file.html#a45509a978803268a0b3073ce042d1a3b">fat_file</a>
 </li>
 <li>last_mod_date
-: <a class="el" href="structfat__directory__item.html#afaf64f492b09fc487b1ed71d600576cd">fat_directory_item</a>
+: <a class="el" href="structfat__file.html#afaf64f492b09fc487b1ed71d600576cd">fat_file</a>
 </li>
 <li>last_mod_time
-: <a class="el" href="structfat__directory__item.html#a3aad4501b37fe714284af7b4daa271cb">fat_directory_item</a>
+: <a class="el" href="structfat__file.html#a3aad4501b37fe714284af7b4daa271cb">fat_file</a>
 </li>
 <li>low_16bits_first_cluster
-: <a class="el" href="structfat__directory__item.html#a2b501243ffd6868f87a44b5a3aeaad44">fat_directory_item</a>
+: <a class="el" href="structfat__file.html#a2b501243ffd6868f87a44b5a3aeaad44">fat_file</a>
 </li>
 </ul>
 
@@ -295,7 +298,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="structfilesystem.html#af613853ed5a75afef5a37b7a16520443">filesystem</a>
 </li>
 <li>reserved
-: <a class="el" href="structfat__directory__item.html#acb7bc06bed6f6408d719334fc41698c7">fat_directory_item</a>
+: <a class="el" href="structfat__file.html#acb7bc06bed6f6408d719334fc41698c7">fat_file</a>
 </li>
 <li>reserved_sectors
 : <a class="el" href="structfat16__header__primary.html#ab9d9cece402bcfc967b895cd556985ef">fat16_header_primary</a>

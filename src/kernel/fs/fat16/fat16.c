@@ -36,18 +36,33 @@ static uint32_t fat16_get_first_fat_sector(struct fat_private* private)
     return private->header.primary.reserved_sectors;
 }
 
-static void fat16_to_proper_string(char** out, const char* in)
+static void fat16_to_proper_string(char** out, const char* in, int max_len)
 {
-    while (*in != 0x00 && *in != 0x20)
+    int c = 0;
+    while (*in != 0x00 && *in != 0x20 && c < max_len)
     {
         **out = *in;
         *out +=1;
-        in++;
+        in +=1;
+        c++;
     }
 
     if (*in == 0x20) // If is FAT filename terminator replace with null terminator
     {
         **out = 0x00;
+    }
+}
+
+static void fat16_get_full_relative_filename(struct fat_directory_item* item, char* out, int max_len)
+{
+    memset(out, 0x00, max_len);
+    char* out_tmp = out;
+    fat16_to_proper_string(&out_tmp, (const char*) item->filename, 8);
+    if (item->ext[0] != 0x00 && item->ext[0] != 0x20)
+    {
+        *out_tmp = '.';
+        out_tmp++;
+        fat16_to_proper_string(&out_tmp, (const char*) item->ext, 3);
     }
 }
 
@@ -77,7 +92,9 @@ static int fat16_get_total_items_for_directory(struct disk* disk, int start_sect
         if (item.filename[0] == 0xE5) //Entry free
             continue;
 
-        kprintf("%s, %s, size: %d\r\n", item.attribute & FAT_FILE_SUBDIRECTORY ? "Dir " : "File", (char*) item.filename, item.filesize);
+        char filename_buf[11];
+        fat16_get_full_relative_filename(&item, filename_buf, 11);
+        kprintf("%s: %s, size: %d\r\n", item.attribute & FAT_FILE_SUBDIRECTORY ? "Dir " : "File", filename_buf, item.filesize);
         i++;
     }
 
@@ -290,19 +307,6 @@ static int fat16_read_internal(struct disk* disk, int starting_cluster, int offs
     struct fat_private* fs_private = disk->fs_private;
     struct disk_stream* stream = fs_private->cluster_read_stream;
     return fat16_read_internal_from_stream(disk, stream, starting_cluster, offset, total, out);
-}
-
-void fat16_get_full_relative_filename(struct fat_directory_item* item, char* out, int max_len)
-{
-    memset(out, 0x00, max_len);
-    char* out_tmp = out;
-    fat16_to_proper_string(&out_tmp, (const char*) item->filename);
-    if (item->ext[0] != 0x00 && item->ext[0] != 0x20)
-    {
-        *out_tmp = '.';
-        out_tmp++;
-        fat16_to_proper_string(&out_tmp, (const char*) item->ext);
-    }
 }
 
 struct fat_directory* fat16_load_fat_directory(struct disk* disk, struct fat_directory_item* item)

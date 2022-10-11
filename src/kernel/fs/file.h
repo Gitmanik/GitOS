@@ -46,9 +46,9 @@ struct file_stat
     uint32_t filesize;
 };
 
-typedef void* (*FS_OPEN_FUNCTION)(struct disk* disk, struct path_part* path, FILE_MODE mode);
-typedef int (*FS_READ_FUNCTION)(struct disk* disk, void* descriptor, uint32_t size, uint32_t nmemb, char* out);
 typedef int (*FS_RESOLVE_FUNCTION)(struct disk* disk);
+typedef void* (*FS_OPEN_FUNCTION)(void* private, struct path_part* path, FILE_MODE mode);
+typedef int (*FS_READ_FUNCTION)(void* private, void* descriptor, uint32_t size, uint32_t nmemb, char* out);
 typedef int (*FS_SEEK_FUNCTION)(void* private, uint32_t offset, FILE_SEEK_MODE seek_mode);
 typedef int (*FS_STAT_FUNCTION)(void* private, struct file_stat* stat);
 typedef int (*FS_CLOSE_FUNCTION)(void* private);

@@ -165,9 +165,9 @@ void kernel_main()
     //Read test file
     kprintf("Opening \"0:/HELLO.TXT\"..");
     int fd = fopen("0:/DIR/FILE.TXT", "r");
-    if (!fd)
+    if (fd < 1)
     {
-        kernel_panic("Could not open 0:/HELLO.TXT");
+        kernel_panic("Could not open 0:/HELLO.TXT: %d", fd);
     }
     else
     {
@@ -185,9 +185,9 @@ void kernel_main()
 
         if (stat->filesize > 22)
         {
-        res = fseek(fd, 22, SEEK_SET);
-        if (res < 0)
-            kernel_panic("fseek error");
+            res = fseek(fd, 22, SEEK_SET);
+            if (res < 0)
+                kernel_panic("fseek error");
         }
         int res = fread(file_content, stat->filesize, 1, fd);
         if (res < 0)
@@ -199,7 +199,6 @@ void kernel_main()
         fclose(fd);
     }
     //
-
 
     tm_SetColor(LIGHT_PURPLE);
     while (1)
@@ -225,7 +224,8 @@ void kernel_panic(char* fmt, ...)
     va_list args;
 	va_start(args, fmt);
 	char internal_buf[1024];
-    ksprintf(internal_buf, fmt, args);
+    memset(internal_buf, 0, sizeof(internal_buf));
+    kvsprintf(internal_buf, fmt, args);
 
     ser_PrintString(COM1, "Kernel panic!\r\n");
     ser_PrintString(COM1, internal_buf);

@@ -7,7 +7,16 @@
 #include "memory/heap/kheap.h"
 #include "drivers/disk/disk.h"
 
+/**
+ * @brief Array holding all registered filesystems
+ * 
+ */
 struct filesystem* filesystems[MAX_FILESYSTEMS];
+
+/**
+ * @brief Array holding all open file descriptors
+ * 
+ */
 struct file_descriptor* file_descriptors[MAX_FILEDESCRIPTORS];
 
 /**
@@ -23,7 +32,7 @@ static struct filesystem** fs_get_free_filesystem_slot()
             return &filesystems[i];
     }
 
-    return ALL_OK;
+    return 0;
 }
 
 /**
@@ -127,24 +136,39 @@ struct filesystem* fs_resolve(struct disk* disk)
     return 0;
 }
 
-FILE_MODE file_get_mode_by_string(const char* str)
+/**
+ * @brief Resolved string filemode to internal
+ * 
+ * @param str File mode
+ * @return FILE_MODE Internal file mode
+ */
+static FILE_MODE file_get_mode_by_string(const char* str)
 {
-    FILE_MODE mode = FILE_MODE_INVALID;
     if (strncmp(str, "r", 1) == 0)
     {
-        mode = FILE_MODE_READ;
+        return FILE_MODE_READ;
     }
     else if (strncmp(str, "w", 1) == 0)
     {
-        mode = FILE_MODE_WRITE;
+        return FILE_MODE_WRITE;
     }
     else if (strncmp(str, "a", 1) == 0)
     {
-        mode = FILE_MODE_APPEND;
+        return FILE_MODE_APPEND;
     }
-    return mode;
+    else
+    {
+        return FILE_MODE_INVALID;
+    }
 }
 
+/**
+ * @brief Opens file
+ * 
+ * @param filename File to open
+ * @param str_mode Open mode
+ * @return int Status
+ */
 int fopen(const char* filename, const char* str_mode)
 {
     int result = 0;
@@ -167,7 +191,7 @@ int fopen(const char* filename, const char* str_mode)
     if (fmode == FILE_MODE_INVALID)
         return -EINVARG;
 
-    void *descriptor_private_data = disk->filesystem->open(disk, root_path->first, fmode);
+    void *descriptor_private_data = disk->filesystem->open(disk->fs_private, root_path->first, fmode);
 
     if (descriptor_private_data == 0)
         return -EIO;
@@ -183,6 +207,15 @@ int fopen(const char* filename, const char* str_mode)
     return desc->index;
 }
 
+/**
+ * @brief Reads from file
+ * 
+ * @param ptr Output buffer
+ * @param size Size in bytes of block
+ * @param nmemb Number of blocks to read
+ * @param fd File descriptor
+ * @return int Status
+ */
 int fread(void* ptr, uint32_t size, uint32_t nmemb, int fd)
 {
     if (size == 0 || nmemb == 0 || fd < 1)
@@ -190,9 +223,17 @@ int fread(void* ptr, uint32_t size, uint32_t nmemb, int fd)
 
     struct file_descriptor* desc = file_get_descriptor(fd);
 
-    return desc->filesystem->read(desc->disk, desc->private_buffer, size, nmemb, (char*) ptr);
+    return desc->filesystem->read(desc->disk->fs_private, desc->private_buffer, size, nmemb, (char*) ptr);
 }
 
+/**
+ * @brief Seeks into file
+ * 
+ * @param fd File descriptor
+ * @param offset Seek offset
+ * @param whence File seek mode (SEEK_SET for absolute, SEEK_CUR for relative)
+ * @return int Status
+ */
 int fseek(int fd, int offset, FILE_SEEK_MODE whence)
 {
     struct file_descriptor* desc = file_get_descriptor(fd);
@@ -202,6 +243,13 @@ int fseek(int fd, int offset, FILE_SEEK_MODE whence)
     return desc->filesystem->seek(desc->private_buffer, offset, whence);
 }
 
+/**
+ * @brief Returns file status
+ * 
+ * @param fd File descriptor 
+ * @param stat Output file status struct
+ * @return int Status
+ */
 int fstat(int fd, struct file_stat* stat)
 {
     struct file_descriptor* desc = file_get_descriptor(fd);
@@ -211,6 +259,12 @@ int fstat(int fd, struct file_stat* stat)
     return desc->filesystem->stat(desc->private_buffer, stat);
 }
 
+/**
+ * @brief Closes file descriptor
+ * 
+ * @param fd File descriptor
+ * @return int Status
+ */
 int fclose(int fd)
 {
     struct file_descriptor* desc = file_get_descriptor(fd);

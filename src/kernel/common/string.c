@@ -60,6 +60,13 @@ char* strrev(char *str)
     return str;
 }
 
+/**
+ * @brief Copies string
+ * 
+ * @param dest Destination buffer
+ * @param src Input buffer
+ * @return char* Pointer to destination buffer
+ */
 char* strcpy(char* dest, const char* src)
 {
 	char* dest_org = dest;
@@ -73,6 +80,14 @@ char* strcpy(char* dest, const char* src)
 	return dest_org;
 }
 
+/**
+ * @brief Compares two strings with maximum length
+ * 
+ * @param str1 String
+ * @param str2 String
+ * @param n Max length 
+ * @return int 0 -> str1==str2, <0 -> str1<str2, >0 ->str1>str2
+ */
 int strncmp(const char* str1, const char* str2, int n)
 {
     unsigned char u1, u2;
@@ -90,6 +105,12 @@ int strncmp(const char* str1, const char* str2, int n)
     return 0;
 }
 
+/**
+ * @brief Converts ASCII letter to lowercase
+ * 
+ * @param c Input letter
+ * @return char Lowercase letter
+ */
 char tolower(char c)
 {
 	if (c >= 65 && c <= 90)
@@ -114,6 +135,14 @@ int istrncmp(const char* str1, const char* str2, int n)
     return 0;
 }
 
+/**
+ * @brief Calculates string length with custom terminator
+ * 
+ * @param str String to measure length
+ * @param max Max length of string
+ * @param terminator Custom terminator
+ * @return int Length
+ */
 int strnlen_terminator(const char* str, int max, char terminator)
 {
 	int i;
@@ -124,8 +153,6 @@ int strnlen_terminator(const char* str, int max, char terminator)
 	}
 	return i;
 }
-
-
 
 /**
  * @brief Converts number to string

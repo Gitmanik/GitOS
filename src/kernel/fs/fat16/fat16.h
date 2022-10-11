@@ -62,7 +62,7 @@ struct fat_header
     } shared;
 };
 
-struct fat_directory_item
+struct fat_file
 {
     uint8_t filename[8];
     uint8_t ext[3];
@@ -81,7 +81,7 @@ struct fat_directory_item
 
 struct fat_directory
 {
-    struct fat_directory_item* item;
+    struct fat_file* item;
     int total;
     int sector_pos;
     int ending_sector_pos;
@@ -91,7 +91,7 @@ struct fat_item
 {
     union 
     {
-        struct fat_directory_item* item;
+        struct fat_file* file;
         struct fat_directory* directory;
     };
     
@@ -100,7 +100,7 @@ struct fat_item
 
 struct fat_file_descriptor
 {
-    struct fat_item* item;
+    struct fat_item* file;
     uint32_t pos;
 };
 
@@ -116,12 +116,14 @@ struct fat_private
 
     // Used to situations where we stream the directory
     struct disk_stream* directory_stream;
+
+    struct disk* disk;
 };
 
 struct filesystem* fat16_init();
 int fat16_resolve(struct disk* disk);
-void* fat16_open(struct disk* disk, struct path_part* path, FILE_MODE mode);
-int fat16_read(struct disk* disk, void* descriptor_buffer, uint32_t size, uint32_t nmemb, char* out);
-int fat16_seek(void* private_buffer, uint32_t offset, FILE_SEEK_MODE seek_mode);
-int fat16_stat(void* private, struct file_stat* stat);
-int fat16_close(void* private);
+void* fat16_open(void* private, struct path_part* path, FILE_MODE mode);
+int fat16_read(void* private, void* desc, uint32_t size, uint32_t nmemb, char* out);
+int fat16_seek(void* desc, uint32_t offset, FILE_SEEK_MODE seek_mode);
+int fat16_stat(void* desc, struct file_stat* stat);
+int fat16_close(void* desc);

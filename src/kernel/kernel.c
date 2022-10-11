@@ -222,9 +222,14 @@ void kernel_panic(char* fmt, ...)
     va_list args;
 	va_start(args, fmt);
 	char internal_buf[1024];
+    ksprintf(internal_buf, fmt, args);
+
+    ser_PrintString(COM1, "Kernel panic!\r\n");
+    ser_PrintString(COM1, internal_buf);
+
 
     tm_PrintStringColor("Kernel panic!\r\n", LIGHT_RED);
-    tm_PrintStringColor(ksprintf(internal_buf, fmt, args), LIGHT_RED);
+    tm_PrintStringColor(internal_buf, LIGHT_RED);
     kernel_halt();
 }
 

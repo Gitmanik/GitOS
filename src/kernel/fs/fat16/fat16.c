@@ -702,10 +702,18 @@ int fat16_seek(void* desc, uint32_t offset, FILE_SEEK_MODE seek_mode)
             break;
 
         case SEEK_CUR:
+            if (fat_desc->pos + offset > item->filesize)
+                return -EINVARG;
+            if (fat_desc->pos + offset < 0)
+                return -EINVARG;
             fat_desc->pos += offset;
             break;
         case SEEK_END:
-            return -ENOTIMPL; 
+            if (item->filesize - offset < 0)
+                return -EINVARG;
+
+            fat_desc->pos = item->filesize - offset;
+            break; 
     }
     return ALL_OK;
 }

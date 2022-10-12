@@ -12,14 +12,28 @@ typedef unsigned int FILE_SEEK_MODE;
 typedef unsigned int FILE_MODE;
 typedef unsigned int FILE_STAT_FLAGS;
 
-enum
+enum FILE_SEEK_MODES
 {
+    /**
+     * @brief Absolute position from 0
+     * 
+     */
     SEEK_SET,
+
+    /**
+     * @brief Relative position
+     * 
+     */
     SEEK_CUR,
+
+    /**
+     * @brief Absolute position from the end of file
+     * 
+     */
     SEEK_END
 };
 
-enum
+enum FILE_OPEN_MODES
 {
     FILE_MODE_READ,
     FILE_MODE_WRITE,
@@ -27,7 +41,7 @@ enum
     FILE_MODE_INVALID
 };
 
-enum
+enum FILE_STAT_FLAGS
 {
     FILE_STAT_READ_ONLY = 0b00000001
 };
@@ -36,7 +50,7 @@ struct file_descriptor
 {
     int index;
     struct filesystem* filesystem;
-    void* private_buffer;
+    void* private_fs_descriptor;
     struct disk* disk;
 };
 

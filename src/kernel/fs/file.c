@@ -202,7 +202,7 @@ int fopen(const char* filename, const char* str_mode)
         return result;
 
     desc->filesystem = disk->filesystem;
-    desc->private_buffer = descriptor_private_data;
+    desc->private_fs_descriptor = descriptor_private_data;
     desc->disk = disk;
     return desc->index;
 }
@@ -223,7 +223,7 @@ int fread(void* ptr, uint32_t size, uint32_t nmemb, int fd)
 
     struct file_descriptor* desc = file_get_descriptor(fd);
 
-    return desc->filesystem->read(desc->disk->fs_private, desc->private_buffer, size, nmemb, (char*) ptr);
+    return desc->filesystem->read(desc->disk->fs_private, desc->private_fs_descriptor, size, nmemb, (char*) ptr);
 }
 
 /**
@@ -240,7 +240,7 @@ int fseek(int fd, int offset, FILE_SEEK_MODE whence)
     if (!desc)
         return -EIO;
 
-    return desc->filesystem->seek(desc->private_buffer, offset, whence);
+    return desc->filesystem->seek(desc->private_fs_descriptor, offset, whence);
 }
 
 /**
@@ -256,7 +256,7 @@ int fstat(int fd, struct file_stat* stat)
     if (!desc)
         return -EIO;
 
-    return desc->filesystem->stat(desc->private_buffer, stat);
+    return desc->filesystem->stat(desc->private_fs_descriptor, stat);
 }
 
 /**
@@ -271,7 +271,7 @@ int fclose(int fd)
     if (!desc)
         return -EIO;
 
-    int res = desc->filesystem->close(desc->private_buffer);
+    int res = desc->filesystem->close(desc->private_fs_descriptor);
     file_free_descriptor(desc);
     return res;
 }

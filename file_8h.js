@@ -15,14 +15,20 @@ var file_8h =
     [ "FS_RESOLVE_FUNCTION", "file_8h.html#a08dac86aa376c5e0b39e9b495222ca5b", null ],
     [ "FS_SEEK_FUNCTION", "file_8h.html#a316e448536e6d1f11f4c086ec0611afb", null ],
     [ "FS_STAT_FUNCTION", "file_8h.html#aee987ceca1f650c2887ee57f40679f30", null ],
-    [ "SEEK_SET", "file_8h.html#a99fb83031ce9923c84392b4e92f956b5a7f53e3798ec48e79c0897ba5138f9b05", null ],
-    [ "SEEK_CUR", "file_8h.html#a99fb83031ce9923c84392b4e92f956b5af3091144c125782cf17bcd3eb84e454c", null ],
-    [ "SEEK_END", "file_8h.html#a99fb83031ce9923c84392b4e92f956b5a060e45245be703e272d7264bafcfdc63", null ],
-    [ "FILE_MODE_READ", "file_8h.html#abc6126af1d45847bc59afa0aa3216b04a89cf567f3e692c97873d7a795c17feca", null ],
-    [ "FILE_MODE_WRITE", "file_8h.html#abc6126af1d45847bc59afa0aa3216b04a12eb77a5f1206154eb9f5adc219c9d5b", null ],
-    [ "FILE_MODE_APPEND", "file_8h.html#abc6126af1d45847bc59afa0aa3216b04acd98f9299ff5eeeee160dc88c6149129", null ],
-    [ "FILE_MODE_INVALID", "file_8h.html#abc6126af1d45847bc59afa0aa3216b04a76d7563fa72e13aebbb9b43e25ce93d9", null ],
-    [ "FILE_STAT_READ_ONLY", "file_8h.html#adc29c2ff13d900c2f185ee95427fb06ca149a2651f7604176c2bf9bd76b666472", null ],
+    [ "FILE_OPEN_MODES", "file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682", [
+      [ "FILE_MODE_READ", "file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682a89cf567f3e692c97873d7a795c17feca", null ],
+      [ "FILE_MODE_WRITE", "file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682a12eb77a5f1206154eb9f5adc219c9d5b", null ],
+      [ "FILE_MODE_APPEND", "file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682acd98f9299ff5eeeee160dc88c6149129", null ],
+      [ "FILE_MODE_INVALID", "file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682a76d7563fa72e13aebbb9b43e25ce93d9", null ]
+    ] ],
+    [ "FILE_SEEK_MODES", "file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8", [
+      [ "SEEK_SET", "file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8a7f53e3798ec48e79c0897ba5138f9b05", null ],
+      [ "SEEK_CUR", "file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8af3091144c125782cf17bcd3eb84e454c", null ],
+      [ "SEEK_END", "file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8a060e45245be703e272d7264bafcfdc63", null ]
+    ] ],
+    [ "FILE_STAT_FLAGS", "file_8h.html#a9cc4f405828927cd159cf8daf81b8383", [
+      [ "FILE_STAT_READ_ONLY", "file_8h.html#a9cc4f405828927cd159cf8daf81b8383a149a2651f7604176c2bf9bd76b666472", null ]
+    ] ],
     [ "fclose", "file_8h.html#a575cfdaca3a77c3f910df16d56d7240c", null ],
     [ "fopen", "file_8h.html#aa01c104dbdab4c93c40a96f0c705a3e1", null ],
     [ "fread", "file_8h.html#adee556231b2610f1807f3dd2f2dd0f6a", null ],

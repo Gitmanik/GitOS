@@ -1,19 +1,15 @@
- ./configure --enable-smp \
-              --enable-cpu-level=6 \
-              --enable-all-optimizations \
+ #Requires build-essential libncurses-dev X11 server xorg-dev glew-utils
+ #https://bochs.sourceforge.io/doc/docbook/user/compiling.html
+ ./configure  --enable-cpu-level=6 \
               --enable-pci \
               --enable-gdb-stub \
-              --enable-debugger \
-              --enable-disasm \
               --enable-logging \
               --enable-fpu \
-              --enable-3dnow \
               --enable-sb16=dummy \
               --enable-cdrom \
               --enable-x86-debugger \
               --enable-iodebug \
               --disable-docbook \
-              --enable-magic-breakpoint
-              --with-x --with-x11 --with-term
+              --with-x11 \
 make
-make install
+sudo make install

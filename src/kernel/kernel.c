@@ -158,16 +158,17 @@ void kernel_main()
 
     //Initializing FS
     fs_init();
-    fs_insert_filesystem(fat16_init());
+    fs_insert_filesystem(fat16_init_filesystem());
     disk_search_and_init();
     //
 
     //Read test file
-    kprintf("Opening \"0:/HELLO.TXT\"..");
-    int fd = fopen("0:/DIR/FILE.TXT", "r");
+    char* file_to_open = "0:/DIR/FILE.TXT";
+    kprintf("Opening \"%s\"..", file_to_open);
+    int fd = fopen(file_to_open, "r");
     if (fd < 1)
     {
-        kernel_panic("Could not open 0:/HELLO.TXT: %d", fd);
+        kernel_panic("Could not open %s: %d", file_to_open, fd);
     }
     else
     {

@@ -4,7 +4,7 @@ BytesPerSector       dw 0x200 ; 512 bytes per sector
 SectorsPerCluster    db 0x80
 ReservedSectors      dw 200 ; TODO: Shrink it down and move kernel to filesystem
 FATCopies            db 0x02
-RootDirEntries       dw 0x40
+RootDirEntries       dw 512
 NumSectors           dw 0x00
 MediaType            db 0xF8
 SectorsPerFat        dw 0x100

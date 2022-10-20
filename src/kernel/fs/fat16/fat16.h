@@ -120,7 +120,7 @@ struct fat_private
     struct disk* disk;
 };
 
-struct filesystem* fat16_init();
+struct filesystem* fat16_init_filesystem();
 int fat16_resolve(struct disk* disk);
 void* fat16_open(void* private, struct path_part* path, FILE_MODE mode);
 int fat16_read(void* private, void* desc, uint32_t size, uint32_t nmemb, char* out);

@@ -24,7 +24,7 @@ struct filesystem fat16_fs =
  * 
  * @return struct filesystem* 
  */
-struct filesystem* fat16_init()
+struct filesystem* fat16_init_filesystem()
 {
     strcpy(fat16_fs.name, "FAT16");
     return &fat16_fs;
@@ -132,6 +132,7 @@ static int fat16_get_total_items_for_directory(struct fat_private* fs_private, i
     struct fat_file current_item;
 
     int total = 0;
+    kdebug("Getting total items for directory, sector %d, absolute %d\r\n", start_sector, fat16_sector_to_absolute(fs_private, start_sector));
     diskstreamer_seek(fs_private->directory_stream, fat16_sector_to_absolute(fs_private, start_sector));
 
     while (1)
@@ -147,7 +148,7 @@ static int fat16_get_total_items_for_directory(struct fat_private* fs_private, i
 
         char filename_buf[11];
         fat16_get_full_relative_filename(&current_item, filename_buf);
-        kdebug("%s: %s, size: %d\r\n", current_item.attribute & FAT_FILE_SUBDIRECTORY ? "D" : "F", filename_buf, current_item.filesize);
+        kdebug("%d %s: %s, size: %d\r\n", (current_item.attribute & FAT_FILE_LONGNAME) ? 1 : 0, current_item.attribute & FAT_FILE_SUBDIRECTORY ? "D" : "F", filename_buf, current_item.filesize);
         total++;
     }
 
@@ -246,7 +247,7 @@ static void fat16_free_directory(struct fat_directory* directory)
  * 
  * @param item Item
  */
-static void fat16_fat_item_free(struct fat_item* item)
+static void fat16_free_fat_item(struct fat_item* item)
 {
     if (item->type == FAT_ITEM_TYPE_DIRECTORY)
     {
@@ -265,7 +266,7 @@ static void fat16_fat_item_free(struct fat_item* item)
  */
 static void fat16_free_file_descriptor(struct fat_file_descriptor* desc)
 {
-    fat16_fat_item_free(desc->file);
+    fat16_free_fat_item(desc->file);
     kfree(desc);
 }
 
@@ -323,7 +324,7 @@ static int fat16_get_next_fat_entry(struct fat_private* fs_private, int cluster)
  * 
  * @param fs_private Private filesystem data 
  * @param starting_cluster First data cluster
- * @param offset Data offset
+ * @param offset Data offset in bytes
  * @return int Status
  */
 static int fat16_get_nth_cluster_from_fat(struct fat_private* fs_private, int starting_cluster, int offset)
@@ -347,13 +348,13 @@ static int fat16_get_nth_cluster_from_fat(struct fat_private* fs_private, int st
             goto out;
         }
         
-        // Reserve)
+        // Reserved
         if (entry == 0xFF0 || entry == 0xFF6)
         {
             result = -EIO;
             goto out;
         }
-
+ 
         if (entry == 0x00)
         {
             result = -EIO;
@@ -396,6 +397,7 @@ static int fat16_read_cluster(struct fat_private* fs_private, struct disk_stream
     int starting_pos = (starting_sector * fs_private->header.primary.bytes_per_sector) + offset_from_cluster;
     int total_to_read = total > size_of_cluster_bytes ? size_of_cluster_bytes : total;
 
+    kdebug("Reading %d bytes from starting cluster %d, target cluster %d (sector %d), offset from cluster: %d\r\n", total, cluster, cluster_to_use, starting_sector, offset_from_cluster);
     result = diskstreamer_seek(stream, starting_pos);
     if (result != ALL_OK)
     {
@@ -553,7 +555,7 @@ static struct fat_item* fat16_get_directory_entry(struct fat_private* fs_private
             break;
         }
         struct fat_item* tmp_item = fat16_find_item_in_directory(fs_private, current_item->directory, next_part->part); // Go to next directory
-        fat16_fat_item_free(current_item); 
+        fat16_free_fat_item(current_item); 
         current_item = tmp_item;
         next_part = next_part->next;
     }

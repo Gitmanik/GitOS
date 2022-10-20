@@ -27,7 +27,7 @@ var fat16_8h =
     [ "FAT_ITEM_TYPE", "fat16_8h.html#ae896c32c11cfc9675939a4eedd6cf4aa", null ],
     [ "__attribute__", "fat16_8h.html#af3d7fe809ad6507f8df5abc50575b96d", null ],
     [ "fat16_close", "fat16_8h.html#a8ab4ff16773fee77633350716b0651e0", null ],
-    [ "fat16_init", "fat16_8h.html#ae1e04408cafa8434e5b7bef3d4843d18", null ],
+    [ "fat16_init_filesystem", "fat16_8h.html#ac7084cd25f98698980cc6da2beacd9b8", null ],
     [ "fat16_open", "fat16_8h.html#a6b86ee3f3ae4738765843ec95e07353c", null ],
     [ "fat16_read", "fat16_8h.html#a0351b44b17a0616b826963bbad622e98", null ],
     [ "fat16_resolve", "fat16_8h.html#a7cd0b930003f5667057bd2e2e286c6e4", null ],

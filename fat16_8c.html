@@ -98,9 +98,9 @@ $(document).ready(function(){initNavTree('fat16_8c.html',''); initResizable(); }
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae1e04408cafa8434e5b7bef3d4843d18"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structfilesystem.html">filesystem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8c.html#ae1e04408cafa8434e5b7bef3d4843d18">fat16_init</a> ()</td></tr>
-<tr class="memdesc:ae1e04408cafa8434e5b7bef3d4843d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares filesystem struct for generic filesystem driver use.  <a href="fat16_8c.html#ae1e04408cafa8434e5b7bef3d4843d18">More...</a><br /></td></tr>
-<tr class="separator:ae1e04408cafa8434e5b7bef3d4843d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7084cd25f98698980cc6da2beacd9b8"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structfilesystem.html">filesystem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8c.html#ac7084cd25f98698980cc6da2beacd9b8">fat16_init_filesystem</a> ()</td></tr>
+<tr class="memdesc:ac7084cd25f98698980cc6da2beacd9b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares filesystem struct for generic filesystem driver use.  <a href="fat16_8c.html#ac7084cd25f98698980cc6da2beacd9b8">More...</a><br /></td></tr>
+<tr class="separator:ac7084cd25f98698980cc6da2beacd9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cd0b930003f5667057bd2e2e286c6e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8c.html#a7cd0b930003f5667057bd2e2e286c6e4">fat16_resolve</a> (struct <a class="el" href="structdisk.html">disk</a> *<a class="el" href="structdisk.html">disk</a>)</td></tr>
 <tr class="memdesc:a7cd0b930003f5667057bd2e2e286c6e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">FAT16 filesystem resolver.  <a href="fat16_8c.html#a7cd0b930003f5667057bd2e2e286c6e4">More...</a><br /></td></tr>
 <tr class="separator:a7cd0b930003f5667057bd2e2e286c6e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,14 +154,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ae1e04408cafa8434e5b7bef3d4843d18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1e04408cafa8434e5b7bef3d4843d18">&#9670;&nbsp;</a></span>fat16_init()</h2>
+<a id="ac7084cd25f98698980cc6da2beacd9b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7084cd25f98698980cc6da2beacd9b8">&#9670;&nbsp;</a></span>fat16_init_filesystem()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structfilesystem.html">filesystem</a>* fat16_init </td>
+          <td class="memname">struct <a class="el" href="structfilesystem.html">filesystem</a>* fat16_init_filesystem </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -428,12 +428,12 @@ Variables</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="afat16_8c_html_a04ed328867d7fdeee818ae25557400a0"><div class="ttname"><a href="fat16_8c.html#a04ed328867d7fdeee818ae25557400a0">fat16_seek</a></div><div class="ttdeci">int fat16_seek(void *desc, uint32_t offset, FILE_SEEK_MODE seek_mode)</div><div class="ttdoc">FAT16 Implementation of fseek.</div><div class="ttdef"><b>Definition:</b> fat16.c:686</div></div>
-<div class="ttc" id="afat16_8c_html_a0351b44b17a0616b826963bbad622e98"><div class="ttname"><a href="fat16_8c.html#a0351b44b17a0616b826963bbad622e98">fat16_read</a></div><div class="ttdeci">int fat16_read(void *private, void *desc, uint32_t size, uint32_t nmemb, char *out)</div><div class="ttdoc">FAT16 Implementation of fread.</div><div class="ttdef"><b>Definition:</b> fat16.c:660</div></div>
-<div class="ttc" id="afat16_8c_html_a6b86ee3f3ae4738765843ec95e07353c"><div class="ttname"><a href="fat16_8c.html#a6b86ee3f3ae4738765843ec95e07353c">fat16_open</a></div><div class="ttdeci">void * fat16_open(void *private, struct path_part *path, FILE_MODE mode)</div><div class="ttdoc">FAT16 Implementation of fopen.</div><div class="ttdef"><b>Definition:</b> fat16.c:631</div></div>
-<div class="ttc" id="afat16_8c_html_a7cd0b930003f5667057bd2e2e286c6e4"><div class="ttname"><a href="fat16_8c.html#a7cd0b930003f5667057bd2e2e286c6e4">fat16_resolve</a></div><div class="ttdeci">int fat16_resolve(struct disk *disk)</div><div class="ttdoc">FAT16 filesystem resolver.</div><div class="ttdef"><b>Definition:</b> fat16.c:571</div></div>
-<div class="ttc" id="afat16_8c_html_a8ab4ff16773fee77633350716b0651e0"><div class="ttname"><a href="fat16_8c.html#a8ab4ff16773fee77633350716b0651e0">fat16_close</a></div><div class="ttdeci">int fat16_close(void *desc)</div><div class="ttdoc">FAT16 Implementation of fclose.</div><div class="ttdef"><b>Definition:</b> fat16.c:753</div></div>
-<div class="ttc" id="afat16_8c_html_a26828ac940d0d1665fa27a5fa8e00923"><div class="ttname"><a href="fat16_8c.html#a26828ac940d0d1665fa27a5fa8e00923">fat16_stat</a></div><div class="ttdeci">int fat16_stat(void *desc, struct file_stat *stat)</div><div class="ttdoc">FAT16 Implementation of fstat.</div><div class="ttdef"><b>Definition:</b> fat16.c:728</div></div>
+<div class="ttc" id="afat16_8c_html_a04ed328867d7fdeee818ae25557400a0"><div class="ttname"><a href="fat16_8c.html#a04ed328867d7fdeee818ae25557400a0">fat16_seek</a></div><div class="ttdeci">int fat16_seek(void *desc, uint32_t offset, FILE_SEEK_MODE seek_mode)</div><div class="ttdoc">FAT16 Implementation of fseek.</div><div class="ttdef"><b>Definition:</b> fat16.c:688</div></div>
+<div class="ttc" id="afat16_8c_html_a0351b44b17a0616b826963bbad622e98"><div class="ttname"><a href="fat16_8c.html#a0351b44b17a0616b826963bbad622e98">fat16_read</a></div><div class="ttdeci">int fat16_read(void *private, void *desc, uint32_t size, uint32_t nmemb, char *out)</div><div class="ttdoc">FAT16 Implementation of fread.</div><div class="ttdef"><b>Definition:</b> fat16.c:662</div></div>
+<div class="ttc" id="afat16_8c_html_a6b86ee3f3ae4738765843ec95e07353c"><div class="ttname"><a href="fat16_8c.html#a6b86ee3f3ae4738765843ec95e07353c">fat16_open</a></div><div class="ttdeci">void * fat16_open(void *private, struct path_part *path, FILE_MODE mode)</div><div class="ttdoc">FAT16 Implementation of fopen.</div><div class="ttdef"><b>Definition:</b> fat16.c:633</div></div>
+<div class="ttc" id="afat16_8c_html_a7cd0b930003f5667057bd2e2e286c6e4"><div class="ttname"><a href="fat16_8c.html#a7cd0b930003f5667057bd2e2e286c6e4">fat16_resolve</a></div><div class="ttdeci">int fat16_resolve(struct disk *disk)</div><div class="ttdoc">FAT16 filesystem resolver.</div><div class="ttdef"><b>Definition:</b> fat16.c:573</div></div>
+<div class="ttc" id="afat16_8c_html_a8ab4ff16773fee77633350716b0651e0"><div class="ttname"><a href="fat16_8c.html#a8ab4ff16773fee77633350716b0651e0">fat16_close</a></div><div class="ttdeci">int fat16_close(void *desc)</div><div class="ttdoc">FAT16 Implementation of fclose.</div><div class="ttdef"><b>Definition:</b> fat16.c:755</div></div>
+<div class="ttc" id="afat16_8c_html_a26828ac940d0d1665fa27a5fa8e00923"><div class="ttname"><a href="fat16_8c.html#a26828ac940d0d1665fa27a5fa8e00923">fat16_stat</a></div><div class="ttdeci">int fat16_stat(void *desc, struct file_stat *stat)</div><div class="ttdoc">FAT16 Implementation of fstat.</div><div class="ttdef"><b>Definition:</b> fat16.c:730</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['fat16_5fclose_388',['fat16_close',['../fat16_8c.html#a8ab4ff16773fee77633350716b0651e0',1,'fat16_close(void *desc):&#160;fat16.c'],['../fat16_8h.html#a8ab4ff16773fee77633350716b0651e0',1,'fat16_close(void *desc):&#160;fat16.c']]],
-  ['fat16_5finit_389',['fat16_init',['../fat16_8c.html#ae1e04408cafa8434e5b7bef3d4843d18',1,'fat16_init():&#160;fat16.c'],['../fat16_8h.html#ae1e04408cafa8434e5b7bef3d4843d18',1,'fat16_init():&#160;fat16.c']]],
+  ['fat16_5finit_5ffilesystem_389',['fat16_init_filesystem',['../fat16_8c.html#ac7084cd25f98698980cc6da2beacd9b8',1,'fat16_init_filesystem():&#160;fat16.c'],['../fat16_8h.html#ac7084cd25f98698980cc6da2beacd9b8',1,'fat16_init_filesystem():&#160;fat16.c']]],
   ['fat16_5fopen_390',['fat16_open',['../fat16_8c.html#a6b86ee3f3ae4738765843ec95e07353c',1,'fat16_open(void *private, struct path_part *path, FILE_MODE mode):&#160;fat16.c'],['../fat16_8h.html#a6b86ee3f3ae4738765843ec95e07353c',1,'fat16_open(void *private, struct path_part *path, FILE_MODE mode):&#160;fat16.c']]],
   ['fat16_5fread_391',['fat16_read',['../fat16_8c.html#a0351b44b17a0616b826963bbad622e98',1,'fat16_read(void *private, void *desc, uint32_t size, uint32_t nmemb, char *out):&#160;fat16.c'],['../fat16_8h.html#a0351b44b17a0616b826963bbad622e98',1,'fat16_read(void *private, void *desc, uint32_t size, uint32_t nmemb, char *out):&#160;fat16.c']]],
   ['fat16_5fresolve_392',['fat16_resolve',['../fat16_8c.html#a7cd0b930003f5667057bd2e2e286c6e4',1,'fat16_resolve(struct disk *disk):&#160;fat16.c'],['../fat16_8h.html#a7cd0b930003f5667057bd2e2e286c6e4',1,'fat16_resolve(struct disk *disk):&#160;fat16.c']]],

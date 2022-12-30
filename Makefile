@@ -1,5 +1,5 @@
 # Compiler settings
-TOOLS_DIR = ~/opt/cross/bin
+TOOLS_DIR = /opt/cross/bin
 TARGET = i686-elf
 GCC = ${TOOLS_DIR}/${TARGET}-gcc
 LD = ${TOOLS_DIR}/${TARGET}-ld

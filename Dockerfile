@@ -2,7 +2,7 @@ FROM debian:bullseye-slim
 
 RUN apt update
 RUN apt install -y build-essential bison flex libgmp3-dev \
-                  libmpc-dev libmpfr-dev texinfo libisl-dev wget make dox2unix
+                  libmpc-dev libmpfr-dev texinfo libisl-dev wget make dos2unix
 
 RUN apt install -y x11-utils x11-common x11-apps
 
@@ -33,5 +33,37 @@ RUN mkdir build-gcc &&\
     make all-target-libgcc && \
     make install-gcc && \
     make install-target-libgcc
+
+RUN apt install -y git
+RUN apt install -y gdb
+
+RUN apt install -y unzip
+
+RUN apt install -y libncurses-dev xorg-dev glew-utils
+
+WORKDIR /tmp
+
+RUN wget https://github.com/bochs-emu/Bochs/archive/refs/tags/REL_2_7_FINAL.zip
+RUN unzip REL_2_7_FINAL.zip
+
+WORKDIR /tmp/Bochs-REL_2_7_FINAL/bochs
+
+RUN ./configure  --build=x86_64 \
+              --host=x86_64 \
+              --target=x86_64 \
+              --enable-cpu-level=6 \
+              --enable-pci \
+              --enable-gdb-stub \
+              --enable-logging \
+              --enable-fpu \
+              --enable-sb16=dummy \
+              --enable-cdrom \
+              --enable-x86-debugger \
+              --enable-iodebug \
+              --disable-docbook \
+              --with-x11 
+
+RUN make
+RUN make install
 
 RUN rm -rf /tmp/*

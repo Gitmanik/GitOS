@@ -66,12 +66,12 @@ disk: build
 	dd if=${STAGE1_BIN} >> ${DISK_BIN}
 	dd if=${KERNEL_BIN} >> ${DISK_BIN}
 
-# 										16MB = 16777216 - 1
-	 dd if=/dev/zero of=${DISK_BIN} seek=16777215 bs=1 count=1
+# 							     16MB = 16777216 - 1
+	dd if=/dev/zero of=${DISK_BIN} seek=16777215 bs=1 count=1
 	-mkdir mnt
-	sudo /usr/bin/mount -t vfat -o fat=16 ./bin/disk.bin ./mnt
-	sudo cp -r ./fs/. ./mnt/.
-	sudo umount ./mnt
+	mount -t vfat -o fat=16 ./bin/disk.bin ./mnt
+	cp -r ./fs/. ./mnt/.
+	umount ./mnt
 	rm -rf ./mnt
 
 # ASM_OBJECTS need to be first because of pm_entry.asm

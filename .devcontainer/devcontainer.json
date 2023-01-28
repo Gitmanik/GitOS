@@ -7,7 +7,27 @@
 		"context": "..",
 		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
 		"dockerfile": "../Dockerfile"
-	}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"mateuszchudyk.hexinspector",
+				"DavidAnson.vscode-markdownlint",
+				"doinkythederp.nasm-language-support",
+				"jack89ita.open-file-from-path",
+				"mcu-debug.memory-view",
+				"NateAGeek.memory-viewer",
+				"mcu-debug.debug-tracker-vscode",
+				"ms-vscode.makefile-tools",
+				"ms-vscode.hexeditor",
+				"iliazeus.vscode-ansi",
+				"cschlosser.doxdocgen",
+				"ms-vscode.cpptools-extension-pack"
+				]
+		}
+	},
+	"runArgs": ["--privileged", "-e", "DISPLAY=host.docker.internal:0.0"]
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},

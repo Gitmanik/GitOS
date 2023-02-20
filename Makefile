@@ -10,7 +10,7 @@ SOURCE_PREFIX = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 GCC_ARGUMENTS = -g -std=gnu99 -ffreestanding -nostdlib -O0 -Wall -Wextra
 #  -D__FILENAME__=\"$(notdir $<)\"
 
-QEMU_ARGUMENTS = -drive file=${DISK_BIN},format=raw,index=0,media=disk -m 32M -serial /dev/ttyS0
+QEMU_ARGUMENTS = -drive file=${DISK_BIN},format=raw,index=0,media=disk -m 32M -serial tcp:host.docker.internal:4555
 
 STAGE1_ASM = ./src/boot/boot.asm
 STAGE1_BIN = ./bin/stage1.bin

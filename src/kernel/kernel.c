@@ -16,12 +16,20 @@
 #include "fs/pathparser.h"
 #include "fs/file.h"
 #include "fs/fat16/fat16.h"
+#include "gdt/gdt.h"
 
-static struct paging_chunk* kernel_paging_chunk;
+static struct paging_chunk *kernel_paging_chunk;
+
+struct gdt gdt_real[TOTAL_GDT_SEGMENTS];
+struct gdt_structured gdt_structured[TOTAL_GDT_SEGMENTS] = {
+    {.base = 0x00, .limit = 0x00, .type = 0x00},       // NULL
+    {.base = 0x00, .limit = 0xFFFFFFFF, .type = 0x9A}, // KERNEL CODE
+    {.base = 0x00, .limit = 0xFFFFFFFF, .type = 0x92}, // KERNEL DATA
+};
 
 /**
  * @brief Temporary int 0x0 handler
- * 
+ *
  */
 void divide_by_zero()
 {
@@ -30,13 +38,13 @@ void divide_by_zero()
 
 /**
  * @brief Located in idt_handler.asm entry point for interrupt 0x0
- * 
+ *
  */
 
-extern void int21h(); 
+extern void int21h();
 /**
  * @brief Temporary int 0x21 handler
- * 
+ *
  */
 void int21h_handler()
 {
@@ -47,7 +55,7 @@ void int21h_handler()
 
 /**
  * @brief Kernel C entry point
- * 
+ *
  */
 void kernel_main()
 {
@@ -60,10 +68,18 @@ void kernel_main()
     {
         kernel_panic("Could not initialize Serial port!");
     }
-    
+
     kprintf("GitOS - operating system as exercise. Pawel Reich 2022\r\n");
 
-    //Initialize IDT
+    // Initialize GDT
+    kprintf("Initializing GDT..");
+    memset(gdt_real, 0, sizeof(gdt_real));
+    gdt_structured_to_gdt(gdt_real, gdt_structured, TOTAL_GDT_SEGMENTS);
+    gdt_load(gdt_real, sizeof(gdt_real));
+    kprintf("OK\r\n");
+    //
+
+    // Initialize IDT
     kprintf("Initializing IDT..");
     idt_Init();
     idt_SetDescriptor(0, divide_by_zero);
@@ -72,44 +88,44 @@ void kernel_main()
     kprintf("OK\r\n");
     //
 
-    //ksprintf test
-    kprintf("kprintf test: %p %x %i %s %c %ld %%\r\n", bios_memory_map, 0x41424344, -1234, "gitmanik.dev", 'X',  __LONG_MAX__);
-    kdebug("kdebug test: %p %x %i %s %c %ld %%\r\n", bios_memory_map, 0x41424344, -1234, "gitmanik.dev", 'X',  __LONG_MAX__);
+    // ksprintf test
+    kprintf("kprintf test: %p %x %i %s %c %ld %%\r\n", bios_memory_map, 0x41424344, -1234, "gitmanik.dev", 'X', __LONG_MAX__);
+    kdebug("kdebug test: %p %x %i %s %c %ld %%\r\n", bios_memory_map, 0x41424344, -1234, "gitmanik.dev", 'X', __LONG_MAX__);
     //
 
-    //Finding biggest usable memory chunk to use as heap
+    // Finding biggest usable memory chunk to use as heap
     memory_map_entry heap_entry;
     int idx = 0;
 
     kprintf("Usable memory map:\r\n");
     while (bios_memory_map[idx].length_in_bytes > 0)
     {
-        if ( bios_memory_map[idx].type != 1)
+        if (bios_memory_map[idx].type != 1)
             goto skip;
 
-        kprintf("0x%p -> 0x%p, Size: %ldKB\r\n", 
-                    (long) bios_memory_map[idx].base_address, 
-                    (long) bios_memory_map[idx].base_address + (long) bios_memory_map[idx].length_in_bytes, 
-                    (long) bios_memory_map[idx].length_in_bytes / 1024);
+        kprintf("0x%p -> 0x%p, Size: %ldKB\r\n",
+                (long)bios_memory_map[idx].base_address,
+                (long)bios_memory_map[idx].base_address + (long)bios_memory_map[idx].length_in_bytes,
+                (long)bios_memory_map[idx].length_in_bytes / 1024);
 
         if (bios_memory_map[idx].length_in_bytes > heap_entry.length_in_bytes)
             heap_entry = bios_memory_map[idx];
 
-        skip:
+    skip:
         idx++;
     }
 
-    //Kernel is located at 0x100000
+    // Kernel is located at 0x100000
     if (heap_entry.length_in_bytes < 0x100000)
     {
         kernel_panic("Not enough memory to place kernel heap!");
     }
     heap_entry.base_address += 0x100000;
     heap_entry.length_in_bytes -= 0x100000;
-    
-    kprintf("Heap address: 0x%p, Size: %ldKB\r\n", (long) heap_entry.base_address, (long) heap_entry.length_in_bytes / 1024);
 
-    res = kheap_init((void*) (uint32_t) heap_entry.base_address, heap_entry.length_in_bytes);
+    kprintf("Heap address: 0x%p, Size: %ldKB\r\n", (long)heap_entry.base_address, (long)heap_entry.length_in_bytes / 1024);
+
+    res = kheap_init((void *)(uint32_t)heap_entry.base_address, heap_entry.length_in_bytes);
     if (res < 0)
     {
         kernel_panic("Failed to create heap!");
@@ -122,21 +138,21 @@ void kernel_main()
     paging_enable();
     kprintf("OK\r\n");
 
-    //Paging test
+    // Paging test
     kprintf("Setting up paging..");
-    char* ptr_real = kzalloc(4096);
-    res = paging_set_page(paging_get_directory(kernel_paging_chunk), (void*) 0x1000, (uint32_t) ptr_real | PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
+    char *ptr_real = kzalloc(4096);
+    res = paging_set_page(paging_get_directory(kernel_paging_chunk), (void *)0x1000, (uint32_t)ptr_real | PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
     if (res < 0)
     {
         kernel_panic("Could not sect page!");
     }
-    char* ptr_virt = (char*) 0x1000;
+    char *ptr_virt = (char *)0x1000;
 
     ptr_virt[0] = 'O';
     ptr_virt[1] = 'K';
-    
+
     kprintf("OK\r\n", LIGHT_GREEN);
-    kprintf("Paging self-test: 0x%p:'%s' 0x%p:'%s'", (uint32_t)ptr_real, ptr_real, (uint32_t) ptr_virt, ptr_virt);
+    kprintf("Paging self-test: 0x%p:'%s' 0x%p:'%s'", (uint32_t)ptr_real, ptr_real, (uint32_t)ptr_virt, ptr_virt);
     if (memcmp(ptr_real, ptr_virt, 2) != 0)
     {
         kernel_panic("\r\nPaging self-test unsuccessful!");
@@ -145,25 +161,25 @@ void kernel_main()
     kfree(ptr_real);
     //
 
-    //Remap PIC
+    // Remap PIC
     kprintf("Remapping PIC..");
 
     pic_Remap(0x20, 0x28);
-    
+
     kprintf(" OK\r\n");
     //
 
     //
     asm("sti");
 
-    //Initializing FS
+    // Initializing FS
     fs_init();
     fs_insert_filesystem(fat16_init_filesystem());
     disk_search_and_init();
     //
 
-    //Read test file
-    char* file_to_open = "0:/DIR/FILE.TXT";
+    // Read test file
+    char *file_to_open = "0:/DIR/FILE.TXT";
     kprintf("Opening \"%s\"..", file_to_open);
     int fd = fopen(file_to_open, "r");
     if (fd < 1)
@@ -172,7 +188,7 @@ void kernel_main()
     }
     else
     {
-        struct file_stat* stat = 0;
+        struct file_stat *stat = 0;
         res = fstat(fd, stat);
 
         if (res < 0)
@@ -182,7 +198,7 @@ void kernel_main()
 
         kprintf("File size: %d, Flags: %d\r\n", stat->filesize, stat->flags);
 
-        char* file_content = kzalloc(stat->filesize);
+        char *file_content = kzalloc(stat->filesize);
 
         if (stat->filesize > 22)
         {
@@ -204,7 +220,8 @@ void kernel_main()
     tm_SetColor(LIGHT_PURPLE);
     while (1)
     {
-        while (!ser_Received(COM1));
+        while (!ser_Received(COM1))
+            ;
         char c = ser_ReadChar(COM1);
         tm_PrintChar(c);
         if (c == '\r')
@@ -216,21 +233,20 @@ void kernel_main()
 
 /**
  * @brief (Temporary) Prints kernel_message and halts the kernel.
- * 
+ *
  * @param fmt Reason of the panic
  * @param ... Arguments
  */
-void kernel_panic(char* fmt, ...)
+void kernel_panic(char *fmt, ...)
 {
     va_list args;
-	va_start(args, fmt);
-	char internal_buf[1024];
+    va_start(args, fmt);
+    char internal_buf[1024];
     memset(internal_buf, 0, sizeof(internal_buf));
     kvsprintf(internal_buf, fmt, args);
 
     ser_PrintString(COM1, "Kernel panic!\r\n");
     ser_PrintString(COM1, internal_buf);
-
 
     tm_PrintStringColor("Kernel panic!\r\n", LIGHT_RED);
     tm_PrintStringColor(internal_buf, LIGHT_RED);
@@ -239,24 +255,25 @@ void kernel_panic(char* fmt, ...)
 
 void kernel_halt()
 {
-    for (;;);
+    for (;;)
+        ;
 }
 
 /**
  * @brief Prints to kernel debug channels. Max length of processed message is 1024 characters.
- * 
- * @param fmt Message to format and print. 
+ *
+ * @param fmt Message to format and print.
  * @param ... Arguments
  */
-void kprintf(char* fmt, ...)
+void kprintf(char *fmt, ...)
 {
-	va_list args;
-	va_start(args, fmt);
+    va_list args;
+    va_start(args, fmt);
 
-	char internal_buf[1024];
+    char internal_buf[1024];
     memset(internal_buf, 0, sizeof(internal_buf));
 
-	kvsprintf(internal_buf, fmt, args);
+    kvsprintf(internal_buf, fmt, args);
     ser_PrintString(COM1, internal_buf);
 
     enum TEXT_MODE_COLORS x = tm_GetColor();

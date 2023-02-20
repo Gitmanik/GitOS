@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "GDB QEMU",
             "type": "cppdbg",
@@ -33,7 +34,8 @@
                     "description": "Break when kernel is halting."
                 }
             ],
-            "preLaunchTask": "Launch QEMU"
+            "preLaunchTask": "Launch QEMU",
+            "externalConsole": false
         },
         {
             "name": "GDB Bochs",
@@ -67,7 +69,8 @@
                     "description": "Break when kernel is halting."
                 }
             ],
-            "preLaunchTask": "Launch BOCHS"
+            "preLaunchTask": "Launch BOCHS",
+            "externalConsole": false
         }
     ]
 }

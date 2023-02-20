@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['kernel_5fheap_512',['kernel_heap',['../hkeap_8c.html#ad6120fe96d96d8fe0fd0e0b184f79a22',1,'hkeap.c']]],
-  ['kernel_5fheap_5ftable_513',['kernel_heap_table',['../hkeap_8c.html#a77407aa4a3d4413e86ed0728fef3d408',1,'hkeap.c']]]
+  ['jmp_5fshort_542',['jmp_short',['../structfat16__header__primary.html#a2464b8f23508db1d894fff3f267c46bc',1,'fat16_header_primary::jmp_short()'],['../fat16_8h.html#a2464b8f23508db1d894fff3f267c46bc',1,'jmp_short():&#160;fat16.h']]]
 ];

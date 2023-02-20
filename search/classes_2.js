@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['heap_340',['heap',['../structheap.html',1,'']]],
-  ['heap_5ftable_341',['heap_table',['../structheap__table.html',1,'']]]
+  ['gdt_357',['gdt',['../structgdt.html',1,'']]],
+  ['gdt_5fstructured_358',['gdt_structured',['../structgdt__structured.html',1,'']]]
 ];

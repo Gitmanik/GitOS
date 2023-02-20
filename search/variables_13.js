@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['volume_5fid_552',['volume_id',['../structfat16__header__extended.html#a77a2cd2807c348ae913c256e41533320',1,'fat16_header_extended::volume_id()'],['../fat16_8h.html#a77a2cd2807c348ae913c256e41533320',1,'volume_id():&#160;fat16.h']]],
-  ['volume_5fid_5fstring_553',['volume_id_string',['../structfat16__header__extended.html#a2eab2b435efae77606b7bb849b48c8c8',1,'fat16_header_extended::volume_id_string()'],['../fat16_8h.html#a2eab2b435efae77606b7bb849b48c8c8',1,'volume_id_string():&#160;fat16.h']]]
+  ['table_582',['table',['../structheap.html#a4c45dc1b862c2349d0854d74e2269511',1,'heap']]],
+  ['total_583',['total',['../structfat__directory.html#ac7af894858cf396a219d632f40afdc8d',1,'fat_directory::total()'],['../structheap__table.html#a3fab45bb4d7cd7e889bdf00080096e8e',1,'heap_table::total()']]],
+  ['type_584',['type',['../structfat__item.html#a8f518c5a61a32a6ebb8d9a1de98c3b0b',1,'fat_item::type()'],['../structgdt__structured.html#a1d127017fb298b889f4ba24752d08b8e',1,'gdt_structured::type()']]]
 ];

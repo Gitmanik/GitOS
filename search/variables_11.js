@@ -1,15 +1,9 @@
 var searchData=
 [
-  ['sector_5fpos_537',['sector_pos',['../structfat__directory.html#a2968f86887ce121cd678fd6b6f6eed6e',1,'fat_directory']]],
-  ['sector_5fsize_538',['sector_size',['../structdisk.html#accbd02759a995a4ec4ee9813d9bde5af',1,'disk']]],
-  ['sectors_5fbig_539',['sectors_big',['../structfat16__header__primary.html#a5f359d01479e36c10c41e7a627a78df2',1,'fat16_header_primary::sectors_big()'],['../fat16_8h.html#a5f359d01479e36c10c41e7a627a78df2',1,'sectors_big():&#160;fat16.h']]],
-  ['sectors_5fper_5fcluster_540',['sectors_per_cluster',['../structfat16__header__primary.html#aa3a3c1372b7961d20b11ab8164cc7ef3',1,'fat16_header_primary::sectors_per_cluster()'],['../fat16_8h.html#aa3a3c1372b7961d20b11ab8164cc7ef3',1,'sectors_per_cluster():&#160;fat16.h']]],
-  ['sectors_5fper_5ffat_541',['sectors_per_fat',['../structfat16__header__primary.html#afaf566f8b31310da063915639d11ad55',1,'fat16_header_primary::sectors_per_fat()'],['../fat16_8h.html#afaf566f8b31310da063915639d11ad55',1,'sectors_per_fat():&#160;fat16.h']]],
-  ['sectors_5fper_5ftrack_542',['sectors_per_track',['../structfat16__header__primary.html#a6ff75fddb278127f316c862cbf03bfb6',1,'fat16_header_primary::sectors_per_track()'],['../fat16_8h.html#a6ff75fddb278127f316c862cbf03bfb6',1,'sectors_per_track():&#160;fat16.h']]],
-  ['seek_543',['seek',['../structfilesystem.html#a26c2dc31908f883ce80eb5e527930dbf',1,'filesystem']]],
-  ['shared_544',['shared',['../structfat__header.html#ae59cdbb76c023af3663f023dc5d412bc',1,'fat_header']]],
-  ['signature_545',['signature',['../structfat16__header__extended.html#af27e6d4ea3add14cd8cc9aa275d716ad',1,'fat16_header_extended::signature()'],['../fat16_8h.html#af27e6d4ea3add14cd8cc9aa275d716ad',1,'signature():&#160;fat16.h']]],
-  ['start_5faddress_546',['start_address',['../structheap.html#ad515ea1aae3191d87e6e737b848374a4',1,'heap']]],
-  ['stat_547',['stat',['../structfilesystem.html#a8f22eedfb54e691e700d45173b0f1e08',1,'filesystem']]],
-  ['system_5fid_5fstring_548',['system_id_string',['../structfat16__header__extended.html#a8fcec6205e995a2ef6c0422d35e36c30',1,'fat16_header_extended::system_id_string()'],['../fat16_8h.html#a8fcec6205e995a2ef6c0422d35e36c30',1,'system_id_string():&#160;fat16.h']]]
+  ['read_563',['read',['../structfilesystem.html#af613853ed5a75afef5a37b7a16520443',1,'filesystem']]],
+  ['reserved_564',['reserved',['../structfat__file.html#acb7bc06bed6f6408d719334fc41698c7',1,'fat_file::reserved()'],['../fat16_8h.html#acb7bc06bed6f6408d719334fc41698c7',1,'reserved():&#160;fat16.h']]],
+  ['reserved_5fsectors_565',['reserved_sectors',['../structfat16__header__primary.html#ab9d9cece402bcfc967b895cd556985ef',1,'fat16_header_primary::reserved_sectors()'],['../fat16_8h.html#ab9d9cece402bcfc967b895cd556985ef',1,'reserved_sectors():&#160;fat16.h']]],
+  ['resolve_566',['resolve',['../structfilesystem.html#ad1d09a885cf2f5324bdb63dc43cc2d5c',1,'filesystem']]],
+  ['root_5fdir_5fentries_567',['root_dir_entries',['../structfat16__header__primary.html#aca34c8fcd5d2d7d9761c0e5a3da19521',1,'fat16_header_primary::root_dir_entries()'],['../fat16_8h.html#aca34c8fcd5d2d7d9761c0e5a3da19521',1,'root_dir_entries():&#160;fat16.h']]],
+  ['root_5fdirectory_568',['root_directory',['../structfat__private.html#a3ac6f1d4c311f029ae711ba2232c0725',1,'fat_private']]]
 ];

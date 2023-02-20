@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['part_526',['part',['../structpath__part.html#a6aba54109422e4290881c54e5da68026',1,'path_part']]],
-  ['pos_527',['pos',['../structdisk__stream.html#a1910d262855b71da353ed0d07a6c7823',1,'disk_stream::pos()'],['../structfat__file__descriptor.html#af09611129dedc89382e4d7b6427bdb27',1,'fat_file_descriptor::pos()']]],
-  ['primary_528',['primary',['../structfat__header.html#ac1eac96c4053ed01d72bd3a5217615af',1,'fat_header']]],
-  ['primary_5fdisk_529',['primary_disk',['../disk_8c.html#a9634a02aa962b2df71b6b9f38f29d3d4',1,'disk.c']]],
-  ['private_5ffs_5fdescriptor_530',['private_fs_descriptor',['../structfile__descriptor.html#a8548713df4e5500912391c3b3ddc93b0',1,'file_descriptor']]]
+  ['oem_5fidentifier_556',['oem_identifier',['../structfat16__header__primary.html#a63b2dcee2c4e78eeb932fe475ae7e194',1,'fat16_header_primary::oem_identifier()'],['../fat16_8h.html#a63b2dcee2c4e78eeb932fe475ae7e194',1,'oem_identifier():&#160;fat16.h']]],
+  ['open_557',['open',['../structfilesystem.html#ad0a025f59368517e7afd05a4ac2152c7',1,'filesystem']]]
 ];

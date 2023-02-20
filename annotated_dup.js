@@ -13,6 +13,8 @@ var annotated_dup =
     [ "file_descriptor", "structfile__descriptor.html", "structfile__descriptor" ],
     [ "file_stat", "structfile__stat.html", "structfile__stat" ],
     [ "filesystem", "structfilesystem.html", "structfilesystem" ],
+    [ "gdt", "structgdt.html", "structgdt" ],
+    [ "gdt_structured", "structgdt__structured.html", "structgdt__structured" ],
     [ "heap", "structheap.html", "structheap" ],
     [ "heap_table", "structheap__table.html", "structheap__table" ],
     [ "paging_chunk", "structpaging__chunk.html", "structpaging__chunk" ],

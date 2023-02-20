@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['id_504',['id',['../structdisk.html#a7441ef0865bcb3db9b8064dd7375c1ea',1,'disk']]],
-  ['idt_5fdesc_505',['idt_desc',['../idt_8h.html#a830cd7b0a812b38e7052aab635cf8487',1,'idt.h']]],
-  ['idt_5fdescriptors_506',['idt_descriptors',['../idt_8c.html#adf094f238e70a027d44afe9fbb5092b8',1,'idt.c']]],
-  ['idtr_5fdesc_507',['idtr_desc',['../idt_8h.html#a47e422e5167f03378f7565816e29d05a',1,'idt.h']]],
-  ['idtr_5fdescriptor_508',['idtr_descriptor',['../idt_8c.html#a6a8d2dcfd1f1f83c2f5df272ac639086',1,'idt.c']]],
-  ['index_509',['index',['../structfile__descriptor.html#a750b5d744c39a06bfb13e6eb010e35d0',1,'file_descriptor']]],
-  ['item_510',['item',['../structfat__directory.html#a4eea561a2e67f0911c1676eae55f5c63',1,'fat_directory']]]
+  ['header_531',['header',['../structfat__private.html#af189636d10af1cda73cb226033b4d964',1,'fat_private']]],
+  ['hidden_5fsectors_532',['hidden_sectors',['../structfat16__header__primary.html#ad4f0ed516a7d627aa96fd773f27a03a7',1,'fat16_header_primary::hidden_sectors()'],['../fat16_8h.html#ad4f0ed516a7d627aa96fd773f27a03a7',1,'hidden_sectors():&#160;fat16.h']]],
+  ['high_5f16bits_5ffirst_5fcluster_533',['high_16bits_first_cluster',['../structfat__file.html#a2849a9d32db60871eed12a088d7857fa',1,'fat_file::high_16bits_first_cluster()'],['../fat16_8h.html#a2849a9d32db60871eed12a088d7857fa',1,'high_16bits_first_cluster():&#160;fat16.h']]],
+  ['high_5fflags_534',['high_flags',['../structgdt.html#a11072e0dcf739ac795f486ed4642c426',1,'gdt']]]
 ];

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['name_520',['name',['../structfilesystem.html#a32a40b0f5bd31c570ff3b4c515d6725f',1,'filesystem']]],
-  ['next_521',['next',['../structpath__part.html#ad5d8ed0c4183f4e1bbef6d0250b02c37',1,'path_part']]],
-  ['number_5fof_5fheads_522',['number_of_heads',['../structfat16__header__primary.html#ac2f425c61a49cd29d409c842cf522def',1,'fat16_header_primary::number_of_heads()'],['../fat16_8h.html#ac2f425c61a49cd29d409c842cf522def',1,'number_of_heads():&#160;fat16.h']]],
-  ['numeber_5fof_5fsectors_523',['numeber_of_sectors',['../structfat16__header__primary.html#ad67dc0a93ab59765a12a944809c38564',1,'fat16_header_primary::numeber_of_sectors()'],['../fat16_8h.html#ad67dc0a93ab59765a12a944809c38564',1,'numeber_of_sectors():&#160;fat16.h']]]
+  ['media_5ftype_550',['media_type',['../structfat16__header__primary.html#a4b184d5976feb6927aa2a1bd3bc157cc',1,'fat16_header_primary::media_type()'],['../fat16_8h.html#a4b184d5976feb6927aa2a1bd3bc157cc',1,'media_type():&#160;fat16.h']]],
+  ['memory_5fmap_5fentry_551',['memory_map_entry',['../bios__memory__map_8h.html#a69ee9415479e1704667a452f1d715987',1,'bios_memory_map.h']]]
 ];

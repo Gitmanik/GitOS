@@ -1,5 +1,13 @@
 var searchData=
 [
-  ['outb_432',['outb',['../io_8c.html#a8bf7a9af91c08e6f876aaffeccd48ff3',1,'outb(uint16_t port, uint8_t val):&#160;io.c'],['../io_8h.html#a8bf7a9af91c08e6f876aaffeccd48ff3',1,'outb(uint16_t port, uint8_t val):&#160;io.c']]],
-  ['outw_433',['outw',['../io_8c.html#a3105e202829cfca8b5757df9351f96e1',1,'outw(uint16_t port, uint16_t val):&#160;io.c'],['../io_8h.html#a3105e202829cfca8b5757df9351f96e1',1,'outw(uint16_t port, uint16_t val):&#160;io.c']]]
+  ['kernel_5fhalt_443',['kernel_halt',['../kernel_8h.html#aa0feb8fe21f2712340bcfe8777e9860b',1,'kernel_halt():&#160;kernel.c'],['../kernel_8c.html#aa0feb8fe21f2712340bcfe8777e9860b',1,'kernel_halt():&#160;kernel.c']]],
+  ['kernel_5fmain_444',['kernel_main',['../kernel_8c.html#ada8402e0c504af8cafef5cc76c076003',1,'kernel_main():&#160;kernel.c'],['../kernel_8h.html#ada8402e0c504af8cafef5cc76c076003',1,'kernel_main():&#160;kernel.c']]],
+  ['kernel_5fpanic_445',['kernel_panic',['../kernel_8c.html#a8d209f2439b73fa38517f599a1904a99',1,'kernel_panic(char *fmt,...):&#160;kernel.c'],['../kernel_8h.html#a8d209f2439b73fa38517f599a1904a99',1,'kernel_panic(char *fmt,...):&#160;kernel.c']]],
+  ['kfree_446',['kfree',['../hkeap_8c.html#a069f85a5001d71bc44d8be6532a4e432',1,'kfree(void *ptr):&#160;hkeap.c'],['../kheap_8h.html#a069f85a5001d71bc44d8be6532a4e432',1,'kfree(void *ptr):&#160;hkeap.c']]],
+  ['kheap_5finit_447',['kheap_init',['../hkeap_8c.html#adf384b2e867b567a531f37e258b855d3',1,'kheap_init(void *start_address, uint32_t size):&#160;hkeap.c'],['../kheap_8h.html#adf384b2e867b567a531f37e258b855d3',1,'kheap_init(void *start_address, uint32_t size):&#160;hkeap.c']]],
+  ['kmalloc_448',['kmalloc',['../hkeap_8c.html#a5f52d7c56b7d67dc2f96b2e93dfdc7be',1,'kmalloc(size_t size):&#160;hkeap.c'],['../kheap_8h.html#a5f52d7c56b7d67dc2f96b2e93dfdc7be',1,'kmalloc(size_t size):&#160;hkeap.c']]],
+  ['kprintf_449',['kprintf',['../kernel_8c.html#ac9d768b4772cc87fc88afbbbd805f96a',1,'kprintf(char *fmt,...):&#160;kernel.c'],['../kernel_8h.html#ac9d768b4772cc87fc88afbbbd805f96a',1,'kprintf(char *fmt,...):&#160;kernel.c']]],
+  ['ksprintf_450',['ksprintf',['../string_8c.html#a8b9caf068b045bb5cb5c38f54cf82367',1,'ksprintf(char *buf, char *fmt,...):&#160;string.c'],['../string_8h.html#a8b9caf068b045bb5cb5c38f54cf82367',1,'ksprintf(char *buf, char *fmt,...):&#160;string.c']]],
+  ['kvsprintf_451',['kvsprintf',['../string_8c.html#ac193243152e2c541c49fbe5548d7d65c',1,'kvsprintf(char *buf, char *fmt, va_list args):&#160;string.c'],['../string_8h.html#ac193243152e2c541c49fbe5548d7d65c',1,'kvsprintf(char *buf, char *fmt, va_list args):&#160;string.c']]],
+  ['kzalloc_452',['kzalloc',['../hkeap_8c.html#a913f2de31558b9cca9405d2cd05a402a',1,'kzalloc(size_t size):&#160;hkeap.c'],['../kheap_8h.html#a913f2de31558b9cca9405d2cd05a402a',1,'kzalloc(size_t size):&#160;hkeap.c']]]
 ];

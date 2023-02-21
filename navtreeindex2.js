@@ -1,5 +1,15 @@
 var NAVTREEINDEX2 =
 {
+"structpaging__chunk.html":[0,0,18],
+"structpaging__chunk.html#a7abe8d9cbf8d303b43dc85b868b4eb93":[0,0,18,0],
+"structpath__part.html":[0,0,19],
+"structpath__part.html#a6aba54109422e4290881c54e5da68026":[0,0,19,1],
+"structpath__part.html#ad5d8ed0c4183f4e1bbef6d0250b02c37":[0,0,19,0],
+"structpath__root.html":[0,0,20],
+"structpath__root.html#a44057b89a20883587ec7bdc59cce57d2":[0,0,20,0],
+"structpath__root.html#ac5622a8973d91afac63f4c3e5441af37":[0,0,20,1],
+"text__mode_8c.html":[1,0,0,0,1,3,0],
+"text__mode_8c.html#a0ce4b7080788f46ff10075c9c69418c4":[1,0,0,0,1,3,0,0],
 "text__mode_8c.html#a56913d70de80fed50f90c6ae90b1fd2a":[1,0,0,0,1,3,0,3],
 "text__mode_8c.html#a78040333df78235651318a5267734639":[1,0,0,0,1,3,0,8],
 "text__mode_8c.html#a8afdb6ae911de36c44009b2126a43f13":[1,0,0,0,1,3,0,5],

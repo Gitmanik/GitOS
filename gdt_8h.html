@@ -84,7 +84,8 @@ $(document).ready(function(){initNavTree('gdt_8h.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">gdt.h File Reference</div>  </div>
 </div><!--header-->
@@ -99,15 +100,46 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgdt__structured.html">gdt_structured</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgdt__descriptor.html">gdt_descriptor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a071baa899e787757da9db71d9bacc67a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a071baa899e787757da9db71d9bacc67a">gdt_load</a> (struct <a class="el" href="structgdt.html">gdt</a> *<a class="el" href="structgdt.html">gdt</a>, unsigned int size)</td></tr>
+<tr class="memitem:a0d98bb105f5a175de261c38a804a9466"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structgdt__descriptor.html">gdt_descriptor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a0d98bb105f5a175de261c38a804a9466">__attribute__</a> ((packed))</td></tr>
+<tr class="separator:a0d98bb105f5a175de261c38a804a9466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a071baa899e787757da9db71d9bacc67a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a071baa899e787757da9db71d9bacc67a">gdt_load</a> (struct <a class="el" href="structgdt.html">gdt</a> *<a class="el" href="structgdt.html">gdt</a>, unsigned int <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>)</td></tr>
 <tr class="separator:a071baa899e787757da9db71d9bacc67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a769b1f61b4b7589d1adc57ea4c7867ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a769b1f61b4b7589d1adc57ea4c7867ac">gdt_read</a> (struct <a class="el" href="structgdt__descriptor.html">gdt_descriptor</a> **target)</td></tr>
+<tr class="separator:a769b1f61b4b7589d1adc57ea4c7867ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad98deccb3abc7cfdd109b1821d1807b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#ad98deccb3abc7cfdd109b1821d1807b4">gdt_structured_to_gdt</a> (struct <a class="el" href="structgdt.html">gdt</a> *<a class="el" href="structgdt.html">gdt</a>, struct <a class="el" href="structgdt__structured.html">gdt_structured</a> *structured_gdt, unsigned int total_entries)</td></tr>
 <tr class="separator:ad98deccb3abc7cfdd109b1821d1807b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aaba88b24a21a6c70c895c0d55f4a69a0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a></td></tr>
+<tr class="separator:aaba88b24a21a6c70c895c0d55f4a69a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe5b74a6bf41557a5ae72460fa563219"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#abe5b74a6bf41557a5ae72460fa563219">start_address</a></td></tr>
+<tr class="separator:abe5b74a6bf41557a5ae72460fa563219"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a0d98bb105f5a175de261c38a804a9466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d98bb105f5a175de261c38a804a9466">&#9670;&nbsp;</a></span>__attribute__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structgdt__descriptor.html">gdt_descriptor</a> __attribute__ </td>
+          <td>(</td>
+          <td class="paramtype">(packed)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a071baa899e787757da9db71d9bacc67a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a071baa899e787757da9db71d9bacc67a">&#9670;&nbsp;</a></span>gdt_load()</h2>
 
@@ -130,6 +162,26 @@ Functions</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="gdt_8c.html#ae3d8e1b4bac862471e8a06190d3e7973">gdt_descriptor</a>, <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, <a class="el" href="structgdt__descriptor.html#aaba88b24a21a6c70c895c0d55f4a69a0">gdt_descriptor::size</a>, and <a class="el" href="structgdt__descriptor.html#abe5b74a6bf41557a5ae72460fa563219">gdt_descriptor::start_address</a>.</p>
+
+</div>
+</div>
+<a id="a769b1f61b4b7589d1adc57ea4c7867ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a769b1f61b4b7589d1adc57ea4c7867ac">&#9670;&nbsp;</a></span>gdt_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gdt_read </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structgdt__descriptor.html">gdt_descriptor</a> **&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -169,6 +221,35 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="gdt_8c.html#a636b7c59562c6decfc33e43b5623955b">encode_gdt_entry()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="aaba88b24a21a6c70c895c0d55f4a69a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaba88b24a21a6c70c895c0d55f4a69a0">&#9670;&nbsp;</a></span>size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abe5b74a6bf41557a5ae72460fa563219"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe5b74a6bf41557a5ae72460fa563219">&#9670;&nbsp;</a></span>start_address</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t start_address</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

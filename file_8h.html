@@ -128,7 +128,7 @@ Typedefs</h2></td></tr>
 <tr class="separator:a08dac86aa376c5e0b39e9b495222ca5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53232da3f6880dab0e93af658e0d6fc3"><td class="memItemLeft" align="right" valign="top">typedef void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a53232da3f6880dab0e93af658e0d6fc3">FS_OPEN_FUNCTION</a>) (void *private, struct <a class="el" href="structpath__part.html">path_part</a> *path, <a class="el" href="file_8h.html#a83452b48fc3d8fdbc81f52de7217fa68">FILE_MODE</a> mode)</td></tr>
 <tr class="separator:a53232da3f6880dab0e93af658e0d6fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabb0ac3c9daa03550b7fec98228b4f75"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#aabb0ac3c9daa03550b7fec98228b4f75">FS_READ_FUNCTION</a>) (void *private, void *descriptor, uint32_t size, uint32_t nmemb, char *out)</td></tr>
+<tr class="memitem:aabb0ac3c9daa03550b7fec98228b4f75"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#aabb0ac3c9daa03550b7fec98228b4f75">FS_READ_FUNCTION</a>) (void *private, void *descriptor, uint32_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, uint32_t nmemb, char *out)</td></tr>
 <tr class="separator:aabb0ac3c9daa03550b7fec98228b4f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a316e448536e6d1f11f4c086ec0611afb"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a316e448536e6d1f11f4c086ec0611afb">FS_SEEK_FUNCTION</a>) (void *private, uint32_t offset, <a class="el" href="file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a> seek_mode)</td></tr>
 <tr class="separator:a316e448536e6d1f11f4c086ec0611afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,7 +168,7 @@ Functions</h2></td></tr>
 <tr class="memitem:aa01c104dbdab4c93c40a96f0c705a3e1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#aa01c104dbdab4c93c40a96f0c705a3e1">fopen</a> (const char *<a class="el" href="fat16_8h.html#a36126364ff9f56a16488e5c2b8d1206e">filename</a>, const char *mode)</td></tr>
 <tr class="memdesc:aa01c104dbdab4c93c40a96f0c705a3e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens file.  <a href="file_8h.html#aa01c104dbdab4c93c40a96f0c705a3e1">More...</a><br /></td></tr>
 <tr class="separator:aa01c104dbdab4c93c40a96f0c705a3e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adee556231b2610f1807f3dd2f2dd0f6a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#adee556231b2610f1807f3dd2f2dd0f6a">fread</a> (void *ptr, uint32_t size, uint32_t nmemb, int fd)</td></tr>
+<tr class="memitem:adee556231b2610f1807f3dd2f2dd0f6a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#adee556231b2610f1807f3dd2f2dd0f6a">fread</a> (void *ptr, uint32_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, uint32_t nmemb, int fd)</td></tr>
 <tr class="memdesc:adee556231b2610f1807f3dd2f2dd0f6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads from file.  <a href="file_8h.html#adee556231b2610f1807f3dd2f2dd0f6a">More...</a><br /></td></tr>
 <tr class="separator:adee556231b2610f1807f3dd2f2dd0f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4afef177a56ef89821691c7c4df374c3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a4afef177a56ef89821691c7c4df374c3">fseek</a> (int fd, int offset, <a class="el" href="file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a> whence)</td></tr>
@@ -302,7 +302,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int(* FS_READ_FUNCTION) (void *private, void *descriptor, uint32_t size, uint32_t nmemb, char *out)</td>
+          <td class="memname">typedef int(* FS_READ_FUNCTION) (void *private, void *descriptor, uint32_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, uint32_t nmemb, char *out)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -529,7 +529,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Status </dd></dl>
 
-<p class="reference">References <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>.</p>
+<p class="reference">References <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>, and <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>.</p>
 
 </div>
 </div>

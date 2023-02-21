@@ -1,6 +1,8 @@
 #include "gdt.h"
 #include "kernel.h"
 
+struct gdt_descriptor gdt_descriptor = {0};
+
 void encode_gdt_entry(uint8_t *target, struct gdt_structured src)
 {
     if ((src.limit > 65536) && (src.limit & 0xFFF) != 0xFFF)
@@ -39,4 +41,18 @@ void gdt_structured_to_gdt(struct gdt *gdt, struct gdt_structured *structured_gd
     {
         encode_gdt_entry((uint8_t *)&gdt[i], structured_gdt[i]);
     }
+}
+
+void gdt_load(struct gdt *gdt, unsigned int size)
+{
+    // kprintf("Loading GDT in %x, sz: %d\n", gdt, size);
+    gdt_descriptor.size = size;
+    gdt_descriptor.start_address = (uint32_t)gdt;
+
+    asm volatile("lgdt %0" : : "m" (gdt_descriptor));
+}
+
+void gdt_read(struct gdt_descriptor **target)
+{
+    asm volatile ("sgdt %0" : "=m"(*target));
 }

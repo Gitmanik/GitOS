@@ -76,6 +76,10 @@ void kernel_main()
     memset(gdt_real, 0, sizeof(gdt_real));
     gdt_structured_to_gdt(gdt_real, gdt_structured, TOTAL_GDT_SEGMENTS);
     gdt_load(gdt_real, sizeof(gdt_real));
+
+    struct gdt_descriptor gdt_content;
+    gdt_read(&gdt_content);
+    kprintf(" GDTR pointing at %x ", gdt_content.start_address);
     kprintf("OK\r\n");
     //
 

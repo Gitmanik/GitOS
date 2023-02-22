@@ -17,14 +17,19 @@
 #include "fs/file.h"
 #include "fs/fat16/fat16.h"
 #include "gdt/gdt.h"
+#include "task/tss.h"
 
 static struct paging_chunk *kernel_paging_chunk;
 
+struct tss tss;
 struct gdt gdt_real[TOTAL_GDT_SEGMENTS];
 struct gdt_structured gdt_structured[TOTAL_GDT_SEGMENTS] = {
     {.base = 0x00, .limit = 0x00, .type = 0x00},       // NULL
     {.base = 0x00, .limit = 0xFFFFFFFF, .type = 0x9A}, // KERNEL CODE
     {.base = 0x00, .limit = 0xFFFFFFFF, .type = 0x92}, // KERNEL DATA
+    {.base = 0x00, .limit = 0xFFFFFFFF, .type = 0xF8}, // USER CODE
+    {.base = 0x00, .limit = 0xFFFFFFFF, .type = 0xF2}, // USER DATA
+    {.base = (uint32_t)&tss, .limit = sizeof(tss), .type = 0xE9}, // TASK SWITCH SEGMENT
 };
 
 /**
@@ -91,6 +96,13 @@ void kernel_main()
     idt_Load();
     kprintf("OK\r\n");
     //
+
+    // Initialize TSS
+    kprintf("Initializing TSS..");
+    memset(&tss,0,sizeof(tss));
+    tss.esp0 = 0x600000;
+    tss.ss0 = KERNEL_DATA_SELECTOR;
+    tss_load(sizeof(struct gdt) * 5); //TSS Segment is 6th GDT Segment
 
     // ksprintf test
     kprintf("kprintf test: %p %x %i %s %c %ld %%\r\n", bios_memory_map, 0x41424344, -1234, "gitmanik.dev", 'X', __LONG_MAX__);

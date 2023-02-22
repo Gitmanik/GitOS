@@ -52,7 +52,7 @@ void gdt_load(struct gdt *gdt, unsigned int size)
     asm volatile("lgdt %0" : : "m" (gdt_descriptor));
 }
 
-void gdt_read(struct gdt_descriptor **target)
+void gdt_read(struct gdt_descriptor *target)
 {
     asm volatile ("sgdt %0" : "=m"(*target));
 }

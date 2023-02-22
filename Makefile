@@ -24,7 +24,7 @@ C_SOURCES = $(shell find . -name "*.c")
 C_HEADERS = $(shell find . -name "*.h")
 C_OBJECTS = ${C_SOURCES:.c=.o}
 
-# pm_entry.asm needs to be first linked because of hard-copying bytes in the last step
+# pm_entry.asm needs to be linked first because of hard-copying bytes in the last step
 ASM_SOURCES = ./src/kernel/pm_entry.asm $(shell find ./src/kernel -name "*.asm" ! -wholename "./src/kernel/pm_entry.asm") 
 ASM_OBJECTS = ${ASM_SOURCES:.asm=.asm.o}
 

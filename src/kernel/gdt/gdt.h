@@ -26,7 +26,10 @@ struct gdt_descriptor
 } __attribute__((packed));
 
 void gdt_load(struct gdt *gdt, unsigned int size);
-void gdt_read(struct gdt_descriptor **target);
+void gdt_read(struct gdt_descriptor *target);
 void gdt_structured_to_gdt(struct gdt *gdt, struct gdt_structured *structured_gdt, unsigned int total_entries);
 
-#define TOTAL_GDT_SEGMENTS 3
+#define TOTAL_GDT_SEGMENTS 6
+
+#define KERNEL_CODE_SELECTOR 0x08
+#define KERNEL_DATA_SELECTOR 0x10

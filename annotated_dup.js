@@ -21,5 +21,7 @@ var annotated_dup =
     [ "paging_chunk", "structpaging__chunk.html", "structpaging__chunk" ],
     [ "path_part", "structpath__part.html", "structpath__part" ],
     [ "path_root", "structpath__root.html", "structpath__root" ],
+    [ "registers", "structregisters.html", "structregisters" ],
+    [ "task", "structtask.html", "structtask" ],
     [ "tss", "structtss.html", "structtss" ]
 ];

@@ -59,7 +59,7 @@ var searchData=
   ['filesystem_128',['filesystem',['../structfilesystem.html',1,'filesystem'],['../structdisk.html#a4bce4c67c8c2fc4f8e3c0182f4afa586',1,'disk::filesystem()'],['../structfile__descriptor.html#a4bce4c67c8c2fc4f8e3c0182f4afa586',1,'file_descriptor::filesystem()']]],
   ['filesystems_129',['filesystems',['../file_8c.html#a2060af084ec6daac3995f941302d7024',1,'file.c']]],
   ['first_130',['first',['../structpath__root.html#ac5622a8973d91afac63f4c3e5441af37',1,'path_root']]],
-  ['flags_131',['flags',['../structfile__stat.html#a15883273c251db75429f281f77b26394',1,'file_stat']]],
+  ['flags_131',['flags',['../structfile__stat.html#a15883273c251db75429f281f77b26394',1,'file_stat::flags()'],['../structregisters.html#a773b39d480759f67926cb18ae2219281',1,'registers::flags()']]],
   ['fopen_132',['fopen',['../file_8c.html#acaa8025589d6cb55085a1976b97e08b9',1,'fopen(const char *filename, const char *str_mode):&#160;file.c'],['../file_8h.html#aa01c104dbdab4c93c40a96f0c705a3e1',1,'fopen(const char *filename, const char *mode):&#160;file.c']]],
   ['fread_133',['fread',['../file_8c.html#adee556231b2610f1807f3dd2f2dd0f6a',1,'fread(void *ptr, uint32_t size, uint32_t nmemb, int fd):&#160;file.c'],['../file_8h.html#adee556231b2610f1807f3dd2f2dd0f6a',1,'fread(void *ptr, uint32_t size, uint32_t nmemb, int fd):&#160;file.c']]],
   ['fs_134',['fs',['../tss_8h.html#a2ffb5cf275c124e8f8ff30e1d4449f80',1,'fs():&#160;tss.h'],['../structtss.html#a2ffb5cf275c124e8f8ff30e1d4449f80',1,'tss::fs()']]],

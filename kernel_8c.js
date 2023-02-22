@@ -8,5 +8,6 @@ var kernel_8c =
     [ "kernel_panic", "kernel_8c.html#a8d209f2439b73fa38517f599a1904a99", null ],
     [ "kprintf", "kernel_8c.html#ac9d768b4772cc87fc88afbbbd805f96a", null ],
     [ "gdt_real", "kernel_8c.html#ae94f4033175eb35d712ddcc38cd60b67", null ],
-    [ "gdt_structured", "kernel_8c.html#a71ca8723766d535dc4ffaf6e2dbc3daa", null ]
+    [ "gdt_structured", "kernel_8c.html#a71ca8723766d535dc4ffaf6e2dbc3daa", null ],
+    [ "tss", "kernel_8c.html#a77d7cb6847a4ad6a6c8ae993202dd619", null ]
 ];

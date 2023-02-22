@@ -20,5 +20,6 @@ var annotated_dup =
     [ "heap_table", "structheap__table.html", "structheap__table" ],
     [ "paging_chunk", "structpaging__chunk.html", "structpaging__chunk" ],
     [ "path_part", "structpath__part.html", "structpath__part" ],
-    [ "path_root", "structpath__root.html", "structpath__root" ]
+    [ "path_root", "structpath__root.html", "structpath__root" ],
+    [ "tss", "structtss.html", "structtss" ]
 ];

@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('gdt_8h.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -103,14 +104,21 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgdt__descriptor.html">gdt_descriptor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:adc5afdb11c099afb2162d63377834e14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#adc5afdb11c099afb2162d63377834e14">TOTAL_GDT_SEGMENTS</a>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:adc5afdb11c099afb2162d63377834e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6c98f7af7f77b08139f02f671678434"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#ab6c98f7af7f77b08139f02f671678434">KERNEL_CODE_SELECTOR</a>&#160;&#160;&#160;0x08</td></tr>
+<tr class="separator:ab6c98f7af7f77b08139f02f671678434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a0d98bb105f5a175de261c38a804a9466"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structgdt__descriptor.html">gdt_descriptor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a0d98bb105f5a175de261c38a804a9466">__attribute__</a> ((packed))</td></tr>
 <tr class="separator:a0d98bb105f5a175de261c38a804a9466"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a071baa899e787757da9db71d9bacc67a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a071baa899e787757da9db71d9bacc67a">gdt_load</a> (struct <a class="el" href="structgdt.html">gdt</a> *<a class="el" href="structgdt.html">gdt</a>, unsigned int <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>)</td></tr>
 <tr class="separator:a071baa899e787757da9db71d9bacc67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a769b1f61b4b7589d1adc57ea4c7867ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a769b1f61b4b7589d1adc57ea4c7867ac">gdt_read</a> (struct <a class="el" href="structgdt__descriptor.html">gdt_descriptor</a> **target)</td></tr>
-<tr class="separator:a769b1f61b4b7589d1adc57ea4c7867ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bea945b578f5101079d84c9f4864725"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a0bea945b578f5101079d84c9f4864725">gdt_read</a> (struct <a class="el" href="structgdt__descriptor.html">gdt_descriptor</a> *target)</td></tr>
+<tr class="separator:a0bea945b578f5101079d84c9f4864725"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad98deccb3abc7cfdd109b1821d1807b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#ad98deccb3abc7cfdd109b1821d1807b4">gdt_structured_to_gdt</a> (struct <a class="el" href="structgdt.html">gdt</a> *<a class="el" href="structgdt.html">gdt</a>, struct <a class="el" href="structgdt__structured.html">gdt_structured</a> *structured_gdt, unsigned int total_entries)</td></tr>
 <tr class="separator:ad98deccb3abc7cfdd109b1821d1807b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -121,6 +129,35 @@ Variables</h2></td></tr>
 <tr class="memitem:abe5b74a6bf41557a5ae72460fa563219"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#abe5b74a6bf41557a5ae72460fa563219">start_address</a></td></tr>
 <tr class="separator:abe5b74a6bf41557a5ae72460fa563219"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ab6c98f7af7f77b08139f02f671678434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6c98f7af7f77b08139f02f671678434">&#9670;&nbsp;</a></span>KERNEL_CODE_SELECTOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KERNEL_CODE_SELECTOR&#160;&#160;&#160;0x08</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adc5afdb11c099afb2162d63377834e14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc5afdb11c099afb2162d63377834e14">&#9670;&nbsp;</a></span>TOTAL_GDT_SEGMENTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TOTAL_GDT_SEGMENTS&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a0d98bb105f5a175de261c38a804a9466"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d98bb105f5a175de261c38a804a9466">&#9670;&nbsp;</a></span>__attribute__()</h2>
@@ -170,8 +207,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a769b1f61b4b7589d1adc57ea4c7867ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a769b1f61b4b7589d1adc57ea4c7867ac">&#9670;&nbsp;</a></span>gdt_read()</h2>
+<a id="a0bea945b578f5101079d84c9f4864725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bea945b578f5101079d84c9f4864725">&#9670;&nbsp;</a></span>gdt_read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,7 +216,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void gdt_read </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structgdt__descriptor.html">gdt_descriptor</a> **&#160;</td>
+          <td class="paramtype">struct <a class="el" href="structgdt__descriptor.html">gdt_descriptor</a> *&#160;</td>
           <td class="paramname"><em>target</em></td><td>)</td>
           <td></td>
         </tr>

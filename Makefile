@@ -36,6 +36,7 @@ stage1: ${STAGE1_BIN}
 kernel: ${KERNEL_BIN}
 
 clean:
+	rm -rf bin
 	rm -rf docs
 	-pkill -9 bochs
 	-pkill -9 qemu
@@ -76,6 +77,7 @@ disk: build
 
 # ASM_OBJECTS need to be first because of pm_entry.asm
 ${KERNEL_ELF}: ${C_OBJECTS} ${ASM_OBJECTS}
+	-mkdir bin
 	${GCC} -T ./src/linker.ld ${GCC_ARGUMENTS} -o ${KERNEL_ELF} ${ASM_OBJECTS} $(C_OBJECTS)
 
 ${KERNEL_BIN}: ${KERNEL_ELF}
@@ -92,6 +94,7 @@ ${STAGE1_BIN}:
 	${GCC} -I "src/kernel" -c ${GCC_ARGUMENTS} $< -o $@
 
 dump:
+
 	rm -rf dump.ans
 	${OBJDUMP} --demangle -w --visualize-jumps=extended-color -Mintel --prefix-addresses -d -f -t -s ${KERNEL_ELF} > dump.ans
 

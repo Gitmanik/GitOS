@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim AS build
+FROM debian:bullseye-slim
 
 WORKDIR /tmp
 
@@ -6,16 +6,16 @@ ENV PREFIX="/opt/cross"
 ENV TARGET=i686-elf
 ENV PATH="$PREFIX/bin:$PATH"
 
+RUN apt update && apt install -y build-essential bison flex libgmp3-dev \
+                  libmpc-dev libmpfr-dev texinfo libisl-dev wget make \
+                  libncurses-dev xorg-dev glew-utils unzip x11-utils x11-common
+
 RUN wget https://ftp.gnu.org/gnu/binutils/binutils-2.39.tar.xz
 RUN wget https://ftp.gnu.org/gnu/gcc/gcc-10.4.0/gcc-10.4.0.tar.xz
 RUN wget https://github.com/bochs-emu/Bochs/archive/refs/tags/REL_2_7_FINAL.zip
 RUN tar -xf binutils-2.39.tar.xz
 RUN tar -xf gcc-10.4.0.tar.xz
 
-RUN apt update
-RUN apt install -y build-essential bison flex libgmp3-dev \
-                  libmpc-dev libmpfr-dev texinfo libisl-dev wget make \
-                  libncurses-dev xorg-dev glew-utils unzip x11-utils x11-common
 
 RUN mkdir build-binutils && \
     cd build-binutils && \
@@ -35,7 +35,6 @@ RUN unzip REL_2_7_FINAL.zip
 WORKDIR /tmp/Bochs-REL_2_7_FINAL/bochs
 
 RUN ./configure \
-              --prefix=/opt/bochs \
               --build=x86_64 \
               --host=x86_64 \
               --target=x86_64 \
@@ -54,9 +53,6 @@ RUN ./configure \
 RUN make
 RUN make install
 
-FROM debian:bullseye-slim AS target
+RUN apt install -y qemu-system-i386 nasm git gdb dos2unix
 
-COPY --from=build /opt/cross /opt/cross
-COPY --from=build /opt/bochs /opt/bochs
-RUN apt update
-RUN apt install -y qemu-system-i386 nasm git gdb dos2unix x11-utils x11-common
+RUN rm -rf /tmp

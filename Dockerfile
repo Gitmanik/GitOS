@@ -1,13 +1,4 @@
-FROM debian:bullseye-slim
-
-RUN apt update
-RUN apt install -y build-essential bison flex libgmp3-dev \
-                  libmpc-dev libmpfr-dev texinfo libisl-dev wget make dos2unix
-
-RUN apt install -y x11-utils x11-common x11-apps
-
-RUN apt install -y qemu-system-i386
-RUN apt install -y nasm
+FROM debian:bullseye-slim AS build
 
 WORKDIR /tmp
 
@@ -17,15 +8,21 @@ ENV PATH="$PREFIX/bin:$PATH"
 
 RUN wget https://ftp.gnu.org/gnu/binutils/binutils-2.39.tar.xz
 RUN wget https://ftp.gnu.org/gnu/gcc/gcc-10.4.0/gcc-10.4.0.tar.xz
- 
+RUN wget https://github.com/bochs-emu/Bochs/archive/refs/tags/REL_2_7_FINAL.zip
 RUN tar -xf binutils-2.39.tar.xz
+RUN tar -xf gcc-10.4.0.tar.xz
+
+RUN apt update
+RUN apt install -y build-essential bison flex libgmp3-dev \
+                  libmpc-dev libmpfr-dev texinfo libisl-dev wget make \
+                  libncurses-dev xorg-dev glew-utils unzip x11-utils x11-common
+
 RUN mkdir build-binutils && \
     cd build-binutils && \
     ../binutils-2.39/configure --target=$TARGET --prefix="$PREFIX" --with-sysroot --disable-nls --disable-werror &&\
     make && \
     make install
 
-RUN tar -xf gcc-10.4.0.tar.xz
 RUN mkdir build-gcc &&\
     cd build-gcc && \
     ../gcc-10.4.0/configure --target=$TARGET --prefix="$PREFIX" --disable-nls --enable-languages=c,c++ --without-headers && \
@@ -34,21 +31,12 @@ RUN mkdir build-gcc &&\
     make install-gcc && \
     make install-target-libgcc
 
-RUN apt install -y git
-RUN apt install -y gdb
-
-RUN apt install -y unzip
-
-RUN apt install -y libncurses-dev xorg-dev glew-utils
-
-WORKDIR /tmp
-
-RUN wget https://github.com/bochs-emu/Bochs/archive/refs/tags/REL_2_7_FINAL.zip
 RUN unzip REL_2_7_FINAL.zip
-
 WORKDIR /tmp/Bochs-REL_2_7_FINAL/bochs
 
-RUN ./configure  --build=x86_64 \
+RUN ./configure \
+              --prefix=/opt/bochs \
+              --build=x86_64 \
               --host=x86_64 \
               --target=x86_64 \
               --enable-cpu-level=6 \
@@ -66,4 +54,9 @@ RUN ./configure  --build=x86_64 \
 RUN make
 RUN make install
 
-RUN rm -rf /tmp/*
+FROM debian:bullseye-slim AS target
+
+COPY --from=build /opt/cross /opt/cross
+COPY --from=build /opt/bochs /opt/bochs
+RUN apt update
+RUN apt install -y qemu-system-i386 nasm git gdb dos2unix x11-utils x11-common

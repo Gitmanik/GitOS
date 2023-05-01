@@ -1,6 +1,6 @@
 #pragma once
 
-#include "paging/paging.h"
+#include "memory/paging/paging.h"
 
 struct registers
 {
@@ -21,5 +21,34 @@ struct registers
 
 struct task 
 {
-    struct paging_4gb_chunk* page_directory;
-}
+    /**
+     * @brief The page directory of the task
+     */
+    struct paging_chunk* page_directory;
+
+    /**
+     * @brief Stored registers of the task (when the task is not running)
+     * 
+     */
+    struct registers registers;
+
+    /**
+     * @brief Next task 
+     */
+    struct task* next;
+
+    /**
+     * @brief Previous task
+     */
+    struct task* prev;
+};
+
+#define PROGRAM_VIRTUAL_ADDRESS 0x400000
+#define PROGRAM_VIRTUAL_STACK_ADDRESS_START 0x3FF000
+#define PROGRAM_VIRTUAL_STACK_ADDRESS_END  PROGRAM_VIRTUAL_STACK_ADDRESS_START - PROGRAM_VIRTUAL_STACK_SIZE
+#define PROGRAM_VIRTUAL_STACK_SIZE 1024 * 16
+
+struct task* task_current();
+struct task* task_new();
+struct task* task_get_next();
+int task_free(struct task* task);

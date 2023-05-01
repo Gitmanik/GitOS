@@ -29,3 +29,7 @@
  * 
  */
 #define ENOTIMPL 4
+
+#define ISERR(value) ((int) value < 0)
+#define ERROR(value) (void*)(value)
+#define ERROR_I(value) (int)(value)

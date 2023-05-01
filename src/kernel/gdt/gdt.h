@@ -33,3 +33,6 @@ void gdt_structured_to_gdt(struct gdt *gdt, struct gdt_structured *structured_gd
 
 #define KERNEL_CODE_SELECTOR 0x08
 #define KERNEL_DATA_SELECTOR 0x10
+
+#define USER_CODE_SELECTOR 0x1b
+#define USER_DATA_SELECTOR 0x23

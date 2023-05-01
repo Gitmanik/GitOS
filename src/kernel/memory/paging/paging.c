@@ -84,6 +84,23 @@ struct paging_chunk* paging_new_directory(uint8_t flags)
 }
 
 /**
+ * @brief Frees all entries and page directory itself
+ * 
+ * @param chunk Page directory to free
+ */
+void paging_free_directory(struct paging_chunk* chunk)
+{
+    for (int i = 0; i <1024; i++)
+    {
+        uint32_t entry = chunk->directory_entry[i];
+        uint32_t* table = ((uint32_t*)(entry & 0xfffff000)); //lowest 12 bits are flags
+        kfree(table);
+    }
+    kfree(chunk->directory_entry);
+    kfree(chunk);
+}
+
+/**
  * @brief Switches to given page directory pointer
  * 
  * @param directory Page directory pointer

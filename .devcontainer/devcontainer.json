@@ -23,7 +23,7 @@
 				"ms-vscode.hexeditor",
 				"iliazeus.vscode-ansi",
 				"cschlosser.doxdocgen",
-				"ms-vscode.cpptools-extension-pack"
+				"ms-vscode.cpptools"
 				]
 		}
 	},

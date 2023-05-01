@@ -1,6 +1,6 @@
 {
 	"name": "i686-osdev image",
-	"image": "i686-osdev:latest",
+	"image": "ghcr.io/gitmanik/i686-osdev:latest",
 	"customizations": {
 		"vscode": {
 			"extensions": [

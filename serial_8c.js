@@ -1,6 +1,6 @@
 var serial_8c =
 [
-    [ "ENOTIMPL", "serial_8c.html#a0e9e819f6f5a649e0dcb3e7d00c54e91", null ],
+    [ "ERROR_I", "serial_8c.html#a38e167bf6deb15344b87b76e432ca1c2", null ],
     [ "ser_Init", "serial_8c.html#a6b98595090e689060d67fba97affb7cb", null ],
     [ "ser_PrintChar", "serial_8c.html#ae89a8b98ece5c499d9e83c04bc4abc2f", null ],
     [ "ser_PrintString", "serial_8c.html#a4c091f828571492ebd73ebf301658a9c", null ],

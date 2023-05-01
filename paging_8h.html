@@ -121,6 +121,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a79699e43f28673ac9ba6933be1cf011a"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8h.html#a79699e43f28673ac9ba6933be1cf011a">paging_new_directory</a> (uint8_t flags)</td></tr>
 <tr class="memdesc:a79699e43f28673ac9ba6933be1cf011a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates and creates new page directory with specified flags.  <a href="paging_8h.html#a79699e43f28673ac9ba6933be1cf011a">More...</a><br /></td></tr>
 <tr class="separator:a79699e43f28673ac9ba6933be1cf011a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7ce9ba915145e34d6ec637ce24fec2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8h.html#af7ce9ba915145e34d6ec637ce24fec2d">paging_free_directory</a> (struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *chunk)</td></tr>
+<tr class="memdesc:af7ce9ba915145e34d6ec637ce24fec2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees all entries and page directory itself.  <a href="paging_8h.html#af7ce9ba915145e34d6ec637ce24fec2d">More...</a><br /></td></tr>
+<tr class="separator:af7ce9ba915145e34d6ec637ce24fec2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a850f8e4f83800436f132570f9faf1c40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8h.html#a850f8e4f83800436f132570f9faf1c40">paging_switch</a> (uint32_t *directory)</td></tr>
 <tr class="memdesc:a850f8e4f83800436f132570f9faf1c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switches to given page directory pointer.  <a href="paging_8h.html#a850f8e4f83800436f132570f9faf1c40">More...</a><br /></td></tr>
 <tr class="separator:a850f8e4f83800436f132570f9faf1c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -247,6 +250,34 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="af7ce9ba915145e34d6ec637ce24fec2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7ce9ba915145e34d6ec637ce24fec2d">&#9670;&nbsp;</a></span>paging_free_directory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void paging_free_directory </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *&#160;</td>
+          <td class="paramname"><em>chunk</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frees all entries and page directory itself. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chunk</td><td>Page directory to free </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="structpaging__chunk.html#a7abe8d9cbf8d303b43dc85b868b4eb93">paging_chunk::directory_entry</a>, and <a class="el" href="hkeap_8c.html#a069f85a5001d71bc44d8be6532a4e432">kfree()</a>.</p>
 
 </div>
 </div>

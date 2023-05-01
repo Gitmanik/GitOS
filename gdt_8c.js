@@ -1,6 +1,6 @@
 var gdt_8c =
 [
-    [ "KERNEL_DATA_SELECTOR", "gdt_8c.html#aa6c68f1bf413d84abd00bafd773b2e02", null ],
+    [ "USER_DATA_SELECTOR", "gdt_8c.html#a7314263eacc399b707efe8d1fbb804b6", null ],
     [ "encode_gdt_entry", "gdt_8c.html#a636b7c59562c6decfc33e43b5623955b", null ],
     [ "gdt_load", "gdt_8c.html#a071baa899e787757da9db71d9bacc67a", null ],
     [ "gdt_read", "gdt_8c.html#a0bea945b578f5101079d84c9f4864725", null ],

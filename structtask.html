@@ -93,21 +93,81 @@ $(document).ready(function(){initNavTree('structtask.html',''); initResizable();
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a33428c70ab68c3b79cec7869a69c1126"><td class="memItemLeft" align="right" valign="top">struct paging_4gb_chunk *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtask.html#a33428c70ab68c3b79cec7869a69c1126">page_directory</a></td></tr>
-<tr class="separator:a33428c70ab68c3b79cec7869a69c1126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab88b1e54843df52e90498f531b017418"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtask.html#ab88b1e54843df52e90498f531b017418">page_directory</a></td></tr>
+<tr class="memdesc:ab88b1e54843df52e90498f531b017418"><td class="mdescLeft">&#160;</td><td class="mdescRight">The page directory of the task.  <a href="structtask.html#ab88b1e54843df52e90498f531b017418">More...</a><br /></td></tr>
+<tr class="separator:ab88b1e54843df52e90498f531b017418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a603eb8db7897915c2002dbb9458ca137"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structregisters.html">registers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtask.html#a603eb8db7897915c2002dbb9458ca137">registers</a></td></tr>
+<tr class="memdesc:a603eb8db7897915c2002dbb9458ca137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stored registers of the task (when the task is not running)  <a href="structtask.html#a603eb8db7897915c2002dbb9458ca137">More...</a><br /></td></tr>
+<tr class="separator:a603eb8db7897915c2002dbb9458ca137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae949d26b280beacfbb782fa148c8505d"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structtask.html">task</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtask.html#ae949d26b280beacfbb782fa148c8505d">next</a></td></tr>
+<tr class="memdesc:ae949d26b280beacfbb782fa148c8505d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Next task.  <a href="structtask.html#ae949d26b280beacfbb782fa148c8505d">More...</a><br /></td></tr>
+<tr class="separator:ae949d26b280beacfbb782fa148c8505d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8db5db35b32960e280d9dd0abff3aeca"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structtask.html">task</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtask.html#a8db5db35b32960e280d9dd0abff3aeca">prev</a></td></tr>
+<tr class="memdesc:a8db5db35b32960e280d9dd0abff3aeca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Previous task.  <a href="structtask.html#a8db5db35b32960e280d9dd0abff3aeca">More...</a><br /></td></tr>
+<tr class="separator:a8db5db35b32960e280d9dd0abff3aeca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Field Documentation</h2>
-<a id="a33428c70ab68c3b79cec7869a69c1126"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33428c70ab68c3b79cec7869a69c1126">&#9670;&nbsp;</a></span>page_directory</h2>
+<a id="ae949d26b280beacfbb782fa148c8505d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae949d26b280beacfbb782fa148c8505d">&#9670;&nbsp;</a></span>next</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct paging_4gb_chunk* page_directory</td>
+          <td class="memname">struct <a class="el" href="structtask.html">task</a>* next</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Next task. </p>
+
+</div>
+</div>
+<a id="ab88b1e54843df52e90498f531b017418"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab88b1e54843df52e90498f531b017418">&#9670;&nbsp;</a></span>page_directory</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structpaging__chunk.html">paging_chunk</a>* page_directory</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The page directory of the task. </p>
+
+</div>
+</div>
+<a id="a8db5db35b32960e280d9dd0abff3aeca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8db5db35b32960e280d9dd0abff3aeca">&#9670;&nbsp;</a></span>prev</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structtask.html">task</a>* prev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Previous task. </p>
+
+</div>
+</div>
+<a id="a603eb8db7897915c2002dbb9458ca137"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a603eb8db7897915c2002dbb9458ca137">&#9670;&nbsp;</a></span>registers</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structregisters.html">registers</a> <a class="el" href="structregisters.html">registers</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stored registers of the task (when the task is not running) </p>
 
 </div>
 </div>

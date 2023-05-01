@@ -83,12 +83,14 @@ $(document).ready(function(){initNavTree('task_8h.html',''); initResizable(); })
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">task.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="paging_8h_source.html">paging/paging.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="paging_8h_source.html">memory/paging/paging.h</a>&quot;</code><br />
 </div>
 <p><a href="task_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -98,7 +100,182 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtask.html">task</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a0657d569354e9817b4763d671a36a8ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a0657d569354e9817b4763d671a36a8ab">PROGRAM_VIRTUAL_ADDRESS</a>&#160;&#160;&#160;0x400000</td></tr>
+<tr class="separator:a0657d569354e9817b4763d671a36a8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc94869b5cc333fe54a400654a10c9f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#abc94869b5cc333fe54a400654a10c9f0">PROGRAM_VIRTUAL_STACK_ADDRESS_START</a>&#160;&#160;&#160;0x3FF000</td></tr>
+<tr class="separator:abc94869b5cc333fe54a400654a10c9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a535100eb5fba42cd54dacade2711f60b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a535100eb5fba42cd54dacade2711f60b">PROGRAM_VIRTUAL_STACK_ADDRESS_END</a>&#160;&#160;&#160;<a class="el" href="task_8h.html#abc94869b5cc333fe54a400654a10c9f0">PROGRAM_VIRTUAL_STACK_ADDRESS_START</a> - <a class="el" href="task_8h.html#a0aef6002f9257edbf0dfb5e7ffb4c03b">PROGRAM_VIRTUAL_STACK_SIZE</a></td></tr>
+<tr class="separator:a535100eb5fba42cd54dacade2711f60b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aef6002f9257edbf0dfb5e7ffb4c03b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a0aef6002f9257edbf0dfb5e7ffb4c03b">PROGRAM_VIRTUAL_STACK_SIZE</a>&#160;&#160;&#160;1024 * 16</td></tr>
+<tr class="separator:a0aef6002f9257edbf0dfb5e7ffb4c03b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a09984f0be407f262769bb93c9c1d0937"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structtask.html">task</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a09984f0be407f262769bb93c9c1d0937">task_current</a> ()</td></tr>
+<tr class="memdesc:a09984f0be407f262769bb93c9c1d0937"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns currently running task.  <a href="task_8h.html#a09984f0be407f262769bb93c9c1d0937">More...</a><br /></td></tr>
+<tr class="separator:a09984f0be407f262769bb93c9c1d0937"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63ad5f786b6278415cd642dd33a5aaad"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structtask.html">task</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a63ad5f786b6278415cd642dd33a5aaad">task_new</a> ()</td></tr>
+<tr class="separator:a63ad5f786b6278415cd642dd33a5aaad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac794f1e1c7cf79fe144cb85a303a4eda"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structtask.html">task</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#ac794f1e1c7cf79fe144cb85a303a4eda">task_get_next</a> ()</td></tr>
+<tr class="memdesc:ac794f1e1c7cf79fe144cb85a303a4eda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns next task in list (or first if there is no next task in current_task)  <a href="task_8h.html#ac794f1e1c7cf79fe144cb85a303a4eda">More...</a><br /></td></tr>
+<tr class="separator:ac794f1e1c7cf79fe144cb85a303a4eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab03b661c3eeb2df303a9931941fefebe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#ab03b661c3eeb2df303a9931941fefebe">task_free</a> (struct <a class="el" href="structtask.html">task</a> *<a class="el" href="structtask.html">task</a>)</td></tr>
+<tr class="memdesc:ab03b661c3eeb2df303a9931941fefebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees all data associated with task struct.  <a href="task_8h.html#ab03b661c3eeb2df303a9931941fefebe">More...</a><br /></td></tr>
+<tr class="separator:ab03b661c3eeb2df303a9931941fefebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a0657d569354e9817b4763d671a36a8ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0657d569354e9817b4763d671a36a8ab">&#9670;&nbsp;</a></span>PROGRAM_VIRTUAL_ADDRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PROGRAM_VIRTUAL_ADDRESS&#160;&#160;&#160;0x400000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a535100eb5fba42cd54dacade2711f60b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a535100eb5fba42cd54dacade2711f60b">&#9670;&nbsp;</a></span>PROGRAM_VIRTUAL_STACK_ADDRESS_END</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PROGRAM_VIRTUAL_STACK_ADDRESS_END&#160;&#160;&#160;<a class="el" href="task_8h.html#abc94869b5cc333fe54a400654a10c9f0">PROGRAM_VIRTUAL_STACK_ADDRESS_START</a> - <a class="el" href="task_8h.html#a0aef6002f9257edbf0dfb5e7ffb4c03b">PROGRAM_VIRTUAL_STACK_SIZE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc94869b5cc333fe54a400654a10c9f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc94869b5cc333fe54a400654a10c9f0">&#9670;&nbsp;</a></span>PROGRAM_VIRTUAL_STACK_ADDRESS_START</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PROGRAM_VIRTUAL_STACK_ADDRESS_START&#160;&#160;&#160;0x3FF000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0aef6002f9257edbf0dfb5e7ffb4c03b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aef6002f9257edbf0dfb5e7ffb4c03b">&#9670;&nbsp;</a></span>PROGRAM_VIRTUAL_STACK_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PROGRAM_VIRTUAL_STACK_SIZE&#160;&#160;&#160;1024 * 16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a09984f0be407f262769bb93c9c1d0937"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09984f0be407f262769bb93c9c1d0937">&#9670;&nbsp;</a></span>task_current()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structtask.html">task</a>* task_current </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns currently running task. </p>
+<dl class="section return"><dt>Returns</dt><dd>struct task* Current task </dd></dl>
+
+<p class="reference">References <a class="el" href="task_8c.html#a9f6cf565fea5037efb7f971337abaf12">current_task</a>.</p>
+
+</div>
+</div>
+<a id="ab03b661c3eeb2df303a9931941fefebe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab03b661c3eeb2df303a9931941fefebe">&#9670;&nbsp;</a></span>task_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int task_free </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structtask.html">task</a> *&#160;</td>
+          <td class="paramname"><em>task</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frees all data associated with task struct. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>Task to free </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Error code </dd></dl>
+
+<p class="reference">References <a class="el" href="structtask.html#ab88b1e54843df52e90498f531b017418">task::page_directory</a>, and <a class="el" href="paging_8c.html#af7ce9ba915145e34d6ec637ce24fec2d">paging_free_directory()</a>.</p>
+
+</div>
+</div>
+<a id="ac794f1e1c7cf79fe144cb85a303a4eda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac794f1e1c7cf79fe144cb85a303a4eda">&#9670;&nbsp;</a></span>task_get_next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structtask.html">task</a>* task_get_next </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns next task in list (or first if there is no next task in current_task) </p>
+<dl class="section return"><dt>Returns</dt><dd>struct task* Next task </dd></dl>
+
+<p class="reference">References <a class="el" href="task_8c.html#a9f6cf565fea5037efb7f971337abaf12">current_task</a>, <a class="el" href="structtask.html#ae949d26b280beacfbb782fa148c8505d">task::next</a>, and <a class="el" href="task_8c.html#af03921059f0a909bfa22d2da65bc3886">task_head</a>.</p>
+
+</div>
+</div>
+<a id="a63ad5f786b6278415cd642dd33a5aaad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63ad5f786b6278415cd642dd33a5aaad">&#9670;&nbsp;</a></span>task_new()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structtask.html">task</a>* task_new </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="status_8h.html#a6a05c923dad0c1208043e9c20a58c8e5">ENOMEM</a>, <a class="el" href="status_8h.html#a9d59f12a576147f4e1564e3fa76b5077">ERROR</a>, <a class="el" href="status_8h.html#a7a255d1282fefa856ce93d9c8cb5612b">ISERR</a>, <a class="el" href="hkeap_8c.html#a913f2de31558b9cca9405d2cd05a402a">kzalloc()</a>, <a class="el" href="structtask.html#ae949d26b280beacfbb782fa148c8505d">task::next</a>, <a class="el" href="structtask.html#a8db5db35b32960e280d9dd0abff3aeca">task::prev</a>, <a class="el" href="task_8c.html#ab03b661c3eeb2df303a9931941fefebe">task_free()</a>, <a class="el" href="task_8c.html#af03921059f0a909bfa22d2da65bc3886">task_head</a>, <a class="el" href="task_8c.html#acd1c2d2c7b60725ecd9f5e6a377abdb3">task_init()</a>, and <a class="el" href="task_8c.html#a15855d60333dcd992f4e39d20f5b9aa2">task_tail</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

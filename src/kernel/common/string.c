@@ -81,6 +81,29 @@ char* strcpy(char* dest, const char* src)
 }
 
 /**
+ * @brief Copies string with maximum length
+ * 
+ * @param dest Destination buffer
+ * @param src Input buffer
+ * @param n Max length 
+ * @return char* Pointer to destination buffer
+ */
+char* strncpy(char* dest, const char* src, int n)
+{
+	char* dest_org = dest;
+	
+	int i;
+	for (i = 0; i < n-1; i++)
+	{
+		if (src[i] == 0)
+			break;
+		dest[i] = src[i];
+	}
+	dest[i] = 0;
+	return dest_org;
+}
+
+/**
  * @brief Compares two strings with maximum length
  * 
  * @param str1 String

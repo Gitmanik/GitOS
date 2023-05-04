@@ -19,10 +19,13 @@ struct registers
     uint32_t ss;
 };
 
+struct process;
+
 struct task 
 {
     /**
      * @brief The page directory of the task
+     * 
      */
     struct paging_chunk* page_directory;
 
@@ -33,22 +36,30 @@ struct task
     struct registers registers;
 
     /**
+     * @brief Process of task
+     * 
+     */
+    struct process* process;
+
+    /**
      * @brief Next task 
+     * 
      */
     struct task* next;
 
     /**
      * @brief Previous task
+     * 
      */
     struct task* prev;
 };
 
 #define PROGRAM_VIRTUAL_ADDRESS 0x400000
+#define PROGRAM_VIRTUAL_STACK_SIZE 1024 * 16
 #define PROGRAM_VIRTUAL_STACK_ADDRESS_START 0x3FF000
 #define PROGRAM_VIRTUAL_STACK_ADDRESS_END  PROGRAM_VIRTUAL_STACK_ADDRESS_START - PROGRAM_VIRTUAL_STACK_SIZE
-#define PROGRAM_VIRTUAL_STACK_SIZE 1024 * 16
 
 struct task* task_current();
-struct task* task_new();
 struct task* task_get_next();
+struct task* task_new(struct process* process);
 int task_free(struct task* task);

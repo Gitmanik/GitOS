@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:bookworm-20230502-slim
 
 WORKDIR /tmp
 
@@ -53,6 +53,6 @@ RUN ./configure \
 RUN make
 RUN make install
 
-RUN apt install -y qemu-system-i386 nasm git gdb dos2unix
+RUN apt install -y qemu-system-i386 nasm git gdb dos2unix cmake
 
 RUN rm -rf /tmp

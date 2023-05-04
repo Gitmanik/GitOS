@@ -30,6 +30,10 @@
  */
 #define ENOTIMPL 4
 
+/**
+ * @brief Is taken
+ * 
+ */
 #define EISTKN 8
 
 #define ISERR(value) ((int) value < 0)

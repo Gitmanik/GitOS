@@ -137,3 +137,93 @@ int paging_set_page(uint32_t* directory, void* virtual_address, uint32_t value)
 
     return 0;
 }
+
+/**
+ * @brief Aligns pointer to page size
+ * 
+ * @param ptr 
+ * @return void* 
+ */
+void* paging_align_address(void* ptr)
+{
+    if ((uint32_t) ptr % 0)
+    {
+        return (void*)((uint32_t) ptr + PAGING_PAGE_SIZE - ((uint32_t) ptr % PAGING_PAGE_SIZE));
+    }
+    return ptr;
+}
+
+/**
+ * @brief Maps virtual address to physical in page directory
+ * 
+ * @param directory Page directory
+ * @param physical Physical address
+ * @param flags Page directory entry flags
+ * @return int Error code
+ */
+int paging_map(uint32_t* directory, void* virtual, void* physical, int flags)
+{
+    if (((unsigned int) virtual % PAGING_PAGE_SIZE) || ((unsigned int) physical % PAGING_PAGE_SIZE))
+    {
+        return -EINVARG;
+    }
+
+    return paging_set_page(directory, virtual, (uint32_t) physical | flags);
+}
+
+/**
+ * @brief Maps range of virtual addresses to physical in page directory
+ * 
+ * @param directory Page directory
+ * @param physical Physical address
+ * @param flags Page directory entry flags
+ * @param count Count of entries
+ * @return int Error code
+ */
+int paging_map_range(uint32_t* directory, void* virtual, void* physical, int count, int flags)
+{
+    int res = 0;
+    for (int i = 0; i < count; i++)
+    {
+        res = paging_map(directory, virtual, physical, flags);
+        if (res == 0)
+            break;
+        virtual += PAGING_PAGE_SIZE;
+        physical += PAGING_PAGE_SIZE;
+    }
+    return res;
+}
+
+// TODO: brief
+int paging_map_to(uint32_t* directory, void* virtual, void* physical, void* physical_end, int flags)
+{
+    int res = 0;
+    if ((uint32_t) virtual % PAGING_PAGE_SIZE)
+    {
+        res = -EINVARG;
+        goto out;
+    }
+    if ((uint32_t) physical % PAGING_PAGE_SIZE)
+    {
+        res = -EINVARG;
+        goto out;
+    }
+    if ((uint32_t) physical_end % PAGING_PAGE_SIZE)
+    {
+        res = -EINVARG;
+        goto out;
+    }
+
+    if ((uint32_t) physical_end < (uint32_t) physical)
+    {
+        res = -EINVARG;
+        goto out;
+    }
+
+    uint32_t total_bytes = physical_end-physical;
+    int total_pages = total_bytes / PAGING_PAGE_SIZE;
+    res = paging_map_range(directory, virtual, physical, total_pages, flags);
+
+    out:
+    return res;
+}

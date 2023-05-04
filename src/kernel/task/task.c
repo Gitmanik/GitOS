@@ -4,13 +4,14 @@
 #include "memory/heap/kheap.h"
 #include "gdt/gdt.h"
 #include "memory/memory.h"
+#include "process.h"
 
 struct task* current_task = 0;
 
 struct task* task_tail = 0;
 struct task* task_head = 0;
 
-int task_init(struct task* task);
+int task_init(struct task* task, struct process* process);
 
 /**
  * @brief Returns currently running task
@@ -75,7 +76,7 @@ int task_free(struct task* task)
  * @param task Struct to be initialized
  * @return int Error code
  */
-int task_init(struct task* task)
+int task_init(struct task* task, struct process* process)
 {
     memset(task, 0, sizeof(struct task));
     task->page_directory = paging_new_directory(PAGING_IS_PRESENT | PAGING_ACCESS_FROM_ALL);
@@ -88,11 +89,13 @@ int task_init(struct task* task)
     task->registers.ss = USER_DATA_SELECTOR;
     task->registers.esp = PROGRAM_VIRTUAL_STACK_ADDRESS_START;
 
+    task->process = process;
+
     return 0;
 }
 
 
-struct task* task_new()
+struct task* task_new(struct process* process)
 {
     int res = 0;
     struct task* task = kzalloc(sizeof(struct task));
@@ -103,7 +106,7 @@ struct task* task_new()
         goto out;
     }
 
-    res = task_init(task);
+    res = task_init(task, process);
     if (ISERR(res))
         goto out;
     

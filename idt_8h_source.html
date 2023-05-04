@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('idt_8h_source.html',''); initResizable
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="idt_8h.html#ab898071398b359603a35c202e9c65f3b">__attribute__</a>((packed))</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    uint16_t limit; <span class="comment">// Size of desc table - 1</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    uint32_t base; <span class="comment">// Address of the desc table</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    uint32_t <a class="code" href="gdt_8h.html#ad44119f8ce1676a4dfac55fd4b74d09c">base</a>; <span class="comment">// Address of the desc table</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="idt_8h.html#a47e422e5167f03378f7565816e29d05a">   17</a></span>&#160;} <a class="code" href="idt_8h.html#a47e422e5167f03378f7565816e29d05a">idtr_desc</a>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span> <a class="code" href="idt_8h.html#a808e651ac439d9410771231324e80ff5">idt_Init</a>();</div>
@@ -131,6 +131,7 @@ $(document).ready(function(){initNavTree('idt_8h_source.html',''); initResizable
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">0x05C   19-31   Reserved exceptions</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">0x068 - 0x3FF   32-255  Interrupts free for software use</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">*/</span></div>
+<div class="ttc" id="agdt_8h_html_ad44119f8ce1676a4dfac55fd4b74d09c"><div class="ttname"><a href="gdt_8h.html#ad44119f8ce1676a4dfac55fd4b74d09c">base</a></div><div class="ttdeci">uint8_t base</div><div class="ttdef"><b>Definition:</b> gdt.h:2</div></div>
 <div class="ttc" id="aidt_8h_html_a296416326885a0423be69095e07b054e"><div class="ttname"><a href="idt_8h.html#a296416326885a0423be69095e07b054e">idt_Load</a></div><div class="ttdeci">void idt_Load()</div><div class="ttdoc">Loads Interrupt Descriptor Table.</div><div class="ttdef"><b>Definition:</b> idt.c:19</div></div>
 <div class="ttc" id="aidt_8h_html_a47e422e5167f03378f7565816e29d05a"><div class="ttname"><a href="idt_8h.html#a47e422e5167f03378f7565816e29d05a">idtr_desc</a></div><div class="ttdeci">idtr_desc</div><div class="ttdef"><b>Definition:</b> idt.h:17</div></div>
 <div class="ttc" id="aidt_8h_html_a808e651ac439d9410771231324e80ff5"><div class="ttname"><a href="idt_8h.html#a808e651ac439d9410771231324e80ff5">idt_Init</a></div><div class="ttdeci">void idt_Init()</div><div class="ttdoc">Initializes memory for IDT struct Sets default for all interrupts.</div><div class="ttdef"><b>Definition:</b> idt.c:45</div></div>

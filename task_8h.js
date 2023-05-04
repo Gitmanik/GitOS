@@ -9,5 +9,5 @@ var task_8h =
     [ "task_current", "task_8h.html#a09984f0be407f262769bb93c9c1d0937", null ],
     [ "task_free", "task_8h.html#ab03b661c3eeb2df303a9931941fefebe", null ],
     [ "task_get_next", "task_8h.html#ac794f1e1c7cf79fe144cb85a303a4eda", null ],
-    [ "task_new", "task_8h.html#a63ad5f786b6278415cd642dd33a5aaad", null ]
+    [ "task_new", "task_8h.html#aac4ed16fa0ba438a9e54edddb7e179ee", null ]
 ];

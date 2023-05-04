@@ -117,8 +117,8 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0d98bb105f5a175de261c38a804a9466"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structgdt__descriptor.html">gdt_descriptor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a0d98bb105f5a175de261c38a804a9466">__attribute__</a> ((packed))</td></tr>
-<tr class="separator:a0d98bb105f5a175de261c38a804a9466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec44192f522a85272b2aac9d3f767bab"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structgdt.html">gdt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#aec44192f522a85272b2aac9d3f767bab">__attribute__</a> ((packed))</td></tr>
+<tr class="separator:aec44192f522a85272b2aac9d3f767bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a071baa899e787757da9db71d9bacc67a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a071baa899e787757da9db71d9bacc67a">gdt_load</a> (struct <a class="el" href="structgdt.html">gdt</a> *<a class="el" href="structgdt.html">gdt</a>, unsigned int <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>)</td></tr>
 <tr class="separator:a071baa899e787757da9db71d9bacc67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bea945b578f5101079d84c9f4864725"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a0bea945b578f5101079d84c9f4864725">gdt_read</a> (struct <a class="el" href="structgdt__descriptor.html">gdt_descriptor</a> *target)</td></tr>
@@ -128,6 +128,20 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:aa1d954ee686ce47aac9e7a1b24daf78c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#aa1d954ee686ce47aac9e7a1b24daf78c">segment</a></td></tr>
+<tr class="separator:aa1d954ee686ce47aac9e7a1b24daf78c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f59044265cddfa39bee1a7b6430aeac"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a0f59044265cddfa39bee1a7b6430aeac">base_first</a></td></tr>
+<tr class="separator:a0f59044265cddfa39bee1a7b6430aeac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad44119f8ce1676a4dfac55fd4b74d09c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#ad44119f8ce1676a4dfac55fd4b74d09c">base</a></td></tr>
+<tr class="separator:ad44119f8ce1676a4dfac55fd4b74d09c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b0d6200bc639dd37ff68847a0adde5f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a8b0d6200bc639dd37ff68847a0adde5f">access</a></td></tr>
+<tr class="separator:a8b0d6200bc639dd37ff68847a0adde5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11072e0dcf739ac795f486ed4642c426"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a11072e0dcf739ac795f486ed4642c426">high_flags</a></td></tr>
+<tr class="separator:a11072e0dcf739ac795f486ed4642c426"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c7adcee207668e8dbbb44c6b0311edc"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a2c7adcee207668e8dbbb44c6b0311edc">base_24_31_bits</a></td></tr>
+<tr class="separator:a2c7adcee207668e8dbbb44c6b0311edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa10181a16a79b055f27edb2846ad2f44"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structgdt__structured.html">gdt_structured</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#aa10181a16a79b055f27edb2846ad2f44">__attribute__</a></td></tr>
+<tr class="separator:aa10181a16a79b055f27edb2846ad2f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaba88b24a21a6c70c895c0d55f4a69a0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a></td></tr>
 <tr class="separator:aaba88b24a21a6c70c895c0d55f4a69a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe5b74a6bf41557a5ae72460fa563219"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#abe5b74a6bf41557a5ae72460fa563219">start_address</a></td></tr>
@@ -191,14 +205,14 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a0d98bb105f5a175de261c38a804a9466"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d98bb105f5a175de261c38a804a9466">&#9670;&nbsp;</a></span>__attribute__()</h2>
+<a id="aec44192f522a85272b2aac9d3f767bab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec44192f522a85272b2aac9d3f767bab">&#9670;&nbsp;</a></span>__attribute__()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structgdt__descriptor.html">gdt_descriptor</a> __attribute__ </td>
+          <td class="memname">struct <a class="el" href="structgdt.html">gdt</a> __attribute__ </td>
           <td>(</td>
           <td class="paramtype">(packed)&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -294,6 +308,104 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="aa10181a16a79b055f27edb2846ad2f44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa10181a16a79b055f27edb2846ad2f44">&#9670;&nbsp;</a></span>__attribute__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structgdt__structured.html">gdt_structured</a> __attribute__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8b0d6200bc639dd37ff68847a0adde5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b0d6200bc639dd37ff68847a0adde5f">&#9670;&nbsp;</a></span>access</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t access</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad44119f8ce1676a4dfac55fd4b74d09c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad44119f8ce1676a4dfac55fd4b74d09c">&#9670;&nbsp;</a></span>base</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t base</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c7adcee207668e8dbbb44c6b0311edc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c7adcee207668e8dbbb44c6b0311edc">&#9670;&nbsp;</a></span>base_24_31_bits</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t base_24_31_bits</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f59044265cddfa39bee1a7b6430aeac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f59044265cddfa39bee1a7b6430aeac">&#9670;&nbsp;</a></span>base_first</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t base_first</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a11072e0dcf739ac795f486ed4642c426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11072e0dcf739ac795f486ed4642c426">&#9670;&nbsp;</a></span>high_flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t high_flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa1d954ee686ce47aac9e7a1b24daf78c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1d954ee686ce47aac9e7a1b24daf78c">&#9670;&nbsp;</a></span>segment</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t segment</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aaba88b24a21a6c70c895c0d55f4a69a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaba88b24a21a6c70c895c0d55f4a69a0">&#9670;&nbsp;</a></span>size</h2>
 

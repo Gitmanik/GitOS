@@ -105,23 +105,23 @@ Data Structures</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:a0657d569354e9817b4763d671a36a8ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a0657d569354e9817b4763d671a36a8ab">PROGRAM_VIRTUAL_ADDRESS</a>&#160;&#160;&#160;0x400000</td></tr>
 <tr class="separator:a0657d569354e9817b4763d671a36a8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aef6002f9257edbf0dfb5e7ffb4c03b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a0aef6002f9257edbf0dfb5e7ffb4c03b">PROGRAM_VIRTUAL_STACK_SIZE</a>&#160;&#160;&#160;1024 * 16</td></tr>
+<tr class="separator:a0aef6002f9257edbf0dfb5e7ffb4c03b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc94869b5cc333fe54a400654a10c9f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#abc94869b5cc333fe54a400654a10c9f0">PROGRAM_VIRTUAL_STACK_ADDRESS_START</a>&#160;&#160;&#160;0x3FF000</td></tr>
 <tr class="separator:abc94869b5cc333fe54a400654a10c9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a535100eb5fba42cd54dacade2711f60b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a535100eb5fba42cd54dacade2711f60b">PROGRAM_VIRTUAL_STACK_ADDRESS_END</a>&#160;&#160;&#160;<a class="el" href="task_8h.html#abc94869b5cc333fe54a400654a10c9f0">PROGRAM_VIRTUAL_STACK_ADDRESS_START</a> - <a class="el" href="task_8h.html#a0aef6002f9257edbf0dfb5e7ffb4c03b">PROGRAM_VIRTUAL_STACK_SIZE</a></td></tr>
 <tr class="separator:a535100eb5fba42cd54dacade2711f60b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0aef6002f9257edbf0dfb5e7ffb4c03b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a0aef6002f9257edbf0dfb5e7ffb4c03b">PROGRAM_VIRTUAL_STACK_SIZE</a>&#160;&#160;&#160;1024 * 16</td></tr>
-<tr class="separator:a0aef6002f9257edbf0dfb5e7ffb4c03b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a09984f0be407f262769bb93c9c1d0937"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structtask.html">task</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a09984f0be407f262769bb93c9c1d0937">task_current</a> ()</td></tr>
 <tr class="memdesc:a09984f0be407f262769bb93c9c1d0937"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns currently running task.  <a href="task_8h.html#a09984f0be407f262769bb93c9c1d0937">More...</a><br /></td></tr>
 <tr class="separator:a09984f0be407f262769bb93c9c1d0937"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63ad5f786b6278415cd642dd33a5aaad"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structtask.html">task</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a63ad5f786b6278415cd642dd33a5aaad">task_new</a> ()</td></tr>
-<tr class="separator:a63ad5f786b6278415cd642dd33a5aaad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac794f1e1c7cf79fe144cb85a303a4eda"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structtask.html">task</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#ac794f1e1c7cf79fe144cb85a303a4eda">task_get_next</a> ()</td></tr>
 <tr class="memdesc:ac794f1e1c7cf79fe144cb85a303a4eda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns next task in list (or first if there is no next task in current_task)  <a href="task_8h.html#ac794f1e1c7cf79fe144cb85a303a4eda">More...</a><br /></td></tr>
 <tr class="separator:ac794f1e1c7cf79fe144cb85a303a4eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac4ed16fa0ba438a9e54edddb7e179ee"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structtask.html">task</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#aac4ed16fa0ba438a9e54edddb7e179ee">task_new</a> (struct <a class="el" href="structprocess.html">process</a> *<a class="el" href="structprocess.html">process</a>)</td></tr>
+<tr class="separator:aac4ed16fa0ba438a9e54edddb7e179ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab03b661c3eeb2df303a9931941fefebe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#ab03b661c3eeb2df303a9931941fefebe">task_free</a> (struct <a class="el" href="structtask.html">task</a> *<a class="el" href="structtask.html">task</a>)</td></tr>
 <tr class="memdesc:ab03b661c3eeb2df303a9931941fefebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees all data associated with task struct.  <a href="task_8h.html#ab03b661c3eeb2df303a9931941fefebe">More...</a><br /></td></tr>
 <tr class="separator:ab03b661c3eeb2df303a9931941fefebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -257,8 +257,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a63ad5f786b6278415cd642dd33a5aaad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63ad5f786b6278415cd642dd33a5aaad">&#9670;&nbsp;</a></span>task_new()</h2>
+<a id="aac4ed16fa0ba438a9e54edddb7e179ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac4ed16fa0ba438a9e54edddb7e179ee">&#9670;&nbsp;</a></span>task_new()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -266,13 +266,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">struct <a class="el" href="structtask.html">task</a>* task_new </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="structprocess.html">process</a> *&#160;</td>
+          <td class="paramname"><em>process</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="status_8h.html#a6a05c923dad0c1208043e9c20a58c8e5">ENOMEM</a>, <a class="el" href="status_8h.html#a9d59f12a576147f4e1564e3fa76b5077">ERROR</a>, <a class="el" href="status_8h.html#a7a255d1282fefa856ce93d9c8cb5612b">ISERR</a>, <a class="el" href="hkeap_8c.html#a913f2de31558b9cca9405d2cd05a402a">kzalloc()</a>, <a class="el" href="structtask.html#ae949d26b280beacfbb782fa148c8505d">task::next</a>, <a class="el" href="structtask.html#a8db5db35b32960e280d9dd0abff3aeca">task::prev</a>, <a class="el" href="task_8c.html#ab03b661c3eeb2df303a9931941fefebe">task_free()</a>, <a class="el" href="task_8c.html#af03921059f0a909bfa22d2da65bc3886">task_head</a>, <a class="el" href="task_8c.html#acd1c2d2c7b60725ecd9f5e6a377abdb3">task_init()</a>, and <a class="el" href="task_8c.html#a15855d60333dcd992f4e39d20f5b9aa2">task_tail</a>.</p>
+<p class="reference">References <a class="el" href="status_8h.html#a6a05c923dad0c1208043e9c20a58c8e5">ENOMEM</a>, <a class="el" href="status_8h.html#a9d59f12a576147f4e1564e3fa76b5077">ERROR</a>, <a class="el" href="status_8h.html#a7a255d1282fefa856ce93d9c8cb5612b">ISERR</a>, <a class="el" href="hkeap_8c.html#a913f2de31558b9cca9405d2cd05a402a">kzalloc()</a>, <a class="el" href="structtask.html#ae949d26b280beacfbb782fa148c8505d">task::next</a>, <a class="el" href="structtask.html#a8db5db35b32960e280d9dd0abff3aeca">task::prev</a>, <a class="el" href="task_8c.html#ab03b661c3eeb2df303a9931941fefebe">task_free()</a>, <a class="el" href="task_8c.html#af03921059f0a909bfa22d2da65bc3886">task_head</a>, <a class="el" href="task_8c.html#a3b58a43c9c28b44a3bedb1fb9cdee42a">task_init()</a>, and <a class="el" href="task_8c.html#a15855d60333dcd992f4e39d20f5b9aa2">task_tail</a>.</p>
 
 </div>
 </div>

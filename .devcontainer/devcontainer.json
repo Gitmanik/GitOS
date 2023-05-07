@@ -12,7 +12,6 @@
 				"mcu-debug.memory-view",
 				"NateAGeek.memory-viewer",
 				"mcu-debug.debug-tracker-vscode",
-				"ms-vscode.makefile-tools",
 				"ms-vscode.hexeditor",
 				"iliazeus.vscode-ansi",
 				"cschlosser.doxdocgen",

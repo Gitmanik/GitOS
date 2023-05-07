@@ -29,9 +29,3 @@ add_custom_target(
     BYPRODUCTS ${DISK_BIN}
 )
 add_dependencies(make_disk ${KERNEL_BIN} stage1)
-
-add_custom_target(
-    run_in_qemu
-    COMMAND OPEN ${SRCROOT}/scripts/run_in_qemu.sh
-)
-add_dependencies(run_in_qemu make_disk)

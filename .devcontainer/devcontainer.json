@@ -16,8 +16,8 @@
 				"ms-vscode.hexeditor",
 				"iliazeus.vscode-ansi",
 				"cschlosser.doxdocgen",
-				"ms-vscode.cpptools"
-				]
+				"ms-vscode.cmake-tools"
+			]
 		}
 	},
 	"runArgs": ["--privileged", "-e", "DISPLAY=host.docker.internal:0.0"]

@@ -4,7 +4,7 @@ BITS 16
 jmp short setup ; jump over BIOS Parameter Block's space
 nop
 
-%include "./src/boot/fat16_bpb.asm"
+%include "fat16_bpb.asm"
 
 setup:
     jmp 0:.setup2 ; set code segment
@@ -26,7 +26,7 @@ setup:
     mov cr0, eax
     jmp 0x08:load32
 
-%include "./src/boot/ata.asm"
+%include "ata.asm"
 
 [BITS 32]
 load32:
@@ -53,8 +53,8 @@ load32:
     jmp 0x08:0x0100000
 
 [BITS 16]
-%include "./src/boot/memmap.asm"
-%include "./src/boot/gdt.asm"
+%include "memmap.asm"
+%include "gdt.asm"
 ; Aligning to 512 bytes
 times 510 - ($ - $$) db 0
 db 0x55

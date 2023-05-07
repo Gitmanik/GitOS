@@ -30,3 +30,8 @@ add_custom_target(
     BYPRODUCTS ${DISK_BIN}
 )
 add_dependencies(make_disk ${KERNEL_BIN} stage1)
+
+add_custom_target(
+    dump_symbols
+    COMMAND ${CMAKE_OBJDUMP} --demangle -w --visualize-jumps=extended-color -Mintel --prefix-addresses -d -f -t -s ${KERNEL_ELF} > dump.ans
+)

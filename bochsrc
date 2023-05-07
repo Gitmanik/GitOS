@@ -1,8 +1,8 @@
 display_library: x
-ata0-master: type=disk, path="./bin/disk.bin", mode=flat
+ata0-master: type=disk, path="./build/disk.bin", mode=flat
 boot:disk
 megs:64
-debug_symbols: file="bochs_symbols.sym"
+debug_symbols: file="./build/bochs_symbols.sym"
 cpu: count=1, ips=10000000, reset_on_triple_fault=0
 com1: enabled=1, mode=socket-client, dev=host.docker.internal:4555
 gdbstub: enabled=1, port=1234

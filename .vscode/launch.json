@@ -1,7 +1,6 @@
 {
     "version": "0.2.0",
     "configurations": [
-        
         {
             "name": "GDB QEMU",
             "type": "cppdbg",
@@ -26,7 +25,7 @@
                     "ignoreFailures": true
                 },
                 {
-                    "text": "file ${workspaceRoot}/bin/kernel.elf",
+                    "text": "file ${workspaceRoot}/build/kernel.elf",
                     "description": "Load ELF."
                 },
                 {
@@ -34,7 +33,7 @@
                     "description": "Break when kernel is halting."
                 }
             ],
-            "preLaunchTask": "Launch QEMU",
+            "preLaunchTask": "Run QEMU",
             "externalConsole": false
         },
         {
@@ -61,7 +60,7 @@
                     "ignoreFailures": true
                 },
                 {
-                    "text": "file ${workspaceRoot}/bin/kernel.elf",
+                    "text": "file ${workspaceRoot}/build/kernel.elf",
                     "description": "Load ELF."
                 },
                 {
@@ -69,7 +68,7 @@
                     "description": "Break when kernel is halting."
                 }
             ],
-            "preLaunchTask": "Launch BOCHS",
+            "preLaunchTask": "Run BOCHS",
             "externalConsole": false
         }
     ]

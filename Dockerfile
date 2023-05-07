@@ -16,7 +16,6 @@ RUN wget https://github.com/bochs-emu/Bochs/archive/refs/tags/REL_2_7_FINAL.zip
 RUN tar -xf binutils-2.39.tar.xz
 RUN tar -xf gcc-10.4.0.tar.xz
 
-
 RUN mkdir build-binutils && \
     cd build-binutils && \
     ../binutils-2.39/configure --target=$TARGET --prefix="$PREFIX" --with-sysroot --disable-nls --disable-werror &&\
@@ -54,5 +53,7 @@ RUN make
 RUN make install
 
 RUN apt install -y qemu-system-i386 nasm git gdb dos2unix cmake
+
+RUN apt remove gcc g++ dpkg-dev
 
 RUN rm -rf /tmp

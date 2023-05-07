@@ -55,5 +55,6 @@ RUN make install
 RUN apt install -y qemu-system-i386 nasm git gdb dos2unix cmake
 
 RUN apt remove gcc g++ dpkg-dev
+RUN apt install netcat-traditional
 
 RUN rm -rf /tmp

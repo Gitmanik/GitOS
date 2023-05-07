@@ -15,25 +15,31 @@
 			"type": "shell",
 			"label": "Run QEMU",
 			"command": "${workspaceRoot}/scripts/run_in_qemu.sh ./build/disk.bin",
-			// "isBackground": true,
 			"dependsOn": "CMake: Make disk",
-			// "problemMatcher": [
-			// 	{
-			// 	  "pattern": [
-			// 		{
-			// 		  "regexp": ".",
-			// 		  "file": 1,
-			// 		  "location": 2,
-			// 		  "message": 3
-			// 		}
-			// 	  ],
-			// 	  "background": {
-			// 		"activeOnStart": true,
-			// 		"beginsPattern": ".",
-			// 		"endsPattern": ".",
-			// 	  }
-			// 	}
-			// ]
-		}
+		},
+		{
+			"type": "shell",
+			"label": "Run BOCHS",
+			"command": "${workspaceRoot}/scripts/run_in_bochs.sh",
+			"isBackground": true,
+			"dependsOn": "CMake: Make disk",
+			"problemMatcher": [
+				{
+				  "pattern": [
+					{
+					  "regexp": ".",
+					  "file": 1,
+					  "location": 2,
+					  "message": 3
+					}
+				  ],
+				  "background": {
+					"activeOnStart": true,
+					"beginsPattern": ".",
+					"endsPattern": ".",
+				  }
+				}
+			]
+		},
 	]
 }

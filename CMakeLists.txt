@@ -19,6 +19,7 @@ add_subdirectory(${SRCROOT}/src/kernel)
 add_custom_target(
     ${KERNEL_BIN}
     COMMAND ${CMAKE_OBJCOPY} -O binary ${KERNEL_ELF} ${KERNEL_BIN}
+    COMMAND nm ${KERNEL_ELF} | sort | sed 's/\ A\ /\ /g' > bochs_symbols.sym
 )
 add_dependencies(${KERNEL_BIN} kernel)
 

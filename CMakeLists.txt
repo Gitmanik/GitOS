@@ -6,6 +6,8 @@ set (CMAKE_VERBOSE_MAKEFILE ON)
 
 project(GitOS)
 
+set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
+
 set(KERNEL_BIN kernel.bin)
 set(KERNEL_ELF kernel.elf)
 set(STAGE1_BIN stage1.bin)
@@ -14,6 +16,7 @@ set(SRCROOT ${PROJECT_SOURCE_DIR})
 
 add_subdirectory(${SRCROOT}/src/boot)
 add_subdirectory(${SRCROOT}/src/kernel)
+add_subdirectory(${SRCROOT}/docs)
 
 # kernel.bin target
 add_custom_target(
@@ -31,6 +34,7 @@ add_custom_target(
 )
 add_dependencies(make_disk ${KERNEL_BIN} stage1)
 
+# Dump symbols target
 add_custom_target(
     dump_symbols
     COMMAND ${CMAKE_OBJDUMP} --demangle -w --visualize-jumps=extended-color -Mintel --prefix-addresses -d -f -t -s ${KERNEL_ELF} > dump.ans

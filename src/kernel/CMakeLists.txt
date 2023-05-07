@@ -1,6 +1,6 @@
-set (SRCROOT ${PROJECT_SOURCE_DIR}/src/kernel)
+set (SRCROOT ${CMAKE_CURRENT_SOURCE_DIR})
 
-set (KERNEL_ELF kernel)
+set (KERNEL_ELF kernel.elf)
 
 set (CMAKE_C_FLAGS "-ffreestanding -O0 -nostdlib -Wall -Wextra -I${SRCROOT} -Wno-maybe-uninitialized")
 set (CMAKE_C_STANDARD 11)
@@ -17,7 +17,11 @@ list (REMOVE_ITEM ASM_KERNEL_SOURCES ${SRCROOT}/pm_entry.asm)
 list (INSERT ASM_KERNEL_SOURCES 0 ${SRCROOT}/pm_entry.asm)
 
 add_executable(${KERNEL_ELF})
+add_custom_command(
+    TARGET ${KERNEL_ELF} 
+    POST_BUILD 
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${KERNEL_ELF}> ${CMAKE_BINARY_DIR}
+)
 
-# Build kernel.elf
 target_sources(${KERNEL_ELF} PRIVATE ${ASM_KERNEL_SOURCES} ${C_SOURCES})
 target_include_directories(${KERNEL_ELF} PRIVATE ${SRCROOT})

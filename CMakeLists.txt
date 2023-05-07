@@ -20,8 +20,9 @@ add_custom_target(
     ${KERNEL_BIN}
     COMMAND ${CMAKE_OBJCOPY} -O binary ${KERNEL_ELF} ${KERNEL_BIN}
     COMMAND nm ${KERNEL_ELF} | sort | sed 's/\ A\ /\ /g' > bochs_symbols.sym
+    BYPRODUCTS ${KERNEL_BIN}
 )
-add_dependencies(${KERNEL_BIN} kernel)
+add_dependencies(${KERNEL_BIN} ${KERNEL_ELF})
 
 # disk.bin target
 add_custom_target(

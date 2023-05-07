@@ -10,4 +10,4 @@ add_custom_target(
     WORKING_DIRECTORY ${SRCROOT}
     COMMAND ${CMAKE_ASM_NASM_COMPILER} -f bin ${SRCROOT}/boot.asm -o ${CMAKE_BINARY_DIR}/${STAGE1_BIN}
     BYPRODUCTS ${STAGE1_BIN}
-    )
+)

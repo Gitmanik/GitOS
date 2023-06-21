@@ -85,7 +85,8 @@ $(document).ready(function(){initNavTree('task_8h.html',''); initResizable(); })
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">task.h File Reference</div>  </div>
 </div><!--header-->
@@ -114,6 +115,10 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:afbe98bd1f8d3c7a65d8a8048fdd8cd99"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structregisters.html">registers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#afbe98bd1f8d3c7a65d8a8048fdd8cd99">__attribute__</a> ((packed))</td></tr>
+<tr class="separator:afbe98bd1f8d3c7a65d8a8048fdd8cd99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c3f53a94942da37305118db4eb0a4a6"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a7c3f53a94942da37305118db4eb0a4a6">restore_general_purpose_registers</a> (struct <a class="el" href="structregisters.html">registers</a> *<a class="el" href="structregisters.html">registers</a>)</td></tr>
+<tr class="separator:a7c3f53a94942da37305118db4eb0a4a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09984f0be407f262769bb93c9c1d0937"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structtask.html">task</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a09984f0be407f262769bb93c9c1d0937">task_current</a> ()</td></tr>
 <tr class="memdesc:a09984f0be407f262769bb93c9c1d0937"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns currently running task.  <a href="task_8h.html#a09984f0be407f262769bb93c9c1d0937">More...</a><br /></td></tr>
 <tr class="separator:a09984f0be407f262769bb93c9c1d0937"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,6 +130,39 @@ Functions</h2></td></tr>
 <tr class="memitem:ab03b661c3eeb2df303a9931941fefebe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#ab03b661c3eeb2df303a9931941fefebe">task_free</a> (struct <a class="el" href="structtask.html">task</a> *<a class="el" href="structtask.html">task</a>)</td></tr>
 <tr class="memdesc:ab03b661c3eeb2df303a9931941fefebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees all data associated with task struct.  <a href="task_8h.html#ab03b661c3eeb2df303a9931941fefebe">More...</a><br /></td></tr>
 <tr class="separator:ab03b661c3eeb2df303a9931941fefebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba7c84f8935dd23579647c702d880941"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#aba7c84f8935dd23579647c702d880941">task_return</a> (struct <a class="el" href="structregisters.html">registers</a> *<a class="el" href="structregisters.html">registers</a>)</td></tr>
+<tr class="separator:aba7c84f8935dd23579647c702d880941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2be45a1d61331ba5b9fc59deb2053a61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a2be45a1d61331ba5b9fc59deb2053a61">user_registers</a> ()</td></tr>
+<tr class="separator:a2be45a1d61331ba5b9fc59deb2053a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a36ffab8d34c6c411a7e5205ddb95eaf9"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a36ffab8d34c6c411a7e5205ddb95eaf9">edi</a></td></tr>
+<tr class="separator:a36ffab8d34c6c411a7e5205ddb95eaf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada78e3124de6adf5a5d212f9ebc4bbe0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#ada78e3124de6adf5a5d212f9ebc4bbe0">esi</a></td></tr>
+<tr class="separator:ada78e3124de6adf5a5d212f9ebc4bbe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaba2ad0ff8ba480934feabfdab02b1e7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#aaba2ad0ff8ba480934feabfdab02b1e7">ebp</a></td></tr>
+<tr class="separator:aaba2ad0ff8ba480934feabfdab02b1e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7c1e3339e4dead200cab41010e9127c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#ae7c1e3339e4dead200cab41010e9127c">ebx</a></td></tr>
+<tr class="separator:ae7c1e3339e4dead200cab41010e9127c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6db045cebe7b4cf979120dccdee0d01"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#ae6db045cebe7b4cf979120dccdee0d01">edx</a></td></tr>
+<tr class="separator:ae6db045cebe7b4cf979120dccdee0d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2b16bef95c844028dd145264d1d3875"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#af2b16bef95c844028dd145264d1d3875">ecx</a></td></tr>
+<tr class="separator:af2b16bef95c844028dd145264d1d3875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93d929ad1fc57af9d4f1793c361fb4f2"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a93d929ad1fc57af9d4f1793c361fb4f2">eax</a></td></tr>
+<tr class="separator:a93d929ad1fc57af9d4f1793c361fb4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69ddb9c845da426f636d9dd0dbed4e7e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a69ddb9c845da426f636d9dd0dbed4e7e">ip</a></td></tr>
+<tr class="separator:a69ddb9c845da426f636d9dd0dbed4e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8519dc239502dfcbac171b3128dc7054"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a8519dc239502dfcbac171b3128dc7054">cs</a></td></tr>
+<tr class="separator:a8519dc239502dfcbac171b3128dc7054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a773b39d480759f67926cb18ae2219281"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a773b39d480759f67926cb18ae2219281">flags</a></td></tr>
+<tr class="separator:a773b39d480759f67926cb18ae2219281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7534a179bc9cc0ef26f0468e0959ee5c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a7534a179bc9cc0ef26f0468e0959ee5c">esp</a></td></tr>
+<tr class="separator:a7534a179bc9cc0ef26f0468e0959ee5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c59346dd338708c94ca75cf21b78195"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a3c59346dd338708c94ca75cf21b78195">ss</a></td></tr>
+<tr class="separator:a3c59346dd338708c94ca75cf21b78195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40623fda07a44ccfe37937db8e86c24e"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structtask.html">task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a40623fda07a44ccfe37937db8e86c24e">__attribute__</a></td></tr>
+<tr class="separator:a40623fda07a44ccfe37937db8e86c24e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a0657d569354e9817b4763d671a36a8ab"></a>
@@ -184,6 +222,42 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="afbe98bd1f8d3c7a65d8a8048fdd8cd99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbe98bd1f8d3c7a65d8a8048fdd8cd99">&#9670;&nbsp;</a></span>__attribute__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structregisters.html">registers</a> __attribute__ </td>
+          <td>(</td>
+          <td class="paramtype">(packed)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7c3f53a94942da37305118db4eb0a4a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c3f53a94942da37305118db4eb0a4a6">&#9670;&nbsp;</a></span>restore_general_purpose_registers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* restore_general_purpose_registers </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structregisters.html">registers</a> *&#160;</td>
+          <td class="paramname"><em>registers</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a09984f0be407f262769bb93c9c1d0937"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a09984f0be407f262769bb93c9c1d0937">&#9670;&nbsp;</a></span>task_current()</h2>
 
@@ -274,6 +348,224 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="status_8h.html#a6a05c923dad0c1208043e9c20a58c8e5">ENOMEM</a>, <a class="el" href="status_8h.html#a9d59f12a576147f4e1564e3fa76b5077">ERROR</a>, <a class="el" href="status_8h.html#a7a255d1282fefa856ce93d9c8cb5612b">ISERR</a>, <a class="el" href="hkeap_8c.html#a913f2de31558b9cca9405d2cd05a402a">kzalloc()</a>, <a class="el" href="structtask.html#ae949d26b280beacfbb782fa148c8505d">task::next</a>, <a class="el" href="structtask.html#a8db5db35b32960e280d9dd0abff3aeca">task::prev</a>, <a class="el" href="task_8c.html#ab03b661c3eeb2df303a9931941fefebe">task_free()</a>, <a class="el" href="task_8c.html#af03921059f0a909bfa22d2da65bc3886">task_head</a>, <a class="el" href="task_8c.html#a3b58a43c9c28b44a3bedb1fb9cdee42a">task_init()</a>, and <a class="el" href="task_8c.html#a15855d60333dcd992f4e39d20f5b9aa2">task_tail</a>.</p>
+
+</div>
+</div>
+<a id="aba7c84f8935dd23579647c702d880941"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba7c84f8935dd23579647c702d880941">&#9670;&nbsp;</a></span>task_return()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void task_return </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structregisters.html">registers</a> *&#160;</td>
+          <td class="paramname"><em>registers</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2be45a1d61331ba5b9fc59deb2053a61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2be45a1d61331ba5b9fc59deb2053a61">&#9670;&nbsp;</a></span>user_registers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void user_registers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a40623fda07a44ccfe37937db8e86c24e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40623fda07a44ccfe37937db8e86c24e">&#9670;&nbsp;</a></span>__attribute__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structtask.html">task</a> __attribute__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8519dc239502dfcbac171b3128dc7054"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8519dc239502dfcbac171b3128dc7054">&#9670;&nbsp;</a></span>cs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t cs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a93d929ad1fc57af9d4f1793c361fb4f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93d929ad1fc57af9d4f1793c361fb4f2">&#9670;&nbsp;</a></span>eax</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t eax</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaba2ad0ff8ba480934feabfdab02b1e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaba2ad0ff8ba480934feabfdab02b1e7">&#9670;&nbsp;</a></span>ebp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ebp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae7c1e3339e4dead200cab41010e9127c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7c1e3339e4dead200cab41010e9127c">&#9670;&nbsp;</a></span>ebx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ebx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af2b16bef95c844028dd145264d1d3875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2b16bef95c844028dd145264d1d3875">&#9670;&nbsp;</a></span>ecx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ecx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a36ffab8d34c6c411a7e5205ddb95eaf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36ffab8d34c6c411a7e5205ddb95eaf9">&#9670;&nbsp;</a></span>edi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t edi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae6db045cebe7b4cf979120dccdee0d01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6db045cebe7b4cf979120dccdee0d01">&#9670;&nbsp;</a></span>edx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t edx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada78e3124de6adf5a5d212f9ebc4bbe0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada78e3124de6adf5a5d212f9ebc4bbe0">&#9670;&nbsp;</a></span>esi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t esi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7534a179bc9cc0ef26f0468e0959ee5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7534a179bc9cc0ef26f0468e0959ee5c">&#9670;&nbsp;</a></span>esp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t esp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a773b39d480759f67926cb18ae2219281"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a773b39d480759f67926cb18ae2219281">&#9670;&nbsp;</a></span>flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69ddb9c845da426f636d9dd0dbed4e7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69ddb9c845da426f636d9dd0dbed4e7e">&#9670;&nbsp;</a></span>ip</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ip</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c59346dd338708c94ca75cf21b78195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c59346dd338708c94ca75cf21b78195">&#9670;&nbsp;</a></span>ss</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ss</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

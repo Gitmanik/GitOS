@@ -4,20 +4,20 @@
 
 struct registers
 {
-    uint32_t edi;
-    uint32_t esi;
-    uint32_t ebp;
-    uint32_t ebx;
-    uint32_t edx;
-    uint32_t ecx;
-    uint32_t eax;
+    uint32_t edi; //0
+    uint32_t esi; //4
+    uint32_t ebp; //8
+    uint32_t ebx; //12
+    uint32_t edx; //16
+    uint32_t ecx; //20
+    uint32_t eax; //24
 
-    uint32_t ip;
-    uint32_t cs;
-    uint32_t flags;
-    uint32_t esp;
-    uint32_t ss;
-};
+    uint32_t ip; //28
+    uint32_t cs; //32
+    uint32_t flags; //36
+    uint32_t esp; //40
+    uint32_t ss; //44
+} __attribute__((packed));
 
 struct process;
 
@@ -59,7 +59,11 @@ struct task
 #define PROGRAM_VIRTUAL_STACK_ADDRESS_START 0x3FF000
 #define PROGRAM_VIRTUAL_STACK_ADDRESS_END  PROGRAM_VIRTUAL_STACK_ADDRESS_START - PROGRAM_VIRTUAL_STACK_SIZE
 
+void* restore_general_purpose_registers(struct registers* registers);
+
 struct task* task_current();
 struct task* task_get_next();
 struct task* task_new(struct process* process);
 int task_free(struct task* task);
+void task_return(struct registers* registers);
+void user_registers();

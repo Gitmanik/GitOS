@@ -1,4 +1,4 @@
-FROM debian:bookworm-20230502-slim
+FROM debian:bookworm-20231218-slim
 
 WORKDIR /tmp
 
@@ -8,7 +8,8 @@ ENV PATH="$PREFIX/bin:$PATH"
 
 RUN apt update && apt install -y build-essential bison flex libgmp3-dev \
                   libmpc-dev libmpfr-dev texinfo libisl-dev wget make \
-                  libncurses-dev xorg-dev glew-utils unzip x11-utils x11-common
+                  libncurses-dev xorg-dev glew-utils unzip x11-utils x11-common \
+                  qemu-system-i386 nasm git gdb dos2unix netcat-traditional
 
 RUN wget https://ftp.gnu.org/gnu/binutils/binutils-2.39.tar.xz
 RUN wget https://ftp.gnu.org/gnu/gcc/gcc-10.4.0/gcc-10.4.0.tar.xz
@@ -51,10 +52,5 @@ RUN ./configure \
 
 RUN make
 RUN make install
-
-RUN apt install -y qemu-system-i386 nasm git gdb dos2unix cmake
-
-RUN apt remove gcc g++ dpkg-dev
-RUN apt install netcat-traditional
 
 RUN rm -rf /tmp

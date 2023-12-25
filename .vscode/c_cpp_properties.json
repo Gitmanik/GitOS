@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "i686-elf x",
+            "name": "i686-elf cross",
             "includePath": [
                 "${workspaceFolder}/**"
             ],

@@ -11,5 +11,5 @@ Using:
 * NASM
 * qemu-system-i386
 * Bochs
-* cmake for building
+* make for building
 * Docker containers for tools

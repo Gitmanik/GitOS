@@ -109,6 +109,7 @@ void pathparser_free(struct path_root* root)
 
 int pathparser_parse(struct path_root** path_root_out, const char* path, const char* current_dir_path)
 {
+    (void)(current_dir_path);
     int drive_number = 0;
     const char* tmp_path = path;
 

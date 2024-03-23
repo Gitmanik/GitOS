@@ -33,13 +33,14 @@ ASM_SOURCES = ./src/kernel/pm_entry.asm $(shell find ./src/kernel -name "*.asm" 
 ASM_OBJECTS = ${ASM_SOURCES:.asm=.asm.o}
 
 
-all: clean build disk
+default: all
+all: clean build userland disk
 test: all run
 
 stage1: ${STAGE1_BIN}
 kernel: ${KERNEL_BIN}
 
-clean:
+clean: userland_clean
 	rm -rf ${BUILD_FOLDER}
 	rm -rf docs
 	-pkill -9 bochs
@@ -86,13 +87,14 @@ disk: build
 	# losetup -d ${LO_DEV}
 	mount -t vfat -o fat=16 ./build/disk.bin ./mnt
 	cp -r ./fs/. ./mnt/.
+	cp ./src/userland/blank.bin ./mnt/.
 	umount ./mnt
 	rm -rf ./mnt
 
 # ASM_OBJECTS need to be first because of pm_entry.asm
 ${KERNEL_ELF}: ${C_OBJECTS} ${ASM_OBJECTS}
 	-mkdir build
-	${GCC} -T ./src/linker.ld ${GCC_ARGUMENTS} -o ${KERNEL_ELF} ${ASM_OBJECTS} $(C_OBJECTS)
+	${GCC} -T ./src/kernel_linker.ld ${GCC_ARGUMENTS} -o ${KERNEL_ELF} ${ASM_OBJECTS} $(C_OBJECTS)
 
 ${KERNEL_BIN}: ${KERNEL_ELF}
 	${OBJCOPY} -O binary ${KERNEL_ELF} ${KERNEL_BIN}
@@ -113,3 +115,9 @@ dump:
 
 docs: ./docs
 	doxygen Doxyfile
+
+userland:
+	cd ./src/userland && ${MAKE} all
+
+userland_clean:
+	cd ./src/userland && ${MAKE} clean

@@ -132,8 +132,16 @@ Functions</h2></td></tr>
 <tr class="separator:ab03b661c3eeb2df303a9931941fefebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba7c84f8935dd23579647c702d880941"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#aba7c84f8935dd23579647c702d880941">task_return</a> (struct <a class="el" href="structregisters.html">registers</a> *<a class="el" href="structregisters.html">registers</a>)</td></tr>
 <tr class="separator:aba7c84f8935dd23579647c702d880941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab94af482792ae8ca51832783d1916c33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#ab94af482792ae8ca51832783d1916c33">task_run_first_ever_task</a> ()</td></tr>
+<tr class="separator:ab94af482792ae8ca51832783d1916c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2be45a1d61331ba5b9fc59deb2053a61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a2be45a1d61331ba5b9fc59deb2053a61">user_registers</a> ()</td></tr>
 <tr class="separator:a2be45a1d61331ba5b9fc59deb2053a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b0e7375897d0c61d6b2d12024451f8a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a2b0e7375897d0c61d6b2d12024451f8a">task_switch</a> (struct <a class="el" href="structtask.html">task</a> *<a class="el" href="structtask.html">task</a>)</td></tr>
+<tr class="memdesc:a2b0e7375897d0c61d6b2d12024451f8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switch current task (switch pages)  <a href="task_8h.html#a2b0e7375897d0c61d6b2d12024451f8a">More...</a><br /></td></tr>
+<tr class="separator:a2b0e7375897d0c61d6b2d12024451f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45e8e823b36227f6dadb826453d8042a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a45e8e823b36227f6dadb826453d8042a">task_page</a> ()</td></tr>
+<tr class="memdesc:a45e8e823b36227f6dadb826453d8042a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads into the task's page.  <a href="task_8h.html#a45e8e823b36227f6dadb826453d8042a">More...</a><br /></td></tr>
+<tr class="separator:a45e8e823b36227f6dadb826453d8042a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -347,7 +355,29 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="status_8h.html#a6a05c923dad0c1208043e9c20a58c8e5">ENOMEM</a>, <a class="el" href="status_8h.html#a9d59f12a576147f4e1564e3fa76b5077">ERROR</a>, <a class="el" href="status_8h.html#a7a255d1282fefa856ce93d9c8cb5612b">ISERR</a>, <a class="el" href="hkeap_8c.html#a913f2de31558b9cca9405d2cd05a402a">kzalloc()</a>, <a class="el" href="structtask.html#ae949d26b280beacfbb782fa148c8505d">task::next</a>, <a class="el" href="structtask.html#a8db5db35b32960e280d9dd0abff3aeca">task::prev</a>, <a class="el" href="task_8c.html#ab03b661c3eeb2df303a9931941fefebe">task_free()</a>, <a class="el" href="task_8c.html#af03921059f0a909bfa22d2da65bc3886">task_head</a>, <a class="el" href="task_8c.html#a3b58a43c9c28b44a3bedb1fb9cdee42a">task_init()</a>, and <a class="el" href="task_8c.html#a15855d60333dcd992f4e39d20f5b9aa2">task_tail</a>.</p>
+<p class="reference">References <a class="el" href="task_8c.html#a9f6cf565fea5037efb7f971337abaf12">current_task</a>, <a class="el" href="status_8h.html#a6a05c923dad0c1208043e9c20a58c8e5">ENOMEM</a>, <a class="el" href="status_8h.html#a9d59f12a576147f4e1564e3fa76b5077">ERROR</a>, <a class="el" href="status_8h.html#a7a255d1282fefa856ce93d9c8cb5612b">ISERR</a>, <a class="el" href="hkeap_8c.html#a913f2de31558b9cca9405d2cd05a402a">kzalloc()</a>, <a class="el" href="structtask.html#ae949d26b280beacfbb782fa148c8505d">task::next</a>, <a class="el" href="structtask.html#a8db5db35b32960e280d9dd0abff3aeca">task::prev</a>, <a class="el" href="task_8c.html#ab03b661c3eeb2df303a9931941fefebe">task_free()</a>, <a class="el" href="task_8c.html#af03921059f0a909bfa22d2da65bc3886">task_head</a>, <a class="el" href="task_8c.html#a3b58a43c9c28b44a3bedb1fb9cdee42a">task_init()</a>, and <a class="el" href="task_8c.html#a15855d60333dcd992f4e39d20f5b9aa2">task_tail</a>.</p>
+
+</div>
+</div>
+<a id="a45e8e823b36227f6dadb826453d8042a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e8e823b36227f6dadb826453d8042a">&#9670;&nbsp;</a></span>task_page()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int task_page </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads into the task's page. </p>
+<dl class="section return"><dt>Returns</dt><dd>int Error code </dd></dl>
+
+<p class="reference">References <a class="el" href="task_8c.html#a9f6cf565fea5037efb7f971337abaf12">current_task</a>, <a class="el" href="task_8c.html#a2b0e7375897d0c61d6b2d12024451f8a">task_switch()</a>, and <a class="el" href="task_8h.html#a2be45a1d61331ba5b9fc59deb2053a61">user_registers()</a>.</p>
 
 </div>
 </div>
@@ -366,6 +396,54 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab94af482792ae8ca51832783d1916c33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab94af482792ae8ca51832783d1916c33">&#9670;&nbsp;</a></span>task_run_first_ever_task()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void task_run_first_ever_task </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="task_8c.html#a9f6cf565fea5037efb7f971337abaf12">current_task</a>, <a class="el" href="kernel_8c.html#a8d209f2439b73fa38517f599a1904a99">kernel_panic()</a>, <a class="el" href="structtask.html#a603eb8db7897915c2002dbb9458ca137">task::registers</a>, <a class="el" href="task_8c.html#af03921059f0a909bfa22d2da65bc3886">task_head</a>, <a class="el" href="task_8h.html#aba7c84f8935dd23579647c702d880941">task_return()</a>, and <a class="el" href="task_8c.html#a2b0e7375897d0c61d6b2d12024451f8a">task_switch()</a>.</p>
+
+</div>
+</div>
+<a id="a2b0e7375897d0c61d6b2d12024451f8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b0e7375897d0c61d6b2d12024451f8a">&#9670;&nbsp;</a></span>task_switch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int task_switch </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structtask.html">task</a> *&#160;</td>
+          <td class="paramname"><em>task</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Switch current task (switch pages) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>Task to switch to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Error code </dd></dl>
+
+<p class="reference">References <a class="el" href="task_8c.html#a9f6cf565fea5037efb7f971337abaf12">current_task</a>, <a class="el" href="structpaging__chunk.html#a7abe8d9cbf8d303b43dc85b868b4eb93">paging_chunk::directory_entry</a>, <a class="el" href="structtask.html#ab88b1e54843df52e90498f531b017418">task::page_directory</a>, and <a class="el" href="paging_8c.html#a850f8e4f83800436f132570f9faf1c40">paging_switch()</a>.</p>
 
 </div>
 </div>

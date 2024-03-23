@@ -1,6 +1,9 @@
 {
-	"name": "i686-osdev image",
-	"image": "ghcr.io/gitmanik/i686-osdev:latest",
+	"name": "Local Dockerfile",
+	"build": {
+		"context": "..",
+		"dockerfile": "../Dockerfile"
+	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -15,7 +18,7 @@
 				"ms-vscode.hexeditor",
 				"iliazeus.vscode-ansi",
 				"cschlosser.doxdocgen",
-				"ms-vscode.cmake-tools"
+				"ms-vscode.makefile-tools"
 			]
 		}
 	},

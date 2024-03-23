@@ -103,12 +103,12 @@ void paging_free_directory(struct paging_chunk* chunk)
 /**
  * @brief Switches to given page directory pointer
  * 
- * @param directory Page directory pointer
+ * @param chunk Page directory pointer
  */
-void paging_switch(uint32_t* directory)
+void paging_switch(struct paging_chunk* chunk)
 {
-    paging_load_directory(directory);
-    current_directory = directory;
+    paging_load_directory(chunk->directory_entry);
+    current_directory = chunk->directory_entry;
 }
 
 /**
@@ -156,19 +156,19 @@ void* paging_align_address(void* ptr)
 /**
  * @brief Maps virtual address to physical in page directory
  * 
- * @param directory Page directory
+ * @param chunk Paging chunk
  * @param physical Physical address
  * @param flags Page directory entry flags
  * @return int Error code
  */
-int paging_map(uint32_t* directory, void* virtual, void* physical, int flags)
+int paging_map(struct paging_chunk* chunk, void* virtual, void* physical, int flags)
 {
     if (((unsigned int) virtual % PAGING_PAGE_SIZE) || ((unsigned int) physical % PAGING_PAGE_SIZE))
     {
         return -EINVARG;
     }
 
-    return paging_set_page(directory, virtual, (uint32_t) physical | flags);
+    return paging_set_page(chunk->directory_entry, virtual, (uint32_t) physical | flags);
 }
 
 /**
@@ -180,7 +180,7 @@ int paging_map(uint32_t* directory, void* virtual, void* physical, int flags)
  * @param count Count of entries
  * @return int Error code
  */
-int paging_map_range(uint32_t* directory, void* virtual, void* physical, int count, int flags)
+int paging_map_range(struct paging_chunk* directory, void* virtual, void* physical, int count, int flags)
 {
     int res = 0;
     for (int i = 0; i < count; i++)
@@ -194,8 +194,16 @@ int paging_map_range(uint32_t* directory, void* virtual, void* physical, int cou
     return res;
 }
 
-// TODO: brief
-int paging_map_to(uint32_t* directory, void* virtual, void* physical, void* physical_end, int flags)
+/**
+ * @brief Maps virtual address to physical in page directory
+ * 
+ * @param chunk Paging chunk
+ * @param physical Physical address start
+ * @param physical_end Physical address end
+ * @param flags Page directory entry flags
+ * @return int Error code
+ */
+int paging_map_to(struct paging_chunk* chunk, void* virtual, void* physical, void* physical_end, int flags)
 {
     int res = 0;
     if ((uint32_t) virtual % PAGING_PAGE_SIZE)
@@ -222,7 +230,7 @@ int paging_map_to(uint32_t* directory, void* virtual, void* physical, void* phys
 
     uint32_t total_bytes = physical_end-physical;
     int total_pages = total_bytes / PAGING_PAGE_SIZE;
-    res = paging_map_range(directory, virtual, physical, total_pages, flags);
+    res = paging_map_range(chunk, virtual, physical, total_pages, flags);
 
     out:
     return res;

@@ -153,19 +153,19 @@ void kernel_main()
 
     kprintf("Enabling paging..");
     kernel_paging_chunk = paging_new_directory(PAGING_IS_WRITEABLE | PAGING_IS_PRESENT | PAGING_ACCESS_FROM_ALL);
-    paging_switch(paging_get_directory(kernel_paging_chunk));
+    paging_switch(kernel_paging_chunk);
     paging_enable();
     kprintf("OK\r\n");
 
     // Paging test
     kprintf("Setting up paging..");
     char *ptr_real = kzalloc(4096);
-    res = paging_set_page(paging_get_directory(kernel_paging_chunk), (void *)0x1000, (uint32_t)ptr_real | PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
+    char *ptr_virt = (char *)0x1000;
+    res = paging_map_to(kernel_paging_chunk, ptr_virt, ptr_real, paging_align_address(ptr_real + sizeof(ptr_real)), PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
     if (res < 0)
     {
-        kernel_panic("Could not sect page!");
+        kernel_panic("Could not map virtual address!");
     }
-    char *ptr_virt = (char *)0x1000;
 
     ptr_virt[0] = 'O';
     ptr_virt[1] = 'K';

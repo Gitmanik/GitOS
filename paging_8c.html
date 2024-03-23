@@ -105,23 +105,24 @@ Functions</h2></td></tr>
 <tr class="memitem:af7ce9ba915145e34d6ec637ce24fec2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#af7ce9ba915145e34d6ec637ce24fec2d">paging_free_directory</a> (struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *chunk)</td></tr>
 <tr class="memdesc:af7ce9ba915145e34d6ec637ce24fec2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees all entries and page directory itself.  <a href="paging_8c.html#af7ce9ba915145e34d6ec637ce24fec2d">More...</a><br /></td></tr>
 <tr class="separator:af7ce9ba915145e34d6ec637ce24fec2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a850f8e4f83800436f132570f9faf1c40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#a850f8e4f83800436f132570f9faf1c40">paging_switch</a> (uint32_t *directory)</td></tr>
-<tr class="memdesc:a850f8e4f83800436f132570f9faf1c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switches to given page directory pointer.  <a href="paging_8c.html#a850f8e4f83800436f132570f9faf1c40">More...</a><br /></td></tr>
-<tr class="separator:a850f8e4f83800436f132570f9faf1c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2659d08cc3bac5b029cb7e7008352c85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#a2659d08cc3bac5b029cb7e7008352c85">paging_switch</a> (struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *chunk)</td></tr>
+<tr class="memdesc:a2659d08cc3bac5b029cb7e7008352c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switches to given page directory pointer.  <a href="paging_8c.html#a2659d08cc3bac5b029cb7e7008352c85">More...</a><br /></td></tr>
+<tr class="separator:a2659d08cc3bac5b029cb7e7008352c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a040900b1b1eec0f5ce8027a31a25c1d9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#a040900b1b1eec0f5ce8027a31a25c1d9">paging_set_page</a> (uint32_t *directory, void *virtual_address, uint32_t value)</td></tr>
 <tr class="memdesc:a040900b1b1eec0f5ce8027a31a25c1d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets page table entry.  <a href="paging_8c.html#a040900b1b1eec0f5ce8027a31a25c1d9">More...</a><br /></td></tr>
 <tr class="separator:a040900b1b1eec0f5ce8027a31a25c1d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d32790b83c14fffde9038096b5d3025"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#a4d32790b83c14fffde9038096b5d3025">paging_align_address</a> (void *ptr)</td></tr>
 <tr class="memdesc:a4d32790b83c14fffde9038096b5d3025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aligns pointer to page size.  <a href="paging_8c.html#a4d32790b83c14fffde9038096b5d3025">More...</a><br /></td></tr>
 <tr class="separator:a4d32790b83c14fffde9038096b5d3025"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a61ec9b3c33b1029061fc989a12bcca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#a1a61ec9b3c33b1029061fc989a12bcca">paging_map</a> (uint32_t *directory, void *virtual, void *physical, int <a class="el" href="task_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>)</td></tr>
-<tr class="memdesc:a1a61ec9b3c33b1029061fc989a12bcca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps virtual address to physical in page directory.  <a href="paging_8c.html#a1a61ec9b3c33b1029061fc989a12bcca">More...</a><br /></td></tr>
-<tr class="separator:a1a61ec9b3c33b1029061fc989a12bcca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0b7f88ac26befffac6b59b76ca09b6a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#ac0b7f88ac26befffac6b59b76ca09b6a">paging_map_range</a> (uint32_t *directory, void *virtual, void *physical, int count, int <a class="el" href="task_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>)</td></tr>
-<tr class="memdesc:ac0b7f88ac26befffac6b59b76ca09b6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps range of virtual addresses to physical in page directory.  <a href="paging_8c.html#ac0b7f88ac26befffac6b59b76ca09b6a">More...</a><br /></td></tr>
-<tr class="separator:ac0b7f88ac26befffac6b59b76ca09b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49cea9871c6d52e7cc73bc82bb9774fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#a49cea9871c6d52e7cc73bc82bb9774fc">paging_map_to</a> (uint32_t *directory, void *virtual, void *physical, void *physical_end, int <a class="el" href="task_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>)</td></tr>
-<tr class="separator:a49cea9871c6d52e7cc73bc82bb9774fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05e68db3330a8c08d9cd8255a2ff5f48"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#a05e68db3330a8c08d9cd8255a2ff5f48">paging_map</a> (struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *chunk, void *virtual, void *physical, int <a class="el" href="task_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>)</td></tr>
+<tr class="memdesc:a05e68db3330a8c08d9cd8255a2ff5f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps virtual address to physical in page directory.  <a href="paging_8c.html#a05e68db3330a8c08d9cd8255a2ff5f48">More...</a><br /></td></tr>
+<tr class="separator:a05e68db3330a8c08d9cd8255a2ff5f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77bed9b9ce6bad3bf10a02aa90522cde"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#a77bed9b9ce6bad3bf10a02aa90522cde">paging_map_range</a> (struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *directory, void *virtual, void *physical, int count, int <a class="el" href="task_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>)</td></tr>
+<tr class="memdesc:a77bed9b9ce6bad3bf10a02aa90522cde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps range of virtual addresses to physical in page directory.  <a href="paging_8c.html#a77bed9b9ce6bad3bf10a02aa90522cde">More...</a><br /></td></tr>
+<tr class="separator:a77bed9b9ce6bad3bf10a02aa90522cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e2b23a20adf4668e771ca2295351deb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#a4e2b23a20adf4668e771ca2295351deb">paging_map_to</a> (struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *chunk, void *virtual, void *physical, void *physical_end, int <a class="el" href="task_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>)</td></tr>
+<tr class="memdesc:a4e2b23a20adf4668e771ca2295351deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps virtual address to physical in page directory.  <a href="paging_8c.html#a4e2b23a20adf4668e771ca2295351deb">More...</a><br /></td></tr>
+<tr class="separator:a4e2b23a20adf4668e771ca2295351deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a4d32790b83c14fffde9038096b5d3025"></a>
@@ -210,8 +211,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1a61ec9b3c33b1029061fc989a12bcca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a61ec9b3c33b1029061fc989a12bcca">&#9670;&nbsp;</a></span>paging_map()</h2>
+<a id="a05e68db3330a8c08d9cd8255a2ff5f48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05e68db3330a8c08d9cd8255a2ff5f48">&#9670;&nbsp;</a></span>paging_map()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,8 +220,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int paging_map </td>
           <td>(</td>
-          <td class="paramtype">uint32_t *&#160;</td>
-          <td class="paramname"><em>directory</em>, </td>
+          <td class="paramtype">struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *&#160;</td>
+          <td class="paramname"><em>chunk</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -251,7 +252,7 @@ Functions</h2></td></tr>
 <p>Maps virtual address to physical in page directory. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">directory</td><td>Page directory </td></tr>
+    <tr><td class="paramname">chunk</td><td>Paging chunk </td></tr>
     <tr><td class="paramname">physical</td><td>Physical address </td></tr>
     <tr><td class="paramname">flags</td><td>Page directory entry flags </td></tr>
   </table>
@@ -259,12 +260,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Error code </dd></dl>
 
-<p class="reference">References <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>, <a class="el" href="task_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>, <a class="el" href="paging_8h.html#abcbd82cb3501151500769a688d988df3">PAGING_PAGE_SIZE</a>, and <a class="el" href="paging_8c.html#a040900b1b1eec0f5ce8027a31a25c1d9">paging_set_page()</a>.</p>
+<p class="reference">References <a class="el" href="structpaging__chunk.html#a7abe8d9cbf8d303b43dc85b868b4eb93">paging_chunk::directory_entry</a>, <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>, <a class="el" href="task_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>, <a class="el" href="paging_8h.html#abcbd82cb3501151500769a688d988df3">PAGING_PAGE_SIZE</a>, and <a class="el" href="paging_8c.html#a040900b1b1eec0f5ce8027a31a25c1d9">paging_set_page()</a>.</p>
 
 </div>
 </div>
-<a id="ac0b7f88ac26befffac6b59b76ca09b6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0b7f88ac26befffac6b59b76ca09b6a">&#9670;&nbsp;</a></span>paging_map_range()</h2>
+<a id="a77bed9b9ce6bad3bf10a02aa90522cde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77bed9b9ce6bad3bf10a02aa90522cde">&#9670;&nbsp;</a></span>paging_map_range()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -272,7 +273,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int paging_map_range </td>
           <td>(</td>
-          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramtype">struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *&#160;</td>
           <td class="paramname"><em>directory</em>, </td>
         </tr>
         <tr>
@@ -319,12 +320,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Error code </dd></dl>
 
-<p class="reference">References <a class="el" href="task_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>, <a class="el" href="paging_8c.html#a1a61ec9b3c33b1029061fc989a12bcca">paging_map()</a>, and <a class="el" href="paging_8h.html#abcbd82cb3501151500769a688d988df3">PAGING_PAGE_SIZE</a>.</p>
+<p class="reference">References <a class="el" href="task_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>, <a class="el" href="paging_8c.html#a05e68db3330a8c08d9cd8255a2ff5f48">paging_map()</a>, and <a class="el" href="paging_8h.html#abcbd82cb3501151500769a688d988df3">PAGING_PAGE_SIZE</a>.</p>
 
 </div>
 </div>
-<a id="a49cea9871c6d52e7cc73bc82bb9774fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49cea9871c6d52e7cc73bc82bb9774fc">&#9670;&nbsp;</a></span>paging_map_to()</h2>
+<a id="a4e2b23a20adf4668e771ca2295351deb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e2b23a20adf4668e771ca2295351deb">&#9670;&nbsp;</a></span>paging_map_to()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -332,8 +333,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int paging_map_to </td>
           <td>(</td>
-          <td class="paramtype">uint32_t *&#160;</td>
-          <td class="paramname"><em>directory</em>, </td>
+          <td class="paramtype">struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *&#160;</td>
+          <td class="paramname"><em>chunk</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -367,7 +368,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>, <a class="el" href="task_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>, <a class="el" href="paging_8c.html#ac0b7f88ac26befffac6b59b76ca09b6a">paging_map_range()</a>, and <a class="el" href="paging_8h.html#abcbd82cb3501151500769a688d988df3">PAGING_PAGE_SIZE</a>.</p>
+<p>Maps virtual address to physical in page directory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chunk</td><td>Paging chunk </td></tr>
+    <tr><td class="paramname">physical</td><td>Physical address start </td></tr>
+    <tr><td class="paramname">physical_end</td><td>Physical address end </td></tr>
+    <tr><td class="paramname">flags</td><td>Page directory entry flags </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Error code </dd></dl>
+
+<p class="reference">References <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>, <a class="el" href="task_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>, <a class="el" href="paging_8c.html#a77bed9b9ce6bad3bf10a02aa90522cde">paging_map_range()</a>, and <a class="el" href="paging_8h.html#abcbd82cb3501151500769a688d988df3">PAGING_PAGE_SIZE</a>.</p>
 
 </div>
 </div>
@@ -445,8 +458,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a850f8e4f83800436f132570f9faf1c40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a850f8e4f83800436f132570f9faf1c40">&#9670;&nbsp;</a></span>paging_switch()</h2>
+<a id="a2659d08cc3bac5b029cb7e7008352c85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2659d08cc3bac5b029cb7e7008352c85">&#9670;&nbsp;</a></span>paging_switch()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -454,8 +467,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void paging_switch </td>
           <td>(</td>
-          <td class="paramtype">uint32_t *&#160;</td>
-          <td class="paramname"><em>directory</em></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *&#160;</td>
+          <td class="paramname"><em>chunk</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -464,7 +477,7 @@ Functions</h2></td></tr>
 <p>Switches to given page directory pointer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">directory</td><td>Page directory pointer </td></tr>
+    <tr><td class="paramname">chunk</td><td>Page directory pointer </td></tr>
   </table>
   </dd>
 </dl>

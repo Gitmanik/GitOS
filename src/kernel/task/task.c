@@ -115,6 +115,7 @@ struct task* task_new(struct process* process)
     {
         task_head = task;
         task_tail = task;
+        current_task = task;
         goto out;
     }
 

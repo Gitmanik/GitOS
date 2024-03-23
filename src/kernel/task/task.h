@@ -66,4 +66,8 @@ struct task* task_get_next();
 struct task* task_new(struct process* process);
 int task_free(struct task* task);
 void task_return(struct registers* registers);
+
+void task_run_first_ever_task();
 void user_registers();
+int task_switch(struct task* task);
+int task_page();

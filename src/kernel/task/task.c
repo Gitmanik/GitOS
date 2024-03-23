@@ -5,6 +5,7 @@
 #include "gdt/gdt.h"
 #include "memory/memory.h"
 #include "process.h"
+#include "kernel.h"
 
 struct task* current_task = 0;
 
@@ -68,6 +69,41 @@ int task_free(struct task* task)
     task_list_remove(task);
     kfree(task);
     return 0;
+}
+
+/**
+ * @brief Switch current task (switch pages)
+ * 
+ * @param task Task to switch to
+ * @return int Error code
+ */
+int task_switch(struct task* task)
+{
+    current_task = task;
+    paging_switch(task->page_directory->directory_entry);
+    return 0;
+}
+
+/**
+ * @brief Loads into the task's page
+ * 
+ * @return int Error code
+ */
+int task_page()
+{
+    user_registers();
+    task_switch(current_task);
+    return 0;
+}
+
+void task_run_first_ever_task()
+{
+    if (!current_task)
+    {
+        kernel_panic("No current task exists");
+    }
+    task_switch(task_head);
+    task_return(&task_head->registers);
 }
 
 /**

@@ -5,11 +5,12 @@
 #include "drivers/text_mode/text_mode.h"
 #include "drivers/serial/serial.h"
 #include "drivers/pic/pic.h"
-#include "common/string.h"
 #include "memory/bios_memory_map.h"
 #include "memory/heap/kheap.h"
 #include "memory/memory.h"
 #include "common/io.h"
+#include "common/status.h"
+#include "common/string.h"
 #include "memory/paging/paging.h"
 #include "drivers/disk/disk.h"
 #include "drivers/disk/disk_streamer.h"
@@ -18,6 +19,8 @@
 #include "fs/fat16/fat16.h"
 #include "gdt/gdt.h"
 #include "task/tss.h"
+#include "task/task.h"
+#include "task/process.h"
 
 static struct paging_chunk *kernel_paging_chunk;
 
@@ -185,9 +188,6 @@ void kernel_main()
     kprintf(" OK\r\n");
     //
 
-    //
-    asm("sti");
-
     // Initializing FS
     fs_init();
     fs_insert_filesystem(fat16_init_filesystem());
@@ -233,18 +233,19 @@ void kernel_main()
     }
     //
 
-    tm_SetColor(LIGHT_PURPLE);
-    while (1)
+    kprintf("Loading BLANK.BIN\r\n");
+    struct process* process = 0;
+    res = process_load("0:/BLANK.BIN", &process);
+    if (res != 0)
     {
-        while (!ser_Received(COM1))
-            ;
-        char c = ser_ReadChar(COM1);
-        tm_PrintChar(c);
-        if (c == '\r')
-            tm_PrintChar('\n');
+        kernel_panic("Failed to load process");
     }
 
-    kernel_halt();
+    kprintf("Running task!\r\n");
+
+    task_run_first_ever_task();
+
+    kernel_panic("Reached the end of kernel_main!");
 }
 
 /**

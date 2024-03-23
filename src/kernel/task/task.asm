@@ -15,7 +15,7 @@ restore_general_purpose_registers:
     mov ecx, [ebx+20]
     mov eax, [ebx+24]
     mov ebx, [ebx+12]
-    pop esp
+    pop ebp
     ret
 
 ; struct registers*
@@ -25,10 +25,10 @@ task_return:
 
     mov ebx, [ebp+4]
 
-    ;push data segment
+    ;push data segment (ss)
     push dword [ebx+44]
 
-    ;push stack pointer
+    ;push stack pointer (esp)
     push dword [ebx+40]
 
     ;push flags
@@ -37,26 +37,29 @@ task_return:
     or eax, 0x200 ;enable interrupts
     push eax
 
-    ;push code segment
+    ;push code segment (cs)
     push dword [ebx+32]
 
-    ;push ip
+    ;push program counter (ip)
     push dword [ebx+28]
 
+    ;setup segment registers
     mov ax, [ebx+44]
     mov ds, ax
     mov es, ax
     mov fs, ax
     mov gs, ax
 
-    push dword [ebx+4]
+    push dword [ebp+4]
     call restore_general_purpose_registers
     add esp,4
 
+    ;execute in userland
     iretd
 
 global user_registers
-user_registers: ;0x23 is user data segment offset in GDT
+user_registers:
+    ;0x23 is user data segment offset in GDT
     mov ax, 0x23
     mov ds, ax
     mov fs, ax

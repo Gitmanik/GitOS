@@ -58,6 +58,9 @@ clean: userland_clean
 debug_qemu:
 	qemu-system-i386 ${QEMU_ARGUMENTS} -S -serial /dev/ttyS0 -gdb tcp::1234 
 
+debug:
+	gdb -ex 'target remote | qemu-system-i386 ${QEMU_ARGUMENTS} -S -gdb stdio'
+
 debug_bochs:
 	bochs -q
 

@@ -7,7 +7,7 @@ OBJCOPY = ${TOOLS_DIR}/${TARGET}-objcopy
 OBJDUMP = ${TOOLS_DIR}/${TARGET}-objdump
 
 SOURCE_PREFIX = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
-GCC_ARGUMENTS = -g -std=gnu99 -ffreestanding -nostdlib -O0 -Wall -Wextra
+GCC_ARGUMENTS = -g -std=gnu99 -ffreestanding -nostdlib -O0 -Wall -Wextra -Werror
 #  -D__FILENAME__=\"$(notdir $<)\"
 
 QEMU_ARGUMENTS = -drive file=${DISK_BIN},format=raw,index=0,media=disk -m 32M -serial tcp:host.docker.internal:4555

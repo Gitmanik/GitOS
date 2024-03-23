@@ -146,7 +146,7 @@ int paging_set_page(uint32_t* directory, void* virtual_address, uint32_t value)
  */
 void* paging_align_address(void* ptr)
 {
-    if ((uint32_t) ptr % 0)
+    if ((uint32_t) ptr % PAGING_PAGE_SIZE)
     {
         return (void*)((uint32_t) ptr + PAGING_PAGE_SIZE - ((uint32_t) ptr % PAGING_PAGE_SIZE));
     }

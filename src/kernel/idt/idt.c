@@ -53,11 +53,6 @@ void idt_Init()
         idt_SetDescriptor(i, ignore_int);
 }
 
-void* isr80h_handler(int command, struct interrupt_frame* frame)
-{
-
-}
-
 /**
  * @brief Default handler for all interrupts
  * 

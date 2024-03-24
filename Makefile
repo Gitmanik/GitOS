@@ -8,7 +8,6 @@ OBJDUMP = ${TOOLS_DIR}/${TARGET}-objdump
 
 SOURCE_PREFIX = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 GCC_ARGUMENTS = -g -std=gnu99 -ffreestanding -nostdlib -O0 -Wall -Wextra -Werror
-#  -D__FILENAME__=\"$(notdir $<)\"
 
 QEMU_ARGUMENTS = -drive file=${DISK_BIN},format=raw,index=0,media=disk -m 32M -serial tcp:host.docker.internal:4555
 
@@ -30,7 +29,7 @@ C_OBJECTS = ${C_SOURCES:.c=.o}
 
 # kernel.asm needs to be linked first because of hard-copying bytes in the last step
 ASM_SOURCES = ./src/kernel/kernel.asm $(shell find ./src/kernel -name "*.asm" ! -wholename "./src/kernel/kernel.asm") 
-ASM_OBJECTS = ${ASM_SOURCES:.asm=.asm.o}
+ASM_OBJECTS = ${ASM_SOURCES:.asm=.asmo}
 
 
 default: all
@@ -46,6 +45,7 @@ clean: userland_clean
 	-pkill -9 bochs
 	-pkill -9 qemu
 	find . -name \*.o -type f -delete
+	find . -name \*.asmo -type f -delete
 	find . -name \*.elf -type f -delete
 	find . -name \*.bin -type f -delete
 	rm -rf *.ans
@@ -80,21 +80,14 @@ disk: build
 	rm -rf mnt
 	-mkdir mnt
 
-	# losetup ${LO_DEV} ${DISK_BIN}
-
-	# mkdosfs ${LO_DEV}
-	# mount -t msdos ${LO_DEV} ./mnt
-	# cp -r ./fs/. ./mnt/.
-	# umount ./mnt
-	# rm -rf ./mnt
-	# losetup -d ${LO_DEV}
 	mount -t vfat -o fat=16 ./build/disk.bin ./mnt
 	cp -r ./fs/. ./mnt/.
+# TODO: Move that part
 	cp ./src/userland/blank.bin ./mnt/.
 	umount ./mnt
 	rm -rf ./mnt
 
-# ASM_OBJECTS need to be first because of pm_entry.asm
+# ASM_OBJECTS need to be first because of kernel.asm
 ${KERNEL_ELF}: ${C_OBJECTS} ${ASM_OBJECTS}
 	-mkdir build
 	${GCC} -T ./src/kernel_linker.ld ${GCC_ARGUMENTS} -o ${KERNEL_ELF} ${ASM_OBJECTS} $(C_OBJECTS)
@@ -106,7 +99,7 @@ ${KERNEL_BIN}: ${KERNEL_ELF}
 ${STAGE1_BIN}: 
 	nasm -I ./src/boot -f bin ${STAGE1_ASM} -o ${STAGE1_BIN}
 
-%.asm.o: %.asm
+%.asmo: %.asm
 	nasm -g -f elf $< -o $@
 
 %.o: %.c

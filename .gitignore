@@ -1,5 +1,6 @@
 **/*.bin
 *.o
+*.asmo
 *.elf
 *.ans
 docs

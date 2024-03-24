@@ -179,7 +179,7 @@ void kernel_main()
     ptr_virt[1] = 'K';
 
     kprintf("OK\r\n", LIGHT_GREEN);
-    kprintf("Paging self-test: 0x%p:'%s' 0x%p:'%s'", (uint32_t)ptr_real, ptr_real, (uint32_t)ptr_virt, ptr_virt);
+    kprintf("Paging self-test: 0x%p:'%s' 0x%p:'%s'..", (uint32_t)ptr_real, ptr_real, (uint32_t)ptr_virt, ptr_virt);
     if (memcmp(ptr_real, ptr_virt, 2) != 0)
     {
         kernel_panic("\r\nPaging self-test unsuccessful!");
@@ -208,13 +208,14 @@ void kernel_main()
     kprintf("OK\r\n");
     //
 
-    kprintf("Loading BLANK.BIN\r\n");
+    kprintf("Loading BLANK.BIN..");
     struct process* process = 0;
     res = process_load("0:/BLANK.BIN", &process);
     if (res != 0)
     {
         kernel_panic("Failed to load process");
     }
+    kprintf("OK\r\n");
 
     kprintf("Running task!\r\n");
 

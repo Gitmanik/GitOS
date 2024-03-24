@@ -3,6 +3,7 @@
 #include "memory/paging/paging.h"
 #include "memory/heap/kheap.h"
 #include "gdt/gdt.h"
+#include "idt/idt.h"
 #include "memory/memory.h"
 #include "process.h"
 #include "kernel.h"
@@ -22,6 +23,34 @@ int task_init(struct task* task, struct process* process);
 struct task* task_current()
 {
     return current_task;
+}
+
+void task_save_state(struct task* task, struct interrupt_frame* frame)
+{
+    task->registers.ip = frame->ip;
+    task->registers.cs = frame->cs;
+    task->registers.ss = frame->ss;
+    task->registers.flags = frame->flags;
+    task->registers.eax = frame->eax;
+    task->registers.ebx = frame->ebx;
+    task->registers.ecx = frame->ecx;
+    task->registers.edx = frame->edx;
+    task->registers.edi = frame->edi;
+    task->registers.esi = frame->esi;
+    task->registers.ebp = frame->ebp;
+    task->registers.esp = frame->esp;
+
+}
+
+void task_current_save_state(struct interrupt_frame* frame)
+{
+    if (task_current() == 0)
+    {
+        kernel_panic("No current task to save!");
+    }
+
+    struct task* task = task_current();
+    task_save_state(task, frame);
 }
 
 /**

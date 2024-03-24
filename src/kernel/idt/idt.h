@@ -1,20 +1,20 @@
 #pragma once
 #include <stdint.h>
 
-typedef struct __attribute__((packed))
+struct idt_desc
 {
     uint16_t offset_low; //Offset bits 0-15
     uint16_t selector;
     uint8_t zero;
     uint8_t type_attr;   
     uint16_t offset_high; //Offset bits 16-31
-} idt_desc;
+} __attribute__((packed));
 
-typedef struct __attribute__((packed))
+struct idtr_desc
 {
     uint16_t limit; // Size of desc table - 1
     uint32_t base; // Address of the desc table
-} idtr_desc;
+} __attribute__((packed));
 
 void idt_Init();
 void idt_SetDescriptor(int int_no, void* address);

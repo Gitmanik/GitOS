@@ -3,8 +3,8 @@
 #include "../memory/memory.h"
 #include "../drivers/pic/pic.h"
 
-idt_desc idt_descriptors[512];
-idtr_desc idtr_descriptor;
+struct idt_desc idt_descriptors[512];
+struct idtr_desc idtr_descriptor;
 
 /**
  * @brief Default interrupt handler lccated in idt_handler.asm
@@ -29,7 +29,7 @@ void idt_Load()
  */
 void idt_SetDescriptor(int int_no, void* address)
 {
-    idt_desc* desc = &idt_descriptors[int_no];
+    struct idt_desc* desc = &idt_descriptors[int_no];
 
     desc->offset_low = (uint32_t) address & 0x0000ffff;
     desc->offset_high = ((uint32_t) address & 0xffff0000) >> 16;
@@ -51,6 +51,11 @@ void idt_Init()
 
     for (int i = 0; i < 512; i++)
         idt_SetDescriptor(i, ignore_int);
+}
+
+void* isr80h_handler(int command, struct interrupt_frame* frame)
+{
+
 }
 
 /**

@@ -31,7 +31,7 @@ setup:
 [BITS 32]
 load32:
     .setup_pm_registers:
-    mov ax, 0x10
+    mov ax, 0x10 ; Kernel data segment offset in GDT
     mov ds, ax
     mov es, ax
     mov fs, ax

@@ -9,6 +9,8 @@
 void kernel_main();
 void kernel_halt();
 void kernel_panic(char* fmt, ...);
+void kernel_page();
+extern void kernel_registers();
 
 void kprintf(char* fmt, ...);
 

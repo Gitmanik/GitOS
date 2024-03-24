@@ -61,6 +61,12 @@ void int21h_handler()
     pic_EOI(0);
 }
 
+void kernel_page()
+{
+    kernel_registers();
+    paging_switch(kernel_paging_chunk);
+}
+
 /**
  * @brief Kernel C entry point
  *

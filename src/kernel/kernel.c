@@ -18,6 +18,7 @@
 #include "fs/file.h"
 #include "fs/fat16/fat16.h"
 #include "gdt/gdt.h"
+#include "syscall/syscall.h"
 #include "task/tss.h"
 #include "task/task.h"
 #include "task/process.h"
@@ -102,6 +103,7 @@ void kernel_main()
     idt_Init();
     idt_SetDescriptor(0, divide_by_zero);
     idt_SetDescriptor(0x21, int21h);
+    idt_SetDescriptor(0x80, syscall_wrapper);
     idt_Load();
     kprintf("OK\r\n");
     //
@@ -200,6 +202,10 @@ void kernel_main()
     disk_search_and_init();
     //
 
+    // Initialize syscalls
+    kprintf("Initializing syscalls..");
+    syscall_init();
+    kprintf("OK\r\n");
     //
 
     kprintf("Loading BLANK.BIN\r\n");

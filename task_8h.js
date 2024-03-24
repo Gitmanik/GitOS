@@ -9,6 +9,7 @@ var task_8h =
     [ "__attribute__", "task_8h.html#afbe98bd1f8d3c7a65d8a8048fdd8cd99", null ],
     [ "restore_general_purpose_registers", "task_8h.html#a7c3f53a94942da37305118db4eb0a4a6", null ],
     [ "task_current", "task_8h.html#a09984f0be407f262769bb93c9c1d0937", null ],
+    [ "task_current_save_state", "task_8h.html#ae51bb6f08bb9c7151940430787f31666", null ],
     [ "task_free", "task_8h.html#ab03b661c3eeb2df303a9931941fefebe", null ],
     [ "task_get_next", "task_8h.html#ac794f1e1c7cf79fe144cb85a303a4eda", null ],
     [ "task_new", "task_8h.html#aac4ed16fa0ba438a9e54edddb7e179ee", null ],

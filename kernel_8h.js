@@ -5,6 +5,8 @@ var kernel_8h =
     [ "kdebug", "kernel_8h.html#ab8e98b2d78ed2a7ff3e2af66009fbe27", null ],
     [ "kernel_halt", "kernel_8h.html#aa0feb8fe21f2712340bcfe8777e9860b", null ],
     [ "kernel_main", "kernel_8h.html#ada8402e0c504af8cafef5cc76c076003", null ],
+    [ "kernel_page", "kernel_8h.html#abd882687cd304ceab89392243ac0bf0d", null ],
     [ "kernel_panic", "kernel_8h.html#a8d209f2439b73fa38517f599a1904a99", null ],
+    [ "kernel_registers", "kernel_8h.html#abfd38f3db413f8fa3822dcba9cd656e7", null ],
     [ "kprintf", "kernel_8h.html#ac9d768b4772cc87fc88afbbbd805f96a", null ]
 ];

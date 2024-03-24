@@ -37,6 +37,12 @@ void idt_Init();
 void idt_SetDescriptor(int int_no, void* address);
 void idt_Load();
 
+/**
+ * @brief Default interrupt handler located in idt_handler.asm
+ * 
+ */
+extern void ignore_int();
+
 /*
 0x000	0	Divide by 0
 0x004	1	Single step (Debugger)

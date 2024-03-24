@@ -1,16 +1,10 @@
 #include "idt.h"
 #include <stdint.h>
-#include "../memory/memory.h"
-#include "../drivers/pic/pic.h"
+#include "memory/memory.h"
+#include "drivers/pic/pic.h"
 
 struct idt_desc idt_descriptors[512];
 struct idtr_desc idtr_descriptor;
-
-/**
- * @brief Default interrupt handler lccated in idt_handler.asm
- * 
- */
-extern void ignore_int();
 
 /**
  * @brief Loads Interrupt Descriptor Table

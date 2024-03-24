@@ -200,43 +200,6 @@ void kernel_main()
     disk_search_and_init();
     //
 
-    // Read test file
-    char *file_to_open = "0:/DIR/FILE.TXT";
-    kprintf("Opening \"%s\"..", file_to_open);
-    int fd = fopen(file_to_open, "r");
-    if (fd < 1)
-    {
-        kernel_panic("Could not open %s: %d", file_to_open, fd);
-    }
-    else
-    {
-        struct file_stat *stat = 0;
-        res = fstat(fd, stat);
-
-        if (res < 0)
-        {
-            kernel_panic("fstat error: %d", res);
-        }
-
-        kprintf("File size: %d, Flags: %d\r\n", stat->filesize, stat->flags);
-
-        char *file_content = kzalloc(stat->filesize);
-
-        if (stat->filesize > 22)
-        {
-            res = fseek(fd, 22, SEEK_SET);
-            if (res < 0)
-                kernel_panic("fseek error");
-        }
-        int res = fread(file_content, stat->filesize, 1, fd);
-        if (res < 0)
-            kernel_panic("fread error");
-        kprintf(file_content);
-        kprintf("\r\nOK\r\n");
-
-        kfree(file_content);
-        fclose(fd);
-    }
     //
 
     kprintf("Loading BLANK.BIN\r\n");

@@ -18,6 +18,8 @@ var annotated_dup =
     [ "gdt_structured", "structgdt__structured.html", "structgdt__structured" ],
     [ "heap", "structheap.html", "structheap" ],
     [ "heap_table", "structheap__table.html", "structheap__table" ],
+    [ "idt_desc", "structidt__desc.html", "structidt__desc" ],
+    [ "idtr_desc", "structidtr__desc.html", "structidtr__desc" ],
     [ "paging_chunk", "structpaging__chunk.html", "structpaging__chunk" ],
     [ "path_part", "structpath__part.html", "structpath__part" ],
     [ "path_root", "structpath__root.html", "structpath__root" ],

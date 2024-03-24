@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('idt_8h.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -93,10 +94,17 @@ $(document).ready(function(){initNavTree('idt_8h.html',''); initResizable(); });
 </div>
 <p><a href="idt_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structidt__desc.html">idt_desc</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structidtr__desc.html">idtr_desc</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab898071398b359603a35c202e9c65f3b"><td class="memItemLeft" align="right" valign="top">struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#ab898071398b359603a35c202e9c65f3b">__attribute__</a> ((packed))</td></tr>
-<tr class="separator:ab898071398b359603a35c202e9c65f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a100ee67d5118ea19cf70d2f0c87fb198"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structidt__desc.html">idt_desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a100ee67d5118ea19cf70d2f0c87fb198">__attribute__</a> ((packed))</td></tr>
+<tr class="separator:a100ee67d5118ea19cf70d2f0c87fb198"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a808e651ac439d9410771231324e80ff5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a808e651ac439d9410771231324e80ff5">idt_Init</a> ()</td></tr>
 <tr class="memdesc:a808e651ac439d9410771231324e80ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes memory for IDT struct Sets default for all interrupts.  <a href="idt_8h.html#a808e651ac439d9410771231324e80ff5">More...</a><br /></td></tr>
 <tr class="separator:a808e651ac439d9410771231324e80ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,20 +117,30 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a830cd7b0a812b38e7052aab635cf8487"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a830cd7b0a812b38e7052aab635cf8487">idt_desc</a></td></tr>
-<tr class="separator:a830cd7b0a812b38e7052aab635cf8487"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47e422e5167f03378f7565816e29d05a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a47e422e5167f03378f7565816e29d05a">idtr_desc</a></td></tr>
-<tr class="separator:a47e422e5167f03378f7565816e29d05a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11b1c6ed61493da558a28e77fa1efee6"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a11b1c6ed61493da558a28e77fa1efee6">offset_low</a></td></tr>
+<tr class="separator:a11b1c6ed61493da558a28e77fa1efee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c44289c163c1460544d6ee0900d02ba"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a1c44289c163c1460544d6ee0900d02ba">selector</a></td></tr>
+<tr class="separator:a1c44289c163c1460544d6ee0900d02ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09777e6a5ad91ffd82a9975efe33de2e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a09777e6a5ad91ffd82a9975efe33de2e">zero</a></td></tr>
+<tr class="separator:a09777e6a5ad91ffd82a9975efe33de2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e7eb925db6957f19edc1e5d7d74c8f6"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a5e7eb925db6957f19edc1e5d7d74c8f6">type_attr</a></td></tr>
+<tr class="separator:a5e7eb925db6957f19edc1e5d7d74c8f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a864a047b12c9faf25a520351049b91f1"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a864a047b12c9faf25a520351049b91f1">offset_high</a></td></tr>
+<tr class="separator:a864a047b12c9faf25a520351049b91f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab28e82ae69032cb4ad3ec3a0be3d7129"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#ab28e82ae69032cb4ad3ec3a0be3d7129">limit</a></td></tr>
+<tr class="separator:ab28e82ae69032cb4ad3ec3a0be3d7129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0523cedff47e2441fc198b7770ec5d3f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a0523cedff47e2441fc198b7770ec5d3f">base</a></td></tr>
+<tr class="separator:a0523cedff47e2441fc198b7770ec5d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab898071398b359603a35c202e9c65f3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab898071398b359603a35c202e9c65f3b">&#9670;&nbsp;</a></span>__attribute__()</h2>
+<a id="a100ee67d5118ea19cf70d2f0c87fb198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a100ee67d5118ea19cf70d2f0c87fb198">&#9670;&nbsp;</a></span>__attribute__()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct __attribute__ </td>
+          <td class="memname">struct <a class="el" href="structidt__desc.html">idt_desc</a> __attribute__ </td>
           <td>(</td>
           <td class="paramtype">(packed)&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -150,7 +168,7 @@ Variables</h2></td></tr>
 
 <p>Initializes memory for IDT struct Sets default for all interrupts. </p>
 
-<p class="reference">References <a class="el" href="idt_8c.html#adf094f238e70a027d44afe9fbb5092b8">idt_descriptors</a>, <a class="el" href="idt_8c.html#ae9dfaeff36b7570b57e8ecea878946b9">idt_SetDescriptor()</a>, <a class="el" href="idt_8c.html#a6a8d2dcfd1f1f83c2f5df272ac639086">idtr_descriptor</a>, <a class="el" href="idt_8c.html#a7d5797d8e5e07fb80f6ae7ddf848c907">ignore_int()</a>, and <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>.</p>
+<p class="reference">References <a class="el" href="structidtr__desc.html#a0523cedff47e2441fc198b7770ec5d3f">idtr_desc::base</a>, <a class="el" href="idt_8c.html#abd807349ff2d7df2a643d14d623dcdc9">idt_descriptors</a>, <a class="el" href="idt_8c.html#ae9dfaeff36b7570b57e8ecea878946b9">idt_SetDescriptor()</a>, <a class="el" href="idt_8c.html#a299d74470ceab3b513858520e0a50bff">idtr_descriptor</a>, <a class="el" href="idt_8c.html#a7d5797d8e5e07fb80f6ae7ddf848c907">ignore_int()</a>, <a class="el" href="structidtr__desc.html#ab28e82ae69032cb4ad3ec3a0be3d7129">idtr_desc::limit</a>, and <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>.</p>
 
 </div>
 </div>
@@ -171,7 +189,7 @@ Variables</h2></td></tr>
 
 <p>Loads Interrupt Descriptor Table. </p>
 
-<p class="reference">References <a class="el" href="idt_8c.html#a6a8d2dcfd1f1f83c2f5df272ac639086">idtr_descriptor</a>.</p>
+<p class="reference">References <a class="el" href="idt_8c.html#a299d74470ceab3b513858520e0a50bff">idtr_descriptor</a>.</p>
 
 </div>
 </div>
@@ -210,33 +228,103 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">References <a class="el" href="idt_8h.html#a830cd7b0a812b38e7052aab635cf8487">idt_desc</a>, and <a class="el" href="idt_8c.html#adf094f238e70a027d44afe9fbb5092b8">idt_descriptors</a>.</p>
+<p class="reference">References <a class="el" href="idt_8c.html#abd807349ff2d7df2a643d14d623dcdc9">idt_descriptors</a>, <a class="el" href="structidt__desc.html#a864a047b12c9faf25a520351049b91f1">idt_desc::offset_high</a>, <a class="el" href="structidt__desc.html#a11b1c6ed61493da558a28e77fa1efee6">idt_desc::offset_low</a>, <a class="el" href="structidt__desc.html#a1c44289c163c1460544d6ee0900d02ba">idt_desc::selector</a>, <a class="el" href="structidt__desc.html#a5e7eb925db6957f19edc1e5d7d74c8f6">idt_desc::type_attr</a>, and <a class="el" href="structidt__desc.html#a09777e6a5ad91ffd82a9975efe33de2e">idt_desc::zero</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a830cd7b0a812b38e7052aab635cf8487"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a830cd7b0a812b38e7052aab635cf8487">&#9670;&nbsp;</a></span>idt_desc</h2>
+<a id="a0523cedff47e2441fc198b7770ec5d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0523cedff47e2441fc198b7770ec5d3f">&#9670;&nbsp;</a></span>base</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">idt_desc</td>
+          <td class="memname">uint32_t base</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a47e422e5167f03378f7565816e29d05a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47e422e5167f03378f7565816e29d05a">&#9670;&nbsp;</a></span>idtr_desc</h2>
+<a id="ab28e82ae69032cb4ad3ec3a0be3d7129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab28e82ae69032cb4ad3ec3a0be3d7129">&#9670;&nbsp;</a></span>limit</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">idtr_desc</td>
+          <td class="memname">uint16_t limit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a864a047b12c9faf25a520351049b91f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a864a047b12c9faf25a520351049b91f1">&#9670;&nbsp;</a></span>offset_high</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t offset_high</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a11b1c6ed61493da558a28e77fa1efee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11b1c6ed61493da558a28e77fa1efee6">&#9670;&nbsp;</a></span>offset_low</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t offset_low</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1c44289c163c1460544d6ee0900d02ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c44289c163c1460544d6ee0900d02ba">&#9670;&nbsp;</a></span>selector</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t selector</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e7eb925db6957f19edc1e5d7d74c8f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e7eb925db6957f19edc1e5d7d74c8f6">&#9670;&nbsp;</a></span>type_attr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t type_attr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a09777e6a5ad91ffd82a9975efe33de2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09777e6a5ad91ffd82a9975efe33de2e">&#9670;&nbsp;</a></span>zero</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t zero</td>
         </tr>
       </table>
 </div><div class="memdoc">

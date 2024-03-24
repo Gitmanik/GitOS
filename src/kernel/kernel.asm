@@ -9,7 +9,7 @@ _start:
 ; Sets all registers to point to kernel segment
 global kernel_registers
 kernel_registers:
-    mov ax, 10 ; Offset for kernel code in GDT
+    mov ax, 0x10 ; Offset for kernel code in GDT
     mov ds, ax
     mov es, ax
     mov gs, ax

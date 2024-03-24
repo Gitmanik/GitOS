@@ -7,6 +7,7 @@ var idt_8h =
     [ "idt_Init", "idt_8h.html#a808e651ac439d9410771231324e80ff5", null ],
     [ "idt_Load", "idt_8h.html#a296416326885a0423be69095e07b054e", null ],
     [ "idt_SetDescriptor", "idt_8h.html#ae9dfaeff36b7570b57e8ecea878946b9", null ],
+    [ "ignore_int", "idt_8h.html#a7d5797d8e5e07fb80f6ae7ddf848c907", null ],
     [ "base", "idt_8h.html#a0523cedff47e2441fc198b7770ec5d3f", null ],
     [ "cs", "idt_8h.html#a8519dc239502dfcbac171b3128dc7054", null ],
     [ "eax", "idt_8h.html#a93d929ad1fc57af9d4f1793c361fb4f2", null ],

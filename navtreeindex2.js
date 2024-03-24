@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"structfat16__header__primary.html#aad9aa4ff8c80f1bcb0ac03f23bb9701e":[0,0,3,0],
 "structfat16__header__primary.html#ab9d9cece402bcfc967b895cd556985ef":[0,0,3,8],
 "structfat16__header__primary.html#ac2f425c61a49cd29d409c842cf522def":[0,0,3,5],
 "structfat16__header__primary.html#aca34c8fcd5d2d7d9761c0e5a3da19521":[0,0,3,9],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "text__mode_8h.html#ad20bc492edfe86d553bf0b66d2f9baa0":[1,0,0,0,1,3,1,7],
 "text__mode_8h.html#aec2803ccb6a9b5e974cf8cf12df8a56a":[1,0,0,0,1,3,1,13],
 "text__mode_8h.html#af141ddd7749219b2c02e37a0df9ed067":[1,0,0,0,1,3,1,9],
-"text__mode_8h.html#af20ac24c92adb1ce73379060a415d168":[1,0,0,0,1,3,1,0]
+"text__mode_8h.html#af20ac24c92adb1ce73379060a415d168":[1,0,0,0,1,3,1,0],
+"text__mode_8h.html#afaddcf340e11fa4e416c53b14cf9548c":[1,0,0,0,1,3,1,5]
 };

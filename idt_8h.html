@@ -116,6 +116,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a296416326885a0423be69095e07b054e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a296416326885a0423be69095e07b054e">idt_Load</a> ()</td></tr>
 <tr class="memdesc:a296416326885a0423be69095e07b054e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads Interrupt Descriptor Table.  <a href="idt_8h.html#a296416326885a0423be69095e07b054e">More...</a><br /></td></tr>
 <tr class="separator:a296416326885a0423be69095e07b054e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d5797d8e5e07fb80f6ae7ddf848c907"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a7d5797d8e5e07fb80f6ae7ddf848c907">ignore_int</a> ()</td></tr>
+<tr class="memdesc:a7d5797d8e5e07fb80f6ae7ddf848c907"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default interrupt handler located in idt_handler.asm.  <a href="idt_8h.html#a7d5797d8e5e07fb80f6ae7ddf848c907">More...</a><br /></td></tr>
+<tr class="separator:a7d5797d8e5e07fb80f6ae7ddf848c907"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -196,7 +199,7 @@ Variables</h2></td></tr>
 
 <p>Initializes memory for IDT struct Sets default for all interrupts. </p>
 
-<p class="reference">References <a class="el" href="structidtr__desc.html#a0523cedff47e2441fc198b7770ec5d3f">idtr_desc::base</a>, <a class="el" href="idt_8c.html#abd807349ff2d7df2a643d14d623dcdc9">idt_descriptors</a>, <a class="el" href="idt_8c.html#ae9dfaeff36b7570b57e8ecea878946b9">idt_SetDescriptor()</a>, <a class="el" href="idt_8c.html#a299d74470ceab3b513858520e0a50bff">idtr_descriptor</a>, <a class="el" href="idt_8c.html#a7d5797d8e5e07fb80f6ae7ddf848c907">ignore_int()</a>, <a class="el" href="structidtr__desc.html#ab28e82ae69032cb4ad3ec3a0be3d7129">idtr_desc::limit</a>, and <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>.</p>
+<p class="reference">References <a class="el" href="structidtr__desc.html#a0523cedff47e2441fc198b7770ec5d3f">idtr_desc::base</a>, <a class="el" href="idt_8c.html#abd807349ff2d7df2a643d14d623dcdc9">idt_descriptors</a>, <a class="el" href="idt_8c.html#ae9dfaeff36b7570b57e8ecea878946b9">idt_SetDescriptor()</a>, <a class="el" href="idt_8c.html#a299d74470ceab3b513858520e0a50bff">idtr_descriptor</a>, <a class="el" href="idt_8h.html#a7d5797d8e5e07fb80f6ae7ddf848c907">ignore_int()</a>, <a class="el" href="structidtr__desc.html#ab28e82ae69032cb4ad3ec3a0be3d7129">idtr_desc::limit</a>, and <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>.</p>
 
 </div>
 </div>
@@ -257,6 +260,25 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="reference">References <a class="el" href="idt_8c.html#abd807349ff2d7df2a643d14d623dcdc9">idt_descriptors</a>, <a class="el" href="structidt__desc.html#a864a047b12c9faf25a520351049b91f1">idt_desc::offset_high</a>, <a class="el" href="structidt__desc.html#a11b1c6ed61493da558a28e77fa1efee6">idt_desc::offset_low</a>, <a class="el" href="structidt__desc.html#a1c44289c163c1460544d6ee0900d02ba">idt_desc::selector</a>, <a class="el" href="structidt__desc.html#a5e7eb925db6957f19edc1e5d7d74c8f6">idt_desc::type_attr</a>, and <a class="el" href="structidt__desc.html#a09777e6a5ad91ffd82a9975efe33de2e">idt_desc::zero</a>.</p>
+
+</div>
+</div>
+<a id="a7d5797d8e5e07fb80f6ae7ddf848c907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d5797d8e5e07fb80f6ae7ddf848c907">&#9670;&nbsp;</a></span>ignore_int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ignore_int </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default interrupt handler located in idt_handler.asm. </p>
 
 </div>
 </div>

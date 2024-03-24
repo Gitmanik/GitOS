@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"text__mode_8h.html#afaddcf340e11fa4e416c53b14cf9548c":[1,0,0,0,1,3,1,5],
 "text__mode_8h_source.html":[1,0,0,0,1,3,1],
 "tss_8h.html":[1,0,0,0,6,4],
 "tss_8h.html#a0dacdc927bbcc6457b629ad88119cdc2":[1,0,0,0,6,4,13],

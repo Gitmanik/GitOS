@@ -20,7 +20,7 @@ var searchData=
   ['idt_5fsetdescriptor_202',['idt_SetDescriptor',['../idt_8c.html#ae9dfaeff36b7570b57e8ecea878946b9',1,'idt_SetDescriptor(int int_no, void *address):&#160;idt.c'],['../idt_8h.html#ae9dfaeff36b7570b57e8ecea878946b9',1,'idt_SetDescriptor(int int_no, void *address):&#160;idt.c']]],
   ['idtr_5fdesc_203',['idtr_desc',['../structidtr__desc.html',1,'']]],
   ['idtr_5fdescriptor_204',['idtr_descriptor',['../idt_8c.html#a299d74470ceab3b513858520e0a50bff',1,'idt.c']]],
-  ['ignore_5fint_205',['ignore_int',['../idt_8c.html#a7d5797d8e5e07fb80f6ae7ddf848c907',1,'idt.c']]],
+  ['ignore_5fint_205',['ignore_int',['../idt_8h.html#a7d5797d8e5e07fb80f6ae7ddf848c907',1,'idt.h']]],
   ['ignore_5fint_5fhandler_206',['ignore_int_handler',['../idt_8c.html#a03b67a2e51f4b54826a9f44e90bb41e3',1,'idt.c']]],
   ['inb_207',['inb',['../io_8c.html#a2e1e8e2c5724c1e8fd2dff2eada06479',1,'inb(uint16_t port):&#160;io.c'],['../io_8h.html#a2e1e8e2c5724c1e8fd2dff2eada06479',1,'inb(uint16_t port):&#160;io.c']]],
   ['index_208',['index',['../structfile__descriptor.html#a750b5d744c39a06bfb13e6eb010e35d0',1,'file_descriptor']]],
@@ -34,8 +34,7 @@ var searchData=
   ['ip_216',['ip',['../idt_8h.html#a69ddb9c845da426f636d9dd0dbed4e7e',1,'ip():&#160;idt.h'],['../task_8h.html#a69ddb9c845da426f636d9dd0dbed4e7e',1,'ip():&#160;task.h'],['../structregisters.html#a69ddb9c845da426f636d9dd0dbed4e7e',1,'registers::ip()'],['../structinterrupt__frame.html#a69ddb9c845da426f636d9dd0dbed4e7e',1,'interrupt_frame::ip()']]],
   ['is_5fdigit_217',['is_digit',['../string_8c.html#afcb8cf4ba18ad43ea5c643b027cf0170',1,'is_digit(char c):&#160;string.c'],['../string_8h.html#afcb8cf4ba18ad43ea5c643b027cf0170',1,'is_digit(char c):&#160;string.c']]],
   ['iserr_218',['ISERR',['../status_8h.html#a7a255d1282fefa856ce93d9c8cb5612b',1,'status.h']]],
-  ['isr80h_5fhandler_219',['isr80h_handler',['../idt_8c.html#af4732b7f54284f1b6ffbb4184f0cc855',1,'idt.c']]],
-  ['istrncmp_220',['istrncmp',['../string_8c.html#a733f9adc8e09d0dcf0bd083cbcf34a33',1,'istrncmp(const char *str1, const char *str2, int n):&#160;string.c'],['../string_8h.html#a733f9adc8e09d0dcf0bd083cbcf34a33',1,'istrncmp(const char *str1, const char *str2, int n):&#160;string.c']]],
-  ['item_221',['item',['../structfat__directory.html#a4eea561a2e67f0911c1676eae55f5c63',1,'fat_directory']]],
-  ['itoa_222',['itoa',['../string_8c.html#a7ecda6e9a4ad5c1d1181bf064db143e9',1,'itoa(long num, char *str, int base):&#160;string.c'],['../string_8h.html#a7ecda6e9a4ad5c1d1181bf064db143e9',1,'itoa(long num, char *str, int base):&#160;string.c']]]
+  ['istrncmp_219',['istrncmp',['../string_8c.html#a733f9adc8e09d0dcf0bd083cbcf34a33',1,'istrncmp(const char *str1, const char *str2, int n):&#160;string.c'],['../string_8h.html#a733f9adc8e09d0dcf0bd083cbcf34a33',1,'istrncmp(const char *str1, const char *str2, int n):&#160;string.c']]],
+  ['item_220',['item',['../structfat__directory.html#a4eea561a2e67f0911c1676eae55f5c63',1,'fat_directory']]],
+  ['itoa_221',['itoa',['../string_8c.html#a7ecda6e9a4ad5c1d1181bf064db143e9',1,'itoa(long num, char *str, int base):&#160;string.c'],['../string_8h.html#a7ecda6e9a4ad5c1d1181bf064db143e9',1,'itoa(long num, char *str, int base):&#160;string.c']]]
 ];

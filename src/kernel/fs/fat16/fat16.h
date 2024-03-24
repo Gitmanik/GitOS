@@ -5,6 +5,8 @@
 #include "drivers/disk/disk.h"
 #include "drivers/disk/disk_streamer.h"
 
+#define DEBUG_FAT16 0
+
 #define FAT16_SIGNATURE 0x29
 #define FAT16_FAT_ENTRY_SIZE 0x20
 #define FAT16_BAD_SECTOR 0xFF7

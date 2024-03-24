@@ -132,7 +132,9 @@ static int fat16_get_total_items_for_directory(struct fat_private* fs_private, i
     struct fat_file current_item;
 
     int total = 0;
+#if DEBUG_FAT16
     kdebug("Getting total items for directory, sector %d, absolute %d\r\n", start_sector, fat16_sector_to_absolute(fs_private, start_sector));
+#endif
     diskstreamer_seek(fs_private->directory_stream, fat16_sector_to_absolute(fs_private, start_sector));
 
     while (1)
@@ -148,7 +150,9 @@ static int fat16_get_total_items_for_directory(struct fat_private* fs_private, i
 
         char filename_buf[11];
         fat16_get_full_relative_filename(&current_item, filename_buf);
+#if DEBUG_FAT16
         kdebug("%d %s: %s, size: %d\r\n", (current_item.attribute & FAT_FILE_LONGNAME) ? 1 : 0, current_item.attribute & FAT_FILE_SUBDIRECTORY ? "D" : "F", filename_buf, current_item.filesize);
+#endif
         total++;
     }
 
@@ -397,7 +401,9 @@ static int fat16_read_cluster(struct fat_private* fs_private, struct disk_stream
     int starting_pos = (starting_sector * fs_private->header.primary.bytes_per_sector) + offset_from_cluster;
     int total_to_read = total > size_of_cluster_bytes ? size_of_cluster_bytes : total;
 
+#if DEBUG_FAT16
     kdebug("Reading %d bytes from starting cluster %d, target cluster %d (sector %d), offset from cluster: %d\r\n", total, cluster, cluster_to_use, starting_sector, offset_from_cluster);
+#endif
     result = diskstreamer_seek(stream, starting_pos);
     if (result != ALL_OK)
     {

@@ -83,7 +83,7 @@ void kernel_main()
         kernel_panic("Could not initialize Serial port!");
     }
 
-    kprintf("GitOS - operating system as exercise. Pawel Reich 2022\r\n");
+    kprintf("GitOS - operating system as exercise. Pawel Reich 2024\r\n");
 
     // Initialize GDT
     kprintf("Initializing GDT..");

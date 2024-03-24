@@ -1,7 +1,16 @@
 var searchData=
 [
-  ['name_267',['name',['../structfilesystem.html#a32a40b0f5bd31c570ff3b4c515d6725f',1,'filesystem']]],
-  ['next_268',['next',['../structpath__part.html#ad5d8ed0c4183f4e1bbef6d0250b02c37',1,'path_part::next()'],['../structtask.html#ae949d26b280beacfbb782fa148c8505d',1,'task::next()']]],
-  ['number_5fof_5fheads_269',['number_of_heads',['../structfat16__header__primary.html#ac2f425c61a49cd29d409c842cf522def',1,'fat16_header_primary::number_of_heads()'],['../fat16_8h.html#ac2f425c61a49cd29d409c842cf522def',1,'number_of_heads():&#160;fat16.h']]],
-  ['numeber_5fof_5fsectors_270',['numeber_of_sectors',['../structfat16__header__primary.html#ad67dc0a93ab59765a12a944809c38564',1,'fat16_header_primary::numeber_of_sectors()'],['../fat16_8h.html#ad67dc0a93ab59765a12a944809c38564',1,'numeber_of_sectors():&#160;fat16.h']]]
+  ['max_5ffiledescriptors_257',['MAX_FILEDESCRIPTORS',['../file_8h.html#a9e908e8845c02e0b0969b41a021310eb',1,'file.h']]],
+  ['max_5ffilesystem_5fname_258',['MAX_FILESYSTEM_NAME',['../file_8h.html#abedb6e14253f852e31a2f62f0e1adf52',1,'file.h']]],
+  ['max_5ffilesystems_259',['MAX_FILESYSTEMS',['../file_8h.html#ad6c0e74019637e82fd86897e2d4a2a25',1,'file.h']]],
+  ['max_5fpath_260',['MAX_PATH',['../pathparser_8h.html#ab99ded389af74001a6298fc9e44e74e5',1,'pathparser.h']]],
+  ['max_5fprocesses_261',['MAX_PROCESSES',['../process_8h.html#a92fd8bb5807bf6abb640686f51e5df3e',1,'process.h']]],
+  ['max_5fsyscalls_262',['MAX_SYSCALLS',['../syscall_8h.html#a88ef3d98617b4673404cd57e1fa4e516',1,'syscall.h']]],
+  ['media_5ftype_263',['media_type',['../structfat16__header__primary.html#a4b184d5976feb6927aa2a1bd3bc157cc',1,'fat16_header_primary::media_type()'],['../fat16_8h.html#a4b184d5976feb6927aa2a1bd3bc157cc',1,'media_type():&#160;fat16.h']]],
+  ['memcmp_264',['memcmp',['../memory_8c.html#a7710a54c06a0782c5762fcc849b71603',1,'memcmp(void *ptr1, void *ptr2, size_t len):&#160;memory.c'],['../memory_8h.html#a7710a54c06a0782c5762fcc849b71603',1,'memcmp(void *ptr1, void *ptr2, size_t len):&#160;memory.c']]],
+  ['memcpy_265',['memcpy',['../memory_8c.html#a113a42d20ee587a79f71464089007387',1,'memcpy(void *restrict dstptr, const void *restrict srcptr, size_t size):&#160;memory.c'],['../memory_8h.html#a113a42d20ee587a79f71464089007387',1,'memcpy(void *restrict dstptr, const void *restrict srcptr, size_t size):&#160;memory.c']]],
+  ['memory_2ec_266',['memory.c',['../memory_8c.html',1,'']]],
+  ['memory_2eh_267',['memory.h',['../memory_8h.html',1,'']]],
+  ['memory_5fmap_5fentry_268',['memory_map_entry',['../bios__memory__map_8h.html#a69ee9415479e1704667a452f1d715987',1,'bios_memory_map.h']]],
+  ['memset_269',['memset',['../memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60',1,'memset(void *ptr, int c, size_t size):&#160;memory.c'],['../memory_8h.html#ab8dce9c192324f0fd191fd5b85c7bb60',1,'memset(void *ptr, int c, size_t size):&#160;memory.c']]]
 ];

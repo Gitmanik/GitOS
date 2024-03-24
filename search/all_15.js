@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['volume_5fid_433',['volume_id',['../structfat16__header__extended.html#a77a2cd2807c348ae913c256e41533320',1,'fat16_header_extended::volume_id()'],['../fat16_8h.html#a77a2cd2807c348ae913c256e41533320',1,'volume_id():&#160;fat16.h']]],
-  ['volume_5fid_5fstring_434',['volume_id_string',['../structfat16__header__extended.html#a2eab2b435efae77606b7bb849b48c8c8',1,'fat16_header_extended::volume_id_string()'],['../fat16_8h.html#a2eab2b435efae77606b7bb849b48c8c8',1,'volume_id_string():&#160;fat16.h']]]
+  ['user_5fcode_5fselector_441',['USER_CODE_SELECTOR',['../gdt_8h.html#a3b5b77020c86db446e1729defea0ea17',1,'gdt.h']]],
+  ['user_5fdata_5fselector_442',['USER_DATA_SELECTOR',['../gdt_8c.html#a7314263eacc399b707efe8d1fbb804b6',1,'gdt.h']]],
+  ['user_5fregisters_443',['user_registers',['../task_8h.html#a2be45a1d61331ba5b9fc59deb2053a61',1,'task.h']]]
 ];

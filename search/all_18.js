@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zero_438',['zero',['../structidt__desc.html#a09777e6a5ad91ffd82a9975efe33de2e',1,'idt_desc::zero()'],['../idt_8h.html#a09777e6a5ad91ffd82a9975efe33de2e',1,'zero():&#160;idt.h']]]
+  ['yellow_448',['YELLOW',['../text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3ae735a848bf82163a19236ead1c3ef2d2',1,'text_mode.h']]]
 ];

@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['oem_5fidentifier_271',['oem_identifier',['../structfat16__header__primary.html#a63b2dcee2c4e78eeb932fe475ae7e194',1,'fat16_header_primary::oem_identifier()'],['../fat16_8h.html#a63b2dcee2c4e78eeb932fe475ae7e194',1,'oem_identifier():&#160;fat16.h']]],
-  ['offset_5fhigh_272',['offset_high',['../structidt__desc.html#a864a047b12c9faf25a520351049b91f1',1,'idt_desc::offset_high()'],['../idt_8h.html#a864a047b12c9faf25a520351049b91f1',1,'offset_high():&#160;idt.h']]],
-  ['offset_5flow_273',['offset_low',['../structidt__desc.html#a11b1c6ed61493da558a28e77fa1efee6',1,'idt_desc::offset_low()'],['../idt_8h.html#a11b1c6ed61493da558a28e77fa1efee6',1,'offset_low():&#160;idt.h']]],
-  ['open_274',['open',['../structfilesystem.html#ad0a025f59368517e7afd05a4ac2152c7',1,'filesystem']]],
-  ['outb_275',['outb',['../io_8c.html#a8bf7a9af91c08e6f876aaffeccd48ff3',1,'outb(uint16_t port, uint8_t val):&#160;io.c'],['../io_8h.html#a8bf7a9af91c08e6f876aaffeccd48ff3',1,'outb(uint16_t port, uint8_t val):&#160;io.c']]],
-  ['outw_276',['outw',['../io_8c.html#a3105e202829cfca8b5757df9351f96e1',1,'outw(uint16_t port, uint16_t val):&#160;io.c'],['../io_8h.html#a3105e202829cfca8b5757df9351f96e1',1,'outw(uint16_t port, uint16_t val):&#160;io.c']]]
+  ['name_270',['name',['../structfilesystem.html#a32a40b0f5bd31c570ff3b4c515d6725f',1,'filesystem']]],
+  ['next_271',['next',['../structpath__part.html#ad5d8ed0c4183f4e1bbef6d0250b02c37',1,'path_part::next()'],['../structtask.html#ae949d26b280beacfbb782fa148c8505d',1,'task::next()']]],
+  ['number_5fof_5fheads_272',['number_of_heads',['../structfat16__header__primary.html#ac2f425c61a49cd29d409c842cf522def',1,'fat16_header_primary::number_of_heads()'],['../fat16_8h.html#ac2f425c61a49cd29d409c842cf522def',1,'number_of_heads():&#160;fat16.h']]],
+  ['numeber_5fof_5fsectors_273',['numeber_of_sectors',['../structfat16__header__primary.html#ad67dc0a93ab59765a12a944809c38564',1,'fat16_header_primary::numeber_of_sectors()'],['../fat16_8h.html#ad67dc0a93ab59765a12a944809c38564',1,'numeber_of_sectors():&#160;fat16.h']]]
 ];

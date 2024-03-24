@@ -9,6 +9,7 @@ var fat16_8h =
     [ "fat_item", "structfat__item.html", "structfat__item" ],
     [ "fat_file_descriptor", "structfat__file__descriptor.html", "structfat__file__descriptor" ],
     [ "fat_private", "structfat__private.html", "structfat__private" ],
+    [ "DEBUG_FAT16", "fat16_8h.html#a94d5e52e2b8fbf4949b2a762c07b572b", null ],
     [ "FAT16_BAD_SECTOR", "fat16_8h.html#a729a70b83c68aaa101a62ad18c9ba95d", null ],
     [ "FAT16_FAT_ENTRY_SIZE", "fat16_8h.html#a1aa5cbb34b1c152ed576a90d8e0c55a8", null ],
     [ "FAT16_SIGNATURE", "fat16_8h.html#a0a07bee40a57c0384feaf75e23b408a0", null ],

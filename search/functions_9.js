@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['outb_568',['outb',['../io_8c.html#a8bf7a9af91c08e6f876aaffeccd48ff3',1,'outb(uint16_t port, uint8_t val):&#160;io.c'],['../io_8h.html#a8bf7a9af91c08e6f876aaffeccd48ff3',1,'outb(uint16_t port, uint8_t val):&#160;io.c']]],
-  ['outw_569',['outw',['../io_8c.html#a3105e202829cfca8b5757df9351f96e1',1,'outw(uint16_t port, uint16_t val):&#160;io.c'],['../io_8h.html#a3105e202829cfca8b5757df9351f96e1',1,'outw(uint16_t port, uint16_t val):&#160;io.c']]]
+  ['memcmp_579',['memcmp',['../memory_8c.html#a7710a54c06a0782c5762fcc849b71603',1,'memcmp(void *ptr1, void *ptr2, size_t len):&#160;memory.c'],['../memory_8h.html#a7710a54c06a0782c5762fcc849b71603',1,'memcmp(void *ptr1, void *ptr2, size_t len):&#160;memory.c']]],
+  ['memcpy_580',['memcpy',['../memory_8c.html#a113a42d20ee587a79f71464089007387',1,'memcpy(void *restrict dstptr, const void *restrict srcptr, size_t size):&#160;memory.c'],['../memory_8h.html#a113a42d20ee587a79f71464089007387',1,'memcpy(void *restrict dstptr, const void *restrict srcptr, size_t size):&#160;memory.c']]],
+  ['memset_581',['memset',['../memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60',1,'memset(void *ptr, int c, size_t size):&#160;memory.c'],['../memory_8h.html#ab8dce9c192324f0fd191fd5b85c7bb60',1,'memset(void *ptr, int c, size_t size):&#160;memory.c']]]
 ];

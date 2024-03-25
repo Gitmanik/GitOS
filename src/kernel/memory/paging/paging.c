@@ -138,6 +138,23 @@ int paging_set_page(uint32_t* directory, void* virtual_address, uint32_t value)
     return 0;
 }
 
+uint32_t paging_get_page(uint32_t* directory, void* virtual_address)
+{
+    if (!paging_is_aligned(virtual_address))
+        return -EINVARG;
+
+    uint32_t directory_index, page_table_index;
+
+    int res = paging_get_indexes(virtual_address, &directory_index, &page_table_index);
+
+    if (res < 0)
+        return res;
+
+    uint32_t page_directory_entry = directory[directory_index];
+    uint32_t* page_table = (uint32_t*) (page_directory_entry & 0xfffff000);
+    return page_table[page_table_index];
+}
+
 /**
  * @brief Aligns pointer to page size
  * 

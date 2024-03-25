@@ -72,3 +72,5 @@ void user_registers();
 int task_switch(struct task* task);
 int task_page();
 void task_current_save_state(struct interrupt_frame* frame);
+
+int task_copy_string_from(struct task* task, void* virtual, void* physical, int max);

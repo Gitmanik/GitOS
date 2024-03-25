@@ -7,6 +7,7 @@
 #include "memory/memory.h"
 #include "process.h"
 #include "kernel.h"
+#include "common/string.h"
 
 struct task* current_task = 0;
 
@@ -196,5 +197,44 @@ struct task* task_new(struct process* process)
         return ERROR(res);
     }
     return task;
+}
+
+int task_copy_string_from(struct task* task, void* virtual, void* physical, int max)
+{
+    // TODO: Allow more than one page size
+    if (max >= PAGING_PAGE_SIZE)
+    {
+        return -EINVARG;
+    }
+
+    int res = 0;
+    char* tmp = kzalloc(max);
+    if (!tmp)
+    {
+        res = -ENOMEM;
+        goto out;
+    }
+
+    uint32_t* task_directory = task->page_directory->directory_entry;
+    uint32_t old_entry = paging_get_page(task_directory, tmp);
+    paging_set_page(task->page_directory->directory_entry, tmp, PAGING_IS_PRESENT | PAGING_IS_WRITEABLE | PAGING_ACCESS_FROM_ALL);
+    paging_switch(task->page_directory);
+    strncpy(tmp, virtual, max);
+    kernel_page();
+
+    res = paging_set_page(task_directory, tmp, old_entry);
+    if (res < 0)
+    {
+        res = -EIO;
+        goto out_free;
+    }
+
+    strncpy(physical, tmp, max);
+
+    out_free:
+    kfree(tmp);
+
+    out:
+    return res;
 
 }

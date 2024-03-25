@@ -1,5 +1,6 @@
 var task_8c =
 [
+    [ "task_copy_string_from", "task_8c.html#a4d8f83240dc6495f59d2513e3954f711", null ],
     [ "task_current", "task_8c.html#a09984f0be407f262769bb93c9c1d0937", null ],
     [ "task_current_save_state", "task_8c.html#ae51bb6f08bb9c7151940430787f31666", null ],
     [ "task_free", "task_8c.html#ab03b661c3eeb2df303a9931941fefebe", null ],

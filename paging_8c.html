@@ -111,6 +111,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a040900b1b1eec0f5ce8027a31a25c1d9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#a040900b1b1eec0f5ce8027a31a25c1d9">paging_set_page</a> (uint32_t *directory, void *virtual_address, uint32_t value)</td></tr>
 <tr class="memdesc:a040900b1b1eec0f5ce8027a31a25c1d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets page table entry.  <a href="paging_8c.html#a040900b1b1eec0f5ce8027a31a25c1d9">More...</a><br /></td></tr>
 <tr class="separator:a040900b1b1eec0f5ce8027a31a25c1d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78f65ef8e3c37f9f8d9db43885c19e02"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#a78f65ef8e3c37f9f8d9db43885c19e02">paging_get_page</a> (uint32_t *directory, void *virtual_address)</td></tr>
+<tr class="separator:a78f65ef8e3c37f9f8d9db43885c19e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d32790b83c14fffde9038096b5d3025"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#a4d32790b83c14fffde9038096b5d3025">paging_align_address</a> (void *ptr)</td></tr>
 <tr class="memdesc:a4d32790b83c14fffde9038096b5d3025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aligns pointer to page size.  <a href="paging_8c.html#a4d32790b83c14fffde9038096b5d3025">More...</a><br /></td></tr>
 <tr class="separator:a4d32790b83c14fffde9038096b5d3025"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,6 +210,34 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>uint32_t* Page directory pointer </dd></dl>
 
 <p class="reference">References <a class="el" href="structpaging__chunk.html#a7abe8d9cbf8d303b43dc85b868b4eb93">paging_chunk::directory_entry</a>.</p>
+
+</div>
+</div>
+<a id="a78f65ef8e3c37f9f8d9db43885c19e02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78f65ef8e3c37f9f8d9db43885c19e02">&#9670;&nbsp;</a></span>paging_get_page()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t paging_get_page </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>directory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>virtual_address</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

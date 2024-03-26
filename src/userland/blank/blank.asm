@@ -11,3 +11,14 @@ _start:
     mov eax, 1 ; Sum
     int 0x80
     add esp, 8
+
+    push str
+    mov eax, 2 ; Print
+    int 0x80
+    add esp, 4
+
+    jmp $
+
+section .data
+str:
+    db 'Hello from usermode!', 0

@@ -1,5 +1,6 @@
 #include "syscall.h"
 
+#include "memory/heap/kheap.h"
 #include "idt/idt.h"
 #include "kernel.h"
 #include "task/task.h"
@@ -69,8 +70,24 @@ void* sys$sum(struct interrupt_frame* frame)
     return (void*) v1+v2;
 }
 
+void* sys$print(struct interrupt_frame* frame)
+{
+    (void)(frame);
+
+    char buf[2048] = {0};
+
+    void* str_ptr = task_peek_stack(task_current(), 0);
+
+    task_copy_string_from(task_current(), str_ptr, buf, 2048);
+
+    kprintf(buf);
+
+    return 0;
+}
+
 void syscall_init()
 {
     syscall_register(SYSCALL_BLANK, sys$blank);
     syscall_register(SYSCALL_SUM, sys$sum);
+    syscall_register(SYSCALL_PRINT, sys$print);
 }

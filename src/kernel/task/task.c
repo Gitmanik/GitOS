@@ -217,7 +217,7 @@ int task_copy_string_from(struct task* task, void* virtual, void* physical, int 
 
     uint32_t* task_directory = task->page_directory->directory_entry;
     uint32_t old_entry = paging_get_page(task_directory, tmp);
-    paging_set_page(task->page_directory->directory_entry, tmp, PAGING_IS_PRESENT | PAGING_IS_WRITEABLE | PAGING_ACCESS_FROM_ALL);
+    paging_set_page(task->page_directory->directory_entry, tmp, (uint32_t) tmp | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE | PAGING_ACCESS_FROM_ALL);
     paging_switch(task->page_directory);
     strncpy(tmp, virtual, max);
     kernel_page();

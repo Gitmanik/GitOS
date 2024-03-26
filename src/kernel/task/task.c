@@ -238,3 +238,24 @@ int task_copy_string_from(struct task* task, void* virtual, void* physical, int 
     return res;
 
 }
+
+void task_page_task(struct task* task)
+{
+    user_registers();
+    task_switch(task);
+}
+
+void* task_peek_stack(struct task* task, int offset)
+{
+    void* res = 0;
+
+    uint32_t* sp_ptr = (uint32_t*) task->registers.esp;
+
+    task_page_task(task);
+
+    res = (void*) sp_ptr[offset];
+
+    kernel_page();
+
+    return res;
+}

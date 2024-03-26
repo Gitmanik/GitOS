@@ -11,5 +11,6 @@ void syscall_init();
 
 enum syscalls
 {
+    SYSCALL_BLANK,
     SYSCALL_SUM
-};
+    SYSCALL_PRINT

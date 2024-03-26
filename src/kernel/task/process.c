@@ -77,8 +77,16 @@ static int process_load_data(const char* filename, struct process* process)
 int process_map_binary(struct process* process)
 {
     int res = 0;
-    paging_map_to(process->task->page_directory, (void*) PROGRAM_VIRTUAL_ADDRESS, process->ptr, paging_align_address(process->ptr + process->size), PAGING_IS_PRESENT | PAGING_ACCESS_FROM_ALL | PAGING_IS_WRITEABLE);
+    res = paging_map_to(process->task->page_directory, (void*) PROGRAM_VIRTUAL_ADDRESS, process->ptr, paging_align_address(process->ptr + process->size), PAGING_IS_PRESENT | PAGING_ACCESS_FROM_ALL | PAGING_IS_WRITEABLE);
     
+    if (res < 0)
+    {
+        goto out;
+    }
+
+    res = paging_map_to(process->task->page_directory, (void*) PROGRAM_VIRTUAL_STACK_ADDRESS_END, process->stack, paging_align_address((void*) process->stack + PROGRAM_VIRTUAL_STACK_SIZE), PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
+
+    out:
     return res;
 }
 

@@ -6,7 +6,7 @@ var indexSectionsWithContent =
   3: "$_defghikmoprstu",
   4: "_abcdefghijklmnoprstvwz",
   5: "dfhs",
-  6: "fst",
+  6: "ft",
   7: "bcdfglprswy",
   8: "abcdefhikmptu"
 };

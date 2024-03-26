@@ -15,6 +15,8 @@ var task_8h =
     [ "task_get_next", "task_8h.html#ac794f1e1c7cf79fe144cb85a303a4eda", null ],
     [ "task_new", "task_8h.html#aac4ed16fa0ba438a9e54edddb7e179ee", null ],
     [ "task_page", "task_8h.html#a45e8e823b36227f6dadb826453d8042a", null ],
+    [ "task_page_task", "task_8h.html#aef4b6a948712cf121c3e7a29fb320515", null ],
+    [ "task_peek_stack", "task_8h.html#adc449d7517f5739d9d01d662d200157a", null ],
     [ "task_return", "task_8h.html#aba7c84f8935dd23579647c702d880941", null ],
     [ "task_run_first_ever_task", "task_8h.html#ab94af482792ae8ca51832783d1916c33", null ],
     [ "task_switch", "task_8h.html#a2b0e7375897d0c61d6b2d12024451f8a", null ],

@@ -130,6 +130,10 @@ Functions</h2></td></tr>
 <tr class="separator:aac4ed16fa0ba438a9e54edddb7e179ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d8f83240dc6495f59d2513e3954f711"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8c.html#a4d8f83240dc6495f59d2513e3954f711">task_copy_string_from</a> (struct <a class="el" href="structtask.html">task</a> *<a class="el" href="structtask.html">task</a>, void *virtual, void *physical, int max)</td></tr>
 <tr class="separator:a4d8f83240dc6495f59d2513e3954f711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef4b6a948712cf121c3e7a29fb320515"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8c.html#aef4b6a948712cf121c3e7a29fb320515">task_page_task</a> (struct <a class="el" href="structtask.html">task</a> *<a class="el" href="structtask.html">task</a>)</td></tr>
+<tr class="separator:aef4b6a948712cf121c3e7a29fb320515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc449d7517f5739d9d01d662d200157a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8c.html#adc449d7517f5739d9d01d662d200157a">task_peek_stack</a> (struct <a class="el" href="structtask.html">task</a> *<a class="el" href="structtask.html">task</a>, int offset)</td></tr>
+<tr class="separator:adc449d7517f5739d9d01d662d200157a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -354,6 +358,56 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>int Error code </dd></dl>
 
 <p class="reference">References <a class="el" href="task_8c.html#a9f6cf565fea5037efb7f971337abaf12">current_task</a>, <a class="el" href="task_8c.html#a2b0e7375897d0c61d6b2d12024451f8a">task_switch()</a>, and <a class="el" href="task_8h.html#a2be45a1d61331ba5b9fc59deb2053a61">user_registers()</a>.</p>
+
+</div>
+</div>
+<a id="aef4b6a948712cf121c3e7a29fb320515"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef4b6a948712cf121c3e7a29fb320515">&#9670;&nbsp;</a></span>task_page_task()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void task_page_task </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structtask.html">task</a> *&#160;</td>
+          <td class="paramname"><em>task</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="task_8c.html#a2b0e7375897d0c61d6b2d12024451f8a">task_switch()</a>, and <a class="el" href="task_8h.html#a2be45a1d61331ba5b9fc59deb2053a61">user_registers()</a>.</p>
+
+</div>
+</div>
+<a id="adc449d7517f5739d9d01d662d200157a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc449d7517f5739d9d01d662d200157a">&#9670;&nbsp;</a></span>task_peek_stack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* task_peek_stack </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structtask.html">task</a> *&#160;</td>
+          <td class="paramname"><em>task</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="structregisters.html#a7534a179bc9cc0ef26f0468e0959ee5c">registers::esp</a>, <a class="el" href="kernel_8c.html#abd882687cd304ceab89392243ac0bf0d">kernel_page()</a>, <a class="el" href="structtask.html#a603eb8db7897915c2002dbb9458ca137">task::registers</a>, and <a class="el" href="task_8c.html#aef4b6a948712cf121c3e7a29fb320515">task_page_task()</a>.</p>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['disk_5ftype_792',['DISK_TYPE',['../disk_8h.html#a4e3fa02c8adebb0af46e1f6749fe8b4a',1,'disk.h']]]
+  ['disk_5ftype_796',['DISK_TYPE',['../disk_8h.html#a4e3fa02c8adebb0af46e1f6749fe8b4a',1,'disk.h']]]
 ];

@@ -217,7 +217,7 @@ void kernel_main()
     }
     kprintf("OK\r\n");
 
-    kprintf("Running task!\r\n");
+    kprintf("Running task..\r\n");
 
     task_run_first_ever_task();
 

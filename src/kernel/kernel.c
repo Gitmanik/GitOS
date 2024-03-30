@@ -22,6 +22,7 @@
 #include "task/tss.h"
 #include "task/task.h"
 #include "task/process.h"
+#include "keyboard/keyboard.h"
 
 static struct paging_chunk *kernel_paging_chunk;
 
@@ -194,6 +195,10 @@ void kernel_main()
     pic_Remap(0x20, 0x28);
 
     kprintf(" OK\r\n");
+    //
+
+    // Initializing keyboard drivers
+    keyboard_init();
     //
 
     // Initializing FS

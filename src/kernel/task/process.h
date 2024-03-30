@@ -4,6 +4,7 @@
 #include "fs/pathparser.h"
 
 #define PROGRAM_MAX_ALLOCATIONS 1024
+#define PROCESS_KEYBOARD_BUFFER_SIZE 1024
 #define MAX_PROCESSES 12
 
 struct process
@@ -43,6 +44,12 @@ struct process
      * @brief Size of the ptr data
      */
     uint32_t size;
+
+    struct keyboard_buffer {
+        char buffer[PROCESS_KEYBOARD_BUFFER_SIZE];
+        int tail;
+        int head;
+    } keyboard;
 };
 
 int process_load(const char* filename, struct process** process);

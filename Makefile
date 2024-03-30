@@ -5,6 +5,7 @@ GCC = ${TOOLS_DIR}/${TARGET}-gcc
 LD = ${TOOLS_DIR}/${TARGET}-ld
 OBJCOPY = ${TOOLS_DIR}/${TARGET}-objcopy
 OBJDUMP = ${TOOLS_DIR}/${TARGET}-objdump
+export
 
 SOURCE_PREFIX = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 GCC_ARGUMENTS = -g -std=gnu99 -ffreestanding -nostdlib -O0 -Wall -Wextra -Werror

@@ -82,9 +82,10 @@ disk: build
 
 	mount -t vfat -o fat=16 ./build/disk.bin ./mnt
 	cp -r ./fs/. ./mnt/.
-# TODO: Move that part
-	cp ./src/userland/blank.bin ./mnt/.
-	umount ./mnt
+
+	cd ./src/userland && ${MAKE} install
+
+	sudo umount ./mnt
 	rm -rf ./mnt
 
 # ASM_OBJECTS need to be first because of kernel.asm

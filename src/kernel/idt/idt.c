@@ -1,10 +1,16 @@
 #include "idt.h"
 #include <stdint.h>
+#include "common/status.h"
 #include "memory/memory.h"
 #include "drivers/pic/pic.h"
+#include "task/task.h"
+#include "kernel.h"
 
-struct idt_desc idt_descriptors[512];
+struct idt_desc idt_descriptors[MAX_INTERRUPTS];
 struct idtr_desc idtr_descriptor;
+
+extern void* interrupt_pointer_table[MAX_INTERRUPTS];
+ISR_HANDLER interrupt_handlers[MAX_INTERRUPTS];
 
 /**
  * @brief Loads Interrupt Descriptor Table
@@ -33,6 +39,25 @@ void idt_SetDescriptor(int int_no, void* address)
 }
 
 /**
+ * @brief Sets handler for given interrupt number
+ * 
+ * @param int_no Interrupt number
+ * @param handler Handler function
+ * @return int Error code
+ */
+int idt_SetHandler(int int_no, ISR_HANDLER handler)
+{
+    if (int_no < 0 || int_no >= MAX_INTERRUPTS-1)
+    {
+        return -EINVARG;
+    }
+
+    interrupt_handlers[int_no] = handler;    
+
+    return ALL_OK;
+}
+
+/**
  * @brief Initializes memory for IDT struct
  * Sets default for all interrupts
  */
@@ -43,16 +68,23 @@ void idt_Init()
     idtr_descriptor.limit = sizeof(idt_descriptors)-1;
     idtr_descriptor.base = (uint32_t) idt_descriptors;
 
-    for (int i = 0; i < 512; i++)
-        idt_SetDescriptor(i, ignore_int);
+    for (int i = 0; i < MAX_INTERRUPTS; i++)
+        idt_SetDescriptor(i, interrupt_pointer_table[i]);
 }
 
 /**
- * @brief Default handler for all interrupts
+ * @brief Handles interrupt (called by ISR)
  * 
+ * @param int_no Interrupt number
+ * @param frame Interrupt frame
  */
-void ignore_int_handler()
+void idt_Handler(int int_no, struct interrupt_frame* frame)
 {
-    pic_EOI(0);
+    kernel_page();
+    if (interrupt_handlers[int_no] != 0)
+    {
+        task_current_save_state(frame);
+        interrupt_handlers[int_no](frame);
+    }
+    task_page();
 }
-

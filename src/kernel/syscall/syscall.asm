@@ -8,7 +8,7 @@ syscall_wrapper:
     ; uint32_t sp
     ; uint32_t ss
     pushad
-    
+    push dword 0 ; int error_code
     push esp ; struct interrupt_frame*
     push eax ; Command code
     call syscall_handler
@@ -16,6 +16,7 @@ syscall_wrapper:
     add esp, 8
 
     popad
+    add esp, 4
     mov eax, [syscall_handler_result]
     iretd
 

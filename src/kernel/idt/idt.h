@@ -1,6 +1,8 @@
 #pragma once
 #include <stdint.h>
 
+#define MAX_INTERRUPTS 256
+
 struct idt_desc
 {
     uint16_t offset_low; //Offset bits 0-15
@@ -18,6 +20,7 @@ struct idtr_desc
 
 struct interrupt_frame
 {
+    uint32_t error_code;
     uint32_t edi;
     uint32_t esi;
     uint32_t ebp;
@@ -33,15 +36,13 @@ struct interrupt_frame
     uint32_t ss;
 } __attribute__((packed));
 
+typedef void(*ISR_HANDLER)(struct interrupt_frame* frame);
+
 void idt_Init();
 void idt_SetDescriptor(int int_no, void* address);
+int idt_SetHandler(int int_no, ISR_HANDLER handler);
 void idt_Load();
 
-/**
- * @brief Default interrupt handler located in idt_handler.asm
- * 
- */
-extern void ignore_int();
 
 /*
 0x000	0	Divide by 0

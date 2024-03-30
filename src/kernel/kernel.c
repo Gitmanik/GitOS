@@ -37,29 +37,32 @@ struct gdt_structured gdt_structured[TOTAL_GDT_SEGMENTS] = {
     {.base = (uint32_t)&tss, .limit = sizeof(tss), .type = 0xE9}, // TASK SWITCH SEGMENT
 };
 
-/**
- * @brief Temporary int 0x0 handler
- *
- */
-void divide_by_zero()
+void print_interrupt_frame(struct interrupt_frame* frame)
 {
-    kernel_panic("Division by zero error!");
+    kprintf("\r\nKernel Registers:\r\nedi:%ld esi:%ld ebp:%ld\r\nebx:%ld edx:%ld ecx:%ld\r\neax:%ld \r\nip:%p cs:%ld\r\nflags:%lb esp:%p ss:%ld\r\nerror: %ld\r\n",
+    frame->edi, frame->esi, frame->ebp, frame->ebx, frame->edx, frame->ecx, frame->eax, frame->ip, frame->cs, frame->flags, frame->esp, frame->ss,frame->error_code);
 }
 
 /**
- * @brief Located in idt_handler.asm entry point for interrupt 0x0
- *
+ * @brief Temporary int 0x0 handler
+ * 
+ * @param frame Interrupt frame
  */
-
-extern void int21h();
-/**
- * @brief Temporary int 0x21 handler
- *
- */
-void int21h_handler()
+void divide_by_zero(struct interrupt_frame* frame)
 {
-    char scan_code = inb(0x60);
-    tm_PrintChar(scan_code);
+    (void)(frame);
+    kernel_panic("Division by zero!");
+}
+
+/**
+ * @brief Temporary PIC Timer interrupt handler
+ * 
+ * @param frame Interrupt frame
+ */
+void timer_interrupt(struct interrupt_frame* frame)
+{
+    (void)(frame);
+    kprintf("Timer interrupt!\r\n");
     pic_EOI(0);
 }
 
@@ -102,8 +105,8 @@ void kernel_main()
     // Initialize IDT
     kprintf("Initializing IDT..");
     idt_Init();
-    idt_SetDescriptor(0, divide_by_zero);
-    idt_SetDescriptor(0x21, int21h);
+    idt_SetHandler(0x00, divide_by_zero);
+    idt_SetHandler(0x20, timer_interrupt);
     idt_SetDescriptor(0x80, syscall_wrapper);
     idt_Load();
     kprintf("OK\r\n");

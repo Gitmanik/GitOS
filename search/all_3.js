@@ -9,5 +9,6 @@ var searchData=
   ['blue_14',['BLUE',['../text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a35d6719cb4d7577c031b3d79057a1b79',1,'text_mode.h']]],
   ['bochsbreak_15',['BochsBreak',['../kernel_8h.html#aef9e7d5ae531e4004885f5a5cc002143',1,'kernel.h']]],
   ['brown_16',['BROWN',['../text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a1fa14482e7e4dc1332ab8c9d995fe570',1,'text_mode.h']]],
-  ['bytes_5fper_5fsector_17',['bytes_per_sector',['../structfat16__header__primary.html#aad9aa4ff8c80f1bcb0ac03f23bb9701e',1,'fat16_header_primary::bytes_per_sector()'],['../fat16_8h.html#aad9aa4ff8c80f1bcb0ac03f23bb9701e',1,'bytes_per_sector():&#160;fat16.h']]]
+  ['buffer_17',['buffer',['../structprocess_1_1keyboard__buffer.html#ad48a4d77b3c053f592cd912834f45c60',1,'process::keyboard_buffer']]],
+  ['bytes_5fper_5fsector_18',['bytes_per_sector',['../structfat16__header__primary.html#aad9aa4ff8c80f1bcb0ac03f23bb9701e',1,'fat16_header_primary::bytes_per_sector()'],['../fat16_8h.html#aad9aa4ff8c80f1bcb0ac03f23bb9701e',1,'bytes_per_sector():&#160;fat16.h']]]
 ];

@@ -99,11 +99,15 @@ $(document).ready(function(){initNavTree('process_8h.html',''); initResizable();
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprocess.html">process</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprocess_1_1keyboard__buffer.html">process::keyboard_buffer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a1ae0d9051ac392230ca0754368037a0d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#a1ae0d9051ac392230ca0754368037a0d">PROGRAM_MAX_ALLOCATIONS</a>&#160;&#160;&#160;1024</td></tr>
 <tr class="separator:a1ae0d9051ac392230ca0754368037a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19b5a6036a80fdec911d063961b757ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#a19b5a6036a80fdec911d063961b757ac">PROCESS_KEYBOARD_BUFFER_SIZE</a>&#160;&#160;&#160;1024</td></tr>
+<tr class="separator:a19b5a6036a80fdec911d063961b757ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92fd8bb5807bf6abb640686f51e5df3e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#a92fd8bb5807bf6abb640686f51e5df3e">MAX_PROCESSES</a>&#160;&#160;&#160;12</td></tr>
 <tr class="separator:a92fd8bb5807bf6abb640686f51e5df3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -111,6 +115,8 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a7a1fd8997c2d1acde0fa0929c13f7a3f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#a7a1fd8997c2d1acde0fa0929c13f7a3f">process_load</a> (const char *<a class="el" href="fat16_8h.html#a36126364ff9f56a16488e5c2b8d1206e">filename</a>, struct <a class="el" href="structprocess.html">process</a> **<a class="el" href="structprocess.html">process</a>)</td></tr>
 <tr class="separator:a7a1fd8997c2d1acde0fa0929c13f7a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc6a54bcc8069ca95f0f72ed27194e4"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structprocess.html">process</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#a2dc6a54bcc8069ca95f0f72ed27194e4">process_current</a> ()</td></tr>
+<tr class="separator:a2dc6a54bcc8069ca95f0f72ed27194e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a92fd8bb5807bf6abb640686f51e5df3e"></a>
@@ -121,6 +127,20 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define MAX_PROCESSES&#160;&#160;&#160;12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a19b5a6036a80fdec911d063961b757ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19b5a6036a80fdec911d063961b757ac">&#9670;&nbsp;</a></span>PROCESS_KEYBOARD_BUFFER_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PROCESS_KEYBOARD_BUFFER_SIZE&#160;&#160;&#160;1024</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -142,6 +162,25 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a2dc6a54bcc8069ca95f0f72ed27194e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc6a54bcc8069ca95f0f72ed27194e4">&#9670;&nbsp;</a></span>process_current()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structprocess.html">process</a>* process_current </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="process_8c.html#af1b3c695b7f44f0356971770370792d2">current_process</a>.</p>
+
+</div>
+</div>
 <a id="a7a1fd8997c2d1acde0fa0929c13f7a3f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a1fd8997c2d1acde0fa0929c13f7a3f">&#9670;&nbsp;</a></span>process_load()</h2>
 

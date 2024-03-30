@@ -300,6 +300,14 @@ char* kvsprintf(char* buf, char* fmt, va_list args)
 						fmt++;
 						break;
 
+					case 'b':
+						memset(internal_buffer, 0, 512);
+						itoa(va_arg(args, long), internal_buffer, 2);
+						sz = strlen(internal_buffer);
+						memcpy(buf, internal_buffer, sz);
+						buf += sz;
+						fmt++;
+						break;
 					default:
 						fmt++;
 						break;

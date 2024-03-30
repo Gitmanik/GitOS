@@ -46,3 +46,4 @@ struct process
 };
 
 int process_load(const char* filename, struct process** process);
+struct process* process_current();

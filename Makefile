@@ -31,6 +31,8 @@ C_OBJECTS = ${C_SOURCES:.c=.o}
 ASM_SOURCES = ./src/kernel/kernel.asm $(shell find ./src/kernel -name "*.asm" ! -wholename "./src/kernel/kernel.asm") 
 ASM_OBJECTS = ${ASM_SOURCES:.asm=.asmo}
 
+USERMODE_MAKE = cd ./src/userland && ${MAKE}
+
 
 default: all
 all: clean build userland disk
@@ -83,7 +85,7 @@ disk: build
 	mount -t vfat -o fat=16 ./build/disk.bin ./mnt
 	cp -r ./fs/. ./mnt/.
 
-	cd ./src/userland && ${MAKE} install
+	${USERMODE_MAKE} install
 
 	sudo umount ./mnt
 	rm -rf ./mnt
@@ -114,7 +116,7 @@ docs: ./docs
 	doxygen Doxyfile
 
 userland:
-	cd ./src/userland && ${MAKE} all
+	${USERMODE_MAKE} all
 
 userland_clean:
-	cd ./src/userland && ${MAKE} clean
+	${USERMODE_MAKE} clean

@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"structdisk.html#aa4853d13c26ce9af3bbb484e0bee8bf2":[0,0,0,2],
 "structdisk.html#accbd02759a995a4ec4ee9813d9bde5af":[0,0,0,4],
 "structdisk__stream.html":[0,0,1],
 "structdisk__stream.html#a1910d262855b71da353ed0d07a6c7823":[0,0,1,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "task_8h.html#ab94af482792ae8ca51832783d1916c33":[1,0,0,0,8,3,18],
 "task_8h.html#aba7c84f8935dd23579647c702d880941":[1,0,0,0,8,3,17],
 "task_8h.html#abc94869b5cc333fe54a400654a10c9f0":[1,0,0,0,8,3,4],
-"task_8h.html#ac794f1e1c7cf79fe144cb85a303a4eda":[1,0,0,0,8,3,12]
+"task_8h.html#ac794f1e1c7cf79fe144cb85a303a4eda":[1,0,0,0,8,3,12],
+"task_8h.html#ada78e3124de6adf5a5d212f9ebc4bbe0":[1,0,0,0,8,3,29]
 };

@@ -85,15 +85,14 @@ var NAVTREEINDEX1 =
 "kernel_8h.html#aef9e7d5ae531e4004885f5a5cc002143":[1,0,0,0,10,0],
 "kernel_8h_source.html":[1,0,0,0,10],
 "keyboard_8c.html":[1,0,0,0,5,0],
-"keyboard_8c.html#a30102a1402dfd1b478ca03c467b0ecda":[1,0,0,0,5,0,3],
-"keyboard_8c.html#aaeb4e4a3c4813ee1efc6b98bba9ec781":[1,0,0,0,5,0,0],
-"keyboard_8c.html#ad1a0735bd66e1dca1615d835d99cc98e":[1,0,0,0,5,0,2],
-"keyboard_8c.html#af05bd0eedb73ee90a3e17716fc13bbfe":[1,0,0,0,5,0,1],
+"keyboard_8c.html#a30102a1402dfd1b478ca03c467b0ecda":[1,0,0,0,5,0,2],
+"keyboard_8c.html#ad1a0735bd66e1dca1615d835d99cc98e":[1,0,0,0,5,0,1],
+"keyboard_8c.html#af05bd0eedb73ee90a3e17716fc13bbfe":[1,0,0,0,5,0,0],
 "keyboard_8h.html":[1,0,0,0,5,1],
 "keyboard_8h.html#a30102a1402dfd1b478ca03c467b0ecda":[1,0,0,0,5,1,4],
 "keyboard_8h.html#a69ebf9d38803d3b1dd22ced9928579c9":[1,0,0,0,5,1,1],
-"keyboard_8h.html#aaeb4e4a3c4813ee1efc6b98bba9ec781":[1,0,0,0,5,1,2],
 "keyboard_8h.html#ad1a0735bd66e1dca1615d835d99cc98e":[1,0,0,0,5,1,3],
+"keyboard_8h.html#af05bd0eedb73ee90a3e17716fc13bbfe":[1,0,0,0,5,1,2],
 "keyboard_8h_source.html":[1,0,0,0,5,1],
 "kheap_8h.html":[1,0,0,0,6,0,3],
 "kheap_8h.html#a069f85a5001d71bc44d8be6532a4e432":[1,0,0,0,6,0,3,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "structdisk.html":[0,0,0],
 "structdisk.html#a1e73718a47f61fdca0413918f654d471":[0,0,0,0],
 "structdisk.html#a4bce4c67c8c2fc4f8e3c0182f4afa586":[0,0,0,1],
-"structdisk.html#a7441ef0865bcb3db9b8064dd7375c1ea":[0,0,0,3]
+"structdisk.html#a7441ef0865bcb3db9b8064dd7375c1ea":[0,0,0,3],
+"structdisk.html#aa4853d13c26ce9af3bbb484e0bee8bf2":[0,0,0,2]
 };

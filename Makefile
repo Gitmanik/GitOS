@@ -9,7 +9,7 @@ OBJDUMP = ${TOOLS_DIR}/${TARGET}-objdump
 SOURCE_PREFIX = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 GCC_ARGUMENTS = -g -std=gnu99 -ffreestanding -nostdlib -O0 -Wall -Wextra -Werror
 
-QEMU_ARGUMENTS = -drive file=${DISK_BIN},format=raw,index=0,media=disk -m 32M -serial tcp:host.docker.internal:4555
+QEMU_ARGUMENTS = -drive file=${DISK_BIN},format=raw,index=0,media=disk -m 32M
 
 SOURCE_FOLDER = ./src
 BUILD_FOLDER = ./build
@@ -56,7 +56,7 @@ clean: userland_clean
 	rm -rf mnt
 
 debug_qemu:
-	qemu-system-i386 ${QEMU_ARGUMENTS} -S -serial /dev/ttyS0 -gdb tcp::1234 
+	qemu-system-i386 ${QEMU_ARGUMENTS} -S -gdb tcp::1234 
 
 debug:
 	gdb -ex 'target remote | qemu-system-i386 ${QEMU_ARGUMENTS} -S -gdb stdio'
@@ -65,7 +65,7 @@ debug_bochs:
 	bochs -q
 
 run:
-	qemu-system-i386 ${QEMU_ARGUMENTS}
+	qemu-system-i386 ${QEMU_ARGUMENTS} -serial stdio
 
 build: kernel stage1
 

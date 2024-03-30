@@ -1,7 +1,7 @@
 extern syscall_handler
 global syscall_wrapper
 syscall_wrapper:
-    ; Alredy pushed:
+    ; Already pushed:
     ; uint32_t ip
     ; uint32_t cs
     ; uint32_t flags

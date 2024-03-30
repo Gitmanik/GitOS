@@ -7,11 +7,6 @@
 static struct keyboard* keyboard_list_head = 0;
 static struct keyboard* keyboard_list_tail = 0;
 
-void keyboard_init()
-{
-
-}
-
 int keyboard_insert(struct keyboard* keyboard)
 {
     int res = 0;

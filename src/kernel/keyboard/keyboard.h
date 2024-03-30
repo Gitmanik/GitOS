@@ -10,4 +10,4 @@ struct keyboard
 
 char keyboard_pop();
 void keyboard_push(char c);
-void keyboard_init();
+int keyboard_insert(struct keyboard* keyboard);

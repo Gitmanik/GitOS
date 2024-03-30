@@ -198,7 +198,6 @@ void kernel_main()
     //
 
     // Initializing keyboard drivers
-    keyboard_init();
     //
 
     // Initializing FS

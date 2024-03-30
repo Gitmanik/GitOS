@@ -117,15 +117,14 @@ $(document).ready(function(){initNavTree('kernel_8c.html',''); initResizable(); 
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adfda00749bbf6fed5c6596a7896b062c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8c.html#adfda00749bbf6fed5c6596a7896b062c">divide_by_zero</a> ()</td></tr>
-<tr class="memdesc:adfda00749bbf6fed5c6596a7896b062c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temporary int 0x0 handler.  <a href="kernel_8c.html#adfda00749bbf6fed5c6596a7896b062c">More...</a><br /></td></tr>
-<tr class="separator:adfda00749bbf6fed5c6596a7896b062c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac86840e98faa2e3f4509025a6bff1382"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8c.html#ac86840e98faa2e3f4509025a6bff1382">int21h</a> ()</td></tr>
-<tr class="memdesc:ac86840e98faa2e3f4509025a6bff1382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Located in idt_handler.asm entry point for interrupt 0x0.  <a href="kernel_8c.html#ac86840e98faa2e3f4509025a6bff1382">More...</a><br /></td></tr>
-<tr class="separator:ac86840e98faa2e3f4509025a6bff1382"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d1c06ba63ac325cde9056255a24ee7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8c.html#a6d1c06ba63ac325cde9056255a24ee7a">int21h_handler</a> ()</td></tr>
-<tr class="memdesc:a6d1c06ba63ac325cde9056255a24ee7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temporary int 0x21 handler.  <a href="kernel_8c.html#a6d1c06ba63ac325cde9056255a24ee7a">More...</a><br /></td></tr>
-<tr class="separator:a6d1c06ba63ac325cde9056255a24ee7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa81c8798060311ade13ca78e4edac5d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8c.html#aa81c8798060311ade13ca78e4edac5d4">print_interrupt_frame</a> (struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *frame)</td></tr>
+<tr class="separator:aa81c8798060311ade13ca78e4edac5d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a096d4e0cd008c24d3b26bf0bfd083207"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8c.html#a096d4e0cd008c24d3b26bf0bfd083207">divide_by_zero</a> (struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *frame)</td></tr>
+<tr class="memdesc:a096d4e0cd008c24d3b26bf0bfd083207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temporary int 0x0 handler.  <a href="kernel_8c.html#a096d4e0cd008c24d3b26bf0bfd083207">More...</a><br /></td></tr>
+<tr class="separator:a096d4e0cd008c24d3b26bf0bfd083207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08bda630cae3fb3034a2b6e809246d5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8c.html#a08bda630cae3fb3034a2b6e809246d5f">timer_interrupt</a> (struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *frame)</td></tr>
+<tr class="memdesc:a08bda630cae3fb3034a2b6e809246d5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temporary PIC Timer interrupt handler.  <a href="kernel_8c.html#a08bda630cae3fb3034a2b6e809246d5f">More...</a><br /></td></tr>
+<tr class="separator:a08bda630cae3fb3034a2b6e809246d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd882687cd304ceab89392243ac0bf0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8c.html#abd882687cd304ceab89392243ac0bf0d">kernel_page</a> ()</td></tr>
 <tr class="separator:abd882687cd304ceab89392243ac0bf0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada8402e0c504af8cafef5cc76c076003"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8c.html#ada8402e0c504af8cafef5cc76c076003">kernel_main</a> ()</td></tr>
@@ -150,8 +149,8 @@ Variables</h2></td></tr>
 <tr class="separator:a71ca8723766d535dc4ffaf6e2dbc3daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="adfda00749bbf6fed5c6596a7896b062c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfda00749bbf6fed5c6596a7896b062c">&#9670;&nbsp;</a></span>divide_by_zero()</h2>
+<a id="a096d4e0cd008c24d3b26bf0bfd083207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a096d4e0cd008c24d3b26bf0bfd083207">&#9670;&nbsp;</a></span>divide_by_zero()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,55 +158,22 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void divide_by_zero </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Temporary int 0x0 handler. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>Interrupt frame </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="reference">References <a class="el" href="kernel_8c.html#a8d209f2439b73fa38517f599a1904a99">kernel_panic()</a>.</p>
-
-</div>
-</div>
-<a id="ac86840e98faa2e3f4509025a6bff1382"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac86840e98faa2e3f4509025a6bff1382">&#9670;&nbsp;</a></span>int21h()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void int21h </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Located in idt_handler.asm entry point for interrupt 0x0. </p>
-
-</div>
-</div>
-<a id="a6d1c06ba63ac325cde9056255a24ee7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d1c06ba63ac325cde9056255a24ee7a">&#9670;&nbsp;</a></span>int21h_handler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void int21h_handler </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Temporary int 0x21 handler. </p>
-
-<p class="reference">References <a class="el" href="io_8c.html#a2e1e8e2c5724c1e8fd2dff2eada06479">inb()</a>, <a class="el" href="pic_8c.html#a1e4ae4c99f1fd304a8d92e06e19a5f71">pic_EOI()</a>, and <a class="el" href="text__mode_8c.html#ad20bc492edfe86d553bf0b66d2f9baa0">tm_PrintChar()</a>.</p>
 
 </div>
 </div>
@@ -245,7 +211,7 @@ Variables</h2></td></tr>
 
 <p>Kernel C entry point. </p>
 
-<p class="reference">References <a class="el" href="bios__memory__map_8h.html#af47e979e60d4c21d9425b7ae62d7a9e6">bios_memory_map</a>, <a class="el" href="serial_8h.html#a00dbb3ab1c59e14699be9393693e2248">COM1</a>, <a class="el" href="kernel_8c.html#adfda00749bbf6fed5c6596a7896b062c">divide_by_zero()</a>, <a class="el" href="structtss.html#ab8a56bd35e5f4765a5f6736fdd829a2f">tss::esp0</a>, <a class="el" href="gdt_8c.html#a071baa899e787757da9db71d9bacc67a">gdt_load()</a>, <a class="el" href="gdt_8c.html#a0bea945b578f5101079d84c9f4864725">gdt_read()</a>, <a class="el" href="kernel_8c.html#ae94f4033175eb35d712ddcc38cd60b67">gdt_real</a>, <a class="el" href="gdt_8c.html#ad98deccb3abc7cfdd109b1821d1807b4">gdt_structured_to_gdt()</a>, <a class="el" href="text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a38566822dbd9408c447abfd3ed4a85d2">GREY</a>, <a class="el" href="idt_8c.html#a808e651ac439d9410771231324e80ff5">idt_Init()</a>, <a class="el" href="idt_8c.html#a296416326885a0423be69095e07b054e">idt_Load()</a>, <a class="el" href="idt_8c.html#ae9dfaeff36b7570b57e8ecea878946b9">idt_SetDescriptor()</a>, <a class="el" href="kernel_8c.html#ac86840e98faa2e3f4509025a6bff1382">int21h()</a>, <a class="el" href="kernel_8h.html#ab8e98b2d78ed2a7ff3e2af66009fbe27">kdebug</a>, <a class="el" href="gdt_8h.html#aa6c68f1bf413d84abd00bafd773b2e02">KERNEL_DATA_SELECTOR</a>, <a class="el" href="kernel_8c.html#a8d209f2439b73fa38517f599a1904a99">kernel_panic()</a>, <a class="el" href="hkeap_8c.html#adf384b2e867b567a531f37e258b855d3">kheap_init()</a>, <a class="el" href="kernel_8c.html#ac9d768b4772cc87fc88afbbbd805f96a">kprintf()</a>, <a class="el" href="bios__memory__map_8h.html#a69ee9415479e1704667a452f1d715987">memory_map_entry</a>, <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>, <a class="el" href="serial_8c.html#a6b98595090e689060d67fba97affb7cb">ser_Init()</a>, <a class="el" href="structtss.html#a7874b70fa3a93da1588513500cbdf1a8">tss::ss0</a>, <a class="el" href="structgdt__descriptor.html#abe5b74a6bf41557a5ae72460fa563219">gdt_descriptor::start_address</a>, <a class="el" href="syscall_8h.html#a441be2490fb42a2eba6c201a42259075">syscall_wrapper()</a>, <a class="el" href="text__mode_8c.html#a0ce4b7080788f46ff10075c9c69418c4">tm_ClearScreen()</a>, <a class="el" href="text__mode_8c.html#ae96ec3266b8e9844c2932b97e7277c21">tm_SetColor()</a>, <a class="el" href="gdt_8h.html#adc5afdb11c099afb2162d63377834e14">TOTAL_GDT_SEGMENTS</a>, and <a class="el" href="tss_8h.html#a510a383478353a246fb94b4e858fc05e">tss_load()</a>.</p>
+<p class="reference">References <a class="el" href="bios__memory__map_8h.html#af47e979e60d4c21d9425b7ae62d7a9e6">bios_memory_map</a>, <a class="el" href="serial_8h.html#a00dbb3ab1c59e14699be9393693e2248">COM1</a>, <a class="el" href="kernel_8c.html#a096d4e0cd008c24d3b26bf0bfd083207">divide_by_zero()</a>, <a class="el" href="structtss.html#ab8a56bd35e5f4765a5f6736fdd829a2f">tss::esp0</a>, <a class="el" href="gdt_8c.html#a071baa899e787757da9db71d9bacc67a">gdt_load()</a>, <a class="el" href="gdt_8c.html#a0bea945b578f5101079d84c9f4864725">gdt_read()</a>, <a class="el" href="kernel_8c.html#ae94f4033175eb35d712ddcc38cd60b67">gdt_real</a>, <a class="el" href="gdt_8c.html#ad98deccb3abc7cfdd109b1821d1807b4">gdt_structured_to_gdt()</a>, <a class="el" href="text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a38566822dbd9408c447abfd3ed4a85d2">GREY</a>, <a class="el" href="idt_8c.html#a808e651ac439d9410771231324e80ff5">idt_Init()</a>, <a class="el" href="idt_8c.html#a296416326885a0423be69095e07b054e">idt_Load()</a>, <a class="el" href="idt_8c.html#ae9dfaeff36b7570b57e8ecea878946b9">idt_SetDescriptor()</a>, <a class="el" href="idt_8c.html#a00ebf7b83736ba368eb20208cfc0488d">idt_SetHandler()</a>, <a class="el" href="kernel_8h.html#ab8e98b2d78ed2a7ff3e2af66009fbe27">kdebug</a>, <a class="el" href="gdt_8h.html#aa6c68f1bf413d84abd00bafd773b2e02">KERNEL_DATA_SELECTOR</a>, <a class="el" href="kernel_8c.html#a8d209f2439b73fa38517f599a1904a99">kernel_panic()</a>, <a class="el" href="hkeap_8c.html#adf384b2e867b567a531f37e258b855d3">kheap_init()</a>, <a class="el" href="kernel_8c.html#ac9d768b4772cc87fc88afbbbd805f96a">kprintf()</a>, <a class="el" href="bios__memory__map_8h.html#a69ee9415479e1704667a452f1d715987">memory_map_entry</a>, <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>, <a class="el" href="serial_8c.html#a6b98595090e689060d67fba97affb7cb">ser_Init()</a>, <a class="el" href="structtss.html#a7874b70fa3a93da1588513500cbdf1a8">tss::ss0</a>, <a class="el" href="structgdt__descriptor.html#abe5b74a6bf41557a5ae72460fa563219">gdt_descriptor::start_address</a>, <a class="el" href="syscall_8h.html#a441be2490fb42a2eba6c201a42259075">syscall_wrapper()</a>, <a class="el" href="kernel_8c.html#a08bda630cae3fb3034a2b6e809246d5f">timer_interrupt()</a>, <a class="el" href="text__mode_8c.html#a0ce4b7080788f46ff10075c9c69418c4">tm_ClearScreen()</a>, <a class="el" href="text__mode_8c.html#ae96ec3266b8e9844c2932b97e7277c21">tm_SetColor()</a>, <a class="el" href="gdt_8h.html#adc5afdb11c099afb2162d63377834e14">TOTAL_GDT_SEGMENTS</a>, and <a class="el" href="tss_8h.html#a510a383478353a246fb94b4e858fc05e">tss_load()</a>.</p>
 
 </div>
 </div>
@@ -343,6 +309,54 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="reference">References <a class="el" href="serial_8h.html#a00dbb3ab1c59e14699be9393693e2248">COM1</a>, <a class="el" href="text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a38566822dbd9408c447abfd3ed4a85d2">GREY</a>, <a class="el" href="string_8c.html#ac193243152e2c541c49fbe5548d7d65c">kvsprintf()</a>, <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>, <a class="el" href="serial_8c.html#a4c091f828571492ebd73ebf301658a9c">ser_PrintString()</a>, <a class="el" href="text__mode_8c.html#ab026971e8c2ef0a3a36808deca7b8fd4">tm_GetColor()</a>, <a class="el" href="text__mode_8c.html#af141ddd7749219b2c02e37a0df9ed067">tm_PrintString()</a>, and <a class="el" href="text__mode_8c.html#ae96ec3266b8e9844c2932b97e7277c21">tm_SetColor()</a>.</p>
+
+</div>
+</div>
+<a id="aa81c8798060311ade13ca78e4edac5d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa81c8798060311ade13ca78e4edac5d4">&#9670;&nbsp;</a></span>print_interrupt_frame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_interrupt_frame </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="structinterrupt__frame.html#a8519dc239502dfcbac171b3128dc7054">interrupt_frame::cs</a>, <a class="el" href="structinterrupt__frame.html#a93d929ad1fc57af9d4f1793c361fb4f2">interrupt_frame::eax</a>, <a class="el" href="structinterrupt__frame.html#aaba2ad0ff8ba480934feabfdab02b1e7">interrupt_frame::ebp</a>, <a class="el" href="structinterrupt__frame.html#ae7c1e3339e4dead200cab41010e9127c">interrupt_frame::ebx</a>, <a class="el" href="structinterrupt__frame.html#af2b16bef95c844028dd145264d1d3875">interrupt_frame::ecx</a>, <a class="el" href="structinterrupt__frame.html#a36ffab8d34c6c411a7e5205ddb95eaf9">interrupt_frame::edi</a>, <a class="el" href="structinterrupt__frame.html#ae6db045cebe7b4cf979120dccdee0d01">interrupt_frame::edx</a>, <a class="el" href="structinterrupt__frame.html#abf2d7e54e9bb8675882ab068a0885e37">interrupt_frame::error_code</a>, <a class="el" href="structinterrupt__frame.html#ada78e3124de6adf5a5d212f9ebc4bbe0">interrupt_frame::esi</a>, <a class="el" href="structinterrupt__frame.html#a7534a179bc9cc0ef26f0468e0959ee5c">interrupt_frame::esp</a>, <a class="el" href="structinterrupt__frame.html#a773b39d480759f67926cb18ae2219281">interrupt_frame::flags</a>, <a class="el" href="structinterrupt__frame.html#a69ddb9c845da426f636d9dd0dbed4e7e">interrupt_frame::ip</a>, <a class="el" href="kernel_8c.html#ac9d768b4772cc87fc88afbbbd805f96a">kprintf()</a>, and <a class="el" href="structinterrupt__frame.html#a3c59346dd338708c94ca75cf21b78195">interrupt_frame::ss</a>.</p>
+
+</div>
+</div>
+<a id="a08bda630cae3fb3034a2b6e809246d5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08bda630cae3fb3034a2b6e809246d5f">&#9670;&nbsp;</a></span>timer_interrupt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void timer_interrupt </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Temporary PIC Timer interrupt handler. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>Interrupt frame </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="kernel_8c.html#ac9d768b4772cc87fc88afbbbd805f96a">kprintf()</a>, and <a class="el" href="pic_8c.html#a1e4ae4c99f1fd304a8d92e06e19a5f71">pic_EOI()</a>.</p>
 
 </div>
 </div>

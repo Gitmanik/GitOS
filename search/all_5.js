@@ -23,7 +23,7 @@ var searchData=
   ['diskstreamer_5fnew_49',['diskstreamer_new',['../disk__streamer_8c.html#aceb1f3074a2fa2359ec3e9a9893366a2',1,'diskstreamer_new(int disk_id):&#160;disk_streamer.c'],['../disk__streamer_8h.html#aceb1f3074a2fa2359ec3e9a9893366a2',1,'diskstreamer_new(int disk_id):&#160;disk_streamer.c']]],
   ['diskstreamer_5fread_50',['diskstreamer_read',['../disk__streamer_8c.html#a7b9f236b0c4aba1e672d8dc8b63e934f',1,'diskstreamer_read(struct disk_stream *stream, void *out, int total):&#160;disk_streamer.c'],['../disk__streamer_8h.html#a7b9f236b0c4aba1e672d8dc8b63e934f',1,'diskstreamer_read(struct disk_stream *stream, void *out, int total):&#160;disk_streamer.c']]],
   ['diskstreamer_5fseek_51',['diskstreamer_seek',['../disk__streamer_8h.html#a6db279f823450d0f636be872d28bbb04',1,'diskstreamer_seek(struct disk_stream *stream, int pos):&#160;disk_streamer.c'],['../disk__streamer_8c.html#a6db279f823450d0f636be872d28bbb04',1,'diskstreamer_seek(struct disk_stream *stream, int pos):&#160;disk_streamer.c']]],
-  ['divide_5fby_5fzero_52',['divide_by_zero',['../kernel_8c.html#adfda00749bbf6fed5c6596a7896b062c',1,'kernel.c']]],
+  ['divide_5fby_5fzero_52',['divide_by_zero',['../kernel_8c.html#a096d4e0cd008c24d3b26bf0bfd083207',1,'kernel.c']]],
   ['drive_5fno_53',['drive_no',['../structpath__root.html#a44057b89a20883587ec7bdc59cce57d2',1,'path_root']]],
   ['drive_5fnumber_54',['drive_number',['../fat16_8h.html#a72aedf7609ef652851878e7a1a802c40',1,'drive_number():&#160;fat16.h'],['../structfat16__header__extended.html#a72aedf7609ef652851878e7a1a802c40',1,'fat16_header_extended::drive_number()']]],
   ['ds_55',['ds',['../structtss.html#a6fe20edd854a1a653ae71ccf541a6b8b',1,'tss::ds()'],['../tss_8h.html#a6fe20edd854a1a653ae71ccf541a6b8b',1,'ds():&#160;tss.h']]]

@@ -7,6 +7,7 @@ var structinterrupt__frame =
     [ "ecx", "structinterrupt__frame.html#af2b16bef95c844028dd145264d1d3875", null ],
     [ "edi", "structinterrupt__frame.html#a36ffab8d34c6c411a7e5205ddb95eaf9", null ],
     [ "edx", "structinterrupt__frame.html#ae6db045cebe7b4cf979120dccdee0d01", null ],
+    [ "error_code", "structinterrupt__frame.html#abf2d7e54e9bb8675882ab068a0885e37", null ],
     [ "esi", "structinterrupt__frame.html#ada78e3124de6adf5a5d212f9ebc4bbe0", null ],
     [ "esp", "structinterrupt__frame.html#a7534a179bc9cc0ef26f0468e0959ee5c", null ],
     [ "flags", "structinterrupt__frame.html#a773b39d480759f67926cb18ae2219281", null ],

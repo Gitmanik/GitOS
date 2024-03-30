@@ -91,8 +91,11 @@ $(document).ready(function(){initNavTree('idt_8c.html',''); initResizable(); });
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="idt_8h_source.html">idt.h</a>&quot;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="status_8h_source.html">common/status.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="memory_8h_source.html">memory/memory.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="pic_8h_source.html">drivers/pic/pic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="task_8h_source.html">task/task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="kernel_8h_source.html">kernel.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -102,21 +105,67 @@ Functions</h2></td></tr>
 <tr class="memitem:ae9dfaeff36b7570b57e8ecea878946b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8c.html#ae9dfaeff36b7570b57e8ecea878946b9">idt_SetDescriptor</a> (int int_no, void *address)</td></tr>
 <tr class="memdesc:ae9dfaeff36b7570b57e8ecea878946b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills entry in IDT for specified Interrupt number Use before <a class="el" href="idt_8c.html#a296416326885a0423be69095e07b054e" title="Loads Interrupt Descriptor Table.">idt_Load()</a>  <a href="idt_8c.html#ae9dfaeff36b7570b57e8ecea878946b9">More...</a><br /></td></tr>
 <tr class="separator:ae9dfaeff36b7570b57e8ecea878946b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00ebf7b83736ba368eb20208cfc0488d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8c.html#a00ebf7b83736ba368eb20208cfc0488d">idt_SetHandler</a> (int int_no, <a class="el" href="idt_8h.html#a0b3a8b15da6f576c15c6b91751ea02d8">ISR_HANDLER</a> handler)</td></tr>
+<tr class="memdesc:a00ebf7b83736ba368eb20208cfc0488d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets handler for given interrupt number.  <a href="idt_8c.html#a00ebf7b83736ba368eb20208cfc0488d">More...</a><br /></td></tr>
+<tr class="separator:a00ebf7b83736ba368eb20208cfc0488d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a808e651ac439d9410771231324e80ff5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8c.html#a808e651ac439d9410771231324e80ff5">idt_Init</a> ()</td></tr>
 <tr class="memdesc:a808e651ac439d9410771231324e80ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes memory for IDT struct Sets default for all interrupts.  <a href="idt_8c.html#a808e651ac439d9410771231324e80ff5">More...</a><br /></td></tr>
 <tr class="separator:a808e651ac439d9410771231324e80ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03b67a2e51f4b54826a9f44e90bb41e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8c.html#a03b67a2e51f4b54826a9f44e90bb41e3">ignore_int_handler</a> ()</td></tr>
-<tr class="memdesc:a03b67a2e51f4b54826a9f44e90bb41e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default handler for all interrupts.  <a href="idt_8c.html#a03b67a2e51f4b54826a9f44e90bb41e3">More...</a><br /></td></tr>
-<tr class="separator:a03b67a2e51f4b54826a9f44e90bb41e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bab3b24b0b66be11c2bcd565cfb51db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8c.html#a5bab3b24b0b66be11c2bcd565cfb51db">idt_Handler</a> (int int_no, struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *frame)</td></tr>
+<tr class="memdesc:a5bab3b24b0b66be11c2bcd565cfb51db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles interrupt (called by ISR)  <a href="idt_8c.html#a5bab3b24b0b66be11c2bcd565cfb51db">More...</a><br /></td></tr>
+<tr class="separator:a5bab3b24b0b66be11c2bcd565cfb51db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:abd807349ff2d7df2a643d14d623dcdc9"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structidt__desc.html">idt_desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8c.html#abd807349ff2d7df2a643d14d623dcdc9">idt_descriptors</a> [512]</td></tr>
-<tr class="separator:abd807349ff2d7df2a643d14d623dcdc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10a70de7f124560da1fc8e1dca98d103"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structidt__desc.html">idt_desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8c.html#a10a70de7f124560da1fc8e1dca98d103">idt_descriptors</a> [<a class="el" href="idt_8h.html#a9affc80dd8947cc1dcb1ae52801923c8">MAX_INTERRUPTS</a>]</td></tr>
+<tr class="separator:a10a70de7f124560da1fc8e1dca98d103"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a299d74470ceab3b513858520e0a50bff"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structidtr__desc.html">idtr_desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8c.html#a299d74470ceab3b513858520e0a50bff">idtr_descriptor</a></td></tr>
 <tr class="separator:a299d74470ceab3b513858520e0a50bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cd56ff3de4130fae98f2ffb1095ed7d"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8c.html#a0cd56ff3de4130fae98f2ffb1095ed7d">interrupt_pointer_table</a> [<a class="el" href="idt_8h.html#a9affc80dd8947cc1dcb1ae52801923c8">MAX_INTERRUPTS</a>]</td></tr>
+<tr class="separator:a0cd56ff3de4130fae98f2ffb1095ed7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75402e8f05a61f796bc9779a5a3cec8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="idt_8h.html#a0b3a8b15da6f576c15c6b91751ea02d8">ISR_HANDLER</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8c.html#a75402e8f05a61f796bc9779a5a3cec8e">interrupt_handlers</a> [<a class="el" href="idt_8h.html#a9affc80dd8947cc1dcb1ae52801923c8">MAX_INTERRUPTS</a>]</td></tr>
+<tr class="separator:a75402e8f05a61f796bc9779a5a3cec8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a5bab3b24b0b66be11c2bcd565cfb51db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bab3b24b0b66be11c2bcd565cfb51db">&#9670;&nbsp;</a></span>idt_Handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void idt_Handler </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>int_no</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles interrupt (called by ISR) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int_no</td><td>Interrupt number </td></tr>
+    <tr><td class="paramname">frame</td><td>Interrupt frame </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="idt_8c.html#a75402e8f05a61f796bc9779a5a3cec8e">interrupt_handlers</a>, <a class="el" href="kernel_8c.html#abd882687cd304ceab89392243ac0bf0d">kernel_page()</a>, <a class="el" href="task_8c.html#ae51bb6f08bb9c7151940430787f31666">task_current_save_state()</a>, and <a class="el" href="task_8c.html#a45e8e823b36227f6dadb826453d8042a">task_page()</a>.</p>
+
+</div>
+</div>
 <a id="a808e651ac439d9410771231324e80ff5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a808e651ac439d9410771231324e80ff5">&#9670;&nbsp;</a></span>idt_Init()</h2>
 
@@ -134,7 +183,7 @@ Variables</h2></td></tr>
 
 <p>Initializes memory for IDT struct Sets default for all interrupts. </p>
 
-<p class="reference">References <a class="el" href="structidtr__desc.html#a0523cedff47e2441fc198b7770ec5d3f">idtr_desc::base</a>, <a class="el" href="idt_8c.html#abd807349ff2d7df2a643d14d623dcdc9">idt_descriptors</a>, <a class="el" href="idt_8c.html#ae9dfaeff36b7570b57e8ecea878946b9">idt_SetDescriptor()</a>, <a class="el" href="idt_8c.html#a299d74470ceab3b513858520e0a50bff">idtr_descriptor</a>, <a class="el" href="idt_8h.html#a7d5797d8e5e07fb80f6ae7ddf848c907">ignore_int()</a>, <a class="el" href="structidtr__desc.html#ab28e82ae69032cb4ad3ec3a0be3d7129">idtr_desc::limit</a>, and <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>.</p>
+<p class="reference">References <a class="el" href="structidtr__desc.html#a0523cedff47e2441fc198b7770ec5d3f">idtr_desc::base</a>, <a class="el" href="idt_8c.html#a10a70de7f124560da1fc8e1dca98d103">idt_descriptors</a>, <a class="el" href="idt_8c.html#ae9dfaeff36b7570b57e8ecea878946b9">idt_SetDescriptor()</a>, <a class="el" href="idt_8c.html#a299d74470ceab3b513858520e0a50bff">idtr_descriptor</a>, <a class="el" href="idt_8c.html#a0cd56ff3de4130fae98f2ffb1095ed7d">interrupt_pointer_table</a>, <a class="el" href="structidtr__desc.html#ab28e82ae69032cb4ad3ec3a0be3d7129">idtr_desc::limit</a>, <a class="el" href="idt_8h.html#a9affc80dd8947cc1dcb1ae52801923c8">MAX_INTERRUPTS</a>, and <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>.</p>
 
 </div>
 </div>
@@ -194,40 +243,59 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">References <a class="el" href="idt_8c.html#abd807349ff2d7df2a643d14d623dcdc9">idt_descriptors</a>, <a class="el" href="structidt__desc.html#a864a047b12c9faf25a520351049b91f1">idt_desc::offset_high</a>, <a class="el" href="structidt__desc.html#a11b1c6ed61493da558a28e77fa1efee6">idt_desc::offset_low</a>, <a class="el" href="structidt__desc.html#a1c44289c163c1460544d6ee0900d02ba">idt_desc::selector</a>, <a class="el" href="structidt__desc.html#a5e7eb925db6957f19edc1e5d7d74c8f6">idt_desc::type_attr</a>, and <a class="el" href="structidt__desc.html#a09777e6a5ad91ffd82a9975efe33de2e">idt_desc::zero</a>.</p>
+<p class="reference">References <a class="el" href="idt_8c.html#a10a70de7f124560da1fc8e1dca98d103">idt_descriptors</a>, <a class="el" href="structidt__desc.html#a864a047b12c9faf25a520351049b91f1">idt_desc::offset_high</a>, <a class="el" href="structidt__desc.html#a11b1c6ed61493da558a28e77fa1efee6">idt_desc::offset_low</a>, <a class="el" href="structidt__desc.html#a1c44289c163c1460544d6ee0900d02ba">idt_desc::selector</a>, <a class="el" href="structidt__desc.html#a5e7eb925db6957f19edc1e5d7d74c8f6">idt_desc::type_attr</a>, and <a class="el" href="structidt__desc.html#a09777e6a5ad91ffd82a9975efe33de2e">idt_desc::zero</a>.</p>
 
 </div>
 </div>
-<a id="a03b67a2e51f4b54826a9f44e90bb41e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03b67a2e51f4b54826a9f44e90bb41e3">&#9670;&nbsp;</a></span>ignore_int_handler()</h2>
+<a id="a00ebf7b83736ba368eb20208cfc0488d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00ebf7b83736ba368eb20208cfc0488d">&#9670;&nbsp;</a></span>idt_SetHandler()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ignore_int_handler </td>
+          <td class="memname">int idt_SetHandler </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>int_no</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="idt_8h.html#a0b3a8b15da6f576c15c6b91751ea02d8">ISR_HANDLER</a>&#160;</td>
+          <td class="paramname"><em>handler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Default handler for all interrupts. </p>
+<p>Sets handler for given interrupt number. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int_no</td><td>Interrupt number </td></tr>
+    <tr><td class="paramname">handler</td><td>Handler function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Error code </dd></dl>
 
-<p class="reference">References <a class="el" href="pic_8c.html#a1e4ae4c99f1fd304a8d92e06e19a5f71">pic_EOI()</a>.</p>
+<p class="reference">References <a class="el" href="status_8h.html#ae34bccefcb5925f2ccd27bc3a0b4731d">ALL_OK</a>, <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>, <a class="el" href="idt_8c.html#a75402e8f05a61f796bc9779a5a3cec8e">interrupt_handlers</a>, and <a class="el" href="idt_8h.html#a9affc80dd8947cc1dcb1ae52801923c8">MAX_INTERRUPTS</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="abd807349ff2d7df2a643d14d623dcdc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd807349ff2d7df2a643d14d623dcdc9">&#9670;&nbsp;</a></span>idt_descriptors</h2>
+<a id="a10a70de7f124560da1fc8e1dca98d103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10a70de7f124560da1fc8e1dca98d103">&#9670;&nbsp;</a></span>idt_descriptors</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structidt__desc.html">idt_desc</a> idt_descriptors[512]</td>
+          <td class="memname">struct <a class="el" href="structidt__desc.html">idt_desc</a> idt_descriptors[<a class="el" href="idt_8h.html#a9affc80dd8947cc1dcb1ae52801923c8">MAX_INTERRUPTS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -244,6 +312,42 @@ Variables</h2></td></tr>
           <td class="memname">struct <a class="el" href="structidtr__desc.html">idtr_desc</a> idtr_descriptor</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a75402e8f05a61f796bc9779a5a3cec8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75402e8f05a61f796bc9779a5a3cec8e">&#9670;&nbsp;</a></span>interrupt_handlers</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="idt_8h.html#a0b3a8b15da6f576c15c6b91751ea02d8">ISR_HANDLER</a> interrupt_handlers[<a class="el" href="idt_8h.html#a9affc80dd8947cc1dcb1ae52801923c8">MAX_INTERRUPTS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0cd56ff3de4130fae98f2ffb1095ed7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cd56ff3de4130fae98f2ffb1095ed7d">&#9670;&nbsp;</a></span>interrupt_pointer_table</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* interrupt_pointer_table[<a class="el" href="idt_8h.html#a9affc80dd8947cc1dcb1ae52801923c8">MAX_INTERRUPTS</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

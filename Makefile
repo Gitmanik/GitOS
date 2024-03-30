@@ -21,7 +21,6 @@ KERNEL_ELF = ./build/kernel.elf
 KERNEL_BIN = ./build/kernel.bin
 
 DISK_BIN = ./build/disk.bin
-LO_DEV = /dev/loop0
 
 C_SOURCES = $(shell find . -name "*.c")
 C_HEADERS = $(shell find . -name "*.h")
@@ -72,7 +71,6 @@ run:
 build: kernel stage1
 
 disk: build
-	# -losetup -d ${LO_DEV}
 	-rm ${DISK_BIN}
 	dd if=${STAGE1_BIN} >> ${DISK_BIN}
 	dd if=${KERNEL_BIN} >> ${DISK_BIN}

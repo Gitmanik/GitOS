@@ -3,9 +3,6 @@ extern idt_Handler
 %macro macro_int 2
     global handler_int%1
     handler_int%1:
-        %if%2==0
-            push dword 0
-        %endif
         ; Already pushed:
         ; uint32_t ip
         ; uint32_t cs
@@ -13,6 +10,9 @@ extern idt_Handler
         ; uint32_t sp
         ; uint32_t ss
         pushad
+        %if%2==0
+            push dword 0
+        %endif
         push esp ; struct interrupt_frame*
         push dword %1 ; int int_no
         call idt_Handler

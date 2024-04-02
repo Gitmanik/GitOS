@@ -217,7 +217,7 @@ void kernel_main()
 
     kprintf("Loading BLANK.BIN..");
     struct process* process = 0;
-    res = process_load("0:/BLANK.BIN", &process);
+    res = process_load_switch("0:/BLANK.BIN", &process);
     if (res != 0)
     {
         kernel_panic("Failed to load process");

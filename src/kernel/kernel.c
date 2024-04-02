@@ -51,6 +51,7 @@ void print_interrupt_frame(struct interrupt_frame* frame)
 void divide_by_zero(struct interrupt_frame* frame)
 {
     (void)(frame);
+    print_interrupt_frame(frame);
     kernel_panic("Division by zero!");
 }
 

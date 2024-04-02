@@ -23,6 +23,7 @@
 #include "task/task.h"
 #include "task/process.h"
 #include "keyboard/keyboard.h"
+#include "drivers/ps2keyboard/ps2keyboard.h"
 
 static struct paging_chunk *kernel_paging_chunk;
 
@@ -202,6 +203,7 @@ void kernel_main()
     //
 
     // Initializing keyboard drivers
+    keyboard_insert(ps2keyboard_init());
     //
 
     // Initializing FS
@@ -226,6 +228,8 @@ void kernel_main()
     kprintf("OK\r\n");
 
     kprintf("Running task..\r\n");
+
+    keyboard_push('A');
 
     task_run_first_ever_task();
 

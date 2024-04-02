@@ -7,3 +7,4 @@ docs
 *.lock
 *.sym
 settings.json
+.DS_Store

@@ -5,7 +5,9 @@ var process_8c =
     [ "process_get_free_slot", "process_8c.html#abbcb5d3664435a4ffe158851ae84b2f0", null ],
     [ "process_load", "process_8c.html#a7a1fd8997c2d1acde0fa0929c13f7a3f", null ],
     [ "process_load_for_slot", "process_8c.html#adc25c326102fa0104e43b72b7d4e9f88", null ],
+    [ "process_load_switch", "process_8c.html#ad1de02c0f6318fafe8f8aef7c87899c0", null ],
     [ "process_map_binary", "process_8c.html#abba5706ef3373d2f0f042d3565fd65bf", null ],
     [ "process_map_memory", "process_8c.html#a547a74f3e9364f853ce647b1a1cc7243", null ],
+    [ "process_switch", "process_8c.html#a9173d96e28447a42821079e71cddae0f", null ],
     [ "current_process", "process_8c.html#af1b3c695b7f44f0356971770370792d2", null ]
 ];

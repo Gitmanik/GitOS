@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GitOS: src/kernel/drivers Directory Reference</title>
+<title>GitOS: src/kernel/drivers/ps2keyboard/ps2keyboard.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('dir_aee9ab6fedb00380c94a3a6c6b09f99a.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('ps2keyboard_8h_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -83,29 +83,24 @@ $(document).ready(function(){initNavTree('dir_aee9ab6fedb00380c94a3a6c6b09f99a.h
 
 <div class="header">
   <div class="headertitle">
-<div class="title">drivers Directory Reference</div>  </div>
+<div class="title">ps2keyboard.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="subdirs"></a>
-Directories</h2></td></tr>
-<tr class="memitem:dir_19e143b479cb2e79f7eeb3e58e551868"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_19e143b479cb2e79f7eeb3e58e551868.html">disk</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:dir_605f0d8189de7b0b9065901e4c2af2d9"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_605f0d8189de7b0b9065901e4c2af2d9.html">pic</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:dir_6bad1345e223096c78bcdd3d9963f090"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_6bad1345e223096c78bcdd3d9963f090.html">ps2keyboard</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:dir_1e4b4a645210dfc0e8dbad6c9bb08618"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_1e4b4a645210dfc0e8dbad6c9bb08618.html">serial</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:dir_2e9ffaad78c3007c3947728782199e58"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_2e9ffaad78c3007c3947728782199e58.html">text_mode</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-</div><!-- contents -->
+<a href="ps2keyboard_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="keyboard_8h.html">keyboard/keyboard.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">struct </span><a class="code" href="structkeyboard.html">keyboard</a>* <a class="code" href="ps2keyboard_8h.html#adaad37d254aa4891c84b515ff04f599b">ps2keyboard_init</a>();</div>
+<div class="ttc" id="akeyboard_8h_html"><div class="ttname"><a href="keyboard_8h.html">keyboard.h</a></div></div>
+<div class="ttc" id="aps2keyboard_8h_html_adaad37d254aa4891c84b515ff04f599b"><div class="ttname"><a href="ps2keyboard_8h.html#adaad37d254aa4891c84b515ff04f599b">ps2keyboard_init</a></div><div class="ttdeci">struct keyboard * ps2keyboard_init()</div><div class="ttdef"><b>Definition:</b> ps2keyboard.c:31</div></div>
+<div class="ttc" id="astructkeyboard_html"><div class="ttname"><a href="structkeyboard.html">keyboard</a></div><div class="ttdef"><b>Definition:</b> keyboard.h:5</div></div>
+</div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_cbd7f246bdf7dc0a50281a272327e6ed.html">kernel</a></li><li class="navelem"><a class="el" href="dir_aee9ab6fedb00380c94a3a6c6b09f99a.html">drivers</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_cbd7f246bdf7dc0a50281a272327e6ed.html">kernel</a></li><li class="navelem"><a class="el" href="dir_aee9ab6fedb00380c94a3a6c6b09f99a.html">drivers</a></li><li class="navelem"><a class="el" href="dir_6bad1345e223096c78bcdd3d9963f090.html">ps2keyboard</a></li><li class="navelem"><a class="el" href="ps2keyboard_8h.html">ps2keyboard.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

@@ -103,12 +103,16 @@ Functions</h2></td></tr>
 <tr class="separator:a2dc6a54bcc8069ca95f0f72ed27194e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb6bf09869f617dd253da6cf4b218380"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structprocess.html">process</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8c.html#abb6bf09869f617dd253da6cf4b218380">process_get</a> (int process_id)</td></tr>
 <tr class="separator:abb6bf09869f617dd253da6cf4b218380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9173d96e28447a42821079e71cddae0f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8c.html#a9173d96e28447a42821079e71cddae0f">process_switch</a> (struct <a class="el" href="structprocess.html">process</a> *<a class="el" href="structprocess.html">process</a>)</td></tr>
+<tr class="separator:a9173d96e28447a42821079e71cddae0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abba5706ef3373d2f0f042d3565fd65bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8c.html#abba5706ef3373d2f0f042d3565fd65bf">process_map_binary</a> (struct <a class="el" href="structprocess.html">process</a> *<a class="el" href="structprocess.html">process</a>)</td></tr>
 <tr class="separator:abba5706ef3373d2f0f042d3565fd65bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a547a74f3e9364f853ce647b1a1cc7243"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8c.html#a547a74f3e9364f853ce647b1a1cc7243">process_map_memory</a> (struct <a class="el" href="structprocess.html">process</a> *<a class="el" href="structprocess.html">process</a>)</td></tr>
 <tr class="separator:a547a74f3e9364f853ce647b1a1cc7243"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbcb5d3664435a4ffe158851ae84b2f0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8c.html#abbcb5d3664435a4ffe158851ae84b2f0">process_get_free_slot</a> ()</td></tr>
 <tr class="separator:abbcb5d3664435a4ffe158851ae84b2f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1de02c0f6318fafe8f8aef7c87899c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8c.html#ad1de02c0f6318fafe8f8aef7c87899c0">process_load_switch</a> (const char *<a class="el" href="fat16_8h.html#a36126364ff9f56a16488e5c2b8d1206e">filename</a>, struct <a class="el" href="structprocess.html">process</a> **<a class="el" href="structprocess.html">process</a>)</td></tr>
+<tr class="separator:ad1de02c0f6318fafe8f8aef7c87899c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc25c326102fa0104e43b72b7d4e9f88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8c.html#adc25c326102fa0104e43b72b7d4e9f88">process_load_for_slot</a> (const char *<a class="el" href="fat16_8h.html#a36126364ff9f56a16488e5c2b8d1206e">filename</a>, struct <a class="el" href="structprocess.html">process</a> **<a class="el" href="structprocess.html">process</a>, int process_slot)</td></tr>
 <tr class="separator:adc25c326102fa0104e43b72b7d4e9f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a1fd8997c2d1acde0fa0929c13f7a3f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8c.html#a7a1fd8997c2d1acde0fa0929c13f7a3f">process_load</a> (const char *<a class="el" href="fat16_8h.html#a36126364ff9f56a16488e5c2b8d1206e">filename</a>, struct <a class="el" href="structprocess.html">process</a> **<a class="el" href="structprocess.html">process</a>)</td></tr>
@@ -244,6 +248,36 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ad1de02c0f6318fafe8f8aef7c87899c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1de02c0f6318fafe8f8aef7c87899c0">&#9670;&nbsp;</a></span>process_load_switch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int process_load_switch </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structprocess.html">process</a> **&#160;</td>
+          <td class="paramname"><em>process</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="fat16_8h.html#a36126364ff9f56a16488e5c2b8d1206e">filename</a>, <a class="el" href="process_8c.html#a7a1fd8997c2d1acde0fa0929c13f7a3f">process_load()</a>, and <a class="el" href="process_8c.html#a9173d96e28447a42821079e71cddae0f">process_switch()</a>.</p>
+
+</div>
+</div>
 <a id="abba5706ef3373d2f0f042d3565fd65bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abba5706ef3373d2f0f042d3565fd65bf">&#9670;&nbsp;</a></span>process_map_binary()</h2>
 
@@ -281,6 +315,26 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="process_8c.html#abba5706ef3373d2f0f042d3565fd65bf">process_map_binary()</a>.</p>
+
+</div>
+</div>
+<a id="a9173d96e28447a42821079e71cddae0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9173d96e28447a42821079e71cddae0f">&#9670;&nbsp;</a></span>process_switch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int process_switch </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structprocess.html">process</a> *&#160;</td>
+          <td class="paramname"><em>process</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="process_8c.html#af1b3c695b7f44f0356971770370792d2">current_process</a>.</p>
 
 </div>
 </div>

@@ -97,6 +97,7 @@ $(document).ready(function(){initNavTree('ps2keyboard_8c.html',''); initResizabl
 <code>#include &quot;<a class="el" href="kernel_8h_source.html">kernel.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="idt_8h_source.html">idt/idt.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="task_8h_source.html">task/task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="pic_8h_source.html">drivers/pic/pic.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -147,7 +148,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="io_8c.html#a2e1e8e2c5724c1e8fd2dff2eada06479">inb()</a>, and <a class="el" href="kernel_8c.html#abd882687cd304ceab89392243ac0bf0d">kernel_page()</a>.</p>
+<p class="reference">References <a class="el" href="io_8c.html#a2e1e8e2c5724c1e8fd2dff2eada06479">inb()</a>, <a class="el" href="kernel_8c.html#abd882687cd304ceab89392243ac0bf0d">kernel_page()</a>, and <a class="el" href="pic_8c.html#a1e4ae4c99f1fd304a8d92e06e19a5f71">pic_EOI()</a>.</p>
 
 </div>
 </div>
@@ -166,7 +167,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="idt_8c.html#a00ebf7b83736ba368eb20208cfc0488d">idt_SetHandler()</a>, <a class="el" href="io_8c.html#a8bf7a9af91c08e6f876aaffeccd48ff3">outb()</a>, and <a class="el" href="ps2keyboard_8c.html#a6acef13060f97ef2f1e52e614203a5ec">ps2keyboard_irq_handler()</a>.</p>
+<p class="reference">References <a class="el" href="idt_8c.html#a00ebf7b83736ba368eb20208cfc0488d">idt_SetHandler()</a>, <a class="el" href="kernel_8c.html#ac9d768b4772cc87fc88afbbbd805f96a">kprintf()</a>, <a class="el" href="io_8c.html#a8bf7a9af91c08e6f876aaffeccd48ff3">outb()</a>, and <a class="el" href="ps2keyboard_8c.html#a6acef13060f97ef2f1e52e614203a5ec">ps2keyboard_irq_handler()</a>.</p>
 
 </div>
 </div>
@@ -186,7 +187,7 @@ Variables</h2></td></tr>
 <div class="line">    .name = <span class="stringliteral">&quot;PS2 Keyboard&quot;</span>,</div>
 <div class="line">    .init = <a class="code" href="ps2keyboard_8c.html#a8ccc910489590ed0143e2fed529597f8">ps2keyboard_setup</a></div>
 <div class="line">}</div>
-<div class="ttc" id="aps2keyboard_8c_html_a8ccc910489590ed0143e2fed529597f8"><div class="ttname"><a href="ps2keyboard_8c.html#a8ccc910489590ed0143e2fed529597f8">ps2keyboard_setup</a></div><div class="ttdeci">int ps2keyboard_setup()</div><div class="ttdef"><b>Definition:</b> ps2keyboard.c:38</div></div>
+<div class="ttc" id="aps2keyboard_8c_html_a8ccc910489590ed0143e2fed529597f8"><div class="ttname"><a href="ps2keyboard_8c.html#a8ccc910489590ed0143e2fed529597f8">ps2keyboard_setup</a></div><div class="ttdeci">int ps2keyboard_setup()</div><div class="ttdef"><b>Definition:</b> ps2keyboard.c:40</div></div>
 </div><!-- fragment -->
 </div>
 </div>

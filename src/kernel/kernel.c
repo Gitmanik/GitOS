@@ -64,7 +64,7 @@ void divide_by_zero(struct interrupt_frame* frame)
 void timer_interrupt(struct interrupt_frame* frame)
 {
     (void)(frame);
-    kprintf("Timer interrupt!\r\n");
+    // kprintf("Timer interrupt!\r\n");
     pic_EOI(0);
 }
 
@@ -228,8 +228,6 @@ void kernel_main()
     kprintf("OK\r\n");
 
     kprintf("Running task..\r\n");
-
-    keyboard_push('A');
 
     task_run_first_ever_task();
 

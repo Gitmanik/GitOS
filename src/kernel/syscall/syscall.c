@@ -85,9 +85,18 @@ void* sys$print(struct interrupt_frame* frame)
     return 0;
 }
 
+void* sys$putchar(struct interrupt_frame* frame)
+{
+    (void)(frame);
+    char c = (char) ((int)task_peek_stack(task_current(), 0));
+    kprintf("%c", c);
+    return 0;
+}
+
 void syscall_init()
 {
     syscall_register(SYSCALL_BLANK, sys$blank);
     syscall_register(SYSCALL_SUM, sys$sum);
     syscall_register(SYSCALL_PRINT, sys$print);
+    syscall_register(SYSCALL_PUTCHAR, sys$putchar);
 }

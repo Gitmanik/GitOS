@@ -6,6 +6,8 @@
 #include "kernel.h"
 #include "idt/idt.h"
 #include "task/task.h"
+#include "kernel.h"
+#include "drivers/pic/pic.h"
 
 static uint8_t ps2keyboard_scan_set_1[] = {
     0x00, 0x1B, '1', '2', '3', '4', '5',
@@ -37,6 +39,7 @@ void ps2keyboard_irq_handler();
 
 int ps2keyboard_setup()
 {
+    kprintf("Initializing PS2 Keyboard driver\r\n");
     outb(0x64, 0xAE); // Enable first PS/2 port
 
     idt_SetHandler(0x21, ps2keyboard_irq_handler);
@@ -64,6 +67,9 @@ int ps2keyboard_setup()
 void ps2keyboard_irq_handler()
 {
     kernel_page();
+    
+    pic_EOI(0);
+
     uint8_t scancode = inb(0x60);
     inb(0x60); // Ignore next byte
 

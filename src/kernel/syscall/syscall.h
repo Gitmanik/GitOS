@@ -14,5 +14,6 @@ enum syscalls
     SYSCALL_BLANK,
     SYSCALL_SUM,
     SYSCALL_PRINT,
+    SYSCALL_GETKEY,
     SYSCALL_PUTCHAR
 };

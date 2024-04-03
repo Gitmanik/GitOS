@@ -4,6 +4,7 @@
 #include "idt/idt.h"
 #include "kernel.h"
 #include "task/task.h"
+#include "keyboard/keyboard.h"
 
 static SYSCALL syscalls[MAX_SYSCALLS];
 
@@ -85,6 +86,13 @@ void* sys$print(struct interrupt_frame* frame)
     return 0;
 }
 
+void* sys$getkey(struct interrupt_frame* frame)
+{
+    (void)(frame);
+    char c = keyboard_pop();
+    return (void*) ((int) c);
+}
+
 void* sys$putchar(struct interrupt_frame* frame)
 {
     (void)(frame);
@@ -98,5 +106,6 @@ void syscall_init()
     syscall_register(SYSCALL_BLANK, sys$blank);
     syscall_register(SYSCALL_SUM, sys$sum);
     syscall_register(SYSCALL_PRINT, sys$print);
+    syscall_register(SYSCALL_GETKEY, sys$getkey);
     syscall_register(SYSCALL_PUTCHAR, sys$putchar);
 }

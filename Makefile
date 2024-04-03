@@ -54,6 +54,7 @@ clean: userland_clean
 	rm -rf *.lock
 	rm -rf *.sym
 
+	-umount ./mnt
 	rm -rf mnt
 
 debug_qemu:
@@ -85,7 +86,7 @@ disk: build
 
 	${USERMODE_MAKE} install
 
-	sudo umount ./mnt
+	umount ./mnt
 	rm -rf ./mnt
 
 # ASM_OBJECTS need to be first because of kernel.asm

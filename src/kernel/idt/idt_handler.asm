@@ -10,17 +10,17 @@ extern idt_Handler
         ; uint32_t sp
         ; uint32_t ss
         pushad
-        %if%2==0
+        %if %2==0
             push dword 0
         %endif
         push esp ; struct interrupt_frame*
         push dword %1 ; int int_no
         call idt_Handler
         add esp, 8
-        popad
-        %if%2==0
+        %if %2==0
             add esp,4
         %endif
+        popad
         iret
 %endmacro
 

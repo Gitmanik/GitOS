@@ -61,7 +61,7 @@ debug_qemu:
 	qemu-system-i386 ${QEMU_ARGUMENTS} -S -gdb tcp::1234 
 
 debug:
-	gdb -ex 'target remote | qemu-system-i386 ${QEMU_ARGUMENTS} -S -gdb stdio'
+	gdb -ex 'file ./build/kernel.elf' -ex 'target remote | qemu-system-i386 ${QEMU_ARGUMENTS} -S -gdb stdio'
 
 debug_bochs:
 	bochs -q

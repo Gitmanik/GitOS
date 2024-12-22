@@ -78,10 +78,11 @@ disk: build
 
 # 							     16MB = 16777216 - 1
 	dd if=/dev/zero of=${DISK_BIN} seek=16777215 bs=1 count=1
+	-umount ./mnt
 	rm -rf mnt
 	-mkdir mnt
 
-	mount -t vfat -o fat=16 ./build/disk.bin ./mnt
+	mount -t vfat -o fat=16 -o uid=1000 -o gid=1000 ./build/disk.bin ./mnt
 	cp -r ./fs/. ./mnt/.
 
 	${USERMODE_MAKE} install

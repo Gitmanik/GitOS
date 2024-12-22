@@ -8,3 +8,4 @@ docs
 *.sym
 settings.json
 .DS_Store
+.idea

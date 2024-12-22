@@ -14,8 +14,8 @@ char tolower(char c);
 
 
 char* itoa(long num, char* str, int base);
-char* ksprintf(char* buf, char* fmt, ...);
-char* kvsprintf(char* buf, char* fmt, va_list args);
+char* ksprintf(char* buf, const char* fmt, ...);
+char* kvsprintf(char* buf, const char* fmt, va_list args);
 
 int is_digit(char c);
 int to_numeric_digit(char c);

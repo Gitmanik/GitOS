@@ -1,4 +1,6 @@
 #include "kernel.h"
+extern "C"
+{
 #include <stdint.h>
 #include <stdarg.h>
 #include "idt/idt.h"
@@ -24,6 +26,7 @@
 #include "task/process.h"
 #include "keyboard/keyboard.h"
 #include "drivers/ps2keyboard/ps2keyboard.h"
+}
 
 static struct paging_chunk *kernel_paging_chunk;
 
@@ -109,7 +112,7 @@ void kernel_main()
     idt_Init();
     idt_SetHandler(0x00, divide_by_zero);
     idt_SetHandler(0x20, timer_interrupt);
-    idt_SetDescriptor(0x80, syscall_wrapper);
+    idt_SetDescriptor(0x80, (void*) syscall_wrapper);
     idt_Load();
     kprintf("OK\r\n");
     //
@@ -173,16 +176,16 @@ void kernel_main()
 
     // Paging test
     kprintf("Setting up paging..");
-    char *ptr_real = kzalloc(4096);
-    char *ptr_virt = (char *)0x1000;
+    char* ptr_real = (char*) kzalloc(4096);
+    char* ptr_virt = (char *)0x1000;
     res = paging_map_to(kernel_paging_chunk, ptr_virt, ptr_real, paging_align_address(ptr_real + sizeof(ptr_real)), PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
     if (res < 0)
     {
         kernel_panic("Could not map virtual address!");
     }
 
-    ptr_virt[0] = 'O';
-    ptr_virt[1] = 'K';
+    ((char*) ptr_virt)[0] = 'O';
+    ((char*) ptr_virt)[1] = 'K';
 
     kprintf("OK\r\n", LIGHT_GREEN);
     kprintf("Paging self-test: 0x%p:'%s' 0x%p:'%s'..", (uint32_t)ptr_real, ptr_real, (uint32_t)ptr_virt, ptr_virt);
@@ -240,7 +243,7 @@ void kernel_main()
  * @param fmt Reason of the panic
  * @param ... Arguments
  */
-void kernel_panic(char *fmt, ...)
+void kernel_panic(const char *fmt, ...)
 {
     va_list args;
     va_start(args, fmt);
@@ -268,7 +271,7 @@ void kernel_halt()
  * @param fmt Message to format and print.
  * @param ... Arguments
  */
-void kprintf(char *fmt, ...)
+void kprintf(const char *fmt, ...)
 {
     va_list args;
     va_start(args, fmt);
@@ -279,7 +282,7 @@ void kprintf(char *fmt, ...)
     kvsprintf(internal_buf, fmt, args);
     ser_PrintString(COM1, internal_buf);
 
-    enum TEXT_MODE_COLORS x = tm_GetColor();
+    enum TEXT_MODE_COLORS x = (enum TEXT_MODE_COLORS) tm_GetColor();
     tm_SetColor(GREY);
     tm_PrintString(internal_buf);
     tm_SetColor(x);

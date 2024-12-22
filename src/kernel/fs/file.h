@@ -41,7 +41,7 @@ enum FILE_OPEN_MODES
     FILE_MODE_INVALID
 };
 
-enum FILE_STAT_FLAGS
+enum FILE_STAT_FLAGS_ENUM
 {
     FILE_STAT_READ_ONLY = 0b00000001
 };
@@ -61,11 +61,11 @@ struct file_stat
 };
 
 typedef int (*FS_RESOLVE_FUNCTION)(struct disk* disk);
-typedef void* (*FS_OPEN_FUNCTION)(void* private, struct path_part* path, FILE_MODE mode);
-typedef int (*FS_READ_FUNCTION)(void* private, void* descriptor, uint32_t size, uint32_t nmemb, char* out);
-typedef int (*FS_SEEK_FUNCTION)(void* private, uint32_t offset, FILE_SEEK_MODE seek_mode);
-typedef int (*FS_STAT_FUNCTION)(void* private, struct file_stat* stat);
-typedef int (*FS_CLOSE_FUNCTION)(void* private);
+typedef void* (*FS_OPEN_FUNCTION)(void* private_fs, struct path_part* path, FILE_MODE mode);
+typedef int (*FS_READ_FUNCTION)(void* private_fs, void* descriptor, uint32_t size, uint32_t nmemb, char* out);
+typedef int (*FS_SEEK_FUNCTION)(void* private_fs, uint32_t offset, FILE_SEEK_MODE seek_mode);
+typedef int (*FS_STAT_FUNCTION)(void* private_fs, struct file_stat* stat);
+typedef int (*FS_CLOSE_FUNCTION)(void* private_fs);
 
 
 struct filesystem

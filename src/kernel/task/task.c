@@ -199,7 +199,7 @@ struct task* task_new(struct process* process)
     return task;
 }
 
-int task_copy_string_from(struct task* task, void* virtual, void* physical, int max)
+int task_copy_string_from(struct task* task, void* virtual_address, void* physical_address, int max)
 {
     // TODO: Allow more than one page size
     if (max >= PAGING_PAGE_SIZE)
@@ -219,7 +219,7 @@ int task_copy_string_from(struct task* task, void* virtual, void* physical, int 
     uint32_t old_entry = paging_get_page(task_directory, tmp);
     paging_set_page(task->page_directory->directory_entry, tmp, (uint32_t) tmp | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE | PAGING_ACCESS_FROM_ALL);
     paging_switch(task->page_directory);
-    strncpy(tmp, virtual, max);
+    strncpy(tmp, virtual_address, max);
     kernel_page();
 
     res = paging_set_page(task_directory, tmp, old_entry);
@@ -229,7 +229,7 @@ int task_copy_string_from(struct task* task, void* virtual, void* physical, int 
         goto out_free;
     }
 
-    strncpy(physical, tmp, max);
+    strncpy(physical_address, tmp, max);
 
     out_free:
     kfree(tmp);

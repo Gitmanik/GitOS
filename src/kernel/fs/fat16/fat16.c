@@ -631,14 +631,14 @@ int fat16_resolve(struct disk* disk)
 /**
  * @brief FAT16 Implementation of fopen
  * 
- * @param private Private filesystem data
+ * @param private_fs Private filesystem data
  * @param path Path to file
  * @param mode Open mode (FILE_MODE_READ for readonly)
  * @return void* Pointer to private file descriptor
  */
-void* fat16_open(void* private, struct path_part* path, FILE_MODE mode)
+void* fat16_open(void* private_fs, struct path_part* path, FILE_MODE mode)
 {
-    struct fat_private* fs_private = private;
+    struct fat_private* fs_private = private_fs;
     if (mode != FILE_MODE_READ)
         return 0;
 
@@ -658,16 +658,16 @@ void* fat16_open(void* private, struct path_part* path, FILE_MODE mode)
 /**
  * @brief FAT16 Implementation of fread
  * 
- * @param private Private filesystem data
+ * @param private_fs Private filesystem data
  * @param desc Internal file descriptor
  * @param size Size of block
  * @param nmemb Number of blocks to read
  * @param out Output buffer
  * @return int Status
  */
-int fat16_read(void* private, void* desc, uint32_t size, uint32_t nmemb, char* out)
+int fat16_read(void* private_fs, void* desc, uint32_t size, uint32_t nmemb, char* out)
 {
-    struct fat_private* fs_private = private;
+    struct fat_private* fs_private = private_fs;
     struct fat_file_descriptor* fat_desc = desc;
 
     struct fat_file* file = fat_desc->file->file;

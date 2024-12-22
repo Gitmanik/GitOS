@@ -2,6 +2,7 @@
 TOOLS_DIR = /opt/cross/bin
 TARGET = i686-elf
 GCC = ${TOOLS_DIR}/${TARGET}-gcc
+GPP = ${TOOLS_DIR}/${TARGET}-g++
 LD = ${TOOLS_DIR}/${TARGET}-ld
 OBJCOPY = ${TOOLS_DIR}/${TARGET}-objcopy
 OBJDUMP = ${TOOLS_DIR}/${TARGET}-objdump
@@ -9,6 +10,7 @@ export
 
 SOURCE_PREFIX = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 GCC_ARGUMENTS = -g -std=gnu99 -ffreestanding -nostdlib -O0 -Wall -Wextra -Werror
+GPP_ARGUMENTS = -g -std=c++11 -ffreestanding -nostdlib -O0 -Wall -Wextra -Werror -fno-rtti -fno-exceptions
 
 QEMU_ARGUMENTS = -drive file=${DISK_BIN},format=raw,index=0,media=disk -m 32M
 
@@ -24,8 +26,10 @@ KERNEL_BIN = ./build/kernel.bin
 DISK_BIN = ./build/disk.bin
 
 C_SOURCES = $(shell find . -name "*.c")
+CPP_SOURCES = $(shell find . -name "*.cpp")
+
 C_HEADERS = $(shell find . -name "*.h")
-C_OBJECTS = ${C_SOURCES:.c=.o}
+C_OBJECTS = ${C_SOURCES:.c=.o} ${CPP_SOURCES:.cpp=.o}
 
 # kernel.asm needs to be linked first because of hard-copying bytes in the last step
 ASM_SOURCES = ./src/kernel/kernel.asm $(shell find ./src/kernel -name "*.asm" ! -wholename "./src/kernel/kernel.asm") 
@@ -91,9 +95,9 @@ disk: build
 	rm -rf ./mnt
 
 # ASM_OBJECTS need to be first because of kernel.asm
-${KERNEL_ELF}: ${C_OBJECTS} ${ASM_OBJECTS}
+${KERNEL_ELF}: ${C_OBJECTS} ${CPP_OBJECTS} ${ASM_OBJECTS}
 	-mkdir build
-	${GCC} -T ./src/kernel_linker.ld ${GCC_ARGUMENTS} -o ${KERNEL_ELF} ${ASM_OBJECTS} $(C_OBJECTS)
+	${GPP} -T ./src/kernel_linker.ld ${GCC_ARGUMENTS} -o ${KERNEL_ELF} ${ASM_OBJECTS} $(C_OBJECTS) $(CPP_OBJECTS)
 
 ${KERNEL_BIN}: ${KERNEL_ELF}
 	${OBJCOPY} -O binary ${KERNEL_ELF} ${KERNEL_BIN}
@@ -107,6 +111,9 @@ ${STAGE1_BIN}:
 
 %.o: %.c
 	${GCC} -I "src/kernel" -c ${GCC_ARGUMENTS} $< -o $@
+
+%.o: %.cpp
+	${GPP} -I "src/kernel" -c ${GPP_ARGUMENTS} $< -o $@
 
 dump:
 	rm -rf dump.ans

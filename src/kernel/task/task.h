@@ -74,5 +74,5 @@ int task_page();
 void task_page_task(struct task* task);
 void task_current_save_state(struct interrupt_frame* frame);
 
-int task_copy_string_from(struct task* task, void* virtual, void* physical, int max);
+int task_copy_string_from(struct task* task, void* virtual_address, void* physical_address, int max);
 void* task_peek_stack(struct task* task, int offset);

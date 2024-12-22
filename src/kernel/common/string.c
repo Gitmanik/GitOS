@@ -227,7 +227,7 @@ char* itoa(long num, char* str, int base)
  * @param va_list arguments
  * @return char* Buffer
  */
-char* kvsprintf(char* buf, char* fmt, va_list args)
+char* kvsprintf(char* buf, const char* fmt, va_list args)
 {
 	char* org_buf = buf;
 
@@ -359,7 +359,7 @@ char* kvsprintf(char* buf, char* fmt, va_list args)
  * @param ... Args
  * @return char* Buffer
  */
-char* ksprintf(char* buf, char* fmt, ...)
+char* ksprintf(char* buf, const char* fmt, ...)
 {
 	va_list args;
 	va_start(args, fmt);

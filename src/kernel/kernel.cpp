@@ -221,9 +221,9 @@ void kernel_main()
     kprintf("OK\r\n");
     //
 
-    kprintf("Loading BLANK.BIN..");
+    kprintf("Loading blank.bin..");
     struct process* process = 0;
-    res = process_load_switch("0:/BLANK.BIN", &process);
+    res = process_load_switch("0:/blank.bin", &process);
     if (res != 0)
     {
         kernel_panic("Failed to load process");

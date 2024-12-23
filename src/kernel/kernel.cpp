@@ -176,7 +176,7 @@ void kernel_main()
 
     // Paging test
     kprintf("Setting up paging..");
-    char* ptr_real = (char*) kzalloc(4096);
+    char* ptr_real = new char[4096];
     char* ptr_virt = (char *)0x1000;
     res = paging_map_to(kernel_paging_chunk, ptr_virt, ptr_real, paging_align_address(ptr_real + sizeof(ptr_real)), PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
     if (res < 0)
@@ -194,7 +194,7 @@ void kernel_main()
         kernel_panic("\r\nPaging self-test unsuccessful!");
     }
     kprintf("OK\r\n");
-    kfree(ptr_real);
+    delete ptr_real;
     //
 
     // Remap PIC
@@ -286,4 +286,24 @@ void kprintf(const char *fmt, ...)
     tm_SetColor(GREY);
     tm_PrintString(internal_buf);
     tm_SetColor(x);
+}
+
+void *operator new(size_t size)
+{
+    return kzalloc(size);
+}
+
+void *operator new[](size_t size)
+{
+    return kzalloc(size);
+}
+
+void operator delete(void *p)
+{
+    kfree(p);
+}
+
+void operator delete[](void *p)
+{
+    kfree(p);
 }

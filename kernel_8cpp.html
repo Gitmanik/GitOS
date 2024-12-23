@@ -139,6 +139,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a199a1f701f4cc4fd1c3ff7903a102d7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8cpp.html#a199a1f701f4cc4fd1c3ff7903a102d7a">kprintf</a> (const char *fmt,...)</td></tr>
 <tr class="memdesc:a199a1f701f4cc4fd1c3ff7903a102d7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints to kernel debug channels. Max length of processed message is 1024 characters.  <a href="kernel_8cpp.html#a199a1f701f4cc4fd1c3ff7903a102d7a">More...</a><br /></td></tr>
 <tr class="separator:a199a1f701f4cc4fd1c3ff7903a102d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a205ed048fdf5259c2e8e0cb60ee8f719"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8cpp.html#a205ed048fdf5259c2e8e0cb60ee8f719">operator new</a> (size_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>)</td></tr>
+<tr class="separator:a205ed048fdf5259c2e8e0cb60ee8f719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63ce4f64887b9307317aee5baae6b18f"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8cpp.html#a63ce4f64887b9307317aee5baae6b18f">operator new[]</a> (size_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>)</td></tr>
+<tr class="separator:a63ce4f64887b9307317aee5baae6b18f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86107594327f3a001230df9802cd4422"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8cpp.html#a86107594327f3a001230df9802cd4422">operator delete</a> (void *p)</td></tr>
+<tr class="separator:a86107594327f3a001230df9802cd4422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa8d8403dca7d813a59dd1f07728349d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8cpp.html#aaa8d8403dca7d813a59dd1f07728349d">operator delete[]</a> (void *p)</td></tr>
+<tr class="separator:aaa8d8403dca7d813a59dd1f07728349d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -310,6 +318,86 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="reference">References <a class="el" href="serial_8h.html#a00dbb3ab1c59e14699be9393693e2248">COM1</a>, <a class="el" href="text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a38566822dbd9408c447abfd3ed4a85d2">GREY</a>, <a class="el" href="string_8c.html#a82c6a675a792dfc5ebd38470486afe4f">kvsprintf()</a>, <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>, <a class="el" href="serial_8c.html#a4c091f828571492ebd73ebf301658a9c">ser_PrintString()</a>, <a class="el" href="text__mode_8c.html#ab026971e8c2ef0a3a36808deca7b8fd4">tm_GetColor()</a>, <a class="el" href="text__mode_8c.html#af141ddd7749219b2c02e37a0df9ed067">tm_PrintString()</a>, and <a class="el" href="text__mode_8c.html#ae96ec3266b8e9844c2932b97e7277c21">tm_SetColor()</a>.</p>
+
+</div>
+</div>
+<a id="a86107594327f3a001230df9802cd4422"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86107594327f3a001230df9802cd4422">&#9670;&nbsp;</a></span>operator delete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void operator delete </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="hkeap_8c.html#a069f85a5001d71bc44d8be6532a4e432">kfree()</a>.</p>
+
+</div>
+</div>
+<a id="aaa8d8403dca7d813a59dd1f07728349d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa8d8403dca7d813a59dd1f07728349d">&#9670;&nbsp;</a></span>operator delete[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void operator delete[] </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="hkeap_8c.html#a069f85a5001d71bc44d8be6532a4e432">kfree()</a>.</p>
+
+</div>
+</div>
+<a id="a205ed048fdf5259c2e8e0cb60ee8f719"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a205ed048fdf5259c2e8e0cb60ee8f719">&#9670;&nbsp;</a></span>operator new()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* operator new </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="hkeap_8c.html#a913f2de31558b9cca9405d2cd05a402a">kzalloc()</a>, and <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>.</p>
+
+</div>
+</div>
+<a id="a63ce4f64887b9307317aee5baae6b18f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63ce4f64887b9307317aee5baae6b18f">&#9670;&nbsp;</a></span>operator new[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* operator new[] </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="hkeap_8c.html#a913f2de31558b9cca9405d2cd05a402a">kzalloc()</a>, and <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>.</p>
 
 </div>
 </div>

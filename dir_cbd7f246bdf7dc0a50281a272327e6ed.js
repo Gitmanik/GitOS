@@ -9,6 +9,6 @@ var dir_cbd7f246bdf7dc0a50281a272327e6ed =
     [ "memory", "dir_cfddc3e4738eb751c9ecb1dcd81b4d56.html", "dir_cfddc3e4738eb751c9ecb1dcd81b4d56" ],
     [ "syscall", "dir_86f15235f1dbace123bd765dedac1e4b.html", "dir_86f15235f1dbace123bd765dedac1e4b" ],
     [ "task", "dir_507c9ec95be9a201f49444d5da26e8a6.html", "dir_507c9ec95be9a201f49444d5da26e8a6" ],
-    [ "kernel.c", "kernel_8c.html", "kernel_8c" ],
+    [ "kernel.cpp", "kernel_8cpp.html", "kernel_8cpp" ],
     [ "kernel.h", "kernel_8h.html", "kernel_8h" ]
 ];

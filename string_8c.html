@@ -124,12 +124,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a7ecda6e9a4ad5c1d1181bf064db143e9"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a7ecda6e9a4ad5c1d1181bf064db143e9">itoa</a> (long num, char *str, int <a class="el" href="idt_8h.html#a0523cedff47e2441fc198b7770ec5d3f">base</a>)</td></tr>
 <tr class="memdesc:a7ecda6e9a4ad5c1d1181bf064db143e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts number to string.  <a href="string_8c.html#a7ecda6e9a4ad5c1d1181bf064db143e9">More...</a><br /></td></tr>
 <tr class="separator:a7ecda6e9a4ad5c1d1181bf064db143e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac193243152e2c541c49fbe5548d7d65c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#ac193243152e2c541c49fbe5548d7d65c">kvsprintf</a> (char *buf, char *fmt, va_list args)</td></tr>
-<tr class="memdesc:ac193243152e2c541c49fbe5548d7d65c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kernel vsprintf params: %% c s p l(mod) d i x.  <a href="string_8c.html#ac193243152e2c541c49fbe5548d7d65c">More...</a><br /></td></tr>
-<tr class="separator:ac193243152e2c541c49fbe5548d7d65c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b9caf068b045bb5cb5c38f54cf82367"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a8b9caf068b045bb5cb5c38f54cf82367">ksprintf</a> (char *buf, char *fmt,...)</td></tr>
-<tr class="memdesc:a8b9caf068b045bb5cb5c38f54cf82367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kernel sprintf params: %% c s p l(mod) d i x.  <a href="string_8c.html#a8b9caf068b045bb5cb5c38f54cf82367">More...</a><br /></td></tr>
-<tr class="separator:a8b9caf068b045bb5cb5c38f54cf82367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c6a675a792dfc5ebd38470486afe4f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a82c6a675a792dfc5ebd38470486afe4f">kvsprintf</a> (char *buf, const char *fmt, va_list args)</td></tr>
+<tr class="memdesc:a82c6a675a792dfc5ebd38470486afe4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kernel vsprintf params: %% c s p l(mod) d i x.  <a href="string_8c.html#a82c6a675a792dfc5ebd38470486afe4f">More...</a><br /></td></tr>
+<tr class="separator:a82c6a675a792dfc5ebd38470486afe4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7806fff9874b7d1d5761767e2595a220"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a7806fff9874b7d1d5761767e2595a220">ksprintf</a> (char *buf, const char *fmt,...)</td></tr>
+<tr class="memdesc:a7806fff9874b7d1d5761767e2595a220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kernel sprintf params: %% c s p l(mod) d i x.  <a href="string_8c.html#a7806fff9874b7d1d5761767e2595a220">More...</a><br /></td></tr>
+<tr class="separator:a7806fff9874b7d1d5761767e2595a220"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcb8cf4ba18ad43ea5c643b027cf0170"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#afcb8cf4ba18ad43ea5c643b027cf0170">is_digit</a> (char c)</td></tr>
 <tr class="memdesc:afcb8cf4ba18ad43ea5c643b027cf0170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if given char is an ASCII digit.  <a href="string_8c.html#afcb8cf4ba18ad43ea5c643b027cf0170">More...</a><br /></td></tr>
 <tr class="separator:afcb8cf4ba18ad43ea5c643b027cf0170"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,8 +248,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8b9caf068b045bb5cb5c38f54cf82367"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b9caf068b045bb5cb5c38f54cf82367">&#9670;&nbsp;</a></span>ksprintf()</h2>
+<a id="a7806fff9874b7d1d5761767e2595a220"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7806fff9874b7d1d5761767e2595a220">&#9670;&nbsp;</a></span>ksprintf()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -263,7 +263,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>fmt</em>, </td>
         </tr>
         <tr>
@@ -291,12 +291,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>char* Buffer </dd></dl>
 
-<p class="reference">References <a class="el" href="string_8c.html#ac193243152e2c541c49fbe5548d7d65c">kvsprintf()</a>.</p>
+<p class="reference">References <a class="el" href="string_8c.html#a82c6a675a792dfc5ebd38470486afe4f">kvsprintf()</a>.</p>
 
 </div>
 </div>
-<a id="ac193243152e2c541c49fbe5548d7d65c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac193243152e2c541c49fbe5548d7d65c">&#9670;&nbsp;</a></span>kvsprintf()</h2>
+<a id="a82c6a675a792dfc5ebd38470486afe4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c6a675a792dfc5ebd38470486afe4f">&#9670;&nbsp;</a></span>kvsprintf()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,7 +310,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>fmt</em>, </td>
         </tr>
         <tr>
@@ -338,7 +338,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>char* Buffer </dd></dl>
 
-<p class="reference">References <a class="el" href="string_8c.html#a7ecda6e9a4ad5c1d1181bf064db143e9">itoa()</a>, <a class="el" href="memory_8c.html#a113a42d20ee587a79f71464089007387">memcpy()</a>, <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>, and <a class="el" href="string_8c.html#a008e171a518fe0e0352f31b245e03875">strlen()</a>.</p>
+<p class="reference">References <a class="el" href="string_8c.html#a7ecda6e9a4ad5c1d1181bf064db143e9">itoa()</a>, <a class="el" href="memory_8c.html#a370712322c794e949c996946f2283ea8">memcpy()</a>, <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>, and <a class="el" href="string_8c.html#a008e171a518fe0e0352f31b245e03875">strlen()</a>.</p>
 
 </div>
 </div>

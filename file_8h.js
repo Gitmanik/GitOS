@@ -9,12 +9,12 @@ var file_8h =
     [ "FILE_MODE", "file_8h.html#a83452b48fc3d8fdbc81f52de7217fa68", null ],
     [ "FILE_SEEK_MODE", "file_8h.html#abe921a3b588578250cc96f01a96953ab", null ],
     [ "FILE_STAT_FLAGS", "file_8h.html#a28336e6c2f5eea087e30e2177a7ea5a0", null ],
-    [ "FS_CLOSE_FUNCTION", "file_8h.html#acbc52bc4a9cddcf847caae60f7ac448a", null ],
-    [ "FS_OPEN_FUNCTION", "file_8h.html#a53232da3f6880dab0e93af658e0d6fc3", null ],
-    [ "FS_READ_FUNCTION", "file_8h.html#aabb0ac3c9daa03550b7fec98228b4f75", null ],
+    [ "FS_CLOSE_FUNCTION", "file_8h.html#a5177ed95ade641b7961a793a5122f76d", null ],
+    [ "FS_OPEN_FUNCTION", "file_8h.html#ab7d90627ef45bfb3dedcb3a2bb6daaa7", null ],
+    [ "FS_READ_FUNCTION", "file_8h.html#a5cddfba3e55d068419e7206b9fa8b2e0", null ],
     [ "FS_RESOLVE_FUNCTION", "file_8h.html#a08dac86aa376c5e0b39e9b495222ca5b", null ],
-    [ "FS_SEEK_FUNCTION", "file_8h.html#a316e448536e6d1f11f4c086ec0611afb", null ],
-    [ "FS_STAT_FUNCTION", "file_8h.html#aee987ceca1f650c2887ee57f40679f30", null ],
+    [ "FS_SEEK_FUNCTION", "file_8h.html#ab5fa8fcf1f69d9baa73d8e74beb2ff40", null ],
+    [ "FS_STAT_FUNCTION", "file_8h.html#a16ae9c72750529c16e15f41d5c45e9c0", null ],
     [ "FILE_OPEN_MODES", "file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682", [
       [ "FILE_MODE_READ", "file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682a89cf567f3e692c97873d7a795c17feca", null ],
       [ "FILE_MODE_WRITE", "file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682a12eb77a5f1206154eb9f5adc219c9d5b", null ],
@@ -26,8 +26,8 @@ var file_8h =
       [ "SEEK_CUR", "file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8af3091144c125782cf17bcd3eb84e454c", null ],
       [ "SEEK_END", "file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8a060e45245be703e272d7264bafcfdc63", null ]
     ] ],
-    [ "FILE_STAT_FLAGS", "file_8h.html#a9cc4f405828927cd159cf8daf81b8383", [
-      [ "FILE_STAT_READ_ONLY", "file_8h.html#a9cc4f405828927cd159cf8daf81b8383a149a2651f7604176c2bf9bd76b666472", null ]
+    [ "FILE_STAT_FLAGS_ENUM", "file_8h.html#abcb59f9acb9c3530b7d75c33f6755617", [
+      [ "FILE_STAT_READ_ONLY", "file_8h.html#abcb59f9acb9c3530b7d75c33f6755617a149a2651f7604176c2bf9bd76b666472", null ]
     ] ],
     [ "fclose", "file_8h.html#a575cfdaca3a77c3f910df16d56d7240c", null ],
     [ "fopen", "file_8h.html#aa01c104dbdab4c93c40a96f0c705a3e1", null ],

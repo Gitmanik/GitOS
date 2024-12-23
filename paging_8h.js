@@ -13,7 +13,7 @@ var paging_8h =
     [ "paging_free_directory", "paging_8h.html#af7ce9ba915145e34d6ec637ce24fec2d", null ],
     [ "paging_get_directory", "paging_8h.html#a14a82d17b3c9b1a7b39bb55daeef5462", null ],
     [ "paging_get_page", "paging_8h.html#a78f65ef8e3c37f9f8d9db43885c19e02", null ],
-    [ "paging_map_to", "paging_8h.html#a4e2b23a20adf4668e771ca2295351deb", null ],
+    [ "paging_map_to", "paging_8h.html#abbc96dfb690336d0a9379237945bdb52", null ],
     [ "paging_new_directory", "paging_8h.html#a79699e43f28673ac9ba6933be1cf011a", null ],
     [ "paging_set_page", "paging_8h.html#a040900b1b1eec0f5ce8027a31a25c1d9", null ],
     [ "paging_switch", "paging_8h.html#a2659d08cc3bac5b029cb7e7008352c85", null ]

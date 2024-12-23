@@ -122,9 +122,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a77bed9b9ce6bad3bf10a02aa90522cde"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#a77bed9b9ce6bad3bf10a02aa90522cde">paging_map_range</a> (struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *directory, void *virtual, void *physical, int count, int <a class="el" href="task_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>)</td></tr>
 <tr class="memdesc:a77bed9b9ce6bad3bf10a02aa90522cde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps range of virtual addresses to physical in page directory.  <a href="paging_8c.html#a77bed9b9ce6bad3bf10a02aa90522cde">More...</a><br /></td></tr>
 <tr class="separator:a77bed9b9ce6bad3bf10a02aa90522cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e2b23a20adf4668e771ca2295351deb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#a4e2b23a20adf4668e771ca2295351deb">paging_map_to</a> (struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *chunk, void *virtual, void *physical, void *physical_end, int <a class="el" href="task_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>)</td></tr>
-<tr class="memdesc:a4e2b23a20adf4668e771ca2295351deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps virtual address to physical in page directory.  <a href="paging_8c.html#a4e2b23a20adf4668e771ca2295351deb">More...</a><br /></td></tr>
-<tr class="separator:a4e2b23a20adf4668e771ca2295351deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc96dfb690336d0a9379237945bdb52"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paging_8c.html#abbc96dfb690336d0a9379237945bdb52">paging_map_to</a> (struct <a class="el" href="structpaging__chunk.html">paging_chunk</a> *chunk, void *virtual_address, void *physical_address, void *physical_end, int <a class="el" href="task_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>)</td></tr>
+<tr class="memdesc:abbc96dfb690336d0a9379237945bdb52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps virtual address to physical in page directory.  <a href="paging_8c.html#abbc96dfb690336d0a9379237945bdb52">More...</a><br /></td></tr>
+<tr class="separator:abbc96dfb690336d0a9379237945bdb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a4d32790b83c14fffde9038096b5d3025"></a>
@@ -354,8 +354,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4e2b23a20adf4668e771ca2295351deb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e2b23a20adf4668e771ca2295351deb">&#9670;&nbsp;</a></span>paging_map_to()</h2>
+<a id="abbc96dfb690336d0a9379237945bdb52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc96dfb690336d0a9379237945bdb52">&#9670;&nbsp;</a></span>paging_map_to()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -370,13 +370,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>virtual</em>, </td>
+          <td class="paramname"><em>virtual_address</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>physical</em>, </td>
+          <td class="paramname"><em>physical_address</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -402,7 +402,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">chunk</td><td>Paging chunk </td></tr>
-    <tr><td class="paramname">physical</td><td>Physical address start </td></tr>
+    <tr><td class="paramname">physical_address</td><td>Physical address start </td></tr>
     <tr><td class="paramname">physical_end</td><td>Physical address end </td></tr>
     <tr><td class="paramname">flags</td><td>Page directory entry flags </td></tr>
   </table>

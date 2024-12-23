@@ -6,7 +6,7 @@ var kernel_8h =
     [ "kernel_halt", "kernel_8h.html#aa0feb8fe21f2712340bcfe8777e9860b", null ],
     [ "kernel_main", "kernel_8h.html#ada8402e0c504af8cafef5cc76c076003", null ],
     [ "kernel_page", "kernel_8h.html#abd882687cd304ceab89392243ac0bf0d", null ],
-    [ "kernel_panic", "kernel_8h.html#a8d209f2439b73fa38517f599a1904a99", null ],
+    [ "kernel_panic", "kernel_8h.html#a93999bcd6d4fc14e8ad565a045e6f773", null ],
     [ "kernel_registers", "kernel_8h.html#abfd38f3db413f8fa3822dcba9cd656e7", null ],
-    [ "kprintf", "kernel_8h.html#ac9d768b4772cc87fc88afbbbd805f96a", null ]
+    [ "kprintf", "kernel_8h.html#a199a1f701f4cc4fd1c3ff7903a102d7a", null ]
 ];

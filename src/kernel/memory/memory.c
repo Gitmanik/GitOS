@@ -43,9 +43,10 @@ void* memcpy(void* dstptr, const void* srcptr, size_t size)
  * @param ptr1 Pointer to block of memory
  * @param ptr2 Pointer to block of memory
  * @param len Number of bytes to compare
- * @return int 0 if matches, 
- * -1 the first byte that does not match in both memory blocks has a lower value in ptr1 than in ptr2
- * 	1 the first byte that does not match in both memory blocks has a greater value in ptr1 than in ptr2
+ * @return int
+ * - 0 if matches,
+ * - -1 the first byte that does not match in both memory blocks has a lower value in ptr1 than in ptr2,
+ * - 1 the first byte that does not match in both memory blocks has a greater value in ptr1 than in ptr2
  */
 int memcmp(void* ptr1, void* ptr2, size_t len)
 {

@@ -87,8 +87,8 @@ class ELFFile {
     static const unsigned int ELFCLASS64 = 2;
 
     static const unsigned int ELFDATANONE = 0;
-    static const unsigned int ELFDATA2MSB = 1;
-    static const unsigned int ELFDATA2LSB = 2;
+    static const unsigned int ELFDATA2LSB = 1;
+    static const unsigned int ELFDATA2MSB = 2;
 
     static const unsigned int SHN_UNDEF = 0;
 

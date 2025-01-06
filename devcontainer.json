@@ -1,0 +1,8 @@
+{
+	"name": "Local Dockerfile",
+	"build": {
+		"context": ".",
+		"dockerfile": "scripts/Dockerfile"
+	},
+    "runArgs": ["--privileged", "-e", "DISPLAY=${env:DISPLAY}", "--network=host"]
+}

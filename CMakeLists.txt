@@ -18,7 +18,7 @@ set(NASM "nasm")
 
 # Compiler arguments
 set(CMAKE_C_FLAGS "-g -std=gnu99 -ffreestanding -nostdlib -O0 -Wall -Wextra -Werror")
-set(CMAKE_CXX_FLAGS "-g -std=c++11 -ffreestanding -nostdlib -O0 -Wall -Wextra -Werror -fno-rtti -fno-exceptions")
+set(CMAKE_CXX_FLAGS "-g -std=c++17 -ffreestanding -nostdlib -O0 -Wall -Wextra -Werror -fno-rtti -fno-exceptions -fno-sized-deallocation")
 
 # Add subdirectories
 add_subdirectory(src/boot)

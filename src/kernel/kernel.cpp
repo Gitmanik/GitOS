@@ -28,6 +28,25 @@ extern "C"
 #include "drivers/ps2keyboard/ps2keyboard.h"
 }
 
+void *operator new(size_t size)
+{
+    return kzalloc(size);
+}
+
+void *operator new[](size_t size)
+{
+    return kzalloc(size);
+}
+
+void operator delete(void *p)
+{
+    kfree(p);
+}
+
+void operator delete[](void *p)
+{
+    kfree(p);
+}
 static struct paging_chunk *kernel_paging_chunk;
 
 struct tss tss;
@@ -93,7 +112,7 @@ void kernel_main()
         kernel_panic("Could not initialize Serial port!");
     }
 
-    kprintf("GitOS - operating system as exercise. Pawel Reich 2024\r\n");
+    kprintf("GitOS - operating system as exercise. Pawel Reich 2025\r\n");
 
     // Initialize GDT
     kprintf("Initializing GDT..");
@@ -221,9 +240,9 @@ void kernel_main()
     kprintf("OK\r\n");
     //
 
-    kprintf("Loading blank.bin..");
+    kprintf("Loading blank.elf..");
     struct process* process = 0;
-    res = process_load_switch("0:/blank.bin", &process);
+    res = process_load_switch("0:/blank.elf", &process);
     if (res != 0)
     {
         kernel_panic("Failed to load process");
@@ -286,24 +305,4 @@ void kprintf(const char *fmt, ...)
     tm_SetColor(GREY);
     tm_PrintString(internal_buf);
     tm_SetColor(x);
-}
-
-void *operator new(size_t size)
-{
-    return kzalloc(size);
-}
-
-void *operator new[](size_t size)
-{
-    return kzalloc(size);
-}
-
-void operator delete(void *p)
-{
-    kfree(p);
-}
-
-void operator delete[](void *p)
-{
-    kfree(p);
 }

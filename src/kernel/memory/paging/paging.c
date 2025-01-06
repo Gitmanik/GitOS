@@ -170,6 +170,10 @@ void* paging_align_address(void* ptr)
     return ptr;
 }
 
+void* paging_align_address_to_lower_page(void* ptr) {
+    return (void*) ((uint32_t) ptr - (uint32_t) ptr % PAGING_PAGE_SIZE);
+}
+
 /**
  * @brief Maps virtual address to physical in page directory
  * 

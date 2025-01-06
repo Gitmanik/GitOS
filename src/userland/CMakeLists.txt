@@ -32,14 +32,14 @@ function(GITOS_PROGRAM name)
 
     target_include_directories(${name} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
     set_target_properties(${name} PROPERTIES
-            OUTPUT_NAME "${name}.bin"
+            OUTPUT_NAME "${name}.elf"
             RUNTIME_OUTPUT_DIRECTORY ${USERLAND_DESTINATION}
             LINKER_LANGUAGE CXX
     )
 
     list(APPEND USERLAND_PROGRAMS ${name})
 
-    set(EXECUTABLE_PATH "${USERLAND_DESTINATION}/${name}.bin")
+    set(EXECUTABLE_PATH "${USERLAND_DESTINATION}/${name}.elf")
     list(APPEND USERLAND_BINARIES ${EXECUTABLE_PATH})
     set(USERLAND_BINARIES ${USERLAND_BINARIES} PARENT_SCOPE)
 

@@ -151,7 +151,7 @@ int task_init(struct task* task, struct process* process)
     {
         return -EIO;
     }
-    task->registers.ip = PROGRAM_VIRTUAL_ADDRESS;
+    task->registers.ip = (uint32_t) process->elf_entry;
     task->registers.ss = USER_DATA_SELECTOR;
     task->registers.cs = USER_CODE_SELECTOR;
     task->registers.esp = PROGRAM_VIRTUAL_STACK_ADDRESS_START;

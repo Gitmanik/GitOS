@@ -2,6 +2,7 @@ var annotated_dup =
 [
     [ "disk", "structdisk.html", "structdisk" ],
     [ "disk_stream", "structdisk__stream.html", "structdisk__stream" ],
+    [ "ELFFile", "class_e_l_f_file.html", "class_e_l_f_file" ],
     [ "fat16_header_extended", "structfat16__header__extended.html", "structfat16__header__extended" ],
     [ "fat16_header_primary", "structfat16__header__primary.html", "structfat16__header__primary" ],
     [ "fat_directory", "structfat__directory.html", "structfat__directory" ],

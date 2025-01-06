@@ -30,6 +30,7 @@ var NAVTREE =
       [ "Data Structure Index", "classes.html", null ],
       [ "Data Fields", "functions.html", [
         [ "All", "functions.html", null ],
+        [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
@@ -50,10 +51,10 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html",
-"heap_8h.html#a3f1526e4075c63f238fc357e078c8662",
-"string_8c.html#abe557435f36720a0cf098e3d0bf2f58d",
-"task_8c.html#aef4b6a948712cf121c3e7a29fb320515"
+"_e_l_f_file_8cpp.html",
+"globals_t.html",
+"status_8h.html#a9d59f12a576147f4e1564e3fa76b5077",
+"syscall_8h.html#a581ed37968ead91b6d3a0b3b7a71da9d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

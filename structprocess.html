@@ -111,17 +111,15 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a37300e8d26601ed9fc1ffe6bcce6aa5b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprocess.html#a37300e8d26601ed9fc1ffe6bcce6aa5b">allocations</a> [<a class="el" href="process_8h.html#a1ae0d9051ac392230ca0754368037a0d">PROGRAM_MAX_ALLOCATIONS</a>]</td></tr>
 <tr class="memdesc:a37300e8d26601ed9fc1ffe6bcce6aa5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">malloc allocations of the process  <a href="structprocess.html#a37300e8d26601ed9fc1ffe6bcce6aa5b">More...</a><br /></td></tr>
 <tr class="separator:a37300e8d26601ed9fc1ffe6bcce6aa5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add9af9569af79ec26dd741fb226b38ba"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprocess.html#add9af9569af79ec26dd741fb226b38ba">ptr</a></td></tr>
-<tr class="memdesc:add9af9569af79ec26dd741fb226b38ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physical pointer to the process memory.  <a href="structprocess.html#add9af9569af79ec26dd741fb226b38ba">More...</a><br /></td></tr>
-<tr class="separator:add9af9569af79ec26dd741fb226b38ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d868de3e0d747c88ceb683223eab3c3"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprocess.html#a0d868de3e0d747c88ceb683223eab3c3">elf</a></td></tr>
+<tr class="separator:a0d868de3e0d747c88ceb683223eab3c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc0da95553742561773d762fa905fdab"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprocess.html#afc0da95553742561773d762fa905fdab">stack</a></td></tr>
 <tr class="memdesc:afc0da95553742561773d762fa905fdab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physical pointer to the process stack.  <a href="structprocess.html#afc0da95553742561773d762fa905fdab">More...</a><br /></td></tr>
 <tr class="separator:afc0da95553742561773d762fa905fdab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2c6b258f02add8fdf4cfc7c371dd772"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprocess.html#ab2c6b258f02add8fdf4cfc7c371dd772">size</a></td></tr>
-<tr class="memdesc:ab2c6b258f02add8fdf4cfc7c371dd772"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the ptr data.  <a href="structprocess.html#ab2c6b258f02add8fdf4cfc7c371dd772">More...</a><br /></td></tr>
-<tr class="separator:ab2c6b258f02add8fdf4cfc7c371dd772"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae552896be70b28a86bf6b2153c74b370"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structprocess_1_1keyboard__buffer.html">process::keyboard_buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprocess.html#ae552896be70b28a86bf6b2153c74b370">keyboard</a></td></tr>
 <tr class="separator:ae552896be70b28a86bf6b2153c74b370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d24182beb2c088b847bbda1ede92e28"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprocess.html#a1d24182beb2c088b847bbda1ede92e28">elf_entry</a></td></tr>
+<tr class="separator:a1d24182beb2c088b847bbda1ede92e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Field Documentation</h2>
 <a id="a37300e8d26601ed9fc1ffe6bcce6aa5b"></a>
@@ -137,6 +135,34 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>malloc allocations of the process </p>
+
+</div>
+</div>
+<a id="a0d868de3e0d747c88ceb683223eab3c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d868de3e0d747c88ceb683223eab3c3">&#9670;&nbsp;</a></span>elf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* elf</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d24182beb2c088b847bbda1ede92e28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d24182beb2c088b847bbda1ede92e28">&#9670;&nbsp;</a></span>elf_entry</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* elf_entry</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -183,38 +209,6 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="add9af9569af79ec26dd741fb226b38ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add9af9569af79ec26dd741fb226b38ba">&#9670;&nbsp;</a></span>ptr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void* ptr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Physical pointer to the process memory. </p>
-
-</div>
-</div>
-<a id="ab2c6b258f02add8fdf4cfc7c371dd772"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2c6b258f02add8fdf4cfc7c371dd772">&#9670;&nbsp;</a></span>size</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t size</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Size of the ptr data. </p>
 
 </div>
 </div>

@@ -9,6 +9,7 @@ var paging_8h =
     [ "PAGING_TOTAL_ENTRIES_PER_TABLE", "paging_8h.html#a50df72be28cbaf93f9bc2f672033ea32", null ],
     [ "PAGING_WRITE_THROUGH", "paging_8h.html#a216a2f920b261f73f5c9c6688164bac0", null ],
     [ "paging_align_address", "paging_8h.html#a4d32790b83c14fffde9038096b5d3025", null ],
+    [ "paging_align_address_to_lower_page", "paging_8h.html#ae67a75ff4fe0cf61189034f5a14f9c1c", null ],
     [ "paging_enable", "paging_8h.html#ad6d520f99ef8596febe3285e50e79880", null ],
     [ "paging_free_directory", "paging_8h.html#af7ce9ba915145e34d6ec637ce24fec2d", null ],
     [ "paging_get_directory", "paging_8h.html#a14a82d17b3c9b1a7b39bb55daeef5462", null ],

@@ -1,6 +1,7 @@
 var paging_8c =
 [
     [ "paging_align_address", "paging_8c.html#a4d32790b83c14fffde9038096b5d3025", null ],
+    [ "paging_align_address_to_lower_page", "paging_8c.html#ae67a75ff4fe0cf61189034f5a14f9c1c", null ],
     [ "paging_free_directory", "paging_8c.html#af7ce9ba915145e34d6ec637ce24fec2d", null ],
     [ "paging_get_directory", "paging_8c.html#a14a82d17b3c9b1a7b39bb55daeef5462", null ],
     [ "paging_get_page", "paging_8c.html#a78f65ef8e3c37f9f8d9db43885c19e02", null ],

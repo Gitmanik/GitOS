@@ -31,6 +31,12 @@
 #define ENOTIMPL 4
 
 /**
+ * @brief Invalid format
+ *
+ */
+#define EINFORMAT 5
+
+/**
  * @brief Is taken
  * 
  */

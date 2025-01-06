@@ -1,10 +1,14 @@
+extern "C" {
 #include "process.h"
 #include "memory/memory.h"
 #include "memory/heap/kheap.h"
+#include "memory/paging/paging.h"
 #include "fs/file.h"
 #include "common/status.h"
 #include "task.h"
 #include "common/string.h"
+}
+#include "formats/elf/ELFFile.hpp"
 
 struct process* current_process = 0;
 
@@ -35,73 +39,60 @@ int process_switch(struct process* process)
     return 0;
 }
 
-static int process_load_binary(const char* filename, struct process* process)
-{
-    int res = 0;
+int elf_load(const char * filename, ELFFile ** elf_file) {
+    int res = fopen(filename, "r");
+    int fd = 0;
+    void* data = nullptr;
 
-    int fd = fopen(filename, "r");
-    if (!fd)
-    {
-        res = -EIO;
+    if (res < 0)
         goto out;
-    }
+    fd = res;
 
     struct file_stat stat;
     res = fstat(fd, &stat);
-    if (ISERR(res))
+    if (res < 0)
         goto out;
 
-    void* program_data_ptr = kzalloc(stat.filesize);
-
-    if (!program_data_ptr)
-    {
-        res = -ENOMEM;
+    data = kzalloc(stat.filesize);
+    res = fread(data, stat.filesize, 1, fd);
+    if (res < 0)
         goto out;
-    }
 
-    if (fread(program_data_ptr, stat.filesize, 1, fd) != 1)
-    {
-        res = -EIO;
-        goto out;
-    }
+    *elf_file = new ELFFile(data, stat.filesize);
 
-    process->ptr = program_data_ptr;
-    process->size= stat.filesize;
-
-out:
-    fclose(fd);
+    out:
+    fclose(res);
     return res;
 }
 
 static int process_load_data(const char* filename, struct process* process)
 {
     int res = 0;
-    res = process_load_binary(filename, process);
-    return res;
-}
 
-// TODO: Move to binary loader
-int process_map_binary(struct process* process)
-{
-    int res = 0;
-    res = paging_map_to(process->task->page_directory, (void*) PROGRAM_VIRTUAL_ADDRESS, process->ptr, paging_align_address(process->ptr + process->size), PAGING_IS_PRESENT | PAGING_ACCESS_FROM_ALL | PAGING_IS_WRITEABLE);
-    
+    ELFFile* elf_file = nullptr;
+
+    res = elf_load(filename, &elf_file);
     if (res < 0)
-    {
-        goto out;
-    }
+        return res;
 
-    res = paging_map_to(process->task->page_directory, (void*) PROGRAM_VIRTUAL_STACK_ADDRESS_END, process->stack, paging_align_address((void*) process->stack + PROGRAM_VIRTUAL_STACK_SIZE), PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
+    res = elf_file->parse();
 
-    out:
+    process->elf = elf_file;
+    process->elf_entry = elf_file->get_entry();
+
     return res;
 }
 
 int process_map_memory(struct process* process)
 {
-    // TODO: Check if process is properly loaded
     int res = 0;
-    res = process_map_binary(process);
+
+    auto* elf_file = static_cast<ELFFile *>(process->elf);
+
+    res = paging_map_to(process->task->page_directory,  paging_align_address_to_lower_page(elf_file->get_virtual_base_address()), elf_file->get_physical_base_address(), paging_align_address(elf_file->get_physical_end_address()),
+        PAGING_IS_PRESENT | PAGING_ACCESS_FROM_ALL | PAGING_IS_WRITEABLE);
+
+    res = paging_map_to(process->task->page_directory, (void*) (PROGRAM_VIRTUAL_STACK_ADDRESS_END), process->stack, paging_align_address((void*) ((uint32_t) process->stack + PROGRAM_VIRTUAL_STACK_SIZE)), PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
     return res;
 }
 
@@ -131,8 +122,8 @@ int process_load_for_slot(const char* filename, struct process** process, int pr
 {
     int res = 0;
     struct task* task = 0;
-    struct process* _process = 0;
-    void* program_stack_ptr = 0;
+    struct process* _process = nullptr;
+    char* program_stack_ptr = nullptr;
 
     if (process_get(process_slot) != 0)
     {
@@ -140,8 +131,8 @@ int process_load_for_slot(const char* filename, struct process** process, int pr
         goto out;
     }
 
-    _process = kzalloc(sizeof(struct process));
-    if (!_process)
+    _process = new struct process;
+    if (_process == nullptr)
     {
         res = -ENOMEM;
         goto out;
@@ -152,7 +143,7 @@ int process_load_for_slot(const char* filename, struct process** process, int pr
     if (ISERR(res))
         goto out;
 
-    program_stack_ptr = kzalloc(PROGRAM_VIRTUAL_STACK_SIZE);
+    program_stack_ptr = (char*) kzalloc(PROGRAM_VIRTUAL_STACK_SIZE);
     if (!program_stack_ptr)
     {
         res = -ENOMEM;

@@ -30,26 +30,21 @@ struct process
      */
     void* allocations[PROGRAM_MAX_ALLOCATIONS];
 
-    /**
-     * @brief Physical pointer to the process memory
-     */
-    void* ptr;
+    // TODO: Make this ELFFile* when rewritten to C++
+    void* elf;
 
     /**
      * @brief Physical pointer to the process stack
      */
     void* stack;
 
-    /**
-     * @brief Size of the ptr data
-     */
-    uint32_t size;
-
     struct keyboard_buffer {
         char buffer[PROCESS_KEYBOARD_BUFFER_SIZE];
         int tail;
         int head;
     } keyboard;
+
+    void* elf_entry;
 };
 int process_load_switch(const char* filename, struct process** process);
 int process_load(const char* filename, struct process** process);

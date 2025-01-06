@@ -4,39 +4,44 @@
 #pragma once
 
 #include <stdint.h>
+extern "C" {
 #include "fs/pathparser.h"
+}
 
 class ELFFile {
 
   public:
     void* get_entry_ptr();
+    bool is_valid() const;
 
   private:
 
     char filename[MAX_PATH];
 
-    int in_memory_size;
-
+    void* data;
+    int data_sz;
 
     /**
-    * Physical memory address that this ELF File is loaded at.
+    * Physical memory address of this binary.
     */
     void* phys_base_address;
 
     /**
-     * Physical end memory adress of this ELF File.
+     * Physical end memory adress of this binary.
      */
     void* phys_end_address;
 
     /**
-    * Virtual memory address that this ELF File is loaded at.
+    * Virtual memory address that this binary.
     */
     void* virt_base_address;
 
     /**
-     * Virtual end memory address of this ELF File.
+     * Virtual end memory address of this binary.
      */
-    void* virtual_end_address;
+    void* virt_end_address;
+
+    static constexpr char ELF_SIGNATURE[] = {0x7f, 'E', 'L', 'F'};
 
     static const unsigned int PF_X = 1;
     static const unsigned int PF_R = 4;
@@ -150,4 +155,16 @@ class ELFFile {
       unsigned char st_other;
       Elf32_Half st_shndx;
     } Elf32_Sym;
+
+    Elf32_Header *get_header() const;
+
+    Elf32_Phdr *get_program_header() const;
+
+    Elf32_Phdr *get_program_header(unsigned int index) const;
+
+    Elf32_Shdr *get_section_header() const;
+
+    Elf32_Shdr *get_section_header(unsigned int index) const;
+
+    const char *get_string_table() const;
 };

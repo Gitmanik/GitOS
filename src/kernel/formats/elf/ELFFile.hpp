@@ -22,30 +22,6 @@ class ELFFile {
     void* get_virtual_end_address() const;
     void* get_entry() const;
 
-  private:
-    void* m_data;
-    size_t m_data_sz;
-
-    /**
-    * Physical memory address of this binary.
-    */
-    void* m_physical_base_address = 0;
-
-    /**
-     * Physical end memory adress of this binary.
-     */
-    void* m_physical_end_address = 0;
-
-    /**
-    * Virtual memory address of this binary.
-    */
-    void* m_virtual_base_address = 0;
-
-    /**
-     * Virtual end memory address of this binary.
-     */
-    void* m_virtual_end_address = 0;
-
     static constexpr char ELF_SIGNATURE[] = {0x7f, 'E', 'L', 'F'};
 
     static const unsigned int PF_X = 1;
@@ -104,27 +80,27 @@ class ELFFile {
     typedef int32_t Elf32_Off;
 
     typedef struct __attribute__((__packed__)) {
-        Elf32_Word p_type;
-        Elf32_Off p_offset;
-        Elf32_Addr p_vaddr;
-        Elf32_Addr p_paddr;
-        Elf32_Word p_filesz;
-        Elf32_Word p_memsz;
-        Elf32_Word p_flags;
-        Elf32_Word p_align;
+      Elf32_Word p_type;
+      Elf32_Off p_offset;
+      Elf32_Addr p_vaddr;
+      Elf32_Addr p_paddr;
+      Elf32_Word p_filesz;
+      Elf32_Word p_memsz;
+      Elf32_Word p_flags;
+      Elf32_Word p_align;
     } Elf32_Phdr;
 
     typedef struct __attribute__((__packed__)) {
-        Elf32_Word sh_name;
-        Elf32_Word sh_type;
-        Elf32_Word sh_flags;
-        Elf32_Addr sh_addr;
-        Elf32_Off sh_offset;
-        Elf32_Word sh_size;
-        Elf32_Word sh_link;
-        Elf32_Word sh_info;
-        Elf32_Word sh_addralign;
-        Elf32_Word sh_entsize;
+      Elf32_Word sh_name;
+      Elf32_Word sh_type;
+      Elf32_Word sh_flags;
+      Elf32_Addr sh_addr;
+      Elf32_Off sh_offset;
+      Elf32_Word sh_size;
+      Elf32_Word sh_link;
+      Elf32_Word sh_info;
+      Elf32_Word sh_addralign;
+      Elf32_Word sh_entsize;
     } Elf32_Shdr;
 
     typedef struct __attribute__((__packed__)) {
@@ -172,6 +148,30 @@ class ELFFile {
     Elf32_Shdr *get_section_header(unsigned int index) const;
 
     const char *get_string_table() const;
+
+  private:
+    void* m_data;
+    size_t m_data_sz;
+
+    /**
+    * Physical memory address of this binary.
+    */
+    void* m_physical_base_address = 0;
+
+    /**
+     * Physical end memory adress of this binary.
+     */
+    void* m_physical_end_address = 0;
+
+    /**
+    * Virtual memory address of this binary.
+    */
+    void* m_virtual_base_address = 0;
+
+    /**
+     * Virtual end memory address of this binary.
+     */
+    void* m_virtual_end_address = 0;
 
     int parse_pt_load(Elf32_Phdr *phdr);
 };

@@ -88,25 +88,23 @@ $(document).ready(function(){initNavTree('ps2keyboard_8h.html',''); initResizabl
 <div class="title">ps2keyboard.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="keyboard_8h_source.html">keyboard/keyboard.h</a>&quot;</code><br />
-</div>
+
 <p><a href="ps2keyboard_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adaad37d254aa4891c84b515ff04f599b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structkeyboard.html">keyboard</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ps2keyboard_8h.html#adaad37d254aa4891c84b515ff04f599b">ps2keyboard_init</a> ()</td></tr>
-<tr class="separator:adaad37d254aa4891c84b515ff04f599b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ccc910489590ed0143e2fed529597f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ps2keyboard_8h.html#a8ccc910489590ed0143e2fed529597f8">ps2keyboard_setup</a> ()</td></tr>
+<tr class="separator:a8ccc910489590ed0143e2fed529597f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="adaad37d254aa4891c84b515ff04f599b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adaad37d254aa4891c84b515ff04f599b">&#9670;&nbsp;</a></span>ps2keyboard_init()</h2>
+<a id="a8ccc910489590ed0143e2fed529597f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ccc910489590ed0143e2fed529597f8">&#9670;&nbsp;</a></span>ps2keyboard_setup()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structkeyboard.html">keyboard</a>* ps2keyboard_init </td>
+          <td class="memname">int ps2keyboard_setup </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -114,7 +112,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="ps2keyboard_8c.html#acb2640b917e4db4ea4fbb83610792406">ps2keyboard</a>.</p>
+<p class="reference">References <a class="el" href="idt_8c.html#a00ebf7b83736ba368eb20208cfc0488d">idt_SetHandler()</a>, <a class="el" href="kernel_8cpp.html#a199a1f701f4cc4fd1c3ff7903a102d7a">kprintf()</a>, <a class="el" href="io_8c.html#a8bf7a9af91c08e6f876aaffeccd48ff3">outb()</a>, and <a class="el" href="ps2keyboard_8c.html#a6acef13060f97ef2f1e52e614203a5ec">ps2keyboard_irq_handler()</a>.</p>
 
 </div>
 </div>

@@ -83,8 +83,7 @@ $(document).ready(function(){initNavTree('ps2keyboard_8c.html',''); initResizabl
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ps2keyboard.c File Reference</div>  </div>
 </div><!--header-->
@@ -92,7 +91,7 @@ $(document).ready(function(){initNavTree('ps2keyboard_8c.html',''); initResizabl
 <div class="textblock"><code>#include &quot;<a class="el" href="ps2keyboard_8h_source.html">ps2keyboard.h</a>&quot;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="keyboard_8h_source.html">keyboard/keyboard.h</a>&quot;</code><br />
+<code>#include &lt;<a class="el" href="process_8h_source.html">task/process.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="io_8h_source.html">common/io.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="kernel_8h_source.html">kernel.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="idt_8h_source.html">idt/idt.h</a>&quot;</code><br />
@@ -101,38 +100,12 @@ $(document).ready(function(){initNavTree('ps2keyboard_8c.html',''); initResizabl
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8ccc910489590ed0143e2fed529597f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ps2keyboard_8c.html#a8ccc910489590ed0143e2fed529597f8">ps2keyboard_setup</a> ()</td></tr>
-<tr class="separator:a8ccc910489590ed0143e2fed529597f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adaad37d254aa4891c84b515ff04f599b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structkeyboard.html">keyboard</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ps2keyboard_8c.html#adaad37d254aa4891c84b515ff04f599b">ps2keyboard_init</a> ()</td></tr>
-<tr class="separator:adaad37d254aa4891c84b515ff04f599b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6acef13060f97ef2f1e52e614203a5ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ps2keyboard_8c.html#a6acef13060f97ef2f1e52e614203a5ec">ps2keyboard_irq_handler</a> ()</td></tr>
 <tr class="separator:a6acef13060f97ef2f1e52e614203a5ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:acb2640b917e4db4ea4fbb83610792406"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structkeyboard.html">keyboard</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ps2keyboard_8c.html#acb2640b917e4db4ea4fbb83610792406">ps2keyboard</a></td></tr>
-<tr class="separator:acb2640b917e4db4ea4fbb83610792406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ccc910489590ed0143e2fed529597f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ps2keyboard_8c.html#a8ccc910489590ed0143e2fed529597f8">ps2keyboard_setup</a> ()</td></tr>
+<tr class="separator:a8ccc910489590ed0143e2fed529597f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="adaad37d254aa4891c84b515ff04f599b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adaad37d254aa4891c84b515ff04f599b">&#9670;&nbsp;</a></span>ps2keyboard_init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structkeyboard.html">keyboard</a>* ps2keyboard_init </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="ps2keyboard_8c.html#acb2640b917e4db4ea4fbb83610792406">ps2keyboard</a>.</p>
-
-</div>
-</div>
 <a id="a6acef13060f97ef2f1e52e614203a5ec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6acef13060f97ef2f1e52e614203a5ec">&#9670;&nbsp;</a></span>ps2keyboard_irq_handler()</h2>
 
@@ -169,26 +142,6 @@ Variables</h2></td></tr>
 
 <p class="reference">References <a class="el" href="idt_8c.html#a00ebf7b83736ba368eb20208cfc0488d">idt_SetHandler()</a>, <a class="el" href="kernel_8cpp.html#a199a1f701f4cc4fd1c3ff7903a102d7a">kprintf()</a>, <a class="el" href="io_8c.html#a8bf7a9af91c08e6f876aaffeccd48ff3">outb()</a>, and <a class="el" href="ps2keyboard_8c.html#a6acef13060f97ef2f1e52e614203a5ec">ps2keyboard_irq_handler()</a>.</p>
 
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="acb2640b917e4db4ea4fbb83610792406"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb2640b917e4db4ea4fbb83610792406">&#9670;&nbsp;</a></span>ps2keyboard</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structkeyboard.html">keyboard</a> ps2keyboard</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    .name = <span class="stringliteral">&quot;PS2 Keyboard&quot;</span>,</div>
-<div class="line">    .init = <a class="code" href="ps2keyboard_8c.html#a8ccc910489590ed0143e2fed529597f8">ps2keyboard_setup</a></div>
-<div class="line">}</div>
-<div class="ttc" id="aps2keyboard_8c_html_a8ccc910489590ed0143e2fed529597f8"><div class="ttname"><a href="ps2keyboard_8c.html#a8ccc910489590ed0143e2fed529597f8">ps2keyboard_setup</a></div><div class="ttdeci">int ps2keyboard_setup()</div><div class="ttdef"><b>Definition:</b> ps2keyboard.c:40</div></div>
-</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

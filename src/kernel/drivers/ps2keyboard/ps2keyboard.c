@@ -1,7 +1,8 @@
 #include "ps2keyboard.h"
 #include <stdint.h>
 #include <stddef.h>
-#include "keyboard/keyboard.h"
+#include <task/process.h>
+
 #include "common/io.h"
 #include "kernel.h"
 #include "idt/idt.h"
@@ -23,17 +24,6 @@ static uint8_t ps2keyboard_scan_set_1[] = {
     0x00, '7', '8', '9', '-', '4', '5',
     '6', '+', '1', '2', '3', '0', '.'
 };
-int ps2keyboard_setup();
-
-struct keyboard ps2keyboard = {
-    .name = "PS2 Keyboard",
-    .init = ps2keyboard_setup
-};
-
-struct keyboard* ps2keyboard_init()
-{
-    return &ps2keyboard;
-}
 
 void ps2keyboard_irq_handler();
 
@@ -81,7 +71,7 @@ void ps2keyboard_irq_handler()
     uint8_t c = ps2keyboard_scancode_to_char(scancode);
     if (c != 0)
     {
-        keyboard_push(c);
+        process_pushkey(process_current(), c);
     }
     task_page();
 }

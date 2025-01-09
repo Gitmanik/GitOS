@@ -4,7 +4,7 @@
 #include "idt/idt.h"
 #include "kernel.h"
 #include "task/task.h"
-#include "keyboard/keyboard.h"
+#include "task/process.h"
 
 static SYSCALL syscalls[MAX_SYSCALLS];
 
@@ -89,7 +89,7 @@ void* sys$print(struct interrupt_frame* frame)
 void* sys$getkey(struct interrupt_frame* frame)
 {
     (void)(frame);
-    char c = keyboard_pop();
+    char c = process_popkey(task_current()->process);
     return (void*) ((int) c);
 }
 

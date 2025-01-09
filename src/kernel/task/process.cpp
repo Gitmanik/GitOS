@@ -199,3 +199,34 @@ int process_load(const char* filename, struct process** process)
     out:
     return res;
 }
+
+
+void process_pushkey(struct process* process, char c)
+{
+    if (!process)
+    {
+        return;
+    }
+
+    int buffer_index = process->keyboard.tail % sizeof(process->keyboard.buffer);
+    process->keyboard.buffer[buffer_index] = c;
+    process->keyboard.tail++;
+}
+
+char process_popkey(struct process* process)
+{
+    if (!task_current())
+    {
+        return 0;
+    }
+
+    int buffer_index = process->keyboard.head % sizeof(process->keyboard.buffer);
+    char c = process->keyboard.buffer[buffer_index];
+    if (c == 0)
+    {
+        return 0;
+    }
+    process->keyboard.buffer[buffer_index] = 0;
+    process->keyboard.head++;
+    return c;
+}

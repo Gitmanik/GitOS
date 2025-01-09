@@ -24,7 +24,6 @@ extern "C"
 #include "task/tss.h"
 #include "task/task.h"
 #include "task/process.h"
-#include "keyboard/keyboard.h"
 #include "drivers/ps2keyboard/ps2keyboard.h"
 }
 
@@ -225,7 +224,7 @@ void kernel_main()
     //
 
     // Initializing keyboard drivers
-    keyboard_insert(ps2keyboard_init());
+    ps2keyboard_setup();
     //
 
     // Initializing FS

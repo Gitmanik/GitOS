@@ -50,3 +50,5 @@ int process_load_switch(const char* filename, struct process** process);
 int process_load(const char* filename, struct process** process);
 struct process* process_current();
 int process_switch(struct process* process);
+void process_pushkey(struct process* process, char c);
+char process_popkey(struct process* process);

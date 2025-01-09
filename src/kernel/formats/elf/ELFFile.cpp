@@ -54,13 +54,13 @@ bool ELFFile::is_valid() const {
     if (memcmp(header->e_ident,(void*) ELF_SIGNATURE, sizeof(ELF_SIGNATURE)) != 0)
         return false;
 
-    if (header->e_ident[EI_CLASS] != ELFCLASS32)
+    if (header->e_ident[EI_CLASS] != static_cast<char>(ei_class::ELFCLASS32))
         return false;
 
-    if (header->e_ident[EI_DATA] != ELFDATA2LSB)
+    if (header->e_ident[EI_DATA] != static_cast<char>(ei_data::ELFDATA2LSB))
         return false;
 
-    if (header->e_type != ET_EXEC)
+    if (header->e_type != static_cast<char>(e_type::ET_EXEC))
         return false;
 
     if (header->e_entry != PROGRAM_VIRTUAL_ADDRESS)
@@ -112,7 +112,7 @@ int ELFFile::parse() {
         auto phdr = get_program_header(idx);
 
         switch (phdr->p_type) {
-            case PT_LOAD:
+            case static_cast<char>(p_type::PT_LOAD):
                 res = parse_pt_load(phdr);
                 break;
             default:

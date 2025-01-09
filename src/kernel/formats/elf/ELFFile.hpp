@@ -24,54 +24,61 @@ class ELFFile {
 
     static constexpr char ELF_SIGNATURE[] = {0x7f, 'E', 'L', 'F'};
 
-    static const unsigned int PF_X = 1;
-    static const unsigned int PF_R = 4;
-    static const unsigned int PF_W = 2;
-
-    static const unsigned int PT_NULL = 0;
-    static const unsigned int PT_LOAD = 1;
-    static const unsigned int PT_DYNAMIC = 2;
-    static const unsigned int PT_INTERP = 3;
-    static const unsigned int PT_NOTE = 4;
-    static const unsigned int PT_SHLIB = 5;
-    static const unsigned int PT_PHDR = 6;
-
-    static const unsigned int SHT_NULL = 0;
-    static const unsigned int SHT_PROGBITS = 1;
-    static const unsigned int SHT_SYMTAB = 2;
-    static const unsigned int SHT_STRTAB = 3;
-    static const unsigned int SHT_RELA = 4;
-    static const unsigned int SHT_HASH = 5;
-    static const unsigned int SHT_DYNAMIC = 6;
-    static const unsigned int SHT_NOTE = 7;
-    static const unsigned int SHT_NOBITS = 8;
-    static const unsigned int SHT_REL = 9;
-    static const unsigned int SHT_SHLIB = 10;
-    static const unsigned int SHT_DYNSYM = 11;
-    static const unsigned int SHT_LOPROC = 12;
-    static const unsigned int SHT_HIPROC = 13;
-    static const unsigned int SHT_LOUSER = 14;
-    static const unsigned int SHT_HIUSER = 15;
-
-    static const unsigned int ET_NONE = 0;
-    static const unsigned int ET_REL = 1;
-    static const unsigned int ET_EXEC = 2;
-    static const unsigned int ET_DYN = 3;
-    static const unsigned int ET_CORE = 4;
-
     static const unsigned int EI_NIDENT = 16;
     static const unsigned int EI_CLASS = 4;
     static const unsigned int EI_DATA = 5;
-
-    static const unsigned int ELFCLASSNONE = 0;
-    static const unsigned int ELFCLASS32 = 1;
-    static const unsigned int ELFCLASS64 = 2;
-
-    static const unsigned int ELFDATANONE = 0;
-    static const unsigned int ELFDATA2LSB = 1;
-    static const unsigned int ELFDATA2MSB = 2;
-
     static const unsigned int SHN_UNDEF = 0;
+
+    enum class p_flags {
+      PF_X = 0x1,
+      PF_W = 0x2,
+      PF_R = 0x4
+    };
+
+    enum class p_type {
+      PT_NULL = 0,
+      PT_LOAD = 1,
+      PT_DYNAMIC = 2,
+      PT_INTERP = 3,
+      PT_NOTE = 4,
+      PT_SHLIB = 5,
+      PT_PHDR = 6
+    };
+
+    enum class sh_type {
+      SHT_NULL = 0,
+      SHT_PROGBITS = 1,
+      SHT_SYMTAB = 2,
+      SHT_STRTAB = 3,
+      SHT_RELA = 4,
+      SHT_HASH = 5,
+      SHT_DYNAMIC = 6,
+      SHT_NOTE = 7,
+      SHT_NOBITS = 8,
+      SHT_REL = 9,
+      SHT_SHLIB = 10,
+      SHT_DYNSYM = 11
+    };
+
+    enum class e_type {
+      ET_NONE = 0,
+      ET_REL = 1,
+      ET_EXEC = 2,
+      ET_DYN = 3,
+      ET_CORE = 4
+    };
+
+    enum class ei_class {
+      ELFCLASSNONE = 0,
+      ELFCLASS32 = 1,
+      ELFCLASS64 = 2
+    };
+
+    enum class ei_data {
+      ELFDATANONE = 0,
+      ELFDATA2LSB = 1,
+      ELFDATA2MSB = 2
+    };
 
     typedef uint16_t Elf32_Half;
     typedef uint32_t Elf32_Word;

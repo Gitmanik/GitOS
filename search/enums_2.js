@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['text_5fmode_5fcolors_1010',['TEXT_MODE_COLORS',['../text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3',1,'text_mode.h']]]
+  ['p_5fflags_977',['p_flags',['../class_e_l_f_file.html#a79dbad6ba3e0cb9c2e8637f3960f0b34',1,'ELFFile']]],
+  ['p_5ftype_978',['p_type',['../class_e_l_f_file.html#aaedc32202a2913a4b29c67b59f2b64d3',1,'ELFFile']]]
 ];

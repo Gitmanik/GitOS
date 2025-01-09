@@ -96,6 +96,61 @@ $(document).ready(function(){initNavTree('class_e_l_f_file.html',''); initResiza
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
+<tr class="memitem:a79dbad6ba3e0cb9c2e8637f3960f0b34"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a79dbad6ba3e0cb9c2e8637f3960f0b34">p_flags</a> { <a class="el" href="class_e_l_f_file.html#a79dbad6ba3e0cb9c2e8637f3960f0b34a0a8777c2413205648c44b618d44a7537">PF_X</a> = 0x1
+, <a class="el" href="class_e_l_f_file.html#a79dbad6ba3e0cb9c2e8637f3960f0b34a0eadbcfcb764ae49720af418e5a41b75">PF_W</a> = 0x2
+, <a class="el" href="class_e_l_f_file.html#a79dbad6ba3e0cb9c2e8637f3960f0b34aaf960bd4d04582f1944777c6af78edf7">PF_R</a> = 0x4
+ }</td></tr>
+<tr class="separator:a79dbad6ba3e0cb9c2e8637f3960f0b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaedc32202a2913a4b29c67b59f2b64d3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#aaedc32202a2913a4b29c67b59f2b64d3">p_type</a> { <br />
+&#160;&#160;<a class="el" href="class_e_l_f_file.html#aaedc32202a2913a4b29c67b59f2b64d3aedbadb89d72876dbd4b63fe42c18b9a3">PT_NULL</a> = 0
+, <a class="el" href="class_e_l_f_file.html#aaedc32202a2913a4b29c67b59f2b64d3a6afc882cc69d26ba63d1409ecd70d0af">PT_LOAD</a> = 1
+, <a class="el" href="class_e_l_f_file.html#aaedc32202a2913a4b29c67b59f2b64d3aa61dc5606dd5cc570d3009b86ea93553">PT_DYNAMIC</a> = 2
+, <a class="el" href="class_e_l_f_file.html#aaedc32202a2913a4b29c67b59f2b64d3a06976d2867a3666991e62e3095882aad">PT_INTERP</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="class_e_l_f_file.html#aaedc32202a2913a4b29c67b59f2b64d3a43bd98aa65c8476a7f7fff18caecb8d2">PT_NOTE</a> = 4
+, <a class="el" href="class_e_l_f_file.html#aaedc32202a2913a4b29c67b59f2b64d3a05ebfe6ae0b3c13d0997009fe3797678">PT_SHLIB</a> = 5
+, <a class="el" href="class_e_l_f_file.html#aaedc32202a2913a4b29c67b59f2b64d3a065b88c806e8dfb11b29e31f5fdc74a8">PT_PHDR</a> = 6
+<br />
+ }</td></tr>
+<tr class="separator:aaedc32202a2913a4b29c67b59f2b64d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50a2d4dba0b4f0a84bcae40def21ddf9"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9">sh_type</a> { <br />
+&#160;&#160;<a class="el" href="class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9aac5c5edacfd31ea95f729775f4a4b4e0">SHT_NULL</a> = 0
+, <a class="el" href="class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9aa03a61c5898b43ef2bbf5fa0f1f38118">SHT_PROGBITS</a> = 1
+, <a class="el" href="class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9ac908bed6031148c2bdfce74f52c8fb26">SHT_SYMTAB</a> = 2
+, <a class="el" href="class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9ad77911cfee823bc985d7a997d64ddde5">SHT_STRTAB</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9a6ec4ae80995ee4ae6591768c807829ed">SHT_RELA</a> = 4
+, <a class="el" href="class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9ad608c6153784d7154263f57b7836a0d4">SHT_HASH</a> = 5
+, <a class="el" href="class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9a025bf134634a1fea60bbe05698473783">SHT_DYNAMIC</a> = 6
+, <a class="el" href="class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9a8b3658a553be885a6e3cdc393bac32c5">SHT_NOTE</a> = 7
+, <br />
+&#160;&#160;<a class="el" href="class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9a16066d866e6065a15a821a3e3213d1ce">SHT_NOBITS</a> = 8
+, <a class="el" href="class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9af146868219bbb5639aeb193a4393a390">SHT_REL</a> = 9
+, <a class="el" href="class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9af3b1da621c86d631babc3cff483cb2ac">SHT_SHLIB</a> = 10
+, <a class="el" href="class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9aa678af70941785345f662e320095b28d">SHT_DYNSYM</a> = 11
+<br />
+ }</td></tr>
+<tr class="separator:a50a2d4dba0b4f0a84bcae40def21ddf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07fb55fb8ca681eee25e1f632b6701ad"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a07fb55fb8ca681eee25e1f632b6701ad">e_type</a> { <br />
+&#160;&#160;<a class="el" href="class_e_l_f_file.html#a07fb55fb8ca681eee25e1f632b6701ada22a7b5c7cc34844a7244f8fbeb0adc75">ET_NONE</a> = 0
+, <a class="el" href="class_e_l_f_file.html#a07fb55fb8ca681eee25e1f632b6701adaea4c437885ba0bca21cd51ba9e3909fa">ET_REL</a> = 1
+, <a class="el" href="class_e_l_f_file.html#a07fb55fb8ca681eee25e1f632b6701adad717783da744e39b1b5fc21c2ad593b6">ET_EXEC</a> = 2
+, <a class="el" href="class_e_l_f_file.html#a07fb55fb8ca681eee25e1f632b6701adafa99df568249e62f8a05202c91da9c1b">ET_DYN</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="class_e_l_f_file.html#a07fb55fb8ca681eee25e1f632b6701ada9f8b7b6dfc5a3cd4a12632328797769a">ET_CORE</a> = 4
+<br />
+ }</td></tr>
+<tr class="separator:a07fb55fb8ca681eee25e1f632b6701ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada3ab0bf24c3ee3e502ec40e624cc260"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#ada3ab0bf24c3ee3e502ec40e624cc260">ei_class</a> { <a class="el" href="class_e_l_f_file.html#ada3ab0bf24c3ee3e502ec40e624cc260a0210de3dbb213214095a081ce5c6b7a7">ELFCLASSNONE</a> = 0
+, <a class="el" href="class_e_l_f_file.html#ada3ab0bf24c3ee3e502ec40e624cc260abdec6e4a237bcc13b2a4f9c01b12a330">ELFCLASS32</a> = 1
+, <a class="el" href="class_e_l_f_file.html#ada3ab0bf24c3ee3e502ec40e624cc260a8505fa9e7adfc7679e72ad8fdb53ce39">ELFCLASS64</a> = 2
+ }</td></tr>
+<tr class="separator:ada3ab0bf24c3ee3e502ec40e624cc260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0546be993182864bd1491795b7faad99"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a0546be993182864bd1491795b7faad99">ei_data</a> { <a class="el" href="class_e_l_f_file.html#a0546be993182864bd1491795b7faad99aaba4e752dff9afee025c5e12bc9c7826">ELFDATANONE</a> = 0
+, <a class="el" href="class_e_l_f_file.html#a0546be993182864bd1491795b7faad99a42c72f09ed51ca826403ca9a94f7f1eb">ELFDATA2LSB</a> = 1
+, <a class="el" href="class_e_l_f_file.html#a0546be993182864bd1491795b7faad99a14d4d4f755697c699a4b5d8d07d936d1">ELFDATA2MSB</a> = 2
+ }</td></tr>
+<tr class="separator:a0546be993182864bd1491795b7faad99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ff0787d7d1bae0f251192806a2974ca"><td class="memItemLeft" align="right" valign="top">typedef uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a2ff0787d7d1bae0f251192806a2974ca">Elf32_Half</a></td></tr>
 <tr class="separator:a2ff0787d7d1bae0f251192806a2974ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5924ece606c732e86f8263a19408e45"><td class="memItemLeft" align="right" valign="top">typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#af5924ece606c732e86f8263a19408e45">Elf32_Word</a></td></tr>
@@ -167,86 +222,12 @@ Data Fields</h2></td></tr>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a0b4f6e12cbdd5a96fdcbaa665700513b"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a0b4f6e12cbdd5a96fdcbaa665700513b">ELF_SIGNATURE</a> [] = {0x7f, 'E', 'L', 'F'}</td></tr>
 <tr class="separator:a0b4f6e12cbdd5a96fdcbaa665700513b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6a4f81ac1d7878ac9533e17b9479513"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#ab6a4f81ac1d7878ac9533e17b9479513">PF_X</a> = 1</td></tr>
-<tr class="separator:ab6a4f81ac1d7878ac9533e17b9479513"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e3b851b490bf8af82058e99f30f8cf2"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a5e3b851b490bf8af82058e99f30f8cf2">PF_R</a> = 4</td></tr>
-<tr class="separator:a5e3b851b490bf8af82058e99f30f8cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ba0066ccc989ed96628e5d417b965d4"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a8ba0066ccc989ed96628e5d417b965d4">PF_W</a> = 2</td></tr>
-<tr class="separator:a8ba0066ccc989ed96628e5d417b965d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9746c5791c9d27aa678419233ecd8d4"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#ad9746c5791c9d27aa678419233ecd8d4">PT_NULL</a> = 0</td></tr>
-<tr class="separator:ad9746c5791c9d27aa678419233ecd8d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e4333598efa19fc2b4b0483f71414aa"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a4e4333598efa19fc2b4b0483f71414aa">PT_LOAD</a> = 1</td></tr>
-<tr class="separator:a4e4333598efa19fc2b4b0483f71414aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae554248602b5b7fe7a90acddae41d066"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#ae554248602b5b7fe7a90acddae41d066">PT_DYNAMIC</a> = 2</td></tr>
-<tr class="separator:ae554248602b5b7fe7a90acddae41d066"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c8f8d1c8d25ba0f00e15e6f88b1e0a3"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a9c8f8d1c8d25ba0f00e15e6f88b1e0a3">PT_INTERP</a> = 3</td></tr>
-<tr class="separator:a9c8f8d1c8d25ba0f00e15e6f88b1e0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4cea186641e43c446f6303697cb0c69"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#aa4cea186641e43c446f6303697cb0c69">PT_NOTE</a> = 4</td></tr>
-<tr class="separator:aa4cea186641e43c446f6303697cb0c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae939f6f45b3c16dfacc26563c7ad67cc"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#ae939f6f45b3c16dfacc26563c7ad67cc">PT_SHLIB</a> = 5</td></tr>
-<tr class="separator:ae939f6f45b3c16dfacc26563c7ad67cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addabdff9b77e25f430aadeee83e9d483"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#addabdff9b77e25f430aadeee83e9d483">PT_PHDR</a> = 6</td></tr>
-<tr class="separator:addabdff9b77e25f430aadeee83e9d483"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0881a2865264dae38e6ff4d4361e9952"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a0881a2865264dae38e6ff4d4361e9952">SHT_NULL</a> = 0</td></tr>
-<tr class="separator:a0881a2865264dae38e6ff4d4361e9952"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21962832e9468c83f5cd97dbef621818"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a21962832e9468c83f5cd97dbef621818">SHT_PROGBITS</a> = 1</td></tr>
-<tr class="separator:a21962832e9468c83f5cd97dbef621818"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9732b2a818dd218d854599bc274b0b61"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a9732b2a818dd218d854599bc274b0b61">SHT_SYMTAB</a> = 2</td></tr>
-<tr class="separator:a9732b2a818dd218d854599bc274b0b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4e20dea551fde649235cfa3d8c272b6"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#ad4e20dea551fde649235cfa3d8c272b6">SHT_STRTAB</a> = 3</td></tr>
-<tr class="separator:ad4e20dea551fde649235cfa3d8c272b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0aa36cf56ea8fa5d194923844bee0e0e"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a0aa36cf56ea8fa5d194923844bee0e0e">SHT_RELA</a> = 4</td></tr>
-<tr class="separator:a0aa36cf56ea8fa5d194923844bee0e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29271b3bb27a9fcdbd98bc06bf54c9eb"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a29271b3bb27a9fcdbd98bc06bf54c9eb">SHT_HASH</a> = 5</td></tr>
-<tr class="separator:a29271b3bb27a9fcdbd98bc06bf54c9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6356332c50c7e2a81c375346117b8af7"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a6356332c50c7e2a81c375346117b8af7">SHT_DYNAMIC</a> = 6</td></tr>
-<tr class="separator:a6356332c50c7e2a81c375346117b8af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3fc0110d7312d3acf4f77bd7f5b58cd"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#ae3fc0110d7312d3acf4f77bd7f5b58cd">SHT_NOTE</a> = 7</td></tr>
-<tr class="separator:ae3fc0110d7312d3acf4f77bd7f5b58cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b7dd5fc6e4c112562038f6ad5f3cf81"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a0b7dd5fc6e4c112562038f6ad5f3cf81">SHT_NOBITS</a> = 8</td></tr>
-<tr class="separator:a0b7dd5fc6e4c112562038f6ad5f3cf81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a05ec5bdaf7ec11345b432b98a23c12"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a3a05ec5bdaf7ec11345b432b98a23c12">SHT_REL</a> = 9</td></tr>
-<tr class="separator:a3a05ec5bdaf7ec11345b432b98a23c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ad8acce18f5400152ec19ba8eaedf04"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a6ad8acce18f5400152ec19ba8eaedf04">SHT_SHLIB</a> = 10</td></tr>
-<tr class="separator:a6ad8acce18f5400152ec19ba8eaedf04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44fa96d5313bcae0b1f5762bf67b6736"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a44fa96d5313bcae0b1f5762bf67b6736">SHT_DYNSYM</a> = 11</td></tr>
-<tr class="separator:a44fa96d5313bcae0b1f5762bf67b6736"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20dc651df4d19835aeec7c1fd39ed9de"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a20dc651df4d19835aeec7c1fd39ed9de">SHT_LOPROC</a> = 12</td></tr>
-<tr class="separator:a20dc651df4d19835aeec7c1fd39ed9de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22a5465fe1ded677ee54ae3ed53d1eef"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a22a5465fe1ded677ee54ae3ed53d1eef">SHT_HIPROC</a> = 13</td></tr>
-<tr class="separator:a22a5465fe1ded677ee54ae3ed53d1eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a241587dcf45bd7f03bbfa2ff09e3d34d"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a241587dcf45bd7f03bbfa2ff09e3d34d">SHT_LOUSER</a> = 14</td></tr>
-<tr class="separator:a241587dcf45bd7f03bbfa2ff09e3d34d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f892e8788a831875312184a7a7739c8"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a8f892e8788a831875312184a7a7739c8">SHT_HIUSER</a> = 15</td></tr>
-<tr class="separator:a8f892e8788a831875312184a7a7739c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97ef798f76a44ed6971238b7ab772ca7"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a97ef798f76a44ed6971238b7ab772ca7">ET_NONE</a> = 0</td></tr>
-<tr class="separator:a97ef798f76a44ed6971238b7ab772ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28eaa3d390f23b8c92a85ec5de71d849"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a28eaa3d390f23b8c92a85ec5de71d849">ET_REL</a> = 1</td></tr>
-<tr class="separator:a28eaa3d390f23b8c92a85ec5de71d849"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2ef8826d070193d6e8a974f82b33b34"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#ae2ef8826d070193d6e8a974f82b33b34">ET_EXEC</a> = 2</td></tr>
-<tr class="separator:ae2ef8826d070193d6e8a974f82b33b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc19e3d44de2a3971bb2477c050ab192"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#acc19e3d44de2a3971bb2477c050ab192">ET_DYN</a> = 3</td></tr>
-<tr class="separator:acc19e3d44de2a3971bb2477c050ab192"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fb46607a662a576670b52652caa8ed3"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a6fb46607a662a576670b52652caa8ed3">ET_CORE</a> = 4</td></tr>
-<tr class="separator:a6fb46607a662a576670b52652caa8ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ab5a9a371ecf9ba0e05d21d1809c869"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a7ab5a9a371ecf9ba0e05d21d1809c869">EI_NIDENT</a> = 16</td></tr>
 <tr class="separator:a7ab5a9a371ecf9ba0e05d21d1809c869"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17485b837ae67b7b0e50029b0c6a8157"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a17485b837ae67b7b0e50029b0c6a8157">EI_CLASS</a> = 4</td></tr>
 <tr class="separator:a17485b837ae67b7b0e50029b0c6a8157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e2afb21225ba8dec72d120b0330bf4b"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a7e2afb21225ba8dec72d120b0330bf4b">EI_DATA</a> = 5</td></tr>
 <tr class="separator:a7e2afb21225ba8dec72d120b0330bf4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac50d7d64d64094c164e4f6c94f2cff01"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#ac50d7d64d64094c164e4f6c94f2cff01">ELFCLASSNONE</a> = 0</td></tr>
-<tr class="separator:ac50d7d64d64094c164e4f6c94f2cff01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab495515113e084f83325e6458068c136"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#ab495515113e084f83325e6458068c136">ELFCLASS32</a> = 1</td></tr>
-<tr class="separator:ab495515113e084f83325e6458068c136"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a915b8da643266f1105ba87fa1fc9fc6b"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a915b8da643266f1105ba87fa1fc9fc6b">ELFCLASS64</a> = 2</td></tr>
-<tr class="separator:a915b8da643266f1105ba87fa1fc9fc6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d9cf9465c11b716a8618f595d2067cf"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a2d9cf9465c11b716a8618f595d2067cf">ELFDATANONE</a> = 0</td></tr>
-<tr class="separator:a2d9cf9465c11b716a8618f595d2067cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3797286f8102dde2127ad18a2a9fa159"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a3797286f8102dde2127ad18a2a9fa159">ELFDATA2LSB</a> = 1</td></tr>
-<tr class="separator:a3797286f8102dde2127ad18a2a9fa159"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63cfc51a1bc19977c999a5e34e3e89c6"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a63cfc51a1bc19977c999a5e34e3e89c6">ELFDATA2MSB</a> = 2</td></tr>
-<tr class="separator:a63cfc51a1bc19977c999a5e34e3e89c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53fdffdc01ba28cdc61cbe70b1834150"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_l_f_file.html#a53fdffdc01ba28cdc61cbe70b1834150">SHN_UNDEF</a> = 0</td></tr>
 <tr class="separator:a53fdffdc01ba28cdc61cbe70b1834150"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -318,6 +299,184 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a07fb55fb8ca681eee25e1f632b6701ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07fb55fb8ca681eee25e1f632b6701ad">&#9670;&nbsp;</a></span>e_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_e_l_f_file.html#a07fb55fb8ca681eee25e1f632b6701ad">e_type</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a07fb55fb8ca681eee25e1f632b6701ada22a7b5c7cc34844a7244f8fbeb0adc75"></a>ET_NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a07fb55fb8ca681eee25e1f632b6701adaea4c437885ba0bca21cd51ba9e3909fa"></a>ET_REL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a07fb55fb8ca681eee25e1f632b6701adad717783da744e39b1b5fc21c2ad593b6"></a>ET_EXEC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a07fb55fb8ca681eee25e1f632b6701adafa99df568249e62f8a05202c91da9c1b"></a>ET_DYN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a07fb55fb8ca681eee25e1f632b6701ada9f8b7b6dfc5a3cd4a12632328797769a"></a>ET_CORE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="ada3ab0bf24c3ee3e502ec40e624cc260"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada3ab0bf24c3ee3e502ec40e624cc260">&#9670;&nbsp;</a></span>ei_class</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_e_l_f_file.html#ada3ab0bf24c3ee3e502ec40e624cc260">ei_class</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ada3ab0bf24c3ee3e502ec40e624cc260a0210de3dbb213214095a081ce5c6b7a7"></a>ELFCLASSNONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ada3ab0bf24c3ee3e502ec40e624cc260abdec6e4a237bcc13b2a4f9c01b12a330"></a>ELFCLASS32&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ada3ab0bf24c3ee3e502ec40e624cc260a8505fa9e7adfc7679e72ad8fdb53ce39"></a>ELFCLASS64&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a0546be993182864bd1491795b7faad99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0546be993182864bd1491795b7faad99">&#9670;&nbsp;</a></span>ei_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_e_l_f_file.html#a0546be993182864bd1491795b7faad99">ei_data</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0546be993182864bd1491795b7faad99aaba4e752dff9afee025c5e12bc9c7826"></a>ELFDATANONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0546be993182864bd1491795b7faad99a42c72f09ed51ca826403ca9a94f7f1eb"></a>ELFDATA2LSB&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0546be993182864bd1491795b7faad99a14d4d4f755697c699a4b5d8d07d936d1"></a>ELFDATA2MSB&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a79dbad6ba3e0cb9c2e8637f3960f0b34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79dbad6ba3e0cb9c2e8637f3960f0b34">&#9670;&nbsp;</a></span>p_flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_e_l_f_file.html#a79dbad6ba3e0cb9c2e8637f3960f0b34">p_flags</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a79dbad6ba3e0cb9c2e8637f3960f0b34a0a8777c2413205648c44b618d44a7537"></a>PF_X&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a79dbad6ba3e0cb9c2e8637f3960f0b34a0eadbcfcb764ae49720af418e5a41b75"></a>PF_W&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a79dbad6ba3e0cb9c2e8637f3960f0b34aaf960bd4d04582f1944777c6af78edf7"></a>PF_R&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="aaedc32202a2913a4b29c67b59f2b64d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaedc32202a2913a4b29c67b59f2b64d3">&#9670;&nbsp;</a></span>p_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_e_l_f_file.html#aaedc32202a2913a4b29c67b59f2b64d3">p_type</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aaedc32202a2913a4b29c67b59f2b64d3aedbadb89d72876dbd4b63fe42c18b9a3"></a>PT_NULL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaedc32202a2913a4b29c67b59f2b64d3a6afc882cc69d26ba63d1409ecd70d0af"></a>PT_LOAD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaedc32202a2913a4b29c67b59f2b64d3aa61dc5606dd5cc570d3009b86ea93553"></a>PT_DYNAMIC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaedc32202a2913a4b29c67b59f2b64d3a06976d2867a3666991e62e3095882aad"></a>PT_INTERP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaedc32202a2913a4b29c67b59f2b64d3a43bd98aa65c8476a7f7fff18caecb8d2"></a>PT_NOTE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaedc32202a2913a4b29c67b59f2b64d3a05ebfe6ae0b3c13d0997009fe3797678"></a>PT_SHLIB&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaedc32202a2913a4b29c67b59f2b64d3a065b88c806e8dfb11b29e31f5fdc74a8"></a>PT_PHDR&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a50a2d4dba0b4f0a84bcae40def21ddf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50a2d4dba0b4f0a84bcae40def21ddf9">&#9670;&nbsp;</a></span>sh_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9">sh_type</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a50a2d4dba0b4f0a84bcae40def21ddf9aac5c5edacfd31ea95f729775f4a4b4e0"></a>SHT_NULL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a50a2d4dba0b4f0a84bcae40def21ddf9aa03a61c5898b43ef2bbf5fa0f1f38118"></a>SHT_PROGBITS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a50a2d4dba0b4f0a84bcae40def21ddf9ac908bed6031148c2bdfce74f52c8fb26"></a>SHT_SYMTAB&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a50a2d4dba0b4f0a84bcae40def21ddf9ad77911cfee823bc985d7a997d64ddde5"></a>SHT_STRTAB&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a50a2d4dba0b4f0a84bcae40def21ddf9a6ec4ae80995ee4ae6591768c807829ed"></a>SHT_RELA&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a50a2d4dba0b4f0a84bcae40def21ddf9ad608c6153784d7154263f57b7836a0d4"></a>SHT_HASH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a50a2d4dba0b4f0a84bcae40def21ddf9a025bf134634a1fea60bbe05698473783"></a>SHT_DYNAMIC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a50a2d4dba0b4f0a84bcae40def21ddf9a8b3658a553be885a6e3cdc393bac32c5"></a>SHT_NOTE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a50a2d4dba0b4f0a84bcae40def21ddf9a16066d866e6065a15a821a3e3213d1ce"></a>SHT_NOBITS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a50a2d4dba0b4f0a84bcae40def21ddf9af146868219bbb5639aeb193a4393a390"></a>SHT_REL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a50a2d4dba0b4f0a84bcae40def21ddf9af3b1da621c86d631babc3cff483cb2ac"></a>SHT_SHLIB&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a50a2d4dba0b4f0a84bcae40def21ddf9aa678af70941785345f662e320095b28d"></a>SHT_DYNSYM&#160;</td><td class="fielddoc"></td></tr>
+</table>
 
 </div>
 </div>
@@ -720,7 +879,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="class_e_l_f_file.html#a17485b837ae67b7b0e50029b0c6a8157">EI_CLASS</a>, <a class="el" href="class_e_l_f_file.html#a7e2afb21225ba8dec72d120b0330bf4b">EI_DATA</a>, <a class="el" href="class_e_l_f_file.html#a162eb52fd67fc0ccb1b48407e030734d">Elf32_Header</a>, <a class="el" href="class_e_l_f_file.html#a0b4f6e12cbdd5a96fdcbaa665700513b">ELF_SIGNATURE</a>, <a class="el" href="class_e_l_f_file.html#ab495515113e084f83325e6458068c136">ELFCLASS32</a>, <a class="el" href="class_e_l_f_file.html#a3797286f8102dde2127ad18a2a9fa159">ELFDATA2LSB</a>, <a class="el" href="class_e_l_f_file.html#ae2ef8826d070193d6e8a974f82b33b34">ET_EXEC</a>, <a class="el" href="memory_8c.html#a7710a54c06a0782c5762fcc849b71603">memcmp()</a>, and <a class="el" href="task_8h.html#a0657d569354e9817b4763d671a36a8ab">PROGRAM_VIRTUAL_ADDRESS</a>.</p>
+<p class="reference">References <a class="el" href="class_e_l_f_file.html#a17485b837ae67b7b0e50029b0c6a8157">EI_CLASS</a>, <a class="el" href="class_e_l_f_file.html#a7e2afb21225ba8dec72d120b0330bf4b">EI_DATA</a>, <a class="el" href="class_e_l_f_file.html#a162eb52fd67fc0ccb1b48407e030734d">Elf32_Header</a>, <a class="el" href="class_e_l_f_file.html#a0b4f6e12cbdd5a96fdcbaa665700513b">ELF_SIGNATURE</a>, <a class="el" href="class_e_l_f_file.html#ada3ab0bf24c3ee3e502ec40e624cc260abdec6e4a237bcc13b2a4f9c01b12a330">ELFCLASS32</a>, <a class="el" href="class_e_l_f_file.html#a0546be993182864bd1491795b7faad99a42c72f09ed51ca826403ca9a94f7f1eb">ELFDATA2LSB</a>, <a class="el" href="class_e_l_f_file.html#a07fb55fb8ca681eee25e1f632b6701adad717783da744e39b1b5fc21c2ad593b6">ET_EXEC</a>, <a class="el" href="memory_8c.html#a7710a54c06a0782c5762fcc849b71603">memcmp()</a>, and <a class="el" href="task_8h.html#a0657d569354e9817b4763d671a36a8ab">PROGRAM_VIRTUAL_ADDRESS</a>.</p>
 
 </div>
 </div>
@@ -739,7 +898,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="status_8h.html#ae308551ef6094853f7fc617c330668d2">EINFORMAT</a>, <a class="el" href="class_e_l_f_file.html#a1dd7ec86560828e8f94950b0c223921e">get_header()</a>, <a class="el" href="class_e_l_f_file.html#a77b3886fcbcf144562fe55a6b5ac0fd7">get_program_header()</a>, <a class="el" href="class_e_l_f_file.html#a8ca0e76fa665125f1e50bd1ed8dbd213">is_valid()</a>, and <a class="el" href="class_e_l_f_file.html#a4e4333598efa19fc2b4b0483f71414aa">PT_LOAD</a>.</p>
+<p class="reference">References <a class="el" href="status_8h.html#ae308551ef6094853f7fc617c330668d2">EINFORMAT</a>, <a class="el" href="class_e_l_f_file.html#a1dd7ec86560828e8f94950b0c223921e">get_header()</a>, <a class="el" href="class_e_l_f_file.html#a77b3886fcbcf144562fe55a6b5ac0fd7">get_program_header()</a>, <a class="el" href="class_e_l_f_file.html#a8ca0e76fa665125f1e50bd1ed8dbd213">is_valid()</a>, and <a class="el" href="class_e_l_f_file.html#aaedc32202a2913a4b29c67b59f2b64d3a6afc882cc69d26ba63d1409ecd70d0af">PT_LOAD</a>.</p>
 
 </div>
 </div>
@@ -902,468 +1061,6 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab495515113e084f83325e6458068c136"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab495515113e084f83325e6458068c136">&#9670;&nbsp;</a></span>ELFCLASS32</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int ELFCLASS32 = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a915b8da643266f1105ba87fa1fc9fc6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a915b8da643266f1105ba87fa1fc9fc6b">&#9670;&nbsp;</a></span>ELFCLASS64</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int ELFCLASS64 = 2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac50d7d64d64094c164e4f6c94f2cff01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac50d7d64d64094c164e4f6c94f2cff01">&#9670;&nbsp;</a></span>ELFCLASSNONE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int ELFCLASSNONE = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3797286f8102dde2127ad18a2a9fa159"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3797286f8102dde2127ad18a2a9fa159">&#9670;&nbsp;</a></span>ELFDATA2LSB</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int ELFDATA2LSB = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a63cfc51a1bc19977c999a5e34e3e89c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63cfc51a1bc19977c999a5e34e3e89c6">&#9670;&nbsp;</a></span>ELFDATA2MSB</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int ELFDATA2MSB = 2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2d9cf9465c11b716a8618f595d2067cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d9cf9465c11b716a8618f595d2067cf">&#9670;&nbsp;</a></span>ELFDATANONE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int ELFDATANONE = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6fb46607a662a576670b52652caa8ed3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fb46607a662a576670b52652caa8ed3">&#9670;&nbsp;</a></span>ET_CORE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int ET_CORE = 4</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acc19e3d44de2a3971bb2477c050ab192"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc19e3d44de2a3971bb2477c050ab192">&#9670;&nbsp;</a></span>ET_DYN</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int ET_DYN = 3</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae2ef8826d070193d6e8a974f82b33b34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2ef8826d070193d6e8a974f82b33b34">&#9670;&nbsp;</a></span>ET_EXEC</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int ET_EXEC = 2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a97ef798f76a44ed6971238b7ab772ca7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97ef798f76a44ed6971238b7ab772ca7">&#9670;&nbsp;</a></span>ET_NONE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int ET_NONE = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a28eaa3d390f23b8c92a85ec5de71d849"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28eaa3d390f23b8c92a85ec5de71d849">&#9670;&nbsp;</a></span>ET_REL</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int ET_REL = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5e3b851b490bf8af82058e99f30f8cf2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e3b851b490bf8af82058e99f30f8cf2">&#9670;&nbsp;</a></span>PF_R</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int PF_R = 4</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8ba0066ccc989ed96628e5d417b965d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ba0066ccc989ed96628e5d417b965d4">&#9670;&nbsp;</a></span>PF_W</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int PF_W = 2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab6a4f81ac1d7878ac9533e17b9479513"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6a4f81ac1d7878ac9533e17b9479513">&#9670;&nbsp;</a></span>PF_X</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int PF_X = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae554248602b5b7fe7a90acddae41d066"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae554248602b5b7fe7a90acddae41d066">&#9670;&nbsp;</a></span>PT_DYNAMIC</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int PT_DYNAMIC = 2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9c8f8d1c8d25ba0f00e15e6f88b1e0a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c8f8d1c8d25ba0f00e15e6f88b1e0a3">&#9670;&nbsp;</a></span>PT_INTERP</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int PT_INTERP = 3</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4e4333598efa19fc2b4b0483f71414aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e4333598efa19fc2b4b0483f71414aa">&#9670;&nbsp;</a></span>PT_LOAD</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int PT_LOAD = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa4cea186641e43c446f6303697cb0c69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4cea186641e43c446f6303697cb0c69">&#9670;&nbsp;</a></span>PT_NOTE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int PT_NOTE = 4</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad9746c5791c9d27aa678419233ecd8d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9746c5791c9d27aa678419233ecd8d4">&#9670;&nbsp;</a></span>PT_NULL</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int PT_NULL = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="addabdff9b77e25f430aadeee83e9d483"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addabdff9b77e25f430aadeee83e9d483">&#9670;&nbsp;</a></span>PT_PHDR</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int PT_PHDR = 6</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae939f6f45b3c16dfacc26563c7ad67cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae939f6f45b3c16dfacc26563c7ad67cc">&#9670;&nbsp;</a></span>PT_SHLIB</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int PT_SHLIB = 5</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a53fdffdc01ba28cdc61cbe70b1834150"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a53fdffdc01ba28cdc61cbe70b1834150">&#9670;&nbsp;</a></span>SHN_UNDEF</h2>
 
@@ -1375,358 +1072,6 @@ Static Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">const unsigned int SHN_UNDEF = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6356332c50c7e2a81c375346117b8af7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6356332c50c7e2a81c375346117b8af7">&#9670;&nbsp;</a></span>SHT_DYNAMIC</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int SHT_DYNAMIC = 6</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a44fa96d5313bcae0b1f5762bf67b6736"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44fa96d5313bcae0b1f5762bf67b6736">&#9670;&nbsp;</a></span>SHT_DYNSYM</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int SHT_DYNSYM = 11</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a29271b3bb27a9fcdbd98bc06bf54c9eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29271b3bb27a9fcdbd98bc06bf54c9eb">&#9670;&nbsp;</a></span>SHT_HASH</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int SHT_HASH = 5</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a22a5465fe1ded677ee54ae3ed53d1eef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22a5465fe1ded677ee54ae3ed53d1eef">&#9670;&nbsp;</a></span>SHT_HIPROC</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int SHT_HIPROC = 13</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8f892e8788a831875312184a7a7739c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f892e8788a831875312184a7a7739c8">&#9670;&nbsp;</a></span>SHT_HIUSER</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int SHT_HIUSER = 15</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a20dc651df4d19835aeec7c1fd39ed9de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20dc651df4d19835aeec7c1fd39ed9de">&#9670;&nbsp;</a></span>SHT_LOPROC</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int SHT_LOPROC = 12</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a241587dcf45bd7f03bbfa2ff09e3d34d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a241587dcf45bd7f03bbfa2ff09e3d34d">&#9670;&nbsp;</a></span>SHT_LOUSER</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int SHT_LOUSER = 14</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0b7dd5fc6e4c112562038f6ad5f3cf81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b7dd5fc6e4c112562038f6ad5f3cf81">&#9670;&nbsp;</a></span>SHT_NOBITS</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int SHT_NOBITS = 8</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae3fc0110d7312d3acf4f77bd7f5b58cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3fc0110d7312d3acf4f77bd7f5b58cd">&#9670;&nbsp;</a></span>SHT_NOTE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int SHT_NOTE = 7</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0881a2865264dae38e6ff4d4361e9952"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0881a2865264dae38e6ff4d4361e9952">&#9670;&nbsp;</a></span>SHT_NULL</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int SHT_NULL = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a21962832e9468c83f5cd97dbef621818"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21962832e9468c83f5cd97dbef621818">&#9670;&nbsp;</a></span>SHT_PROGBITS</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int SHT_PROGBITS = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3a05ec5bdaf7ec11345b432b98a23c12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a05ec5bdaf7ec11345b432b98a23c12">&#9670;&nbsp;</a></span>SHT_REL</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int SHT_REL = 9</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0aa36cf56ea8fa5d194923844bee0e0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0aa36cf56ea8fa5d194923844bee0e0e">&#9670;&nbsp;</a></span>SHT_RELA</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int SHT_RELA = 4</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6ad8acce18f5400152ec19ba8eaedf04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ad8acce18f5400152ec19ba8eaedf04">&#9670;&nbsp;</a></span>SHT_SHLIB</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int SHT_SHLIB = 10</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad4e20dea551fde649235cfa3d8c272b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4e20dea551fde649235cfa3d8c272b6">&#9670;&nbsp;</a></span>SHT_STRTAB</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int SHT_STRTAB = 3</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9732b2a818dd218d854599bc274b0b61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9732b2a818dd218d854599bc274b0b61">&#9670;&nbsp;</a></span>SHT_SYMTAB</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned int SHT_SYMTAB = 2</td>
         </tr>
       </table>
   </td>

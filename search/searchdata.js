@@ -6,8 +6,8 @@ var indexSectionsWithContent =
   3: "$_defghikmoprstu~",
   4: "_abcdefghijklmnoprstvwz",
   5: "defhis",
-  6: "fst",
-  7: "bcdfglprswy",
+  6: "efpst",
+  7: "bcdefglprswy",
   8: "abcdefhikmptu"
 };
 

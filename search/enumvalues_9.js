@@ -1,4 +1,23 @@
 var searchData=
 [
-  ['white_1038',['WHITE',['../text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a283fc479650da98250635b9c3c0e7e50',1,'text_mode.h']]]
+  ['seek_5fcur_1022',['SEEK_CUR',['../file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8af3091144c125782cf17bcd3eb84e454c',1,'file.h']]],
+  ['seek_5fend_1023',['SEEK_END',['../file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8a060e45245be703e272d7264bafcfdc63',1,'file.h']]],
+  ['seek_5fset_1024',['SEEK_SET',['../file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8a7f53e3798ec48e79c0897ba5138f9b05',1,'file.h']]],
+  ['sht_5fdynamic_1025',['SHT_DYNAMIC',['../class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9a025bf134634a1fea60bbe05698473783',1,'ELFFile']]],
+  ['sht_5fdynsym_1026',['SHT_DYNSYM',['../class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9aa678af70941785345f662e320095b28d',1,'ELFFile']]],
+  ['sht_5fhash_1027',['SHT_HASH',['../class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9ad608c6153784d7154263f57b7836a0d4',1,'ELFFile']]],
+  ['sht_5fnobits_1028',['SHT_NOBITS',['../class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9a16066d866e6065a15a821a3e3213d1ce',1,'ELFFile']]],
+  ['sht_5fnote_1029',['SHT_NOTE',['../class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9a8b3658a553be885a6e3cdc393bac32c5',1,'ELFFile']]],
+  ['sht_5fnull_1030',['SHT_NULL',['../class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9aac5c5edacfd31ea95f729775f4a4b4e0',1,'ELFFile']]],
+  ['sht_5fprogbits_1031',['SHT_PROGBITS',['../class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9aa03a61c5898b43ef2bbf5fa0f1f38118',1,'ELFFile']]],
+  ['sht_5frel_1032',['SHT_REL',['../class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9af146868219bbb5639aeb193a4393a390',1,'ELFFile']]],
+  ['sht_5frela_1033',['SHT_RELA',['../class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9a6ec4ae80995ee4ae6591768c807829ed',1,'ELFFile']]],
+  ['sht_5fshlib_1034',['SHT_SHLIB',['../class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9af3b1da621c86d631babc3cff483cb2ac',1,'ELFFile']]],
+  ['sht_5fstrtab_1035',['SHT_STRTAB',['../class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9ad77911cfee823bc985d7a997d64ddde5',1,'ELFFile']]],
+  ['sht_5fsymtab_1036',['SHT_SYMTAB',['../class_e_l_f_file.html#a50a2d4dba0b4f0a84bcae40def21ddf9ac908bed6031148c2bdfce74f52c8fb26',1,'ELFFile']]],
+  ['syscall_5fblank_1037',['SYSCALL_BLANK',['../syscall_8h.html#a01e111270f52e13b9d48a3829ffef89bafffc795e312e0ce6c90c1c0380ebf59d',1,'syscall.h']]],
+  ['syscall_5fgetkey_1038',['SYSCALL_GETKEY',['../syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba4ac650bb88c6c78130ba4bcbd72184c6',1,'syscall.h']]],
+  ['syscall_5fprint_1039',['SYSCALL_PRINT',['../syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba311b73d58947909e6715652fe203e080',1,'syscall.h']]],
+  ['syscall_5fputchar_1040',['SYSCALL_PUTCHAR',['../syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba639c4e2053c1b258b3fc62f20e066512',1,'syscall.h']]],
+  ['syscall_5fsum_1041',['SYSCALL_SUM',['../syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba0f6bd380114143d2af4702a0d12cd78a',1,'syscall.h']]]
 ];

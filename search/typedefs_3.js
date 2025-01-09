@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isr_5fhandler_892',['ISR_HANDLER',['../idt_8h.html#a0b3a8b15da6f576c15c6b91751ea02d8',1,'idt.h']]]
+  ['heap_5fblock_5ftable_5fentry_1003',['HEAP_BLOCK_TABLE_ENTRY',['../heap_8h.html#a9d0a6e6d9ffe25ff7cd0fdb48860caca',1,'heap.h']]]
 ];

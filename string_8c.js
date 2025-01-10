@@ -13,5 +13,6 @@ var string_8c =
     [ "strnlen_terminator", "string_8c.html#a50ba706f06bf4485284b720a04c369d1", null ],
     [ "strrev", "string_8c.html#a44060611134f89c400f1a05962f23350", null ],
     [ "to_numeric_digit", "string_8c.html#aa4fad8c232814085ca883c3e271aea0d", null ],
-    [ "tolower", "string_8c.html#a207391fc2c5fa7786d5e0b9ef8ba5e80", null ]
+    [ "tolower", "string_8c.html#a207391fc2c5fa7786d5e0b9ef8ba5e80", null ],
+    [ "uitoa", "string_8c.html#a55cc627dc6dc83ca2d6a7e06821ea22a", null ]
 ];

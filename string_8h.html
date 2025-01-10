@@ -122,8 +122,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:a207391fc2c5fa7786d5e0b9ef8ba5e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts ASCII letter to lowercase.  <a href="string_8h.html#a207391fc2c5fa7786d5e0b9ef8ba5e80">More...</a><br /></td></tr>
 <tr class="separator:a207391fc2c5fa7786d5e0b9ef8ba5e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ecda6e9a4ad5c1d1181bf064db143e9"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a7ecda6e9a4ad5c1d1181bf064db143e9">itoa</a> (long num, char *str, int <a class="el" href="idt_8h.html#a0523cedff47e2441fc198b7770ec5d3f">base</a>)</td></tr>
-<tr class="memdesc:a7ecda6e9a4ad5c1d1181bf064db143e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts number to string.  <a href="string_8h.html#a7ecda6e9a4ad5c1d1181bf064db143e9">More...</a><br /></td></tr>
+<tr class="memdesc:a7ecda6e9a4ad5c1d1181bf064db143e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts signed number to string.  <a href="string_8h.html#a7ecda6e9a4ad5c1d1181bf064db143e9">More...</a><br /></td></tr>
 <tr class="separator:a7ecda6e9a4ad5c1d1181bf064db143e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55cc627dc6dc83ca2d6a7e06821ea22a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a55cc627dc6dc83ca2d6a7e06821ea22a">uitoa</a> (unsigned long num, char *str, int <a class="el" href="idt_8h.html#a0523cedff47e2441fc198b7770ec5d3f">base</a>)</td></tr>
+<tr class="memdesc:a55cc627dc6dc83ca2d6a7e06821ea22a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts unsigned number to string.  <a href="string_8h.html#a55cc627dc6dc83ca2d6a7e06821ea22a">More...</a><br /></td></tr>
+<tr class="separator:a55cc627dc6dc83ca2d6a7e06821ea22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7806fff9874b7d1d5761767e2595a220"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a7806fff9874b7d1d5761767e2595a220">ksprintf</a> (char *buf, const char *fmt,...)</td></tr>
 <tr class="memdesc:a7806fff9874b7d1d5761767e2595a220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kernel sprintf params: %% c s p l(mod) d i x.  <a href="string_8h.html#a7806fff9874b7d1d5761767e2595a220">More...</a><br /></td></tr>
 <tr class="separator:a7806fff9874b7d1d5761767e2595a220"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -233,7 +236,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Converts number to string. </p>
+<p>Converts signed number to string. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">num</td><td>Long to convert </td></tr>
@@ -338,7 +341,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>char* Buffer </dd></dl>
 
-<p class="reference">References <a class="el" href="string_8c.html#a7ecda6e9a4ad5c1d1181bf064db143e9">itoa()</a>, <a class="el" href="memory_8c.html#a370712322c794e949c996946f2283ea8">memcpy()</a>, <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>, and <a class="el" href="string_8c.html#a008e171a518fe0e0352f31b245e03875">strlen()</a>.</p>
+<p class="reference">References <a class="el" href="string_8c.html#a7ecda6e9a4ad5c1d1181bf064db143e9">itoa()</a>, <a class="el" href="memory_8c.html#a370712322c794e949c996946f2283ea8">memcpy()</a>, <a class="el" href="memory_8c.html#ab8dce9c192324f0fd191fd5b85c7bb60">memset()</a>, <a class="el" href="string_8c.html#a008e171a518fe0e0352f31b245e03875">strlen()</a>, and <a class="el" href="string_8c.html#a55cc627dc6dc83ca2d6a7e06821ea22a">uitoa()</a>.</p>
 
 </div>
 </div>
@@ -660,6 +663,53 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>char Lowercase letter </dd></dl>
+
+</div>
+</div>
+<a id="a55cc627dc6dc83ca2d6a7e06821ea22a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55cc627dc6dc83ca2d6a7e06821ea22a">&#9670;&nbsp;</a></span>uitoa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* uitoa </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>base</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts unsigned number to string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>Unsigned Long to convert </td></tr>
+    <tr><td class="paramname">str</td><td>Buffer </td></tr>
+    <tr><td class="paramname">base</td><td>Base to use when converting the number </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char* Buffer </dd></dl>
+
+<p class="reference">References <a class="el" href="gdt_8h.html#ad44119f8ce1676a4dfac55fd4b74d09c">base</a>, and <a class="el" href="string_8c.html#a44060611134f89c400f1a05962f23350">strrev()</a>.</p>
 
 </div>
 </div>

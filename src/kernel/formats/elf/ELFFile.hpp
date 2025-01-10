@@ -29,13 +29,13 @@ class ELFFile {
     static const unsigned int EI_DATA = 5;
     static const unsigned int SHN_UNDEF = 0;
 
-    enum class p_flags {
+    enum p_flags {
       PF_X = 0x1,
       PF_W = 0x2,
       PF_R = 0x4
     };
 
-    enum class p_type {
+    enum p_type {
       PT_NULL = 0,
       PT_LOAD = 1,
       PT_DYNAMIC = 2,
@@ -45,7 +45,7 @@ class ELFFile {
       PT_PHDR = 6
     };
 
-    enum class sh_type {
+    enum sh_type {
       SHT_NULL = 0,
       SHT_PROGBITS = 1,
       SHT_SYMTAB = 2,
@@ -60,7 +60,7 @@ class ELFFile {
       SHT_DYNSYM = 11
     };
 
-    enum class e_type {
+    enum e_type {
       ET_NONE = 0,
       ET_REL = 1,
       ET_EXEC = 2,
@@ -68,13 +68,13 @@ class ELFFile {
       ET_CORE = 4
     };
 
-    enum class ei_class {
+    enum ei_class {
       ELFCLASSNONE = 0,
       ELFCLASS32 = 1,
       ELFCLASS64 = 2
     };
 
-    enum class ei_data {
+    enum ei_data {
       ELFDATANONE = 0,
       ELFDATA2LSB = 1,
       ELFDATA2MSB = 2

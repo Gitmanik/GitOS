@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"structprocess.html#a1d24182beb2c088b847bbda1ede92e28":[0,0,25,3],
+"structprocess.html#a28a6737545bbf2d8b2a1145f1e6bd5a6":[0,0,25,4],
 "structprocess.html#a37300e8d26601ed9fc1ffe6bcce6aa5b":[0,0,25,1],
 "structprocess.html#a4fc3a0c58dfbd1e68224521185cb9384":[0,0,25,5],
 "structprocess.html#a51b84d6af17c12b1021cd3b75f29e769":[0,0,25,8],

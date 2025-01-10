@@ -112,8 +112,8 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a0b3a8b15da6f576c15c6b91751ea02d8"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a0b3a8b15da6f576c15c6b91751ea02d8">ISR_HANDLER</a>) (struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *frame)</td></tr>
-<tr class="separator:a0b3a8b15da6f576c15c6b91751ea02d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad97765e4e7c4ef678ee28925d64c7ff2"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#ad97765e4e7c4ef678ee28925d64c7ff2">ISR_HANDLER</a>) (int int_no, struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *frame)</td></tr>
+<tr class="separator:ad97765e4e7c4ef678ee28925d64c7ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -125,7 +125,7 @@ Functions</h2></td></tr>
 <tr class="memitem:ae9dfaeff36b7570b57e8ecea878946b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#ae9dfaeff36b7570b57e8ecea878946b9">idt_SetDescriptor</a> (int int_no, void *address)</td></tr>
 <tr class="memdesc:ae9dfaeff36b7570b57e8ecea878946b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills entry in IDT for specified Interrupt number Use before <a class="el" href="idt_8c.html#a296416326885a0423be69095e07b054e" title="Loads Interrupt Descriptor Table.">idt_Load()</a>  <a href="idt_8h.html#ae9dfaeff36b7570b57e8ecea878946b9">More...</a><br /></td></tr>
 <tr class="separator:ae9dfaeff36b7570b57e8ecea878946b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00ebf7b83736ba368eb20208cfc0488d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a00ebf7b83736ba368eb20208cfc0488d">idt_SetHandler</a> (int int_no, <a class="el" href="idt_8h.html#a0b3a8b15da6f576c15c6b91751ea02d8">ISR_HANDLER</a> handler)</td></tr>
+<tr class="memitem:a00ebf7b83736ba368eb20208cfc0488d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a00ebf7b83736ba368eb20208cfc0488d">idt_SetHandler</a> (int int_no, <a class="el" href="idt_8h.html#ad97765e4e7c4ef678ee28925d64c7ff2">ISR_HANDLER</a> handler)</td></tr>
 <tr class="memdesc:a00ebf7b83736ba368eb20208cfc0488d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets handler for given interrupt number.  <a href="idt_8h.html#a00ebf7b83736ba368eb20208cfc0488d">More...</a><br /></td></tr>
 <tr class="separator:a00ebf7b83736ba368eb20208cfc0488d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a296416326885a0423be69095e07b054e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a296416326885a0423be69095e07b054e">idt_Load</a> ()</td></tr>
@@ -176,6 +176,8 @@ Variables</h2></td></tr>
 <tr class="separator:a7534a179bc9cc0ef26f0468e0959ee5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c59346dd338708c94ca75cf21b78195"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a3c59346dd338708c94ca75cf21b78195">ss</a></td></tr>
 <tr class="separator:a3c59346dd338708c94ca75cf21b78195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a618a069af5371167c1f5c988e832d648"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8h.html#a618a069af5371167c1f5c988e832d648">idt_InterruptLayoutString</a> [32]</td></tr>
+<tr class="separator:a618a069af5371167c1f5c988e832d648"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a9affc80dd8947cc1dcb1ae52801923c8"></a>
@@ -193,14 +195,14 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="a0b3a8b15da6f576c15c6b91751ea02d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b3a8b15da6f576c15c6b91751ea02d8">&#9670;&nbsp;</a></span>ISR_HANDLER</h2>
+<a id="ad97765e4e7c4ef678ee28925d64c7ff2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad97765e4e7c4ef678ee28925d64c7ff2">&#9670;&nbsp;</a></span>ISR_HANDLER</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* ISR_HANDLER) (struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *frame)</td>
+          <td class="memname">typedef void(* ISR_HANDLER) (int int_no, struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *frame)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -322,7 +324,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="idt_8h.html#a0b3a8b15da6f576c15c6b91751ea02d8">ISR_HANDLER</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="idt_8h.html#ad97765e4e7c4ef678ee28925d64c7ff2">ISR_HANDLER</a>&#160;</td>
           <td class="paramname"><em>handler</em>&#160;</td>
         </tr>
         <tr>
@@ -512,6 +514,28 @@ Variables</h2></td></tr>
           <td class="memname">uint32_t flags</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a618a069af5371167c1f5c988e832d648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a618a069af5371167c1f5c988e832d648">&#9670;&nbsp;</a></span>idt_InterruptLayoutString</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* idt_InterruptLayoutString[32]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

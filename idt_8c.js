@@ -6,6 +6,7 @@ var idt_8c =
     [ "idt_SetDescriptor", "idt_8c.html#ae9dfaeff36b7570b57e8ecea878946b9", null ],
     [ "idt_SetHandler", "idt_8c.html#a00ebf7b83736ba368eb20208cfc0488d", null ],
     [ "idt_descriptors", "idt_8c.html#a10a70de7f124560da1fc8e1dca98d103", null ],
+    [ "idt_InterruptLayoutString", "idt_8c.html#a618a069af5371167c1f5c988e832d648", null ],
     [ "idtr_descriptor", "idt_8c.html#a299d74470ceab3b513858520e0a50bff", null ],
     [ "interrupt_handlers", "idt_8c.html#a75402e8f05a61f796bc9779a5a3cec8e", null ],
     [ "interrupt_pointer_table", "idt_8c.html#a0cd56ff3de4130fae98f2ffb1095ed7d", null ]

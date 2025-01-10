@@ -1,8 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"pathparser_8h.html#ab99ded389af74001a6298fc9e44e74e5":[1,0,0,0,3,4,2],
-"pathparser_8h_source.html":[1,0,0,0,3,4],
-"pic_8c.html":[1,0,0,0,1,1,0],
 "pic_8c.html#a0ecb67a3f71d1d10502fbd834b0292f1":[1,0,0,0,1,1,0,10],
 "pic_8c.html#a16777bf654a4c5630e4f53902a25235a":[1,0,0,0,1,1,0,7],
 "pic_8c.html#a1e4ae4c99f1fd304a8d92e06e19a5f71":[1,0,0,0,1,1,0,11],
@@ -249,5 +246,8 @@ var NAVTREEINDEX2 =
 "structpath__root.html":[0,0,24],
 "structpath__root.html#a44057b89a20883587ec7bdc59cce57d2":[0,0,24,0],
 "structpath__root.html#ac5622a8973d91afac63f4c3e5441af37":[0,0,24,1],
-"structprocess.html":[0,0,25]
+"structprocess.html":[0,0,25],
+"structprocess.html#a0d868de3e0d747c88ceb683223eab3c3":[0,0,25,2],
+"structprocess.html#a1d24182beb2c088b847bbda1ede92e28":[0,0,25,3],
+"structprocess.html#a28a6737545bbf2d8b2a1145f1e6bd5a6":[0,0,25,4]
 };

@@ -33,7 +33,8 @@ var NAVTREE =
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
-        [ "Enumerations", "functions_enum.html", null ]
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -54,9 +55,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_e_l_f_file_8cpp.html",
-"functions_h.html",
-"pathparser_8h.html#ab99ded389af74001a6298fc9e44e74e5",
-"structprocess.html#a0d868de3e0d747c88ceb683223eab3c3"
+"functions_k.html",
+"pic_8c.html#a0ecb67a3f71d1d10502fbd834b0292f1",
+"structprocess.html#a37300e8d26601ed9fc1ffe6bcce6aa5b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

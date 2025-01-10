@@ -78,7 +78,11 @@ var menudata={children:[
 {text:"w",url:"functions_vars.html#index_w"},
 {text:"z",url:"functions_vars.html#index_z"}]},
 {text:"Typedefs",url:"functions_type.html"},
-{text:"Enumerations",url:"functions_enum.html"}]}]},
+{text:"Enumerations",url:"functions_enum.html"},
+{text:"Enumerator",url:"functions_eval.html",children:[
+{text:"e",url:"functions_eval.html#index_e"},
+{text:"p",url:"functions_eval.html#index_p"},
+{text:"s",url:"functions_eval.html#index_s"}]}]}]},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},
 {text:"Globals",url:"globals.html",children:[

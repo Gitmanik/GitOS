@@ -12,6 +12,41 @@ struct idtr_desc idtr_descriptor;
 extern void* interrupt_pointer_table[MAX_INTERRUPTS];
 ISR_HANDLER interrupt_handlers[MAX_INTERRUPTS];
 
+const char *idt_InterruptLayoutString[32] = {
+    "Divide by 0",                                   // 0x00
+    "Reserved",                                      // 0x01
+    "NMI Interrupt",                                 // 0x02
+    "Breakpoint (INT3)",                             // 0x03
+    "Overflow (INTO)",                               // 0x04
+    "Bounds range exceeded (BOUND)",                 // 0x05
+    "Invalid opcode (UD2)",                          // 0x06
+    "Device not available (WAIT/FWAIT)",             // 0x07
+    "Double fault",                                  // 0x08
+    "Coprocessor segment overrun",                   // 0x09
+    "Invalid TSS",                                   // 0x0A
+    "Segment not present",                           // 0x0B
+    "Stack-segment fault",                           // 0x0C
+    "General protection fault",                      // 0x0D
+    "Page fault",                                    // 0x0E
+    "Reserved",                                      // 0x0F
+    "x87 FPU error",                                 // 0x10
+    "Alignment check",                               // 0x11
+    "Machine check",                                 // 0x12
+    "SIMD Floating-Point Exception",                 // 0x13
+    "Reserved",                                      // 0x14
+    "Reserved",                                      // 0x15
+    "Reserved",                                      // 0x16
+    "Reserved",                                      // 0x17
+    "Reserved",                                      // 0x18
+    "Reserved",                                      // 0x19
+    "Reserved",                                      // 0x1A
+    "Reserved",                                      // 0x1B
+    "Reserved",                                      // 0x1C
+    "Reserved",                                      // 0x1D
+    "Reserved",                                      // 0x1E
+    "Reserved"                                       // 0x1F
+};
+
 /**
  * @brief Loads Interrupt Descriptor Table
  * 
@@ -84,7 +119,7 @@ void idt_Handler(int int_no, struct interrupt_frame* frame)
     if (interrupt_handlers[int_no] != 0)
     {
         task_current_save_state(frame);
-        interrupt_handlers[int_no](frame);
+        interrupt_handlers[int_no](int_no, frame);
     }
     task_page();
 }

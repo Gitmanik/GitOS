@@ -61,20 +61,15 @@ struct gdt_structured gdt_structured[TOTAL_GDT_SEGMENTS] = {
 
 void print_interrupt_frame(struct interrupt_frame* frame)
 {
-    kprintf("\r\nKernel Registers:\r\nedi:%x esi:%x ebp:%x\r\nebx:%x edx:%x ecx:%x\r\neax:%x \r\nip:%p cs:%x\r\nflags:%x esp:%p ss:%x\r\nerror: %x\r\n",
-    frame->edi, frame->esi, frame->ebp, frame->ebx, frame->edx, frame->ecx, frame->eax, frame->ip, frame->cs, frame->flags, frame->esp, frame->ss, frame->error_code);
-}
-
-/**
- * @brief Temporary int 0x0 handler
- * 
- * @param frame Interrupt frame
- */
-void divide_by_zero(struct interrupt_frame* frame)
-{
-    (void)(frame);
-    print_interrupt_frame(frame);
-    kernel_panic("Division by zero!");
+    kprintf("CPU Registers:\nedi: %d (0x%p)\nesi: %d (0x%p)\nebp: %d (0x%p)\nebx: %d (0x%p)\nedx: %d (0x%p)\necx: %d (0x%p)\neax: %d (0x%p)\nip: 0x%p\nflags: %b\nesp: 0x%p\ncs: 0x%p\nss: 0x%p\nerror: %d\n",
+    frame->edi, frame->edi,
+    frame->esi, frame->esi,
+    frame->ebp, frame->ebp,
+    frame->ebx, frame->ebx,
+    frame->edx, frame->edx,
+    frame->ecx, frame->ecx,
+    frame->eax, frame->eax,
+    frame->ip, frame->flags, frame->esp, frame->cs, frame->ss, frame->error_code);
 }
 
 /**
@@ -82,11 +77,28 @@ void divide_by_zero(struct interrupt_frame* frame)
  * 
  * @param frame Interrupt frame
  */
-void timer_interrupt(struct interrupt_frame* frame)
+void timer_interrupt(int int_no, struct interrupt_frame* frame)
 {
+    (void)(int_no);
     (void)(frame);
-    // kprintf("Timer interrupt!\r\n");
     pic_EOI(0);
+}
+
+void kernel_exception(int int_no, struct interrupt_frame* frame) {
+
+    char internal_buf[1024];
+    memset(internal_buf, 0, sizeof(internal_buf));
+
+    ksprintf(internal_buf, "Kernel panic! Exception thrown by CPU: %s\n", idt_InterruptLayoutString[int_no]);
+    ser_PrintString(COM1, internal_buf);
+
+    tm_SetColor(LIGHT_RED);
+    tm_PrintString(internal_buf);
+
+    ser_PrintString(COM1, internal_buf);
+    print_interrupt_frame(frame);
+    tm_PrintString("GitOS halted.");
+    while (1);
 }
 
 void kernel_page()
@@ -128,7 +140,10 @@ void kernel_main()
     // Initialize IDT
     kprintf("Initializing IDT..");
     idt_Init();
-    idt_SetHandler(0x00, divide_by_zero);
+
+    for (int i = 0; i < 0x20; i++)
+        idt_SetHandler(i, kernel_exception);
+
     idt_SetHandler(0x20, timer_interrupt);
     idt_SetDescriptor(0x80, (void*) syscall_wrapper);
     idt_Load();

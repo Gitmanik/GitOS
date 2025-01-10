@@ -61,7 +61,7 @@ struct gdt_structured gdt_structured[TOTAL_GDT_SEGMENTS] = {
 
 void print_interrupt_frame(struct interrupt_frame* frame)
 {
-    kprintf("CPU Registers:\nedi: %d (0x%p)\nesi: %d (0x%p)\nebp: %d (0x%p)\nebx: %d (0x%p)\nedx: %d (0x%p)\necx: %d (0x%p)\neax: %d (0x%p)\nip: 0x%p\nflags: %b\nesp: 0x%p\ncs: 0x%p\nss: 0x%p\nerror: %d\n",
+    kprintf("Interrupt frame:\nedi: %d (0x%x)\nesi: %d (0x%x)\nebp: %d (0x%x)\nebx: %d (0x%x)\nedx: %d (0x%x)\necx: %d (0x%x)\neax: %d (0x%x)\nip: 0x%x\nflags: %b\nesp: 0x%x\ncs: 0x%x\nss: 0x%x\nerror: %d\n",
     frame->edi, frame->edi,
     frame->esi, frame->esi,
     frame->ebp, frame->ebp,
@@ -221,7 +221,7 @@ void kernel_main()
     ((char*) ptr_virt)[1] = 'K';
 
     kprintf("OK\r\n", LIGHT_GREEN);
-    kprintf("Paging self-test: 0x%p:'%s' 0x%p:'%s'..", (uint32_t)ptr_real, ptr_real, (uint32_t)ptr_virt, ptr_virt);
+    kprintf("Paging self-test: 0x%x:'%s' 0x%x:'%s'..", (uint32_t)ptr_real, ptr_real, (uint32_t)ptr_virt, ptr_virt);
     if (memcmp(ptr_real, ptr_virt, 2) != 0)
     {
         kernel_panic("\r\nPaging self-test unsuccessful!");

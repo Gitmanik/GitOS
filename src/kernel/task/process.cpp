@@ -85,15 +85,32 @@ static int process_load_data(const char* filename, struct process* process)
 
 int process_map_memory(struct process* process)
 {
-    int res = 0;
-
     auto* elf_file = static_cast<ELFFile *>(process->elf);
 
-    res = paging_map_to(process->task->page_directory,  paging_align_address_to_lower_page(elf_file->get_virtual_base_address()), elf_file->get_physical_base_address(), paging_align_address(elf_file->get_physical_end_address()),
-        PAGING_IS_PRESENT | PAGING_ACCESS_FROM_ALL | PAGING_IS_WRITEABLE);
+    auto elf_header = elf_file->get_header();
 
-    res = paging_map_to(process->task->page_directory, (void*) (PROGRAM_VIRTUAL_STACK_ADDRESS_END), process->stack, paging_align_address((void*) ((uint32_t) process->stack + PROGRAM_VIRTUAL_STACK_SIZE)), PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
-    return res;
+    for (int i = 0; i < elf_header->e_phnum; i++) {
+        auto program_header = elf_file->get_program_header(i);
+        void* physical_address = reinterpret_cast<void *>(reinterpret_cast<int>(elf_file->get_header()) + program_header->p_offset);
+        void* physical_end = (void*) ((int)physical_address + program_header->p_memsz);
+
+        int page_flags = PAGING_IS_PRESENT | PAGING_ACCESS_FROM_ALL;
+        if (program_header->p_flags & ELFFile::p_flags::PF_W) {
+            page_flags |= PAGING_IS_WRITEABLE;
+        }
+
+
+    int res = paging_map_to(process->task->page_directory,
+        paging_align_address_to_lower_page((void*) program_header->p_vaddr),
+        paging_align_address_to_lower_page(physical_address),
+        paging_align_address(physical_end),
+        page_flags);
+
+        if (res < 0)
+            return res;
+    }
+
+    return paging_map_to(process->task->page_directory, (void*) (PROGRAM_VIRTUAL_STACK_ADDRESS_END), process->stack, paging_align_address((void*) ((uint32_t) process->stack + PROGRAM_VIRTUAL_STACK_SIZE)), PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
 }
 
 int process_get_free_slot()

@@ -14,12 +14,7 @@ class ELFFile {
 
     ~ELFFile();
 
-    int parse();
-
-    void* get_physical_base_address() const;
-    void* get_physical_end_address() const;
-    void* get_virtual_base_address() const;
-    void* get_virtual_end_address() const;
+    int parse() const;
     void* get_entry() const;
 
     static constexpr char ELF_SIGNATURE[] = {0x7f, 'E', 'L', 'F'};
@@ -159,26 +154,4 @@ class ELFFile {
   private:
     void* m_data;
     size_t m_data_sz;
-
-    /**
-    * Physical memory address of this binary.
-    */
-    void* m_physical_base_address = 0;
-
-    /**
-     * Physical end memory adress of this binary.
-     */
-    void* m_physical_end_address = 0;
-
-    /**
-    * Virtual memory address of this binary.
-    */
-    void* m_virtual_base_address = 0;
-
-    /**
-     * Virtual end memory address of this binary.
-     */
-    void* m_virtual_end_address = 0;
-
-    int parse_pt_load(Elf32_Phdr *phdr);
 };

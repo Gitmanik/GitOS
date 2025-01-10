@@ -22,22 +22,6 @@ ELFFile::~ELFFile() {
     kfree(m_data);
 }
 
-void * ELFFile::get_physical_base_address() const {
-    return m_physical_base_address;
-}
-
-void* ELFFile::get_physical_end_address() const {
-    return m_physical_end_address;
-}
-
-void * ELFFile::get_virtual_base_address() const {
-    return m_virtual_base_address;
-}
-
-void * ELFFile::get_virtual_end_address() const {
-    return m_virtual_end_address;
-}
-
 void * ELFFile::get_entry() const {
     return (void*) get_header()->e_entry;
 }
@@ -101,40 +85,10 @@ const char* ELFFile::get_string_table() const {
     return reinterpret_cast<const char *>(reinterpret_cast<int>(header) + get_section_header(header->e_shstrndx)->sh_offset);
 }
 
-int ELFFile::parse() {
-    int res = 0;
+int ELFFile::parse() const {
 
     if (!is_valid())
         return -EINFORMAT;
 
-    auto header = get_header();
-    for (int idx = 0; idx < header->e_phnum; idx++) {
-        auto phdr = get_program_header(idx);
-
-        switch (phdr->p_type) {
-            case PT_LOAD:
-                res = parse_pt_load(phdr);
-                break;
-            default:
-                break;
-        }
-    }
-    return res;
-}
-
-int ELFFile::parse_pt_load(Elf32_Phdr *phdr) {
-    int res = 0;
-
-    if (m_virtual_base_address == 0 || (uint32_t) m_virtual_end_address >= phdr->p_vaddr) {
-        m_virtual_base_address = (void*) phdr->p_vaddr;
-        m_physical_base_address = (void*) (reinterpret_cast<int>(m_data) + phdr->p_offset);
-    }
-
-    unsigned int virtual_end_address_canditate = phdr->p_vaddr + phdr->p_filesz;
-    if (m_virtual_end_address == 0 || virtual_end_address_canditate >=  (uint32_t) m_virtual_end_address) {
-        m_virtual_end_address = (void*) virtual_end_address_canditate;
-        m_physical_end_address = (void*) (reinterpret_cast<int>(m_data) + phdr->p_offset + phdr->p_filesz);
-    }
-
-    return res;
+    return 0;
 }

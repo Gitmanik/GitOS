@@ -304,7 +304,7 @@ char* kvsprintf(char* buf, const char* fmt, va_list args)
 
 			case 'p':
 				memset(internal_buffer, 0, 512);
-				itoa(va_arg(args, long), internal_buffer, 16);
+				uitoa(va_arg(args, long), internal_buffer, 16);
 				sz = strlen(internal_buffer);
 				memcpy(buf, internal_buffer, sz);
 				buf += sz;
@@ -327,7 +327,7 @@ char* kvsprintf(char* buf, const char* fmt, va_list args)
 
 					case 'x':
 						memset(internal_buffer, 0, 512);
-						itoa(va_arg(args, long), internal_buffer, 16);
+						uitoa(va_arg(args, unsigned long), internal_buffer, 16);
 						sz = strlen(internal_buffer);
 						memcpy(buf, internal_buffer, sz);
 						buf += sz;
@@ -336,7 +336,7 @@ char* kvsprintf(char* buf, const char* fmt, va_list args)
 
 					case 'b':
 						memset(internal_buffer, 0, 512);
-						itoa(va_arg(args, long), internal_buffer, 2);
+						uitoa(va_arg(args, unsigned long), internal_buffer, 2);
 						sz = strlen(internal_buffer);
 						memcpy(buf, internal_buffer, sz);
 						buf += sz;
@@ -350,7 +350,7 @@ char* kvsprintf(char* buf, const char* fmt, va_list args)
 
 			case 'x':
 				memset(internal_buffer, 0, 512);
-				itoa(va_arg(args, int), internal_buffer, 16);
+				uitoa(va_arg(args, unsigned int), internal_buffer, 16);
 				sz = strlen(internal_buffer);
 				memcpy(buf, internal_buffer, sz);
 				buf += sz;
@@ -368,7 +368,7 @@ char* kvsprintf(char* buf, const char* fmt, va_list args)
 			
 			case 'b':
 				memset(internal_buffer, 0, 512);
-				itoa(va_arg(args, int), internal_buffer, 2);
+				uitoa(va_arg(args, unsigned int), internal_buffer, 2);
 				sz = strlen(internal_buffer);
 				memcpy(buf, internal_buffer, sz);
 				buf += sz;

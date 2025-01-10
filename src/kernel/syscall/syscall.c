@@ -55,23 +55,7 @@ void* syscall_handler(int syscall_id, struct interrupt_frame* frame)
 
 // SYSCALLS
 
-void* sys$blank(struct interrupt_frame* frame)
-{
-    (void)(frame);
-
-    return (void*) 0;
-}
-
-void* sys$sum(struct interrupt_frame* frame)
-{
-    (void)(frame);
-    int v2 = (int) task_peek_stack(task_current(), 0);
-    int v1 = (int) task_peek_stack(task_current(), 1);
-
-    return (void*) v1+v2;
-}
-
-void* sys$print(struct interrupt_frame* frame)
+void* sys$putstring(struct interrupt_frame* frame)
 {
     (void)(frame);
 
@@ -86,7 +70,7 @@ void* sys$print(struct interrupt_frame* frame)
     return 0;
 }
 
-void* sys$getkey(struct interrupt_frame* frame)
+void* sys$getchar(struct interrupt_frame* frame)
 {
     (void)(frame);
     char c = process_popkey(task_current()->process);
@@ -103,9 +87,7 @@ void* sys$putchar(struct interrupt_frame* frame)
 
 void syscall_init()
 {
-    syscall_register(SYSCALL_BLANK, sys$blank);
-    syscall_register(SYSCALL_SUM, sys$sum);
-    syscall_register(SYSCALL_PRINT, sys$print);
-    syscall_register(SYSCALL_GETKEY, sys$getkey);
+    syscall_register(SYSCALL_PUTSTRING, sys$putstring);
+    syscall_register(SYSCALL_GETCHAR, sys$getchar);
     syscall_register(SYSCALL_PUTCHAR, sys$putchar);
 }

@@ -11,13 +11,13 @@ _start:
 
     call waitforkey
     push eax
-    mov eax, 4
+    mov eax, 1
     int 0x80
     add esp, 4
     jmp loop
 
 waitforkey:
-    mov eax, 3
+    mov eax, 0
     int 0x80
     cmp eax, 0x00
     je waitforkey

@@ -39,6 +39,8 @@ int ps2keyboard_setup()
     return 0;
 }
 
+static bool ps2keyboard_capslock = false;
+
 [[maybe_unused]] static char ps2keyboard_scancode_to_char(uint8_t scancode)
 {
     // TODO: Handle other scan sets
@@ -49,9 +51,12 @@ int ps2keyboard_setup()
         return 0;
     }
 
-    // TODO: Handle Caps Lock
+    char c = ps2keyboard_scan_set_1[scancode];
 
-    return ps2keyboard_scan_set_1[scancode];
+    if (c >= 'A' && c <= 'Z' && !ps2keyboard_capslock)
+        c += 32;
+
+    return c;
 }
 
 void ps2keyboard_irq_handler()
@@ -65,6 +70,12 @@ void ps2keyboard_irq_handler()
 
     if (scancode & 0x80) //release
     {
+        return;
+    }
+
+    if (scancode == 0x3A) { //Capslock
+
+        ps2keyboard_capslock = !ps2keyboard_capslock;
         return;
     }
 

@@ -1,14 +1,13 @@
 [BITS 32]
 
-global _start
-_start:
+global main
+main:
     push str
     mov eax, 2
     int 0x80
     add esp,4
 
-    loop:
-
+loop:
     call waitforkey
     push eax
     mov eax, 1

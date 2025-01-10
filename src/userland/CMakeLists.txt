@@ -4,6 +4,8 @@ set(USERLAND_BINARIES)
 set(USERLAND_DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/dest)
 set(USERLAND_DESTINATION ${USERLAND_DESTINATION} PARENT_SCOPE)
 
+add_subdirectory(stdlib)
+
 function(GITOS_PROGRAM name)
     MESSAGE("Registering GitOS program: ${name}")
     file(GLOB_RECURSE C_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.c")
@@ -31,6 +33,8 @@ function(GITOS_PROGRAM name)
     )
 
     target_include_directories(${name} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+    target_include_directories(${name} PRIVATE "${STDLIB_SOURCE_DIR}")
+    target_link_libraries(${name} stdlib)
     set_target_properties(${name} PROPERTIES
             OUTPUT_NAME "${name}.elf"
             RUNTIME_OUTPUT_DIRECTORY ${USERLAND_DESTINATION}
@@ -46,4 +50,4 @@ function(GITOS_PROGRAM name)
 endfunction()
 
 add_subdirectory(blank)
-add_dependencies(userland blank)
+add_dependencies(userland stdlib blank)

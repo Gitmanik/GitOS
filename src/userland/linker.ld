@@ -5,6 +5,7 @@ SECTIONS
     . = 0x400000;
     .text : ALIGN(4096)
     {
+        *(.crt0)
         *(.text)
     }
 

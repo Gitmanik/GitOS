@@ -178,7 +178,7 @@ int strnlen_terminator(const char* str, int max, char terminator)
 }
 
 /**
- * @brief Converts number to string
+ * @brief Converts signed number to string
  * 
  * @param num Long to convert
  * @param str Buffer
@@ -187,7 +187,7 @@ int strnlen_terminator(const char* str, int max, char terminator)
  */
 char* itoa(long num, char* str, int base)
 {
-	long long idx = 0;
+	int idx = 0;
 	int negative = 0;
 
 	if (num == 0)
@@ -218,6 +218,40 @@ char* itoa(long num, char* str, int base)
 
 	return str;
 }
+
+/**
+ * @brief Converts unsigned number to string
+ *
+ * @param num Unsigned Long to convert
+ * @param str Buffer
+ * @param base Base to use when converting the number
+ * @return char* Buffer
+ */
+char* uitoa(unsigned long num, char* str, int base)
+{
+	int idx = 0;
+
+	if (num == 0)
+	{
+		str[idx++] = '0';
+		str[idx] = '\0';
+		return str;
+	}
+
+	while (num != 0)
+	{
+		long rem = num % base;
+		str[idx++] = (rem > 9) ? (rem-10) + 'a' : rem + '0';
+		num = num / base;
+	}
+
+	str[idx] = '\0';
+
+	strrev(str);
+
+	return str;
+}
+
 
 /**
  * @brief Kernel vsprintf

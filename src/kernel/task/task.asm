@@ -32,10 +32,7 @@ task_return:
     push dword [ebx+40]
 
     ;push flags
-    pushf
-    pop eax
-    or eax, 0x200 ;enable interrupts
-    push eax
+    push dword [ebx+36]
 
     ;push code segment (cs)
     push dword [ebx+32]

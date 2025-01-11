@@ -155,6 +155,7 @@ int task_init(struct task* task, struct process* process)
     task->registers.ss = USER_DATA_SELECTOR;
     task->registers.cs = USER_CODE_SELECTOR;
     task->registers.esp = PROGRAM_VIRTUAL_STACK_ADDRESS_START;
+    task->registers.flags = 0x200;
 
     task->process = process;
 

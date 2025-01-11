@@ -86,17 +86,35 @@ void timer_interrupt(int int_no, struct interrupt_frame* frame)
 
 void kernel_exception(int int_no, struct interrupt_frame* frame) {
 
+    uint32_t cr0, cr2;
+
+    asm volatile (
+        "mov %%cr0, %0"
+        : "=r" (cr0) // Output
+    );
+
+    asm volatile (
+        "mov %%cr2, %0"
+        : "=r" (cr2) // Output
+    );
+
     char internal_buf[1024];
     memset(internal_buf, 0, sizeof(internal_buf));
-
-    ksprintf(internal_buf, "Kernel panic! Exception thrown by CPU: %s\n", idt_InterruptLayoutString[int_no]);
-    ser_PrintString(COM1, internal_buf);
-
     tm_SetColor(LIGHT_RED);
+
+    ksprintf(internal_buf, "\n\nKernel panic! Exception thrown by CPU: %s\n", idt_InterruptLayoutString[int_no]);
+    ser_PrintString(COM1, internal_buf);
     tm_PrintString(internal_buf);
 
-    ser_PrintString(COM1, internal_buf);
     print_interrupt_frame(frame);
+
+    tm_SetColor(GREY);
+    memset(internal_buf, 0, sizeof(internal_buf));
+
+    ksprintf(internal_buf,"cr0: 0b%b\ncr2: %d (0x%x)\n\n", cr0, cr2, cr2);
+    tm_PrintString(internal_buf);
+    ser_PrintString(COM1, internal_buf);
+
     tm_PrintString("GitOS halted.");
     while (1);
 }

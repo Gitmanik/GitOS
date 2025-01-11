@@ -50,4 +50,5 @@ function(GITOS_PROGRAM name)
 endfunction()
 
 add_subdirectory(blank)
-add_dependencies(userland stdlib blank)
+add_subdirectory(zofia)
+add_dependencies(userland stdlib blank zofia)

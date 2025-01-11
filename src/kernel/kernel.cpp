@@ -272,9 +272,9 @@ void kernel_main()
     kprintf("OK\r\n");
     //
 
-    kprintf("Loading blank.elf..");
+    kprintf("Loading zofia.elf..");
     struct process* process = 0;
-    res = process_load_switch("0:/blank.elf", &process);
+    res = process_load_switch("0:/zofia.elf", &process);
     if (res != 0)
     {
         kernel_panic("Failed to load process");

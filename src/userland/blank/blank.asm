@@ -1,23 +1,19 @@
 [BITS 32]
 
+extern getc, putc, puts
 global main
 main:
     push str
-    mov eax, 2
-    int 0x80
-    add esp,4
+    call puts
 
 loop:
     call waitforkey
     push eax
-    mov eax, 1
-    int 0x80
-    add esp, 4
+    call putc
     jmp loop
 
 waitforkey:
-    mov eax, 0
-    int 0x80
+    call getc
     cmp eax, 0x00
     je waitforkey
     ret

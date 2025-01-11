@@ -61,7 +61,7 @@ struct gdt_structured gdt_structured[TOTAL_GDT_SEGMENTS] = {
 
 void print_interrupt_frame(struct interrupt_frame* frame)
 {
-    kprintf("Interrupt frame:\nedi: %d (0x%x)\nesi: %d (0x%x)\nebp: %d (0x%x)\nebx: %d (0x%x)\nedx: %d (0x%x)\necx: %d (0x%x)\neax: %d (0x%x)\nip: 0x%x\nflags: %b\nesp: 0x%x\ncs: 0x%x\nss: 0x%x\nerror: %d\n",
+    kprintf("Interrupt frame:\nedi: %d (0x%x)\nesi: %d (0x%x)\nebp: %d (0x%x)\nebx: %d (0x%x)\nedx: %d (0x%x)\necx: %d (0x%x)\neax: %d (0x%x)\nip: 0x%x\nflags: 0b%b\nesp: 0x%x\ncs: 0x%x\nss: 0x%x\nerror: %d\n",
     frame->edi, frame->edi,
     frame->esi, frame->esi,
     frame->ebp, frame->ebp,

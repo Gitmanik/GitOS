@@ -1,5 +1,13 @@
 var NAVTREEINDEX3 =
 {
+"structpaging__chunk.html":[0,0,22],
+"structpaging__chunk.html#a7abe8d9cbf8d303b43dc85b868b4eb93":[0,0,22,0],
+"structpath__part.html":[0,0,23],
+"structpath__part.html#a6aba54109422e4290881c54e5da68026":[0,0,23,1],
+"structpath__part.html#ad5d8ed0c4183f4e1bbef6d0250b02c37":[0,0,23,0],
+"structpath__root.html":[0,0,24],
+"structpath__root.html#a44057b89a20883587ec7bdc59cce57d2":[0,0,24,0],
+"structpath__root.html#ac5622a8973d91afac63f4c3e5441af37":[0,0,24,1],
 "structprocess.html":[0,0,25],
 "structprocess.html#a0d868de3e0d747c88ceb683223eab3c3":[0,0,25,2],
 "structprocess.html#a1d24182beb2c088b847bbda1ede92e28":[0,0,25,3],
@@ -199,5 +207,7 @@ var NAVTREEINDEX3 =
 "tss_8h.html#af2b16bef95c844028dd145264d1d3875":[1,0,0,0,8,4,8],
 "tss_8h_source.html":[1,0,0,0,8,4],
 "unionfat__header_1_1fat__header__extended.html":[0,0,8,0],
-"unionfat__header_1_1fat__header__extended.html#a219c77a5a9b9c6a48bb5e8dd5d9cd161":[0,0,8,0,0]
+"unionfat__header_1_1fat__header__extended.html#a219c77a5a9b9c6a48bb5e8dd5d9cd161":[0,0,8,0,0],
+"zofia_8cpp.html":[1,0,0,1,1,0],
+"zofia_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[1,0,0,1,1,0,0]
 };

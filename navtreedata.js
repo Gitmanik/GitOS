@@ -56,8 +56,9 @@ var NAVTREEINDEX =
 [
 "_e_l_f_file_8cpp.html",
 "functions_h.html",
-"pathparser_8h.html#a005d703b7674a805f84e8aba64b93ae6",
-"structpaging__chunk.html"
+"paging_8c.html#a05e68db3330a8c08d9cd8255a2ff5f48",
+"structinterrupt__frame.html#af2b16bef95c844028dd145264d1d3875",
+"zofia_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -14,9 +14,8 @@ syscall_wrapper:
     call syscall_handler
     mov dword[syscall_handler_result], eax
     add esp, 8
-
-    popad
     add esp, 4
+    popad
     mov eax, [syscall_handler_result]
     iretd
 

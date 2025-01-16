@@ -3,6 +3,7 @@
 global _start
 section .crt0
 extern main
+extern crt0
 _start:
-    call main
+    call crt0
     ret

@@ -5,6 +5,7 @@
 #include "kernel.h"
 #include "task/task.h"
 #include "task/process.h"
+#include "memory/heap/kheap.h"
 
 static SYSCALL syscalls[MAX_SYSCALLS];
 
@@ -85,9 +86,33 @@ void* sys$putchar(struct interrupt_frame* frame)
     return 0;
 }
 
+void* sys$execprocess(struct interrupt_frame* frame) {
+    (void)(frame);
+    void* str_ptr = task_peek_stack(task_current(), 0);
+    char path[MAX_PATH] = {0};
+
+    task_copy_string_from(task_current(), str_ptr, path, MAX_PATH);
+
+    int res = 0;
+    struct process* new_process = kmalloc(sizeof(struct process));
+    res = process_load_switch(path, &new_process);
+
+    if (res < 0) {
+        kfree(new_process);
+        return (void*) res;
+    }
+
+    task_switch(new_process->task);
+    task_return(&new_process->task->registers);
+
+    return (void*) res;
+
+}
+
 void syscall_init()
 {
     syscall_register(SYSCALL_PUTSTRING, sys$putstring);
     syscall_register(SYSCALL_GETCHAR, sys$getchar);
     syscall_register(SYSCALL_PUTCHAR, sys$putchar);
+    syscall_register(SYSCALL_EXECPROCESS, sys$execprocess);
 }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bochsbreak_1053',['BochsBreak',['../kernel_8h.html#aef9e7d5ae531e4004885f5a5cc002143',1,'kernel.h']]]
+  ['bochsbreak_0',['BochsBreak',['../kernel_8h.html#aef9e7d5ae531e4004885f5a5cc002143',1,'kernel.h']]]
 ];

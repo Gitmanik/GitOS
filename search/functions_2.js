@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['disk_5fget_646',['disk_get',['../disk_8c.html#a10a9768a9f549ad766ce7e19b3179944',1,'disk_get(int index):&#160;disk.c'],['../disk_8h.html#a10a9768a9f549ad766ce7e19b3179944',1,'disk_get(int index):&#160;disk.c']]],
-  ['disk_5fread_5fblock_647',['disk_read_block',['../disk_8c.html#a7a2e4d8dd685931a0282ea66a561ae88',1,'disk_read_block(struct disk *disk, unsigned int lba, int total, void *buf):&#160;disk.c'],['../disk_8h.html#a7a2e4d8dd685931a0282ea66a561ae88',1,'disk_read_block(struct disk *disk, unsigned int lba, int total, void *buf):&#160;disk.c']]],
-  ['disk_5fsearch_5fand_5finit_648',['disk_search_and_init',['../disk_8c.html#a3f37d7034065e7836aaeeab8be7b72ba',1,'disk_search_and_init():&#160;disk.c'],['../disk_8h.html#a3f37d7034065e7836aaeeab8be7b72ba',1,'disk_search_and_init():&#160;disk.c']]],
-  ['diskstreamer_5fclose_649',['diskstreamer_close',['../disk__streamer_8c.html#a7734e75217ecae1b2dedd283c234f2ac',1,'diskstreamer_close(struct disk_stream *stream):&#160;disk_streamer.c'],['../disk__streamer_8h.html#a7734e75217ecae1b2dedd283c234f2ac',1,'diskstreamer_close(struct disk_stream *stream):&#160;disk_streamer.c']]],
-  ['diskstreamer_5fnew_650',['diskstreamer_new',['../disk__streamer_8c.html#aceb1f3074a2fa2359ec3e9a9893366a2',1,'diskstreamer_new(int disk_id):&#160;disk_streamer.c'],['../disk__streamer_8h.html#aceb1f3074a2fa2359ec3e9a9893366a2',1,'diskstreamer_new(int disk_id):&#160;disk_streamer.c']]],
-  ['diskstreamer_5fread_651',['diskstreamer_read',['../disk__streamer_8c.html#a7b9f236b0c4aba1e672d8dc8b63e934f',1,'diskstreamer_read(struct disk_stream *stream, void *out, int total):&#160;disk_streamer.c'],['../disk__streamer_8h.html#a7b9f236b0c4aba1e672d8dc8b63e934f',1,'diskstreamer_read(struct disk_stream *stream, void *out, int total):&#160;disk_streamer.c']]],
-  ['diskstreamer_5fseek_652',['diskstreamer_seek',['../disk__streamer_8c.html#a6db279f823450d0f636be872d28bbb04',1,'diskstreamer_seek(struct disk_stream *stream, int pos):&#160;disk_streamer.c'],['../disk__streamer_8h.html#a6db279f823450d0f636be872d28bbb04',1,'diskstreamer_seek(struct disk_stream *stream, int pos):&#160;disk_streamer.c']]]
+  ['elf_5fload_0',['elf_load',['../process_8cpp.html#a3546bd370b8f1c0dfb230c41e59e7b3f',1,'process.cpp']]],
+  ['elffile_1',['ELFFile',['../class_e_l_f_file.html#a6bdb05aa9d4e058fa5428d4def0ccf20',1,'ELFFile']]],
+  ['encode_5fgdt_5fentry_2',['encode_gdt_entry',['../gdt_8c.html#a636b7c59562c6decfc33e43b5623955b',1,'gdt.c']]],
+  ['execprocess_3',['execprocess',['../misc_8h.html#a190c013df9a32d7c3dd925d060b94c75',1,'misc.h']]]
 ];

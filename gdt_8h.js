@@ -7,6 +7,7 @@ var gdt_8h =
     [ "KERNEL_DATA_SELECTOR", "gdt_8h.html#aa6c68f1bf413d84abd00bafd773b2e02", null ],
     [ "TOTAL_GDT_SEGMENTS", "gdt_8h.html#adc5afdb11c099afb2162d63377834e14", null ],
     [ "USER_CODE_SELECTOR", "gdt_8h.html#a3b5b77020c86db446e1729defea0ea17", null ],
+    [ "USER_DATA_SELECTOR", "gdt_8h.html#a7314263eacc399b707efe8d1fbb804b6", null ],
     [ "__attribute__", "gdt_8h.html#aec44192f522a85272b2aac9d3f767bab", null ],
     [ "gdt_load", "gdt_8h.html#a071baa899e787757da9db71d9bacc67a", null ],
     [ "gdt_read", "gdt_8h.html#a0bea945b578f5101079d84c9f4864725", null ],

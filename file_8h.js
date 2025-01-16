@@ -10,7 +10,7 @@ var file_8h =
     [ "FILE_SEEK_MODE", "file_8h.html#abe921a3b588578250cc96f01a96953ab", null ],
     [ "FILE_STAT_FLAGS", "file_8h.html#a28336e6c2f5eea087e30e2177a7ea5a0", null ],
     [ "FS_CLOSE_FUNCTION", "file_8h.html#a5177ed95ade641b7961a793a5122f76d", null ],
-    [ "FS_OPEN_FUNCTION", "file_8h.html#ab7d90627ef45bfb3dedcb3a2bb6daaa7", null ],
+    [ "FS_OPEN_FUNCTION", "file_8h.html#a727711f4e8697e13e8a9304ccf9085af", null ],
     [ "FS_READ_FUNCTION", "file_8h.html#a5cddfba3e55d068419e7206b9fa8b2e0", null ],
     [ "FS_RESOLVE_FUNCTION", "file_8h.html#a08dac86aa376c5e0b39e9b495222ca5b", null ],
     [ "FS_SEEK_FUNCTION", "file_8h.html#ab5fa8fcf1f69d9baa73d8e74beb2ff40", null ],
@@ -34,7 +34,7 @@ var file_8h =
     [ "fread", "file_8h.html#adee556231b2610f1807f3dd2f2dd0f6a", null ],
     [ "fs_init", "file_8h.html#ac38cc84063ef3ade063f204394babb76", null ],
     [ "fs_insert_filesystem", "file_8h.html#a060417cd82e00f01ecfb2024ae8fce7c", null ],
-    [ "fs_resolve", "file_8h.html#a38c40b249ade55449e2ef4356fdb2aa9", null ],
+    [ "fs_resolve", "file_8h.html#a64056ef2a3bd065ebe747f58b26f167c", null ],
     [ "fseek", "file_8h.html#a4afef177a56ef89821691c7c4df374c3", null ],
     [ "fstat", "file_8h.html#a0ed36033dca44a4c90f733ed5ef33500", null ]
 ];

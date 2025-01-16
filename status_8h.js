@@ -8,5 +8,6 @@ var status_8h =
     [ "ENOMEM", "status_8h.html#a6a05c923dad0c1208043e9c20a58c8e5", null ],
     [ "ENOTIMPL", "status_8h.html#a0e9e819f6f5a649e0dcb3e7d00c54e91", null ],
     [ "ERROR", "status_8h.html#a9d59f12a576147f4e1564e3fa76b5077", null ],
+    [ "ERROR_I", "status_8h.html#a38e167bf6deb15344b87b76e432ca1c2", null ],
     [ "ISERR", "status_8h.html#a7a255d1282fefa856ce93d9c8cb5612b", null ]
 ];

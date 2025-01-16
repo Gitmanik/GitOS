@@ -1,8 +1,8 @@
 var process_8cpp =
 [
     [ "elf_load", "process_8cpp.html#a3546bd370b8f1c0dfb230c41e59e7b3f", null ],
-    [ "process_current", "process_8cpp.html#a2dc6a54bcc8069ca95f0f72ed27194e4", null ],
-    [ "process_get", "process_8cpp.html#abb6bf09869f617dd253da6cf4b218380", null ],
+    [ "process_current", "process_8cpp.html#aaecff9006ec62c1fe2d021dbb6cbeb1a", null ],
+    [ "process_get", "process_8cpp.html#a28f515fb46f9cee780d3eab03622b7cb", null ],
     [ "process_get_free_slot", "process_8cpp.html#abbcb5d3664435a4ffe158851ae84b2f0", null ],
     [ "process_load", "process_8cpp.html#a7a1fd8997c2d1acde0fa0929c13f7a3f", null ],
     [ "process_load_for_slot", "process_8cpp.html#adc25c326102fa0104e43b72b7d4e9f88", null ],

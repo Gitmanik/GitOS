@@ -1,15 +1,19 @@
 var searchData=
 [
-  ['last_5faccess_297',['last_access',['../structfat__file.html#a45509a978803268a0b3073ce042d1a3b',1,'fat_file::last_access()'],['../fat16_8h.html#a45509a978803268a0b3073ce042d1a3b',1,'last_access():&#160;fat16.h']]],
-  ['last_5fmod_5fdate_298',['last_mod_date',['../structfat__file.html#afaf64f492b09fc487b1ed71d600576cd',1,'fat_file::last_mod_date()'],['../fat16_8h.html#afaf64f492b09fc487b1ed71d600576cd',1,'last_mod_date():&#160;fat16.h']]],
-  ['last_5fmod_5ftime_299',['last_mod_time',['../fat16_8h.html#a3aad4501b37fe714284af7b4daa271cb',1,'last_mod_time():&#160;fat16.h'],['../structfat__file.html#a3aad4501b37fe714284af7b4daa271cb',1,'fat_file::last_mod_time()']]],
-  ['ldtr_300',['ldtr',['../structtss.html#a622f0579c9f5823a75a5d71fe9d524ec',1,'tss::ldtr()'],['../tss_8h.html#a622f0579c9f5823a75a5d71fe9d524ec',1,'ldtr():&#160;tss.h']]],
-  ['light_5fblue_301',['LIGHT_BLUE',['../text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a68ce56e42a1a2ef6df9fe104d6f36505',1,'text_mode.h']]],
-  ['light_5fcyan_302',['LIGHT_CYAN',['../text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a592ebc24bbac680fdb4194c9b6429cfb',1,'text_mode.h']]],
-  ['light_5fgreen_303',['LIGHT_GREEN',['../text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3afec3e3526a1600b6e5433488e739c193',1,'text_mode.h']]],
-  ['light_5fpurple_304',['LIGHT_PURPLE',['../text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a49bce2fa4f1572677def255bbeb36109',1,'text_mode.h']]],
-  ['light_5fred_305',['LIGHT_RED',['../text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a03e13fc6dc3ba439104021a816e6c55d',1,'text_mode.h']]],
-  ['limit_306',['limit',['../structidtr__desc.html#ab28e82ae69032cb4ad3ec3a0be3d7129',1,'idtr_desc::limit()'],['../structgdt__structured.html#a119a08b6fc41ba2bd00760569f3167eb',1,'gdt_structured::limit()'],['../idt_8h.html#ab28e82ae69032cb4ad3ec3a0be3d7129',1,'limit():&#160;idt.h']]],
-  ['link_307',['link',['../structtss.html#a6163461798acb053ba062347095330e0',1,'tss::link()'],['../tss_8h.html#a6163461798acb053ba062347095330e0',1,'link():&#160;tss.h']]],
-  ['low_5f16bits_5ffirst_5fcluster_308',['low_16bits_first_cluster',['../structfat__file.html#a2b501243ffd6868f87a44b5a3aeaad44',1,'fat_file::low_16bits_first_cluster()'],['../fat16_8h.html#a2b501243ffd6868f87a44b5a3aeaad44',1,'low_16bits_first_cluster():&#160;fat16.h']]]
+  ['main_0',['main',['../zofia_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'zofia.cpp']]],
+  ['max_5ffiledescriptors_1',['MAX_FILEDESCRIPTORS',['../file_8h.html#a9e908e8845c02e0b0969b41a021310eb',1,'file.h']]],
+  ['max_5ffilesystem_5fname_2',['MAX_FILESYSTEM_NAME',['../file_8h.html#abedb6e14253f852e31a2f62f0e1adf52',1,'file.h']]],
+  ['max_5ffilesystems_3',['MAX_FILESYSTEMS',['../file_8h.html#ad6c0e74019637e82fd86897e2d4a2a25',1,'file.h']]],
+  ['max_5finterrupts_4',['MAX_INTERRUPTS',['../idt_8h.html#a9affc80dd8947cc1dcb1ae52801923c8',1,'idt.h']]],
+  ['max_5fpath_5',['MAX_PATH',['../pathparser_8h.html#ab99ded389af74001a6298fc9e44e74e5',1,'pathparser.h']]],
+  ['max_5fprocesses_6',['MAX_PROCESSES',['../process_8h.html#a92fd8bb5807bf6abb640686f51e5df3e',1,'process.h']]],
+  ['max_5fsyscalls_7',['MAX_SYSCALLS',['../syscall_8h.html#a88ef3d98617b4673404cd57e1fa4e516',1,'syscall.h']]],
+  ['media_5ftype_8',['media_type',['../structfat16__header__primary.html#a4b184d5976feb6927aa2a1bd3bc157cc',1,'fat16_header_primary::media_type'],['../fat16_8h.html#a4b184d5976feb6927aa2a1bd3bc157cc',1,'media_type:&#160;fat16.h']]],
+  ['memcmp_9',['memcmp',['../userland_2stdlib_2string_8h.html#a7710a54c06a0782c5762fcc849b71603',1,'memcmp(void *ptr1, void *ptr2, size_t len):&#160;memory.c'],['../userland_2stdlib_2string_8c.html#a7710a54c06a0782c5762fcc849b71603',1,'memcmp(void *ptr1, void *ptr2, size_t len):&#160;string.c'],['../memory_8h.html#a7710a54c06a0782c5762fcc849b71603',1,'memcmp(void *ptr1, void *ptr2, size_t len):&#160;memory.c'],['../memory_8c.html#a7710a54c06a0782c5762fcc849b71603',1,'memcmp(void *ptr1, void *ptr2, size_t len):&#160;memory.c']]],
+  ['memcpy_10',['memcpy',['../memory_8c.html#aa0c74fd405b3fbe948738ff0d47279df',1,'memcpy(void *dstptr, const void *srcptr, size_t size):&#160;memory.c'],['../memory_8h.html#aa0c74fd405b3fbe948738ff0d47279df',1,'memcpy(void *dstptr, const void *srcptr, size_t size):&#160;memory.c'],['../userland_2stdlib_2string_8c.html#aa0c74fd405b3fbe948738ff0d47279df',1,'memcpy(void *dstptr, const void *srcptr, size_t size):&#160;string.c'],['../userland_2stdlib_2string_8h.html#aa0c74fd405b3fbe948738ff0d47279df',1,'memcpy(void *dstptr, const void *srcptr, size_t size):&#160;memory.c']]],
+  ['memory_2ec_11',['memory.c',['../memory_8c.html',1,'']]],
+  ['memory_2eh_12',['memory.h',['../memory_8h.html',1,'']]],
+  ['memory_5fmap_5fentry_13',['memory_map_entry',['../bios__memory__map_8h.html#a69ee9415479e1704667a452f1d715987',1,'bios_memory_map.h']]],
+  ['memset_14',['memset',['../memory_8c.html#a303bf868586597a1e6b3f20a068dcf06',1,'memset(void *ptr, int c, size_t size):&#160;memory.c'],['../memory_8h.html#a303bf868586597a1e6b3f20a068dcf06',1,'memset(void *ptr, int c, size_t size):&#160;memory.c'],['../userland_2stdlib_2string_8c.html#a303bf868586597a1e6b3f20a068dcf06',1,'memset(void *ptr, int c, size_t size):&#160;string.c'],['../userland_2stdlib_2string_8h.html#a303bf868586597a1e6b3f20a068dcf06',1,'memset(void *ptr, int c, size_t size):&#160;memory.c']]],
+  ['misc_2eh_15',['misc.h',['../misc_8h.html',1,'']]]
 ];

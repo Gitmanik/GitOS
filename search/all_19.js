@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['zero_559',['zero',['../structidt__desc.html#a09777e6a5ad91ffd82a9975efe33de2e',1,'idt_desc::zero()'],['../idt_8h.html#a09777e6a5ad91ffd82a9975efe33de2e',1,'zero():&#160;idt.h']]],
-  ['zofia_2ecpp_560',['zofia.cpp',['../zofia_8cpp.html',1,'']]]
+  ['_7eelffile_0',['~ELFFile',['../class_e_l_f_file.html#ae7df1e328ba9dd940c136c66a94cb576',1,'ELFFile']]]
 ];

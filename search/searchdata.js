@@ -1,9 +1,9 @@
 var indexSectionsWithContent =
 {
-  0: "$_abcdefghijklmnoprstuvwyz~",
+  0: "_abcdefghijklmnoprstuvwyz~",
   1: "defghikprt",
-  2: "bdefghikmpstz",
-  3: "$_defghikmoprstuv~",
+  2: "abdefghikmpstz",
+  3: "_defghikmoprstuv~",
   4: "_abcdefghijklmnoprstvwz",
   5: "defhis",
   6: "efpst",

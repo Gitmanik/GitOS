@@ -11,5 +11,5 @@ var heap_8h =
     [ "HEAP_BLOCK_TABLE_ENTRY", "heap_8h.html#a9d0a6e6d9ffe25ff7cd0fdb48860caca", null ],
     [ "heap_create", "heap_8h.html#a98974982a9a4b22cbdaba4db00431a57", null ],
     [ "heap_free", "heap_8h.html#a1f81a1e670c8cdf32e02d3665eb1162e", null ],
-    [ "heap_malloc", "heap_8h.html#ac9eaa4abd14b62e6a3bca0b15ad042e2", null ]
+    [ "heap_malloc", "heap_8h.html#a98c55e9c60afb415fc10b46f1585e07e", null ]
 ];

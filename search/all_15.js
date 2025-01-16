@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['uitoa_549',['uitoa',['../kernel_2common_2string_8c.html#a55cc627dc6dc83ca2d6a7e06821ea22a',1,'uitoa(unsigned long num, char *str, int base):&#160;string.c'],['../kernel_2common_2string_8h.html#a55cc627dc6dc83ca2d6a7e06821ea22a',1,'uitoa(unsigned long num, char *str, int base):&#160;string.c'],['../userland_2stdlib_2string_8c.html#a55cc627dc6dc83ca2d6a7e06821ea22a',1,'uitoa(unsigned long num, char *str, int base):&#160;string.c'],['../userland_2stdlib_2string_8h.html#a55cc627dc6dc83ca2d6a7e06821ea22a',1,'uitoa(unsigned long num, char *str, int base):&#160;string.c']]],
-  ['user_5fcode_5fselector_550',['USER_CODE_SELECTOR',['../gdt_8h.html#a3b5b77020c86db446e1729defea0ea17',1,'gdt.h']]],
-  ['user_5fdata_5fselector_551',['USER_DATA_SELECTOR',['../gdt_8c.html#a7314263eacc399b707efe8d1fbb804b6',1,'gdt.h']]],
-  ['user_5fregisters_552',['user_registers',['../task_8h.html#a2be45a1d61331ba5b9fc59deb2053a61',1,'task.h']]]
+  ['volume_5fid_0',['volume_id',['../structfat16__header__extended.html#a77a2cd2807c348ae913c256e41533320',1,'fat16_header_extended::volume_id'],['../fat16_8h.html#a77a2cd2807c348ae913c256e41533320',1,'volume_id:&#160;fat16.h']]],
+  ['volume_5fid_5fstring_1',['volume_id_string',['../structfat16__header__extended.html#a2eab2b435efae77606b7bb849b48c8c8',1,'fat16_header_extended::volume_id_string'],['../fat16_8h.html#a2eab2b435efae77606b7bb849b48c8c8',1,'volume_id_string:&#160;fat16.h']]],
+  ['vsprintf_2',['vsprintf',['../userland_2stdlib_2string_8c.html#a6ace31fdb4501403975c952414a15f67',1,'vsprintf(char *buf, const char *fmt, va_list args):&#160;string.c'],['../userland_2stdlib_2string_8h.html#a6ace31fdb4501403975c952414a15f67',1,'vsprintf(char *buf, const char *fmt, va_list args):&#160;string.c']]]
 ];

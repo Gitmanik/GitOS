@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['task_2ec_636',['task.c',['../task_8c.html',1,'']]],
-  ['task_2eh_637',['task.h',['../task_8h.html',1,'']]],
-  ['text_5fmode_2ec_638',['text_mode.c',['../text__mode_8c.html',1,'']]],
-  ['text_5fmode_2eh_639',['text_mode.h',['../text__mode_8h.html',1,'']]],
-  ['tss_2eh_640',['tss.h',['../tss_8h.html',1,'']]]
+  ['serial_2ec_0',['serial.c',['../serial_8c.html',1,'']]],
+  ['serial_2eh_1',['serial.h',['../serial_8h.html',1,'']]],
+  ['status_2eh_2',['status.h',['../status_8h.html',1,'']]],
+  ['stdio_2eh_3',['stdio.h',['../stdio_8h.html',1,'']]],
+  ['string_2ec_4',['string.c',['../kernel_2common_2string_8c.html',1,'(Global Namespace)'],['../userland_2stdlib_2string_8c.html',1,'(Global Namespace)']]],
+  ['string_2eh_5',['string.h',['../kernel_2common_2string_8h.html',1,'(Global Namespace)'],['../userland_2stdlib_2string_8h.html',1,'(Global Namespace)']]],
+  ['syscall_2ec_6',['syscall.c',['../syscall_8c.html',1,'']]],
+  ['syscall_2eh_7',['syscall.h',['../syscall_8h.html',1,'']]]
 ];

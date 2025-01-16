@@ -111,12 +111,12 @@ static void fat16_get_full_relative_filename(struct fat_file* file, char* out)
 {
     memset(out, 0x00, 11);
     char* out_tmp = out;
-    fat16_to_proper_string(&out_tmp, (const char*) file->filename, 8);
+    fat16_to_proper_string(&out_tmp, (const char*) file->filename, sizeof(file->filename));
     if (file->ext[0] != 0x00 && file->ext[0] != 0x20)
     {
         *out_tmp = '.';
         out_tmp++;
-        fat16_to_proper_string(&out_tmp, (const char*) file->ext, 3);
+        fat16_to_proper_string(&out_tmp, (const char*) file->ext, sizeof(file->ext));
     }
 }
 

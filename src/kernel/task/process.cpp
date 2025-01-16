@@ -7,6 +7,7 @@ extern "C" {
 #include "common/status.h"
 #include "task.h"
 #include "common/string.h"
+#include "kernel.h"
 }
 #include "formats/elf/ELFFile.hpp"
 
@@ -246,4 +247,47 @@ char process_popkey(struct process* process)
     process->keyboard.buffer[buffer_index] = 0;
     process->keyboard.head++;
     return c;
+}
+
+int process_get_next_allocation_index(struct process* process) {
+    for (int i = 0; i < PROCESS_MAX_ALLOCATIONS; i++) {
+        if (process->allocations[i] == 0)
+            return i;
+    }
+    return -ENOMEM;
+}
+
+void* process_malloc(struct process* process, size_t size) {
+
+    int next_alloc_idx = process_get_next_allocation_index(process);
+    if (next_alloc_idx == -ENOMEM)
+        return 0;
+
+    void* ptr = kmalloc(size);
+
+    process->allocations[next_alloc_idx] = ptr;
+
+    int res = paging_map_to(process->task->page_directory, ptr, ptr,
+        paging_align_address((void*)((int)ptr+size)),
+        PAGING_IS_PRESENT | PAGING_IS_WRITEABLE | PAGING_ACCESS_FROM_ALL);
+
+    if (res < 0) {
+        kfree(ptr);
+        return 0;
+    }
+
+    kprintf("Allocated %d bytes (idx: %d)", size, next_alloc_idx);
+
+    return process->allocations[next_alloc_idx];
+}
+
+void process_free(struct process* process, void* address) {
+    for (int i = 0; i < PROCESS_MAX_ALLOCATIONS; i++) {
+        if (process->allocations[i] == address) {
+            kprintf("Freed at 0x%p (idx: %d)", address, i);
+            kfree(process->allocations[i]);
+            process->allocations[i] = 0;
+            return;
+        }
+    }
 }

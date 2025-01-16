@@ -2,8 +2,9 @@
 
 #include <stdint.h>
 #include "fs/pathparser.h"
+#include <stddef.h>
 
-#define PROGRAM_MAX_ALLOCATIONS 1024
+#define PROCESS_MAX_ALLOCATIONS 1024
 #define PROCESS_KEYBOARD_BUFFER_SIZE 1024
 #define MAX_PROCESSES 12
 
@@ -28,7 +29,7 @@ struct process
     /**
      * @brief malloc allocations of the process
      */
-    void* allocations[PROGRAM_MAX_ALLOCATIONS];
+    void* allocations[PROCESS_MAX_ALLOCATIONS];
 
     // TODO: Make this ELFFile* when rewritten to C++
     void* elf;
@@ -52,3 +53,5 @@ struct process* process_current();
 int process_switch(struct process* process);
 void process_pushkey(struct process* process, char c);
 char process_popkey(struct process* process);
+void* process_malloc(struct process* process, size_t size);
+void process_free(struct process* process, void* address);

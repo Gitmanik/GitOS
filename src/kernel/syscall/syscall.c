@@ -109,10 +109,34 @@ void* sys$execprocess(struct interrupt_frame* frame) {
 
 }
 
+void* sys$malloc(struct interrupt_frame* frame) {
+    (void)(frame);
+
+    struct process* process = process_current();
+
+    int mem_size = *(int*)task_peek_stack(task_current(), 0);
+
+    return process_malloc(process, mem_size);
+}
+
+void* sys$free(struct interrupt_frame* frame) {
+    (void)(frame);
+
+    struct process* process = process_current();
+
+    void* mem_to_free = task_peek_stack(task_current(), 0);
+
+    process_free(process, mem_to_free);
+
+    return 0;
+}
+
 void syscall_init()
 {
     syscall_register(SYSCALL_PUTSTRING, sys$putstring);
     syscall_register(SYSCALL_GETCHAR, sys$getchar);
     syscall_register(SYSCALL_PUTCHAR, sys$putchar);
     syscall_register(SYSCALL_EXECPROCESS, sys$execprocess);
+    syscall_register(SYSCALL_MALLOC, sys$malloc);
+    syscall_register(SYSCALL_FREE, sys$free);
 }

@@ -95,10 +95,8 @@ static void fat16_to_proper_string(char** out, const char* in, int max_len)
         c++;
     }
 
-    if (*in == 0x20) // If is FAT filename terminator (space) replace with null terminator
-    {
-        **out = 0x00;
-    }
+    if (c < max_len)
+        **out = 0;
 }
 
 /**

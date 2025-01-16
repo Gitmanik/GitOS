@@ -99,6 +99,7 @@ $(document).ready(function(){initNavTree('process_8h.html',''); initResizable();
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="pathparser_8h_source.html">fs/pathparser.h</a>&quot;</code><br />
+<code>#include &lt;stddef.h&gt;</code><br />
 </div>
 <p><a href="process_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -111,8 +112,8 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a1ae0d9051ac392230ca0754368037a0d" id="r_a1ae0d9051ac392230ca0754368037a0d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#a1ae0d9051ac392230ca0754368037a0d">PROGRAM_MAX_ALLOCATIONS</a>&#160;&#160;&#160;1024</td></tr>
-<tr class="separator:a1ae0d9051ac392230ca0754368037a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a881944a5d64fd9c67c2dd17332f0bff2" id="r_a881944a5d64fd9c67c2dd17332f0bff2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#a881944a5d64fd9c67c2dd17332f0bff2">PROCESS_MAX_ALLOCATIONS</a>&#160;&#160;&#160;1024</td></tr>
+<tr class="separator:a881944a5d64fd9c67c2dd17332f0bff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19b5a6036a80fdec911d063961b757ac" id="r_a19b5a6036a80fdec911d063961b757ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#a19b5a6036a80fdec911d063961b757ac">PROCESS_KEYBOARD_BUFFER_SIZE</a>&#160;&#160;&#160;1024</td></tr>
 <tr class="separator:a19b5a6036a80fdec911d063961b757ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92fd8bb5807bf6abb640686f51e5df3e" id="r_a92fd8bb5807bf6abb640686f51e5df3e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#a92fd8bb5807bf6abb640686f51e5df3e">MAX_PROCESSES</a>&#160;&#160;&#160;12</td></tr>
@@ -132,6 +133,10 @@ Functions</h2></td></tr>
 <tr class="separator:ac6d266ad05ab00b91852d1bac27d63a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9fa28dc09450ba227f7c647386f4e08" id="r_ab9fa28dc09450ba227f7c647386f4e08"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#ab9fa28dc09450ba227f7c647386f4e08">process_popkey</a> (struct <a class="el" href="structprocess.html">process</a> *<a class="el" href="structprocess.html">process</a>)</td></tr>
 <tr class="separator:ab9fa28dc09450ba227f7c647386f4e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb72730a52c1eea0e1728521673ad4e2" id="r_acb72730a52c1eea0e1728521673ad4e2"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#acb72730a52c1eea0e1728521673ad4e2">process_malloc</a> (struct <a class="el" href="structprocess.html">process</a> *<a class="el" href="structprocess.html">process</a>, size_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>)</td></tr>
+<tr class="separator:acb72730a52c1eea0e1728521673ad4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e737a5857eea754f30d0fb58d255a1e" id="r_a1e737a5857eea754f30d0fb58d255a1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#a1e737a5857eea754f30d0fb58d255a1e">process_free</a> (struct <a class="el" href="structprocess.html">process</a> *<a class="el" href="structprocess.html">process</a>, void *address)</td></tr>
+<tr class="separator:a1e737a5857eea754f30d0fb58d255a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a92fd8bb5807bf6abb640686f51e5df3e" name="a92fd8bb5807bf6abb640686f51e5df3e"></a>
@@ -162,14 +167,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1ae0d9051ac392230ca0754368037a0d" name="a1ae0d9051ac392230ca0754368037a0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ae0d9051ac392230ca0754368037a0d">&#9670;&#160;</a></span>PROGRAM_MAX_ALLOCATIONS</h2>
+<a id="a881944a5d64fd9c67c2dd17332f0bff2" name="a881944a5d64fd9c67c2dd17332f0bff2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a881944a5d64fd9c67c2dd17332f0bff2">&#9670;&#160;</a></span>PROCESS_MAX_ALLOCATIONS</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define PROGRAM_MAX_ALLOCATIONS&#160;&#160;&#160;1024</td>
+          <td class="memname">#define PROCESS_MAX_ALLOCATIONS&#160;&#160;&#160;1024</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -193,6 +198,36 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="process_8cpp.html#af1b3c695b7f44f0356971770370792d2">current_process</a>.</p>
+
+</div>
+</div>
+<a id="a1e737a5857eea754f30d0fb58d255a1e" name="a1e737a5857eea754f30d0fb58d255a1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e737a5857eea754f30d0fb58d255a1e">&#9670;&#160;</a></span>process_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void process_free </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structprocess.html">process</a> *&#160;</td>
+          <td class="paramname"><em>process</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>address</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="structprocess.html#a4e35d2a1bacc7c8ac8f838c985a7d46f">process::allocations</a>, <a class="el" href="hkeap_8c.html#a069f85a5001d71bc44d8be6532a4e432">kfree()</a>, and <a class="el" href="process_8h.html#a881944a5d64fd9c67c2dd17332f0bff2">PROCESS_MAX_ALLOCATIONS</a>.</p>
 
 </div>
 </div>
@@ -253,6 +288,36 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="fat16_8h.html#a36126364ff9f56a16488e5c2b8d1206e">filename</a>, <a class="el" href="process_8cpp.html#a7a1fd8997c2d1acde0fa0929c13f7a3f">process_load()</a>, and <a class="el" href="process_8cpp.html#a9173d96e28447a42821079e71cddae0f">process_switch()</a>.</p>
+
+</div>
+</div>
+<a id="acb72730a52c1eea0e1728521673ad4e2" name="acb72730a52c1eea0e1728521673ad4e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb72730a52c1eea0e1728521673ad4e2">&#9670;&#160;</a></span>process_malloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * process_malloc </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structprocess.html">process</a> *&#160;</td>
+          <td class="paramname"><em>process</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="structprocess.html#a4e35d2a1bacc7c8ac8f838c985a7d46f">process::allocations</a>, <a class="el" href="status_8h.html#a6a05c923dad0c1208043e9c20a58c8e5">ENOMEM</a>, <a class="el" href="hkeap_8c.html#a069f85a5001d71bc44d8be6532a4e432">kfree()</a>, <a class="el" href="hkeap_8c.html#a87d8585002a620e687d68b38ab387a0e">kmalloc()</a>, <a class="el" href="structtask.html#ab88b1e54843df52e90498f531b017418">task::page_directory</a>, <a class="el" href="paging_8h.html#a3466cd50486f7498faa89ab3b4d63732">PAGING_ACCESS_FROM_ALL</a>, <a class="el" href="paging_8c.html#aa1368f3a69125538a06ae3621e9aa930">paging_align_address()</a>, <a class="el" href="paging_8h.html#aaaa04722a790129664fa46d6ec561478">PAGING_IS_PRESENT</a>, <a class="el" href="paging_8h.html#abfd474751dc86bb0e3a806d62beb9480">PAGING_IS_WRITEABLE</a>, <a class="el" href="paging_8c.html#abbc96dfb690336d0a9379237945bdb52">paging_map_to()</a>, <a class="el" href="process_8cpp.html#acfaf2c5c9fc427b4b367d6204a888eae">process_get_next_allocation_index()</a>, <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, and <a class="el" href="structprocess.html#a51b84d6af17c12b1021cd3b75f29e769">process::task</a>.</p>
 
 </div>
 </div>

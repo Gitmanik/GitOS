@@ -1,18 +1,7 @@
 var searchData=
 [
-  ['fat16_5fclose_0',['fat16_close',['../fat16_8h.html#a8ab4ff16773fee77633350716b0651e0',1,'fat16_close(void *desc):&#160;fat16.c'],['../fat16_8c.html#a8ab4ff16773fee77633350716b0651e0',1,'fat16_close(void *desc):&#160;fat16.c']]],
-  ['fat16_5finit_5ffilesystem_1',['fat16_init_filesystem',['../fat16_8c.html#a81715aa04f41bc468b2a383a199a1ac4',1,'fat16_init_filesystem():&#160;fat16.c'],['../fat16_8h.html#a81715aa04f41bc468b2a383a199a1ac4',1,'fat16_init_filesystem():&#160;fat16.c']]],
-  ['fat16_5fopen_2',['fat16_open',['../fat16_8c.html#add34180378e73e159024002d6c672d58',1,'fat16_open(void *private_fs, struct path_part *path, FILE_MODE mode):&#160;fat16.c'],['../fat16_8h.html#add34180378e73e159024002d6c672d58',1,'fat16_open(void *private_fs, struct path_part *path, FILE_MODE mode):&#160;fat16.c']]],
-  ['fat16_5fread_3',['fat16_read',['../fat16_8c.html#a1553a7be5c659d0e4f6666600e5af2fa',1,'fat16_read(void *private_fs, void *desc, uint32_t size, uint32_t nmemb, char *out):&#160;fat16.c'],['../fat16_8h.html#a1553a7be5c659d0e4f6666600e5af2fa',1,'fat16_read(void *private_fs, void *desc, uint32_t size, uint32_t nmemb, char *out):&#160;fat16.c']]],
-  ['fat16_5fresolve_4',['fat16_resolve',['../fat16_8c.html#a7cd0b930003f5667057bd2e2e286c6e4',1,'fat16_resolve(struct disk *disk):&#160;fat16.c'],['../fat16_8h.html#a7cd0b930003f5667057bd2e2e286c6e4',1,'fat16_resolve(struct disk *disk):&#160;fat16.c']]],
-  ['fat16_5fseek_5',['fat16_seek',['../fat16_8c.html#a04ed328867d7fdeee818ae25557400a0',1,'fat16_seek(void *desc, uint32_t offset, FILE_SEEK_MODE seek_mode):&#160;fat16.c'],['../fat16_8h.html#a04ed328867d7fdeee818ae25557400a0',1,'fat16_seek(void *desc, uint32_t offset, FILE_SEEK_MODE seek_mode):&#160;fat16.c']]],
-  ['fat16_5fstat_6',['fat16_stat',['../fat16_8c.html#a26828ac940d0d1665fa27a5fa8e00923',1,'fat16_stat(void *desc, struct file_stat *stat):&#160;fat16.c'],['../fat16_8h.html#a26828ac940d0d1665fa27a5fa8e00923',1,'fat16_stat(void *desc, struct file_stat *stat):&#160;fat16.c']]],
-  ['fclose_7',['fclose',['../file_8h.html#a575cfdaca3a77c3f910df16d56d7240c',1,'fclose(int fd):&#160;file.c'],['../file_8c.html#a575cfdaca3a77c3f910df16d56d7240c',1,'fclose(int fd):&#160;file.c']]],
-  ['fopen_8',['fopen',['../file_8c.html#acaa8025589d6cb55085a1976b97e08b9',1,'fopen(const char *filename, const char *str_mode):&#160;file.c'],['../file_8h.html#aa01c104dbdab4c93c40a96f0c705a3e1',1,'fopen(const char *filename, const char *mode):&#160;file.c']]],
-  ['fread_9',['fread',['../file_8c.html#adee556231b2610f1807f3dd2f2dd0f6a',1,'fread(void *ptr, uint32_t size, uint32_t nmemb, int fd):&#160;file.c'],['../file_8h.html#adee556231b2610f1807f3dd2f2dd0f6a',1,'fread(void *ptr, uint32_t size, uint32_t nmemb, int fd):&#160;file.c']]],
-  ['fs_5finit_10',['fs_init',['../file_8c.html#ac38cc84063ef3ade063f204394babb76',1,'fs_init():&#160;file.c'],['../file_8h.html#ac38cc84063ef3ade063f204394babb76',1,'fs_init():&#160;file.c']]],
-  ['fs_5finsert_5ffilesystem_11',['fs_insert_filesystem',['../file_8c.html#a060417cd82e00f01ecfb2024ae8fce7c',1,'fs_insert_filesystem(struct filesystem *filesystem):&#160;file.c'],['../file_8h.html#a060417cd82e00f01ecfb2024ae8fce7c',1,'fs_insert_filesystem(struct filesystem *filesystem):&#160;file.c']]],
-  ['fs_5fresolve_12',['fs_resolve',['../file_8c.html#a64056ef2a3bd065ebe747f58b26f167c',1,'fs_resolve(struct disk *disk):&#160;file.c'],['../file_8h.html#a64056ef2a3bd065ebe747f58b26f167c',1,'fs_resolve(struct disk *disk):&#160;file.c']]],
-  ['fseek_13',['fseek',['../file_8c.html#a4afef177a56ef89821691c7c4df374c3',1,'fseek(int fd, int offset, FILE_SEEK_MODE whence):&#160;file.c'],['../file_8h.html#a4afef177a56ef89821691c7c4df374c3',1,'fseek(int fd, int offset, FILE_SEEK_MODE whence):&#160;file.c']]],
-  ['fstat_14',['fstat',['../file_8c.html#a0ed36033dca44a4c90f733ed5ef33500',1,'fstat(int fd, struct file_stat *stat):&#160;file.c'],['../file_8h.html#a0ed36033dca44a4c90f733ed5ef33500',1,'fstat(int fd, struct file_stat *stat):&#160;file.c']]]
+  ['elf_5fload_0',['elf_load',['../process_8cpp.html#a3546bd370b8f1c0dfb230c41e59e7b3f',1,'process.cpp']]],
+  ['elffile_1',['ELFFile',['../class_e_l_f_file.html#a6bdb05aa9d4e058fa5428d4def0ccf20',1,'ELFFile']]],
+  ['encode_5fgdt_5fentry_2',['encode_gdt_entry',['../gdt_8c.html#a636b7c59562c6decfc33e43b5623955b',1,'gdt.c']]],
+  ['execprocess_3',['execprocess',['../misc_8h.html#a190c013df9a32d7c3dd925d060b94c75',1,'misc.h']]]
 ];

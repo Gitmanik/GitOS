@@ -114,10 +114,16 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a01e111270f52e13b9d48a3829ffef89b" id="r_a01e111270f52e13b9d48a3829ffef89b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89b">syscalls</a> { <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba26172b0910d287f755c8d1cb088c329e">SYSCALL_GETCHAR</a>
+<tr class="memitem:a01e111270f52e13b9d48a3829ffef89b" id="r_a01e111270f52e13b9d48a3829ffef89b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89b">syscalls</a> { <br />
+&#160;&#160;<a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba26172b0910d287f755c8d1cb088c329e">SYSCALL_GETCHAR</a>
 , <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba639c4e2053c1b258b3fc62f20e066512">SYSCALL_PUTCHAR</a>
 , <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba21054fd193dc32963c6cd48f505bbc4c">SYSCALL_PUTSTRING</a>
 , <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba46adecc7bd993fb63846e92723a9f8d2">SYSCALL_EXECPROCESS</a>
+, <br />
+&#160;&#160;<a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba7189e79d1fe63ef84061466e440d52d2">SYSCALL_MALLOC</a>
+, <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba36a2cae31a90424fec9f76da7346d381">SYSCALL_FREE</a>
+, <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba3b8611ef4e1d7bc1bde1227fdf64afb9">SYSCALL_GET_PROCESS_ARGUMENTS</a>
+<br />
  }</td></tr>
 <tr class="separator:a01e111270f52e13b9d48a3829ffef89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -175,6 +181,9 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a01e111270f52e13b9d48a3829ffef89ba639c4e2053c1b258b3fc62f20e066512" name="a01e111270f52e13b9d48a3829ffef89ba639c4e2053c1b258b3fc62f20e066512"></a>SYSCALL_PUTCHAR&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a01e111270f52e13b9d48a3829ffef89ba21054fd193dc32963c6cd48f505bbc4c" name="a01e111270f52e13b9d48a3829ffef89ba21054fd193dc32963c6cd48f505bbc4c"></a>SYSCALL_PUTSTRING&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a01e111270f52e13b9d48a3829ffef89ba46adecc7bd993fb63846e92723a9f8d2" name="a01e111270f52e13b9d48a3829ffef89ba46adecc7bd993fb63846e92723a9f8d2"></a>SYSCALL_EXECPROCESS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a01e111270f52e13b9d48a3829ffef89ba7189e79d1fe63ef84061466e440d52d2" name="a01e111270f52e13b9d48a3829ffef89ba7189e79d1fe63ef84061466e440d52d2"></a>SYSCALL_MALLOC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a01e111270f52e13b9d48a3829ffef89ba36a2cae31a90424fec9f76da7346d381" name="a01e111270f52e13b9d48a3829ffef89ba36a2cae31a90424fec9f76da7346d381"></a>SYSCALL_FREE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a01e111270f52e13b9d48a3829ffef89ba3b8611ef4e1d7bc1bde1227fdf64afb9" name="a01e111270f52e13b9d48a3829ffef89ba3b8611ef4e1d7bc1bde1227fdf64afb9"></a>SYSCALL_GET_PROCESS_ARGUMENTS&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -195,7 +204,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="syscall_8c.html#a1083aaefff7ce1376c1cae1500764733">sys$execprocess()</a>, <a class="el" href="syscall_8c.html#a8c655982452cee3da6b3db2dc27e5228">sys$getchar()</a>, <a class="el" href="syscall_8c.html#a8f1950e8deb780e753aad44e7902d612">sys$putchar()</a>, <a class="el" href="syscall_8c.html#a2f174f5aae0388c271e3a160262bf6c7">sys$putstring()</a>, <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba46adecc7bd993fb63846e92723a9f8d2">SYSCALL_EXECPROCESS</a>, <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba26172b0910d287f755c8d1cb088c329e">SYSCALL_GETCHAR</a>, <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba639c4e2053c1b258b3fc62f20e066512">SYSCALL_PUTCHAR</a>, and <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba21054fd193dc32963c6cd48f505bbc4c">SYSCALL_PUTSTRING</a>.</p>
+<p class="reference">References <a class="el" href="syscall_8c.html#a1083aaefff7ce1376c1cae1500764733">sys$execprocess()</a>, <a class="el" href="syscall_8c.html#a6c5afa6447c25c16be5620ffdbe120b5">sys$free()</a>, <a class="el" href="syscall_8c.html#abe3d50c458631cc5a7e520bd1db63237">sys$get_process_arguments()</a>, <a class="el" href="syscall_8c.html#a8c655982452cee3da6b3db2dc27e5228">sys$getchar()</a>, <a class="el" href="syscall_8c.html#a3a6d4f9381d5e1482400afc6b31249fb">sys$malloc()</a>, <a class="el" href="syscall_8c.html#a8f1950e8deb780e753aad44e7902d612">sys$putchar()</a>, <a class="el" href="syscall_8c.html#a2f174f5aae0388c271e3a160262bf6c7">sys$putstring()</a>, <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba46adecc7bd993fb63846e92723a9f8d2">SYSCALL_EXECPROCESS</a>, <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba36a2cae31a90424fec9f76da7346d381">SYSCALL_FREE</a>, <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba3b8611ef4e1d7bc1bde1227fdf64afb9">SYSCALL_GET_PROCESS_ARGUMENTS</a>, <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba26172b0910d287f755c8d1cb088c329e">SYSCALL_GETCHAR</a>, <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba7189e79d1fe63ef84061466e440d52d2">SYSCALL_MALLOC</a>, <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba639c4e2053c1b258b3fc62f20e066512">SYSCALL_PUTCHAR</a>, and <a class="el" href="syscall_8h.html#a01e111270f52e13b9d48a3829ffef89ba21054fd193dc32963c6cd48f505bbc4c">SYSCALL_PUTSTRING</a>.</p>
 
 </div>
 </div>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['elffile_2ecpp_0',['ELFFile.cpp',['../_e_l_f_file_8cpp.html',1,'']]],
-  ['elffile_2ehpp_1',['ELFFile.hpp',['../_e_l_f_file_8hpp.html',1,'']]]
+  ['crt0_2ec_0',['crt0.c',['../crt0_8c.html',1,'']]]
 ];

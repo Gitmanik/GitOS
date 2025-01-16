@@ -14,7 +14,7 @@ var searchData=
   ['pic2_5fcommand_11',['PIC2_COMMAND',['../pic_8h.html#a11d8793812c9d340e9a64cce26ee0570',1,'pic.h']]],
   ['pic2_5fdata_12',['PIC2_DATA',['../pic_8h.html#ab6d3b9f6f427357310896adf176145f1',1,'pic.h']]],
   ['process_5fkeyboard_5fbuffer_5fsize_13',['PROCESS_KEYBOARD_BUFFER_SIZE',['../process_8h.html#a19b5a6036a80fdec911d063961b757ac',1,'process.h']]],
-  ['program_5fmax_5fallocations_14',['PROGRAM_MAX_ALLOCATIONS',['../process_8h.html#a1ae0d9051ac392230ca0754368037a0d',1,'process.h']]],
+  ['process_5fmax_5fallocations_14',['PROCESS_MAX_ALLOCATIONS',['../process_8h.html#a881944a5d64fd9c67c2dd17332f0bff2',1,'process.h']]],
   ['program_5fvirtual_5faddress_15',['PROGRAM_VIRTUAL_ADDRESS',['../task_8h.html#a0657d569354e9817b4763d671a36a8ab',1,'task.h']]],
   ['program_5fvirtual_5fstack_5faddress_5fend_16',['PROGRAM_VIRTUAL_STACK_ADDRESS_END',['../task_8h.html#a535100eb5fba42cd54dacade2711f60b',1,'task.h']]],
   ['program_5fvirtual_5fstack_5faddress_5fstart_17',['PROGRAM_VIRTUAL_STACK_ADDRESS_START',['../task_8h.html#abc94869b5cc333fe54a400654a10c9f0',1,'task.h']]],

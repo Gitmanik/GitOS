@@ -38,7 +38,7 @@ struct filesystem* fat16_init_filesystem()
  */
 static uint32_t fat16_get_first_cluster(struct fat_file* file)
 {
-    return (file->high_16bits_first_cluster) | file->low_16bits_first_cluster;
+    return (file->high_16bits_first_cluster << 16) | file->low_16bits_first_cluster;
 }
 
 /**

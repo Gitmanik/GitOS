@@ -40,8 +40,13 @@ void process_command(char * str) {
     printf("Unrecognized command: %s\n", str);
 }
 
-int main() {
+int main(int argc, char** argv) {
     printf("GitOS Zofia - Build %s %s\n", __DATE__, __TIME__);
+
+    printf("argc = %d\n", argc);
+    for (int i = 0; i < argc; i++) {
+        printf("argv[%d] = %s\n", i, argv[i]);
+    }
 
     char buffer[1024] {0};
 

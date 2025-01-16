@@ -46,6 +46,9 @@ struct process
     } keyboard;
 
     void* elf_entry;
+
+    int argc;
+    char** argv;
 };
 int process_load_switch(const char* filename, struct process** process);
 int process_load(const char* filename, struct process** process);

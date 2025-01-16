@@ -275,6 +275,10 @@ void kernel_main()
     kprintf("Loading zofia.elf..");
     struct process* process = 0;
     res = process_load_switch("0:/zofia.elf", &process);
+    process->argc = 2;
+    process->argv[0] = (char*) "zofia.elf";
+    process->argv[1] = (char*) "hello:)";
+
     if (res != 0)
     {
         kernel_panic("Failed to load process");

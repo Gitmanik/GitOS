@@ -3,8 +3,11 @@
 //
 #include "misc.h"
 
-extern void main();
+extern void main(int argc, char** argv);
 
 void crt0() {
-    main();
+    int argc = 0;
+    char** argv = 0;
+    get_process_arguments(&argc, &argv);
+    main(argc, argv);
 }

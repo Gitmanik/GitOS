@@ -1,5 +1,8 @@
 #include "syscall.h"
 
+#include <common/assert.h>
+#include <common/string.h>
+
 #include "memory/heap/kheap.h"
 #include "idt/idt.h"
 #include "kernel.h"
@@ -109,6 +112,31 @@ void* sys$execprocess(struct interrupt_frame* frame) {
 
 }
 
+void* sys$get_process_arguments(struct interrupt_frame* frame) {
+    (void)(frame);
+
+    int* argc = task_peek_stack(task_current(), 0);
+    char*** argv = task_peek_stack(task_current(), 1);
+
+    struct process* process = process_current();
+
+    char** new_argv = process_malloc(process, sizeof(char*) * process->argc);
+
+    for (int i = 0; i < process->argc; i++) {
+        new_argv[i] = process_malloc(process, sizeof(char) * strlen(process->argv[i]) + 1);
+        strcpy(new_argv[i], process->argv[i]);
+    }
+
+    task_page();
+
+    *argc = process->argc;
+    *argv = new_argv;
+
+    kernel_page();
+
+    return 0;
+}
+
 void* sys$malloc(struct interrupt_frame* frame) {
     (void)(frame);
 
@@ -139,4 +167,5 @@ void syscall_init()
     syscall_register(SYSCALL_EXECPROCESS, sys$execprocess);
     syscall_register(SYSCALL_MALLOC, sys$malloc);
     syscall_register(SYSCALL_FREE, sys$free);
+    syscall_register(SYSCALL_GET_PROCESS_ARGUMENTS, sys$get_process_arguments);
 }

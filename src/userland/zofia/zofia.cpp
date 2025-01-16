@@ -5,6 +5,12 @@
 extern "C" {
 #include "stdio.h"
 #include "string.h"
+#include "misc.h"
+}
+
+const char* get_cwd() {
+    static char cwd[] = "0:/";
+    return cwd;
 }
 
 void process_command(char * str) {
@@ -20,6 +26,17 @@ void process_command(char * str) {
         }
     }
 
+    char buf[1024] {0};
+    int len = strlen(get_cwd());
+    strcpy(buf, get_cwd());
+    strcpy(buf + len, str);
+
+    int res = execprocess(buf);
+    if (res == 0) {
+        printf("Executing process: %s", str);
+        return;
+    }
+
     printf("Unrecognized command: %s\n", str);
 }
 
@@ -29,7 +46,7 @@ int main() {
     char buffer[1024] {0};
 
     while (true) {
-        putc('>');
+        printf("%s $", get_cwd());
         char c = 0;
         int idx = 0;
         while (true) {
@@ -39,6 +56,14 @@ int main() {
             do {
                 c = getc();
             } while (c == 0);
+
+            if (c == 8) {
+                if (idx == 0)
+                    continue;
+                idx--;
+                buffer[idx] = 0;
+                continue;
+            }
 
             if (c == '\r') {
                 break;

@@ -51,4 +51,5 @@ endfunction()
 
 add_subdirectory(blank)
 add_subdirectory(zofia)
-add_dependencies(userland stdlib blank zofia)
+add_subdirectory(crasher)
+add_dependencies(userland stdlib blank zofia crasher)

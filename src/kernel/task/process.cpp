@@ -276,15 +276,12 @@ void* process_malloc(struct process* process, size_t size) {
         return 0;
     }
 
-    kprintf("Allocated %d bytes (idx: %d)", size, next_alloc_idx);
-
     return process->allocations[next_alloc_idx];
 }
 
 void process_free(struct process* process, void* address) {
     for (int i = 0; i < PROCESS_MAX_ALLOCATIONS; i++) {
         if (process->allocations[i] == address) {
-            kprintf("Freed at 0x%p (idx: %d)", address, i);
             kfree(process->allocations[i]);
             process->allocations[i] = 0;
             return;

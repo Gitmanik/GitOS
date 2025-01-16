@@ -338,7 +338,7 @@ static int fat16_get_nth_cluster_from_fat(struct fat_private* fs_private, int st
     for (int i = 0; i < clusters_ahead; i++)
     {
         int entry = fat16_get_next_fat_entry(fs_private, cluster_to_use);
-        if (entry == 0xFF8 || entry == 0xFFF)
+        if (entry == 0xFFF8 || entry == 0xFFFFF)
         {
             //Last entry in the file but size specified otherwise
             result = -EIO;

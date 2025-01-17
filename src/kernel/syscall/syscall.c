@@ -159,6 +159,17 @@ void* sys$free(struct interrupt_frame* frame) {
     return 0;
 }
 
+void* sys$exit(struct interrupt_frame* frame) {
+    (void)(frame);
+    int return_code = *(int*)task_peek_stack(task_current(), 0);
+    kprintf("Process %s exited with return code: %d", process_current()->filename, return_code);
+
+    process_terminate(process_current());
+    task_switch(process_current()->task);
+    task_return(&task_current()->registers);
+    return 0;
+}
+
 void syscall_init()
 {
     syscall_register(SYSCALL_PUTSTRING, sys$putstring);
@@ -168,4 +179,5 @@ void syscall_init()
     syscall_register(SYSCALL_MALLOC, sys$malloc);
     syscall_register(SYSCALL_FREE, sys$free);
     syscall_register(SYSCALL_GET_PROCESS_ARGUMENTS, sys$get_process_arguments);
+    syscall_register(SYSCALL_EXIT, sys$exit);
 }

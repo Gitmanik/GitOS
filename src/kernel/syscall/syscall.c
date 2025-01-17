@@ -98,7 +98,7 @@ void* sys$execprocess(struct interrupt_frame* frame) {
 
     int res = 0;
     struct process* new_process = kmalloc(sizeof(struct process));
-    res = process_load_switch(path, &new_process);
+    res = process_load_switch(path, new_process);
 
     if (res < 0) {
         kfree(new_process);

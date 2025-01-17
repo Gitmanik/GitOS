@@ -15,11 +15,6 @@ struct process* current_process = 0;
 
 static struct process* processes[MAX_PROCESSES] = {};
 
-static void process_init(struct process* process)
-{
-    memset(process, 0, sizeof(struct process));
-}
-
 struct process* process_current()
 {
     return current_process;
@@ -36,7 +31,6 @@ struct process* process_get(int process_id)
 int process_switch(struct process* process)
 {
     current_process = process;
-    // TODO: SWAP VIDEO MEMORY
     return 0;
 }
 
@@ -125,22 +119,21 @@ int process_get_free_slot()
     return -EISTKN;
 }
 
-int process_load_switch(const char* filename, struct process** process)
+int process_load_switch(const char* filename, struct process* process)
 {
     int res = process_load(filename, process);
     if (res == 0)
     {
-        process_switch(*process);
+        process_switch(process);
     }
     return res;
 }
 
 
-int process_load_for_slot(const char* filename, struct process** process, int process_slot)
+int process_load_for_slot(const char* filename, struct process* process, int process_slot)
 {
     int res = 0;
     struct task* task = 0;
-    struct process* _process = nullptr;
     char* program_stack_ptr = nullptr;
 
     if (process_get(process_slot) != 0)
@@ -149,15 +142,7 @@ int process_load_for_slot(const char* filename, struct process** process, int pr
         goto out;
     }
 
-    _process = new struct process;
-    if (_process == nullptr)
-    {
-        res = -ENOMEM;
-        goto out;
-    }
-
-    process_init(_process);
-    res = process_load_data(filename, _process);
+    res = process_load_data(filename, process);
     if (ISERR(res))
         goto out;
 
@@ -168,40 +153,34 @@ int process_load_for_slot(const char* filename, struct process** process, int pr
         goto out;
     }
 
-    strncpy(_process->filename, filename, sizeof(_process->filename));
-    _process->stack = program_stack_ptr;
-    _process->id = process_slot;
+    strncpy(process->filename, filename, sizeof(process->filename));
+    process->stack = program_stack_ptr;
+    process->id = process_slot;
 
-    task = task_new(_process);
+    task = task_new(process);
     if (ERROR_I(task) == 0)
     {
         res = ERROR_I(task);
         goto out;
     }
 
-    _process->task = task;
+    process->task = task;
 
-    res = process_map_memory(_process);
+    res = process_map_memory(process);
     if (res < 0)
         goto out;
 
-    *process = _process;
-
-    processes[process_slot] = _process;
+    processes[process_slot] = process;
 
     out:
         if (ISERR(res))
         {
-            if (_process && _process->task)
-            {
                 task_free(_process->task);
-            }
-            // TODO: Free the process data
         }
         return res;
 }
 
-int process_load(const char* filename, struct process** process)
+int process_load(const char* filename, struct process* process)
 {
     int res = 0;
 

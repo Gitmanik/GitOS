@@ -147,7 +147,7 @@ void kernel_main()
     kprintf("Initializing GDT..");
     memset(gdt_real, 0, sizeof(gdt_real));
     gdt_structured_to_gdt(gdt_real, gdt_structured, TOTAL_GDT_SEGMENTS);
-    gdt_load(gdt_real, sizeof(gdt_real));
+    gdt_load(gdt_real, sizeof(gdt_real)-1);
 
     struct gdt_descriptor gdt_content;
     gdt_read(&gdt_content);

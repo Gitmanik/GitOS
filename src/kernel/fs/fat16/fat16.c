@@ -4,6 +4,7 @@
 #include "memory/memory.h"
 #include "memory/heap/kheap.h"
 #include "kernel.h"
+#include "common/assert.h"
 
 /**
  * @brief Describes driver as filesystem struct for generic filesystem driver use
@@ -736,16 +737,22 @@ int fat16_stat(void* desc, struct file_stat* stat)
     struct fat_file_descriptor* fat_desc = desc;
 
     struct fat_item* desc_item = fat_desc->file;
-    if (desc_item->type != FAT_ITEM_TYPE_FILE)
-        return -EINVARG;
-    
     struct fat_file* file = desc_item->file;
 
-    stat->filesize = file->filesize;
-    stat->flags = 0;
+    if (desc_item->type == FAT_ITEM_TYPE_FILE) {
+        stat->filesize = file->filesize;
+        stat->flags = 0;
 
-    if (file->attribute & FAT_FILE_READONLY)
-        stat->flags |= FILE_STAT_READ_ONLY;
+        if (file->attribute & FAT_FILE_READONLY)
+            stat->flags |= FILE_STAT_READ_ONLY;
+    }
+    else if (desc_item->type == FAT_ITEM_TYPE_DIRECTORY) {
+        stat->filesize = 0;
+        stat->flags = FILE_STAT_FOLDER;
+    }
+    else {
+        assert_not_reached();
+    }
 
     return ALL_OK;
 } 

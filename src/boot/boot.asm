@@ -13,8 +13,10 @@ setup:
     mov ax, 0 ; data is stored in 0x7c00 (BIOS loads this code to 0x7c00 )
     mov ds, ax 
     mov es, ax
-    mov ax, 0x00
     mov ss, ax
+    mov fs, ax
+    mov es, ax
+
     mov sp, 0x7c00 ; set stack below this code
     call get_memory_map ; Load RAM info into 0x500
     sti

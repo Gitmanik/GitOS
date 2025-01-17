@@ -175,7 +175,11 @@ int process_load_for_slot(const char* filename, struct process* process, int pro
     out:
         if (ISERR(res))
         {
-                task_free(_process->task);
+            if (process->task)
+                task_free(process->task);
+
+            if (process->elf)
+                delete static_cast<ELFFile *>(process->elf);
         }
         return res;
 }

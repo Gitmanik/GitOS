@@ -58,3 +58,4 @@ void process_pushkey(struct process* process, char c);
 char process_popkey(struct process* process);
 void* process_malloc(struct process* process, size_t size);
 void process_free(struct process* process, void* address);
+void process_terminate(struct process* process);

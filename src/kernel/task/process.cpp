@@ -271,3 +271,37 @@ void process_free(struct process* process, void* address) {
         }
     }
 }
+
+void process_terminate(struct process* process) {
+    for (int i = 0; i < MAX_PROCESSES; i++) {
+        if (processes[i] == process) {
+            processes[i] = 0;
+        }
+    }
+
+    if (current_process == process) {
+        for (int i = 0; i < MAX_PROCESSES; i++) {
+            if (processes[i] != 0) {
+                process_switch(processes[i]);
+                break;
+            }
+        }
+    }
+    if (current_process == process)
+        kernel_panic("No process to switch to!");
+
+
+    for (int i = 0; i < PROCESS_MAX_ALLOCATIONS; i++) {
+        if (process->allocations[i] == 0)
+            continue;
+        kfree(process->allocations[i]);
+        process->allocations[i] = 0;
+    }
+
+    task_free(process->task);
+    auto* elf = static_cast<ELFFile*>(process->elf);
+    delete elf;
+
+    kfree(process->stack);
+    delete process;
+}

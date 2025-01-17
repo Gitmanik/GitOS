@@ -102,7 +102,11 @@ void kernel_exception(int int_no, struct interrupt_frame* frame) {
     memset(internal_buf, 0, sizeof(internal_buf));
     tm_SetColor(LIGHT_RED);
 
-    ksprintf(internal_buf, "\n\nKernel panic! Exception thrown by CPU: %s\n", idt_InterruptLayoutString[int_no]);
+    if ((frame->cs & 0x3) == 3)
+        ksprintf(internal_buf, "\n\nProcess %s crashed! Exception thrown by CPU: %s\n", process_current()->filename, idt_InterruptLayoutString[int_no]);
+    else
+        ksprintf(internal_buf, "\n\nKernel panic! Exception thrown by CPU: %s\n", idt_InterruptLayoutString[int_no]);
+
     ser_PrintString(COM1, internal_buf);
     tm_PrintString(internal_buf);
 
@@ -115,8 +119,24 @@ void kernel_exception(int int_no, struct interrupt_frame* frame) {
     tm_PrintString(internal_buf);
     ser_PrintString(COM1, internal_buf);
 
-    tm_PrintString("GitOS halted.");
-    while (1);
+    kprintf("Stack trace:\n");
+    uint32_t *ebp = (uint32_t *)frame->ebp;
+
+    while (ebp != 0) {
+        uint32_t returnAddress = ebp[1];
+
+        kprintf("0x%x\n", returnAddress);
+
+        // Move ebp up to the caller's frame
+        ebp = (uint32_t *)ebp[0];  // dereference saved EBP
+    }
+
+    if ((frame->cs & 0x3) == 3) {
+    }
+    else {
+        tm_PrintString("GitOS halted.");
+        while (1);
+    }
 }
 
 void kernel_page()

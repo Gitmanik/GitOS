@@ -7,8 +7,9 @@ struct tss
     uint32_t link;
     uint32_t esp0; //Kernel stack pointer
     uint32_t ss0;  //Kernel stack segment
+    uint32_t esp1;
+    uint32_t ss1;
     uint32_t esp2;
-    uint32_t esp3;
     uint32_t ss2;
     uint32_t sr3;
     uint32_t eip;
@@ -29,6 +30,7 @@ struct tss
     uint32_t gs;
     uint32_t ldtr;
     uint32_t iopb;
+    uint32_t ssp;
 } __attribute__((packed));
 
 void tss_load(int tss_segment);

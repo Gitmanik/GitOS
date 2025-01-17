@@ -118,7 +118,7 @@ void* sys$get_process_arguments(struct interrupt_frame* frame) {
     int* argc = task_peek_stack(task_current(), 0);
     char*** argv = task_peek_stack(task_current(), 1);
 
-    struct process* process = process_current();
+    struct process* process = task_current()->process;
 
     char** new_argv = process_malloc(process, sizeof(char*) * process->argc);
 
@@ -140,7 +140,7 @@ void* sys$get_process_arguments(struct interrupt_frame* frame) {
 void* sys$malloc(struct interrupt_frame* frame) {
     (void)(frame);
 
-    struct process* process = process_current();
+    struct process* process = task_current()->process;
 
     int mem_size = *(int*)task_peek_stack(task_current(), 0);
 
@@ -150,7 +150,7 @@ void* sys$malloc(struct interrupt_frame* frame) {
 void* sys$free(struct interrupt_frame* frame) {
     (void)(frame);
 
-    struct process* process = process_current();
+    struct process* process = task_current()->process;
 
     void* mem_to_free = task_peek_stack(task_current(), 0);
 

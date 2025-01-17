@@ -132,6 +132,9 @@ void kernel_exception(int int_no, struct interrupt_frame* frame) {
     }
 
     if ((frame->cs & 0x3) == 3) {
+        process_terminate(task_current()->process);
+        task_switch(process_current()->task);
+        task_return(&task_current()->registers);
     }
     else {
         tm_PrintString("GitOS halted.");

@@ -31,13 +31,7 @@ void process_command(char * str) {
     strcpy(buf, get_cwd());
     strcpy(buf + len, str);
 
-    int res = execprocess(buf);
-    if (res == 0) {
-        printf("Executing process: %s", str);
-        return;
-    }
-
-    printf("Unrecognized command: %s\n", str);
+    execprocess(buf);
 }
 
 int main(int argc, char** argv) {

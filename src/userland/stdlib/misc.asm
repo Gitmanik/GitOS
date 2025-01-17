@@ -59,3 +59,17 @@ get_process_arguments:
     mov esp, ebp
     pop ebp
     ret
+
+extern exit
+exit:
+    push ebp
+    mov ebp, esp
+
+    push dword [ebp+8]
+    mov eax, 7
+    int 0x80
+    add esp, 4
+
+    mov esp, ebp
+    pop ebp
+    ret

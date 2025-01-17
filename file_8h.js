@@ -27,7 +27,8 @@ var file_8h =
       [ "SEEK_END", "file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8a060e45245be703e272d7264bafcfdc63", null ]
     ] ],
     [ "FILE_STAT_FLAGS_ENUM", "file_8h.html#abcb59f9acb9c3530b7d75c33f6755617", [
-      [ "FILE_STAT_READ_ONLY", "file_8h.html#abcb59f9acb9c3530b7d75c33f6755617a149a2651f7604176c2bf9bd76b666472", null ]
+      [ "FILE_STAT_READ_ONLY", "file_8h.html#abcb59f9acb9c3530b7d75c33f6755617a149a2651f7604176c2bf9bd76b666472", null ],
+      [ "FILE_STAT_FOLDER", "file_8h.html#abcb59f9acb9c3530b7d75c33f6755617a1ac50a6e5976d0935506adf3f4505c91", null ]
     ] ],
     [ "fclose", "file_8h.html#a575cfdaca3a77c3f910df16d56d7240c", null ],
     [ "fopen", "file_8h.html#aa01c104dbdab4c93c40a96f0c705a3e1", null ],

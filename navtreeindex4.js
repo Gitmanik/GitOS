@@ -1,5 +1,15 @@
 var NAVTREEINDEX4 =
 {
+"userland_2stdlib_2string_8c.html#a008e171a518fe0e0352f31b245e03875":[1,0,0,1,1,3,9],
+"userland_2stdlib_2string_8c.html#a0ac44bf20eb0770c1788f29d7bcc2866":[1,0,0,1,1,3,12],
+"userland_2stdlib_2string_8c.html#a0aff7311d684a0e0ef33125616a73385":[1,0,0,1,1,3,6],
+"userland_2stdlib_2string_8c.html#a0b13e0be1a33c43e50cffb3a04fa85a8":[1,0,0,1,1,3,14],
+"userland_2stdlib_2string_8c.html#a207391fc2c5fa7786d5e0b9ef8ba5e80":[1,0,0,1,1,3,16],
+"userland_2stdlib_2string_8c.html#a303bf868586597a1e6b3f20a068dcf06":[1,0,0,1,1,3,5],
+"userland_2stdlib_2string_8c.html#a403182b1cfba20cfeba9efb69845c9ba":[1,0,0,1,1,3,2],
+"userland_2stdlib_2string_8c.html#a444d2c3bbff8fb8a410d51a22b6339d8":[1,0,0,1,1,3,10],
+"userland_2stdlib_2string_8c.html#a50ba706f06bf4485284b720a04c369d1":[1,0,0,1,1,3,13],
+"userland_2stdlib_2string_8c.html#a5d3a7d391b277943084153876592273e":[1,0,0,1,1,3,11],
 "userland_2stdlib_2string_8c.html#a692bbaf15098dc84f83e2d39f9b856a1":[1,0,0,1,1,3,7],
 "userland_2stdlib_2string_8c.html#a6ace31fdb4501403975c952414a15f67":[1,0,0,1,1,3,18],
 "userland_2stdlib_2string_8c.html#a733f9adc8e09d0dcf0bd083cbcf34a33":[1,0,0,1,1,3,1],

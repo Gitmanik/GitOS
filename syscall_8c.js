@@ -1,6 +1,7 @@
 var syscall_8c =
 [
     [ "sys$execprocess", "syscall_8c.html#a1083aaefff7ce1376c1cae1500764733", null ],
+    [ "sys$exit", "syscall_8c.html#a5dc10a94ac7432a128a065d0ac7ba68d", null ],
     [ "sys$free", "syscall_8c.html#a6c5afa6447c25c16be5620ffdbe120b5", null ],
     [ "sys$get_process_arguments", "syscall_8c.html#abe3d50c458631cc5a7e520bd1db63237", null ],
     [ "sys$getchar", "syscall_8c.html#a8c655982452cee3da6b3db2dc27e5228", null ],

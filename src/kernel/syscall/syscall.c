@@ -97,7 +97,7 @@ void* sys$execprocess(struct interrupt_frame* frame) {
     task_copy_string_from(task_current(), str_ptr, path, MAX_PATH);
 
     int res = 0;
-    struct process* new_process = kmalloc(sizeof(struct process));
+    struct process* new_process = kzalloc(sizeof(struct process));
     res = process_load_switch(path, new_process);
 
     if (res < 0) {

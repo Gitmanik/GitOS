@@ -7,7 +7,6 @@ var task_8h =
     [ "PROGRAM_VIRTUAL_STACK_ADDRESS_START", "task_8h.html#abc94869b5cc333fe54a400654a10c9f0", null ],
     [ "PROGRAM_VIRTUAL_STACK_SIZE", "task_8h.html#a0aef6002f9257edbf0dfb5e7ffb4c03b", null ],
     [ "__attribute__", "task_8h.html#afbe98bd1f8d3c7a65d8a8048fdd8cd99", null ],
-    [ "restore_general_purpose_registers", "task_8h.html#a64907aa6724049b1b61108381fc9cc0e", null ],
     [ "task_copy_string_from", "task_8h.html#a7b9fe10fa4d12a92696ade8b825a6a37", null ],
     [ "task_current", "task_8h.html#ae0eb5551e540e9c099788b589b572b3c", null ],
     [ "task_current_save_state", "task_8h.html#ae51bb6f08bb9c7151940430787f31666", null ],

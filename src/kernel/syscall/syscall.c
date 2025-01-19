@@ -142,7 +142,7 @@ void* sys$malloc(struct interrupt_frame* frame) {
 
     struct process* process = task_current()->process;
 
-    int mem_size = *(int*)task_peek_stack(task_current(), 0);
+    int mem_size = (int)task_peek_stack(task_current(), 0);
 
     return process_malloc(process, mem_size);
 }
@@ -161,8 +161,8 @@ void* sys$free(struct interrupt_frame* frame) {
 
 void* sys$exit(struct interrupt_frame* frame) {
     (void)(frame);
-    int return_code = *(int*)task_peek_stack(task_current(), 0);
-    kprintf("Process %s exited with return code: %d", process_current()->filename, return_code);
+    int return_code = (int)task_peek_stack(task_current(), 0);
+    kprintf("Process %s exited with return code: %d\n", process_current()->filename, return_code);
 
     process_terminate(process_current());
     task_switch(process_current()->task);

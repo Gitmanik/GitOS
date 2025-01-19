@@ -59,8 +59,6 @@ struct task
 #define PROGRAM_VIRTUAL_STACK_ADDRESS_START 0x3FF000
 #define PROGRAM_VIRTUAL_STACK_ADDRESS_END  PROGRAM_VIRTUAL_STACK_ADDRESS_START - PROGRAM_VIRTUAL_STACK_SIZE
 
-void* restore_general_purpose_registers(struct registers* registers);
-
 struct task* task_current();
 struct task* task_get_next();
 struct task* task_new(struct process* process);

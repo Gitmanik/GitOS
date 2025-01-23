@@ -1,4 +1,5 @@
 #include "kernel.h"
+#include "drivers/graphics/graphics.hpp"
 extern "C"
 {
 #include <stdint.h>
@@ -360,8 +361,9 @@ void kprintf(const char *fmt, ...)
     kvsprintf(internal_buf, fmt, args);
     ser_PrintString(COM1, internal_buf);
 
-    enum TEXT_MODE_COLORS x = (enum TEXT_MODE_COLORS) tm_GetColor();
-    tm_SetColor(GREY);
-    tm_PrintString(internal_buf);
-    tm_SetColor(x);
+    // enum TEXT_MODE_COLORS x = (enum TEXT_MODE_COLORS) tm_GetColor();
+    // tm_SetColor(GREY);
+    // tm_PrintString(internal_buf);
+    // tm_SetColor(x);
+    Graphics::the()->print_string(internal_buf, 0xFFFFFF);
 }

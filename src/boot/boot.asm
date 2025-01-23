@@ -20,6 +20,25 @@ setup:
     mov sp, 0x7c00 ; set stack below this code
     call get_memory_map ; Load RAM info into 0x500
     sti
+.setup_vbe:
+    mov ax, 0x4F02       ; VBE function: Set mode
+    mov bx, 0x4118       ; Mode 118h (1024x768x32bpp) + Linear framebuffer
+    int 0x10             ; Call BIOS interrupt
+
+    ; Check if the mode was set successfully
+    cmp ax, 0x004F       ; AX == 0x004F indicates success
+    jne fail
+
+    ; Query VBE mode information
+    mov ax, 0x200       ; Load segment value for buffer
+    mov es, ax           ; Set ES to 0x3000
+    mov ax, 0x4F01       ; VBE function: Get mode information
+    mov cx, 0x118        ; Mode number (1024x768x32bpp)
+    xor di, di           ; Offset within segment
+    int 0x10             ; Call BIOS interrupt
+    cmp ax, 0x004F       ; AX == 0x004F indicates success
+    jne fail              ; Check for failure (carry flag set)
+
 .load_protected_mode:
     cli
     lgdt[gdt_descriptor]
@@ -29,6 +48,13 @@ setup:
     jmp 0x08:load32
 
 %include "ata.asm"
+
+fail:
+    ; Indicate failure (e.g., blinking or halting system)
+    mov ah, 0x0E         ; Teletype output function
+    mov al, 'E'          ; Output 'E' for error
+    int 0x10             ; BIOS interrupt
+    jmp $$
 
 [BITS 32]
 load32:

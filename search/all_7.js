@@ -5,7 +5,7 @@ var searchData=
   ['gdt_2eh_2',['gdt.h',['../gdt_8h.html',1,'']]],
   ['gdt_5fdescriptor_3',['gdt_descriptor',['../structgdt__descriptor.html',1,'gdt_descriptor'],['../gdt_8c.html#ae3d8e1b4bac862471e8a06190d3e7973',1,'gdt_descriptor:&#160;gdt.c']]],
   ['gdt_5fload_4',['gdt_load',['../gdt_8c.html#a071baa899e787757da9db71d9bacc67a',1,'gdt_load(struct gdt *gdt, unsigned int size):&#160;gdt.c'],['../gdt_8h.html#a071baa899e787757da9db71d9bacc67a',1,'gdt_load(struct gdt *gdt, unsigned int size):&#160;gdt.c']]],
-  ['gdt_5fread_5',['gdt_read',['../gdt_8c.html#a0bea945b578f5101079d84c9f4864725',1,'gdt_read(struct gdt_descriptor *target):&#160;gdt.c'],['../gdt_8h.html#a0bea945b578f5101079d84c9f4864725',1,'gdt_read(struct gdt_descriptor *target):&#160;gdt.c']]],
+  ['gdt_5fread_5',['gdt_read',['../gdt_8h.html#a0bea945b578f5101079d84c9f4864725',1,'gdt_read(struct gdt_descriptor *target):&#160;gdt.c'],['../gdt_8c.html#a0bea945b578f5101079d84c9f4864725',1,'gdt_read(struct gdt_descriptor *target):&#160;gdt.c']]],
   ['gdt_5freal_6',['gdt_real',['../kernel_8cpp.html#ae94f4033175eb35d712ddcc38cd60b67',1,'kernel.cpp']]],
   ['gdt_5fstructured_7',['gdt_structured',['../kernel_8cpp.html#a71ca8723766d535dc4ffaf6e2dbc3daa',1,'gdt_structured:&#160;kernel.cpp'],['../structgdt__structured.html',1,'gdt_structured']]],
   ['gdt_5fstructured_5fto_5fgdt_8',['gdt_structured_to_gdt',['../gdt_8h.html#ad98deccb3abc7cfdd109b1821d1807b4',1,'gdt_structured_to_gdt(struct gdt *gdt, struct gdt_structured *structured_gdt, unsigned int total_entries):&#160;gdt.c'],['../gdt_8c.html#ad98deccb3abc7cfdd109b1821d1807b4',1,'gdt_structured_to_gdt(struct gdt *gdt, struct gdt_structured *structured_gdt, unsigned int total_entries):&#160;gdt.c']]],
@@ -17,7 +17,13 @@ var searchData=
   ['get_5fsection_5fheader_14',['get_section_header',['../class_e_l_f_file.html#ace84e1e236777846e9de00bd96922c4f',1,'ELFFile::get_section_header(unsigned int index) const'],['../class_e_l_f_file.html#a47606cd943a1dc4a7a63975684cfe3e2',1,'ELFFile::get_section_header() const']]],
   ['get_5fstring_5ftable_15',['get_string_table',['../class_e_l_f_file.html#a774884a1a924b14bce253ab1e8114d4c',1,'ELFFile']]],
   ['getc_16',['getc',['../stdio_8h.html#a12fe8585ae3714e7d4a71cae12fbb110',1,'stdio.h']]],
-  ['green_17',['GREEN',['../text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3aa60bd322f93178d68184e30e162571ca',1,'text_mode.h']]],
-  ['grey_18',['GREY',['../text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a38566822dbd9408c447abfd3ed4a85d2',1,'text_mode.h']]],
-  ['gs_19',['gs',['../structtss.html#a85904ecbf7b717abe738645b4ff2f4ff',1,'tss::gs'],['../tss_8h.html#a85904ecbf7b717abe738645b4ff2f4ff',1,'gs:&#160;tss.h']]]
+  ['granularity_17',['granularity',['../graphics_8hpp.html#a42ce7dd2bb0db3b053ba4d02272886e4',1,'graphics.hpp']]],
+  ['graphics_18',['Graphics',['../class_graphics.html',1,'']]],
+  ['graphics_2ecpp_19',['graphics.cpp',['../graphics_8cpp.html',1,'']]],
+  ['graphics_2ehpp_20',['graphics.hpp',['../graphics_8hpp.html',1,'']]],
+  ['green_21',['GREEN',['../text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3aa60bd322f93178d68184e30e162571ca',1,'text_mode.h']]],
+  ['greenmask_22',['greenMask',['../graphics_8hpp.html#aba3331ae4fa9205f6a65a76ba76e32b2',1,'graphics.hpp']]],
+  ['greenposition_23',['greenPosition',['../graphics_8hpp.html#ad011feab5bcdd62db5d41e7e5688d2d6',1,'graphics.hpp']]],
+  ['grey_24',['GREY',['../text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a38566822dbd9408c447abfd3ed4a85d2',1,'text_mode.h']]],
+  ['gs_25',['gs',['../structtss.html#a85904ecbf7b717abe738645b4ff2f4ff',1,'tss::gs'],['../tss_8h.html#a85904ecbf7b717abe738645b4ff2f4ff',1,'gs:&#160;tss.h']]]
 ];

@@ -17,6 +17,7 @@ var annotated_dup =
     [ "gdt", "structgdt.html", "structgdt" ],
     [ "gdt_descriptor", "structgdt__descriptor.html", "structgdt__descriptor" ],
     [ "gdt_structured", "structgdt__structured.html", "structgdt__structured" ],
+    [ "Graphics", "class_graphics.html", "class_graphics" ],
     [ "heap", "structheap.html", "structheap" ],
     [ "heap_table", "structheap__table.html", "structheap__table" ],
     [ "idt_desc", "structidt__desc.html", "structidt__desc" ],

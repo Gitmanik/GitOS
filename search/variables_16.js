@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['zero_0',['zero',['../structidt__desc.html#a09777e6a5ad91ffd82a9975efe33de2e',1,'idt_desc::zero'],['../idt_8h.html#a09777e6a5ad91ffd82a9975efe33de2e',1,'zero:&#160;idt.h']]]
+  ['xcharsize_0',['xCharSize',['../graphics_8hpp.html#acac298535a9868d68e752a6cec201335',1,'graphics.hpp']]],
+  ['xres_1',['xRes',['../graphics_8hpp.html#a317816591bbfb4a3c2dea70e110f686c',1,'graphics.hpp']]]
 ];

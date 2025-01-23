@@ -1,11 +1,12 @@
 #include "kernel.h"
 #include "drivers/graphics/graphics.hpp"
+#include "drivers/graphics/vbe/vbe_graphics.hpp"
+#include "drivers/graphics/text_mode/text_mode.hpp"
 extern "C"
 {
 #include <stdint.h>
 #include <stdarg.h>
 #include "idt/idt.h"
-#include "drivers/text_mode/text_mode.h"
 #include "drivers/serial/serial.h"
 #include "drivers/pic/pic.h"
 #include "memory/bios_memory_map.h"
@@ -28,6 +29,11 @@ extern "C"
 #include "drivers/ps2keyboard/ps2keyboard.h"
 }
 
+extern "C" int atexit(void (*)())
+{
+    return 0;
+}
+
 void *operator new(size_t size)
 {
     return kzalloc(size);
@@ -48,6 +54,14 @@ void operator delete[](void *p)
     kfree(p);
 }
 static struct paging_chunk *kernel_paging_chunk;
+
+static Graphics* get_graphics() {
+    if (static_cast<VBEGraphics*>(VBEGraphics::the())->is_vbe())
+        return VBEGraphics::the();
+    else
+        return TextModeGraphics::the();
+}
+
 
 struct tss tss;
 struct gdt gdt_real[TOTAL_GDT_SEGMENTS];
@@ -101,7 +115,7 @@ void kernel_exception(int int_no, struct interrupt_frame* frame) {
 
     char internal_buf[1024];
     memset(internal_buf, 0, sizeof(internal_buf));
-    tm_SetColor(LIGHT_RED);
+    get_graphics()->set_text_color(Graphics::LIGHT_RED);
 
     if ((frame->cs & 0x3) == 3)
         ksprintf(internal_buf, "\n\nProcess %s crashed! Exception thrown by CPU: %s\n", process_current()->filename, idt_InterruptLayoutString[int_no]);
@@ -109,15 +123,15 @@ void kernel_exception(int int_no, struct interrupt_frame* frame) {
         ksprintf(internal_buf, "\n\nKernel panic! Exception thrown by CPU: %s\n", idt_InterruptLayoutString[int_no]);
 
     ser_PrintString(COM1, internal_buf);
-    tm_PrintString(internal_buf);
+    get_graphics()->print_string(internal_buf);
 
     print_interrupt_frame(frame);
 
-    tm_SetColor(GREY);
+    get_graphics()->set_text_color(Graphics::GREY);
     memset(internal_buf, 0, sizeof(internal_buf));
 
     ksprintf(internal_buf,"cr0: 0b%b\ncr2: %d (0x%x)\n\n", cr0, cr2, cr2);
-    tm_PrintString(internal_buf);
+    get_graphics()->print_string(internal_buf);
     ser_PrintString(COM1, internal_buf);
 
     kprintf("Stack trace:\n");
@@ -138,7 +152,7 @@ void kernel_exception(int int_no, struct interrupt_frame* frame) {
         task_return(&task_current()->registers);
     }
     else {
-        tm_PrintString("GitOS halted.");
+        get_graphics()->print_string("GitOS halted.");
         while (1);
     }
 }
@@ -157,8 +171,8 @@ void kernel_main()
 {
     int res = 0;
 
-    tm_ClearScreen();
-    tm_SetColor(GREY);
+    get_graphics()->clear_screen();
+    get_graphics()->set_text_color(Graphics::GREY);
     res = ser_Init(COM1, 1);
     if (res < 0)
     {
@@ -262,7 +276,7 @@ void kernel_main()
     ((char*) ptr_virt)[0] = 'O';
     ((char*) ptr_virt)[1] = 'K';
 
-    kprintf("OK\r\n", LIGHT_GREEN);
+    kprintf("OK\r\n");
     kprintf("Paging self-test: 0x%x:'%s' 0x%x:'%s'..", (uint32_t)ptr_real, ptr_real, (uint32_t)ptr_virt, ptr_virt);
     if (memcmp(ptr_real, ptr_virt, 2) != 0)
     {
@@ -333,8 +347,8 @@ void kernel_panic(const char *fmt, ...)
     ser_PrintString(COM1, "Kernel panic!\r\n");
     ser_PrintString(COM1, internal_buf);
 
-    tm_PrintStringColor("Kernel panic!\r\n", LIGHT_RED);
-    tm_PrintStringColor(internal_buf, LIGHT_RED);
+    get_graphics()->print_string_color("Kernel panic!\r\n", Graphics::LIGHT_RED);
+    get_graphics()->print_string_color(internal_buf, Graphics::LIGHT_RED);
     kernel_halt();
 }
 
@@ -365,5 +379,15 @@ void kprintf(const char *fmt, ...)
     // tm_SetColor(GREY);
     // tm_PrintString(internal_buf);
     // tm_SetColor(x);
-    Graphics::the()->print_string(internal_buf, 0xFFFFFF);
+    get_graphics()->print_string(internal_buf);
+}
+
+extern "C" void __cxa_pure_virtual()
+{
+    // If we ever hit this, we've attempted to call a pure virtual method.
+    // In a kernel, you might hang, panic, or debug log.
+    // For example:
+    for (;;) {
+        kernel_panic("__cxa_pure_virtual");
+    }
 }

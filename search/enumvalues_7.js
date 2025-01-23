@@ -10,5 +10,5 @@ var searchData=
   ['pt_5fnull_7',['PT_NULL',['../class_e_l_f_file.html#aaedc32202a2913a4b29c67b59f2b64d3a62bfb1b538f27e5e3c5f80c4630110c6',1,'ELFFile']]],
   ['pt_5fphdr_8',['PT_PHDR',['../class_e_l_f_file.html#aaedc32202a2913a4b29c67b59f2b64d3a34eb875ba646e2f9c25c7637c0d21587',1,'ELFFile']]],
   ['pt_5fshlib_9',['PT_SHLIB',['../class_e_l_f_file.html#aaedc32202a2913a4b29c67b59f2b64d3a2ed11f7cb857ea0462c80c1a48ee5928',1,'ELFFile']]],
-  ['purple_10',['PURPLE',['../text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3a2772ad7cd64f03c2aed60f91c69fa69d',1,'text_mode.h']]]
+  ['purple_10',['PURPLE',['../class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa2772ad7cd64f03c2aed60f91c69fa69d',1,'Graphics']]]
 ];

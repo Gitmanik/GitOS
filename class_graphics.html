@@ -91,235 +91,109 @@ $(document).ready(function(){initNavTree('class_graphics.html',''); initResizabl
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a>  </div>
-  <div class="headertitle"><div class="title">Graphics Class Reference</div></div>
+  <div class="headertitle"><div class="title">Graphics Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="graphics_8hpp_source.html">graphics.hpp</a>&gt;</code></p>
+
+<p>Inherited by <a class="el" href="class_text_mode_graphics.html">TextModeGraphics</a>, and <a class="el" href="class_v_b_e_graphics.html">VBEGraphics</a>.</p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aa7676c0e70481c4c65f2dae856a59dea" id="r_aa7676c0e70481c4c65f2dae856a59dea"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59dea">TEXT_MODE_COLOR</a> { <br />
+&#160;&#160;<a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaaf77fb67151d0c18d397069ad8c271ba3">BLACK</a>
+, <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa35d6719cb4d7577c031b3d79057a1b79">BLUE</a>
+, <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaaa60bd322f93178d68184e30e162571ca">GREEN</a>
+, <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaaafe71cad474c15ce63b300c470eef8cc">CYAN</a>
+, <br />
+&#160;&#160;<a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaaf80f9a890089d211842d59625e561f88">RED</a>
+, <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa2772ad7cd64f03c2aed60f91c69fa69d">PURPLE</a>
+, <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa1fa14482e7e4dc1332ab8c9d995fe570">BROWN</a>
+, <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa38566822dbd9408c447abfd3ed4a85d2">GREY</a>
+, <br />
+&#160;&#160;<a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa36a1fa5db99a3004ccfa2acd94f96cc0">DARK_GREY</a>
+, <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa68ce56e42a1a2ef6df9fe104d6f36505">LIGHT_BLUE</a>
+, <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaafec3e3526a1600b6e5433488e739c193">LIGHT_GREEN</a>
+, <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa592ebc24bbac680fdb4194c9b6429cfb">LIGHT_CYAN</a>
+, <br />
+&#160;&#160;<a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa03e13fc6dc3ba439104021a816e6c55d">LIGHT_RED</a>
+, <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa49bce2fa4f1572677def255bbeb36109">LIGHT_PURPLE</a>
+, <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaae735a848bf82163a19236ead1c3ef2d2">YELLOW</a>
+, <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa283fc479650da98250635b9c3c0e7e50">WHITE</a>
+<br />
+ }</td></tr>
+<tr class="separator:aa7676c0e70481c4c65f2dae856a59dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac63b980a7996a7b9bb47fb872b948178" id="r_ac63b980a7996a7b9bb47fb872b948178"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#ac63b980a7996a7b9bb47fb872b948178">draw_pixel</a> (uint32_t x, uint32_t y, uint32_t color)</td></tr>
-<tr class="separator:ac63b980a7996a7b9bb47fb872b948178"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34eba760465b3700e8618dfc1c2aabb6" id="r_a34eba760465b3700e8618dfc1c2aabb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#a34eba760465b3700e8618dfc1c2aabb6">draw_char</a> (uint32_t x, uint32_t y, char c, uint32_t color)</td></tr>
-<tr class="separator:a34eba760465b3700e8618dfc1c2aabb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9503a4f98c6f712b0d7bf0c7eedc78a" id="r_ad9503a4f98c6f712b0d7bf0c7eedc78a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#ad9503a4f98c6f712b0d7bf0c7eedc78a">draw_string</a> (uint32_t x, uint32_t y, const char *str, uint32_t color)</td></tr>
-<tr class="separator:ad9503a4f98c6f712b0d7bf0c7eedc78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ae899b4e4929b9ef5320fa6e77ffa6b" id="r_a3ae899b4e4929b9ef5320fa6e77ffa6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#a3ae899b4e4929b9ef5320fa6e77ffa6b">print_char</a> (char c, uint32_t color)</td></tr>
-<tr class="separator:a3ae899b4e4929b9ef5320fa6e77ffa6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8837bf465a206776bb60279126ef1482" id="r_a8837bf465a206776bb60279126ef1482"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#a8837bf465a206776bb60279126ef1482">print_string</a> (const char *str, uint32_t color)</td></tr>
-<tr class="separator:a8837bf465a206776bb60279126ef1482"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad622f857ded8b7025a8d1a62cf660fff" id="r_ad622f857ded8b7025a8d1a62cf660fff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#ad622f857ded8b7025a8d1a62cf660fff">print_vbe_mode_info</a> () const</td></tr>
-<tr class="separator:ad622f857ded8b7025a8d1a62cf660fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6822b013923c974b1dde915948dd1d34" id="r_a6822b013923c974b1dde915948dd1d34"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#a6822b013923c974b1dde915948dd1d34">~Graphics</a> ()</td></tr>
+<tr class="separator:a6822b013923c974b1dde915948dd1d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4dce2e3a3f17e7172a9dd2eb9fd0ee1" id="r_ae4dce2e3a3f17e7172a9dd2eb9fd0ee1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#ae4dce2e3a3f17e7172a9dd2eb9fd0ee1">print_char</a> (char c)=0</td></tr>
+<tr class="separator:ae4dce2e3a3f17e7172a9dd2eb9fd0ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9eea8d1300bd6a3708d0ca2ec30b26f" id="r_aa9eea8d1300bd6a3708d0ca2ec30b26f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#aa9eea8d1300bd6a3708d0ca2ec30b26f">print_char_color</a> (char c, <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59dea">TEXT_MODE_COLOR</a> color)=0</td></tr>
+<tr class="separator:aa9eea8d1300bd6a3708d0ca2ec30b26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8c75e1bfcfcc0d139b4b00b2ac0a47e" id="r_aa8c75e1bfcfcc0d139b4b00b2ac0a47e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#aa8c75e1bfcfcc0d139b4b00b2ac0a47e">print_string</a> (const char *str)=0</td></tr>
+<tr class="separator:aa8c75e1bfcfcc0d139b4b00b2ac0a47e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a3b42dd8fcb0d619a00c2e43db22c42" id="r_a7a3b42dd8fcb0d619a00c2e43db22c42"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#a7a3b42dd8fcb0d619a00c2e43db22c42">print_string_color</a> (const char *str, <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59dea">TEXT_MODE_COLOR</a> color)=0</td></tr>
+<tr class="separator:a7a3b42dd8fcb0d619a00c2e43db22c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8dba2d0029efc01922c4fe4b83547e1" id="r_aa8dba2d0029efc01922c4fe4b83547e1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#aa8dba2d0029efc01922c4fe4b83547e1">clear_screen</a> ()=0</td></tr>
+<tr class="separator:aa8dba2d0029efc01922c4fe4b83547e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9b5c1805e6b0bcc396c0e24f358e974" id="r_ac9b5c1805e6b0bcc396c0e24f358e974"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#ac9b5c1805e6b0bcc396c0e24f358e974">set_text_color</a> (<a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59dea">TEXT_MODE_COLOR</a> color)=0</td></tr>
+<tr class="separator:ac9b5c1805e6b0bcc396c0e24f358e974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87f85cfb605e5fb51610672ea827d453" id="r_a87f85cfb605e5fb51610672ea827d453"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#a87f85cfb605e5fb51610672ea827d453">set_cursor</a> (uint32_t x, uint32_t y)=0</td></tr>
+<tr class="separator:a87f85cfb605e5fb51610672ea827d453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae35ebf9ced1b9254f728d6628b7ca5a6" id="r_ae35ebf9ced1b9254f728d6628b7ca5a6"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#ae35ebf9ced1b9254f728d6628b7ca5a6">get_cursor_x</a> ()=0</td></tr>
+<tr class="separator:ae35ebf9ced1b9254f728d6628b7ca5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c6538166bbf67df64abc9f8549c76d7" id="r_a1c6538166bbf67df64abc9f8549c76d7"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#a1c6538166bbf67df64abc9f8549c76d7">get_cursor_y</a> ()=0</td></tr>
+<tr class="separator:a1c6538166bbf67df64abc9f8549c76d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaa07a7be639adbd579e7a244fa1ee92" id="r_adaa07a7be639adbd579e7a244fa1ee92"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59dea">TEXT_MODE_COLOR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#adaa07a7be639adbd579e7a244fa1ee92">get_current_color</a> ()=0</td></tr>
+<tr class="separator:adaa07a7be639adbd579e7a244fa1ee92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ae80747670631b7ebc506577f93aae499" id="r_ae80747670631b7ebc506577f93aae499"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_graphics.html">Graphics</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#ae80747670631b7ebc506577f93aae499">the</a> ()</td></tr>
-<tr class="separator:ae80747670631b7ebc506577f93aae499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6f6a427afc70245e2313474b159bbe1" id="r_aa6f6a427afc70245e2313474b159bbe1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_graphics.html">Graphics</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphics.html#aa6f6a427afc70245e2313474b159bbe1">the</a> ()</td></tr>
+<tr class="separator:aa6f6a427afc70245e2313474b159bbe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a34eba760465b3700e8618dfc1c2aabb6" name="a34eba760465b3700e8618dfc1c2aabb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34eba760465b3700e8618dfc1c2aabb6">&#9670;&#160;</a></span>draw_char()</h2>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="aa7676c0e70481c4c65f2dae856a59dea" name="aa7676c0e70481c4c65f2dae856a59dea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7676c0e70481c4c65f2dae856a59dea">&#9670;&#160;</a></span>TEXT_MODE_COLOR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void draw_char </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>color</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">enum <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59dea">TEXT_MODE_COLOR</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="class_graphics.html#ac63b980a7996a7b9bb47fb872b948178">draw_pixel()</a>.</p>
-
-</div>
-</div>
-<a id="ac63b980a7996a7b9bb47fb872b948178" name="ac63b980a7996a7b9bb47fb872b948178"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac63b980a7996a7b9bb47fb872b948178">&#9670;&#160;</a></span>draw_pixel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void draw_pixel </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>color</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa7676c0e70481c4c65f2dae856a59deaaf77fb67151d0c18d397069ad8c271ba3" name="aa7676c0e70481c4c65f2dae856a59deaaf77fb67151d0c18d397069ad8c271ba3"></a>BLACK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa7676c0e70481c4c65f2dae856a59deaa35d6719cb4d7577c031b3d79057a1b79" name="aa7676c0e70481c4c65f2dae856a59deaa35d6719cb4d7577c031b3d79057a1b79"></a>BLUE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa7676c0e70481c4c65f2dae856a59deaaa60bd322f93178d68184e30e162571ca" name="aa7676c0e70481c4c65f2dae856a59deaaa60bd322f93178d68184e30e162571ca"></a>GREEN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa7676c0e70481c4c65f2dae856a59deaaafe71cad474c15ce63b300c470eef8cc" name="aa7676c0e70481c4c65f2dae856a59deaaafe71cad474c15ce63b300c470eef8cc"></a>CYAN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa7676c0e70481c4c65f2dae856a59deaaf80f9a890089d211842d59625e561f88" name="aa7676c0e70481c4c65f2dae856a59deaaf80f9a890089d211842d59625e561f88"></a>RED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa7676c0e70481c4c65f2dae856a59deaa2772ad7cd64f03c2aed60f91c69fa69d" name="aa7676c0e70481c4c65f2dae856a59deaa2772ad7cd64f03c2aed60f91c69fa69d"></a>PURPLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa7676c0e70481c4c65f2dae856a59deaa1fa14482e7e4dc1332ab8c9d995fe570" name="aa7676c0e70481c4c65f2dae856a59deaa1fa14482e7e4dc1332ab8c9d995fe570"></a>BROWN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa7676c0e70481c4c65f2dae856a59deaa38566822dbd9408c447abfd3ed4a85d2" name="aa7676c0e70481c4c65f2dae856a59deaa38566822dbd9408c447abfd3ed4a85d2"></a>GREY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa7676c0e70481c4c65f2dae856a59deaa36a1fa5db99a3004ccfa2acd94f96cc0" name="aa7676c0e70481c4c65f2dae856a59deaa36a1fa5db99a3004ccfa2acd94f96cc0"></a>DARK_GREY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa7676c0e70481c4c65f2dae856a59deaa68ce56e42a1a2ef6df9fe104d6f36505" name="aa7676c0e70481c4c65f2dae856a59deaa68ce56e42a1a2ef6df9fe104d6f36505"></a>LIGHT_BLUE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa7676c0e70481c4c65f2dae856a59deaafec3e3526a1600b6e5433488e739c193" name="aa7676c0e70481c4c65f2dae856a59deaafec3e3526a1600b6e5433488e739c193"></a>LIGHT_GREEN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa7676c0e70481c4c65f2dae856a59deaa592ebc24bbac680fdb4194c9b6429cfb" name="aa7676c0e70481c4c65f2dae856a59deaa592ebc24bbac680fdb4194c9b6429cfb"></a>LIGHT_CYAN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa7676c0e70481c4c65f2dae856a59deaa03e13fc6dc3ba439104021a816e6c55d" name="aa7676c0e70481c4c65f2dae856a59deaa03e13fc6dc3ba439104021a816e6c55d"></a>LIGHT_RED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa7676c0e70481c4c65f2dae856a59deaa49bce2fa4f1572677def255bbeb36109" name="aa7676c0e70481c4c65f2dae856a59deaa49bce2fa4f1572677def255bbeb36109"></a>LIGHT_PURPLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa7676c0e70481c4c65f2dae856a59deaae735a848bf82163a19236ead1c3ef2d2" name="aa7676c0e70481c4c65f2dae856a59deaae735a848bf82163a19236ead1c3ef2d2"></a>YELLOW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa7676c0e70481c4c65f2dae856a59deaa283fc479650da98250635b9c3c0e7e50" name="aa7676c0e70481c4c65f2dae856a59deaa283fc479650da98250635b9c3c0e7e50"></a>WHITE&#160;</td><td class="fielddoc"></td></tr>
+</table>
 
 </div>
 </div>
-<a id="ad9503a4f98c6f712b0d7bf0c7eedc78a" name="ad9503a4f98c6f712b0d7bf0c7eedc78a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9503a4f98c6f712b0d7bf0c7eedc78a">&#9670;&#160;</a></span>draw_string()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void draw_string </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>color</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="class_graphics.html#a34eba760465b3700e8618dfc1c2aabb6">draw_char()</a>.</p>
-
-</div>
-</div>
-<a id="a3ae899b4e4929b9ef5320fa6e77ffa6b" name="a3ae899b4e4929b9ef5320fa6e77ffa6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ae899b4e4929b9ef5320fa6e77ffa6b">&#9670;&#160;</a></span>print_char()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void print_char </td>
-          <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>color</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="class_graphics.html#a34eba760465b3700e8618dfc1c2aabb6">draw_char()</a>.</p>
-
-</div>
-</div>
-<a id="a8837bf465a206776bb60279126ef1482" name="a8837bf465a206776bb60279126ef1482"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8837bf465a206776bb60279126ef1482">&#9670;&#160;</a></span>print_string()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void print_string </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>color</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="class_graphics.html#a3ae899b4e4929b9ef5320fa6e77ffa6b">print_char()</a>.</p>
-
-</div>
-</div>
-<a id="ad622f857ded8b7025a8d1a62cf660fff" name="ad622f857ded8b7025a8d1a62cf660fff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad622f857ded8b7025a8d1a62cf660fff">&#9670;&#160;</a></span>print_vbe_mode_info()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void print_vbe_mode_info </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="graphics_8hpp.html#aa2434143f131640367469736f6d99795">attributes</a>, <a class="el" href="graphics_8hpp.html#a79f126d77b7750c9e5d3253efaac2668">banks</a>, <a class="el" href="graphics_8hpp.html#a413b0cf941027dff02de4785308b8ada">bankSize</a>, <a class="el" href="graphics_8hpp.html#a552fa0d7b39c19084a4167ef97f00245">blueMask</a>, <a class="el" href="graphics_8hpp.html#afc13b7006e7ae2cb3e2b1f30f0038f4b">bluePosition</a>, <a class="el" href="graphics_8hpp.html#a496818f626ceb32365ca6cf57c991979">bpp</a>, <a class="el" href="graphics_8hpp.html#a23af32c777b08a6d9240bec62e30f0a0">directColorAttributes</a>, <a class="el" href="graphics_8hpp.html#a72f2ff083631702e83d597be300061c9">framebuffer</a>, <a class="el" href="graphics_8hpp.html#a42ce7dd2bb0db3b053ba4d02272886e4">granularity</a>, <a class="el" href="graphics_8hpp.html#aba3331ae4fa9205f6a65a76ba76e32b2">greenMask</a>, <a class="el" href="graphics_8hpp.html#ad011feab5bcdd62db5d41e7e5688d2d6">greenPosition</a>, <a class="el" href="graphics_8hpp.html#a252850f8b35d0ca7d69841fb643b50dc">imagePages</a>, <a class="el" href="graphics_8hpp.html#aea399bf1ee5c1c440ea91f5f100260fb">memoryModel</a>, <a class="el" href="graphics_8hpp.html#a38485703c339a2b6752bc20f8cd0b02d">offScreenMemOffset</a>, <a class="el" href="graphics_8hpp.html#aaa29c098656d499de200fcc09fd4535e">offScreenMemSize</a>, <a class="el" href="graphics_8hpp.html#af1879425937ee67e191d80e6390dc942">pitch</a>, <a class="el" href="graphics_8hpp.html#a1d4865f149a8e0522e7e4f577514a12d">planes</a>, <a class="el" href="graphics_8hpp.html#a1becb529c9fd3dca32f0778bb0712df3">realFctPtr</a>, <a class="el" href="graphics_8hpp.html#a47caa5e6bece802c7bd1f03ea673be4e">redMask</a>, <a class="el" href="graphics_8hpp.html#a69f3de63d110aca075793519a8f4e85d">redPosition</a>, <a class="el" href="graphics_8hpp.html#a41d97db724f4cb89bc3263f802c32493">reserved0</a>, <a class="el" href="graphics_8hpp.html#ac8dd9d27e47ecb72a75fd14d5da57bfc">reserved1</a>, <a class="el" href="graphics_8hpp.html#aff126c22893f86d5558add63edb21b34">reservedMask</a>, <a class="el" href="graphics_8hpp.html#a570508e855a87b87f3d32f7788d92d60">reservedPosition</a>, <a class="el" href="graphics_8hpp.html#a028038a121f39e9fbc8e57fbeb423252">segmentA</a>, <a class="el" href="graphics_8hpp.html#ae3ab4d64441b4c0f4c1ef170b1d0e4bb">segmentB</a>, <a class="el" href="graphics_8hpp.html#aac656aa0c16e6972b3026b3f6c657e96">winA</a>, <a class="el" href="graphics_8hpp.html#aca132bdc627e09e631a98ce07e5fccdc">winB</a>, <a class="el" href="graphics_8hpp.html#a7cd0e10abaf57e41fa02489ff3498b27">winSize</a>, <a class="el" href="graphics_8hpp.html#acac298535a9868d68e752a6cec201335">xCharSize</a>, <a class="el" href="graphics_8hpp.html#a317816591bbfb4a3c2dea70e110f686c">xRes</a>, <a class="el" href="graphics_8hpp.html#a70955f6b521898aebc5f6b7d8746cdf4">yCharSize</a>, and <a class="el" href="graphics_8hpp.html#ac15fae4c1d01322f3f56020c549eec6c">yRes</a>.</p>
-
-</div>
-</div>
-<a id="ae80747670631b7ebc506577f93aae499" name="ae80747670631b7ebc506577f93aae499"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae80747670631b7ebc506577f93aae499">&#9670;&#160;</a></span>the()</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6822b013923c974b1dde915948dd1d34" name="a6822b013923c974b1dde915948dd1d34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6822b013923c974b1dde915948dd1d34">&#9670;&#160;</a></span>~Graphics()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -328,7 +202,339 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_graphics.html">Graphics</a> * the </td>
+          <td class="memname">~<a class="el" href="class_graphics.html">Graphics</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa8dba2d0029efc01922c4fe4b83547e1" name="aa8dba2d0029efc01922c4fe4b83547e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8dba2d0029efc01922c4fe4b83547e1">&#9670;&#160;</a></span>clear_screen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void clear_screen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_v_b_e_graphics.html#a4953d1edcbbfc7e420c423ded1d5621a">VBEGraphics</a>, and <a class="el" href="class_text_mode_graphics.html#a03691ea3849353c916c6c204eb5032a2">TextModeGraphics</a>.</p>
+
+</div>
+</div>
+<a id="adaa07a7be639adbd579e7a244fa1ee92" name="adaa07a7be639adbd579e7a244fa1ee92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaa07a7be639adbd579e7a244fa1ee92">&#9670;&#160;</a></span>get_current_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59dea">TEXT_MODE_COLOR</a> get_current_color </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_v_b_e_graphics.html#a474b5427f1f929b52e324b9a6180c1fb">VBEGraphics</a>, and <a class="el" href="class_text_mode_graphics.html#a99c6cbe135877996d0d4ee0c315febaf">TextModeGraphics</a>.</p>
+
+</div>
+</div>
+<a id="ae35ebf9ced1b9254f728d6628b7ca5a6" name="ae35ebf9ced1b9254f728d6628b7ca5a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae35ebf9ced1b9254f728d6628b7ca5a6">&#9670;&#160;</a></span>get_cursor_x()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uint32_t get_cursor_x </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_v_b_e_graphics.html#a401291f44156390be92c69c27134e612">VBEGraphics</a>, and <a class="el" href="class_text_mode_graphics.html#ac616c78ab0f6b728c8d288df0203af2c">TextModeGraphics</a>.</p>
+
+</div>
+</div>
+<a id="a1c6538166bbf67df64abc9f8549c76d7" name="a1c6538166bbf67df64abc9f8549c76d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c6538166bbf67df64abc9f8549c76d7">&#9670;&#160;</a></span>get_cursor_y()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uint32_t get_cursor_y </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_v_b_e_graphics.html#aa2aa2043e44e6451e48549c216ce60b8">VBEGraphics</a>, and <a class="el" href="class_text_mode_graphics.html#a413bd594f76e2a25ab1895a770892f16">TextModeGraphics</a>.</p>
+
+</div>
+</div>
+<a id="ae4dce2e3a3f17e7172a9dd2eb9fd0ee1" name="ae4dce2e3a3f17e7172a9dd2eb9fd0ee1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4dce2e3a3f17e7172a9dd2eb9fd0ee1">&#9670;&#160;</a></span>print_char()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void print_char </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_v_b_e_graphics.html#a39d3fec85f874fef3e918058576064e1">VBEGraphics</a>, and <a class="el" href="class_text_mode_graphics.html#a7429495bb6a5ceb52768c5e213c21e0b">TextModeGraphics</a>.</p>
+
+</div>
+</div>
+<a id="aa9eea8d1300bd6a3708d0ca2ec30b26f" name="aa9eea8d1300bd6a3708d0ca2ec30b26f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9eea8d1300bd6a3708d0ca2ec30b26f">&#9670;&#160;</a></span>print_char_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void print_char_color </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59dea">TEXT_MODE_COLOR</a>&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_v_b_e_graphics.html#ac7c74e5cb7c7dd3edf7ef6041d425136">VBEGraphics</a>, and <a class="el" href="class_text_mode_graphics.html#abc638758ca1a18f8b36dd1d7072d7dc5">TextModeGraphics</a>.</p>
+
+</div>
+</div>
+<a id="aa8c75e1bfcfcc0d139b4b00b2ac0a47e" name="aa8c75e1bfcfcc0d139b4b00b2ac0a47e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8c75e1bfcfcc0d139b4b00b2ac0a47e">&#9670;&#160;</a></span>print_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void print_string </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_v_b_e_graphics.html#a6e56b516926cd45ec03bb3b5076fe8a0">VBEGraphics</a>, and <a class="el" href="class_text_mode_graphics.html#a2790baecf1d9d3eb7be565e11c24f0dc">TextModeGraphics</a>.</p>
+
+</div>
+</div>
+<a id="a7a3b42dd8fcb0d619a00c2e43db22c42" name="a7a3b42dd8fcb0d619a00c2e43db22c42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a3b42dd8fcb0d619a00c2e43db22c42">&#9670;&#160;</a></span>print_string_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void print_string_color </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59dea">TEXT_MODE_COLOR</a>&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_v_b_e_graphics.html#aed5ab1360f01de61c60b59faa0460d10">VBEGraphics</a>, and <a class="el" href="class_text_mode_graphics.html#a9af32900413b7544b42c04ca68305443">TextModeGraphics</a>.</p>
+
+</div>
+</div>
+<a id="a87f85cfb605e5fb51610672ea827d453" name="a87f85cfb605e5fb51610672ea827d453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87f85cfb605e5fb51610672ea827d453">&#9670;&#160;</a></span>set_cursor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void set_cursor </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_v_b_e_graphics.html#a7d2fed7066b283b2a0fef3bd8d204c5f">VBEGraphics</a>, and <a class="el" href="class_text_mode_graphics.html#ae84bcbbd62254bb87feb992d03b39006">TextModeGraphics</a>.</p>
+
+</div>
+</div>
+<a id="ac9b5c1805e6b0bcc396c0e24f358e974" name="ac9b5c1805e6b0bcc396c0e24f358e974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9b5c1805e6b0bcc396c0e24f358e974">&#9670;&#160;</a></span>set_text_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void set_text_color </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_graphics.html#aa7676c0e70481c4c65f2dae856a59dea">TEXT_MODE_COLOR</a>&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_v_b_e_graphics.html#ac35d5a76a9d9d1aeb27435da0d1f4cdf">VBEGraphics</a>, and <a class="el" href="class_text_mode_graphics.html#a9e7bfb8576da8fdee550f7526c40c430">TextModeGraphics</a>.</p>
+
+</div>
+</div>
+<a id="aa6f6a427afc70245e2313474b159bbe1" name="aa6f6a427afc70245e2313474b159bbe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6f6a427afc70245e2313474b159bbe1">&#9670;&#160;</a></span>the()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_graphics.html">Graphics</a> * the </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>

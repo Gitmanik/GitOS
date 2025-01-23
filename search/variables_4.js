@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['directcolorattributes_0',['directColorAttributes',['../graphics_8hpp.html#a23af32c777b08a6d9240bec62e30f0a0',1,'graphics.hpp']]],
+  ['directcolorattributes_0',['directColorAttributes',['../vbe__graphics_8hpp.html#a23af32c777b08a6d9240bec62e30f0a0',1,'vbe_graphics.hpp']]],
   ['directory_1',['directory',['../structfat__item.html#aa4db22ceecee9d81668b06ee9e49465d',1,'fat_item']]],
   ['directory_5fentry_2',['directory_entry',['../structpaging__chunk.html#a7abe8d9cbf8d303b43dc85b868b4eb93',1,'paging_chunk']]],
   ['directory_5fstream_3',['directory_stream',['../structfat__private.html#ae799795576f3601d20bd7d10df3a9d93',1,'fat_private']]],

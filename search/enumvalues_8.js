@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['red_0',['RED',['../text__mode_8h.html#ab56432e778c2c51e18463cf8877c19b3af80f9a890089d211842d59625e561f88',1,'text_mode.h']]]
+  ['red_0',['RED',['../class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaaf80f9a890089d211842d59625e561f88',1,'Graphics']]]
 ];

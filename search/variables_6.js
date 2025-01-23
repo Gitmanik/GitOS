@@ -11,7 +11,7 @@ var searchData=
   ['filesystems_8',['filesystems',['../file_8c.html#a2060af084ec6daac3995f941302d7024',1,'file.c']]],
   ['first_9',['first',['../structpath__root.html#ac5622a8973d91afac63f4c3e5441af37',1,'path_root']]],
   ['flags_10',['flags',['../task_8h.html#a773b39d480759f67926cb18ae2219281',1,'flags:&#160;task.h'],['../idt_8h.html#a773b39d480759f67926cb18ae2219281',1,'flags:&#160;idt.h'],['../structregisters.html#a773b39d480759f67926cb18ae2219281',1,'registers::flags'],['../structinterrupt__frame.html#a773b39d480759f67926cb18ae2219281',1,'interrupt_frame::flags'],['../structfile__stat.html#a15883273c251db75429f281f77b26394',1,'file_stat::flags']]],
-  ['framebuffer_11',['framebuffer',['../graphics_8hpp.html#a72f2ff083631702e83d597be300061c9',1,'graphics.hpp']]],
+  ['framebuffer_11',['framebuffer',['../vbe__graphics_8hpp.html#a72f2ff083631702e83d597be300061c9',1,'vbe_graphics.hpp']]],
   ['fs_12',['fs',['../structtss.html#a2ffb5cf275c124e8f8ff30e1d4449f80',1,'tss::fs'],['../tss_8h.html#a2ffb5cf275c124e8f8ff30e1d4449f80',1,'fs:&#160;tss.h']]],
   ['fs_5fprivate_13',['fs_private',['../structdisk.html#aa4853d13c26ce9af3bbb484e0bee8bf2',1,'disk']]]
 ];

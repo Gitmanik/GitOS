@@ -1,5 +1,7 @@
 var kernel_8cpp =
 [
+    [ "__cxa_pure_virtual", "kernel_8cpp.html#a6be7d9ce80c86f5178635fa86c2dd5e7", null ],
+    [ "atexit", "kernel_8cpp.html#a5a485781a43898e8594302dc3be9abbf", null ],
     [ "kernel_exception", "kernel_8cpp.html#a023d1ebe2f732b3fd1ef27f7085de22f", null ],
     [ "kernel_halt", "kernel_8cpp.html#aa0feb8fe21f2712340bcfe8777e9860b", null ],
     [ "kernel_main", "kernel_8cpp.html#ada8402e0c504af8cafef5cc76c076003", null ],

@@ -29,5 +29,7 @@ var annotated_dup =
     [ "process", "structprocess.html", "structprocess" ],
     [ "registers", "structregisters.html", "structregisters" ],
     [ "task", "structtask.html", "structtask" ],
-    [ "tss", "structtss.html", "structtss" ]
+    [ "TextModeGraphics", "class_text_mode_graphics.html", "class_text_mode_graphics" ],
+    [ "tss", "structtss.html", "structtss" ],
+    [ "VBEGraphics", "class_v_b_e_graphics.html", "class_v_b_e_graphics" ]
 ];

@@ -63,7 +63,7 @@ var searchData=
   ['first_60',['first',['../structpath__root.html#ac5622a8973d91afac63f4c3e5441af37',1,'path_root']]],
   ['flags_61',['flags',['../idt_8h.html#a773b39d480759f67926cb18ae2219281',1,'flags:&#160;idt.h'],['../task_8h.html#a773b39d480759f67926cb18ae2219281',1,'flags:&#160;task.h'],['../structfile__stat.html#a15883273c251db75429f281f77b26394',1,'file_stat::flags'],['../structinterrupt__frame.html#a773b39d480759f67926cb18ae2219281',1,'interrupt_frame::flags'],['../structregisters.html#a773b39d480759f67926cb18ae2219281',1,'registers::flags']]],
   ['fopen_62',['fopen',['../file_8c.html#acaa8025589d6cb55085a1976b97e08b9',1,'fopen(const char *filename, const char *str_mode):&#160;file.c'],['../file_8h.html#aa01c104dbdab4c93c40a96f0c705a3e1',1,'fopen(const char *filename, const char *mode):&#160;file.c']]],
-  ['framebuffer_63',['framebuffer',['../graphics_8hpp.html#a72f2ff083631702e83d597be300061c9',1,'graphics.hpp']]],
+  ['framebuffer_63',['framebuffer',['../vbe__graphics_8hpp.html#a72f2ff083631702e83d597be300061c9',1,'vbe_graphics.hpp']]],
   ['fread_64',['fread',['../file_8c.html#adee556231b2610f1807f3dd2f2dd0f6a',1,'fread(void *ptr, uint32_t size, uint32_t nmemb, int fd):&#160;file.c'],['../file_8h.html#adee556231b2610f1807f3dd2f2dd0f6a',1,'fread(void *ptr, uint32_t size, uint32_t nmemb, int fd):&#160;file.c']]],
   ['free_65',['free',['../misc_8h.html#a3ebb46db96609b797c999835cf8c108d',1,'misc.h']]],
   ['fs_66',['fs',['../tss_8h.html#a2ffb5cf275c124e8f8ff30e1d4449f80',1,'fs:&#160;tss.h'],['../structtss.html#a2ffb5cf275c124e8f8ff30e1d4449f80',1,'tss::fs']]],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['crt0_0',['crt0',['../crt0_8c.html#a447cecf3acc3ee115cccdd31e5c15659',1,'crt0.c']]]
+  ['atexit_0',['atexit',['../kernel_8cpp.html#a5a485781a43898e8594302dc3be9abbf',1,'kernel.cpp']]]
 ];

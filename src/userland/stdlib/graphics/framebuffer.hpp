@@ -21,26 +21,26 @@ class FramebufferGraphics {
 public:
     static FramebufferGraphics* the();
 
-    virtual void draw_pixel(uint32_t x, uint32_t y, uint32_t color);
+    void draw_pixel(uint32_t x, uint32_t y, uint32_t color);
 
-    virtual void draw_char(uint32_t x, uint32_t y, char c, uint32_t color);
+    void draw_char(uint32_t x, uint32_t y, char c, uint32_t color);
 
-    virtual void draw_string(uint32_t x, uint32_t y, const char* str, uint32_t color);
+    void draw_string(uint32_t x, uint32_t y, const char* str, uint32_t color);
 
-    virtual void print_char(char c);
+    void print_char(char c);
 
-    virtual void print_char_color(char c, uint32_t color);
+    void print_char_color(char c, uint32_t color);
 
-    virtual void print_string(const char* str);
-    virtual void print_string_color(const char* str, uint32_t color);
+    void print_string(const char* str);
+    void print_string_color(const char* str, uint32_t color);
 
-    virtual void clear_screen();
+    void clear_screen();
 
-    virtual void set_cursor(uint32_t x, uint32_t y);
-    virtual uint32_t get_cursor_x();
-    virtual uint32_t get_cursor_y();
-    virtual uint32_t get_current_color();
-    virtual void set_text_color(uint32_t color);
+    void set_cursor(uint32_t x, uint32_t y);
+    uint32_t get_cursor_x();
+    uint32_t get_cursor_y();
+    uint32_t get_current_color();
+    void set_text_color(uint32_t color);
 
 
 private:

@@ -22,6 +22,8 @@ FramebufferGraphics::FramebufferGraphics() {
     HEIGHT = fbInfo->height;
     PITCH = WIDTH * BPP / 8;
     free(fbInfo);
+
+    clear_screen();
 }
 
 FramebufferGraphics* FramebufferGraphics::the() {

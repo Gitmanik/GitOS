@@ -93,11 +93,11 @@ char* strcpy(char* dest, const char* src)
  * @param n Max length
  * @return char* Pointer to destination buffer
  */
-char* strncpy(char* dest, const char* src, int n)
+char* strncpy(char* dest, const char* src, size_t n)
 {
 	char* dest_org = dest;
 
-	int i;
+	size_t i;
 	for (i = 0; i < n-1; i++)
 	{
 		if (src[i] == 0)
@@ -116,7 +116,7 @@ char* strncpy(char* dest, const char* src, int n)
  * @param n Max length
  * @return int 0 -> str1==str2, <0 -> str1<str2, >0 ->str1>str2
  */
-int strncmp(const char* str1, const char* str2, int n)
+int strncmp(const char* str1, const char* str2, size_t n)
 {
     unsigned char u1, u2;
 
@@ -132,6 +132,16 @@ int strncmp(const char* str1, const char* str2, int n)
 
     return 0;
 }
+/**
+ * @brief Compares two strings
+ *
+ * @param str1 String
+ * @param str2 String
+ * @return int 0 -> str1==str2, <0 -> str1<str2, >0 ->str1>str2
+ */
+int strcmp(const char* str1, const char* str2) {
+	return strncmp(str1, str2, strlen(str1));
+}
 
 /**
  * @brief Converts ASCII letter to lowercase
@@ -146,7 +156,7 @@ char tolower(char c)
 	return c;
 }
 
-int istrncmp(const char* str1, const char* str2, int n)
+int istrncmp(const char* str1, const char* str2, size_t n)
 {
     unsigned char u1, u2;
 
@@ -171,9 +181,9 @@ int istrncmp(const char* str1, const char* str2, int n)
  * @param terminator Custom terminator
  * @return int Length
  */
-int strnlen_terminator(const char* str, int max, char terminator)
+size_t strnlen_terminator(const char* str, size_t max, char terminator)
 {
-	int i;
+	size_t i;
 	for (i = 0; i < max; i++)
 	{
 		if (str[i] == 0 || str[i] == terminator)

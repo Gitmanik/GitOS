@@ -2,6 +2,8 @@
 // Created by Pawel Reich on 1/10/25.
 //
 
+#include "graphics/framebuffer.hpp"
+
 extern "C" {
 #include "stdio.h"
 #include "string.h"
@@ -23,6 +25,19 @@ void process_command(char * str) {
         puts("pong\n");
         return;
     }
+
+    if (strcmp("red", str) == 0) {
+        for (int x = 0; x < 1024; x++) {
+            for (int y = 0; y < 768; y++) {
+                FramebufferGraphics::the()->draw_pixel(x, y, 0xff0000);
+            }
+        }
+    }
+
+    if (strcmp("clear", str) == 0) {
+        FramebufferGraphics::the()->clear_screen();
+    }
+
 
     char buf[1024] {0};
     int len = strlen(get_cwd());

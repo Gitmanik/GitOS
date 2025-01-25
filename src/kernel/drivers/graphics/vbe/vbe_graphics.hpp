@@ -34,7 +34,13 @@ public:
     void scroll_screen(int i);
     bool is_vbe() const;
 
+
     uint32_t get_rrggbb_color(TEXT_MODE_COLOR color);
+    uint32_t get_framebuffer_size() const;
+    uint32_t get_bpp() const;
+    uint32_t get_height() const;
+    uint32_t get_width() const;
+    uint8_t *get_framebuffer() const;
 
 private:
     struct VbeModeInfo {

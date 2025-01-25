@@ -6,7 +6,6 @@
 #include "drivers/graphics/graphics.hpp"
 
 #include <stdint.h>
-#include <drivers/graphics/graphics.hpp>
 extern "C" {
 #include <memory/memory.h>
 }
@@ -69,7 +68,6 @@ uint32_t VBEGraphics::get_cursor_x() {
 Graphics::TEXT_MODE_COLOR VBEGraphics::get_current_color() {
     return current_color;
 }
-
 
 void VBEGraphics::print_char(char c) {
     print_char_color(c, current_color);
@@ -137,6 +135,26 @@ void VBEGraphics::clear_screen() {
 
 bool VBEGraphics::is_vbe() const {
     return modeInfo->framebuffer != 0;
+}
+
+size_t VBEGraphics::get_framebuffer_size() const {
+    return modeInfo->pitch*modeInfo->yRes;
+}
+
+uint32_t VBEGraphics::get_bpp() const {
+    return modeInfo->bpp;
+}
+
+uint32_t VBEGraphics::get_height() const {
+    return modeInfo->yRes;
+}
+
+uint32_t VBEGraphics::get_width() const {
+    return modeInfo->xRes;
+}
+
+uint8_t *VBEGraphics::get_framebuffer() const {
+    return FRAMEBUFFER;
 }
 
 uint32_t VBEGraphics::get_rrggbb_color(const TEXT_MODE_COLOR color) {

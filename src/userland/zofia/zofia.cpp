@@ -15,15 +15,13 @@ const char* get_cwd() {
 
 void process_command(char * str) {
 
-    if (strlen(str) == 4) { // TODO: Implement strcmp or smth
-        if (strncmp(str, "int3", 4) == 0) {
-            asm volatile("int $3");
-            return;
-        }
-        if (strncmp(str, "ping", 4) == 0) {
-            puts("pong\n");
-            return;
-        }
+    if (strcmp("int3", str) == 0) {
+        asm volatile("int $3");
+        return;
+    }
+    if (strcmp("ping", str) == 0) {
+        puts("pong\n");
+        return;
     }
 
     char buf[1024] {0};

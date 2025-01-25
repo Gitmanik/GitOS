@@ -6,7 +6,6 @@ var userland_2stdlib_2string_8h =
     [ "memcmp", "userland_2stdlib_2string_8h.html#a7710a54c06a0782c5762fcc849b71603", null ],
     [ "memcpy", "userland_2stdlib_2string_8h.html#aa0c74fd405b3fbe948738ff0d47279df", null ],
     [ "memset", "userland_2stdlib_2string_8h.html#a303bf868586597a1e6b3f20a068dcf06", null ],
-    [ "printf", "userland_2stdlib_2string_8h.html#a0aff7311d684a0e0ef33125616a73385", null ],
     [ "sprintf", "userland_2stdlib_2string_8h.html#a692bbaf15098dc84f83e2d39f9b856a1", null ],
     [ "strcmp", "userland_2stdlib_2string_8h.html#a6f3dcb20ff11ff9db5904c3cfb61a38c", null ],
     [ "strcpy", "userland_2stdlib_2string_8h.html#ac5082c8ce4f0cddd88bf4d0d2e738308", null ],

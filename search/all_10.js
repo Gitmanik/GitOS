@@ -58,7 +58,7 @@ var searchData=
   ['print_5finterrupt_5fframe_55',['print_interrupt_frame',['../kernel_8cpp.html#aa81c8798060311ade13ca78e4edac5d4',1,'kernel.cpp']]],
   ['print_5fstring_56',['print_string',['../class_graphics.html#aa8c75e1bfcfcc0d139b4b00b2ac0a47e',1,'Graphics::print_string()'],['../class_text_mode_graphics.html#a2790baecf1d9d3eb7be565e11c24f0dc',1,'TextModeGraphics::print_string()'],['../class_v_b_e_graphics.html#a6e56b516926cd45ec03bb3b5076fe8a0',1,'VBEGraphics::print_string()'],['../class_framebuffer_graphics.html#a6e56b516926cd45ec03bb3b5076fe8a0',1,'FramebufferGraphics::print_string()']]],
   ['print_5fstring_5fcolor_57',['print_string_color',['../class_graphics.html#a7a3b42dd8fcb0d619a00c2e43db22c42',1,'Graphics::print_string_color()'],['../class_text_mode_graphics.html#a9af32900413b7544b42c04ca68305443',1,'TextModeGraphics::print_string_color()'],['../class_v_b_e_graphics.html#aed5ab1360f01de61c60b59faa0460d10',1,'VBEGraphics::print_string_color()'],['../class_framebuffer_graphics.html#ab690d5fc9bfcd41ba1cae2b75bbd4e58',1,'FramebufferGraphics::print_string_color()']]],
-  ['printf_58',['printf',['../userland_2stdlib_2string_8h.html#a0aff7311d684a0e0ef33125616a73385',1,'printf(const char *fmt,...):&#160;string.c'],['../userland_2stdlib_2string_8c.html#a0aff7311d684a0e0ef33125616a73385',1,'printf(const char *fmt,...):&#160;string.c']]],
+  ['printf_58',['printf',['../stdio_8h.html#a0aff7311d684a0e0ef33125616a73385',1,'printf(const char *fmt,...):&#160;framebuffer.cpp'],['../framebuffer_8cpp.html#a0aff7311d684a0e0ef33125616a73385',1,'printf(const char *fmt,...):&#160;framebuffer.cpp']]],
   ['private_5ffs_5fdescriptor_59',['private_fs_descriptor',['../structfile__descriptor.html#a8548713df4e5500912391c3b3ddc93b0',1,'file_descriptor']]],
   ['process_60',['process',['../structprocess.html',1,'process'],['../structtask.html#ac366e49f8ab47dbfc7c8bbbded4ff55a',1,'task::process']]],
   ['process_2ecpp_61',['process.cpp',['../process_8cpp.html',1,'']]],
@@ -96,6 +96,6 @@ var searchData=
   ['pt_5fphdr_93',['PT_PHDR',['../class_e_l_f_file.html#aaedc32202a2913a4b29c67b59f2b64d3a34eb875ba646e2f9c25c7637c0d21587',1,'ELFFile']]],
   ['pt_5fshlib_94',['PT_SHLIB',['../class_e_l_f_file.html#aaedc32202a2913a4b29c67b59f2b64d3a2ed11f7cb857ea0462c80c1a48ee5928',1,'ELFFile']]],
   ['purple_95',['PURPLE',['../class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa2772ad7cd64f03c2aed60f91c69fa69d',1,'Graphics']]],
-  ['putc_96',['putc',['../stdio_8h.html#acc0ee6e9643f83a5ab11722197fc25ec',1,'stdio.h']]],
-  ['puts_97',['puts',['../stdio_8h.html#a299d0f9cb9e7b14e1278a4ed21e4d76f',1,'stdio.h']]]
+  ['putc_96',['putc',['../framebuffer_8cpp.html#acc0ee6e9643f83a5ab11722197fc25ec',1,'putc(char c):&#160;framebuffer.cpp'],['../stdio_8h.html#acc0ee6e9643f83a5ab11722197fc25ec',1,'putc(char c):&#160;framebuffer.cpp']]],
+  ['puts_97',['puts',['../framebuffer_8cpp.html#ac0f8b733207ae8163a848870bc73f4cf',1,'puts(const char *str):&#160;framebuffer.cpp'],['../stdio_8h.html#a299d0f9cb9e7b14e1278a4ed21e4d76f',1,'puts(const char *s):&#160;framebuffer.cpp']]]
 ];

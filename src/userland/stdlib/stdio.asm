@@ -11,8 +11,8 @@ getc:
     pop ebp
     ret
 
-global putc
-putc:
+global debug_putc
+debug_putc:
     push ebp
     mov ebp, esp
 
@@ -27,8 +27,8 @@ putc:
     pop ebp
     ret
 
-global puts
-puts:
+global debug_puts
+debug_puts:
     push ebp
     mov ebp, esp
 

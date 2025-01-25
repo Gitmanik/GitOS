@@ -3,8 +3,6 @@
 //
 
 #include "string.h"
-#include "stdio.h"
-
 #include <stddef.h>
 #include <stdarg.h>
 /**
@@ -497,17 +495,4 @@ int memcmp(void* ptr1, void* ptr2, size_t len)
 			return c1[-1] < c2[-1] ? -1 : 1;
 	}
 	return 0;
-}
-
-void printf(const char *fmt, ...)
-{
-	va_list args;
-	va_start(args, fmt);
-
-	char internal_buf[1024];
-	memset(internal_buf, 0, sizeof(internal_buf));
-
-	vsprintf(internal_buf, fmt, args);
-
-	puts(internal_buf);
 }

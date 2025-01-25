@@ -4,6 +4,10 @@
 
 #pragma once
 
-int getc();
 void putc(char c);
 void puts(const char *s);
+void printf(const char *fmt, ...);
+
+int getc();
+void debug_putc(char c);
+void debug_puts(const char *s);

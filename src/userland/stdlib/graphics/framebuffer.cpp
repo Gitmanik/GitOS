@@ -147,3 +147,23 @@ void FramebufferGraphics::clear_screen() {
         }
     }
 }
+extern "C" {
+    void printf(const char *fmt, ...)
+    {
+        va_list args;
+        va_start(args, fmt);
+
+        char internal_buf[1024];
+        memset(internal_buf, 0, sizeof(internal_buf));
+
+        vsprintf(internal_buf, fmt, args);
+
+        FramebufferGraphics::the()->print_string(internal_buf);
+    }
+    void puts(const char* str) {
+        FramebufferGraphics::the()->print_string(str);
+    }
+    void putc(char c) {
+        FramebufferGraphics::the()->print_char(c);
+    }
+}

@@ -4,6 +4,7 @@
 
 extern "C" {
 #include "misc.h"
+#include "stdio.h"
 #include "string.h"
 }
 

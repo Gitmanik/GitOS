@@ -24,7 +24,6 @@ char* uitoa(unsigned long num, char* str, int base);
 
 char* sprintf(char* buf, const char* fmt, ...);
 char* vsprintf(char* buf, const char* fmt, va_list args);
-void printf(const char *fmt, ...);
 
 
 int is_digit(char c);

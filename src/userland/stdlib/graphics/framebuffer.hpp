@@ -55,7 +55,7 @@ private:
     const uint32_t FONT_SCALE = 1;
 
     uint32_t current_x = 0, current_y = 0;
-    uint32_t current_color = 0xffffff;
+    uint32_t current_color = 0xAAAAAA;
 
    const uint8_t font[128][8] = {
         {0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000}, // ASCII 0x20

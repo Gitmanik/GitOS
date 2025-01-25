@@ -6,6 +6,6 @@ var searchData=
   ['stdio_2eh_3',['stdio.h',['../stdio_8h.html',1,'']]],
   ['string_2ec_4',['string.c',['../kernel_2common_2string_8c.html',1,'(Global Namespace)'],['../userland_2stdlib_2string_8c.html',1,'(Global Namespace)']]],
   ['string_2eh_5',['string.h',['../kernel_2common_2string_8h.html',1,'(Global Namespace)'],['../userland_2stdlib_2string_8h.html',1,'(Global Namespace)']]],
-  ['syscall_2ec_6',['syscall.c',['../syscall_8c.html',1,'']]],
-  ['syscall_2eh_7',['syscall.h',['../syscall_8h.html',1,'']]]
+  ['syscall_2ecpp_6',['syscall.cpp',['../syscall_8cpp.html',1,'']]],
+  ['syscall_2ehpp_7',['syscall.hpp',['../syscall_8hpp.html',1,'']]]
 ];

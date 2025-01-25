@@ -14,6 +14,8 @@ var annotated_dup =
     [ "file_descriptor", "structfile__descriptor.html", "structfile__descriptor" ],
     [ "file_stat", "structfile__stat.html", "structfile__stat" ],
     [ "filesystem", "structfilesystem.html", "structfilesystem" ],
+    [ "FramebufferGraphics", "class_framebuffer_graphics.html", "class_framebuffer_graphics" ],
+    [ "FramebufferInfo", "struct_framebuffer_info.html", "struct_framebuffer_info" ],
     [ "gdt", "structgdt.html", "structgdt" ],
     [ "gdt_descriptor", "structgdt__descriptor.html", "structgdt__descriptor" ],
     [ "gdt_structured", "structgdt__structured.html", "structgdt__structured" ],

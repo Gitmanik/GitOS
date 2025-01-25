@@ -11,5 +11,7 @@ var searchData=
   ['fat_5fprivate_8',['fat_private',['../structfat__private.html',1,'']]],
   ['file_5fdescriptor_9',['file_descriptor',['../structfile__descriptor.html',1,'']]],
   ['file_5fstat_10',['file_stat',['../structfile__stat.html',1,'']]],
-  ['filesystem_11',['filesystem',['../structfilesystem.html',1,'']]]
+  ['filesystem_11',['filesystem',['../structfilesystem.html',1,'']]],
+  ['framebuffergraphics_12',['FramebufferGraphics',['../class_framebuffer_graphics.html',1,'']]],
+  ['framebufferinfo_13',['FramebufferInfo',['../struct_framebuffer_info.html',1,'']]]
 ];

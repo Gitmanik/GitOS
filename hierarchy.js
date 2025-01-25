@@ -15,6 +15,8 @@ var hierarchy =
     [ "file_descriptor", "structfile__descriptor.html", null ],
     [ "file_stat", "structfile__stat.html", null ],
     [ "filesystem", "structfilesystem.html", null ],
+    [ "FramebufferGraphics", "class_framebuffer_graphics.html", null ],
+    [ "FramebufferInfo", "struct_framebuffer_info.html", null ],
     [ "gdt", "structgdt.html", null ],
     [ "gdt_descriptor", "structgdt__descriptor.html", null ],
     [ "gdt_structured", "structgdt__structured.html", null ],

@@ -13,8 +13,8 @@ var searchData=
   ['bluemask_10',['blueMask',['../vbe__graphics_8hpp.html#a552fa0d7b39c19084a4167ef97f00245',1,'vbe_graphics.hpp']]],
   ['blueposition_11',['bluePosition',['../vbe__graphics_8hpp.html#afc13b7006e7ae2cb3e2b1f30f0038f4b',1,'vbe_graphics.hpp']]],
   ['bochsbreak_12',['BochsBreak',['../kernel_8h.html#aef9e7d5ae531e4004885f5a5cc002143',1,'kernel.h']]],
-  ['bpp_13',['bpp',['../vbe__graphics_8hpp.html#a496818f626ceb32365ca6cf57c991979',1,'vbe_graphics.hpp']]],
+  ['bpp_13',['bpp',['../vbe__graphics_8hpp.html#a496818f626ceb32365ca6cf57c991979',1,'bpp:&#160;vbe_graphics.hpp'],['../struct_framebuffer_info.html#ac2987cad919bae7cfaa2b2a9122e5702',1,'FramebufferInfo::bpp']]],
   ['brown_14',['BROWN',['../class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa1fa14482e7e4dc1332ab8c9d995fe570',1,'Graphics']]],
-  ['buffer_15',['buffer',['../structprocess_1_1keyboard__buffer.html#ad48a4d77b3c053f592cd912834f45c60',1,'process::keyboard_buffer']]],
+  ['buffer_15',['buffer',['../struct_framebuffer_info.html#a56ed84df35de10bdb65e72b184309497',1,'FramebufferInfo::buffer'],['../structprocess_1_1keyboard__buffer.html#ad48a4d77b3c053f592cd912834f45c60',1,'process::keyboard_buffer::buffer'],['../struct_framebuffer_info.html#a74644aa51cc16278dbd041542e13afd0',1,'FramebufferInfo::buffer']]],
   ['bytes_5fper_5fsector_16',['bytes_per_sector',['../structfat16__header__primary.html#aad9aa4ff8c80f1bcb0ac03f23bb9701e',1,'fat16_header_primary::bytes_per_sector'],['../fat16_8h.html#aad9aa4ff8c80f1bcb0ac03f23bb9701e',1,'bytes_per_sector:&#160;fat16.h']]]
 ];

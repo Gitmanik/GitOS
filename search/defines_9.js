@@ -6,5 +6,5 @@ var searchData=
   ['max_5finterrupts_3',['MAX_INTERRUPTS',['../idt_8h.html#a9affc80dd8947cc1dcb1ae52801923c8',1,'idt.h']]],
   ['max_5fpath_4',['MAX_PATH',['../pathparser_8h.html#ab99ded389af74001a6298fc9e44e74e5',1,'pathparser.h']]],
   ['max_5fprocesses_5',['MAX_PROCESSES',['../process_8h.html#a92fd8bb5807bf6abb640686f51e5df3e',1,'process.h']]],
-  ['max_5fsyscalls_6',['MAX_SYSCALLS',['../syscall_8h.html#a88ef3d98617b4673404cd57e1fa4e516',1,'syscall.h']]]
+  ['max_5fsyscalls_6',['MAX_SYSCALLS',['../syscall_8hpp.html#a88ef3d98617b4673404cd57e1fa4e516',1,'syscall.hpp']]]
 ];

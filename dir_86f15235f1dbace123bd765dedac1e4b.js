@@ -1,5 +1,5 @@
 var dir_86f15235f1dbace123bd765dedac1e4b =
 [
-    [ "syscall.c", "syscall_8c.html", "syscall_8c" ],
-    [ "syscall.h", "syscall_8h.html", "syscall_8h" ]
+    [ "syscall.cpp", "syscall_8cpp.html", "syscall_8cpp" ],
+    [ "syscall.hpp", "syscall_8hpp.html", "syscall_8hpp" ]
 ];

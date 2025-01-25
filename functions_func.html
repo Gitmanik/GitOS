@@ -98,14 +98,14 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
-<li>clear_screen()&#160;:&#160;<a class="el" href="class_graphics.html#aa8dba2d0029efc01922c4fe4b83547e1">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#a03691ea3849353c916c6c204eb5032a2">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#a4953d1edcbbfc7e420c423ded1d5621a">VBEGraphics</a></li>
+<li>clear_screen()&#160;:&#160;<a class="el" href="class_framebuffer_graphics.html#a4953d1edcbbfc7e420c423ded1d5621a">FramebufferGraphics</a>, <a class="el" href="class_graphics.html#aa8dba2d0029efc01922c4fe4b83547e1">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#a03691ea3849353c916c6c204eb5032a2">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#a4953d1edcbbfc7e420c423ded1d5621a">VBEGraphics</a></li>
 </ul>
 
 
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
-<li>draw_char()&#160;:&#160;<a class="el" href="class_v_b_e_graphics.html#a34eba760465b3700e8618dfc1c2aabb6">VBEGraphics</a></li>
-<li>draw_pixel()&#160;:&#160;<a class="el" href="class_v_b_e_graphics.html#ac63b980a7996a7b9bb47fb872b948178">VBEGraphics</a></li>
-<li>draw_string()&#160;:&#160;<a class="el" href="class_v_b_e_graphics.html#ad9503a4f98c6f712b0d7bf0c7eedc78a">VBEGraphics</a></li>
+<li>draw_char()&#160;:&#160;<a class="el" href="class_framebuffer_graphics.html#a34eba760465b3700e8618dfc1c2aabb6">FramebufferGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#a34eba760465b3700e8618dfc1c2aabb6">VBEGraphics</a></li>
+<li>draw_pixel()&#160;:&#160;<a class="el" href="class_framebuffer_graphics.html#ac63b980a7996a7b9bb47fb872b948178">FramebufferGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#ac63b980a7996a7b9bb47fb872b948178">VBEGraphics</a></li>
+<li>draw_string()&#160;:&#160;<a class="el" href="class_framebuffer_graphics.html#ad9503a4f98c6f712b0d7bf0c7eedc78a">FramebufferGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#ad9503a4f98c6f712b0d7bf0c7eedc78a">VBEGraphics</a></li>
 </ul>
 
 
@@ -115,15 +115,20 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
-<li>get_current_color()&#160;:&#160;<a class="el" href="class_graphics.html#adaa07a7be639adbd579e7a244fa1ee92">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#a99c6cbe135877996d0d4ee0c315febaf">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#a474b5427f1f929b52e324b9a6180c1fb">VBEGraphics</a></li>
-<li>get_cursor_x()&#160;:&#160;<a class="el" href="class_graphics.html#ae35ebf9ced1b9254f728d6628b7ca5a6">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#ac616c78ab0f6b728c8d288df0203af2c">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#a401291f44156390be92c69c27134e612">VBEGraphics</a></li>
-<li>get_cursor_y()&#160;:&#160;<a class="el" href="class_graphics.html#a1c6538166bbf67df64abc9f8549c76d7">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#a413bd594f76e2a25ab1895a770892f16">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#aa2aa2043e44e6451e48549c216ce60b8">VBEGraphics</a></li>
+<li>get_bpp()&#160;:&#160;<a class="el" href="class_v_b_e_graphics.html#af86165dec1e2e8f359c30ac019149b91">VBEGraphics</a></li>
+<li>get_current_color()&#160;:&#160;<a class="el" href="class_framebuffer_graphics.html#a33041e9caba690c217cfde484fdfaf85">FramebufferGraphics</a>, <a class="el" href="class_graphics.html#adaa07a7be639adbd579e7a244fa1ee92">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#a99c6cbe135877996d0d4ee0c315febaf">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#a474b5427f1f929b52e324b9a6180c1fb">VBEGraphics</a></li>
+<li>get_cursor_x()&#160;:&#160;<a class="el" href="class_framebuffer_graphics.html#a401291f44156390be92c69c27134e612">FramebufferGraphics</a>, <a class="el" href="class_graphics.html#ae35ebf9ced1b9254f728d6628b7ca5a6">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#ac616c78ab0f6b728c8d288df0203af2c">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#a401291f44156390be92c69c27134e612">VBEGraphics</a></li>
+<li>get_cursor_y()&#160;:&#160;<a class="el" href="class_framebuffer_graphics.html#aa2aa2043e44e6451e48549c216ce60b8">FramebufferGraphics</a>, <a class="el" href="class_graphics.html#a1c6538166bbf67df64abc9f8549c76d7">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#a413bd594f76e2a25ab1895a770892f16">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#aa2aa2043e44e6451e48549c216ce60b8">VBEGraphics</a></li>
 <li>get_entry()&#160;:&#160;<a class="el" href="class_e_l_f_file.html#a3c43729e81ea163e8a6de8b387e4f838">ELFFile</a></li>
+<li>get_framebuffer()&#160;:&#160;<a class="el" href="class_v_b_e_graphics.html#acfe4bd631523f3d1e958ba7401950635">VBEGraphics</a></li>
+<li>get_framebuffer_size()&#160;:&#160;<a class="el" href="class_v_b_e_graphics.html#a86a5723aef6f32ca8d711e1eedc5918f">VBEGraphics</a></li>
 <li>get_header()&#160;:&#160;<a class="el" href="class_e_l_f_file.html#a1dd7ec86560828e8f94950b0c223921e">ELFFile</a></li>
+<li>get_height()&#160;:&#160;<a class="el" href="class_v_b_e_graphics.html#af7b468efba2b36847bbcb1515ba7cc35">VBEGraphics</a></li>
 <li>get_program_header()&#160;:&#160;<a class="el" href="class_e_l_f_file.html#a77b3886fcbcf144562fe55a6b5ac0fd7">ELFFile</a></li>
 <li>get_rrggbb_color()&#160;:&#160;<a class="el" href="class_v_b_e_graphics.html#a5fd49484f1596cb29868d3a357865bb2">VBEGraphics</a></li>
 <li>get_section_header()&#160;:&#160;<a class="el" href="class_e_l_f_file.html#a47606cd943a1dc4a7a63975684cfe3e2">ELFFile</a></li>
 <li>get_string_table()&#160;:&#160;<a class="el" href="class_e_l_f_file.html#a774884a1a924b14bce253ab1e8114d4c">ELFFile</a></li>
+<li>get_width()&#160;:&#160;<a class="el" href="class_v_b_e_graphics.html#a755b78350834eeec9f4bb2c5499f5c9a">VBEGraphics</a></li>
 </ul>
 
 
@@ -135,22 +140,22 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
 <li>parse()&#160;:&#160;<a class="el" href="class_e_l_f_file.html#aec6e37fa74577557cc8a1c9a972c0117">ELFFile</a></li>
-<li>print_char()&#160;:&#160;<a class="el" href="class_graphics.html#ae4dce2e3a3f17e7172a9dd2eb9fd0ee1">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#a7429495bb6a5ceb52768c5e213c21e0b">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#a39d3fec85f874fef3e918058576064e1">VBEGraphics</a></li>
-<li>print_char_color()&#160;:&#160;<a class="el" href="class_graphics.html#aa9eea8d1300bd6a3708d0ca2ec30b26f">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#abc638758ca1a18f8b36dd1d7072d7dc5">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#ac7c74e5cb7c7dd3edf7ef6041d425136">VBEGraphics</a></li>
-<li>print_string()&#160;:&#160;<a class="el" href="class_graphics.html#aa8c75e1bfcfcc0d139b4b00b2ac0a47e">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#a2790baecf1d9d3eb7be565e11c24f0dc">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#a6e56b516926cd45ec03bb3b5076fe8a0">VBEGraphics</a></li>
-<li>print_string_color()&#160;:&#160;<a class="el" href="class_graphics.html#a7a3b42dd8fcb0d619a00c2e43db22c42">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#a9af32900413b7544b42c04ca68305443">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#aed5ab1360f01de61c60b59faa0460d10">VBEGraphics</a></li>
+<li>print_char()&#160;:&#160;<a class="el" href="class_framebuffer_graphics.html#a39d3fec85f874fef3e918058576064e1">FramebufferGraphics</a>, <a class="el" href="class_graphics.html#ae4dce2e3a3f17e7172a9dd2eb9fd0ee1">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#a7429495bb6a5ceb52768c5e213c21e0b">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#a39d3fec85f874fef3e918058576064e1">VBEGraphics</a></li>
+<li>print_char_color()&#160;:&#160;<a class="el" href="class_framebuffer_graphics.html#a35f42474a06bd5ebd39de52274ab2133">FramebufferGraphics</a>, <a class="el" href="class_graphics.html#aa9eea8d1300bd6a3708d0ca2ec30b26f">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#abc638758ca1a18f8b36dd1d7072d7dc5">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#ac7c74e5cb7c7dd3edf7ef6041d425136">VBEGraphics</a></li>
+<li>print_string()&#160;:&#160;<a class="el" href="class_framebuffer_graphics.html#a6e56b516926cd45ec03bb3b5076fe8a0">FramebufferGraphics</a>, <a class="el" href="class_graphics.html#aa8c75e1bfcfcc0d139b4b00b2ac0a47e">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#a2790baecf1d9d3eb7be565e11c24f0dc">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#a6e56b516926cd45ec03bb3b5076fe8a0">VBEGraphics</a></li>
+<li>print_string_color()&#160;:&#160;<a class="el" href="class_framebuffer_graphics.html#ab690d5fc9bfcd41ba1cae2b75bbd4e58">FramebufferGraphics</a>, <a class="el" href="class_graphics.html#a7a3b42dd8fcb0d619a00c2e43db22c42">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#a9af32900413b7544b42c04ca68305443">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#aed5ab1360f01de61c60b59faa0460d10">VBEGraphics</a></li>
 </ul>
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>scroll_screen()&#160;:&#160;<a class="el" href="class_v_b_e_graphics.html#a67e708717c501e357492e9c1dc0b1f32">VBEGraphics</a></li>
-<li>set_cursor()&#160;:&#160;<a class="el" href="class_graphics.html#a87f85cfb605e5fb51610672ea827d453">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#ae84bcbbd62254bb87feb992d03b39006">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#a7d2fed7066b283b2a0fef3bd8d204c5f">VBEGraphics</a></li>
-<li>set_text_color()&#160;:&#160;<a class="el" href="class_graphics.html#ac9b5c1805e6b0bcc396c0e24f358e974">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#a9e7bfb8576da8fdee550f7526c40c430">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#ac35d5a76a9d9d1aeb27435da0d1f4cdf">VBEGraphics</a></li>
+<li>set_cursor()&#160;:&#160;<a class="el" href="class_framebuffer_graphics.html#a7d2fed7066b283b2a0fef3bd8d204c5f">FramebufferGraphics</a>, <a class="el" href="class_graphics.html#a87f85cfb605e5fb51610672ea827d453">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#ae84bcbbd62254bb87feb992d03b39006">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#a7d2fed7066b283b2a0fef3bd8d204c5f">VBEGraphics</a></li>
+<li>set_text_color()&#160;:&#160;<a class="el" href="class_framebuffer_graphics.html#a7669cfad26a5825628e10fa181a35ad5">FramebufferGraphics</a>, <a class="el" href="class_graphics.html#ac9b5c1805e6b0bcc396c0e24f358e974">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#a9e7bfb8576da8fdee550f7526c40c430">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#ac35d5a76a9d9d1aeb27435da0d1f4cdf">VBEGraphics</a></li>
 </ul>
 
 
 <h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
-<li>the()&#160;:&#160;<a class="el" href="class_graphics.html#aa6f6a427afc70245e2313474b159bbe1">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#ae80747670631b7ebc506577f93aae499">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#ae80747670631b7ebc506577f93aae499">VBEGraphics</a></li>
+<li>the()&#160;:&#160;<a class="el" href="class_framebuffer_graphics.html#a971ddddbc452d100976e41799bcd5fc7">FramebufferGraphics</a>, <a class="el" href="class_graphics.html#aa6f6a427afc70245e2313474b159bbe1">Graphics</a>, <a class="el" href="class_text_mode_graphics.html#ae80747670631b7ebc506577f93aae499">TextModeGraphics</a>, <a class="el" href="class_v_b_e_graphics.html#ae80747670631b7ebc506577f93aae499">VBEGraphics</a></li>
 </ul>
 
 

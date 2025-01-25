@@ -8,7 +8,7 @@ var searchData=
   ['bios_5fmemory_5fmap_5',['bios_memory_map',['../bios__memory__map_8h.html#af47e979e60d4c21d9425b7ae62d7a9e6',1,'bios_memory_map.h']]],
   ['bluemask_6',['blueMask',['../vbe__graphics_8hpp.html#a552fa0d7b39c19084a4167ef97f00245',1,'vbe_graphics.hpp']]],
   ['blueposition_7',['bluePosition',['../vbe__graphics_8hpp.html#afc13b7006e7ae2cb3e2b1f30f0038f4b',1,'vbe_graphics.hpp']]],
-  ['bpp_8',['bpp',['../vbe__graphics_8hpp.html#a496818f626ceb32365ca6cf57c991979',1,'vbe_graphics.hpp']]],
-  ['buffer_9',['buffer',['../structprocess_1_1keyboard__buffer.html#ad48a4d77b3c053f592cd912834f45c60',1,'process::keyboard_buffer']]],
+  ['bpp_8',['bpp',['../struct_framebuffer_info.html#ac2987cad919bae7cfaa2b2a9122e5702',1,'FramebufferInfo::bpp'],['../vbe__graphics_8hpp.html#a496818f626ceb32365ca6cf57c991979',1,'bpp:&#160;vbe_graphics.hpp']]],
+  ['buffer_9',['buffer',['../struct_framebuffer_info.html#a74644aa51cc16278dbd041542e13afd0',1,'FramebufferInfo::buffer'],['../structprocess_1_1keyboard__buffer.html#ad48a4d77b3c053f592cd912834f45c60',1,'process::keyboard_buffer::buffer'],['../struct_framebuffer_info.html#a56ed84df35de10bdb65e72b184309497',1,'FramebufferInfo::buffer']]],
   ['bytes_5fper_5fsector_10',['bytes_per_sector',['../structfat16__header__primary.html#aad9aa4ff8c80f1bcb0ac03f23bb9701e',1,'fat16_header_primary::bytes_per_sector'],['../fat16_8h.html#aad9aa4ff8c80f1bcb0ac03f23bb9701e',1,'bytes_per_sector:&#160;fat16.h']]]
 ];

@@ -43,6 +43,7 @@ int main(int argc, char** argv) {
     char buffer[1024] {0};
 
     while (true) {
+        memset(buffer, 0, 1024);
         printf("%s $", get_cwd());
         char c = 0;
         int idx = 0;

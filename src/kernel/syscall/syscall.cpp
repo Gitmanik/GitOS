@@ -1,5 +1,6 @@
-#include "syscall.h"
+#include "syscall.hpp"
 
+extern "C" {
 #include <common/assert.h>
 #include <common/string.h>
 
@@ -9,6 +10,8 @@
 #include "task/task.h"
 #include "task/process.h"
 #include "memory/heap/kheap.h"
+}
+
 
 static SYSCALL syscalls[MAX_SYSCALLS];
 
@@ -97,7 +100,7 @@ void* sys$execprocess(struct interrupt_frame* frame) {
     task_copy_string_from(task_current(), str_ptr, path, MAX_PATH);
 
     int res = 0;
-    struct process* new_process = kzalloc(sizeof(struct process));
+    process* new_process = new process;
     res = process_load_switch(path, new_process);
 
     if (res < 0) {
@@ -115,15 +118,15 @@ void* sys$execprocess(struct interrupt_frame* frame) {
 void* sys$get_process_arguments(struct interrupt_frame* frame) {
     (void)(frame);
 
-    int* argc = task_peek_stack(task_current(), 0);
-    char*** argv = task_peek_stack(task_current(), 1);
+    int* argc = (int*) task_peek_stack(task_current(), 0);
+    char*** argv = (char***) task_peek_stack(task_current(), 1);
 
     struct process* process = task_current()->process;
 
-    char** new_argv = process_malloc(process, sizeof(char*) * process->argc);
+    char** new_argv = (char**) process_malloc(process, sizeof(char*) * process->argc);
 
     for (int i = 0; i < process->argc; i++) {
-        new_argv[i] = process_malloc(process, sizeof(char) * strlen(process->argv[i]) + 1);
+        new_argv[i] = (char*) process_malloc(process, sizeof(char) * strlen(process->argv[i]) + 1);
         strcpy(new_argv[i], process->argv[i]);
     }
 

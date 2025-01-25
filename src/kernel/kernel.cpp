@@ -2,6 +2,7 @@
 #include "drivers/graphics/graphics.hpp"
 #include "drivers/graphics/vbe/vbe_graphics.hpp"
 #include "drivers/graphics/text_mode/text_mode.hpp"
+#include "syscall/syscall.hpp"
 extern "C"
 {
 #include <stdint.h>
@@ -22,7 +23,6 @@ extern "C"
 #include "fs/file.h"
 #include "fs/fat16/fat16.h"
 #include "gdt/gdt.h"
-#include "syscall/syscall.h"
 #include "task/tss.h"
 #include "task/task.h"
 #include "task/process.h"

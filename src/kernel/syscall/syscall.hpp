@@ -1,13 +1,18 @@
 #pragma once
 
+extern "C" {
 #include "idt/idt.h"
+}
 
 #define MAX_SYSCALLS 1024
 
 typedef void*(*SYSCALL)(struct interrupt_frame* frame);
-
+extern "C" {
 extern void syscall_wrapper();
+void* syscall_handler(int syscall_id, struct interrupt_frame* frame);
+}
 void syscall_init();
+
 
 enum syscalls
 {

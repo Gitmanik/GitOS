@@ -1,3 +1,5 @@
+#include <drivers/graphics/vbe/vbe_graphics.hpp>
+
 extern "C" {
 #include "process.h"
 #include "memory/memory.h"
@@ -129,12 +131,21 @@ int process_load_switch(const char* filename, struct process* process)
     return res;
 }
 
+int process_get_next_allocation_index(struct process* process) {
+    for (int i = 0; i < PROCESS_MAX_ALLOCATIONS; i++) {
+        if (process->allocations[i] == 0)
+            return i;
+    }
+    return -ENOMEM;
+}
 
 int process_load_for_slot(const char* filename, struct process* process, int process_slot)
 {
     int res = 0;
     struct task* task = 0;
     char* program_stack_ptr = nullptr;
+    char* process_vbe_framebuffer = nullptr;
+    auto vbe = static_cast<VBEGraphics*>(VBEGraphics::the());
 
     if (process_get(process_slot) != 0)
     {
@@ -172,6 +183,24 @@ int process_load_for_slot(const char* filename, struct process* process, int pro
 
     processes[process_slot] = process;
 
+    /* Framebuffer */
+    res = process_get_next_allocation_index(process);
+    if (res == -ENOMEM)
+        goto out;
+
+    process_vbe_framebuffer = (char*) kmalloc(vbe->get_framebuffer_size());
+    process->allocations[res] = process_vbe_framebuffer;
+
+    res = paging_map_to(process->task->page_directory, process_vbe_framebuffer, vbe->get_framebuffer(),
+        paging_align_address((void*)((int)vbe->get_framebuffer()+vbe->get_framebuffer_size())),
+        PAGING_IS_PRESENT | PAGING_IS_WRITEABLE | PAGING_ACCESS_FROM_ALL);
+
+    if (res < 0)
+        goto out;
+
+    process->framebuffer = process_vbe_framebuffer;
+    /* */
+
     out:
         if (ISERR(res))
         {
@@ -180,6 +209,9 @@ int process_load_for_slot(const char* filename, struct process* process, int pro
 
             if (process->elf)
                 delete static_cast<ELFFile *>(process->elf);
+
+            if (process->framebuffer)
+                kfree(process->framebuffer);
         }
         return res;
 }
@@ -230,14 +262,6 @@ char process_popkey(struct process* process)
     process->keyboard.buffer[buffer_index] = 0;
     process->keyboard.head++;
     return c;
-}
-
-int process_get_next_allocation_index(struct process* process) {
-    for (int i = 0; i < PROCESS_MAX_ALLOCATIONS; i++) {
-        if (process->allocations[i] == 0)
-            return i;
-    }
-    return -ENOMEM;
 }
 
 void* process_malloc(struct process* process, size_t size) {

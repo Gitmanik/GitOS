@@ -39,6 +39,11 @@ struct process
      */
     void* stack;
 
+    /**
+     * @brief Pointer to allocated memory for framebuffer
+     */
+    void* framebuffer;
+
     struct keyboard_buffer {
         char buffer[PROCESS_KEYBOARD_BUFFER_SIZE];
         int tail;

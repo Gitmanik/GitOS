@@ -1,5 +1,7 @@
 #include "syscall.hpp"
 
+#include <drivers/graphics/vbe/vbe_graphics.hpp>
+
 extern "C" {
 #include <common/assert.h>
 #include <common/string.h>
@@ -173,6 +175,37 @@ void* sys$exit(struct interrupt_frame* frame) {
     return 0;
 }
 
+struct FramebufferInfo {
+    uint32_t* buffer;
+    uint32_t width;
+    uint32_t height;
+    uint32_t bpp;
+};
+
+void * sys$get_framebuffer_info(struct interrupt_frame * frame) {
+    (void)(frame);
+
+    FramebufferInfo* fb_info = (FramebufferInfo*) task_peek_stack(task_current(), 0);
+
+    auto vbe = static_cast<VBEGraphics*>(VBEGraphics::the());
+
+    auto* framebuffer = (uint32_t*) task_current()->process->framebuffer;
+    uint32_t width = vbe->get_width();
+    uint32_t height = vbe->get_height();
+    uint32_t bpp = vbe->get_bpp();
+
+    task_page();
+
+    fb_info->buffer = framebuffer;
+    fb_info->width = width;
+    fb_info->height = height;
+    fb_info->bpp = bpp;
+
+    kernel_page();
+
+    return 0;
+}
+
 void syscall_init()
 {
     syscall_register(SYSCALL_PUTSTRING, sys$putstring);
@@ -183,4 +216,5 @@ void syscall_init()
     syscall_register(SYSCALL_FREE, sys$free);
     syscall_register(SYSCALL_GET_PROCESS_ARGUMENTS, sys$get_process_arguments);
     syscall_register(SYSCALL_EXIT, sys$exit);
+    syscall_register(SYSCALL_GET_FRAMEBUFFER_INFO, sys$get_framebuffer_info);
 }

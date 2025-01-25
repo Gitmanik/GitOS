@@ -146,6 +146,9 @@ void FramebufferGraphics::clear_screen() {
             draw_pixel(x,y,0);
         }
     }
+    current_x = 0;
+    current_y = 0;
+    current_color = 0xAAAAAA;
 }
 extern "C" {
     void printf(const char *fmt, ...)

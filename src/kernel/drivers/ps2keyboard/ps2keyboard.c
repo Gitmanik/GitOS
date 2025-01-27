@@ -61,8 +61,6 @@ static bool ps2keyboard_capslock = false;
 
 void ps2keyboard_irq_handler()
 {
-    kernel_page();
-    
     pic_EOI(0);
 
     uint8_t scancode = inb(0x60);
@@ -84,5 +82,4 @@ void ps2keyboard_irq_handler()
     {
         process_pushkey(process_current(), c);
     }
-    task_page();
 }

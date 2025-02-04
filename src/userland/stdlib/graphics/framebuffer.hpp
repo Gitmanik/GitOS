@@ -52,7 +52,7 @@ private:
     uint32_t BPP;
     uint32_t PITCH;
 
-    const uint32_t FONT_SCALE = 1;
+    const uint32_t FONT_SCALE = 2;
 
     uint32_t current_x = 0, current_y = 0;
     uint32_t current_color = 0xAAAAAA;

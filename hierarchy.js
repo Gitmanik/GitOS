@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "Compositor", "class_compositor.html", null ],
     [ "disk", "structdisk.html", null ],
     [ "disk_stream", "structdisk__stream.html", null ],
     [ "ELFFile", "class_e_l_f_file.html", null ],
@@ -34,6 +35,7 @@ var hierarchy =
     [ "path_part", "structpath__part.html", null ],
     [ "path_root", "structpath__root.html", null ],
     [ "process", "structprocess.html", null ],
+    [ "PS2Mouse", "class_p_s2_mouse.html", null ],
     [ "registers", "structregisters.html", null ],
     [ "task", "structtask.html", null ],
     [ "tss", "structtss.html", null ]

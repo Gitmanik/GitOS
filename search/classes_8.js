@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['registers_0',['registers',['../structregisters.html',1,'']]]
+  ['paging_5fchunk_0',['paging_chunk',['../structpaging__chunk.html',1,'']]],
+  ['path_5fpart_1',['path_part',['../structpath__part.html',1,'']]],
+  ['path_5froot_2',['path_root',['../structpath__root.html',1,'']]],
+  ['process_3',['process',['../structprocess.html',1,'']]],
+  ['ps2mouse_4',['PS2Mouse',['../class_p_s2_mouse.html',1,'']]]
 ];

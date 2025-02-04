@@ -7,6 +7,7 @@ var process_8h =
     [ "PROCESS_MAX_ALLOCATIONS", "process_8h.html#a881944a5d64fd9c67c2dd17332f0bff2", null ],
     [ "process_current", "process_8h.html#aaecff9006ec62c1fe2d021dbb6cbeb1a", null ],
     [ "process_free", "process_8h.html#a1e737a5857eea754f30d0fb58d255a1e", null ],
+    [ "process_get_list", "process_8h.html#a96d73459c62ab6a5ec2d18164f8a9926", null ],
     [ "process_load", "process_8h.html#ad8b4edaf0f7da944bfb15b926289207d", null ],
     [ "process_load_switch", "process_8h.html#ab781f373ca06d22a212fcb6e1234fd28", null ],
     [ "process_malloc", "process_8h.html#acb72730a52c1eea0e1728521673ad4e2", null ],

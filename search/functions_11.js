@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['_7eelffile_0',['~ELFFile',['../class_e_l_f_file.html#ae7df1e328ba9dd940c136c66a94cb576',1,'ELFFile']]],
-  ['_7egraphics_1',['~Graphics',['../class_graphics.html#a6822b013923c974b1dde915948dd1d34',1,'Graphics']]],
-  ['_7etextmodegraphics_2',['~TextModeGraphics',['../class_text_mode_graphics.html#ac7ffd763031a3c7c9fb20689c0f64f2b',1,'TextModeGraphics']]]
+  ['vsprintf_0',['vsprintf',['../userland_2stdlib_2string_8c.html#a6ace31fdb4501403975c952414a15f67',1,'vsprintf(char *buf, const char *fmt, va_list args):&#160;string.c'],['../userland_2stdlib_2string_8h.html#a6ace31fdb4501403975c952414a15f67',1,'vsprintf(char *buf, const char *fmt, va_list args):&#160;string.c']]]
 ];

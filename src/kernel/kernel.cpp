@@ -6,6 +6,8 @@
 #include "drivers/graphics/vbe/vbe_graphics.hpp"
 #include "drivers/graphics/text_mode/text_mode.hpp"
 #include "syscall/syscall.hpp"
+#include "compositor/compositor.hpp"
+
 extern "C"
 {
 #include <stdint.h>
@@ -99,6 +101,7 @@ void timer_interrupt(int int_no, struct interrupt_frame* frame)
 {
     (void)(int_no);
     (void)(frame);
+    Compositor::instance()->draw();
     pic_EOI(0);
 }
 

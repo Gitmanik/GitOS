@@ -184,20 +184,7 @@ int process_load_for_slot(const char* filename, struct process* process, int pro
     processes[process_slot] = process;
 
     /* Framebuffer */
-    res = process_get_next_allocation_index(process);
-    if (res == -ENOMEM)
-        goto out;
-
-    process_vbe_framebuffer = (char*) kmalloc(vbe->get_framebuffer_size());
-    process->allocations[res] = process_vbe_framebuffer;
-
-    res = paging_map_to(process->task->page_directory, process_vbe_framebuffer, vbe->get_framebuffer(),
-        paging_align_address((void*)((int)vbe->get_framebuffer()+vbe->get_framebuffer_size())),
-        PAGING_IS_PRESENT | PAGING_IS_WRITEABLE | PAGING_ACCESS_FROM_ALL);
-
-    if (res < 0)
-        goto out;
-
+    process_vbe_framebuffer = static_cast<char*>(process_malloc(process, vbe->get_framebuffer_size()));
     process->framebuffer = process_vbe_framebuffer;
     /* */
 
@@ -211,7 +198,7 @@ int process_load_for_slot(const char* filename, struct process* process, int pro
                 delete static_cast<ELFFile *>(process->elf);
 
             if (process->framebuffer)
-                kfree(process->framebuffer);
+                process_free(process, process->framebuffer);
         }
         return res;
 }

@@ -4,6 +4,8 @@
 
 #include "PS2Mouse.hpp"
 
+#include <compositor/compositor.hpp>
+
 extern "C" {
 #include <drivers/pic/pic.h>
 #include "kernel.h"
@@ -51,6 +53,7 @@ void PS2Mouse::handle_cycle() {
         int32_t mouse_y = -mouse_byte[2];
 
         mouse_cycle = 0;
+        Compositor::instance()->push_mouse(mouse_x, mouse_y, mouse_buttons);
 
         break;
             }

@@ -377,12 +377,6 @@ void kprintf(const char *fmt, ...)
 
     kvsprintf(internal_buf, fmt, args);
     ser_PrintString(COM1, internal_buf);
-
-    // enum TEXT_MODE_COLORS x = (enum TEXT_MODE_COLORS) tm_GetColor();
-    // tm_SetColor(GREY);
-    // tm_PrintString(internal_buf);
-    // tm_SetColor(x);
-    get_graphics()->print_string(internal_buf);
 }
 
 extern "C" void __cxa_pure_virtual()

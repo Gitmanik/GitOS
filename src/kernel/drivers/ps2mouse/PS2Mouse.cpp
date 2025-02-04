@@ -94,6 +94,10 @@ PS2Mouse::PS2Mouse() {
         kernel_panic("Mouse enable failed");
     }
 
+
+    write(0xE8);
+    write(0x03);
+
     write(0xF4);
     // Enable data reporting
     if (read() != 0xFA) {

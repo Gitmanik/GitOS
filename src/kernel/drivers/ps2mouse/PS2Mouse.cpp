@@ -41,16 +41,15 @@ void PS2Mouse::handle_cycle() {
             break;
         }
         uint8_t mouse_buttons = mouse_byte[0];
-        // int32_t mouse_x = static_cast<uint8_t>(mouse_byte[1]);
-        // int32_t mouse_y = static_cast<uint8_t>(mouse_byte[2]);
-        //
-        // if ((mouse_byte[0] << 4 & 0x1) == 1)
-        //     mouse_x = -mouse_x;
-        // if ((mouse_byte[0] << 3 & 0x1) == 1)
-        //     mouse_y = -mouse_y;
+        int32_t mouse_x = static_cast<int8_t>(mouse_byte[1]);
+        int32_t mouse_y = static_cast<int8_t>(mouse_byte[2]);
 
-        int32_t mouse_x = mouse_byte[1];
-        int32_t mouse_y = -mouse_byte[2];
+        if ((mouse_byte[0] >> 5 & 0x1) == 1)
+            mouse_x = mouse_x | (mouse_byte[0] >> 5 & 0x1);
+        if ((mouse_byte[0] >> 4 & 0x1) == 1)
+            mouse_y = mouse_y | (mouse_byte[0] >> 4 & 0x1);
+
+        mouse_y = -mouse_y;
 
         mouse_cycle = 0;
         Compositor::instance()->push_mouse(mouse_x, mouse_y, mouse_buttons);

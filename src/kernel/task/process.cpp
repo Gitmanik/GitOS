@@ -329,3 +329,8 @@ void process_terminate(struct process* process) {
     kfree(process->stack);
     delete process;
 }
+
+struct process** process_get_list()
+{
+    return processes;
+}

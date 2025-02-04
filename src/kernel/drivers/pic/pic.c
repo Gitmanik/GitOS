@@ -35,6 +35,10 @@ void pic_Remap(uint8_t offset1, uint8_t offset2)
 
     outb(PIC1_DATA, ICW4_8086);
     outb(PIC2_DATA, ICW4_8086);
+
+    // // Mask all IRQs except IRQ1 (keyboard) and IRQ12 (mouse)
+    outb(PIC1_DATA, 0b11111000); // Unmask only IRQ0 (timer), IRQ1 and IRQ2 (for IRQ12 to work)
+    outb(PIC2_DATA, 0b11101111); // Unmask only IRQ12
 }
 
 /**

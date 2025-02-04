@@ -1,4 +1,7 @@
 #include "kernel.h"
+
+#include <drivers/ps2mouse/PS2Mouse.hpp>
+
 #include "drivers/graphics/graphics.hpp"
 #include "drivers/graphics/vbe/vbe_graphics.hpp"
 #include "drivers/graphics/text_mode/text_mode.hpp"
@@ -294,9 +297,9 @@ void kernel_main()
     kprintf(" OK\r\n");
     //
 
-    // Initializing keyboard drivers
+    // Initializing PS2 drivers
     ps2keyboard_setup();
-    //
+    PS2Mouse::instance();
 
     // Initializing FS
     fs_init();

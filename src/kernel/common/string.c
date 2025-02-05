@@ -423,3 +423,14 @@ int to_numeric_digit(char c)
 {
 	return c - 48;
 }
+
+/**
+ * @brief Compares two strings
+ *
+ * @param str1 String
+ * @param str2 String
+ * @return int 0 -> str1==str2, <0 -> str1<str2, >0 ->str1>str2
+ */
+int strcmp(const char* str1, const char* str2) {
+	return strncmp(str1, str2, strlen(str1));
+}

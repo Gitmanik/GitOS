@@ -43,7 +43,7 @@ static struct filesystem** fs_get_free_filesystem_slot()
  */
 static int file_new_descriptor(struct file_descriptor** desc_out)
 {
-    for (int i = 0; MAX_FILEDESCRIPTORS; i++)
+    for (int i = 0; i < MAX_FILEDESCRIPTORS; i++)
     {
         if (file_descriptors[i] == 0)
         {

@@ -23,7 +23,7 @@ void kprintf(const char* fmt, ...);
 #endif
 
 #ifdef DEBUG_MODE
-#define kdebug(fmt, ...) kprintf("%s:%d: ", __FILE__, __LINE__); kprintf(fmt, __VA_ARGS__);
+#define kdebug(fmt, ...) kprintf("%s:%d: ", __FILE__, __LINE__); kprintf(fmt, __VA_ARGS__); kprintf("\n");
 #else
 #define kdebug(fmt, ...)
 #endif

@@ -221,7 +221,7 @@ void kernel_main()
 
     // ksprintf test
     kprintf("kprintf test: %p %x %i %s %c %ld %%\r\n", bios_memory_map, 0x41424344, -1234, "gitmanik.dev", 'X', __LONG_MAX__);
-    kdebug("kdebug test: %p %x %i %s %c %ld %%\r\n", bios_memory_map, 0x41424344, -1234, "gitmanik.dev", 'X', __LONG_MAX__);
+    kdebug("kdebug test: %p %x %i %s %c %ld %%", bios_memory_map, 0x41424344, -1234, "gitmanik.dev", 'X', __LONG_MAX__);
     //
 
     // Finding biggest usable memory chunk to use as heap

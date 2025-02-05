@@ -132,7 +132,7 @@ static int fat16_get_total_items_for_directory(struct fat_private* fs_private, i
 
     int total = 0;
 #if DEBUG_FAT16
-    kdebug("Getting total items for directory, sector %d, absolute %d\r\n", start_sector, fat16_sector_to_absolute(fs_private, start_sector));
+    kdebug("Getting total items for directory, sector %d, absolute %d", start_sector, fat16_sector_to_absolute(fs_private, start_sector));
 #endif
     diskstreamer_seek(fs_private->directory_stream, fat16_sector_to_absolute(fs_private, start_sector));
 
@@ -150,7 +150,7 @@ static int fat16_get_total_items_for_directory(struct fat_private* fs_private, i
         char filename_buf[11];
         fat16_get_full_relative_filename(&current_item, filename_buf);
 #if DEBUG_FAT16
-        kdebug("%d %s: %s, size: %d\r\n", (current_item.attribute & FAT_FILE_LONGNAME) ? 1 : 0, current_item.attribute & FAT_FILE_SUBDIRECTORY ? "D" : "F", filename_buf, current_item.filesize);
+        kdebug("%d %s: %s, size: %d", (current_item.attribute & FAT_FILE_LONGNAME) ? 1 : 0, current_item.attribute & FAT_FILE_SUBDIRECTORY ? "D" : "F", filename_buf, current_item.filesize);
 #endif
         total++;
     }
@@ -401,7 +401,7 @@ static int fat16_read_cluster(struct fat_private* fs_private, struct disk_stream
     int total_to_read = total > size_of_cluster_bytes ? size_of_cluster_bytes : total;
 
 #if DEBUG_FAT16
-    kdebug("Reading %d bytes from starting cluster %d, target cluster %d (sector %d), offset from cluster: %d\r\n", total, cluster, cluster_to_use, starting_sector, offset_from_cluster);
+    kdebug("Reading %d bytes from starting cluster %d, target cluster %d (sector %d), offset from cluster: %d", total, cluster, cluster_to_use, starting_sector, offset_from_cluster);
 #endif
     result = diskstreamer_seek(stream, starting_pos);
     if (result != ALL_OK)
@@ -595,14 +595,14 @@ int fat16_resolve(struct disk* disk)
     result = diskstreamer_read(stream, &fs_private->header, sizeof(fs_private->header));
     if (result != ALL_OK)
     {
-        kdebug("Could not read from disk %d! Error code: %d\r\n", disk->id, result);
+        kdebug("Could not read from disk %d! Error code: %d", disk->id, result);
         result = -EIO;
         goto out;
     }
 
     if (fs_private->header.shared.extended.signature != 0x29)
     {
-        kdebug("FAT Header Signature did not match! Expected 0x29, found 0x%x\r\n", fs_private->header.shared.extended.signature);
+        kdebug("FAT Header Signature did not match! Expected 0x29, found 0x%x", fs_private->header.shared.extended.signature);
         result = -EIO;
         goto out;
     }
@@ -610,7 +610,7 @@ int fat16_resolve(struct disk* disk)
     result = fat16_get_root_directory(fs_private, &fs_private->root_directory);
     if (result != ALL_OK)
     {
-        kdebug("Could not read root directory! Error code: %d\r\n", result);
+        kdebug("Could not read root directory! Error code: %d", result);
         goto out;
     }
 

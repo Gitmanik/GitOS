@@ -107,7 +107,7 @@ Macros</h2></td></tr>
 <tr class="separator:ac80a3592e72fd96b772ee47a7d8e0d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef9e7d5ae531e4004885f5a5cc002143" id="r_aef9e7d5ae531e4004885f5a5cc002143"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8h.html#aef9e7d5ae531e4004885f5a5cc002143">BochsBreak</a>()&#160;&#160;&#160;<a class="el" href="io_8c.html#a3105e202829cfca8b5757df9351f96e1">outw</a>(0x8A00,0x8A00); <a class="el" href="io_8c.html#a3105e202829cfca8b5757df9351f96e1">outw</a>(0x8A00,0x08AE0);</td></tr>
 <tr class="separator:aef9e7d5ae531e4004885f5a5cc002143"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8e98b2d78ed2a7ff3e2af66009fbe27" id="r_ab8e98b2d78ed2a7ff3e2af66009fbe27"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8h.html#ab8e98b2d78ed2a7ff3e2af66009fbe27">kdebug</a>(fmt, ...)&#160;&#160;&#160;<a class="el" href="kernel_8cpp.html#a199a1f701f4cc4fd1c3ff7903a102d7a">kprintf</a>(&quot;%s:%d: &quot;, __FILE__, __LINE__); <a class="el" href="kernel_8cpp.html#a199a1f701f4cc4fd1c3ff7903a102d7a">kprintf</a>(fmt, __VA_ARGS__);</td></tr>
+<tr class="memitem:ab8e98b2d78ed2a7ff3e2af66009fbe27" id="r_ab8e98b2d78ed2a7ff3e2af66009fbe27"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_8h.html#ab8e98b2d78ed2a7ff3e2af66009fbe27">kdebug</a>(fmt, ...)&#160;&#160;&#160;<a class="el" href="kernel_8cpp.html#a199a1f701f4cc4fd1c3ff7903a102d7a">kprintf</a>(&quot;%s:%d: &quot;, __FILE__, __LINE__); <a class="el" href="kernel_8cpp.html#a199a1f701f4cc4fd1c3ff7903a102d7a">kprintf</a>(fmt, __VA_ARGS__); <a class="el" href="kernel_8cpp.html#a199a1f701f4cc4fd1c3ff7903a102d7a">kprintf</a>(&quot;\n&quot;);</td></tr>
 <tr class="separator:ab8e98b2d78ed2a7ff3e2af66009fbe27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -181,7 +181,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="kernel_8cpp.html#a199a1f701f4cc4fd1c3ff7903a102d7a">kprintf</a>(&quot;%s:%d: &quot;, __FILE__, __LINE__); <a class="el" href="kernel_8cpp.html#a199a1f701f4cc4fd1c3ff7903a102d7a">kprintf</a>(fmt, __VA_ARGS__);</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="kernel_8cpp.html#a199a1f701f4cc4fd1c3ff7903a102d7a">kprintf</a>(&quot;%s:%d: &quot;, __FILE__, __LINE__); <a class="el" href="kernel_8cpp.html#a199a1f701f4cc4fd1c3ff7903a102d7a">kprintf</a>(fmt, __VA_ARGS__); <a class="el" href="kernel_8cpp.html#a199a1f701f4cc4fd1c3ff7903a102d7a">kprintf</a>(&quot;\n&quot;);</td>
         </tr>
       </table>
 </div><div class="memdoc">

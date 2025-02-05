@@ -146,6 +146,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aa4fad8c232814085ca883c3e271aea0d" id="r_aa4fad8c232814085ca883c3e271aea0d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2common_2string_8c.html#aa4fad8c232814085ca883c3e271aea0d">to_numeric_digit</a> (char c)</td></tr>
 <tr class="memdesc:aa4fad8c232814085ca883c3e271aea0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts ASCII digit to numeric.  <br /></td></tr>
 <tr class="separator:aa4fad8c232814085ca883c3e271aea0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f3dcb20ff11ff9db5904c3cfb61a38c" id="r_a6f3dcb20ff11ff9db5904c3cfb61a38c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2common_2string_8c.html#a6f3dcb20ff11ff9db5904c3cfb61a38c">strcmp</a> (const char *str1, const char *str2)</td></tr>
+<tr class="memdesc:a6f3dcb20ff11ff9db5904c3cfb61a38c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two strings.  <br /></td></tr>
+<tr class="separator:a6f3dcb20ff11ff9db5904c3cfb61a38c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="afcb8cf4ba18ad43ea5c643b027cf0170" name="afcb8cf4ba18ad43ea5c643b027cf0170"></a>
@@ -349,6 +352,46 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>char* Buffer </dd></dl>
 
 <p class="reference">References <a class="el" href="kernel_2common_2string_8c.html#a403182b1cfba20cfeba9efb69845c9ba">itoa()</a>, <a class="el" href="memory_8c.html#aa0c74fd405b3fbe948738ff0d47279df">memcpy()</a>, <a class="el" href="memory_8c.html#a303bf868586597a1e6b3f20a068dcf06">memset()</a>, <a class="el" href="kernel_2common_2string_8c.html#a008e171a518fe0e0352f31b245e03875">strlen()</a>, and <a class="el" href="kernel_2common_2string_8c.html#aa61ef8fc11114958ad0905e5cad390bc">uitoa()</a>.</p>
+
+</div>
+</div>
+<a id="a6f3dcb20ff11ff9db5904c3cfb61a38c" name="a6f3dcb20ff11ff9db5904c3cfb61a38c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f3dcb20ff11ff9db5904c3cfb61a38c">&#9670;&#160;</a></span>strcmp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int strcmp </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compares two strings. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str1</td><td>String </td></tr>
+    <tr><td class="paramname">str2</td><td>String </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 -&gt; str1==str2, &lt;0 -&gt; str1&lt;str2, &gt;0 -&gt;str1&gt;str2 </dd></dl>
+
+<p class="reference">References <a class="el" href="kernel_2common_2string_8c.html#a008e171a518fe0e0352f31b245e03875">strlen()</a>, and <a class="el" href="kernel_2common_2string_8c.html#a444d2c3bbff8fb8a410d51a22b6339d8">strncmp()</a>.</p>
 
 </div>
 </div>

@@ -5,6 +5,7 @@ var kernel_2common_2string_8h =
     [ "itoa", "kernel_2common_2string_8h.html#a403182b1cfba20cfeba9efb69845c9ba", null ],
     [ "ksprintf", "kernel_2common_2string_8h.html#a91e0fdf770dbdbd097a5b7f094c5d128", null ],
     [ "kvsprintf", "kernel_2common_2string_8h.html#a26a7e28634002403ea22f6084f172568", null ],
+    [ "strcmp", "kernel_2common_2string_8h.html#a6f3dcb20ff11ff9db5904c3cfb61a38c", null ],
     [ "strcpy", "kernel_2common_2string_8h.html#ac5082c8ce4f0cddd88bf4d0d2e738308", null ],
     [ "strlen", "kernel_2common_2string_8h.html#a008e171a518fe0e0352f31b245e03875", null ],
     [ "strncmp", "kernel_2common_2string_8h.html#a444d2c3bbff8fb8a410d51a22b6339d8", null ],

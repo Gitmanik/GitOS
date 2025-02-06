@@ -307,14 +307,16 @@ void kernel_main()
     kprintf(" OK\r\n");
     //
 
-    // Initializing PS2 drivers
-    ps2keyboard_setup();
-    PS2Mouse::instance();
 
     // Initializing FS
     fs_init();
     fs_insert_filesystem(fat16_init_filesystem());
     disk_search_and_init();
+    //
+
+    // Initializing PS2 drivers
+    ps2keyboard_setup();
+    PS2Mouse::instance();
     //
 
     // Initialize syscalls

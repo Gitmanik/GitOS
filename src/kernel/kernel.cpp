@@ -140,13 +140,19 @@ void kernel_exception(int int_no, struct interrupt_frame* frame) {
     get_graphics()->print_string(internal_buf);
     ser_PrintString(COM1, internal_buf);
 
-    kprintf("Stack trace:\n");
+    memset(internal_buf, 0, sizeof(internal_buf));
+    ksprintf(internal_buf, "Stack trace:\n");
     uint32_t *ebp = (uint32_t *)frame->ebp;
 
     while (ebp != 0) {
         uint32_t returnAddress = ebp[1];
 
-        kprintf("0x%x\n", returnAddress);
+        memset(internal_buf, 0, sizeof(internal_buf));
+        ksprintf(internal_buf, "0x%x\n", returnAddress);
+
+        get_graphics()->print_string(internal_buf);
+        ser_PrintString(COM1, internal_buf);
+
 
         // Move ebp up to the caller's frame
         ebp = (uint32_t *)ebp[0];  // dereference saved EBP
@@ -158,6 +164,7 @@ void kernel_exception(int int_no, struct interrupt_frame* frame) {
         task_return(&task_current()->registers);
     }
     else {
+        ser_PrintString(COM1, "GitOS halted.");
         get_graphics()->print_string("GitOS halted.");
         while (1);
     }

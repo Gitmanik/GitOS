@@ -3,9 +3,11 @@ var kernel_2fs_2file_8h =
     [ "file_descriptor", "structfile__descriptor.html", "structfile__descriptor" ],
     [ "file_stat", "structfile__stat.html", "structfile__stat" ],
     [ "filesystem", "structfilesystem.html", "structfilesystem" ],
+    [ "mounted_file", "structmounted__file.html", "structmounted__file" ],
     [ "MAX_FILEDESCRIPTORS", "kernel_2fs_2file_8h.html#a9e908e8845c02e0b0969b41a021310eb", null ],
     [ "MAX_FILESYSTEM_NAME", "kernel_2fs_2file_8h.html#abedb6e14253f852e31a2f62f0e1adf52", null ],
     [ "MAX_FILESYSTEMS", "kernel_2fs_2file_8h.html#ad6c0e74019637e82fd86897e2d4a2a25", null ],
+    [ "MAX_MOUNTED", "kernel_2fs_2file_8h.html#acf6df270e93fb02936877f580b0314fd", null ],
     [ "FILE_MODE", "kernel_2fs_2file_8h.html#a83452b48fc3d8fdbc81f52de7217fa68", null ],
     [ "FILE_SEEK_MODE", "kernel_2fs_2file_8h.html#abe921a3b588578250cc96f01a96953ab", null ],
     [ "FILE_STAT_FLAGS", "kernel_2fs_2file_8h.html#a28336e6c2f5eea087e30e2177a7ea5a0", null ],
@@ -37,5 +39,6 @@ var kernel_2fs_2file_8h =
     [ "fs_insert_filesystem", "kernel_2fs_2file_8h.html#a060417cd82e00f01ecfb2024ae8fce7c", null ],
     [ "fs_resolve", "kernel_2fs_2file_8h.html#a64056ef2a3bd065ebe747f58b26f167c", null ],
     [ "fseek", "kernel_2fs_2file_8h.html#a4afef177a56ef89821691c7c4df374c3", null ],
-    [ "fstat", "kernel_2fs_2file_8h.html#a0ed36033dca44a4c90f733ed5ef33500", null ]
+    [ "fstat", "kernel_2fs_2file_8h.html#a0ed36033dca44a4c90f733ed5ef33500", null ],
+    [ "mount", "kernel_2fs_2file_8h.html#a18ee81c05ed9a26a59ba7120220a2c96", null ]
 ];

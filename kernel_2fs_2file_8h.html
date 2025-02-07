@@ -113,6 +113,8 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfilesystem.html">filesystem</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmounted__file.html">mounted_file</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
@@ -122,6 +124,8 @@ Macros</h2></td></tr>
 <tr class="separator:a9e908e8845c02e0b0969b41a021310eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abedb6e14253f852e31a2f62f0e1adf52" id="r_abedb6e14253f852e31a2f62f0e1adf52"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#abedb6e14253f852e31a2f62f0e1adf52">MAX_FILESYSTEM_NAME</a>&#160;&#160;&#160;20</td></tr>
 <tr class="separator:abedb6e14253f852e31a2f62f0e1adf52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf6df270e93fb02936877f580b0314fd" id="r_acf6df270e93fb02936877f580b0314fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#acf6df270e93fb02936877f580b0314fd">MAX_MOUNTED</a>&#160;&#160;&#160;16384</td></tr>
+<tr class="separator:acf6df270e93fb02936877f580b0314fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -188,6 +192,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a575cfdaca3a77c3f910df16d56d7240c" id="r_a575cfdaca3a77c3f910df16d56d7240c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#a575cfdaca3a77c3f910df16d56d7240c">fclose</a> (int fd)</td></tr>
 <tr class="memdesc:a575cfdaca3a77c3f910df16d56d7240c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes file descriptor.  <br /></td></tr>
 <tr class="separator:a575cfdaca3a77c3f910df16d56d7240c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18ee81c05ed9a26a59ba7120220a2c96" id="r_a18ee81c05ed9a26a59ba7120220a2c96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#a18ee81c05ed9a26a59ba7120220a2c96">mount</a> (const char *<a class="el" href="fat16_8h.html#a36126364ff9f56a16488e5c2b8d1206e">filename</a>, struct <a class="el" href="structfilesystem.html">filesystem</a> *<a class="el" href="tss_8h.html#a2ffb5cf275c124e8f8ff30e1d4449f80">fs</a>, void *data)</td></tr>
+<tr class="separator:a18ee81c05ed9a26a59ba7120220a2c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a9e908e8845c02e0b0969b41a021310eb" name="a9e908e8845c02e0b0969b41a021310eb"></a>
@@ -226,6 +232,20 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define MAX_FILESYSTEMS&#160;&#160;&#160;12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf6df270e93fb02936877f580b0314fd" name="acf6df270e93fb02936877f580b0314fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf6df270e93fb02936877f580b0314fd">&#9670;&#160;</a></span>MAX_MOUNTED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_MOUNTED&#160;&#160;&#160;16384</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -555,7 +575,7 @@ Functions</h2></td></tr>
 
 <p>Initializes internal filesystem arrays. </p>
 
-<p class="reference">References <a class="el" href="file_8c.html#a320b430f15723315d2b666c63dc44222">file_descriptors</a>, <a class="el" href="file_8c.html#a2060af084ec6daac3995f941302d7024">filesystems</a>, and <a class="el" href="memory_8c.html#a303bf868586597a1e6b3f20a068dcf06">memset()</a>.</p>
+<p class="reference">References <a class="el" href="file_8c.html#a320b430f15723315d2b666c63dc44222">file_descriptors</a>, <a class="el" href="file_8c.html#a2060af084ec6daac3995f941302d7024">filesystems</a>, <a class="el" href="hkeap_8c.html#afa01b5ae9ee20bcd5dd2cc50d8ae4821">kzalloc()</a>, <a class="el" href="kernel_2fs_2file_8h.html#acf6df270e93fb02936877f580b0314fd">MAX_MOUNTED</a>, <a class="el" href="memory_8c.html#a303bf868586597a1e6b3f20a068dcf06">memset()</a>, and <a class="el" href="file_8c.html#a3f4174f7f447fab45238fa207e13bee4">mounted</a>.</p>
 
 </div>
 </div>
@@ -696,6 +716,42 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Status </dd></dl>
+
+</div>
+</div>
+<a id="a18ee81c05ed9a26a59ba7120220a2c96" name="a18ee81c05ed9a26a59ba7120220a2c96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18ee81c05ed9a26a59ba7120220a2c96">&#9670;&#160;</a></span>mount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mount </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structfilesystem.html">filesystem</a> *&#160;</td>
+          <td class="paramname"><em>fs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="structmounted__file.html#a735984d41155bc1032e09bece8f8d66d">mounted_file::data</a>, <a class="el" href="fat16_8h.html#a36126364ff9f56a16488e5c2b8d1206e">filename</a>, <a class="el" href="structmounted__file.html#a7efa5e9c7494c7d4586359300221aa5d">mounted_file::filename</a>, <a class="el" href="structmounted__file.html#aaed61f9753d8a157d46d2843701ee056">mounted_file::fs</a>, <a class="el" href="tss_8h.html#a2ffb5cf275c124e8f8ff30e1d4449f80">fs</a>, <a class="el" href="kernel_8h.html#ab8e98b2d78ed2a7ff3e2af66009fbe27">kdebug</a>, <a class="el" href="kernel_8cpp.html#a93999bcd6d4fc14e8ad565a045e6f773">kernel_panic()</a>, <a class="el" href="hkeap_8c.html#afa01b5ae9ee20bcd5dd2cc50d8ae4821">kzalloc()</a>, <a class="el" href="kernel_2fs_2file_8h.html#acf6df270e93fb02936877f580b0314fd">MAX_MOUNTED</a>, and <a class="el" href="file_8c.html#a3f4174f7f447fab45238fa207e13bee4">mounted</a>.</p>
 
 </div>
 </div>

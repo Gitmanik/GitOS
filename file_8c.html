@@ -131,6 +131,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a575cfdaca3a77c3f910df16d56d7240c" id="r_a575cfdaca3a77c3f910df16d56d7240c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8c.html#a575cfdaca3a77c3f910df16d56d7240c">fclose</a> (int fd)</td></tr>
 <tr class="memdesc:a575cfdaca3a77c3f910df16d56d7240c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes file descriptor.  <br /></td></tr>
 <tr class="separator:a575cfdaca3a77c3f910df16d56d7240c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18ee81c05ed9a26a59ba7120220a2c96" id="r_a18ee81c05ed9a26a59ba7120220a2c96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8c.html#a18ee81c05ed9a26a59ba7120220a2c96">mount</a> (const char *<a class="el" href="fat16_8h.html#a36126364ff9f56a16488e5c2b8d1206e">filename</a>, struct <a class="el" href="structfilesystem.html">filesystem</a> *<a class="el" href="tss_8h.html#a2ffb5cf275c124e8f8ff30e1d4449f80">fs</a>, void *data)</td></tr>
+<tr class="separator:a18ee81c05ed9a26a59ba7120220a2c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -140,6 +142,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a320b430f15723315d2b666c63dc44222" id="r_a320b430f15723315d2b666c63dc44222"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structfile__descriptor.html">file_descriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8c.html#a320b430f15723315d2b666c63dc44222">file_descriptors</a> [<a class="el" href="kernel_2fs_2file_8h.html#a9e908e8845c02e0b0969b41a021310eb">MAX_FILEDESCRIPTORS</a>]</td></tr>
 <tr class="memdesc:a320b430f15723315d2b666c63dc44222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array holding all open file descriptors.  <br /></td></tr>
 <tr class="separator:a320b430f15723315d2b666c63dc44222"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f4174f7f447fab45238fa207e13bee4" id="r_a3f4174f7f447fab45238fa207e13bee4"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmounted__file.html">mounted_file</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8c.html#a3f4174f7f447fab45238fa207e13bee4">mounted</a></td></tr>
+<tr class="memdesc:a3f4174f7f447fab45238fa207e13bee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array holding all mounted files.  <br /></td></tr>
+<tr class="separator:a3f4174f7f447fab45238fa207e13bee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a575cfdaca3a77c3f910df16d56d7240c" name="a575cfdaca3a77c3f910df16d56d7240c"></a>
@@ -207,7 +212,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Status </dd></dl>
 
-<p class="reference">References <a class="el" href="structfile__descriptor.html#abdbae93c1fd15f90751a02563d87b8f7">file_descriptor::disk</a>, <a class="el" href="disk_8c.html#a18bfbf773698ec896e54af82350323ee">disk_get()</a>, <a class="el" href="structpath__root.html#a44057b89a20883587ec7bdc59cce57d2">path_root::drive_no</a>, <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>, <a class="el" href="status_8h.html#a70979f50f9c83e5aebab3d6a1bd4cf35">EIO</a>, <a class="el" href="kernel_2fs_2file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682a76d7563fa72e13aebbb9b43e25ce93d9">FILE_MODE_INVALID</a>, <a class="el" href="fat16_8h.html#a36126364ff9f56a16488e5c2b8d1206e">filename</a>, <a class="el" href="structdisk.html#a4bce4c67c8c2fc4f8e3c0182f4afa586">disk::filesystem</a>, <a class="el" href="structfile__descriptor.html#a4bce4c67c8c2fc4f8e3c0182f4afa586">file_descriptor::filesystem</a>, <a class="el" href="structpath__root.html#ac5622a8973d91afac63f4c3e5441af37">path_root::first</a>, <a class="el" href="structdisk.html#aa4853d13c26ce9af3bbb484e0bee8bf2">disk::fs_private</a>, <a class="el" href="structfile__descriptor.html#a750b5d744c39a06bfb13e6eb010e35d0">file_descriptor::index</a>, <a class="el" href="structfilesystem.html#ad0a025f59368517e7afd05a4ac2152c7">filesystem::open</a>, <a class="el" href="pathparser_8c.html#a3ed8d97fc16b74692268a36de686b7c4">pathparser_parse()</a>, and <a class="el" href="structfile__descriptor.html#a8548713df4e5500912391c3b3ddc93b0">file_descriptor::private_fs_descriptor</a>.</p>
+<p class="reference">References <a class="el" href="structfile__descriptor.html#abdbae93c1fd15f90751a02563d87b8f7">file_descriptor::disk</a>, <a class="el" href="disk_8c.html#a18bfbf773698ec896e54af82350323ee">disk_get()</a>, <a class="el" href="structpath__root.html#a44057b89a20883587ec7bdc59cce57d2">path_root::drive_no</a>, <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>, <a class="el" href="status_8h.html#a70979f50f9c83e5aebab3d6a1bd4cf35">EIO</a>, <a class="el" href="kernel_2fs_2file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682a76d7563fa72e13aebbb9b43e25ce93d9">FILE_MODE_INVALID</a>, <a class="el" href="fat16_8h.html#a36126364ff9f56a16488e5c2b8d1206e">filename</a>, <a class="el" href="structdisk.html#a4bce4c67c8c2fc4f8e3c0182f4afa586">disk::filesystem</a>, <a class="el" href="structfile__descriptor.html#a4bce4c67c8c2fc4f8e3c0182f4afa586">file_descriptor::filesystem</a>, <a class="el" href="structpath__root.html#ac5622a8973d91afac63f4c3e5441af37">path_root::first</a>, <a class="el" href="structmounted__file.html#aaed61f9753d8a157d46d2843701ee056">mounted_file::fs</a>, <a class="el" href="structdisk.html#aa4853d13c26ce9af3bbb484e0bee8bf2">disk::fs_private</a>, <a class="el" href="structfile__descriptor.html#a750b5d744c39a06bfb13e6eb010e35d0">file_descriptor::index</a>, <a class="el" href="kernel_2fs_2file_8h.html#acf6df270e93fb02936877f580b0314fd">MAX_MOUNTED</a>, <a class="el" href="file_8c.html#a3f4174f7f447fab45238fa207e13bee4">mounted</a>, <a class="el" href="structfilesystem.html#ad0a025f59368517e7afd05a4ac2152c7">filesystem::open</a>, <a class="el" href="pathparser_8c.html#a3ed8d97fc16b74692268a36de686b7c4">pathparser_parse()</a>, <a class="el" href="structfile__descriptor.html#a8548713df4e5500912391c3b3ddc93b0">file_descriptor::private_fs_descriptor</a>, and <a class="el" href="kernel_2common_2string_8c.html#a6f3dcb20ff11ff9db5904c3cfb61a38c">strcmp()</a>.</p>
 
 </div>
 </div>
@@ -282,7 +287,7 @@ Variables</h2></td></tr>
 
 <p>Initializes internal filesystem arrays. </p>
 
-<p class="reference">References <a class="el" href="file_8c.html#a320b430f15723315d2b666c63dc44222">file_descriptors</a>, <a class="el" href="file_8c.html#a2060af084ec6daac3995f941302d7024">filesystems</a>, and <a class="el" href="memory_8c.html#a303bf868586597a1e6b3f20a068dcf06">memset()</a>.</p>
+<p class="reference">References <a class="el" href="file_8c.html#a320b430f15723315d2b666c63dc44222">file_descriptors</a>, <a class="el" href="file_8c.html#a2060af084ec6daac3995f941302d7024">filesystems</a>, <a class="el" href="hkeap_8c.html#afa01b5ae9ee20bcd5dd2cc50d8ae4821">kzalloc()</a>, <a class="el" href="kernel_2fs_2file_8h.html#acf6df270e93fb02936877f580b0314fd">MAX_MOUNTED</a>, <a class="el" href="memory_8c.html#a303bf868586597a1e6b3f20a068dcf06">memset()</a>, and <a class="el" href="file_8c.html#a3f4174f7f447fab45238fa207e13bee4">mounted</a>.</p>
 
 </div>
 </div>
@@ -430,6 +435,42 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a18ee81c05ed9a26a59ba7120220a2c96" name="a18ee81c05ed9a26a59ba7120220a2c96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18ee81c05ed9a26a59ba7120220a2c96">&#9670;&#160;</a></span>mount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mount </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structfilesystem.html">filesystem</a> *&#160;</td>
+          <td class="paramname"><em>fs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="structmounted__file.html#a735984d41155bc1032e09bece8f8d66d">mounted_file::data</a>, <a class="el" href="fat16_8h.html#a36126364ff9f56a16488e5c2b8d1206e">filename</a>, <a class="el" href="structmounted__file.html#a7efa5e9c7494c7d4586359300221aa5d">mounted_file::filename</a>, <a class="el" href="structmounted__file.html#aaed61f9753d8a157d46d2843701ee056">mounted_file::fs</a>, <a class="el" href="tss_8h.html#a2ffb5cf275c124e8f8ff30e1d4449f80">fs</a>, <a class="el" href="kernel_8h.html#ab8e98b2d78ed2a7ff3e2af66009fbe27">kdebug</a>, <a class="el" href="kernel_8cpp.html#a93999bcd6d4fc14e8ad565a045e6f773">kernel_panic()</a>, <a class="el" href="hkeap_8c.html#afa01b5ae9ee20bcd5dd2cc50d8ae4821">kzalloc()</a>, <a class="el" href="kernel_2fs_2file_8h.html#acf6df270e93fb02936877f580b0314fd">MAX_MOUNTED</a>, and <a class="el" href="file_8c.html#a3f4174f7f447fab45238fa207e13bee4">mounted</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a320b430f15723315d2b666c63dc44222" name="a320b430f15723315d2b666c63dc44222"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a320b430f15723315d2b666c63dc44222">&#9670;&#160;</a></span>file_descriptors</h2>
@@ -460,6 +501,22 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Array holding all registered filesystems. </p>
+
+</div>
+</div>
+<a id="a3f4174f7f447fab45238fa207e13bee4" name="a3f4174f7f447fab45238fa207e13bee4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f4174f7f447fab45238fa207e13bee4">&#9670;&#160;</a></span>mounted</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structmounted__file.html">mounted_file</a>** mounted</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Array holding all mounted files. </p>
 
 </div>
 </div>

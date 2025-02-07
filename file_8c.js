@@ -8,6 +8,8 @@ var file_8c =
     [ "fs_resolve", "file_8c.html#a64056ef2a3bd065ebe747f58b26f167c", null ],
     [ "fseek", "file_8c.html#a4afef177a56ef89821691c7c4df374c3", null ],
     [ "fstat", "file_8c.html#a0ed36033dca44a4c90f733ed5ef33500", null ],
+    [ "mount", "file_8c.html#a18ee81c05ed9a26a59ba7120220a2c96", null ],
     [ "file_descriptors", "file_8c.html#a320b430f15723315d2b666c63dc44222", null ],
-    [ "filesystems", "file_8c.html#a2060af084ec6daac3995f941302d7024", null ]
+    [ "filesystems", "file_8c.html#a2060af084ec6daac3995f941302d7024", null ],
+    [ "mounted", "file_8c.html#a3f4174f7f447fab45238fa207e13bee4", null ]
 ];

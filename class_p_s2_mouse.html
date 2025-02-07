@@ -91,14 +91,21 @@ $(document).ready(function(){initNavTree('class_p_s2_mouse.html',''); initResiza
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle"><div class="title">PS2Mouse Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_p_s2_mouse_8hpp_source.html">PS2Mouse.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_s2_mouse_1_1mouse__packet.html">mouse_packet</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad35d72fbbe21a0811843c410159fbe41" id="r_ad35d72fbbe21a0811843c410159fbe41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_s2_mouse.html#ad35d72fbbe21a0811843c410159fbe41">handle_cycle</a> ()</td></tr>
@@ -114,6 +121,11 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a9abb614f6a1927d42b1e1fa755850138" id="r_a9abb614f6a1927d42b1e1fa755850138"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_p_s2_mouse.html">PS2Mouse</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_s2_mouse.html#a9abb614f6a1927d42b1e1fa755850138">instance</a> ()</td></tr>
 <tr class="separator:a9abb614f6a1927d42b1e1fa755850138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:ad7117fbe8d6b5933f18e7e8e876eb638" id="r_ad7117fbe8d6b5933f18e7e8e876eb638"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_s2_mouse.html#ad7117fbe8d6b5933f18e7e8e876eb638">pipe_size</a> = 128</td></tr>
+<tr class="separator:ad7117fbe8d6b5933f18e7e8e876eb638"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad35d72fbbe21a0811843c410159fbe41" name="ad35d72fbbe21a0811843c410159fbe41"></a>
@@ -131,7 +143,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="io_8c.html#a2e1e8e2c5724c1e8fd2dff2eada06479">inb()</a>, <a class="el" href="class_compositor.html#aa92939f0c29305975661953bf307a616">Compositor::instance()</a>, <a class="el" href="pic_8c.html#a1e4ae4c99f1fd304a8d92e06e19a5f71">pic_EOI()</a>, and <a class="el" href="class_compositor.html#ad3227b75df031f67a15291665d1e460d">Compositor::push_mouse()</a>.</p>
+<p class="reference">References <a class="el" href="io_8c.html#a2e1e8e2c5724c1e8fd2dff2eada06479">inb()</a>, <a class="el" href="class_compositor.html#aa92939f0c29305975661953bf307a616">Compositor::instance()</a>, <a class="el" href="pic_8c.html#a1e4ae4c99f1fd304a8d92e06e19a5f71">pic_EOI()</a>, <a class="el" href="class_compositor.html#ad3227b75df031f67a15291665d1e460d">Compositor::push_mouse()</a>, <a class="el" href="class_pipe_f_s.html#a615fa4cde24ab096fd4e504d10e6da5e">PipeFS::write()</a>, and <a class="el" href="struct_p_s2_mouse_1_1mouse__packet.html#af6d3062751bd565decb1a2cd3b63bdb2">PS2Mouse::mouse_packet::x</a>.</p>
 
 </div>
 </div>
@@ -234,6 +246,21 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="io_8c.html#a8bf7a9af91c08e6f876aaffeccd48ff3">outb()</a>, and <a class="el" href="class_p_s2_mouse.html#ae1c825ed63352a8617ba172a13a494f8">wait()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="ad7117fbe8d6b5933f18e7e8e876eb638" name="ad7117fbe8d6b5933f18e7e8e876eb638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7117fbe8d6b5933f18e7e8e876eb638">&#9670;&#160;</a></span>pipe_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t pipe_size = 128</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

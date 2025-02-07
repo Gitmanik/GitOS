@@ -2,9 +2,9 @@ var searchData=
 [
   ['main_0',['main',['../blank_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;blank.cpp'],['../crasher_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;crasher.cpp'],['../crt0_8c.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;blank.cpp'],['../zofia_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;zofia.cpp']]],
   ['malloc_1',['malloc',['../misc_8h.html#a606bc9873b128be1978f63b5f0b10339',1,'misc.h']]],
-  ['max_5ffiledescriptors_2',['MAX_FILEDESCRIPTORS',['../file_8h.html#a9e908e8845c02e0b0969b41a021310eb',1,'file.h']]],
-  ['max_5ffilesystem_5fname_3',['MAX_FILESYSTEM_NAME',['../file_8h.html#abedb6e14253f852e31a2f62f0e1adf52',1,'file.h']]],
-  ['max_5ffilesystems_4',['MAX_FILESYSTEMS',['../file_8h.html#ad6c0e74019637e82fd86897e2d4a2a25',1,'file.h']]],
+  ['max_5ffiledescriptors_2',['MAX_FILEDESCRIPTORS',['../kernel_2fs_2file_8h.html#a9e908e8845c02e0b0969b41a021310eb',1,'file.h']]],
+  ['max_5ffilesystem_5fname_3',['MAX_FILESYSTEM_NAME',['../kernel_2fs_2file_8h.html#abedb6e14253f852e31a2f62f0e1adf52',1,'file.h']]],
+  ['max_5ffilesystems_4',['MAX_FILESYSTEMS',['../kernel_2fs_2file_8h.html#ad6c0e74019637e82fd86897e2d4a2a25',1,'file.h']]],
   ['max_5finterrupts_5',['MAX_INTERRUPTS',['../idt_8h.html#a9affc80dd8947cc1dcb1ae52801923c8',1,'idt.h']]],
   ['max_5fpath_6',['MAX_PATH',['../pathparser_8h.html#ab99ded389af74001a6298fc9e44e74e5',1,'pathparser.h']]],
   ['max_5fprocesses_7',['MAX_PROCESSES',['../process_8h.html#a92fd8bb5807bf6abb640686f51e5df3e',1,'process.h']]],

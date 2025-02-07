@@ -98,6 +98,7 @@ $(document).ready(function(){initNavTree('syscall_8cpp.html',''); initResizable(
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="syscall_8hpp_source.html">syscall.hpp</a>&quot;</code><br />
 <code>#include &lt;<a class="el" href="vbe__graphics_8hpp_source.html">drivers/graphics/vbe/vbe_graphics.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="kernel_2fs_2file_8h_source.html">fs/file.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="assert_8h_source.html">common/assert.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="kernel_2common_2string_8h_source.html">common/string.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="kheap_8h_source.html">memory/heap/kheap.h</a>&quot;</code><br />
@@ -133,6 +134,16 @@ Functions</h2></td></tr>
 <tr class="separator:a5dc10a94ac7432a128a065d0ac7ba68d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3849c90833ec5bca6ebf650bcb8692d" id="r_ae3849c90833ec5bca6ebf650bcb8692d"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8cpp.html#ae3849c90833ec5bca6ebf650bcb8692d">sys$get_framebuffer_info</a> (struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *frame)</td></tr>
 <tr class="separator:ae3849c90833ec5bca6ebf650bcb8692d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d523fde2faa1e3cfafa98df1a1d7120" id="r_a1d523fde2faa1e3cfafa98df1a1d7120"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8cpp.html#a1d523fde2faa1e3cfafa98df1a1d7120">sys$fopen</a> (struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *frame)</td></tr>
+<tr class="separator:a1d523fde2faa1e3cfafa98df1a1d7120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6718707a7e4fcafeaa01f7589cf594aa" id="r_a6718707a7e4fcafeaa01f7589cf594aa"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8cpp.html#a6718707a7e4fcafeaa01f7589cf594aa">sys$fclose</a> (struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *frame)</td></tr>
+<tr class="separator:a6718707a7e4fcafeaa01f7589cf594aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a521caaf46ee59287be140e30521b567f" id="r_a521caaf46ee59287be140e30521b567f"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8cpp.html#a521caaf46ee59287be140e30521b567f">sys$fread</a> (struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *frame)</td></tr>
+<tr class="separator:a521caaf46ee59287be140e30521b567f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65b5e7794ddd4397130e3b305928c8b3" id="r_a65b5e7794ddd4397130e3b305928c8b3"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8cpp.html#a65b5e7794ddd4397130e3b305928c8b3">sys$fstat</a> (struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *frame)</td></tr>
+<tr class="separator:a65b5e7794ddd4397130e3b305928c8b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbabe9aa9a654901c7861768dc6986dd" id="r_adbabe9aa9a654901c7861768dc6986dd"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8cpp.html#adbabe9aa9a654901c7861768dc6986dd">sys$fseek</a> (struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *frame)</td></tr>
+<tr class="separator:adbabe9aa9a654901c7861768dc6986dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a581ed37968ead91b6d3a0b3b7a71da9d" id="r_a581ed37968ead91b6d3a0b3b7a71da9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8cpp.html#a581ed37968ead91b6d3a0b3b7a71da9d">syscall_init</a> ()</td></tr>
 <tr class="separator:a581ed37968ead91b6d3a0b3b7a71da9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -177,6 +188,66 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a6718707a7e4fcafeaa01f7589cf594aa" name="a6718707a7e4fcafeaa01f7589cf594aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6718707a7e4fcafeaa01f7589cf594aa">&#9670;&#160;</a></span>sys$fclose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * sys$fclose </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="file_8c.html#a575cfdaca3a77c3f910df16d56d7240c">fclose()</a>, <a class="el" href="task_8c.html#ae0eb5551e540e9c099788b589b572b3c">task_current()</a>, and <a class="el" href="task_8c.html#aa83bc6f2e950015ee4e99199f3baf835">task_peek_stack()</a>.</p>
+
+</div>
+</div>
+<a id="a1d523fde2faa1e3cfafa98df1a1d7120" name="a1d523fde2faa1e3cfafa98df1a1d7120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d523fde2faa1e3cfafa98df1a1d7120">&#9670;&#160;</a></span>sys$fopen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * sys$fopen </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="file_8c.html#acaa8025589d6cb55085a1976b97e08b9">fopen()</a>, <a class="el" href="pathparser_8h.html#ab99ded389af74001a6298fc9e44e74e5">MAX_PATH</a>, <a class="el" href="task_8c.html#a7b9fe10fa4d12a92696ade8b825a6a37">task_copy_string_from()</a>, <a class="el" href="task_8c.html#ae0eb5551e540e9c099788b589b572b3c">task_current()</a>, and <a class="el" href="task_8c.html#aa83bc6f2e950015ee4e99199f3baf835">task_peek_stack()</a>.</p>
+
+</div>
+</div>
+<a id="a521caaf46ee59287be140e30521b567f" name="a521caaf46ee59287be140e30521b567f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a521caaf46ee59287be140e30521b567f">&#9670;&#160;</a></span>sys$fread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * sys$fread </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="file_8c.html#adee556231b2610f1807f3dd2f2dd0f6a">fread()</a>, <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, <a class="el" href="task_8c.html#ae0eb5551e540e9c099788b589b572b3c">task_current()</a>, and <a class="el" href="task_8c.html#aa83bc6f2e950015ee4e99199f3baf835">task_peek_stack()</a>.</p>
+
+</div>
+</div>
 <a id="a6c5afa6447c25c16be5620ffdbe120b5" name="a6c5afa6447c25c16be5620ffdbe120b5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6c5afa6447c25c16be5620ffdbe120b5">&#9670;&#160;</a></span>sys$free()</h2>
 
@@ -194,6 +265,46 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="structtask.html#ac366e49f8ab47dbfc7c8bbbded4ff55a">task::process</a>, <a class="el" href="process_8cpp.html#a1e737a5857eea754f30d0fb58d255a1e">process_free()</a>, <a class="el" href="task_8c.html#ae0eb5551e540e9c099788b589b572b3c">task_current()</a>, and <a class="el" href="task_8c.html#aa83bc6f2e950015ee4e99199f3baf835">task_peek_stack()</a>.</p>
+
+</div>
+</div>
+<a id="adbabe9aa9a654901c7861768dc6986dd" name="adbabe9aa9a654901c7861768dc6986dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbabe9aa9a654901c7861768dc6986dd">&#9670;&#160;</a></span>sys$fseek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * sys$fseek </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="file_8c.html#a4afef177a56ef89821691c7c4df374c3">fseek()</a>, <a class="el" href="task_8c.html#ae0eb5551e540e9c099788b589b572b3c">task_current()</a>, and <a class="el" href="task_8c.html#aa83bc6f2e950015ee4e99199f3baf835">task_peek_stack()</a>.</p>
+
+</div>
+</div>
+<a id="a65b5e7794ddd4397130e3b305928c8b3" name="a65b5e7794ddd4397130e3b305928c8b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65b5e7794ddd4397130e3b305928c8b3">&#9670;&#160;</a></span>sys$fstat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * sys$fstat </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structinterrupt__frame.html">interrupt_frame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="structfile__stat.html#a0532db3d21cdd9e862560340b97d8e05">file_stat::filesize</a>, <a class="el" href="structfile__stat.html#a15883273c251db75429f281f77b26394">file_stat::flags</a>, <a class="el" href="file_8c.html#a0ed36033dca44a4c90f733ed5ef33500">fstat()</a>, <a class="el" href="kernel_8cpp.html#abd882687cd304ceab89392243ac0bf0d">kernel_page()</a>, <a class="el" href="task_8c.html#ae0eb5551e540e9c099788b589b572b3c">task_current()</a>, <a class="el" href="task_8c.html#a45e8e823b36227f6dadb826453d8042a">task_page()</a>, and <a class="el" href="task_8c.html#aa83bc6f2e950015ee4e99199f3baf835">task_peek_stack()</a>.</p>
 
 </div>
 </div>
@@ -362,7 +473,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="syscall_8cpp.html#a1083aaefff7ce1376c1cae1500764733">sys$execprocess()</a>, <a class="el" href="syscall_8cpp.html#a5dc10a94ac7432a128a065d0ac7ba68d">sys$exit()</a>, <a class="el" href="syscall_8cpp.html#a6c5afa6447c25c16be5620ffdbe120b5">sys$free()</a>, <a class="el" href="syscall_8cpp.html#ae3849c90833ec5bca6ebf650bcb8692d">sys$get_framebuffer_info()</a>, <a class="el" href="syscall_8cpp.html#abe3d50c458631cc5a7e520bd1db63237">sys$get_process_arguments()</a>, <a class="el" href="syscall_8cpp.html#a8c655982452cee3da6b3db2dc27e5228">sys$getchar()</a>, <a class="el" href="syscall_8cpp.html#a3a6d4f9381d5e1482400afc6b31249fb">sys$malloc()</a>, <a class="el" href="syscall_8cpp.html#a8f1950e8deb780e753aad44e7902d612">sys$putchar()</a>, <a class="el" href="syscall_8cpp.html#a2f174f5aae0388c271e3a160262bf6c7">sys$putstring()</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba46adecc7bd993fb63846e92723a9f8d2">SYSCALL_EXECPROCESS</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba4777b04e1ffe7c43d3bf5173ea6121f7">SYSCALL_EXIT</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba36a2cae31a90424fec9f76da7346d381">SYSCALL_FREE</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89baa22a8be9692ea055daecfb1120219038">SYSCALL_GET_FRAMEBUFFER_INFO</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba3b8611ef4e1d7bc1bde1227fdf64afb9">SYSCALL_GET_PROCESS_ARGUMENTS</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba26172b0910d287f755c8d1cb088c329e">SYSCALL_GETCHAR</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba7189e79d1fe63ef84061466e440d52d2">SYSCALL_MALLOC</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba639c4e2053c1b258b3fc62f20e066512">SYSCALL_PUTCHAR</a>, and <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba21054fd193dc32963c6cd48f505bbc4c">SYSCALL_PUTSTRING</a>.</p>
+<p class="reference">References <a class="el" href="syscall_8cpp.html#a1083aaefff7ce1376c1cae1500764733">sys$execprocess()</a>, <a class="el" href="syscall_8cpp.html#a5dc10a94ac7432a128a065d0ac7ba68d">sys$exit()</a>, <a class="el" href="syscall_8cpp.html#a6718707a7e4fcafeaa01f7589cf594aa">sys$fclose()</a>, <a class="el" href="syscall_8cpp.html#a1d523fde2faa1e3cfafa98df1a1d7120">sys$fopen()</a>, <a class="el" href="syscall_8cpp.html#a521caaf46ee59287be140e30521b567f">sys$fread()</a>, <a class="el" href="syscall_8cpp.html#a6c5afa6447c25c16be5620ffdbe120b5">sys$free()</a>, <a class="el" href="syscall_8cpp.html#adbabe9aa9a654901c7861768dc6986dd">sys$fseek()</a>, <a class="el" href="syscall_8cpp.html#a65b5e7794ddd4397130e3b305928c8b3">sys$fstat()</a>, <a class="el" href="syscall_8cpp.html#ae3849c90833ec5bca6ebf650bcb8692d">sys$get_framebuffer_info()</a>, <a class="el" href="syscall_8cpp.html#abe3d50c458631cc5a7e520bd1db63237">sys$get_process_arguments()</a>, <a class="el" href="syscall_8cpp.html#a8c655982452cee3da6b3db2dc27e5228">sys$getchar()</a>, <a class="el" href="syscall_8cpp.html#a3a6d4f9381d5e1482400afc6b31249fb">sys$malloc()</a>, <a class="el" href="syscall_8cpp.html#a8f1950e8deb780e753aad44e7902d612">sys$putchar()</a>, <a class="el" href="syscall_8cpp.html#a2f174f5aae0388c271e3a160262bf6c7">sys$putstring()</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba46adecc7bd993fb63846e92723a9f8d2">SYSCALL_EXECPROCESS</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba4777b04e1ffe7c43d3bf5173ea6121f7">SYSCALL_EXIT</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89bafc656d89303ce28335b51981566e9ec8">SYSCALL_FCLOSE</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba1fe24eb747db1da0a7c255870af69c0d">SYSCALL_FOPEN</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89bad0da2e62c206913093f9ed5315354a0b">SYSCALL_FREAD</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba36a2cae31a90424fec9f76da7346d381">SYSCALL_FREE</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba660120329dfa148fcc7207d7bde348ec">SYSCALL_FSEEK</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba63d9066bd974abbcd831af6ec892f37b">SYSCALL_FSTAT</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89baa22a8be9692ea055daecfb1120219038">SYSCALL_GET_FRAMEBUFFER_INFO</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba3b8611ef4e1d7bc1bde1227fdf64afb9">SYSCALL_GET_PROCESS_ARGUMENTS</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba26172b0910d287f755c8d1cb088c329e">SYSCALL_GETCHAR</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba7189e79d1fe63ef84061466e440d52d2">SYSCALL_MALLOC</a>, <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba639c4e2053c1b258b3fc62f20e066512">SYSCALL_PUTCHAR</a>, and <a class="el" href="syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba21054fd193dc32963c6cd48f505bbc4c">SYSCALL_PUTSTRING</a>.</p>
 
 </div>
 </div>

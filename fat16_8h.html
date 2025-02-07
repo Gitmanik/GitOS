@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('fat16_8h.html',''); initResizable(); }
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="file_8h_source.html">fs/file.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="kernel_2fs_2file_8h_source.html">fs/file.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="disk_8h_source.html">drivers/disk/disk.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="disk__streamer_8h_source.html">drivers/disk/disk_streamer.h</a>&quot;</code><br />
 </div>
@@ -177,13 +177,13 @@ Functions</h2></td></tr>
 <tr class="memitem:a7cd0b930003f5667057bd2e2e286c6e4" id="r_a7cd0b930003f5667057bd2e2e286c6e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8h.html#a7cd0b930003f5667057bd2e2e286c6e4">fat16_resolve</a> (struct <a class="el" href="structdisk.html">disk</a> *<a class="el" href="structdisk.html">disk</a>)</td></tr>
 <tr class="memdesc:a7cd0b930003f5667057bd2e2e286c6e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">FAT16 filesystem resolver.  <br /></td></tr>
 <tr class="separator:a7cd0b930003f5667057bd2e2e286c6e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add34180378e73e159024002d6c672d58" id="r_add34180378e73e159024002d6c672d58"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8h.html#add34180378e73e159024002d6c672d58">fat16_open</a> (void *private_fs, struct <a class="el" href="structpath__part.html">path_part</a> *path, <a class="el" href="file_8h.html#a83452b48fc3d8fdbc81f52de7217fa68">FILE_MODE</a> mode)</td></tr>
+<tr class="memitem:add34180378e73e159024002d6c672d58" id="r_add34180378e73e159024002d6c672d58"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8h.html#add34180378e73e159024002d6c672d58">fat16_open</a> (void *private_fs, struct <a class="el" href="structpath__part.html">path_part</a> *path, <a class="el" href="kernel_2fs_2file_8h.html#a83452b48fc3d8fdbc81f52de7217fa68">FILE_MODE</a> mode)</td></tr>
 <tr class="memdesc:add34180378e73e159024002d6c672d58"><td class="mdescLeft">&#160;</td><td class="mdescRight">FAT16 Implementation of fopen.  <br /></td></tr>
 <tr class="separator:add34180378e73e159024002d6c672d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1553a7be5c659d0e4f6666600e5af2fa" id="r_a1553a7be5c659d0e4f6666600e5af2fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8h.html#a1553a7be5c659d0e4f6666600e5af2fa">fat16_read</a> (void *private_fs, void *desc, uint32_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, uint32_t nmemb, char *out)</td></tr>
 <tr class="memdesc:a1553a7be5c659d0e4f6666600e5af2fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">FAT16 Implementation of fread.  <br /></td></tr>
 <tr class="separator:a1553a7be5c659d0e4f6666600e5af2fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04ed328867d7fdeee818ae25557400a0" id="r_a04ed328867d7fdeee818ae25557400a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8h.html#a04ed328867d7fdeee818ae25557400a0">fat16_seek</a> (void *desc, uint32_t offset, <a class="el" href="file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a> seek_mode)</td></tr>
+<tr class="memitem:a04ed328867d7fdeee818ae25557400a0" id="r_a04ed328867d7fdeee818ae25557400a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8h.html#a04ed328867d7fdeee818ae25557400a0">fat16_seek</a> (void *desc, uint32_t offset, <a class="el" href="kernel_2fs_2file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a> seek_mode)</td></tr>
 <tr class="memdesc:a04ed328867d7fdeee818ae25557400a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">FAT16 Implementation of fseek.  <br /></td></tr>
 <tr class="separator:a04ed328867d7fdeee818ae25557400a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26828ac940d0d1665fa27a5fa8e00923" id="r_a26828ac940d0d1665fa27a5fa8e00923"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8h.html#a26828ac940d0d1665fa27a5fa8e00923">fat16_stat</a> (void *desc, struct <a class="el" href="structfile__stat.html">file_stat</a> *stat)</td></tr>
@@ -595,7 +595,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="file_8h.html#a83452b48fc3d8fdbc81f52de7217fa68">FILE_MODE</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="kernel_2fs_2file_8h.html#a83452b48fc3d8fdbc81f52de7217fa68">FILE_MODE</a>&#160;</td>
           <td class="paramname"><em>mode</em>&#160;</td>
         </tr>
         <tr>
@@ -617,7 +617,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void* Pointer to private file descriptor </dd></dl>
 
-<p class="reference">References <a class="el" href="structfat__file__descriptor.html#a07b70464e2367737c6d580bdd45cdb88">fat_file_descriptor::file</a>, <a class="el" href="file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682a89cf567f3e692c97873d7a795c17feca">FILE_MODE_READ</a>, <a class="el" href="hkeap_8c.html#afa01b5ae9ee20bcd5dd2cc50d8ae4821">kzalloc()</a>, and <a class="el" href="structfat__file__descriptor.html#af09611129dedc89382e4d7b6427bdb27">fat_file_descriptor::pos</a>.</p>
+<p class="reference">References <a class="el" href="structfat__file__descriptor.html#a07b70464e2367737c6d580bdd45cdb88">fat_file_descriptor::file</a>, <a class="el" href="kernel_2fs_2file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682a89cf567f3e692c97873d7a795c17feca">FILE_MODE_READ</a>, <a class="el" href="hkeap_8c.html#afa01b5ae9ee20bcd5dd2cc50d8ae4821">kzalloc()</a>, and <a class="el" href="structfat__file__descriptor.html#af09611129dedc89382e4d7b6427bdb27">fat_file_descriptor::pos</a>.</p>
 
 </div>
 </div>
@@ -732,7 +732,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="kernel_2fs_2file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a>&#160;</td>
           <td class="paramname"><em>seek_mode</em>&#160;</td>
         </tr>
         <tr>
@@ -754,7 +754,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Status </dd></dl>
 
-<p class="reference">References <a class="el" href="status_8h.html#ae34bccefcb5925f2ccd27bc3a0b4731d">ALL_OK</a>, <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>, <a class="el" href="fat16_8h.html#aaf8239a44b00b6f88cf993e0a0578e18">FAT_ITEM_TYPE_FILE</a>, <a class="el" href="structfat__item.html#a1930004bd9b7408b642997a7909ff5e1">fat_item::file</a>, <a class="el" href="structfat__file__descriptor.html#a07b70464e2367737c6d580bdd45cdb88">fat_file_descriptor::file</a>, <a class="el" href="structfat__file.html#a0532db3d21cdd9e862560340b97d8e05">fat_file::filesize</a>, <a class="el" href="structfat__file__descriptor.html#af09611129dedc89382e4d7b6427bdb27">fat_file_descriptor::pos</a>, <a class="el" href="file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8af3091144c125782cf17bcd3eb84e454c">SEEK_CUR</a>, <a class="el" href="file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8a060e45245be703e272d7264bafcfdc63">SEEK_END</a>, <a class="el" href="file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8a7f53e3798ec48e79c0897ba5138f9b05">SEEK_SET</a>, and <a class="el" href="structfat__item.html#a8f518c5a61a32a6ebb8d9a1de98c3b0b">fat_item::type</a>.</p>
+<p class="reference">References <a class="el" href="status_8h.html#ae34bccefcb5925f2ccd27bc3a0b4731d">ALL_OK</a>, <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>, <a class="el" href="fat16_8h.html#aaf8239a44b00b6f88cf993e0a0578e18">FAT_ITEM_TYPE_FILE</a>, <a class="el" href="structfat__item.html#a1930004bd9b7408b642997a7909ff5e1">fat_item::file</a>, <a class="el" href="structfat__file__descriptor.html#a07b70464e2367737c6d580bdd45cdb88">fat_file_descriptor::file</a>, <a class="el" href="structfat__file.html#a0532db3d21cdd9e862560340b97d8e05">fat_file::filesize</a>, <a class="el" href="structfat__file__descriptor.html#af09611129dedc89382e4d7b6427bdb27">fat_file_descriptor::pos</a>, <a class="el" href="kernel_2fs_2file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8af3091144c125782cf17bcd3eb84e454c">SEEK_CUR</a>, <a class="el" href="kernel_2fs_2file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8a060e45245be703e272d7264bafcfdc63">SEEK_END</a>, <a class="el" href="kernel_2fs_2file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8a7f53e3798ec48e79c0897ba5138f9b05">SEEK_SET</a>, and <a class="el" href="structfat__item.html#a8f518c5a61a32a6ebb8d9a1de98c3b0b">fat_item::type</a>.</p>
 
 </div>
 </div>
@@ -794,7 +794,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Status </dd></dl>
 
-<p class="reference">References <a class="el" href="status_8h.html#ae34bccefcb5925f2ccd27bc3a0b4731d">ALL_OK</a>, <a class="el" href="assert_8h.html#a9b064f61610cd78085a2b9fb19f94511">assert_not_reached</a>, <a class="el" href="structfat__file.html#ae99e080fe352a99a12cf5b9b260ef734">fat_file::attribute</a>, <a class="el" href="fat16_8h.html#a1dc3c912daef934481164d4b8691bef4">FAT_FILE_READONLY</a>, <a class="el" href="fat16_8h.html#a8af4b417957bae394d8eaad3056dd2a3">FAT_ITEM_TYPE_DIRECTORY</a>, <a class="el" href="fat16_8h.html#aaf8239a44b00b6f88cf993e0a0578e18">FAT_ITEM_TYPE_FILE</a>, <a class="el" href="structfat__item.html#a1930004bd9b7408b642997a7909ff5e1">fat_item::file</a>, <a class="el" href="structfat__file__descriptor.html#a07b70464e2367737c6d580bdd45cdb88">fat_file_descriptor::file</a>, <a class="el" href="file_8h.html#abcb59f9acb9c3530b7d75c33f6755617a1ac50a6e5976d0935506adf3f4505c91">FILE_STAT_FOLDER</a>, <a class="el" href="file_8h.html#abcb59f9acb9c3530b7d75c33f6755617a149a2651f7604176c2bf9bd76b666472">FILE_STAT_READ_ONLY</a>, <a class="el" href="structfat__file.html#a0532db3d21cdd9e862560340b97d8e05">fat_file::filesize</a>, <a class="el" href="structfile__stat.html#a0532db3d21cdd9e862560340b97d8e05">file_stat::filesize</a>, <a class="el" href="structfile__stat.html#a15883273c251db75429f281f77b26394">file_stat::flags</a>, and <a class="el" href="structfat__item.html#a8f518c5a61a32a6ebb8d9a1de98c3b0b">fat_item::type</a>.</p>
+<p class="reference">References <a class="el" href="status_8h.html#ae34bccefcb5925f2ccd27bc3a0b4731d">ALL_OK</a>, <a class="el" href="assert_8h.html#a9b064f61610cd78085a2b9fb19f94511">assert_not_reached</a>, <a class="el" href="structfat__file.html#ae99e080fe352a99a12cf5b9b260ef734">fat_file::attribute</a>, <a class="el" href="fat16_8h.html#a1dc3c912daef934481164d4b8691bef4">FAT_FILE_READONLY</a>, <a class="el" href="fat16_8h.html#a8af4b417957bae394d8eaad3056dd2a3">FAT_ITEM_TYPE_DIRECTORY</a>, <a class="el" href="fat16_8h.html#aaf8239a44b00b6f88cf993e0a0578e18">FAT_ITEM_TYPE_FILE</a>, <a class="el" href="structfat__item.html#a1930004bd9b7408b642997a7909ff5e1">fat_item::file</a>, <a class="el" href="structfat__file__descriptor.html#a07b70464e2367737c6d580bdd45cdb88">fat_file_descriptor::file</a>, <a class="el" href="kernel_2fs_2file_8h.html#abcb59f9acb9c3530b7d75c33f6755617a1ac50a6e5976d0935506adf3f4505c91">FILE_STAT_FOLDER</a>, <a class="el" href="kernel_2fs_2file_8h.html#abcb59f9acb9c3530b7d75c33f6755617a149a2651f7604176c2bf9bd76b666472">FILE_STAT_READ_ONLY</a>, <a class="el" href="structfat__file.html#a0532db3d21cdd9e862560340b97d8e05">fat_file::filesize</a>, <a class="el" href="structfile__stat.html#a0532db3d21cdd9e862560340b97d8e05">file_stat::filesize</a>, <a class="el" href="structfile__stat.html#a15883273c251db75429f281f77b26394">file_stat::flags</a>, and <a class="el" href="structfat__item.html#a8f518c5a61a32a6ebb8d9a1de98c3b0b">fat_item::type</a>.</p>
 
 </div>
 </div>

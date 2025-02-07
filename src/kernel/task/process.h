@@ -40,6 +40,11 @@ struct process
     void* stack;
 
     /**
+     * @brief Allocated BSS segment
+     */
+    void* bss;
+
+    /**
      * @brief Pointer to allocated memory for framebuffer
      */
     void* framebuffer;
@@ -61,6 +66,7 @@ struct process* process_current();
 int process_switch(struct process* process);
 void process_pushkey(struct process* process, char c);
 char process_popkey(struct process* process);
+void* process_malloc_flags(struct process* process, size_t size, int flags);
 void* process_malloc(struct process* process, size_t size);
 void process_free(struct process* process, void* address);
 void process_terminate(struct process* process);

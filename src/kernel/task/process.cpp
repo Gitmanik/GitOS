@@ -88,7 +88,20 @@ int process_map_memory(struct process* process)
 
     for (int i = 0; i < elf_header->e_phnum; i++) {
         auto program_header = elf_file->get_program_header(i);
-        void* physical_address = reinterpret_cast<void *>(reinterpret_cast<int>(elf_file->get_header()) + program_header->p_offset);
+
+        void* physical_address;
+
+        if (program_header->p_memsz > program_header->p_filesz)
+        {
+            void* bss = kzalloc(program_header->p_memsz);
+            memcpy(bss, reinterpret_cast<void *>(reinterpret_cast<int>(elf_file->get_header()) + program_header->p_offset), program_header->p_filesz);
+            process->bss = bss;
+            physical_address = bss;
+        } else
+        {
+            physical_address = reinterpret_cast<void *>(reinterpret_cast<int>(elf_file->get_header()) + program_header->p_offset);
+        }
+
         void* physical_end = (void*) ((int)physical_address + program_header->p_memsz);
 
         int page_flags = PAGING_IS_PRESENT | PAGING_ACCESS_FROM_ALL;
@@ -199,6 +212,9 @@ int process_load_for_slot(const char* filename, struct process* process, int pro
 
             if (process->framebuffer)
                 process_free(process, process->framebuffer);
+
+            if (process->bss)
+                kfree(process->bss);
         }
         return res;
 }
@@ -251,7 +267,11 @@ char process_popkey(struct process* process)
     return c;
 }
 
-void* process_malloc(struct process* process, size_t size) {
+void* process_malloc(struct process* process, size_t size)
+{
+    return process_malloc_flags(process, size, PAGING_IS_PRESENT | PAGING_IS_WRITEABLE | PAGING_ACCESS_FROM_ALL);
+}
+void* process_malloc_flags(struct process* process, size_t size, int flags) {
 
     int next_alloc_idx = process_get_next_allocation_index(process);
     if (next_alloc_idx == -ENOMEM)
@@ -262,8 +282,7 @@ void* process_malloc(struct process* process, size_t size) {
     process->allocations[next_alloc_idx] = ptr;
 
     int res = paging_map_to(process->task->page_directory, ptr, ptr,
-        paging_align_address((void*)((int)ptr+size)),
-        PAGING_IS_PRESENT | PAGING_IS_WRITEABLE | PAGING_ACCESS_FROM_ALL);
+        paging_align_address((void*)((int)ptr+size)), flags);
 
     if (res < 0) {
         kfree(ptr);
@@ -314,6 +333,7 @@ void process_terminate(struct process* process) {
     delete elf;
 
     kfree(process->stack);
+    kfree(process->bss);
     delete process;
 }
 

@@ -40,6 +40,36 @@ int ps2keyboard_setup()
 }
 
 static bool ps2keyboard_capslock = false;
+static bool ps2keyboard_shift = false;
+
+static char shift_char(char c)
+{
+    switch(c)
+    {
+        case '1': return '!';
+        case '2': return '@';
+        case '3': return '#';
+        case '4': return '$';
+        case '5': return '%';
+        case '6': return '^';
+        case '7': return '&';
+        case '8': return '*';
+        case '9': return '(';
+        case '0': return ')';
+        case '-': return '_';
+        case '=': return '+';
+        case '[': return '{';
+        case ']': return '}';
+        case ';': return ':';
+        case '\'': return '"';
+        case '`': return '~';
+        case '\\': return '|';
+        case ',': return '<';
+        case '.': return '>';
+        case '/': return '?';
+        default:  return c;
+    }
+}
 
 [[maybe_unused]] static char ps2keyboard_scancode_to_char(uint8_t scancode)
 {
@@ -56,6 +86,10 @@ static bool ps2keyboard_capslock = false;
     if (c >= 'A' && c <= 'Z' && !ps2keyboard_capslock)
         c += 32;
 
+    else if (ps2keyboard_shift) {
+        c = shift_char(c);
+    }
+
     return c;
 }
 
@@ -66,8 +100,20 @@ void ps2keyboard_irq_handler()
     uint8_t scancode = inb(0x60);
     inb(0x60); // Ignore next byte
 
+    if (scancode == 0xAA || scancode == 0xB6)  // Left Shift release (0xAA) or Right Shift release (0xB6)
+    {
+        ps2keyboard_shift = false;
+        return;
+    }
+
     if (scancode & 0x80) //release
     {
+        return;
+    }
+
+    if (scancode == 0x2A || scancode == 0x36)  // Left Shift (0x2A) or Right Shift (0x36)
+    {
+        ps2keyboard_shift = true;
         return;
     }
 

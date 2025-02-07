@@ -11,6 +11,7 @@ var process_8h =
     [ "process_load", "process_8h.html#ad8b4edaf0f7da944bfb15b926289207d", null ],
     [ "process_load_switch", "process_8h.html#ab781f373ca06d22a212fcb6e1234fd28", null ],
     [ "process_malloc", "process_8h.html#acb72730a52c1eea0e1728521673ad4e2", null ],
+    [ "process_malloc_flags", "process_8h.html#aa96a018c06b32920085e4542acb5acc1", null ],
     [ "process_popkey", "process_8h.html#ab9fa28dc09450ba227f7c647386f4e08", null ],
     [ "process_pushkey", "process_8h.html#ac6d266ad05ab00b91852d1bac27d63a1", null ],
     [ "process_switch", "process_8h.html#a9173d96e28447a42821079e71cddae0f", null ],

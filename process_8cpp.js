@@ -11,6 +11,7 @@ var process_8cpp =
     [ "process_load_for_slot", "process_8cpp.html#ab4f8825e09eca609c803f0651bad1de9", null ],
     [ "process_load_switch", "process_8cpp.html#ab781f373ca06d22a212fcb6e1234fd28", null ],
     [ "process_malloc", "process_8cpp.html#acb72730a52c1eea0e1728521673ad4e2", null ],
+    [ "process_malloc_flags", "process_8cpp.html#aa96a018c06b32920085e4542acb5acc1", null ],
     [ "process_map_memory", "process_8cpp.html#a547a74f3e9364f853ce647b1a1cc7243", null ],
     [ "process_popkey", "process_8cpp.html#ab9fa28dc09450ba227f7c647386f4e08", null ],
     [ "process_pushkey", "process_8cpp.html#ac6d266ad05ab00b91852d1bac27d63a1", null ],

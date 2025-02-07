@@ -133,6 +133,8 @@ Functions</h2></td></tr>
 <tr class="separator:ac6d266ad05ab00b91852d1bac27d63a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9fa28dc09450ba227f7c647386f4e08" id="r_ab9fa28dc09450ba227f7c647386f4e08"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#ab9fa28dc09450ba227f7c647386f4e08">process_popkey</a> (struct <a class="el" href="structprocess.html">process</a> *<a class="el" href="structprocess.html">process</a>)</td></tr>
 <tr class="separator:ab9fa28dc09450ba227f7c647386f4e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa96a018c06b32920085e4542acb5acc1" id="r_aa96a018c06b32920085e4542acb5acc1"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#aa96a018c06b32920085e4542acb5acc1">process_malloc_flags</a> (struct <a class="el" href="structprocess.html">process</a> *<a class="el" href="structprocess.html">process</a>, size_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, int <a class="el" href="idt_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>)</td></tr>
+<tr class="separator:aa96a018c06b32920085e4542acb5acc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb72730a52c1eea0e1728521673ad4e2" id="r_acb72730a52c1eea0e1728521673ad4e2"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#acb72730a52c1eea0e1728521673ad4e2">process_malloc</a> (struct <a class="el" href="structprocess.html">process</a> *<a class="el" href="structprocess.html">process</a>, size_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>)</td></tr>
 <tr class="separator:acb72730a52c1eea0e1728521673ad4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e737a5857eea754f30d0fb58d255a1e" id="r_a1e737a5857eea754f30d0fb58d255a1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#a1e737a5857eea754f30d0fb58d255a1e">process_free</a> (struct <a class="el" href="structprocess.html">process</a> *<a class="el" href="structprocess.html">process</a>, void *address)</td></tr>
@@ -338,7 +340,43 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="structprocess.html#a4e35d2a1bacc7c8ac8f838c985a7d46f">process::allocations</a>, <a class="el" href="status_8h.html#a6a05c923dad0c1208043e9c20a58c8e5">ENOMEM</a>, <a class="el" href="hkeap_8c.html#a069f85a5001d71bc44d8be6532a4e432">kfree()</a>, <a class="el" href="hkeap_8c.html#a87d8585002a620e687d68b38ab387a0e">kmalloc()</a>, <a class="el" href="structtask.html#ab88b1e54843df52e90498f531b017418">task::page_directory</a>, <a class="el" href="paging_8h.html#a3466cd50486f7498faa89ab3b4d63732">PAGING_ACCESS_FROM_ALL</a>, <a class="el" href="paging_8c.html#aa1368f3a69125538a06ae3621e9aa930">paging_align_address()</a>, <a class="el" href="paging_8h.html#aaaa04722a790129664fa46d6ec561478">PAGING_IS_PRESENT</a>, <a class="el" href="paging_8h.html#abfd474751dc86bb0e3a806d62beb9480">PAGING_IS_WRITEABLE</a>, <a class="el" href="paging_8c.html#abbc96dfb690336d0a9379237945bdb52">paging_map_to()</a>, <a class="el" href="process_8cpp.html#acfaf2c5c9fc427b4b367d6204a888eae">process_get_next_allocation_index()</a>, <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, and <a class="el" href="structprocess.html#a51b84d6af17c12b1021cd3b75f29e769">process::task</a>.</p>
+<p class="reference">References <a class="el" href="paging_8h.html#a3466cd50486f7498faa89ab3b4d63732">PAGING_ACCESS_FROM_ALL</a>, <a class="el" href="paging_8h.html#aaaa04722a790129664fa46d6ec561478">PAGING_IS_PRESENT</a>, <a class="el" href="paging_8h.html#abfd474751dc86bb0e3a806d62beb9480">PAGING_IS_WRITEABLE</a>, <a class="el" href="process_8cpp.html#aa96a018c06b32920085e4542acb5acc1">process_malloc_flags()</a>, and <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>.</p>
+
+</div>
+</div>
+<a id="aa96a018c06b32920085e4542acb5acc1" name="aa96a018c06b32920085e4542acb5acc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa96a018c06b32920085e4542acb5acc1">&#9670;&#160;</a></span>process_malloc_flags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * process_malloc_flags </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structprocess.html">process</a> *&#160;</td>
+          <td class="paramname"><em>process</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="structprocess.html#a4e35d2a1bacc7c8ac8f838c985a7d46f">process::allocations</a>, <a class="el" href="status_8h.html#a6a05c923dad0c1208043e9c20a58c8e5">ENOMEM</a>, <a class="el" href="idt_8h.html#a773b39d480759f67926cb18ae2219281">flags</a>, <a class="el" href="hkeap_8c.html#a069f85a5001d71bc44d8be6532a4e432">kfree()</a>, <a class="el" href="hkeap_8c.html#a87d8585002a620e687d68b38ab387a0e">kmalloc()</a>, <a class="el" href="structtask.html#ab88b1e54843df52e90498f531b017418">task::page_directory</a>, <a class="el" href="paging_8c.html#aa1368f3a69125538a06ae3621e9aa930">paging_align_address()</a>, <a class="el" href="paging_8c.html#abbc96dfb690336d0a9379237945bdb52">paging_map_to()</a>, <a class="el" href="process_8cpp.html#acfaf2c5c9fc427b4b367d6204a888eae">process_get_next_allocation_index()</a>, <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, and <a class="el" href="structprocess.html#a51b84d6af17c12b1021cd3b75f29e769">process::task</a>.</p>
 
 </div>
 </div>

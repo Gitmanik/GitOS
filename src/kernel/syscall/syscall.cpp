@@ -3,6 +3,7 @@
 #include <drivers/graphics/vbe/vbe_graphics.hpp>
 
 extern "C" {
+#include <fs/file.h>
 #include <common/assert.h>
 #include <common/string.h>
 
@@ -206,6 +207,67 @@ void * sys$get_framebuffer_info(struct interrupt_frame * frame) {
     return 0;
 }
 
+void * sys$fopen(struct interrupt_frame * frame) {
+    (void)(frame);
+
+    void* path_ptr = task_peek_stack(task_current(), 0);
+    void* mode_ptr = task_peek_stack(task_current(), 1);
+    char path[MAX_PATH] = {0};
+    char mode[MAX_PATH] = {0};
+
+    task_copy_string_from(task_current(), path_ptr, path, MAX_PATH);
+    task_copy_string_from(task_current(), mode_ptr, mode, MAX_PATH);
+
+    return (void*) fopen(path, mode);
+}
+
+void * sys$fclose(struct interrupt_frame * frame) {
+    (void)(frame);
+
+    return (void*) fclose((int) task_peek_stack(task_current(),0));
+}
+void * sys$fread(struct interrupt_frame * frame) {
+    (void)(frame);
+
+    void* buffer = task_peek_stack(task_current(), 0);
+    uint32_t size = (int) task_peek_stack(task_current(), 1);
+    uint32_t nmemb = (int) task_peek_stack(task_current(), 2);
+    int fd = (int) task_peek_stack(task_current(), 3);
+    return (void*) fread(buffer, size, nmemb, fd);
+
+}
+
+void * sys$fstat(struct interrupt_frame * frame) {
+    (void)(frame);
+    int fd = (int) task_peek_stack(task_current(), 0);
+    file_stat* task_stat = (file_stat*) task_peek_stack(task_current(), 1);
+
+    file_stat file;
+
+    void* res = (void*) fstat(fd, &file);
+
+    task_page();
+
+    task_stat->filesize = file.filesize;
+    task_stat->flags = file.flags;
+
+    kernel_page();
+
+
+    return res;
+}
+
+void * sys$fseek(struct interrupt_frame * frame) {
+    (void)(frame);
+    int fd = (int) task_peek_stack(task_current(), 0);
+    int offset = (int) task_peek_stack(task_current(), 1);
+    FILE_SEEK_MODE whence = (int) task_peek_stack(task_current(), 2);
+
+    void* res = (void*) fseek(fd, offset, whence);
+
+    return res;
+}
+
 void syscall_init()
 {
     syscall_register(SYSCALL_PUTSTRING, sys$putstring);
@@ -217,4 +279,9 @@ void syscall_init()
     syscall_register(SYSCALL_GET_PROCESS_ARGUMENTS, sys$get_process_arguments);
     syscall_register(SYSCALL_EXIT, sys$exit);
     syscall_register(SYSCALL_GET_FRAMEBUFFER_INFO, sys$get_framebuffer_info);
+    syscall_register(SYSCALL_FOPEN, sys$fopen);
+    syscall_register(SYSCALL_FREAD, sys$fread);
+    syscall_register(SYSCALL_FSTAT, sys$fstat);
+    syscall_register(SYSCALL_FSEEK, sys$fseek);
+    syscall_register(SYSCALL_FCLOSE, sys$fclose);
 }

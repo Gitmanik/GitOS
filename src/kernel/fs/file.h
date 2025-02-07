@@ -7,6 +7,7 @@
 #define MAX_FILESYSTEMS 12
 #define MAX_FILEDESCRIPTORS 1024
 #define MAX_FILESYSTEM_NAME 20
+#define MAX_MOUNTED 16384
 
 typedef unsigned int FILE_SEEK_MODE;
 typedef unsigned int FILE_MODE;
@@ -90,3 +91,11 @@ int fread(void* ptr, uint32_t size, uint32_t nmemb, int fd);
 int fseek(int fd, int offset, FILE_SEEK_MODE whence);
 int fstat(int fd, struct file_stat* stat);
 int fclose(int fd);
+
+struct mounted_file {
+    const char* filename;
+    struct filesystem* fs;
+    void* data;
+};
+
+void mount(const char* filename, struct filesystem* fs, void* data);

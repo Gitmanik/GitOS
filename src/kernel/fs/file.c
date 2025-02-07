@@ -20,6 +20,12 @@ struct filesystem* filesystems[MAX_FILESYSTEMS];
 struct file_descriptor* file_descriptors[MAX_FILEDESCRIPTORS];
 
 /**
+ * @brief Array holding all mounted files
+ *
+ */
+struct mounted_file** mounted;
+
+/**
  * @brief Returns first free slot for filesystem struct
  * 
  * @return struct filesystem** Pointer to free pointer for filesystem slot
@@ -114,7 +120,8 @@ void fs_insert_filesystem(struct filesystem* filesystem)
 void fs_init()
 {
     memset(filesystems, 0, sizeof(filesystems)); 
-    memset(file_descriptors, 0, sizeof(file_descriptors)); 
+    memset(file_descriptors, 0, sizeof(file_descriptors));
+    mounted = kzalloc(sizeof(struct mounted_file) * MAX_MOUNTED);
 }
 
 /**
@@ -180,6 +187,32 @@ int fopen(const char* filename, const char* str_mode)
     if (!root_path->first) //Cannot have just root path (without any file)
         return -EINVARG;
 
+    FILE_MODE fmode = file_get_mode_by_string(str_mode);
+    if (fmode == FILE_MODE_INVALID)
+        return -EINVARG;
+
+    for (int idx = 0; idx < MAX_MOUNTED; idx++) {
+        if (mounted[idx] != 0) {
+            if (strcmp(mounted[idx]->filename, filename) == 0) {
+
+                void *descriptor_private_data = mounted[idx]->fs->open((void*) mounted[idx]->data, root_path->first, fmode);
+
+                if (descriptor_private_data == 0)
+                    return -EIO;
+
+                struct file_descriptor* desc = 0;
+                result = file_new_descriptor(&desc);
+                if (result < 0)
+                    return result;
+
+                desc->filesystem = mounted[idx]->fs;
+                desc->disk = 0;
+                desc->private_fs_descriptor = descriptor_private_data;
+                return desc->index;
+            }
+        }
+    }
+
     struct disk* disk = disk_get(root_path->drive_no);
     if (!disk)
         return -EIO;
@@ -187,9 +220,6 @@ int fopen(const char* filename, const char* str_mode)
     if (!disk->filesystem)
         return -EINVARG;
 
-    FILE_MODE fmode = file_get_mode_by_string(str_mode);
-    if (fmode == FILE_MODE_INVALID)
-        return -EINVARG;
 
     void *descriptor_private_data = disk->filesystem->open(disk->fs_private, root_path->first, fmode);
 
@@ -274,4 +304,19 @@ int fclose(int fd)
     int res = desc->filesystem->close(desc->private_fs_descriptor);
     file_free_descriptor(desc);
     return res;
+}
+
+void mount(const char *filename, struct filesystem* fs, void* data) {
+    struct mounted_file* mf = kzalloc(sizeof(struct mounted_file));
+    mf->fs = fs;
+    mf->data = data;
+    mf->filename = filename;
+    for (int idx = 0; idx < MAX_MOUNTED; idx++) {
+        if (mounted[idx] == 0) {
+            mounted[idx] = mf;
+            kdebug("[FS] Mounted %s pointing to %s at idx %d", filename, fs->name, idx);
+            return;
+        }
+    }
+    kernel_panic("No more mount slots");
 }

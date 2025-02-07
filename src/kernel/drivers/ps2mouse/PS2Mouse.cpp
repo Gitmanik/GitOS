@@ -5,6 +5,7 @@
 #include "PS2Mouse.hpp"
 
 #include <compositor/compositor.hpp>
+#include <fs/file.h>
 
 extern "C" {
 #include <drivers/pic/pic.h>
@@ -53,6 +54,8 @@ void PS2Mouse::handle_cycle() {
 
         mouse_cycle = 0;
         Compositor::instance()->push_mouse(mouse_x, mouse_y, mouse_buttons);
+        mouse_packet packet = {.x = mouse_x, .y = mouse_y, .buttons = mouse_buttons};
+        pipe->write((char*) &packet, sizeof(mouse_packet));
 
         break;
             }
@@ -62,7 +65,7 @@ void PS2Mouse::handle_cycle() {
     pic_EOI(MOUSE_IRQ);
 }
 PS2Mouse::PS2Mouse() {
-    kprintf("Initializing PS2 Mouse");
+    kprintf("Initializing PS2 Mouse\n");
     outb(MOUSE_STATUS, 0xA7); // Disable mouse
 
     // Flush output buffer
@@ -108,6 +111,9 @@ PS2Mouse::PS2Mouse() {
 
     // Set up IRQ handler
     idt_SetHandler(0x20 + MOUSE_IRQ, ps2mouse_irq_handler);
+
+    pipe = new PipeFS(sizeof(mouse_packet) * pipe_size);
+    mount("0:/mouse", pipe->get_struct(), pipe);
 }
 
 inline void PS2Mouse::wait(uint8_t type) const {

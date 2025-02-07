@@ -89,14 +89,18 @@ int process_map_memory(struct process* process)
     for (int i = 0; i < elf_header->e_phnum; i++) {
         auto program_header = elf_file->get_program_header(i);
 
+        int page_flags = PAGING_IS_PRESENT | PAGING_ACCESS_FROM_ALL;
+        if (program_header->p_flags & ELFFile::p_flags::PF_W) {
+            page_flags |= PAGING_IS_WRITEABLE;
+        }
+
         void* physical_address;
 
         if (program_header->p_memsz > program_header->p_filesz)
         {
-            void* bss = kzalloc(program_header->p_memsz);
-            memcpy(bss, reinterpret_cast<void *>(reinterpret_cast<int>(elf_file->get_header()) + program_header->p_offset), program_header->p_filesz);
-            process->bss = bss;
-            physical_address = bss;
+            void* mem = process_malloc_flags(process, program_header->p_memsz, page_flags);
+            memcpy(mem, reinterpret_cast<void *>(reinterpret_cast<int>(elf_file->get_header()) + program_header->p_offset), program_header->p_filesz);
+            physical_address = mem;
         } else
         {
             physical_address = reinterpret_cast<void *>(reinterpret_cast<int>(elf_file->get_header()) + program_header->p_offset);
@@ -104,10 +108,7 @@ int process_map_memory(struct process* process)
 
         void* physical_end = (void*) ((int)physical_address + program_header->p_memsz);
 
-        int page_flags = PAGING_IS_PRESENT | PAGING_ACCESS_FROM_ALL;
-        if (program_header->p_flags & ELFFile::p_flags::PF_W) {
-            page_flags |= PAGING_IS_WRITEABLE;
-        }
+
 
 
     int res = paging_map_to(process->task->page_directory,

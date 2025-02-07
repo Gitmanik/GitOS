@@ -8,6 +8,7 @@ extern "C" {
 #include "stdio.h"
 #include "string.h"
 #include "misc.h"
+#include "file.h"
 }
 
 const char* get_cwd() {
@@ -38,6 +39,44 @@ void process_command(char * str) {
         FramebufferGraphics::the()->clear_screen();
     }
 
+    if (strncmp("cat ", str, 4) == 0) {
+        char* file = str+4;
+
+        int res = fopen(file, "r");
+
+        if (res < 0) {
+            printf("Error while opening \"%s\"\n", file);
+            return;
+        }
+
+        int fd = res;
+        char* data = nullptr;
+
+        file_stat stat;
+        res = fstat(fd, &stat);
+        if (res < 0) {
+            printf("Error while stating \"%s\": %d\n", file, res);
+            return;
+        }
+
+        data = (char*) malloc(stat.filesize);
+        res = fread(data, stat.filesize, 1, fd);
+        if (res < 0) {
+            printf("Error while reading \"%s\": %d\n", file, res);
+            return;
+        }
+
+        puts(data);
+        putc('\n');
+
+        free(data);
+
+        res = fclose(fd);
+        if (res < 0) {
+            printf("Error while closing %s: %d", file, res);
+            return;
+        }
+    }
 
     char buf[1024] {0};
     int len = strlen(get_cwd());

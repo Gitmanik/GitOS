@@ -40,6 +40,11 @@ struct process
     void* stack;
 
     /**
+     * @brief Allocated BSS segment
+     */
+    void* bss;
+
+    /**
      * @brief Pointer to allocated memory for framebuffer
      */
     void* framebuffer;

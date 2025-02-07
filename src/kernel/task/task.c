@@ -1,4 +1,7 @@
 #include "task.h"
+
+#include <common/assert.h>
+
 #include "common/status.h"
 #include "memory/paging/paging.h"
 #include "memory/heap/kheap.h"
@@ -203,18 +206,11 @@ struct task* task_new(struct process* process)
 int task_copy_string_from(struct task* task, void* virtual_address, void* physical_address, int max)
 {
     // TODO: Allow more than one page size
-    if (max >= PAGING_PAGE_SIZE)
-    {
-        return -EINVARG;
-    }
+    assert(PAGING_PAGE_SIZE > max);
 
     int res = 0;
     char* tmp = kzalloc(max);
-    if (!tmp)
-    {
-        res = -ENOMEM;
-        goto out;
-    }
+    assert(tmp);
 
     uint32_t* task_directory = task->page_directory->directory_entry;
     uint32_t old_entry = paging_get_page(task_directory, tmp);
@@ -224,20 +220,12 @@ int task_copy_string_from(struct task* task, void* virtual_address, void* physic
     kernel_page();
 
     res = paging_set_page(task_directory, tmp, old_entry);
-    if (res < 0)
-    {
-        res = -EIO;
-        goto out_free;
-    }
+    assert(res == 0);
 
     strncpy(physical_address, tmp, max);
 
-    out_free:
     kfree(tmp);
-
-    out:
     return res;
-
 }
 
 void task_page_task(struct task* task)

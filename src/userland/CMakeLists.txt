@@ -22,6 +22,10 @@ function(GITOS_PROGRAM name)
                 DEPENDS ${ASM_FILE}
                 COMMENT "Assembling ${ASM_FILE}"
         )
+        add_custom_command(
+                OUTPUT ${ASM_OBJECT}.sym
+                COMMAND objdump --demangle -w --visualize-jumps=extended-color -Mintel --prefix-addresses -d -f -t -s ${ASM_OBJECT} > ${ASM_OBJECT}.sym
+        )
         list(APPEND ASM_OBJECTS ${ASM_OBJECT})
     endforeach()
 
@@ -52,4 +56,5 @@ endfunction()
 add_subdirectory(blank)
 add_subdirectory(zofia)
 add_subdirectory(crasher)
-add_dependencies(userland stdlib blank zofia crasher)
+add_subdirectory(compositor)
+add_dependencies(userland stdlib blank zofia crasher compositor)

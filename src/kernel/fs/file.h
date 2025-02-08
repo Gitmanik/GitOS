@@ -68,6 +68,7 @@ typedef int (*FS_READ_FUNCTION)(void* private_fs, void* descriptor, uint32_t siz
 typedef int (*FS_SEEK_FUNCTION)(void* private_fs, uint32_t offset, FILE_SEEK_MODE seek_mode);
 typedef int (*FS_STAT_FUNCTION)(void* private_fs, struct file_stat* stat);
 typedef int (*FS_CLOSE_FUNCTION)(void* private_fs);
+typedef int (*FS_WRITE_FUNCTION)(void* private_fs, void* descriptor, uint32_t size, uint32_t nmemb, char* out);
 
 
 struct filesystem
@@ -78,6 +79,7 @@ struct filesystem
     FS_SEEK_FUNCTION seek;
     FS_STAT_FUNCTION stat;
     FS_CLOSE_FUNCTION close;
+    FS_WRITE_FUNCTION write;
 
     char name[MAX_FILESYSTEM_NAME];
 };

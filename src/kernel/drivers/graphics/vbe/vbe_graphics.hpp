@@ -4,10 +4,13 @@
 
 #pragma once
 #include <stdint.h>
+#include <fs/memory/MemoryFS.hpp>
+
 #include "drivers/graphics/graphics.hpp"
 
 class VBEGraphics : public Graphics {
 public:
+
     static Graphics* the();
 
     virtual void draw_pixel(uint32_t x, uint32_t y, uint32_t color);
@@ -42,7 +45,10 @@ public:
     uint32_t get_width() const;
     uint8_t *get_framebuffer() const;
 
+    void mount_fb();
+
 private:
+    VBEGraphics() = default;
     struct VbeModeInfo {
         uint16_t attributes;
         uint8_t winA, winB;
@@ -70,6 +76,8 @@ private:
     const uint32_t WIDTH = modeInfo->xRes;
     const uint32_t HEIGHT = modeInfo->yRes;
     const uint32_t BPP = modeInfo->bpp;
+
+    MemoryFS* m_memoryfs;
 
     const uint32_t FONT_SCALE = 1;
 
@@ -173,6 +181,4 @@ private:
         {0b00000000, 0b01100000, 0b00100000, 0b00100000, 0b00010000, 0b00100000, 0b00100000, 0b01100000}, // ASCII 0x7D
         {0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b01111000, 0b00000000, 0b00000000}, // ASCII 0x7E
     };
-
-
 };

@@ -6,7 +6,10 @@
 #include "drivers/graphics/graphics.hpp"
 
 #include <stdint.h>
+#include <fs/memory/MemoryFS.hpp>
+
 extern "C" {
+#include <fs/file.h>
 #include <memory/memory.h>
 }
 
@@ -155,6 +158,11 @@ uint32_t VBEGraphics::get_width() const {
 
 uint8_t *VBEGraphics::get_framebuffer() const {
     return FRAMEBUFFER;
+}
+
+void VBEGraphics::mount_fb() {
+    m_memoryfs = new MemoryFS(reinterpret_cast<char *>(FRAMEBUFFER), get_framebuffer_size());
+    mount("0:/fb", m_memoryfs->get_struct(), m_memoryfs);
 }
 
 uint32_t VBEGraphics::get_rrggbb_color(const TEXT_MODE_COLOR color) {

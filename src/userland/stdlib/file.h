@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <stdint-gcc.h>
+
 typedef unsigned int FILE_SEEK_MODE;
 typedef unsigned int FILE_MODE;
 typedef unsigned int FILE_STAT_FLAGS;

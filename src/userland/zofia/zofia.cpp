@@ -16,6 +16,12 @@ const char* get_cwd() {
     return cwd;
 }
 
+struct mouse_packet { // TODO: Make this smaller
+    int32_t x;
+    int32_t y;
+    unsigned char buttons;
+};
+
 void process_command(char * str) {
 
     if (strcmp("int3", str) == 0) {
@@ -77,6 +83,31 @@ void process_command(char * str) {
             return;
         }
     }
+
+    if (strcmp("mouse", str) == 0) {
+        int res = fopen("0:/mouse", "r");
+
+        printf("fopen res: %d\n", res);
+
+        int fd = 0;
+        fd = res;
+        printf("fd: %d\n", fd);
+
+        file_stat stat;
+        res = fstat(fd, &stat);
+        if (res < 0)
+            return;
+        mouse_packet* data = (mouse_packet*) malloc(sizeof(mouse_packet));
+        while (true) {
+            res = fstat(fd, &stat);
+            if (stat.filesize == 0)
+                continue;
+
+            res = fread(data, sizeof(mouse_packet), 1, fd);
+            printf("%d, %d, %b\n", data->x, data->y, data->buttons);
+        }
+    }
+
 
     char buf[1024] {0};
     int len = strlen(get_cwd());

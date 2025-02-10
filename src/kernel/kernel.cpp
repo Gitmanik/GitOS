@@ -6,7 +6,6 @@
 #include "drivers/graphics/vbe/vbe_graphics.hpp"
 #include "drivers/graphics/text_mode/text_mode.hpp"
 #include "syscall/syscall.hpp"
-#include "compositor/compositor.hpp"
 
 extern "C"
 {
@@ -105,7 +104,6 @@ void timer_interrupt(int int_no, struct interrupt_frame* frame)
 {
     (void)(int_no);
     (void)(frame);
-    Compositor::instance()->draw();
     pic_EOI(0);
 }
 
@@ -331,7 +329,7 @@ void kernel_main()
 
     kprintf("Loading zofia.elf..");
     struct process* process = new struct process;
-    res = process_load_switch("0:/zofia.elf", process);
+    res = process_load_switch("0:/shell.elf", process);
     process->argc = 2;
     process->argv[0] = (char*) "zofia.elf";
     process->argv[1] = (char*) "hello:)";

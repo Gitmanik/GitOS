@@ -4,7 +4,6 @@
 
 #include "PS2Mouse.hpp"
 
-#include <compositor/compositor.hpp>
 #include <fs/file.h>
 
 extern "C" {
@@ -53,7 +52,6 @@ void PS2Mouse::handle_cycle() {
         mouse_y = -mouse_y;
 
         mouse_cycle = 0;
-        Compositor::instance()->push_mouse(mouse_x, mouse_y, mouse_buttons);
         mouse_packet packet = {.x = mouse_x, .y = mouse_y, .buttons = mouse_buttons};
         pipe->write((char*) &packet, sizeof(mouse_packet));
 

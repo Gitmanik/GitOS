@@ -311,11 +311,11 @@ void kernel_main()
     kprintf(" OK\r\n");
     //
 
-
     // Initializing FS
     fs_init();
     fs_insert_filesystem(fat16_init_filesystem());
     disk_search_and_init();
+    static_cast<VBEGraphics*>(VBEGraphics::the())->mount_fb();
     //
 
     // Initializing PS2 drivers

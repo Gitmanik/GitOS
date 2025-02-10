@@ -26,7 +26,7 @@ var searchData=
   ['imagepages_23',['imagePages',['../vbe__graphics_8hpp.html#a252850f8b35d0ca7d69841fb643b50dc',1,'vbe_graphics.hpp']]],
   ['inb_24',['inb',['../io_8h.html#a2e1e8e2c5724c1e8fd2dff2eada06479',1,'inb(uint16_t port):&#160;io.c'],['../io_8c.html#a2e1e8e2c5724c1e8fd2dff2eada06479',1,'inb(uint16_t port):&#160;io.c']]],
   ['index_25',['index',['../structfile__descriptor.html#a750b5d744c39a06bfb13e6eb010e35d0',1,'file_descriptor']]],
-  ['instance_26',['instance',['../class_p_s2_mouse.html#a9abb614f6a1927d42b1e1fa755850138',1,'PS2Mouse::instance()'],['../class_compositor.html#aa92939f0c29305975661953bf307a616',1,'Compositor::instance()']]],
+  ['instance_26',['instance',['../class_p_s2_mouse.html#a9abb614f6a1927d42b1e1fa755850138',1,'PS2Mouse']]],
   ['interrupt_5fframe_27',['interrupt_frame',['../structinterrupt__frame.html',1,'']]],
   ['interrupt_5fhandlers_28',['interrupt_handlers',['../idt_8c.html#a75402e8f05a61f796bc9779a5a3cec8e',1,'idt.c']]],
   ['interrupt_5fpointer_5ftable_29',['interrupt_pointer_table',['../idt_8c.html#a0cd56ff3de4130fae98f2ffb1095ed7d',1,'idt.c']]],

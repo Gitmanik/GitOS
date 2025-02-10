@@ -1,6 +1,5 @@
 var hierarchy =
 [
-    [ "Compositor", "class_compositor.html", null ],
     [ "disk", "structdisk.html", null ],
     [ "disk_stream", "structdisk__stream.html", null ],
     [ "ELFFile", "class_e_l_f_file.html", null ],
@@ -33,6 +32,7 @@ var hierarchy =
     [ "keyboard_buffer", "structprocess_1_1keyboard__buffer.html", null ],
     [ "MemoryFS", "class_memory_f_s.html", null ],
     [ "mounted_file", "structmounted__file.html", null ],
+    [ "mouse_packet", "structmouse__packet.html", null ],
     [ "mouse_packet", "struct_p_s2_mouse_1_1mouse__packet.html", null ],
     [ "paging_chunk", "structpaging__chunk.html", null ],
     [ "path_part", "structpath__part.html", null ],

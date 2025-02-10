@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GitOS: src/kernel/compositor/compositor.hpp File Reference</title>
+<title>GitOS: src/userland/shell/shell.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('compositor_8hpp.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('shell_8cpp.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -91,25 +91,64 @@ $(document).ready(function(){initNavTree('compositor_8hpp.html',''); initResizab
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
-  <div class="headertitle"><div class="title">compositor.hpp File Reference</div></div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">shell.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdint-gcc.h&gt;</code><br />
-</div>
-<p><a href="compositor_8hpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<div class="textblock"><code>#include &lt;<a class="el" href="framebuffer_8hpp_source.html">graphics/framebuffer.hpp</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="stdio_8h_source.html">stdio.h</a>&quot;</code><br />
+<code>#include &quot;string.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="misc_8h_source.html">misc.h</a>&quot;</code><br />
+<code>#include &quot;file.h&quot;</code><br />
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_compositor.html">Compositor</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmouse__packet.html">mouse_packet</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627" id="r_a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shell_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a3c04138a5bfe5d72780bb7e82a18e627" name="a3c04138a5bfe5d72780bb7e82a18e627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c04138a5bfe5d72780bb7e82a18e627">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="file_8c.html#acaa8025589d6cb55085a1976b97e08b9">fopen()</a>, <a class="el" href="file_8c.html#adee556231b2610f1807f3dd2f2dd0f6a">fread()</a>, <a class="el" href="file_8c.html#a4afef177a56ef89821691c7c4df374c3">fseek()</a>, <a class="el" href="file_8c.html#a0ed36033dca44a4c90f733ed5ef33500">fstat()</a>, <a class="el" href="file_8c.html#a5e3192feef8941c44511f3a15af4b9f7">fwrite()</a>, <a class="el" href="misc_8h.html#a606bc9873b128be1978f63b5f0b10339">malloc()</a>, <a class="el" href="kernel_2fs_2file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8a7f53e3798ec48e79c0897ba5138f9b05">SEEK_SET</a>, <a class="el" href="class_framebuffer_graphics.html#a971ddddbc452d100976e41799bcd5fc7">FramebufferGraphics::the()</a>, <a class="el" href="structmouse__packet.html#af6d3062751bd565decb1a2cd3b63bdb2">mouse_packet::x</a>, and <a class="el" href="structmouse__packet.html#af64066d134a77e01b3d6eb8da813627a">mouse_packet::y</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_cbd7f246bdf7dc0a50281a272327e6ed.html">kernel</a></li><li class="navelem"><a class="el" href="dir_a33ec836134bf1d998cfc04cccb9c6af.html">compositor</a></li><li class="navelem"><a class="el" href="compositor_8hpp.html">compositor.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_173c9e88aa581eef1e30c63858f75f59.html">userland</a></li><li class="navelem"><a class="el" href="dir_8188d2403f8782d47de5ea4ccc1ebd5f.html">shell</a></li><li class="navelem"><a class="el" href="shell_8cpp.html">shell.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

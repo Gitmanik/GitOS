@@ -1,7 +1,6 @@
 var dir_cbd7f246bdf7dc0a50281a272327e6ed =
 [
     [ "common", "dir_fcf7d5413151a077d860b9393d8ec048.html", "dir_fcf7d5413151a077d860b9393d8ec048" ],
-    [ "compositor", "dir_a33ec836134bf1d998cfc04cccb9c6af.html", "dir_a33ec836134bf1d998cfc04cccb9c6af" ],
     [ "drivers", "dir_aee9ab6fedb00380c94a3a6c6b09f99a.html", "dir_aee9ab6fedb00380c94a3a6c6b09f99a" ],
     [ "formats", "dir_de08fd7879203d3faa6db86536b3322c.html", "dir_de08fd7879203d3faa6db86536b3322c" ],
     [ "fs", "dir_f848a285e60993dcb3189737897d2857.html", "dir_f848a285e60993dcb3189737897d2857" ],

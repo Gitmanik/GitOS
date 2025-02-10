@@ -1,6 +1,5 @@
 var annotated_dup =
 [
-    [ "Compositor", "class_compositor.html", "class_compositor" ],
     [ "disk", "structdisk.html", "structdisk" ],
     [ "disk_stream", "structdisk__stream.html", "structdisk__stream" ],
     [ "ELFFile", "class_e_l_f_file.html", "class_e_l_f_file" ],
@@ -28,6 +27,7 @@ var annotated_dup =
     [ "interrupt_frame", "structinterrupt__frame.html", "structinterrupt__frame" ],
     [ "MemoryFS", "class_memory_f_s.html", "class_memory_f_s" ],
     [ "mounted_file", "structmounted__file.html", "structmounted__file" ],
+    [ "mouse_packet", "structmouse__packet.html", "structmouse__packet" ],
     [ "paging_chunk", "structpaging__chunk.html", "structpaging__chunk" ],
     [ "path_part", "structpath__part.html", "structpath__part" ],
     [ "path_root", "structpath__root.html", "structpath__root" ],

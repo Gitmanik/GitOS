@@ -9,6 +9,7 @@ var syscall_8cpp =
     [ "sys$free", "syscall_8cpp.html#a6c5afa6447c25c16be5620ffdbe120b5", null ],
     [ "sys$fseek", "syscall_8cpp.html#adbabe9aa9a654901c7861768dc6986dd", null ],
     [ "sys$fstat", "syscall_8cpp.html#a65b5e7794ddd4397130e3b305928c8b3", null ],
+    [ "sys$fwrite", "syscall_8cpp.html#ad63f8492a06b5c9a652069f158e11d24", null ],
     [ "sys$get_framebuffer_info", "syscall_8cpp.html#ae3849c90833ec5bca6ebf650bcb8692d", null ],
     [ "sys$get_process_arguments", "syscall_8cpp.html#abe3d50c458631cc5a7e520bd1db63237", null ],
     [ "sys$getchar", "syscall_8cpp.html#a8c655982452cee3da6b3db2dc27e5228", null ],

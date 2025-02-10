@@ -9,5 +9,6 @@ var searchData=
   ['fs_5fread_5ffunction_6',['FS_READ_FUNCTION',['../kernel_2fs_2file_8h.html#a5cddfba3e55d068419e7206b9fa8b2e0',1,'file.h']]],
   ['fs_5fresolve_5ffunction_7',['FS_RESOLVE_FUNCTION',['../kernel_2fs_2file_8h.html#a08dac86aa376c5e0b39e9b495222ca5b',1,'file.h']]],
   ['fs_5fseek_5ffunction_8',['FS_SEEK_FUNCTION',['../kernel_2fs_2file_8h.html#ab5fa8fcf1f69d9baa73d8e74beb2ff40',1,'file.h']]],
-  ['fs_5fstat_5ffunction_9',['FS_STAT_FUNCTION',['../kernel_2fs_2file_8h.html#a16ae9c72750529c16e15f41d5c45e9c0',1,'file.h']]]
+  ['fs_5fstat_5ffunction_9',['FS_STAT_FUNCTION',['../kernel_2fs_2file_8h.html#a16ae9c72750529c16e15f41d5c45e9c0',1,'file.h']]],
+  ['fs_5fwrite_5ffunction_10',['FS_WRITE_FUNCTION',['../kernel_2fs_2file_8h.html#a612a9429f9cd818ba4e5b4ce78e24e5f',1,'file.h']]]
 ];

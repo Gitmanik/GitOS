@@ -17,6 +17,7 @@ var kernel_2fs_2file_8h =
     [ "FS_RESOLVE_FUNCTION", "kernel_2fs_2file_8h.html#a08dac86aa376c5e0b39e9b495222ca5b", null ],
     [ "FS_SEEK_FUNCTION", "kernel_2fs_2file_8h.html#ab5fa8fcf1f69d9baa73d8e74beb2ff40", null ],
     [ "FS_STAT_FUNCTION", "kernel_2fs_2file_8h.html#a16ae9c72750529c16e15f41d5c45e9c0", null ],
+    [ "FS_WRITE_FUNCTION", "kernel_2fs_2file_8h.html#a612a9429f9cd818ba4e5b4ce78e24e5f", null ],
     [ "FILE_OPEN_MODES", "kernel_2fs_2file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682", [
       [ "FILE_MODE_READ", "kernel_2fs_2file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682a89cf567f3e692c97873d7a795c17feca", null ],
       [ "FILE_MODE_WRITE", "kernel_2fs_2file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682a12eb77a5f1206154eb9f5adc219c9d5b", null ],
@@ -40,5 +41,6 @@ var kernel_2fs_2file_8h =
     [ "fs_resolve", "kernel_2fs_2file_8h.html#a64056ef2a3bd065ebe747f58b26f167c", null ],
     [ "fseek", "kernel_2fs_2file_8h.html#a4afef177a56ef89821691c7c4df374c3", null ],
     [ "fstat", "kernel_2fs_2file_8h.html#a0ed36033dca44a4c90f733ed5ef33500", null ],
+    [ "fwrite", "kernel_2fs_2file_8h.html#a5e3192feef8941c44511f3a15af4b9f7", null ],
     [ "mount", "kernel_2fs_2file_8h.html#a18ee81c05ed9a26a59ba7120220a2c96", null ]
 ];

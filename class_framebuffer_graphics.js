@@ -7,6 +7,7 @@ var class_framebuffer_graphics =
     [ "get_current_color", "class_framebuffer_graphics.html#a33041e9caba690c217cfde484fdfaf85", null ],
     [ "get_cursor_x", "class_framebuffer_graphics.html#a401291f44156390be92c69c27134e612", null ],
     [ "get_cursor_y", "class_framebuffer_graphics.html#aa2aa2043e44e6451e48549c216ce60b8", null ],
+    [ "get_pixel", "class_framebuffer_graphics.html#a9c5f40382cb8af6e1a9d44902e2b7df1", null ],
     [ "print_char", "class_framebuffer_graphics.html#a39d3fec85f874fef3e918058576064e1", null ],
     [ "print_char_color", "class_framebuffer_graphics.html#a35f42474a06bd5ebd39de52274ab2133", null ],
     [ "print_string", "class_framebuffer_graphics.html#a6e56b516926cd45ec03bb3b5076fe8a0", null ],

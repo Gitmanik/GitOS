@@ -7,5 +7,5 @@ var searchData=
   ['wina_4',['winA',['../vbe__graphics_8hpp.html#aac656aa0c16e6972b3026b3f6c657e96',1,'vbe_graphics.hpp']]],
   ['winb_5',['winB',['../vbe__graphics_8hpp.html#aca132bdc627e09e631a98ce07e5fccdc',1,'vbe_graphics.hpp']]],
   ['winsize_6',['winSize',['../vbe__graphics_8hpp.html#a7cd0e10abaf57e41fa02489ff3498b27',1,'vbe_graphics.hpp']]],
-  ['write_7',['write',['../class_p_s2_mouse.html#a3823f6e5e35f3118e53216b4b05b949e',1,'PS2Mouse::write()'],['../class_pipe_f_s.html#a615fa4cde24ab096fd4e504d10e6da5e',1,'PipeFS::write()']]]
+  ['write_7',['write',['../structfilesystem.html#abc58211988ab639f73e2f0717cb2203a',1,'filesystem::write'],['../class_p_s2_mouse.html#a3823f6e5e35f3118e53216b4b05b949e',1,'PS2Mouse::write()'],['../class_memory_f_s.html#a615fa4cde24ab096fd4e504d10e6da5e',1,'MemoryFS::write()'],['../class_pipe_f_s.html#a615fa4cde24ab096fd4e504d10e6da5e',1,'PipeFS::write()']]]
 ];

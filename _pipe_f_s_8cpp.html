@@ -115,6 +115,8 @@ Functions</h2></td></tr>
 <tr class="separator:ada29abba588cc68a4a5b67f47f49733a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9cbd2bbc7988d7ec77c3181dd4fa16c" id="r_ab9cbd2bbc7988d7ec77c3181dd4fa16c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pipe_f_s_8cpp.html#ab9cbd2bbc7988d7ec77c3181dd4fa16c">pipe_resolve</a> (struct <a class="el" href="structdisk.html">disk</a> *<a class="el" href="structdisk.html">disk</a>)</td></tr>
 <tr class="separator:ab9cbd2bbc7988d7ec77c3181dd4fa16c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a208e911577ea44b0d8daa65f0469cff3" id="r_a208e911577ea44b0d8daa65f0469cff3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pipe_f_s_8cpp.html#a208e911577ea44b0d8daa65f0469cff3">pipe_write</a> (void *private_fs, void *desc, uint32_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, uint32_t nmemb, char *in)</td></tr>
+<tr class="separator:a208e911577ea44b0d8daa65f0469cff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a9f40ad375fa3bf3d99212e4ad65cf4e7" name="a9f40ad375fa3bf3d99212e4ad65cf4e7"></a>
@@ -300,6 +302,54 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="kernel_2fs_2file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682acd98f9299ff5eeeee160dc88c6149129">FILE_MODE_APPEND</a>, <a class="el" href="kernel_2fs_2file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682a89cf567f3e692c97873d7a795c17feca">FILE_MODE_READ</a>, <a class="el" href="kernel_2fs_2file_8h.html#ad62aa6bebe0d9e00b2fc07f6f625e682a12eb77a5f1206154eb9f5adc219c9d5b">FILE_MODE_WRITE</a>, <a class="el" href="structfile__stat.html#a0532db3d21cdd9e862560340b97d8e05">file_stat::filesize</a>, <a class="el" href="structfile__stat.html#a15883273c251db75429f281f77b26394">file_stat::flags</a>, and <a class="el" href="tss_8h.html#a2ffb5cf275c124e8f8ff30e1d4449f80">fs</a>.</p>
+
+</div>
+</div>
+<a id="a208e911577ea44b0d8daa65f0469cff3" name="a208e911577ea44b0d8daa65f0469cff3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a208e911577ea44b0d8daa65f0469cff3">&#9670;&#160;</a></span>pipe_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pipe_write </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>private_fs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>nmemb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>in</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="tss_8h.html#a2ffb5cf275c124e8f8ff30e1d4449f80">fs</a>, <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, and <a class="el" href="class_pipe_f_s.html#a615fa4cde24ab096fd4e504d10e6da5e">PipeFS::write()</a>.</p>
 
 </div>
 </div>

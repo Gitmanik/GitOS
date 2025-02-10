@@ -23,5 +23,6 @@ var userland_2stdlib_2file_8h =
     [ "fopen", "userland_2stdlib_2file_8h.html#aa01c104dbdab4c93c40a96f0c705a3e1", null ],
     [ "fread", "userland_2stdlib_2file_8h.html#adee556231b2610f1807f3dd2f2dd0f6a", null ],
     [ "fseek", "userland_2stdlib_2file_8h.html#a4afef177a56ef89821691c7c4df374c3", null ],
-    [ "fstat", "userland_2stdlib_2file_8h.html#a0ed36033dca44a4c90f733ed5ef33500", null ]
+    [ "fstat", "userland_2stdlib_2file_8h.html#a0ed36033dca44a4c90f733ed5ef33500", null ],
+    [ "fwrite", "userland_2stdlib_2file_8h.html#a5e3192feef8941c44511f3a15af4b9f7", null ]
 ];

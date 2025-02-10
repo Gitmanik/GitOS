@@ -16,7 +16,8 @@ var syscall_8hpp =
       [ "SYSCALL_FREAD", "syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89bad0da2e62c206913093f9ed5315354a0b", null ],
       [ "SYSCALL_FSTAT", "syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba63d9066bd974abbcd831af6ec892f37b", null ],
       [ "SYSCALL_FSEEK", "syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba660120329dfa148fcc7207d7bde348ec", null ],
-      [ "SYSCALL_FCLOSE", "syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89bafc656d89303ce28335b51981566e9ec8", null ]
+      [ "SYSCALL_FCLOSE", "syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89bafc656d89303ce28335b51981566e9ec8", null ],
+      [ "SYSCALL_FWRITE", "syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89baf731a8edc4a09965669d05f91973235e", null ]
     ] ],
     [ "syscall_handler", "syscall_8hpp.html#addfc5a8429e319fd8d9b75a82a827b46", null ],
     [ "syscall_init", "syscall_8hpp.html#a581ed37968ead91b6d3a0b3b7a71da9d", null ],

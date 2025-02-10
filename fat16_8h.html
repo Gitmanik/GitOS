@@ -183,6 +183,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a1553a7be5c659d0e4f6666600e5af2fa" id="r_a1553a7be5c659d0e4f6666600e5af2fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8h.html#a1553a7be5c659d0e4f6666600e5af2fa">fat16_read</a> (void *private_fs, void *desc, uint32_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, uint32_t nmemb, char *out)</td></tr>
 <tr class="memdesc:a1553a7be5c659d0e4f6666600e5af2fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">FAT16 Implementation of fread.  <br /></td></tr>
 <tr class="separator:a1553a7be5c659d0e4f6666600e5af2fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb59827797d1e15a45703e9c0ee75a10" id="r_aeb59827797d1e15a45703e9c0ee75a10"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8h.html#aeb59827797d1e15a45703e9c0ee75a10">fat16_write</a> (void *private_fs, void *desc, uint32_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, uint32_t nmemb, char *in)</td></tr>
+<tr class="separator:aeb59827797d1e15a45703e9c0ee75a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04ed328867d7fdeee818ae25557400a0" id="r_a04ed328867d7fdeee818ae25557400a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fat16_8h.html#a04ed328867d7fdeee818ae25557400a0">fat16_seek</a> (void *desc, uint32_t offset, <a class="el" href="kernel_2fs_2file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a> seek_mode)</td></tr>
 <tr class="memdesc:a04ed328867d7fdeee818ae25557400a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">FAT16 Implementation of fseek.  <br /></td></tr>
 <tr class="separator:a04ed328867d7fdeee818ae25557400a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -795,6 +797,54 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>int Status </dd></dl>
 
 <p class="reference">References <a class="el" href="status_8h.html#ae34bccefcb5925f2ccd27bc3a0b4731d">ALL_OK</a>, <a class="el" href="assert_8h.html#a9b064f61610cd78085a2b9fb19f94511">assert_not_reached</a>, <a class="el" href="structfat__file.html#ae99e080fe352a99a12cf5b9b260ef734">fat_file::attribute</a>, <a class="el" href="fat16_8h.html#a1dc3c912daef934481164d4b8691bef4">FAT_FILE_READONLY</a>, <a class="el" href="fat16_8h.html#a8af4b417957bae394d8eaad3056dd2a3">FAT_ITEM_TYPE_DIRECTORY</a>, <a class="el" href="fat16_8h.html#aaf8239a44b00b6f88cf993e0a0578e18">FAT_ITEM_TYPE_FILE</a>, <a class="el" href="structfat__item.html#a1930004bd9b7408b642997a7909ff5e1">fat_item::file</a>, <a class="el" href="structfat__file__descriptor.html#a07b70464e2367737c6d580bdd45cdb88">fat_file_descriptor::file</a>, <a class="el" href="kernel_2fs_2file_8h.html#abcb59f9acb9c3530b7d75c33f6755617a1ac50a6e5976d0935506adf3f4505c91">FILE_STAT_FOLDER</a>, <a class="el" href="kernel_2fs_2file_8h.html#abcb59f9acb9c3530b7d75c33f6755617a149a2651f7604176c2bf9bd76b666472">FILE_STAT_READ_ONLY</a>, <a class="el" href="structfat__file.html#a0532db3d21cdd9e862560340b97d8e05">fat_file::filesize</a>, <a class="el" href="structfile__stat.html#a0532db3d21cdd9e862560340b97d8e05">file_stat::filesize</a>, <a class="el" href="structfile__stat.html#a15883273c251db75429f281f77b26394">file_stat::flags</a>, and <a class="el" href="structfat__item.html#a8f518c5a61a32a6ebb8d9a1de98c3b0b">fat_item::type</a>.</p>
+
+</div>
+</div>
+<a id="aeb59827797d1e15a45703e9c0ee75a10" name="aeb59827797d1e15a45703e9c0ee75a10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb59827797d1e15a45703e9c0ee75a10">&#9670;&#160;</a></span>fat16_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fat16_write </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>private_fs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>nmemb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>in</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="status_8h.html#a0e9e819f6f5a649e0dcb3e7d00c54e91">ENOTIMPL</a>, and <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>.</p>
 
 </div>
 </div>

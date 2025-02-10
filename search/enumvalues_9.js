@@ -23,10 +23,11 @@ var searchData=
   ['syscall_5ffree_20',['SYSCALL_FREE',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba36a2cae31a90424fec9f76da7346d381',1,'syscall.hpp']]],
   ['syscall_5ffseek_21',['SYSCALL_FSEEK',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba660120329dfa148fcc7207d7bde348ec',1,'syscall.hpp']]],
   ['syscall_5ffstat_22',['SYSCALL_FSTAT',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba63d9066bd974abbcd831af6ec892f37b',1,'syscall.hpp']]],
-  ['syscall_5fget_5fframebuffer_5finfo_23',['SYSCALL_GET_FRAMEBUFFER_INFO',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89baa22a8be9692ea055daecfb1120219038',1,'syscall.hpp']]],
-  ['syscall_5fget_5fprocess_5farguments_24',['SYSCALL_GET_PROCESS_ARGUMENTS',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba3b8611ef4e1d7bc1bde1227fdf64afb9',1,'syscall.hpp']]],
-  ['syscall_5fgetchar_25',['SYSCALL_GETCHAR',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba26172b0910d287f755c8d1cb088c329e',1,'syscall.hpp']]],
-  ['syscall_5fmalloc_26',['SYSCALL_MALLOC',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba7189e79d1fe63ef84061466e440d52d2',1,'syscall.hpp']]],
-  ['syscall_5fputchar_27',['SYSCALL_PUTCHAR',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba639c4e2053c1b258b3fc62f20e066512',1,'syscall.hpp']]],
-  ['syscall_5fputstring_28',['SYSCALL_PUTSTRING',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba21054fd193dc32963c6cd48f505bbc4c',1,'syscall.hpp']]]
+  ['syscall_5ffwrite_23',['SYSCALL_FWRITE',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89baf731a8edc4a09965669d05f91973235e',1,'syscall.hpp']]],
+  ['syscall_5fget_5fframebuffer_5finfo_24',['SYSCALL_GET_FRAMEBUFFER_INFO',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89baa22a8be9692ea055daecfb1120219038',1,'syscall.hpp']]],
+  ['syscall_5fget_5fprocess_5farguments_25',['SYSCALL_GET_PROCESS_ARGUMENTS',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba3b8611ef4e1d7bc1bde1227fdf64afb9',1,'syscall.hpp']]],
+  ['syscall_5fgetchar_26',['SYSCALL_GETCHAR',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba26172b0910d287f755c8d1cb088c329e',1,'syscall.hpp']]],
+  ['syscall_5fmalloc_27',['SYSCALL_MALLOC',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba7189e79d1fe63ef84061466e440d52d2',1,'syscall.hpp']]],
+  ['syscall_5fputchar_28',['SYSCALL_PUTCHAR',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba639c4e2053c1b258b3fc62f20e066512',1,'syscall.hpp']]],
+  ['syscall_5fputstring_29',['SYSCALL_PUTSTRING',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba21054fd193dc32963c6cd48f505bbc4c',1,'syscall.hpp']]]
 ];

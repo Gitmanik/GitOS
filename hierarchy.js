@@ -31,6 +31,7 @@ var hierarchy =
     [ "idtr_desc", "structidtr__desc.html", null ],
     [ "interrupt_frame", "structinterrupt__frame.html", null ],
     [ "keyboard_buffer", "structprocess_1_1keyboard__buffer.html", null ],
+    [ "MemoryFS", "class_memory_f_s.html", null ],
     [ "mounted_file", "structmounted__file.html", null ],
     [ "mouse_packet", "struct_p_s2_mouse_1_1mouse__packet.html", null ],
     [ "paging_chunk", "structpaging__chunk.html", null ],

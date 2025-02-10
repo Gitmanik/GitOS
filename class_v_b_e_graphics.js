@@ -14,6 +14,7 @@ var class_v_b_e_graphics =
     [ "get_rrggbb_color", "class_v_b_e_graphics.html#a5fd49484f1596cb29868d3a357865bb2", null ],
     [ "get_width", "class_v_b_e_graphics.html#a755b78350834eeec9f4bb2c5499f5c9a", null ],
     [ "is_vbe", "class_v_b_e_graphics.html#ad82d0b017834b5a3e8f65d6139122987", null ],
+    [ "mount_fb", "class_v_b_e_graphics.html#a1c0653abb61760dc166339121e5cb09b", null ],
     [ "print_char", "class_v_b_e_graphics.html#a39d3fec85f874fef3e918058576064e1", null ],
     [ "print_char_color", "class_v_b_e_graphics.html#ac7c74e5cb7c7dd3edf7ef6041d425136", null ],
     [ "print_string", "class_v_b_e_graphics.html#a6e56b516926cd45ec03bb3b5076fe8a0", null ],

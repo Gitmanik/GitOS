@@ -26,6 +26,7 @@ var annotated_dup =
     [ "idt_desc", "structidt__desc.html", "structidt__desc" ],
     [ "idtr_desc", "structidtr__desc.html", "structidtr__desc" ],
     [ "interrupt_frame", "structinterrupt__frame.html", "structinterrupt__frame" ],
+    [ "MemoryFS", "class_memory_f_s.html", "class_memory_f_s" ],
     [ "mounted_file", "structmounted__file.html", "structmounted__file" ],
     [ "paging_chunk", "structpaging__chunk.html", "structpaging__chunk" ],
     [ "path_part", "structpath__part.html", "structpath__part" ],

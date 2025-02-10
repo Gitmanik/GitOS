@@ -147,6 +147,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:a16ae9c72750529c16e15f41d5c45e9c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5177ed95ade641b7961a793a5122f76d" id="r_a5177ed95ade641b7961a793a5122f76d"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#a5177ed95ade641b7961a793a5122f76d">FS_CLOSE_FUNCTION</a>) (void *private_fs)</td></tr>
 <tr class="separator:a5177ed95ade641b7961a793a5122f76d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a612a9429f9cd818ba4e5b4ce78e24e5f" id="r_a612a9429f9cd818ba4e5b4ce78e24e5f"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#a612a9429f9cd818ba4e5b4ce78e24e5f">FS_WRITE_FUNCTION</a>) (void *private_fs, void *descriptor, uint32_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, uint32_t nmemb, char *in)</td></tr>
+<tr class="separator:a612a9429f9cd818ba4e5b4ce78e24e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -183,6 +185,9 @@ Functions</h2></td></tr>
 <tr class="memitem:adee556231b2610f1807f3dd2f2dd0f6a" id="r_adee556231b2610f1807f3dd2f2dd0f6a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#adee556231b2610f1807f3dd2f2dd0f6a">fread</a> (void *ptr, uint32_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, uint32_t nmemb, int fd)</td></tr>
 <tr class="memdesc:adee556231b2610f1807f3dd2f2dd0f6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads from file.  <br /></td></tr>
 <tr class="separator:adee556231b2610f1807f3dd2f2dd0f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e3192feef8941c44511f3a15af4b9f7" id="r_a5e3192feef8941c44511f3a15af4b9f7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#a5e3192feef8941c44511f3a15af4b9f7">fwrite</a> (void *ptr, uint32_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, uint32_t nmemb, int fd)</td></tr>
+<tr class="memdesc:a5e3192feef8941c44511f3a15af4b9f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes to file.  <br /></td></tr>
+<tr class="separator:a5e3192feef8941c44511f3a15af4b9f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4afef177a56ef89821691c7c4df374c3" id="r_a4afef177a56ef89821691c7c4df374c3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#a4afef177a56ef89821691c7c4df374c3">fseek</a> (int fd, int offset, <a class="el" href="kernel_2fs_2file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a> whence)</td></tr>
 <tr class="memdesc:a4afef177a56ef89821691c7c4df374c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seeks into file.  <br /></td></tr>
 <tr class="separator:a4afef177a56ef89821691c7c4df374c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -373,6 +378,20 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">typedef int(* FS_STAT_FUNCTION) (void *private_fs, struct <a class="el" href="structfile__stat.html">file_stat</a> *stat)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a612a9429f9cd818ba4e5b4ce78e24e5f" name="a612a9429f9cd818ba4e5b4ce78e24e5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a612a9429f9cd818ba4e5b4ce78e24e5f">&#9670;&#160;</a></span>FS_WRITE_FUNCTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int(* FS_WRITE_FUNCTION) (void *private_fs, void *descriptor, uint32_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, uint32_t nmemb, char *in)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -712,6 +731,58 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">fd</td><td>File descriptor </td></tr>
     <tr><td class="paramname">stat</td><td>Output file status struct </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Status </dd></dl>
+
+</div>
+</div>
+<a id="a5e3192feef8941c44511f3a15af4b9f7" name="a5e3192feef8941c44511f3a15af4b9f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e3192feef8941c44511f3a15af4b9f7">&#9670;&#160;</a></span>fwrite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fwrite </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>nmemb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes to file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ptr</td><td>Input buffer </td></tr>
+    <tr><td class="paramname">size</td><td>Size in bytes of block </td></tr>
+    <tr><td class="paramname">nmemb</td><td>Number of blocks to read </td></tr>
+    <tr><td class="paramname">fd</td><td>File descriptor </td></tr>
   </table>
   </dd>
 </dl>

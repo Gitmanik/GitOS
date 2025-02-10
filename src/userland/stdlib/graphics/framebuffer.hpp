@@ -16,7 +16,6 @@ extern "C" {
     void get_framebuffer_info(struct FramebufferInfo* fbInfo);
 }
 
-
 class FramebufferGraphics {
 public:
     static FramebufferGraphics* the();
@@ -43,6 +42,12 @@ public:
     uint32_t get_current_color();
     void set_text_color(uint32_t color);
 
+    uint8_t *get_buffer() const;
+    uint32_t get_width() const;
+    uint32_t get_height() const;
+    uint32_t get_bpp() const;
+
+    uint32_t get_offset(uint32_t x, uint32_t y);
 
 private:
     void scroll_screen(int i);

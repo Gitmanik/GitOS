@@ -150,6 +150,26 @@ void FramebufferGraphics::set_text_color(uint32_t color) {
     current_color = color;
 }
 
+uint8_t * FramebufferGraphics::get_buffer() const {
+    return FRAMEBUFFER;
+}
+
+uint32_t FramebufferGraphics::get_width() const {
+    return WIDTH;
+}
+
+uint32_t FramebufferGraphics::get_height() const {
+    return HEIGHT;
+}
+
+uint32_t FramebufferGraphics::get_bpp() const {
+    return BPP;
+}
+
+uint32_t FramebufferGraphics::get_offset(uint32_t x, uint32_t y) {
+    return PITCH * y + x * BPP/8;
+}
+
 void FramebufferGraphics::scroll_screen(int amount) {
     amount = amount * (8*FONT_SCALE);
     memcpy(FRAMEBUFFER, reinterpret_cast<char *>(FRAMEBUFFER) + PITCH * amount, PITCH * (HEIGHT - amount));

@@ -108,9 +108,6 @@ int process_map_memory(struct process* process)
 
         void* physical_end = (void*) ((int)physical_address + program_header->p_memsz);
 
-
-
-
     int res = paging_map_to(process->task->page_directory,
         paging_align_address_to_lower_page((void*) program_header->p_vaddr),
         paging_align_address_to_lower_page(physical_address),

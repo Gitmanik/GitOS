@@ -1,5 +1,5 @@
 //
-// Created by root on 1/10/25.
+// Created by Paweł Reich on 1/10/25.
 //
 
 #include "string.h"

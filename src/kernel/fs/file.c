@@ -257,6 +257,26 @@ int fread(void* ptr, uint32_t size, uint32_t nmemb, int fd)
 }
 
 /**
+ * @brief Writes to file
+ *
+ * @param ptr Input buffer
+ * @param size Size in bytes of block
+ * @param nmemb Number of blocks to read
+ * @param fd File descriptor
+ * @return int Status
+ */
+int fwrite(void* ptr, uint32_t size, uint32_t nmemb, int fd)
+{
+    if (size == 0 || nmemb == 0 || fd < 1)
+        return -EINVARG;
+
+    struct file_descriptor* desc = file_get_descriptor(fd);
+
+    return desc->filesystem->write(desc->disk->fs_private, desc->private_fs_descriptor, size, nmemb, (char*) ptr);
+}
+
+
+/**
  * @brief Seeks into file
  * 
  * @param fd File descriptor

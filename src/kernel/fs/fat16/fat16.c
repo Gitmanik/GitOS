@@ -17,7 +17,8 @@ struct filesystem fat16_fs =
     .read = fat16_read,
     .seek = fat16_seek,
     .stat = fat16_stat,
-    .close = fat16_close
+    .close = fat16_close,
+    .write = fat16_write,
 };
 
 /**
@@ -680,6 +681,17 @@ int fat16_read(void* private_fs, void* desc, uint32_t size, uint32_t nmemb, char
         offset += size;
     }
     return nmemb;
+}
+
+int fat16_write(void* private_fs, void* desc, uint32_t size, uint32_t nmemb, char* in)
+{
+    (void)(private_fs);
+    (void)(desc);
+    (void)(size);
+    (void)(nmemb);
+    (void)(in);
+
+    return -ENOTIMPL;
 }
 
 /**

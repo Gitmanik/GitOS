@@ -126,6 +126,7 @@ struct filesystem* fat16_init_filesystem();
 int fat16_resolve(struct disk* disk);
 void* fat16_open(void* private_fs, struct path_part* path, FILE_MODE mode);
 int fat16_read(void* private_fs, void* desc, uint32_t size, uint32_t nmemb, char* out);
+int fat16_write(void* private_fs, void* desc, uint32_t size, uint32_t nmemb, char* in);
 int fat16_seek(void* desc, uint32_t offset, FILE_SEEK_MODE seek_mode);
 int fat16_stat(void* desc, struct file_stat* stat);
 int fat16_close(void* desc);

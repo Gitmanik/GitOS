@@ -30,4 +30,5 @@ enum syscalls
     SYSCALL_FSTAT,
     SYSCALL_FSEEK,
     SYSCALL_FCLOSE,
+    SYSCALL_FWRITE,
 };

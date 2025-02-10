@@ -226,14 +226,28 @@ void * sys$fclose(struct interrupt_frame * frame) {
 
     return (void*) fclose((int) task_peek_stack(task_current(),0));
 }
+
 void * sys$fread(struct interrupt_frame * frame) {
     (void)(frame);
 
     void* buffer = task_peek_stack(task_current(), 0);
-    uint32_t size = (int) task_peek_stack(task_current(), 1);
-    uint32_t nmemb = (int) task_peek_stack(task_current(), 2);
+    auto size = (uint32_t) task_peek_stack(task_current(), 1);
+    auto nmemb = (uint32_t) task_peek_stack(task_current(), 2);
     int fd = (int) task_peek_stack(task_current(), 3);
+
     return (void*) fread(buffer, size, nmemb, fd);
+
+}
+
+void * sys$fwrite(struct interrupt_frame * frame) {
+    (void)(frame);
+
+    void* buffer = task_peek_stack(task_current(), 0);
+    auto size = (uint32_t) task_peek_stack(task_current(), 1);
+    auto nmemb = (uint32_t) task_peek_stack(task_current(), 2);
+    int fd = (int) task_peek_stack(task_current(), 3);
+
+    return (void*) fwrite(buffer, size, nmemb, fd);
 
 }
 
@@ -281,6 +295,7 @@ void syscall_init()
     syscall_register(SYSCALL_GET_FRAMEBUFFER_INFO, sys$get_framebuffer_info);
     syscall_register(SYSCALL_FOPEN, sys$fopen);
     syscall_register(SYSCALL_FREAD, sys$fread);
+    syscall_register(SYSCALL_FWRITE, sys$fwrite);
     syscall_register(SYSCALL_FSTAT, sys$fstat);
     syscall_register(SYSCALL_FSEEK, sys$fseek);
     syscall_register(SYSCALL_FCLOSE, sys$fclose);

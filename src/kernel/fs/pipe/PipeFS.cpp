@@ -49,13 +49,21 @@ int pipe_resolve([[maybe_unused]] struct disk * disk) {
     return 0;
 }
 
+int pipe_write([[maybe_unused]] void * private_fs, void * desc, uint32_t size, uint32_t nmemb, char* in) {
+    auto* fs = static_cast<PipeFS *>(desc);
+    for (uint32_t i = 0; i < nmemb; i++)
+    {
+        fs->write(in, size);
+        in += size;
+    }
+    return nmemb;
+}
 PipeFS::PipeFS(size_t buffer_size) {
     m_buffer = static_cast<char*>(kzalloc(buffer_size));
     m_buffer_size = buffer_size;
     m_buffer_read_idx = 0;
     m_buffer_write_idx = 0;
 }
-
 
 filesystem* PipeFS::get_struct() {
     static filesystem fs = {
@@ -65,6 +73,7 @@ filesystem* PipeFS::get_struct() {
         .seek = pipe_seek,
         .stat = pipe_stat,
         .close = pipe_close,
+        .write = pipe_write,
         .name = "PipeFS\0\0\0\0\0\0\0\0\0\0\0\0\0",
     };
     return &fs;

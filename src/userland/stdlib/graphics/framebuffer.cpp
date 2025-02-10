@@ -163,6 +163,18 @@ extern "C" {
 
         FramebufferGraphics::the()->print_string(internal_buf);
     }
+    void debug_printf(const char *fmt, ...)
+    {
+        va_list args;
+        va_start(args, fmt);
+
+        char internal_buf[1024];
+        memset(internal_buf, 0, sizeof(internal_buf));
+
+        vsprintf(internal_buf, fmt, args);
+
+        debug_puts(internal_buf);
+    }
     void puts(const char* str) {
         FramebufferGraphics::the()->print_string(str);
     }

@@ -51,6 +51,27 @@ void FramebufferGraphics::draw_pixel(uint32_t x, uint32_t y, uint32_t color) {
     }
 }
 
+uint32_t FramebufferGraphics::get_pixel(uint32_t x, uint32_t y) {
+    if (x >= WIDTH || y >= HEIGHT)
+        return 0;
+
+    uint32_t offset = y * PITCH + x * BPP/8;
+
+    uint32_t pixel = 0;
+
+    if (BPP == 32) {
+        pixel = FRAMEBUFFER[offset + 0];          // Blue
+        pixel |= FRAMEBUFFER[offset + 1] << 8;   // Green
+        pixel |= FRAMEBUFFER[offset + 2] << 16;  // Red
+        pixel |= FRAMEBUFFER[offset + 3] << 24;  // Alpha
+    } else if (BPP == 24) {
+        pixel = FRAMEBUFFER[offset + 0];          // Blue
+        pixel |= FRAMEBUFFER[offset + 1] << 8;   // Green
+        pixel |= FRAMEBUFFER[offset + 2] << 16;  // Red
+    }
+    return pixel;
+}
+
 // Draw a single character at (x, y)
 void FramebufferGraphics::draw_char(uint32_t x, uint32_t y, char c, uint32_t color) {
     for (int row = 0; row < 8; row++) {

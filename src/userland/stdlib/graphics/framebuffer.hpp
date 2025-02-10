@@ -22,6 +22,7 @@ public:
     static FramebufferGraphics* the();
 
     void draw_pixel(uint32_t x, uint32_t y, uint32_t color);
+    uint32_t get_pixel(uint32_t x, uint32_t y);
 
     void draw_char(uint32_t x, uint32_t y, char c, uint32_t color);
 

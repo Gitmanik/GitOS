@@ -166,6 +166,10 @@ uint32_t FramebufferGraphics::get_bpp() const {
     return BPP;
 }
 
+uint32_t FramebufferGraphics::get_buffer_size() const {
+    return get_width() * get_bpp() / 8 * get_height();
+}
+
 uint32_t FramebufferGraphics::get_offset(uint32_t x, uint32_t y) {
     return PITCH * y + x * BPP/8;
 }

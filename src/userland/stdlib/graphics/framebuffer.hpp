@@ -47,6 +47,8 @@ public:
     uint32_t get_height() const;
     uint32_t get_bpp() const;
 
+    uint32_t get_buffer_size() const;
+
     uint32_t get_offset(uint32_t x, uint32_t y);
 
 private:

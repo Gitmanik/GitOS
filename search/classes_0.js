@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['disk_0',['disk',['../structdisk.html',1,'']]],
-  ['disk_5fstream_1',['disk_stream',['../structdisk__stream.html',1,'']]]
+  ['bmpfile_0',['BMPFile',['../class_b_m_p_file.html',1,'']]]
 ];

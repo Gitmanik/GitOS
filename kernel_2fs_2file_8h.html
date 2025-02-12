@@ -141,7 +141,7 @@ Typedefs</h2></td></tr>
 <tr class="separator:a727711f4e8697e13e8a9304ccf9085af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cddfba3e55d068419e7206b9fa8b2e0" id="r_a5cddfba3e55d068419e7206b9fa8b2e0"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#a5cddfba3e55d068419e7206b9fa8b2e0">FS_READ_FUNCTION</a>) (void *private_fs, void *descriptor, uint32_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, uint32_t nmemb, char *out)</td></tr>
 <tr class="separator:a5cddfba3e55d068419e7206b9fa8b2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5fa8fcf1f69d9baa73d8e74beb2ff40" id="r_ab5fa8fcf1f69d9baa73d8e74beb2ff40"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#ab5fa8fcf1f69d9baa73d8e74beb2ff40">FS_SEEK_FUNCTION</a>) (void *private_fs, uint32_t offset, <a class="el" href="kernel_2fs_2file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a> seek_mode)</td></tr>
+<tr class="memitem:ab5fa8fcf1f69d9baa73d8e74beb2ff40" id="r_ab5fa8fcf1f69d9baa73d8e74beb2ff40"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#ab5fa8fcf1f69d9baa73d8e74beb2ff40">FS_SEEK_FUNCTION</a>) (void *private_fs, uint32_t <a class="el" href="_b_m_p_file_8hpp.html#a894bdfa2d603d8343f8ef01dda6fcd23">offset</a>, <a class="el" href="kernel_2fs_2file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a> seek_mode)</td></tr>
 <tr class="separator:ab5fa8fcf1f69d9baa73d8e74beb2ff40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16ae9c72750529c16e15f41d5c45e9c0" id="r_a16ae9c72750529c16e15f41d5c45e9c0"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#a16ae9c72750529c16e15f41d5c45e9c0">FS_STAT_FUNCTION</a>) (void *private_fs, struct <a class="el" href="structfile__stat.html">file_stat</a> *stat)</td></tr>
 <tr class="separator:a16ae9c72750529c16e15f41d5c45e9c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,7 +188,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a5e3192feef8941c44511f3a15af4b9f7" id="r_a5e3192feef8941c44511f3a15af4b9f7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#a5e3192feef8941c44511f3a15af4b9f7">fwrite</a> (void *ptr, uint32_t <a class="el" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, uint32_t nmemb, int fd)</td></tr>
 <tr class="memdesc:a5e3192feef8941c44511f3a15af4b9f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes to file.  <br /></td></tr>
 <tr class="separator:a5e3192feef8941c44511f3a15af4b9f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4afef177a56ef89821691c7c4df374c3" id="r_a4afef177a56ef89821691c7c4df374c3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#a4afef177a56ef89821691c7c4df374c3">fseek</a> (int fd, int offset, <a class="el" href="kernel_2fs_2file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a> whence)</td></tr>
+<tr class="memitem:a4afef177a56ef89821691c7c4df374c3" id="r_a4afef177a56ef89821691c7c4df374c3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#a4afef177a56ef89821691c7c4df374c3">fseek</a> (int fd, int <a class="el" href="_b_m_p_file_8hpp.html#a894bdfa2d603d8343f8ef01dda6fcd23">offset</a>, <a class="el" href="kernel_2fs_2file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a> whence)</td></tr>
 <tr class="memdesc:a4afef177a56ef89821691c7c4df374c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seeks into file.  <br /></td></tr>
 <tr class="separator:a4afef177a56ef89821691c7c4df374c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ed36033dca44a4c90f733ed5ef33500" id="r_a0ed36033dca44a4c90f733ed5ef33500"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2fs_2file_8h.html#a0ed36033dca44a4c90f733ed5ef33500">fstat</a> (int fd, struct <a class="el" href="structfile__stat.html">file_stat</a> *stat)</td></tr>
@@ -363,7 +363,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int(* FS_SEEK_FUNCTION) (void *private_fs, uint32_t offset, <a class="el" href="kernel_2fs_2file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a> seek_mode)</td>
+          <td class="memname">typedef int(* FS_SEEK_FUNCTION) (void *private_fs, uint32_t <a class="el" href="_b_m_p_file_8hpp.html#a894bdfa2d603d8343f8ef01dda6fcd23">offset</a>, <a class="el" href="kernel_2fs_2file_8h.html#abe921a3b588578250cc96f01a96953ab">FILE_SEEK_MODE</a> seek_mode)</td>
         </tr>
       </table>
 </div><div class="memdoc">

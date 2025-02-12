@@ -6,6 +6,7 @@ var class_framebuffer_graphics =
     [ "draw_string", "class_framebuffer_graphics.html#ad9503a4f98c6f712b0d7bf0c7eedc78a", null ],
     [ "get_bpp", "class_framebuffer_graphics.html#af86165dec1e2e8f359c30ac019149b91", null ],
     [ "get_buffer", "class_framebuffer_graphics.html#a71636cfa3362dfe7a867701baa84835c", null ],
+    [ "get_buffer_size", "class_framebuffer_graphics.html#a5656c1c7fbf994f35e3593fe07de5389", null ],
     [ "get_current_color", "class_framebuffer_graphics.html#a33041e9caba690c217cfde484fdfaf85", null ],
     [ "get_cursor_x", "class_framebuffer_graphics.html#a401291f44156390be92c69c27134e612", null ],
     [ "get_cursor_y", "class_framebuffer_graphics.html#aa2aa2043e44e6451e48549c216ce60b8", null ],

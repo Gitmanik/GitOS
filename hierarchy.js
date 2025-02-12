@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "BMPFile", "class_b_m_p_file.html", null ],
     [ "disk", "structdisk.html", null ],
     [ "disk_stream", "structdisk__stream.html", null ],
     [ "ELFFile", "class_e_l_f_file.html", null ],

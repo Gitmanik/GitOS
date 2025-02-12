@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['wait_0',['wait',['../class_p_s2_mouse.html#ae1c825ed63352a8617ba172a13a494f8',1,'PS2Mouse']]],
-  ['write_1',['write',['../class_p_s2_mouse.html#a3823f6e5e35f3118e53216b4b05b949e',1,'PS2Mouse::write()'],['../class_memory_f_s.html#a615fa4cde24ab096fd4e504d10e6da5e',1,'MemoryFS::write()'],['../class_pipe_f_s.html#a615fa4cde24ab096fd4e504d10e6da5e',1,'PipeFS::write()']]]
+  ['vsprintf_0',['vsprintf',['../userland_2stdlib_2string_8c.html#a6ace31fdb4501403975c952414a15f67',1,'vsprintf(char *buf, const char *fmt, va_list args):&#160;string.c'],['../userland_2stdlib_2string_8h.html#a6ace31fdb4501403975c952414a15f67',1,'vsprintf(char *buf, const char *fmt, va_list args):&#160;string.c']]]
 ];

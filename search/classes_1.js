@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['elffile_0',['ELFFile',['../class_e_l_f_file.html',1,'']]]
+  ['disk_0',['disk',['../structdisk.html',1,'']]],
+  ['disk_5fstream_1',['disk_stream',['../structdisk__stream.html',1,'']]]
 ];

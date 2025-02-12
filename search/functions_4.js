@@ -1,8 +1,16 @@
 var searchData=
 [
-  ['elf_5fload_0',['elf_load',['../process_8cpp.html#a3546bd370b8f1c0dfb230c41e59e7b3f',1,'process.cpp']]],
-  ['elffile_1',['ELFFile',['../class_e_l_f_file.html#a6bdb05aa9d4e058fa5428d4def0ccf20',1,'ELFFile']]],
-  ['encode_5fgdt_5fentry_2',['encode_gdt_entry',['../gdt_8c.html#a636b7c59562c6decfc33e43b5623955b',1,'gdt.c']]],
-  ['execprocess_3',['execprocess',['../misc_8h.html#abc36e836b8b4cff17c0ba736424b1577',1,'misc.h']]],
-  ['exit_4',['exit',['../misc_8h.html#a55e99c539cf7723ec15e856b7e0a8cee',1,'misc.h']]]
+  ['debug_5fprintf_0',['debug_printf',['../framebuffer_8cpp.html#a8fa97b2140c7e193969379b988ac38d1',1,'debug_printf(const char *fmt,...):&#160;framebuffer.cpp'],['../stdio_8h.html#a8fa97b2140c7e193969379b988ac38d1',1,'debug_printf(const char *fmt,...):&#160;framebuffer.cpp']]],
+  ['debug_5fputc_1',['debug_putc',['../stdio_8h.html#afe02d1f040867e6fbf9fae10fdee40ff',1,'stdio.h']]],
+  ['debug_5fputs_2',['debug_puts',['../stdio_8h.html#a3180ff28b41ee0ee125fbf8e6ef011b4',1,'stdio.h']]],
+  ['disk_5fget_3',['disk_get',['../disk_8c.html#a18bfbf773698ec896e54af82350323ee',1,'disk_get(int index):&#160;disk.c'],['../disk_8h.html#a18bfbf773698ec896e54af82350323ee',1,'disk_get(int index):&#160;disk.c']]],
+  ['disk_5fread_5fblock_4',['disk_read_block',['../disk_8h.html#a7a2e4d8dd685931a0282ea66a561ae88',1,'disk_read_block(struct disk *disk, unsigned int lba, int total, void *buf):&#160;disk.c'],['../disk_8c.html#a7a2e4d8dd685931a0282ea66a561ae88',1,'disk_read_block(struct disk *disk, unsigned int lba, int total, void *buf):&#160;disk.c']]],
+  ['disk_5fsearch_5fand_5finit_5',['disk_search_and_init',['../disk_8h.html#a3f37d7034065e7836aaeeab8be7b72ba',1,'disk_search_and_init():&#160;disk.c'],['../disk_8c.html#a3f37d7034065e7836aaeeab8be7b72ba',1,'disk_search_and_init():&#160;disk.c']]],
+  ['diskstreamer_5fclose_6',['diskstreamer_close',['../disk__streamer_8h.html#a7734e75217ecae1b2dedd283c234f2ac',1,'diskstreamer_close(struct disk_stream *stream):&#160;disk_streamer.c'],['../disk__streamer_8c.html#a7734e75217ecae1b2dedd283c234f2ac',1,'diskstreamer_close(struct disk_stream *stream):&#160;disk_streamer.c']]],
+  ['diskstreamer_5fnew_7',['diskstreamer_new',['../disk__streamer_8c.html#aed0acdaace7283e0a123588ced097df3',1,'diskstreamer_new(int disk_id):&#160;disk_streamer.c'],['../disk__streamer_8h.html#aed0acdaace7283e0a123588ced097df3',1,'diskstreamer_new(int disk_id):&#160;disk_streamer.c']]],
+  ['diskstreamer_5fread_8',['diskstreamer_read',['../disk__streamer_8c.html#a7b9f236b0c4aba1e672d8dc8b63e934f',1,'diskstreamer_read(struct disk_stream *stream, void *out, int total):&#160;disk_streamer.c'],['../disk__streamer_8h.html#a7b9f236b0c4aba1e672d8dc8b63e934f',1,'diskstreamer_read(struct disk_stream *stream, void *out, int total):&#160;disk_streamer.c']]],
+  ['diskstreamer_5fseek_9',['diskstreamer_seek',['../disk__streamer_8c.html#a6db279f823450d0f636be872d28bbb04',1,'diskstreamer_seek(struct disk_stream *stream, int pos):&#160;disk_streamer.c'],['../disk__streamer_8h.html#a6db279f823450d0f636be872d28bbb04',1,'diskstreamer_seek(struct disk_stream *stream, int pos):&#160;disk_streamer.c']]],
+  ['draw_5fchar_10',['draw_char',['../class_framebuffer_graphics.html#a34eba760465b3700e8618dfc1c2aabb6',1,'FramebufferGraphics::draw_char()'],['../class_v_b_e_graphics.html#a34eba760465b3700e8618dfc1c2aabb6',1,'VBEGraphics::draw_char()']]],
+  ['draw_5fpixel_11',['draw_pixel',['../class_framebuffer_graphics.html#ac63b980a7996a7b9bb47fb872b948178',1,'FramebufferGraphics::draw_pixel()'],['../class_v_b_e_graphics.html#ac63b980a7996a7b9bb47fb872b948178',1,'VBEGraphics::draw_pixel()']]],
+  ['draw_5fstring_12',['draw_string',['../class_framebuffer_graphics.html#ad9503a4f98c6f712b0d7bf0c7eedc78a',1,'FramebufferGraphics::draw_string()'],['../class_v_b_e_graphics.html#ad9503a4f98c6f712b0d7bf0c7eedc78a',1,'VBEGraphics::draw_string()']]]
 ];

@@ -5,6 +5,8 @@
 #include <format/bmp/BMPFile.hpp>
 #include <graphics/framebuffer.hpp>
 
+#include "../../kernel/kernel.h"
+
 extern "C" {
 #include "stdio.h"
 #include "string.h"
@@ -60,7 +62,7 @@ int main(int argc, char** argv) {
         for (uint32_t x = 0; x < cursor->get_width(); x++) {
             under_cursor_buffer[y*cursor->get_height() + x] = fbg->get_pixel(mouse_x + x, mouse_y + y);
             auto col = cursor->get_pixel(x,y);
-            if ((col & 0xFF) == 0)
+            if ((col & 0xFF000000) == 0)
                 continue;
             fbg->draw_pixel(mouse_x + x, mouse_y + y, col);
         }
@@ -104,8 +106,9 @@ int main(int argc, char** argv) {
             for (uint32_t x = 0; x < cursor->get_width(); x++) {
                 under_cursor_buffer[y*cursor->get_height() + x] = fbg->get_pixel(new_mouse_x + x, new_mouse_y + y);
                 auto col = cursor->get_pixel(x,y);
-                if ((col & 0xFF) == 0)
+                if ((col & 0xFF000000) == 0) {
                     continue;
+                }
                 fbg->draw_pixel(new_mouse_x + x, new_mouse_y + y, col);
             }
             int off = fbg->get_offset(new_mouse_x, new_mouse_y + y);

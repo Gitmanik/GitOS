@@ -1,6 +1,7 @@
 #include "ps2keyboard.h"
 #include <stdint.h>
 #include <stddef.h>
+#include <stdbool.h>
 #include <task/process.h>
 
 #include "common/io.h"

@@ -6,6 +6,7 @@
 #include "memory/memory.h"
 #include "memory/heap/kheap.h"
 #include "drivers/disk/disk.h"
+#include "Path.hpp"
 
 /**
  * @brief Array holding all registered filesystems
@@ -179,12 +180,12 @@ static FILE_MODE file_get_mode_by_string(const char* str)
 int fopen(const char* filename, const char* str_mode)
 {
     int result = 0;
-    struct path_root* root_path;
+    struct path_part* root_path;
     result = pathparser_parse(&root_path, filename, NULL);
     if (result < 0)
         return result;
 
-    if (!root_path->first) //Cannot have just root path (without any file)
+    if (!root_path->next) //Cannot have just root path (without any file)
         return -EINVARG;
 
     FILE_MODE fmode = file_get_mode_by_string(str_mode);
@@ -195,7 +196,7 @@ int fopen(const char* filename, const char* str_mode)
         if (mounted[idx] != 0) {
             if (strcmp(mounted[idx]->filename, filename) == 0) {
 
-                void *descriptor_private_data = mounted[idx]->fs->open((void*) mounted[idx]->data, root_path->first, fmode);
+                void *descriptor_private_data = mounted[idx]->fs->open((void*) mounted[idx]->data, root_path->next, fmode);
 
                 if (descriptor_private_data == 0)
                     return -EIO;
@@ -213,7 +214,7 @@ int fopen(const char* filename, const char* str_mode)
         }
     }
 
-    struct disk* disk = disk_get(root_path->drive_no);
+    struct disk* disk = disk_get(pathparser_get_drive_number(filename));
     if (!disk)
         return -EIO;
 
@@ -221,7 +222,7 @@ int fopen(const char* filename, const char* str_mode)
         return -EINVARG;
 
 
-    void *descriptor_private_data = disk->filesystem->open(disk->fs_private, root_path->first, fmode);
+    void *descriptor_private_data = disk->filesystem->open(disk->fs_private, root_path->next, fmode);
 
     if (descriptor_private_data == 0)
         return -EIO;

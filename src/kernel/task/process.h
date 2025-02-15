@@ -1,7 +1,7 @@
 #pragma once
 
 #include <stdint.h>
-#include "fs/pathparser.h"
+#include "fs/Path.hpp"
 #include <stddef.h>
 
 #define PROCESS_MAX_ALLOCATIONS 1024

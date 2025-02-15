@@ -566,6 +566,9 @@ out:
  */
 int fat16_resolve(struct disk* disk)
 {
+#ifdef DEBUG_FAT16
+    kdebug("fat16_resolve: disk: 0x%p", disk);
+#endif
     int result = ALL_OK;
 
     struct fat_private* fs_private = kzalloc(sizeof(struct fat_private));
@@ -626,6 +629,9 @@ int fat16_resolve(struct disk* disk)
  */
 void* fat16_open(void* private_fs, struct path_part* path, FILE_MODE mode)
 {
+#ifdef DEBUG_FAT16
+    kdebug("fat16_open: private_fs: 0x%p, path: 0x%p, path->part: %s, mode: %d", private_fs, path, path->part, mode);
+#endif
     struct fat_private* fs_private = private_fs;
     if (mode != FILE_MODE_READ)
         return 0;
@@ -655,6 +661,10 @@ void* fat16_open(void* private_fs, struct path_part* path, FILE_MODE mode)
  */
 int fat16_read(void* private_fs, void* desc, uint32_t size, uint32_t nmemb, char* out)
 {
+#ifdef DEBUG_FAT16
+    kdebug("fat16_read: private_fs: 0x%p, desc: 0x%p, size: %d, nmemb: %d, out: 0x%p", private_fs, desc, size, nmemb, out);
+#endif
+
     struct fat_private* fs_private = private_fs;
     struct fat_file_descriptor* fat_desc = desc;
 
@@ -673,6 +683,10 @@ int fat16_read(void* private_fs, void* desc, uint32_t size, uint32_t nmemb, char
 
 int fat16_write(void* private_fs, void* desc, uint32_t size, uint32_t nmemb, char* in)
 {
+#ifdef DEBUG_FAT16
+    kdebug("fat16_write: private_fs: 0x%p, desc: 0x%p, size: %d, nmemb: %d, in: 0x%p", private_fs, desc, size, nmemb, in);
+#endif
+
     (void)(private_fs);
     (void)(desc);
     (void)(size);
@@ -692,6 +706,10 @@ int fat16_write(void* private_fs, void* desc, uint32_t size, uint32_t nmemb, cha
  */
 int fat16_seek(void* desc, uint32_t offset, FILE_SEEK_MODE seek_mode)
 {
+#ifdef DEBUG_FAT16
+    kdebug("fat16_seek: desc: 0x%p, offset: %d, seek_mode: %d", desc, offset, seek_mode);
+#endif
+
     struct fat_file_descriptor* fat_desc = desc;
 
     if (fat_desc->file->type != FAT_ITEM_TYPE_FILE)
@@ -734,6 +752,10 @@ int fat16_seek(void* desc, uint32_t offset, FILE_SEEK_MODE seek_mode)
  */
 int fat16_stat(void* desc, struct file_stat* stat)
 {
+#ifdef DEBUG_FAT16
+    kdebug("fat16_seek: desc: 0x%p, stat: 0x%p", desc, stat);
+#endif
+
     struct fat_file_descriptor* fat_desc = desc;
 
     struct fat_item* desc_item = fat_desc->file;
@@ -765,6 +787,9 @@ int fat16_stat(void* desc, struct file_stat* stat)
  */
 int fat16_close(void* desc)
 {
+#ifdef DEBUG_FAT16
+    kdebug("fat16_close: desc: 0x%p", desc);
+#endif
     struct fat_file_descriptor* fat_desc = desc;
     fat16_free_file_descriptor(fat_desc);
     return ALL_OK;

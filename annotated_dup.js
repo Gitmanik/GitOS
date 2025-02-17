@@ -31,7 +31,6 @@ var annotated_dup =
     [ "mouse_packet", "structmouse__packet.html", "structmouse__packet" ],
     [ "paging_chunk", "structpaging__chunk.html", "structpaging__chunk" ],
     [ "path_part", "structpath__part.html", "structpath__part" ],
-    [ "path_root", "structpath__root.html", "structpath__root" ],
     [ "PipeFS", "class_pipe_f_s.html", "class_pipe_f_s" ],
     [ "process", "structprocess.html", "structprocess" ],
     [ "PS2Mouse", "class_p_s2_mouse.html", "class_p_s2_mouse" ],

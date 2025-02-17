@@ -37,7 +37,6 @@ var hierarchy =
     [ "mouse_packet", "struct_p_s2_mouse_1_1mouse__packet.html", null ],
     [ "paging_chunk", "structpaging__chunk.html", null ],
     [ "path_part", "structpath__part.html", null ],
-    [ "path_root", "structpath__root.html", null ],
     [ "PipeFS", "class_pipe_f_s.html", null ],
     [ "process", "structprocess.html", null ],
     [ "PS2Mouse", "class_p_s2_mouse.html", null ],

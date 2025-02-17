@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GitOS: path_root Struct Reference</title>
+<title>GitOS: src/kernel/fs/Path.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('structpath__root.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('_path_8cpp.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -91,58 +91,84 @@ $(document).ready(function(){initNavTree('structpath__root.html',''); initResiza
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Data Fields</a>  </div>
-  <div class="headertitle"><div class="title">path_root Struct Reference</div></div>
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">Path.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="pathparser_8h_source.html">pathparser.h</a>&gt;</code></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:a44057b89a20883587ec7bdc59cce57d2" id="r_a44057b89a20883587ec7bdc59cce57d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpath__root.html#a44057b89a20883587ec7bdc59cce57d2">drive_no</a></td></tr>
-<tr class="separator:a44057b89a20883587ec7bdc59cce57d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5622a8973d91afac63f4c3e5441af37" id="r_ac5622a8973d91afac63f4c3e5441af37"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structpath__part.html">path_part</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpath__root.html#ac5622a8973d91afac63f4c3e5441af37">first</a></td></tr>
-<tr class="separator:ac5622a8973d91afac63f4c3e5441af37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<div class="textblock"><code>#include &quot;<a class="el" href="_path_8hpp_source.html">Path.hpp</a>&quot;</code><br />
+<code>#include &lt;<a class="el" href="kernel_8h_source.html">kernel.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="status_8h_source.html">common/status.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="kheap_8h_source.html">memory/heap/kheap.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="kernel_2common_2string_8h_source.html">common/string.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aa5b069d9cec07c9931324374037d9fdd" id="r_aa5b069d9cec07c9931324374037d9fdd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_path_8cpp.html#aa5b069d9cec07c9931324374037d9fdd">pathparser_parse</a> (struct <a class="el" href="structpath__part.html">path_part</a> **path_root_out, const char *path, const char *current_dir_path)</td></tr>
+<tr class="separator:aa5b069d9cec07c9931324374037d9fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaba417e6e9c524ae297a036fa898c0d1" id="r_aaba417e6e9c524ae297a036fa898c0d1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_path_8cpp.html#aaba417e6e9c524ae297a036fa898c0d1">pathparser_get_drive_number</a> (const char *path)</td></tr>
+<tr class="separator:aaba417e6e9c524ae297a036fa898c0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
-<a id="a44057b89a20883587ec7bdc59cce57d2" name="a44057b89a20883587ec7bdc59cce57d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44057b89a20883587ec7bdc59cce57d2">&#9670;&#160;</a></span>drive_no</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="aaba417e6e9c524ae297a036fa898c0d1" name="aaba417e6e9c524ae297a036fa898c0d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaba417e6e9c524ae297a036fa898c0d1">&#9670;&#160;</a></span>pathparser_get_drive_number()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int drive_no</td>
+          <td class="memname">int pathparser_get_drive_number </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ac5622a8973d91afac63f4c3e5441af37" name="ac5622a8973d91afac63f4c3e5441af37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5622a8973d91afac63f4c3e5441af37">&#9670;&#160;</a></span>first</h2>
+<a id="aa5b069d9cec07c9931324374037d9fdd" name="aa5b069d9cec07c9931324374037d9fdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5b069d9cec07c9931324374037d9fdd">&#9670;&#160;</a></span>pathparser_parse()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structpath__part.html">path_part</a>* first</td>
+          <td class="memname">int pathparser_parse </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structpath__part.html">path_part</a> **&#160;</td>
+          <td class="paramname"><em>path_root_out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>current_dir_path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p class="reference">References <a class="el" href="status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83">EINVARG</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/kernel/fs/<a class="el" href="pathparser_8h_source.html">pathparser.h</a></li>
-</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="structpath__root.html">path_root</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_cbd7f246bdf7dc0a50281a272327e6ed.html">kernel</a></li><li class="navelem"><a class="el" href="dir_f848a285e60993dcb3189737897d2857.html">fs</a></li><li class="navelem"><a class="el" href="_path_8cpp.html">Path.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

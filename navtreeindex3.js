@@ -1,10 +1,9 @@
 var NAVTREEINDEX3 =
 {
-"pathparser_8h.html":[1,0,0,0,3,6],
-"pathparser_8h.html#a005d703b7674a805f84e8aba64b93ae6":[1,0,0,0,3,6,3],
-"pathparser_8h.html#a3ed8d97fc16b74692268a36de686b7c4":[1,0,0,0,3,6,4],
-"pathparser_8h.html#ab99ded389af74001a6298fc9e44e74e5":[1,0,0,0,3,6,2],
-"pathparser_8h_source.html":[1,0,0,0,3,6],
+"paging_8h.html#af3570714d86f629e500c6566d493e184":[1,0,0,0,6,1,1,12],
+"paging_8h.html#af7ce9ba915145e34d6ec637ce24fec2d":[1,0,0,0,6,1,1,11],
+"paging_8h.html#afe97a9cadf19d85b54d291704855e71f":[1,0,0,0,6,1,1,2],
+"paging_8h_source.html":[1,0,0,0,6,1,1],
 "pic_8c.html":[1,0,0,0,1,2,0],
 "pic_8c.html#a0ecb67a3f71d1d10502fbd834b0292f1":[1,0,0,0,1,2,0,10],
 "pic_8c.html#a16777bf654a4c5630e4f53902a25235a":[1,0,0,0,1,2,0,7],
@@ -115,10 +114,10 @@ var NAVTREEINDEX3 =
 "struct_framebuffer_info.html#a6ad4f820ce4e75cda0686fcaad5168be":[0,0,16,3],
 "struct_framebuffer_info.html#a74644aa51cc16278dbd041542e13afd0":[0,0,16,1],
 "struct_framebuffer_info.html#ac2987cad919bae7cfaa2b2a9122e5702":[0,0,16,0],
-"struct_p_s2_mouse_1_1mouse__packet.html":[0,0,34,0],
-"struct_p_s2_mouse_1_1mouse__packet.html#a3201e5ae0a645e0390dd69ec1a5e5a4a":[0,0,34,0,0],
-"struct_p_s2_mouse_1_1mouse__packet.html#af64066d134a77e01b3d6eb8da813627a":[0,0,34,0,2],
-"struct_p_s2_mouse_1_1mouse__packet.html#af6d3062751bd565decb1a2cd3b63bdb2":[0,0,34,0,1],
+"struct_p_s2_mouse_1_1mouse__packet.html":[0,0,33,0],
+"struct_p_s2_mouse_1_1mouse__packet.html#a3201e5ae0a645e0390dd69ec1a5e5a4a":[0,0,33,0,0],
+"struct_p_s2_mouse_1_1mouse__packet.html#af64066d134a77e01b3d6eb8da813627a":[0,0,33,0,2],
+"struct_p_s2_mouse_1_1mouse__packet.html#af6d3062751bd565decb1a2cd3b63bdb2":[0,0,33,0,1],
 "structdisk.html":[0,0,1],
 "structdisk.html#a1e73718a47f61fdca0413918f654d471":[0,0,1,0],
 "structdisk.html#a4bce4c67c8c2fc4f8e3c0182f4afa586":[0,0,1,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "structinterrupt__frame.html#af2b16bef95c844028dd145264d1d3875":[0,0,25,4],
 "structmounted__file.html":[0,0,27],
 "structmounted__file.html#a735984d41155bc1032e09bece8f8d66d":[0,0,27,0],
-"structmounted__file.html#a7efa5e9c7494c7d4586359300221aa5d":[0,0,27,1]
+"structmounted__file.html#a7efa5e9c7494c7d4586359300221aa5d":[0,0,27,1],
+"structmounted__file.html#aaed61f9753d8a157d46d2843701ee056":[0,0,27,2]
 };

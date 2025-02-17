@@ -1,9 +1,5 @@
 var NAVTREEINDEX5 =
 {
-"userland_2stdlib_2string_8h.html#a0ac44bf20eb0770c1788f29d7bcc2866":[1,0,0,1,3,8,12],
-"userland_2stdlib_2string_8h.html#a0b13e0be1a33c43e50cffb3a04fa85a8":[1,0,0,1,3,8,14],
-"userland_2stdlib_2string_8h.html#a207391fc2c5fa7786d5e0b9ef8ba5e80":[1,0,0,1,3,8,16],
-"userland_2stdlib_2string_8h.html#a303bf868586597a1e6b3f20a068dcf06":[1,0,0,1,3,8,5],
 "userland_2stdlib_2string_8h.html#a392af3ec853d719a302f361e3374f3c2":[1,0,0,1,3,8,13],
 "userland_2stdlib_2string_8h.html#a403182b1cfba20cfeba9efb69845c9ba":[1,0,0,1,3,8,2],
 "userland_2stdlib_2string_8h.html#a692bbaf15098dc84f83e2d39f9b856a1":[1,0,0,1,3,8,6],

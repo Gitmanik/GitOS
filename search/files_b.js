@@ -2,8 +2,8 @@ var searchData=
 [
   ['paging_2ec_0',['paging.c',['../paging_8c.html',1,'']]],
   ['paging_2eh_1',['paging.h',['../paging_8h.html',1,'']]],
-  ['pathparser_2ec_2',['pathparser.c',['../pathparser_8c.html',1,'']]],
-  ['pathparser_2eh_3',['pathparser.h',['../pathparser_8h.html',1,'']]],
+  ['path_2ecpp_2',['Path.cpp',['../_path_8cpp.html',1,'']]],
+  ['path_2ehpp_3',['Path.hpp',['../_path_8hpp.html',1,'']]],
   ['pic_2ec_4',['pic.c',['../pic_8c.html',1,'']]],
   ['pic_2eh_5',['pic.h',['../pic_8h.html',1,'']]],
   ['pipefs_2ecpp_6',['PipeFS.cpp',['../_pipe_f_s_8cpp.html',1,'']]],

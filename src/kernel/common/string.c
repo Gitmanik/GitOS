@@ -304,7 +304,7 @@ char* kvsprintf(char* buf, const char* fmt, va_list args)
 
 			case 'p':
 				memset(internal_buffer, 0, 512);
-				uitoa(va_arg(args, long), internal_buffer, 16);
+				uitoa(va_arg(args, unsigned long), internal_buffer, 16);
 				sz = strlen(internal_buffer);
 				memcpy(buf, internal_buffer, sz);
 				buf += sz;
@@ -315,10 +315,74 @@ char* kvsprintf(char* buf, const char* fmt, va_list args)
 				fmt++;
 				switch (*fmt)
 				{
+				case 'l': //Longer
+					fmt++;
+					switch (*fmt)
+					{
+						case 'i':
+						case 'd':
+							memset(internal_buffer, 0, 512);
+							itoa(va_arg(args, long long), internal_buffer, 10);
+							sz = strlen(internal_buffer);
+							memcpy(buf, internal_buffer, sz);
+							buf += sz;
+							fmt++;
+							break;
+
+						case 'u':
+							memset(internal_buffer, 0, 512);
+							itoa(va_arg(args, unsigned long long), internal_buffer, 10);
+							sz = strlen(internal_buffer);
+							memcpy(buf, internal_buffer, sz);
+							buf += sz;
+							fmt++;
+							break;
+
+						case 'x':
+							memset(internal_buffer, 0, 512);
+							uitoa(va_arg(args, unsigned long long), internal_buffer, 16);
+							sz = strlen(internal_buffer);
+							memcpy(buf, internal_buffer, sz);
+							buf += sz;
+							fmt++;
+							break;
+
+						case 'b':
+							memset(internal_buffer, 0, 512);
+							uitoa(va_arg(args, unsigned long long), internal_buffer, 2);
+							sz = strlen(internal_buffer);
+							memcpy(buf, internal_buffer, sz);
+							buf += sz;
+							fmt++;
+							break;
+
+						case 'p':
+							memset(internal_buffer, 0, 512);
+							uitoa(va_arg(args, unsigned long long), internal_buffer, 16);
+							sz = strlen(internal_buffer);
+							memcpy(buf, internal_buffer, sz);
+							buf += sz;
+							fmt++;
+							break;
+						default:
+							fmt++;
+							break;
+					}
+					break;
+
 					case 'i':
 					case 'd':
 						memset(internal_buffer, 0, 512);
 						itoa(va_arg(args, long), internal_buffer, 10);
+						sz = strlen(internal_buffer);
+						memcpy(buf, internal_buffer, sz);
+						buf += sz;
+						fmt++;
+						break;
+
+					case 'u':
+						memset(internal_buffer, 0, 512);
+						itoa(va_arg(args, unsigned long), internal_buffer, 10);
 						sz = strlen(internal_buffer);
 						memcpy(buf, internal_buffer, sz);
 						buf += sz;
@@ -342,6 +406,16 @@ char* kvsprintf(char* buf, const char* fmt, va_list args)
 						buf += sz;
 						fmt++;
 						break;
+
+					case 'p':
+						memset(internal_buffer, 0, 512);
+						uitoa(va_arg(args, unsigned long), internal_buffer, 16);
+						sz = strlen(internal_buffer);
+						memcpy(buf, internal_buffer, sz);
+						buf += sz;
+						fmt++;
+						break;
+
 					default:
 						fmt++;
 						break;
@@ -365,6 +439,15 @@ char* kvsprintf(char* buf, const char* fmt, va_list args)
 				buf += sz;
 				fmt++;
 				break;
+
+		case 'u':
+			memset(internal_buffer, 0, 512);
+			itoa(va_arg(args, unsigned int), internal_buffer, 10);
+			sz = strlen(internal_buffer);
+			memcpy(buf, internal_buffer, sz);
+			buf += sz;
+			fmt++;
+			break;
 			
 			case 'b':
 				memset(internal_buffer, 0, 512);

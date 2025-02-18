@@ -5,8 +5,6 @@
 #include <format/bmp/BMPFile.hpp>
 #include <graphics/framebuffer.hpp>
 
-#include "../../kernel/kernel.h"
-
 extern "C" {
 #include "stdio.h"
 #include "string.h"

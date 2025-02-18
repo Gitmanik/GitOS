@@ -228,10 +228,6 @@ void kernel_main()
     tss.ss0 = KERNEL_DATA_SELECTOR;
     tss_load(sizeof(struct gdt) * 5); //TSS Segment is 6th GDT Segment
 
-    // ksprintf test
-    kprintf("kprintf test: %p %x %i %s %c %ld %%\r\n", bios_memory_map, 0x41424344, -1234, "gitmanik.dev", 'X', __LONG_MAX__);
-    kdebug("kdebug test: %p %x %i %s %c %ld %%", bios_memory_map, 0x41424344, -1234, "gitmanik.dev", 'X', __LONG_MAX__);
-    //
 
     // Finding biggest usable memory chunk to use as heap
     memory_map_entry heap_entry;
@@ -277,28 +273,6 @@ void kernel_main()
     paging_switch(kernel_paging_chunk);
     paging_enable();
     kprintf("OK\r\n");
-
-    // Paging test
-    kprintf("Setting up paging..");
-    char* ptr_real = new char[4096];
-    char* ptr_virt = (char *)0x1000;
-    res = paging_map_to(kernel_paging_chunk, ptr_virt, ptr_real, paging_align_address(ptr_real + sizeof(ptr_real)), PAGING_ACCESS_FROM_ALL | PAGING_IS_PRESENT | PAGING_IS_WRITEABLE);
-    if (res < 0)
-    {
-        kernel_panic("Could not map virtual address!");
-    }
-
-    ((char*) ptr_virt)[0] = 'O';
-    ((char*) ptr_virt)[1] = 'K';
-
-    kprintf("OK\r\n");
-    kprintf("Paging self-test: 0x%x:'%s' 0x%x:'%s'..", (uint32_t)ptr_real, ptr_real, (uint32_t)ptr_virt, ptr_virt);
-    if (memcmp(ptr_real, ptr_virt, 2) != 0)
-    {
-        kernel_panic("\r\nPaging self-test unsuccessful!");
-    }
-    kprintf("OK\r\n");
-    delete ptr_real;
     //
 
     // Remap PIC

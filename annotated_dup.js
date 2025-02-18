@@ -1,6 +1,7 @@
 var annotated_dup =
 [
     [ "BMPFile", "class_b_m_p_file.html", "class_b_m_p_file" ],
+    [ "Bootloader", "class_bootloader.html", "class_bootloader" ],
     [ "disk", "structdisk.html", "structdisk" ],
     [ "disk_stream", "structdisk__stream.html", "structdisk__stream" ],
     [ "ELFFile", "class_e_l_f_file.html", "class_e_l_f_file" ],
@@ -20,6 +21,7 @@ var annotated_dup =
     [ "gdt", "structgdt.html", "structgdt" ],
     [ "gdt_descriptor", "structgdt__descriptor.html", "structgdt__descriptor" ],
     [ "gdt_structured", "structgdt__structured.html", "structgdt__structured" ],
+    [ "GitBoot", "class_git_boot.html", "class_git_boot" ],
     [ "Graphics", "class_graphics.html", "class_graphics" ],
     [ "heap", "structheap.html", "structheap" ],
     [ "heap_table", "structheap__table.html", "structheap__table" ],

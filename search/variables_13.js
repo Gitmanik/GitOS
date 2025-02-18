@@ -7,6 +7,6 @@ var searchData=
   ['task_5ftail_4',['task_tail',['../task_8c.html#a15855d60333dcd992f4e39d20f5b9aa2',1,'task.c']]],
   ['total_5',['total',['../structfat__directory.html#ac7af894858cf396a219d632f40afdc8d',1,'fat_directory::total'],['../structheap__table.html#a3fab45bb4d7cd7e889bdf00080096e8e',1,'heap_table::total']]],
   ['tss_6',['tss',['../kernel_8cpp.html#a77d7cb6847a4ad6a6c8ae993202dd619',1,'kernel.cpp']]],
-  ['type_7',['type',['../structfat__item.html#a8f518c5a61a32a6ebb8d9a1de98c3b0b',1,'fat_item::type'],['../structgdt__structured.html#a1d127017fb298b889f4ba24752d08b8e',1,'gdt_structured::type']]],
+  ['type_7',['type',['../structfat__item.html#a8f518c5a61a32a6ebb8d9a1de98c3b0b',1,'fat_item::type'],['../structgdt__structured.html#a1d127017fb298b889f4ba24752d08b8e',1,'gdt_structured::type'],['../_git_boot_8hpp.html#ad44b615021ed3ccb734fcaf583ef4a03',1,'type:&#160;GitBoot.hpp']]],
   ['type_5fattr_8',['type_attr',['../structidt__desc.html#a5e7eb925db6957f19edc1e5d7d74c8f6',1,'idt_desc::type_attr'],['../idt_8h.html#a5e7eb925db6957f19edc1e5d7d74c8f6',1,'type_attr:&#160;idt.h']]]
 ];

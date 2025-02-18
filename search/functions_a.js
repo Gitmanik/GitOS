@@ -2,7 +2,7 @@ var searchData=
 [
   ['kernel_5fexception_0',['kernel_exception',['../kernel_8cpp.html#a023d1ebe2f732b3fd1ef27f7085de22f',1,'kernel.cpp']]],
   ['kernel_5fhalt_1',['kernel_halt',['../kernel_8cpp.html#aa0feb8fe21f2712340bcfe8777e9860b',1,'kernel_halt():&#160;kernel.cpp'],['../kernel_8h.html#aa0feb8fe21f2712340bcfe8777e9860b',1,'kernel_halt():&#160;kernel.cpp']]],
-  ['kernel_5fmain_2',['kernel_main',['../kernel_8cpp.html#ada8402e0c504af8cafef5cc76c076003',1,'kernel_main():&#160;kernel.cpp'],['../kernel_8h.html#ada8402e0c504af8cafef5cc76c076003',1,'kernel_main():&#160;kernel.cpp']]],
+  ['kernel_5fmain_2',['kernel_main',['../kernel_8cpp.html#a31aed747805bab1aa7860eceb7247b3f',1,'kernel_main(uint32_t magic, void *info_ptr):&#160;kernel.cpp'],['../kernel_8h.html#a31aed747805bab1aa7860eceb7247b3f',1,'kernel_main(uint32_t magic, void *info_ptr):&#160;kernel.cpp']]],
   ['kernel_5fpage_3',['kernel_page',['../kernel_8cpp.html#abd882687cd304ceab89392243ac0bf0d',1,'kernel_page():&#160;kernel.cpp'],['../kernel_8h.html#abd882687cd304ceab89392243ac0bf0d',1,'kernel_page():&#160;kernel.cpp']]],
   ['kernel_5fpanic_4',['kernel_panic',['../kernel_8cpp.html#a93999bcd6d4fc14e8ad565a045e6f773',1,'kernel_panic(const char *fmt,...):&#160;kernel.cpp'],['../kernel_8h.html#a93999bcd6d4fc14e8ad565a045e6f773',1,'kernel_panic(const char *fmt,...):&#160;kernel.cpp']]],
   ['kernel_5fregisters_5',['kernel_registers',['../kernel_8h.html#abfd38f3db413f8fa3822dcba9cd656e7',1,'kernel.h']]],

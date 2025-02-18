@@ -5,5 +5,5 @@ var searchData=
   ['argc_2',['argc',['../structprocess.html#ad1447518f4372828b8435ae82e48499e',1,'process']]],
   ['argv_3',['argv',['../structprocess.html#af2efa898e9eed6fe6715279cb1ec35b0',1,'process']]],
   ['attribute_4',['attribute',['../structfat__file.html#ae99e080fe352a99a12cf5b9b260ef734',1,'fat_file::attribute'],['../fat16_8h.html#ae99e080fe352a99a12cf5b9b260ef734',1,'attribute:&#160;fat16.h']]],
-  ['attributes_5',['attributes',['../vbe__graphics_8hpp.html#aa2434143f131640367469736f6d99795',1,'vbe_graphics.hpp']]]
+  ['attributes_5',['attributes',['../_git_boot_8hpp.html#aa2434143f131640367469736f6d99795',1,'GitBoot.hpp']]]
 ];

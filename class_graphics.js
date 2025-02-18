@@ -18,7 +18,7 @@ var class_graphics =
       [ "YELLOW", "class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaae735a848bf82163a19236ead1c3ef2d2", null ],
       [ "WHITE", "class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa283fc479650da98250635b9c3c0e7e50", null ]
     ] ],
-    [ "~Graphics", "class_graphics.html#a6822b013923c974b1dde915948dd1d34", null ],
+    [ "~Graphics", "class_graphics.html#aae74a3643d160364774600834e14b676", null ],
     [ "clear_screen", "class_graphics.html#aa8dba2d0029efc01922c4fe4b83547e1", null ],
     [ "get_current_color", "class_graphics.html#adaa07a7be639adbd579e7a244fa1ee92", null ],
     [ "get_cursor_x", "class_graphics.html#ae35ebf9ced1b9254f728d6628b7ca5a6", null ],

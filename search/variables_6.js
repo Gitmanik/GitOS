@@ -11,7 +11,7 @@ var searchData=
   ['filesystem_8',['filesystem',['../structdisk.html#a4bce4c67c8c2fc4f8e3c0182f4afa586',1,'disk::filesystem'],['../structfile__descriptor.html#a4bce4c67c8c2fc4f8e3c0182f4afa586',1,'file_descriptor::filesystem']]],
   ['filesystems_9',['filesystems',['../file_8c.html#a2060af084ec6daac3995f941302d7024',1,'file.c']]],
   ['flags_10',['flags',['../idt_8h.html#a773b39d480759f67926cb18ae2219281',1,'flags:&#160;idt.h'],['../task_8h.html#a773b39d480759f67926cb18ae2219281',1,'flags:&#160;task.h'],['../structregisters.html#a773b39d480759f67926cb18ae2219281',1,'registers::flags'],['../structinterrupt__frame.html#a773b39d480759f67926cb18ae2219281',1,'interrupt_frame::flags'],['../structfile__stat.html#a15883273c251db75429f281f77b26394',1,'file_stat::flags']]],
-  ['framebuffer_11',['framebuffer',['../vbe__graphics_8hpp.html#a72f2ff083631702e83d597be300061c9',1,'framebuffer:&#160;vbe_graphics.hpp'],['../structprocess.html#abc3c7fb728cde5451750bf2f9424f6e8',1,'process::framebuffer']]],
+  ['framebuffer_11',['framebuffer',['../_git_boot_8hpp.html#a72f2ff083631702e83d597be300061c9',1,'framebuffer:&#160;GitBoot.hpp'],['../structprocess.html#abc3c7fb728cde5451750bf2f9424f6e8',1,'process::framebuffer']]],
   ['fs_12',['fs',['../structtss.html#a2ffb5cf275c124e8f8ff30e1d4449f80',1,'tss::fs'],['../structmounted__file.html#aaed61f9753d8a157d46d2843701ee056',1,'mounted_file::fs'],['../tss_8h.html#a2ffb5cf275c124e8f8ff30e1d4449f80',1,'fs:&#160;tss.h']]],
   ['fs_5fprivate_13',['fs_private',['../structdisk.html#aa4853d13c26ce9af3bbb484e0bee8bf2',1,'disk']]]
 ];

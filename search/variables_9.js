@@ -5,7 +5,7 @@ var searchData=
   ['idt_5finterruptlayoutstring_2',['idt_interruptlayoutstring',['../idt_8h.html#a618a069af5371167c1f5c988e832d648',1,'idt_InterruptLayoutString:&#160;idt.c'],['../idt_8c.html#a618a069af5371167c1f5c988e832d648',1,'idt_InterruptLayoutString:&#160;idt.c']]],
   ['idtr_5fdescriptor_3',['idtr_descriptor',['../idt_8c.html#a299d74470ceab3b513858520e0a50bff',1,'idt.c']]],
   ['image_5fsize_4',['image_size',['../_b_m_p_file_8hpp.html#a42539ea8650b094f66be7a689243c5ef',1,'BMPFile.hpp']]],
-  ['imagepages_5',['imagePages',['../vbe__graphics_8hpp.html#a252850f8b35d0ca7d69841fb643b50dc',1,'vbe_graphics.hpp']]],
+  ['imagepages_5',['imagePages',['../_git_boot_8hpp.html#a252850f8b35d0ca7d69841fb643b50dc',1,'GitBoot.hpp']]],
   ['index_6',['index',['../structfile__descriptor.html#a750b5d744c39a06bfb13e6eb010e35d0',1,'file_descriptor']]],
   ['interrupt_5fhandlers_7',['interrupt_handlers',['../idt_8c.html#a75402e8f05a61f796bc9779a5a3cec8e',1,'idt.c']]],
   ['interrupt_5fpointer_5ftable_8',['interrupt_pointer_table',['../idt_8c.html#a0cd56ff3de4130fae98f2ffb1095ed7d',1,'idt.c']]],

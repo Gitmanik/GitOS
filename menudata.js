@@ -110,7 +110,8 @@ var menudata={children:[
 {text:"r",url:"functions_eval.html#index_r"},
 {text:"s",url:"functions_eval.html#index_s"},
 {text:"w",url:"functions_eval.html#index_w"},
-{text:"y",url:"functions_eval.html#index_y"}]}]}]},
+{text:"y",url:"functions_eval.html#index_y"}]},
+{text:"Related Symbols",url:"functions_rela.html"}]}]},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},
 {text:"Globals",url:"globals.html",children:[

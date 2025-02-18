@@ -110,30 +110,35 @@ $(document).ready(function(){initNavTree('kernel_8h_source.html',''); initResiza
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">void</span> <a class="code hl_function" href="kernel_8h.html#ada8402e0c504af8cafef5cc76c076003">kernel_main</a>();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">void</span> <a class="code hl_function" href="kernel_8h.html#a31aed747805bab1aa7860eceb7247b3f">kernel_main</a>(uint32_t magic, <span class="keywordtype">void</span> *info_ptr);</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">void</span> <a class="code hl_function" href="kernel_8h.html#aa0feb8fe21f2712340bcfe8777e9860b">kernel_halt</a>();</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">void</span> <a class="code hl_function" href="kernel_8h.html#a93999bcd6d4fc14e8ad565a045e6f773">kernel_panic</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, ...);</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">void</span> <a class="code hl_function" href="kernel_8h.html#abd882687cd304ceab89392243ac0bf0d">kernel_page</a>();</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="kernel_8h.html#abfd38f3db413f8fa3822dcba9cd656e7">   17</a></span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="kernel_8h.html#abfd38f3db413f8fa3822dcba9cd656e7">kernel_registers</a>();</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">void</span> <a class="code hl_function" href="kernel_8h.html#a199a1f701f4cc4fd1c3ff7903a102d7a">kprintf</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, ...);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#ifdef DEBUG_MODE</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="kernel_8h.html#ab8e98b2d78ed2a7ff3e2af66009fbe27">   26</a></span><span class="preprocessor">#define kdebug(fmt, ...) kprintf(&quot;%s:%d: &quot;, __FILE__, __LINE__); kprintf(fmt, __VA_ARGS__); kprintf(&quot;\n&quot;);</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define kdebug(fmt, ...)</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">extern</span> <span class="keyword">const</span> uint32_t <a class="code hl_variable" href="kernel_8h.html#a1d230a9fcbcf394d1c8fc890cf709823">kernel_start</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">extern</span> <span class="keyword">const</span> uint32_t <a class="code hl_variable" href="kernel_8h.html#acf8d4706188db08654bab579f9172969">kernel_end</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifdef DEBUG_MODE</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="kernel_8h.html#ab8e98b2d78ed2a7ff3e2af66009fbe27">   29</a></span><span class="preprocessor">#define kdebug(fmt, ...) kprintf(&quot;%s:%d: &quot;, __FILE__, __LINE__); kprintf(fmt, __VA_ARGS__); kprintf(&quot;\n&quot;);</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#define kdebug(fmt, ...)</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aio_8h_html"><div class="ttname"><a href="io_8h.html">io.h</a></div></div>
-<div class="ttc" id="akernel_8h_html_a199a1f701f4cc4fd1c3ff7903a102d7a"><div class="ttname"><a href="kernel_8h.html#a199a1f701f4cc4fd1c3ff7903a102d7a">kprintf</a></div><div class="ttdeci">void kprintf(const char *fmt,...)</div><div class="ttdoc">Prints to kernel debug channels. Max length of processed message is 1024 characters.</div><div class="ttdef"><b>Definition</b> kernel.cpp:384</div></div>
-<div class="ttc" id="akernel_8h_html_a93999bcd6d4fc14e8ad565a045e6f773"><div class="ttname"><a href="kernel_8h.html#a93999bcd6d4fc14e8ad565a045e6f773">kernel_panic</a></div><div class="ttdeci">void kernel_panic(const char *fmt,...)</div><div class="ttdoc">(Temporary) Prints kernel_message and halts the kernel.</div><div class="ttdef"><b>Definition</b> kernel.cpp:356</div></div>
-<div class="ttc" id="akernel_8h_html_aa0feb8fe21f2712340bcfe8777e9860b"><div class="ttname"><a href="kernel_8h.html#aa0feb8fe21f2712340bcfe8777e9860b">kernel_halt</a></div><div class="ttdeci">void kernel_halt()</div><div class="ttdef"><b>Definition</b> kernel.cpp:372</div></div>
-<div class="ttc" id="akernel_8h_html_abd882687cd304ceab89392243ac0bf0d"><div class="ttname"><a href="kernel_8h.html#abd882687cd304ceab89392243ac0bf0d">kernel_page</a></div><div class="ttdeci">void kernel_page()</div><div class="ttdef"><b>Definition</b> kernel.cpp:175</div></div>
+<div class="ttc" id="akernel_8h_html_a199a1f701f4cc4fd1c3ff7903a102d7a"><div class="ttname"><a href="kernel_8h.html#a199a1f701f4cc4fd1c3ff7903a102d7a">kprintf</a></div><div class="ttdeci">void kprintf(const char *fmt,...)</div><div class="ttdoc">Prints to kernel debug channels. Max length of processed message is 1024 characters.</div><div class="ttdef"><b>Definition</b> kernel.cpp:344</div></div>
+<div class="ttc" id="akernel_8h_html_a1d230a9fcbcf394d1c8fc890cf709823"><div class="ttname"><a href="kernel_8h.html#a1d230a9fcbcf394d1c8fc890cf709823">kernel_start</a></div><div class="ttdeci">const uint32_t kernel_start</div></div>
+<div class="ttc" id="akernel_8h_html_a31aed747805bab1aa7860eceb7247b3f"><div class="ttname"><a href="kernel_8h.html#a31aed747805bab1aa7860eceb7247b3f">kernel_main</a></div><div class="ttdeci">void kernel_main(uint32_t magic, void *info_ptr)</div><div class="ttdoc">Kernel C entry point.</div><div class="ttdef"><b>Definition</b> kernel.cpp:182</div></div>
+<div class="ttc" id="akernel_8h_html_a93999bcd6d4fc14e8ad565a045e6f773"><div class="ttname"><a href="kernel_8h.html#a93999bcd6d4fc14e8ad565a045e6f773">kernel_panic</a></div><div class="ttdeci">void kernel_panic(const char *fmt,...)</div><div class="ttdoc">(Temporary) Prints kernel_message and halts the kernel.</div><div class="ttdef"><b>Definition</b> kernel.cpp:316</div></div>
+<div class="ttc" id="akernel_8h_html_aa0feb8fe21f2712340bcfe8777e9860b"><div class="ttname"><a href="kernel_8h.html#aa0feb8fe21f2712340bcfe8777e9860b">kernel_halt</a></div><div class="ttdeci">void kernel_halt()</div><div class="ttdef"><b>Definition</b> kernel.cpp:332</div></div>
+<div class="ttc" id="akernel_8h_html_abd882687cd304ceab89392243ac0bf0d"><div class="ttname"><a href="kernel_8h.html#abd882687cd304ceab89392243ac0bf0d">kernel_page</a></div><div class="ttdeci">void kernel_page()</div><div class="ttdef"><b>Definition</b> kernel.cpp:172</div></div>
 <div class="ttc" id="akernel_8h_html_abfd38f3db413f8fa3822dcba9cd656e7"><div class="ttname"><a href="kernel_8h.html#abfd38f3db413f8fa3822dcba9cd656e7">kernel_registers</a></div><div class="ttdeci">void kernel_registers()</div></div>
-<div class="ttc" id="akernel_8h_html_ada8402e0c504af8cafef5cc76c076003"><div class="ttname"><a href="kernel_8h.html#ada8402e0c504af8cafef5cc76c076003">kernel_main</a></div><div class="ttdeci">void kernel_main()</div><div class="ttdoc">Kernel C entry point.</div><div class="ttdef"><b>Definition</b> kernel.cpp:185</div></div>
+<div class="ttc" id="akernel_8h_html_acf8d4706188db08654bab579f9172969"><div class="ttname"><a href="kernel_8h.html#acf8d4706188db08654bab579f9172969">kernel_end</a></div><div class="ttdeci">const uint32_t kernel_end</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

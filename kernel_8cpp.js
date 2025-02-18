@@ -4,7 +4,7 @@ var kernel_8cpp =
     [ "atexit", "kernel_8cpp.html#a5a485781a43898e8594302dc3be9abbf", null ],
     [ "kernel_exception", "kernel_8cpp.html#a023d1ebe2f732b3fd1ef27f7085de22f", null ],
     [ "kernel_halt", "kernel_8cpp.html#aa0feb8fe21f2712340bcfe8777e9860b", null ],
-    [ "kernel_main", "kernel_8cpp.html#ada8402e0c504af8cafef5cc76c076003", null ],
+    [ "kernel_main", "kernel_8cpp.html#a31aed747805bab1aa7860eceb7247b3f", null ],
     [ "kernel_page", "kernel_8cpp.html#abd882687cd304ceab89392243ac0bf0d", null ],
     [ "kernel_panic", "kernel_8cpp.html#a93999bcd6d4fc14e8ad565a045e6f773", null ],
     [ "kprintf", "kernel_8cpp.html#a199a1f701f4cc4fd1c3ff7903a102d7a", null ],

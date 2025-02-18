@@ -21,5 +21,6 @@ var class_v_b_e_graphics =
     [ "print_string_color", "class_v_b_e_graphics.html#aed5ab1360f01de61c60b59faa0460d10", null ],
     [ "scroll_screen", "class_v_b_e_graphics.html#a67e708717c501e357492e9c1dc0b1f32", null ],
     [ "set_cursor", "class_v_b_e_graphics.html#a7d2fed7066b283b2a0fef3bd8d204c5f", null ],
-    [ "set_text_color", "class_v_b_e_graphics.html#ac35d5a76a9d9d1aeb27435da0d1f4cdf", null ]
+    [ "set_text_color", "class_v_b_e_graphics.html#ac35d5a76a9d9d1aeb27435da0d1f4cdf", null ],
+    [ "setup", "class_v_b_e_graphics.html#adc76f575d8b70bca111729e0a0808be5", null ]
 ];

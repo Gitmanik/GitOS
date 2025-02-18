@@ -28,7 +28,7 @@ BMPFile::BMPFile(uint8_t* data, uint32_t sz) {
         debug_printf("BMPFile::BMPFile(): invalid size: real %d, expected %d", sz, m_file_header->file_size);
     }
 
-    if (m_info_header->compression != 0) {
+    if (m_info_header->compression != 0 && m_info_header->compression != 3) {
         debug_printf("BMPFile::BMPFile(): invalid compression: %d\n", m_info_header->compression);
     }
 

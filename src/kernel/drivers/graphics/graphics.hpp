@@ -8,7 +8,7 @@
 
 class Graphics {
   public:
-    virtual ~Graphics();
+    virtual ~Graphics() = default;
 
     enum TEXT_MODE_COLOR
     {

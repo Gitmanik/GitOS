@@ -10,3 +10,4 @@ settings.json
 .DS_Store
 .idea
 cmake-build-debug
+scripts/serial.log

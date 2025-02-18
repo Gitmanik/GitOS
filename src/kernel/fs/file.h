@@ -53,7 +53,7 @@ struct file_descriptor
     int index;
     struct filesystem* filesystem;
     void* private_fs_descriptor;
-    struct disk* disk;
+    void* private_fs;
 };
 
 struct file_stat

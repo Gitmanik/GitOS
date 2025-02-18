@@ -23,7 +23,7 @@ path_part* Path::parse(const char* path, [[maybe_unused]] Path* relative) {
         return nullptr;
 
     auto first = new path_part;
-    first->part = static_cast<char *>(kmalloc(MAX_PATH));
+    first->part = static_cast<char *>(kzalloc(MAX_PATH));
 
     auto current = first;
     const char* current_path_ptr = path;
@@ -39,7 +39,7 @@ path_part* Path::parse(const char* path, [[maybe_unused]] Path* relative) {
             relative_path_idx = 0;
             current_path_ptr = current_path_ptr + relative_path_idx;
             auto new_part = new path_part;
-            new_part->part = static_cast<char *>(kmalloc(MAX_PATH));
+            new_part->part = static_cast<char *>(kzalloc(MAX_PATH));
             current->next = new_part;
             current = new_part;
         } else {
@@ -64,4 +64,17 @@ int pathparser_parse(struct path_part **path_root_out, const char *path, [[maybe
 
 int pathparser_get_drive_number(const char *path) {
     return path[0] - '0';
+}
+
+void pathparser_free(struct path_part* path)
+{
+    path_part* part = path;
+    while (part)
+    {
+        path_part* next_part = part->next;
+        kfree(part->part);
+        kfree(part);
+        part = next_part;
+    }
+    kfree(path);
 }

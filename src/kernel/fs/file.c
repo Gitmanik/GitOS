@@ -1,11 +1,11 @@
 #include "file.h"
 #include <stdint.h>
+#include <common/assert.h>
 #include "kernel.h"
 #include "common/string.h"
 #include "common/status.h"
 #include "memory/memory.h"
 #include "memory/heap/kheap.h"
-#include "drivers/disk/disk.h"
 #include "Path.hpp"
 
 /**
@@ -138,6 +138,7 @@ struct filesystem* fs_resolve(struct disk* disk)
         if (filesystems[i] != 0 && filesystems[i]->resolve(disk) == ALL_OK)
         {
             kprintf("Resolved filesystem for disk %d: %s\r\n", disk->id, filesystems[i]->name);
+            mount("0:", filesystems[i], disk->fs_private);
             return filesystems[i];
         }
     }
@@ -192,50 +193,64 @@ int fopen(const char* filename, const char* str_mode)
     if (fmode == FILE_MODE_INVALID)
         return -EINVARG;
 
-    for (int idx = 0; idx < MAX_MOUNTED; idx++) {
-        if (mounted[idx] != 0) {
-            if (strcmp(mounted[idx]->filename, filename) == 0) {
+    int path_sz = 0;
+    struct path_part* part = root_path;
+    while (part) {
+        part = part->next;
+        path_sz++;
+    }
 
-                void *descriptor_private_data = mounted[idx]->fs->open((void*) mounted[idx]->data, root_path->next, fmode);
+    part = root_path;
+    struct path_part** parts = kzalloc(path_sz * sizeof(struct path_part*));
+    for (int i = 0; i < path_sz; i++) {
+        parts[i] = part;
+        part = part->next;
+    }
 
-                if (descriptor_private_data == 0)
-                    return -EIO;
+    char* reconstructed_path = kzalloc(MAX_PATH);
 
-                struct file_descriptor* desc = 0;
-                result = file_new_descriptor(&desc);
-                if (result < 0)
-                    return result;
+    kdebug("Trying to search mounted for '%s'", filename);
+    int relative_path_to_mounted_idx = path_sz;
+    for (; relative_path_to_mounted_idx >= 0; relative_path_to_mounted_idx--) {
+        memset(reconstructed_path, 0, MAX_PATH);
+        char* ptr = reconstructed_path;
+        for (int j = 0; j < relative_path_to_mounted_idx; j++) {
+            strcpy(ptr, parts[j]->part);
+            ptr += strlen(parts[j]->part);
+            if (j < relative_path_to_mounted_idx - 1) {
+                *ptr = '/';
+                ptr++;
+            }
+        }
+        for (int idx = 0; idx < MAX_MOUNTED; idx++) {
+            if (mounted[idx] != 0) {
+                if (strlen(reconstructed_path) == strlen(mounted[idx]->filename) && strcmp(reconstructed_path, mounted[idx]->filename) == 0) {
+                    kdebug("Found mounted file: '%s' -> '%s', fs root: '%s'", filename, mounted[idx]->fs->name, mounted[idx]->filename);
+                    void *descriptor_private_data = mounted[idx]->fs->open(mounted[idx]->data, parts[relative_path_to_mounted_idx], fmode);
 
-                desc->filesystem = mounted[idx]->fs;
-                desc->disk = 0;
-                desc->private_fs_descriptor = descriptor_private_data;
-                return desc->index;
+                    assert(descriptor_private_data);
+
+                    struct file_descriptor* desc = 0;
+                    result = file_new_descriptor(&desc);
+                    assert(result == 0);
+
+                    desc->filesystem = mounted[idx]->fs;
+                    desc->private_fs_descriptor = descriptor_private_data;
+                    desc->private_fs = mounted[idx]->data;
+                    result = desc->index;
+                    goto out;
+                }
             }
         }
     }
 
-    struct disk* disk = disk_get(pathparser_get_drive_number(filename));
-    if (!disk)
-        return -EIO;
+    result = -EINVARG;
 
-    if (!disk->filesystem)
-        return -EINVARG;
-
-
-    void *descriptor_private_data = disk->filesystem->open(disk->fs_private, root_path->next, fmode);
-
-    if (descriptor_private_data == 0)
-        return -EIO;
-
-    struct file_descriptor* desc = 0;
-    result = file_new_descriptor(&desc);
-    if (result < 0)
-        return result;
-
-    desc->filesystem = disk->filesystem;
-    desc->private_fs_descriptor = descriptor_private_data;
-    desc->disk = disk;
-    return desc->index;
+    out:
+    kfree(reconstructed_path);
+    kfree(parts);
+    pathparser_free(root_path);
+    return result;
 }
 
 /**
@@ -254,7 +269,7 @@ int fread(void* ptr, uint32_t size, uint32_t nmemb, int fd)
 
     struct file_descriptor* desc = file_get_descriptor(fd);
 
-    return desc->filesystem->read(desc->disk->fs_private, desc->private_fs_descriptor, size, nmemb, (char*) ptr);
+    return desc->filesystem->read(desc->private_fs, desc->private_fs_descriptor, size, nmemb, (char*) ptr);
 }
 
 /**
@@ -273,7 +288,7 @@ int fwrite(void* ptr, uint32_t size, uint32_t nmemb, int fd)
 
     struct file_descriptor* desc = file_get_descriptor(fd);
 
-    return desc->filesystem->write(desc->disk->fs_private, desc->private_fs_descriptor, size, nmemb, (char*) ptr);
+    return desc->filesystem->write(desc->private_fs, desc->private_fs_descriptor, size, nmemb, (char*) ptr);
 }
 
 

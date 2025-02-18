@@ -15,6 +15,7 @@ extern "C" {
     };
     int pathparser_parse(struct path_part** path_root_out, const char* path, const char* current_dir_path);
     int pathparser_get_drive_number(const char* path);
+    void pathparser_free(struct path_part* part);
 
 #ifdef __cplusplus
 }

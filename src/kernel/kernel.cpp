@@ -182,8 +182,10 @@ void kernel_page()
  * @brief Kernel C entry point
  *
  */
-void kernel_main()
+void kernel_main(uint32_t magic, void* info_ptr)
 {
+    (void)(magic);
+    (void)(info_ptr);
     int res = 0;
 
     get_graphics()->clear_screen();

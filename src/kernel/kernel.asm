@@ -3,9 +3,14 @@ BITS 32
 extern kernel_main
 global _start
 section .kernelstart
+
+extern stack_top
+
 _start:
-.jump_to_kernel:
-    jmp 0x08:kernel_main
+    mov esp, stack_top
+    push ebx
+    push eax
+    call kernel_main
 
 ; Sets all registers to point to kernel segment
 global kernel_registers

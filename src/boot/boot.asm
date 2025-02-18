@@ -69,7 +69,7 @@ load32:
     mov esp, ebp
 
     mov eax, 1 ; LBA
-    mov ecx, 100 ; sectors number
+    mov ecx, 200 ; sectors number
     mov edi, 0x0100000 ; load into
     call ata_lba_read
 
@@ -77,7 +77,10 @@ load32:
     in al, 0x92
     or al, 2
     out 0x92, al
-    
+
+    mov ebx, 0
+    mov eax, 1337
+
     jmp 0x08:0x0100000
 
 [BITS 16]

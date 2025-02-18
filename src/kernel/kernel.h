@@ -10,12 +10,15 @@
 extern "C" {
 #endif
 
-void kernel_main();
+void kernel_main(uint32_t magic, void *info_ptr);
 void kernel_halt();
 void kernel_panic(const char* fmt, ...);
 void kernel_page();
 extern void kernel_registers();
 void kprintf(const char* fmt, ...);
+
+extern const uint32_t kernel_start;
+extern const uint32_t kernel_end;
 
 
 #ifdef __cplusplus

@@ -566,7 +566,7 @@ out:
  */
 int fat16_resolve(struct disk* disk)
 {
-#ifdef DEBUG_FAT16
+#if DEBUG_FAT16
     kdebug("fat16_resolve: disk: 0x%p", disk);
 #endif
     int result = ALL_OK;
@@ -629,7 +629,7 @@ int fat16_resolve(struct disk* disk)
  */
 void* fat16_open(void* private_fs, struct path_part* path, FILE_MODE mode)
 {
-#ifdef DEBUG_FAT16
+#if DEBUG_FAT16
     kdebug("fat16_open: private_fs: 0x%p, path: 0x%p, path->part: %s, mode: %d", private_fs, path, path->part, mode);
 #endif
     struct fat_private* fs_private = private_fs;
@@ -661,7 +661,7 @@ void* fat16_open(void* private_fs, struct path_part* path, FILE_MODE mode)
  */
 int fat16_read(void* private_fs, void* desc, uint32_t size, uint32_t nmemb, char* out)
 {
-#ifdef DEBUG_FAT16
+#if DEBUG_FAT16
     kdebug("fat16_read: private_fs: 0x%p, desc: 0x%p, size: %d, nmemb: %d, out: 0x%p", private_fs, desc, size, nmemb, out);
 #endif
 
@@ -683,7 +683,7 @@ int fat16_read(void* private_fs, void* desc, uint32_t size, uint32_t nmemb, char
 
 int fat16_write(void* private_fs, void* desc, uint32_t size, uint32_t nmemb, char* in)
 {
-#ifdef DEBUG_FAT16
+#if DEBUG_FAT16
     kdebug("fat16_write: private_fs: 0x%p, desc: 0x%p, size: %d, nmemb: %d, in: 0x%p", private_fs, desc, size, nmemb, in);
 #endif
 
@@ -706,7 +706,7 @@ int fat16_write(void* private_fs, void* desc, uint32_t size, uint32_t nmemb, cha
  */
 int fat16_seek(void* desc, uint32_t offset, FILE_SEEK_MODE seek_mode)
 {
-#ifdef DEBUG_FAT16
+#if DEBUG_FAT16
     kdebug("fat16_seek: desc: 0x%p, offset: %d, seek_mode: %d", desc, offset, seek_mode);
 #endif
 
@@ -752,7 +752,7 @@ int fat16_seek(void* desc, uint32_t offset, FILE_SEEK_MODE seek_mode)
  */
 int fat16_stat(void* desc, struct file_stat* stat)
 {
-#ifdef DEBUG_FAT16
+#if DEBUG_FAT16
     kdebug("fat16_seek: desc: 0x%p, stat: 0x%p", desc, stat);
 #endif
 
@@ -787,7 +787,7 @@ int fat16_stat(void* desc, struct file_stat* stat)
  */
 int fat16_close(void* desc)
 {
-#ifdef DEBUG_FAT16
+#if DEBUG_FAT16
     kdebug("fat16_close: desc: 0x%p", desc);
 #endif
     struct fat_file_descriptor* fat_desc = desc;

@@ -44,36 +44,18 @@ public:
     uint32_t get_width() const;
     uint8_t *get_framebuffer() const;
 
+    void setup(uint8_t* framebuffer, uint32_t bpp, uint32_t width, uint32_t height);
     void mount_fb();
 
 private:
-    struct VbeModeInfo {
-        uint16_t attributes;
-        uint8_t winA, winB;
-        uint16_t granularity, winSize, segmentA, segmentB;
-        uint32_t realFctPtr;
-        uint16_t pitch;  // Bytes per scanline
-        uint16_t xRes, yRes;
-        uint8_t xCharSize, yCharSize, planes, bpp, banks;
-        uint8_t memoryModel, bankSize, imagePages;
-        uint8_t reserved0;
-        uint8_t redMask, redPosition;
-        uint8_t greenMask, greenPosition;
-        uint8_t blueMask, bluePosition;
-        uint8_t reservedMask, reservedPosition;
-        uint8_t directColorAttributes;
-        uint32_t framebuffer;  // Framebuffer address
-        uint32_t offScreenMemOffset;
-        uint16_t offScreenMemSize;
-        uint8_t reserved1[206];
-    } __attribute__((packed));
 
-    const VbeModeInfo* modeInfo =reinterpret_cast<VbeModeInfo *>(0x2000);
+    uint8_t* FRAMEBUFFER;
+    uint32_t WIDTH;
+    uint32_t HEIGHT;
+    uint32_t BPP;
+    uint32_t PITCH;
 
-    uint8_t* FRAMEBUFFER = reinterpret_cast<uint8_t*>(modeInfo->framebuffer);
-    const uint32_t WIDTH = modeInfo->xRes;
-    const uint32_t HEIGHT = modeInfo->yRes;
-    const uint32_t BPP = modeInfo->bpp;
+    bool m_setup = false;
 
     MemoryFS* m_memoryfs;
 

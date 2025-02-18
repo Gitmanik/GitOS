@@ -1,6 +1,8 @@
 #include "kernel.h"
 
+#include <bootloaders/gitboot/GitBoot.hpp>
 #include <drivers/ps2mouse/PS2Mouse.hpp>
+#include <common/assert.h>
 
 #include "drivers/graphics/graphics.hpp"
 #include "drivers/graphics/vbe/vbe_graphics.hpp"
@@ -14,7 +16,6 @@ extern "C"
 #include "idt/idt.h"
 #include "drivers/serial/serial.h"
 #include "drivers/pic/pic.h"
-#include "memory/bios_memory_map.h"
 #include "memory/heap/kheap.h"
 #include "memory/memory.h"
 #include "common/io.h"
@@ -184,13 +185,16 @@ void kernel_page()
  */
 void kernel_main(uint32_t magic, void* info_ptr)
 {
-    (void)(magic);
-    (void)(info_ptr);
     int res = 0;
+    res = ser_Init(COM1, 1);
+
+    assert(res == 0);
+
+    GitBoot gitboot;
+    gitboot.init(magic, info_ptr);
 
     get_graphics()->clear_screen();
     get_graphics()->set_text_color(Graphics::GREY);
-    res = ser_Init(COM1, 1);
     if (res < 0)
     {
         kernel_panic("Could not initialize Serial port!");
@@ -229,47 +233,31 @@ void kernel_main(uint32_t magic, void* info_ptr)
     tss.esp0 = 0x600000;
     tss.ss0 = KERNEL_DATA_SELECTOR;
     tss_load(sizeof(struct gdt) * 5); //TSS Segment is 6th GDT Segment
+    kprintf("OK\n");
 
 
-    // Finding biggest usable memory chunk to use as heap
-    memory_map_entry heap_entry;
-    int idx = 0;
+    //Initialize heap
+    uint64_t base_address = Bootloader::the()->get_heap_base_address();
+    uint64_t length_in_bytes = Bootloader::the()->get_heap_size();
 
-    kprintf("Usable memory map:\r\n");
-    while (bios_memory_map[idx].length_in_bytes > 0)
-    {
-        if (bios_memory_map[idx].type != 1)
-            goto skip;
-
-        kprintf("0x%p -> 0x%p, Size: %ldKB\r\n",
-                (long)bios_memory_map[idx].base_address,
-                (long)bios_memory_map[idx].base_address + (long)bios_memory_map[idx].length_in_bytes,
-                (long)bios_memory_map[idx].length_in_bytes / 1024);
-
-        if (bios_memory_map[idx].length_in_bytes > heap_entry.length_in_bytes)
-            heap_entry = bios_memory_map[idx];
-
-    skip:
-        idx++;
-    }
-
-    // Kernel is located at 0x100000
-    if (heap_entry.length_in_bytes < 0x100000)
+    uint32_t kernel_size = 0x100000;
+    if (length_in_bytes < kernel_size)
     {
         kernel_panic("Not enough memory to place kernel heap!");
     }
-    heap_entry.base_address += 0x100000;
-    heap_entry.length_in_bytes -= 0x100000;
+    base_address += kernel_size;
+    length_in_bytes -= kernel_size;
 
-    kprintf("Heap address: 0x%p, Size: %ldKB\r\n", (long)heap_entry.base_address, (long)heap_entry.length_in_bytes / 1024);
+    kprintf("Heap address: 0x%llp, Size: %lldKB\r\n", base_address, length_in_bytes / 1024);
 
-    res = kheap_init((void *)(uint32_t)heap_entry.base_address, heap_entry.length_in_bytes);
+    res = kheap_init((void *) base_address, length_in_bytes);
     if (res < 0)
     {
         kernel_panic("Failed to create heap!");
     }
     //
 
+    //
     kprintf("Enabling paging..");
     kernel_paging_chunk = paging_new_directory(PAGING_IS_WRITEABLE | PAGING_IS_PRESENT | PAGING_ACCESS_FROM_ALL);
     paging_switch(kernel_paging_chunk);

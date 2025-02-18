@@ -3,6 +3,9 @@
 //
 
 #include "vbe_graphics.hpp"
+
+#include <kernel.h>
+
 #include "drivers/graphics/graphics.hpp"
 
 #include <stdint.h>
@@ -23,14 +26,13 @@ void VBEGraphics::draw_pixel(uint32_t x, uint32_t y, uint32_t color) {
     if (x >= WIDTH || y >= HEIGHT)
         return;
 
-    uint32_t offset = (y * modeInfo->pitch) + (x * (modeInfo->bpp / 8));
+    uint32_t offset = (y * PITCH) + (x * (BPP / 8));
 
-    if (modeInfo->bpp == 32) {
+    if (BPP == 32) {
         FRAMEBUFFER[offset + 0] = color & 0xFF;          // Blue
         FRAMEBUFFER[offset + 1] = (color >> 8) & 0xFF;   // Green
         FRAMEBUFFER[offset + 2] = (color >> 16) & 0xFF;  // Red
-    } else if (modeInfo->bpp == 24) {
-        // 24bpp: Write 3 bytes (RGB format, no alpha)
+    } else if (BPP == 24) {
         FRAMEBUFFER[offset + 0] = color & 0xFF;          // Blue
         FRAMEBUFFER[offset + 1] = (color >> 8) & 0xFF;   // Green
         FRAMEBUFFER[offset + 2] = (color >> 16) & 0xFF;  // Red
@@ -118,8 +120,8 @@ void VBEGraphics::set_text_color(TEXT_MODE_COLOR color) {
 
 void VBEGraphics::scroll_screen(int amount) {
     amount = amount * (8*FONT_SCALE);
-    memcpy(FRAMEBUFFER, reinterpret_cast<char *>(FRAMEBUFFER) + modeInfo->pitch * amount, modeInfo->pitch * (modeInfo->yRes - amount));
-    memset(reinterpret_cast<char*>(FRAMEBUFFER) + modeInfo->pitch * (modeInfo->yRes - amount), 0, modeInfo->pitch * amount);
+    memcpy(FRAMEBUFFER, reinterpret_cast<char *>(FRAMEBUFFER) + PITCH * amount, PITCH * (HEIGHT - amount));
+    memset(reinterpret_cast<char*>(FRAMEBUFFER) + PITCH * (HEIGHT - amount), 0, PITCH * amount);
 
 }
 
@@ -137,27 +139,40 @@ void VBEGraphics::clear_screen() {
 }
 
 bool VBEGraphics::is_vbe() const {
-    return modeInfo->framebuffer != 0;
+    return m_setup;
 }
 
 size_t VBEGraphics::get_framebuffer_size() const {
-    return modeInfo->pitch*modeInfo->yRes;
+    return PITCH * HEIGHT;
 }
 
 uint32_t VBEGraphics::get_bpp() const {
-    return modeInfo->bpp;
+    return BPP;
 }
 
 uint32_t VBEGraphics::get_height() const {
-    return modeInfo->yRes;
+    return HEIGHT;
 }
 
 uint32_t VBEGraphics::get_width() const {
-    return modeInfo->xRes;
+    return WIDTH;
 }
 
 uint8_t *VBEGraphics::get_framebuffer() const {
     return FRAMEBUFFER;
+}
+
+void VBEGraphics::setup(uint8_t* framebuffer, uint32_t bpp, uint32_t width, uint32_t height)
+{
+    FRAMEBUFFER = framebuffer;
+    BPP = bpp;
+    WIDTH = width;
+    HEIGHT = height;
+    PITCH = WIDTH * BPP / 8;
+
+    kprintf("VBEGraphics set up: %dx%dx%d\r\n", WIDTH, HEIGHT, BPP);
+
+    m_setup = true;
 }
 
 void VBEGraphics::mount_fb() {

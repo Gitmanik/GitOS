@@ -753,7 +753,7 @@ int fat16_seek(void* desc, uint32_t offset, FILE_SEEK_MODE seek_mode)
 int fat16_stat(void* desc, struct file_stat* stat)
 {
 #if DEBUG_FAT16
-    kdebug("fat16_seek: desc: 0x%p, stat: 0x%p", desc, stat);
+    kdebug("fat16_stat: desc: 0x%p, stat: 0x%p", desc, stat);
 #endif
 
     struct fat_file_descriptor* fat_desc = desc;

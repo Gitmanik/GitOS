@@ -230,7 +230,7 @@ void kernel_main(uint32_t magic, void* info_ptr)
     tss.ss0 = KERNEL_DATA_SELECTOR;
     tss_load(sizeof(struct gdt) * 5); //TSS Segment is 6th GDT Segment
     kprintf("OK\n");
-
+    //
 
     //Initialize heap
     uint64_t base_address = Bootloader::the()->get_heap_base_address();
@@ -253,7 +253,7 @@ void kernel_main(uint32_t magic, void* info_ptr)
     }
     //
 
-    //
+    // Paging
     kprintf("Enabling paging..");
     kernel_paging_chunk = paging_new_directory(PAGING_IS_WRITEABLE | PAGING_IS_PRESENT | PAGING_ACCESS_FROM_ALL);
     paging_switch(kernel_paging_chunk);

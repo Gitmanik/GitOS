@@ -719,6 +719,8 @@ int fat16_read(void* private_fs, void* desc, uint32_t size, uint32_t nmemb, char
         out += size;
         offset += size;
     }
+
+    fat_desc->pos = offset;
     return nmemb;
 }
 

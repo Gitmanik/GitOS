@@ -32,7 +32,7 @@ var NAVTREE =
       [ "Data Fields", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Typedefs", "functions_type.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Enumerator", "functions_eval.html", null ],
@@ -57,11 +57,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_b_m_p_file_8cpp.html",
-"class_p_s2_mouse.html",
-"gdt_8h.html#a071baa899e787757da9db71d9bacc67a",
-"kernel_8h.html#ac80a3592e72fd96b772ee47a7d8e0d0a",
-"structfile__stat.html",
-"tss_8h.html#ada78e3124de6adf5a5d212f9ebc4bbe0"
+"class_graphics.html#ae35ebf9ced1b9254f728d6628b7ca5a6",
+"functions_h.html",
+"kernel_2fs_2file_8h.html#a5177ed95ade641b7961a793a5122f76d",
+"serial_8c.html#ac9011a61b118037e17b6ab74473c3e55",
+"structmultiboot__tag.html#a6d813a0f2b5281b18dea3f4cda696c33",
+"task_8c.html#a7b9fe10fa4d12a92696ade8b825a6a37"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -6,5 +6,6 @@ var class_bootloader =
     [ "get_heap_base_address", "class_bootloader.html#a8a4d579f3ab8e61ee5dc493578afd9f8", null ],
     [ "get_heap_size", "class_bootloader.html#a61dd9a6717d1a9c456bc09f3263e5a22", null ],
     [ "init", "class_bootloader.html#a87b2dc3d9b17b990cd352d59aa565fe8", null ],
-    [ "GitBoot", "class_bootloader.html#a0cefeef26622dbf559c41a601a2a9cf3", null ]
+    [ "GitBoot", "class_bootloader.html#a0cefeef26622dbf559c41a601a2a9cf3", null ],
+    [ "Multiboot", "class_bootloader.html#a999827fefc7348d79207d113d2534c78", null ]
 ];

@@ -5,5 +5,6 @@ var structfat__private =
     [ "disk", "structfat__private.html#abdbae93c1fd15f90751a02563d87b8f7", null ],
     [ "fat_read_stream", "structfat__private.html#ae1295383f350da92c487db4e9504fb58", null ],
     [ "header", "structfat__private.html#af189636d10af1cda73cb226033b4d964", null ],
+    [ "partition_offset", "structfat__private.html#a0c000f8248f396ab7ae8a008a2f2b702", null ],
     [ "root_directory", "structfat__private.html#a3ac6f1d4c311f029ae711ba2232c0725", null ]
 ];

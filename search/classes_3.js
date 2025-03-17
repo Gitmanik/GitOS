@@ -6,7 +6,7 @@ var searchData=
   ['fat_5ffile_3',['fat_file',['../structfat__file.html',1,'']]],
   ['fat_5ffile_5fdescriptor_4',['fat_file_descriptor',['../structfat__file__descriptor.html',1,'']]],
   ['fat_5fheader_5',['fat_header',['../structfat__header.html',1,'']]],
-  ['fat_5fheader_5fextended_6',['fat_header_extended',['../unionfat__header_1_1fat__header__extended.html',1,'fat_header']]],
+  ['fat_5fheader_5fextended_6',['fat_header_extended',['../unionfat__header_1_1fat__header__extended.html',1,'fat_header::fat_header_extended'],['../unionfat__header__extended.html',1,'fat_header_extended']]],
   ['fat_5fitem_7',['fat_item',['../structfat__item.html',1,'']]],
   ['fat_5fprivate_8',['fat_private',['../structfat__private.html',1,'']]],
   ['file_5fdescriptor_9',['file_descriptor',['../structfile__descriptor.html',1,'']]],

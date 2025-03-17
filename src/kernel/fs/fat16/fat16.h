@@ -62,7 +62,7 @@ struct fat_header
     {
         struct fat16_header_extended extended;
     } shared;
-};
+} __attribute__((packed));
 
 struct fat_file
 {
@@ -104,6 +104,8 @@ struct fat_file_descriptor
 {
     struct fat_item* file;
     uint32_t pos;
+    int cached_cluster;       // Cached cluster number
+    int cached_offset_bytes;  // Byte offset of cached cluster
 };
 
 struct fat_private
@@ -120,6 +122,7 @@ struct fat_private
     struct disk_stream* directory_stream;
 
     struct disk* disk;
+    uint32_t partition_offset;
 };
 
 struct filesystem* fat16_init_filesystem();

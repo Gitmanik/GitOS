@@ -64,7 +64,7 @@ static int fat16_cluster_to_sector(struct fat_private* fs_private, int cluster)
  */
 static int fat16_sector_to_absolute(struct fat_private* fs_private, int sector)
 {
-    return sector * fs_private->header.primary.bytes_per_sector;
+    return fs_private->partition_offset + sector * fs_private->header.primary.bytes_per_sector;
 }
 
 /**
@@ -207,7 +207,7 @@ static int fat16_get_root_directory(struct fat_private* fs_private, struct fat_d
  */
 static int fat16_init_private(struct disk* disk, struct fat_private* fs_private)
 {
-    memset(fs_private, 0, sizeof(fs_private));
+    memset(fs_private, 0, sizeof(struct fat_private));
     fs_private->disk = disk;
     fs_private->cluster_read_stream = diskstreamer_new(disk->id);
     fs_private->fat_read_stream     = diskstreamer_new(disk->id);
@@ -326,18 +326,38 @@ static int fat16_get_next_fat_entry(struct fat_private* fs_private, int cluster)
  * @brief Resolves n-th data cluster from FAT for given starting FAT cluster
  * 
  * @param fs_private Private filesystem data 
+ * @param fat_desc File descriptor
  * @param starting_cluster First data cluster
  * @param offset Data offset in bytes
- * @return int Status
+ * @return int Cluster number or Error code
  */
-static int fat16_get_nth_cluster_from_fat(struct fat_private* fs_private, int starting_cluster, int offset)
+static int fat16_get_nth_cluster_from_fat(struct fat_private* fs_private, struct fat_file_descriptor* fat_desc, int starting_cluster, int offset)
 {
     int result = 0;
     int size_of_cluster_bytes = fs_private->header.primary.sectors_per_cluster * fs_private->header.primary.bytes_per_sector;
+
+    int target_cluster = offset / size_of_cluster_bytes;
+
+    // If requesting first cluster, return immediately
+    if (target_cluster == 0)
+        return starting_cluster;
+
     int cluster_to_use = starting_cluster;
-    int clusters_ahead = offset/size_of_cluster_bytes;
-    for (int i = 0; i < clusters_ahead; i++)
-    {
+    int current_pos = 0;
+
+    if (fat_desc && fat_desc->cached_cluster != 0) {
+        int cached_cluster = fat_desc->cached_offset_bytes / size_of_cluster_bytes;
+
+        // Check if cached position
+        if (cached_cluster < target_cluster) {
+            cluster_to_use = fat_desc->cached_cluster;
+            current_pos = cached_cluster;
+        } else if (cached_cluster == target_cluster) {
+            return fat_desc->cached_cluster;
+        }
+    }
+
+    while (current_pos < target_cluster) {
         int entry = fat16_get_next_fat_entry(fs_private, cluster_to_use);
         if (entry == 0xFFF8 || entry == 0xFFFF)
         {
@@ -364,11 +384,17 @@ static int fat16_get_nth_cluster_from_fat(struct fat_private* fs_private, int st
             goto out;
         }
         cluster_to_use = entry;
+        current_pos++;
     }
 
     result = cluster_to_use;
 
     out:
+    // Update cache
+    if (!ISERR(result) && fat_desc) {
+        fat_desc->cached_cluster = cluster_to_use;
+        fat_desc->cached_offset_bytes = current_pos * size_of_cluster_bytes;
+    }
     return result;
 }
 
@@ -383,35 +409,33 @@ static int fat16_get_nth_cluster_from_fat(struct fat_private* fs_private, int st
  * @param out Output buffer
  * @return int Status
  */
-static int fat16_read_cluster(struct fat_private* fs_private, struct disk_stream* stream, int cluster, int offset, int total, void* out)
+static int fat16_read_cluster(struct fat_private* fs_private, struct disk_stream* stream, struct fat_file_descriptor* fat_desc, int starting_cluster, int offset, int total, void* out)
 {
-    int result = 0;
     int size_of_cluster_bytes = fs_private->header.primary.sectors_per_cluster * fs_private->header.primary.bytes_per_sector;
-    int cluster_to_use = fat16_get_nth_cluster_from_fat(fs_private, cluster, offset);
-    assert(cluster_to_use > 0);
+    while (total > 0) {
+        int cluster_to_use = fat16_get_nth_cluster_from_fat(fs_private, fat_desc, starting_cluster, offset);
+        assert(cluster_to_use > 0);
+        int offset_from_cluster = offset % size_of_cluster_bytes;
 
-    int offset_from_cluster = offset % size_of_cluster_bytes;
+        int starting_sector = fat16_cluster_to_sector(fs_private, cluster_to_use);
+        int starting_pos = fat16_sector_to_absolute(fs_private, starting_sector) + offset_from_cluster;
+        int total_to_read = total > size_of_cluster_bytes ? size_of_cluster_bytes : total;
 
-    int starting_sector = fat16_cluster_to_sector(fs_private, cluster_to_use);
-    int starting_pos = (starting_sector * fs_private->header.primary.bytes_per_sector) + offset_from_cluster;
-    int total_to_read = total > size_of_cluster_bytes ? size_of_cluster_bytes : total;
+    #if DEBUG_FAT16
+        kdebug("Reading %d bytes from starting cluster %d, target cluster %d (sector %d), offset from cluster: %d, total: %d, total_to_read: %d", total, cluster, cluster_to_use, starting_sector, offset_from_cluster, total, total_to_read);
+    #endif
+        int result = diskstreamer_seek(stream, starting_pos);
+        assert(result == ALL_OK);
 
-#if DEBUG_FAT16
-    kdebug("Reading %d bytes from starting cluster %d, target cluster %d (sector %d), offset from cluster: %d, total: %d, total_to_read: %d", total, cluster, cluster_to_use, starting_sector, offset_from_cluster, total, total_to_read);
-#endif
-    result = diskstreamer_seek(stream, starting_pos);
-    assert(result == ALL_OK);
+        result = diskstreamer_read(stream, out, total_to_read);
+        assert(result == ALL_OK);
 
-    result = diskstreamer_read(stream, out, total_to_read);
-    assert(result == ALL_OK);
-    total -= total_to_read;
-
-    if (total > 0)
-    {
-        result = fat16_read_cluster(fs_private, stream, cluster, offset+total_to_read, total, out + total_to_read);
+        total -= total_to_read;
+        offset += total_to_read;
+        out += total_to_read;
     }
 
-    return result;
+    return 0;
 }
 
 /**
@@ -431,7 +455,7 @@ static struct fat_directory* fat16_load_fat_directory(struct fat_private* fs_pri
         result = -EIO;
         goto out;
     }
-
+    
     directory = kzalloc(sizeof(struct fat_directory));
     if (!directory)
     {
@@ -453,10 +477,9 @@ static struct fat_directory* fat16_load_fat_directory(struct fat_private* fs_pri
         result = -ENOMEM;
         goto out;
     }
-        
 
-    if (fat16_read_cluster(fs_private, fs_private->cluster_read_stream ,cluster, 0x00, directory_size, directory->item) != ALL_OK)
-    {   
+    if (fat16_read_cluster(fs_private, fs_private->cluster_read_stream, NULL, cluster, 0x00, directory_size, directory->item) != ALL_OK)
+    {
         result = -EIO;
         goto out;
     }
@@ -583,11 +606,47 @@ int fat16_resolve(struct disk* disk)
         result = -ENOMEM;
         goto out;
     }
+
+    uint8_t mbr[512];
+    if (diskstreamer_read(stream, mbr, sizeof(mbr)) != ALL_OK) {
+        result = -EIO;
+        goto out;
+    }
+
+    // Verify MBR signature
+    if (mbr[510] != 0x55 || mbr[511] != 0xAA) {
+        kdebug("Invalid MBR signature (disk %d)", disk->id);
+        result = -EIO;
+        goto out;
+    }
+
+    // Parse partition entries (located at offset 0x1BE)
+    struct partition_entry* partitions = (struct partition_entry*)(mbr + 0x1BE);
+    uint32_t partition_offset = 0;
+    uint32_t partition_number = -1;
+    for (uint32_t i = 0; i < 4; i++) {
+        if (partitions[i].type == 0x04 || partitions[i].type == 0x06 || partitions[i].type == 0x0E) {
+            partition_number = i;
+            partition_offset = partitions[i].starting_lba * disk->sector_size;
+            break;
+        }
+    }
+
+    if (partition_offset == 0) {
+        kdebug("No FAT16 partition found in MBR (disk %d)", disk->id);
+    }
+
+    fs_private->partition_offset = partition_offset;
+
+    if (diskstreamer_seek(stream, partition_offset) != ALL_OK) {
+        result = -EIO;
+        goto out;
+    }
     
     result = diskstreamer_read(stream, &fs_private->header, sizeof(fs_private->header));
     if (result != ALL_OK)
     {
-        kdebug("Could not read from disk %d! Error code: %d", disk->id, result);
+        kdebug("Could not read FAT header from partition in offset %d: %d (disk %d)", partition_offset, result, disk->id);
         result = -EIO;
         goto out;
     }
@@ -603,6 +662,7 @@ int fat16_resolve(struct disk* disk)
     if (result != ALL_OK)
     {
         kdebug("Could not read root directory! Error code: %d", result);
+        result = -EIO;
         goto out;
     }
 
@@ -614,6 +674,10 @@ int fat16_resolve(struct disk* disk)
     {
         fat16_free_private(fs_private);
         disk->fs_private = 0;
+    }
+    else
+    {
+        kdebug("fat16_resolve: Found FAT16 partition at partition index: %d", partition_number)
     }
 
     return result;
@@ -645,6 +709,8 @@ void* fat16_open(void* private_fs, struct path_part* path, FILE_MODE mode)
         return 0;
 
     descriptor->pos = 0;
+    descriptor->cached_cluster = 0;
+    descriptor->cached_offset_bytes = 0;
 
     return descriptor;
 }
@@ -672,12 +738,14 @@ int fat16_read(void* private_fs, void* desc, uint32_t size, uint32_t nmemb, char
     int offset = fat_desc->pos;
     for (uint32_t i = 0; i < nmemb; i++)
     {
-        int res = fat16_read_cluster(fs_private, fs_private->cluster_read_stream, fat16_get_first_cluster(file), fat_desc->pos, size, out);
+        int res = fat16_read_cluster(fs_private, fs_private->cluster_read_stream, fat_desc, fat16_get_first_cluster(file), offset, size, out);
         if (res != ALL_OK)
             return res;
         out += size;
         offset += size;
     }
+
+    fat_desc->pos = offset;
     return nmemb;
 }
 
@@ -753,7 +821,7 @@ int fat16_seek(void* desc, uint32_t offset, FILE_SEEK_MODE seek_mode)
 int fat16_stat(void* desc, struct file_stat* stat)
 {
 #if DEBUG_FAT16
-    kdebug("fat16_seek: desc: 0x%p, stat: 0x%p", desc, stat);
+    kdebug("fat16_stat: desc: 0x%p, stat: 0x%p", desc, stat);
 #endif
 
     struct fat_file_descriptor* fat_desc = desc;

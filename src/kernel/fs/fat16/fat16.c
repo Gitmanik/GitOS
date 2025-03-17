@@ -207,7 +207,7 @@ static int fat16_get_root_directory(struct fat_private* fs_private, struct fat_d
  */
 static int fat16_init_private(struct disk* disk, struct fat_private* fs_private)
 {
-    memset(fs_private, 0, sizeof(fs_private));
+    memset(fs_private, 0, sizeof(struct fat_private));
     fs_private->disk = disk;
     fs_private->cluster_read_stream = diskstreamer_new(disk->id);
     fs_private->fat_read_stream     = diskstreamer_new(disk->id);

@@ -104,6 +104,8 @@ struct fat_file_descriptor
 {
     struct fat_item* file;
     uint32_t pos;
+    int cached_cluster;       // Cached cluster number
+    int cached_offset_bytes;  // Byte offset of cached cluster
 };
 
 struct fat_private

@@ -10,6 +10,7 @@
 
 class Bootloader {
     friend class GitBoot;
+    friend class Multiboot;
 
     public:
       virtual void init(uint32_t magic, void* info_ptr) = 0;

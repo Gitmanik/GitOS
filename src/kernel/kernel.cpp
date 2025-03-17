@@ -2,6 +2,7 @@
 
 #include <bootloaders/gitboot/GitBoot.hpp>
 #include <drivers/ps2mouse/PS2Mouse.hpp>
+#include <bootloaders/multiboot2/Multiboot.hpp>
 #include <common/assert.h>
 
 #include "drivers/graphics/graphics.hpp"
@@ -185,6 +186,9 @@ void kernel_main(uint32_t magic, void* info_ptr)
     res = ser_Init(COM1, 1);
 
     assert(res == 0);
+
+    Multiboot multiboot;
+    multiboot.init(magic, info_ptr);
 
     GitBoot gitboot;
     gitboot.init(magic, info_ptr);

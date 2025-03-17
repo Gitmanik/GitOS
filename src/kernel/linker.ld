@@ -4,6 +4,10 @@ SECTIONS
 {
     . = 1M;
     kernel_start = .;
+    .multiboot2 : ALIGN(4){
+       KEEP(*(.multiboot2))
+    }
+
     .text : ALIGN(4096)
     {
         *(.kernelstart)

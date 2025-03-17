@@ -76,7 +76,7 @@ load32:
     mov ebx, 0
     mov eax, 1337
 
-    jmp 0x08:0x0100000
+    jmp 0x08:0x0101000
 
 [BITS 16]
 %include "memmap.asm"

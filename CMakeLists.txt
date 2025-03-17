@@ -31,8 +31,13 @@ set(MOUNT_DIR "${CMAKE_CURRENT_BINARY_DIR}/mnt")
 set(BOOT_DIR "${MOUNT_DIR}/boot")
 set(FS_DIR "${CMAKE_SOURCE_DIR}/fs")
 
+add_custom_target(grub ALL
+        COMMAND sh ${CMAKE_SOURCE_DIR}/scripts/install_grub.sh ${DISK_BIN} ${MOUNT_DIR} ${FS_DIR} ${USERLAND_DESTINATION} ${KERNEL_ELF}
+        COMMENT "Generating disk image with Grub2"
+)
 
 add_custom_target(gitboot ALL
         COMMAND sh ${CMAKE_SOURCE_DIR}/scripts/install_gitboot.sh ${DISK_BIN} ${MOUNT_DIR} ${FS_DIR} ${USERLAND_DESTINATION} ${KERNEL_BIN} ${STAGE1_BIN}
 )
 add_dependencies(gitboot stage1_bin kernel_bin userland)
+add_dependencies(grub kernel_bin userland)

@@ -387,11 +387,10 @@ static int fat16_read_cluster(struct fat_private* fs_private, struct disk_stream
 {
     int result = 0;
 
+    int size_of_cluster_bytes = fs_private->header.primary.sectors_per_cluster * fs_private->header.primary.bytes_per_sector;
     while (total > 0) {
-        int size_of_cluster_bytes = fs_private->header.primary.sectors_per_cluster * fs_private->header.primary.bytes_per_sector;
         int cluster_to_use = fat16_get_nth_cluster_from_fat(fs_private, cluster, offset);
         assert(cluster_to_use > 0);
-
         int offset_from_cluster = offset % size_of_cluster_bytes;
 
         int starting_sector = fat16_cluster_to_sector(fs_private, cluster_to_use);

@@ -386,32 +386,33 @@ static int fat16_get_nth_cluster_from_fat(struct fat_private* fs_private, int st
 static int fat16_read_cluster(struct fat_private* fs_private, struct disk_stream* stream, int cluster, int offset, int total, void* out)
 {
     int result = 0;
-    int size_of_cluster_bytes = fs_private->header.primary.sectors_per_cluster * fs_private->header.primary.bytes_per_sector;
-    int cluster_to_use = fat16_get_nth_cluster_from_fat(fs_private, cluster, offset);
-    assert(cluster_to_use > 0);
 
-    int offset_from_cluster = offset % size_of_cluster_bytes;
+    while (total > 0) {
+        int size_of_cluster_bytes = fs_private->header.primary.sectors_per_cluster * fs_private->header.primary.bytes_per_sector;
+        int cluster_to_use = fat16_get_nth_cluster_from_fat(fs_private, cluster, offset);
+        assert(cluster_to_use > 0);
 
-    int starting_sector = fat16_cluster_to_sector(fs_private, cluster_to_use);
-    int starting_pos = (starting_sector * fs_private->header.primary.bytes_per_sector) + offset_from_cluster;
-    int total_to_read = total > size_of_cluster_bytes ? size_of_cluster_bytes : total;
+        int offset_from_cluster = offset % size_of_cluster_bytes;
 
-#if DEBUG_FAT16
-    kdebug("Reading %d bytes from starting cluster %d, target cluster %d (sector %d), offset from cluster: %d, total: %d, total_to_read: %d", total, cluster, cluster_to_use, starting_sector, offset_from_cluster, total, total_to_read);
-#endif
-    result = diskstreamer_seek(stream, starting_pos);
-    assert(result == ALL_OK);
+        int starting_sector = fat16_cluster_to_sector(fs_private, cluster_to_use);
+        int starting_pos = fat16_sector_to_absolute(fs_private, starting_sector) + offset_from_cluster;
+        int total_to_read = total > size_of_cluster_bytes ? size_of_cluster_bytes : total;
 
-    result = diskstreamer_read(stream, out, total_to_read);
-    assert(result == ALL_OK);
-    total -= total_to_read;
+    #if DEBUG_FAT16
+        kdebug("Reading %d bytes from starting cluster %d, target cluster %d (sector %d), offset from cluster: %d, total: %d, total_to_read: %d", total, cluster, cluster_to_use, starting_sector, offset_from_cluster, total, total_to_read);
+    #endif
+        result = diskstreamer_seek(stream, starting_pos);
+        assert(result == ALL_OK);
 
-    if (total > 0)
-    {
-        result = fat16_read_cluster(fs_private, stream, cluster, offset+total_to_read, total, out + total_to_read);
+        result = diskstreamer_read(stream, out, total_to_read);
+        assert(result == ALL_OK);
+
+        total -= total_to_read;
+        offset += total_to_read;
+        out += total_to_read;
     }
 
-    return result;
+    return 0;
 }
 
 /**

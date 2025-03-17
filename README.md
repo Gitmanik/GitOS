@@ -7,10 +7,12 @@ My personal graphical operating system project
 ## Goals
 
 ### Boot
-- [x] Custom bootloader
+- [x] Custom bootloader - GitBoot
   - [x] Loading kernel from ATA drive
   - [x] BIOS memory mapping routine
-- [ ] GRUB Multiboot support
+  - [x] Set VBE to 1024x768x32
+  - [ ] Load kernel.elf from partition
+- [x] GRUB Multiboot support
 
 ### Kernel
 - [x] Global Descriptor Table

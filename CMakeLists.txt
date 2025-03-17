@@ -27,21 +27,12 @@ add_subdirectory(src/userland)
 
 # Output for the final disk image
 set(DISK_BIN "${CMAKE_CURRENT_BINARY_DIR}/disk.bin")
+set(MOUNT_DIR "${CMAKE_CURRENT_BINARY_DIR}/mnt")
+set(BOOT_DIR "${MOUNT_DIR}/boot")
+set(FS_DIR "${CMAKE_SOURCE_DIR}/fs")
 
-add_custom_target(disk ALL
-        COMMAND rm -f ${DISK_BIN}
-        COMMAND umount ${CMAKE_CURRENT_BINARY_DIR}/mnt || (exit 0)
-        COMMAND rm -rf ${CMAKE_CURRENT_BINARY_DIR}/mnt
 
-        COMMAND dd if=${STAGE1_BIN} >> ${DISK_BIN}
-        COMMAND dd if=${KERNEL_BIN} >> ${DISK_BIN}
-        COMMAND dd if=/dev/zero of=${DISK_BIN} seek=16777215 bs=1 count=1
-
-        COMMAND mkdir ${CMAKE_CURRENT_BINARY_DIR}/mnt
-        COMMAND mount -t vfat -o fat=16 -o uid=1000 -o gid=1000 ${DISK_BIN} ${CMAKE_CURRENT_BINARY_DIR}/mnt
-        COMMAND cp -r ${CMAKE_SOURCE_DIR}/fs/. ${CMAKE_CURRENT_BINARY_DIR}/mnt/.
-        COMMAND cp -r ${USERLAND_DESTINATION}/. ${CMAKE_CURRENT_BINARY_DIR}/mnt/.
-        COMMAND umount ${CMAKE_CURRENT_BINARY_DIR}/mnt || (exit 0)
-        COMMENT "Generating disk image"
+add_custom_target(gitboot ALL
+        COMMAND sh ${CMAKE_SOURCE_DIR}/scripts/install_gitboot.sh ${DISK_BIN} ${MOUNT_DIR} ${FS_DIR} ${USERLAND_DESTINATION} ${KERNEL_BIN} ${STAGE1_BIN}
 )
-add_dependencies(disk stage1_bin kernel_bin userland)
+add_dependencies(gitboot stage1_bin kernel_bin userland)

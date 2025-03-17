@@ -64,7 +64,7 @@ static int fat16_cluster_to_sector(struct fat_private* fs_private, int cluster)
  */
 static int fat16_sector_to_absolute(struct fat_private* fs_private, int sector)
 {
-    return sector * fs_private->header.primary.bytes_per_sector;
+    return fs_private->partition_offset + sector * fs_private->header.primary.bytes_per_sector;
 }
 
 /**
@@ -584,11 +584,47 @@ int fat16_resolve(struct disk* disk)
         result = -ENOMEM;
         goto out;
     }
+
+    uint8_t mbr[512];
+    if (diskstreamer_read(stream, mbr, sizeof(mbr)) != ALL_OK) {
+        result = -EIO;
+        goto out;
+    }
+
+    // Verify MBR signature
+    if (mbr[510] != 0x55 || mbr[511] != 0xAA) {
+        kdebug("Invalid MBR signature (disk %d)", disk->id);
+        result = -EIO;
+        goto out;
+    }
+
+    // Parse partition entries (located at offset 0x1BE)
+    struct partition_entry* partitions = (struct partition_entry*)(mbr + 0x1BE);
+    uint32_t partition_offset = 0;
+    uint32_t partition_number = -1;
+    for (uint32_t i = 0; i < 4; i++) {
+        if (partitions[i].type == 0x04 || partitions[i].type == 0x06 || partitions[i].type == 0x0E) {
+            partition_number = i;
+            partition_offset = partitions[i].starting_lba * disk->sector_size;
+            break;
+        }
+    }
+
+    if (partition_offset == 0) {
+        kdebug("No FAT16 partition found in MBR (disk %d)", disk->id);
+    }
+
+    fs_private->partition_offset = partition_offset;
+
+    if (diskstreamer_seek(stream, partition_offset) != ALL_OK) {
+        result = -EIO;
+        goto out;
+    }
     
     result = diskstreamer_read(stream, &fs_private->header, sizeof(fs_private->header));
     if (result != ALL_OK)
     {
-        kdebug("Could not read from disk %d! Error code: %d", disk->id, result);
+        kdebug("Could not read FAT header from partition in offset %d: %d (disk %d)", partition_offset, result, disk->id);
         result = -EIO;
         goto out;
     }
@@ -604,6 +640,7 @@ int fat16_resolve(struct disk* disk)
     if (result != ALL_OK)
     {
         kdebug("Could not read root directory! Error code: %d", result);
+        result = -EIO;
         goto out;
     }
 
@@ -615,6 +652,10 @@ int fat16_resolve(struct disk* disk)
     {
         fat16_free_private(fs_private);
         disk->fs_private = 0;
+    }
+    else
+    {
+        kdebug("fat16_resolve: Found FAT16 partition at partition index: %d", partition_number)
     }
 
     return result;

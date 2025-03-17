@@ -1,11 +1,6 @@
 ORG 0x7c00
 BITS 16
 
-jmp short setup ; jump over BIOS Parameter Block's space
-nop
-
-%include "fat16_bpb.asm"
-
 setup:
     jmp 0:.setup2 ; set code segment
 .setup2:
@@ -86,7 +81,5 @@ load32:
 [BITS 16]
 %include "memmap.asm"
 %include "gdt.asm"
-; Aligning to 512 bytes
-times 510 - ($ - $$) db 0
-db 0x55
-db 0xaa
+
+times 446 - ($ - $$) db 0

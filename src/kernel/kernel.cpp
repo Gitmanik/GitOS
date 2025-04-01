@@ -124,7 +124,7 @@ void kernel_exception(int int_no, struct interrupt_frame* frame) {
     get_graphics()->set_text_color(Graphics::LIGHT_RED);
 
     if ((frame->cs & 0x3) == 3)
-        ksprintf(internal_buf, "\n\nProcess %s crashed! Exception thrown by CPU: %s\n", process_current()->filename, idt_InterruptLayoutString[int_no]);
+        ksprintf(internal_buf, "\n\nProcess %s crashed! Exception thrown by CPU: %s\n", task_current()->process->filename, idt_InterruptLayoutString[int_no]);
     else
         ksprintf(internal_buf, "\n\nKernel panic! Exception thrown by CPU: %s\n", idt_InterruptLayoutString[int_no]);
 

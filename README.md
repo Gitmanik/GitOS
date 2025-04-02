@@ -44,7 +44,8 @@ My personal graphical operating system project
 - [x] Process management functionality
 - [x] Task switching mechanisms
 - [x] Recovering from task crashes
-- [ ] Multitasking support
+- [x] Multitasking support
+  - [x] Round robin scheduler
 - [x] Process arguments and environment passing
 
 #### Syscalls
@@ -58,7 +59,7 @@ My personal graphical operating system project
 - [x] Graphical shell functionality
   - [x] Drawing background
   - [x] Graphical cursor
-  - [ ] Compositor
+  - [x] Compositor
 - [x] C/C++ application support
 - [x] Basic printing to kernel stdio
 - [ ] Debugging userland applications

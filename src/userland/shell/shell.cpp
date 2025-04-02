@@ -31,6 +31,7 @@ struct window
     uint8_t* fd = nullptr;
     char* name;
     bool dirty;
+    bool moving = false;
 };
 
 int main(int argc, char** argv) {
@@ -97,9 +98,12 @@ int main(int argc, char** argv) {
     auto* tmp_window_message_set_size = new window_message_set_size;
     auto* tmp_char = new char;
 
+    uint32_t title_bar_sz = 24;
+
+    bool compositor_dirty = true;
+
     while (true) {
         file_stat stat{};
-
         file_stat ipc_stat{};
 
         fstat(ipc_fd, &ipc_stat);
@@ -160,13 +164,11 @@ int main(int argc, char** argv) {
             if (!window->dirty)
                 continue;
 
-            uint32_t title_bar_sz = 24;
-
             for (uint32_t y = 0; y < title_bar_sz; y++) {
                 int off = fbg->get_offset( window->x, window->y + y);
                 for (uint32_t x = 0; x < window->width; x++)
                 {
-                    fbg->draw_pixel(x, y, 0xffffffff);
+                    fbg->draw_pixel(window->x + x, window->y + y, 0xffffffff);
                 }
                 fbg->draw_string(window->x, window->y, window->name, 0x00ff00ff);
                 fseek(framebuffer_fd, off, SEEK_SET);
@@ -189,6 +191,39 @@ int main(int argc, char** argv) {
         }
 
         fread(data, sizeof(mouse_packet), 1, mouse_fd);
+
+
+
+        for (int i = 0; i < 32; i++) // TODO: This should be a list traversal
+        {
+            auto window = &windows[i]; // TODO: This should be a list traversal
+
+            if (window->fd == nullptr)
+                continue;
+
+            if ((data->buttons & 1) == 1 && mouse_x > window->x && mouse_x - window->x < window->width && mouse_y > window->y && mouse_y - window->y < title_bar_sz)
+            {
+                window->x += data->x;
+                window->y += data->y;
+                window->moving = true;
+            } else if ((data->buttons & 1) == 0 && window->moving)
+            {
+                window->moving = false;
+                compositor_dirty = true;
+            }
+        }
+
+        if (compositor_dirty)
+        {
+            for (uint32_t y = 0; y < background->get_height(); y++) {
+                for (uint32_t x = 0; x < background->get_width(); x++) {
+                    fbg->draw_pixel(x,y,background->get_pixel(x,y));
+                }
+            }
+            fseek(framebuffer_fd, 0, SEEK_SET);
+            fwrite(fbg->get_buffer(), fbg->get_buffer_size(), 1, framebuffer_fd);
+            compositor_dirty = false;
+        }
 
         for (uint32_t y = 0; y < cursor->get_height(); y++) {
             for (uint32_t x = 0; x < cursor->get_width(); x++) {

@@ -19,11 +19,12 @@ class PipeFS {
 
         int read(uint32_t size, char *out);
 
-        int write(char *data, uint32_t size);
+        int write(const char *data, uint32_t size);
 
     private:
         char* m_buffer;
         size_t m_buffer_size;
         uint32_t m_buffer_read_idx;
         uint32_t m_buffer_write_idx;
+        uint32_t m_count;
 };

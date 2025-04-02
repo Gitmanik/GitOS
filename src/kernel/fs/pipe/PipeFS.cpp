@@ -63,6 +63,7 @@ PipeFS::PipeFS(size_t buffer_size) {
     m_buffer_size = buffer_size;
     m_buffer_read_idx = 0;
     m_buffer_write_idx = 0;
+    m_count = 0;
 }
 
 filesystem* PipeFS::get_struct() {
@@ -80,23 +81,48 @@ filesystem* PipeFS::get_struct() {
 }
 
 uint32_t PipeFS::get_buffer_size() {
-    return m_buffer_write_idx - m_buffer_read_idx;
+    return m_count;
 }
 
 int PipeFS::read(uint32_t size, char* out) {
-    if (m_buffer_read_idx + size > m_buffer_size) {
-        m_buffer_read_idx = 0;
+    if (size > m_count) return -1;
+
+    const uint32_t bytes_available = m_count;
+    const uint32_t to_read = (size > bytes_available) ? bytes_available : size;
+
+    if (m_buffer_read_idx + to_read <= m_buffer_size) {
+        memcpy(out, m_buffer + m_buffer_read_idx, to_read);
+        m_buffer_read_idx = (m_buffer_read_idx + to_read) % m_buffer_size;
+    } else {
+        const uint32_t first_chunk = m_buffer_size - m_buffer_read_idx;
+        memcpy(out, m_buffer + m_buffer_read_idx, first_chunk);
+        memcpy(out + first_chunk, m_buffer, to_read - first_chunk);
+        m_buffer_read_idx = to_read - first_chunk;
     }
-    memcpy(out, m_buffer + m_buffer_read_idx, size);
-    m_buffer_read_idx += size;
-    return 0;
+
+    m_count -= to_read;
+    return to_read;
 }
 
-int PipeFS::write(char* data, uint32_t size) {
-    if (m_buffer_write_idx + size > m_buffer_size) {
-        m_buffer_write_idx = 0;
+int PipeFS::write(const char* data, uint32_t size) {
+    if (size == 0) return 0;
+
+    if (size + m_count > m_buffer_size) {
+        const uint32_t to_discard = size + m_count - m_buffer_size;
+        m_buffer_read_idx = (m_buffer_read_idx + to_discard) % m_buffer_size;
+        m_count -= to_discard;
     }
-    memcpy(m_buffer + m_buffer_write_idx, data, size);
-    m_buffer_write_idx += size;
-    return 0;
+
+    if (m_buffer_write_idx + size <= m_buffer_size) {
+        memcpy(m_buffer + m_buffer_write_idx, data, size);
+        m_buffer_write_idx = (m_buffer_write_idx + size) % m_buffer_size;
+    } else {
+        const uint32_t first_chunk = m_buffer_size - m_buffer_write_idx;
+        memcpy(m_buffer + m_buffer_write_idx, data, first_chunk);
+        memcpy(m_buffer, data + first_chunk, size - first_chunk);
+        m_buffer_write_idx = size - first_chunk;
+    }
+
+    m_count += size;
+    return size;
 }

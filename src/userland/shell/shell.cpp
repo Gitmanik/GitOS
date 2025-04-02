@@ -163,6 +163,8 @@ int main(int argc, char** argv) {
                 continue;
             if (!window->dirty)
                 continue;
+            if (window->moving)
+                continue;
 
             for (uint32_t y = 0; y < title_bar_sz; y++) {
                 int off = fbg->get_offset( window->x, window->y + y);

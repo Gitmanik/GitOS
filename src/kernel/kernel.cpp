@@ -103,6 +103,8 @@ void timer_interrupt(int int_no, struct interrupt_frame* frame)
     (void)(int_no);
     (void)(frame);
     pic_EOI(0);
+    task_switch(task_get_next());
+    task_return(&task_current()->registers);
 }
 
 void kernel_exception(int int_no, struct interrupt_frame* frame) {

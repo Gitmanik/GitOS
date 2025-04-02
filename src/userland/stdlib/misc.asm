@@ -91,3 +91,16 @@ open_ipc:
     mov esp, ebp
     pop ebp
     ret
+
+;int getpid();
+extern getpid
+getpid:
+    push ebp
+    mov ebp, esp
+
+    mov eax, 16
+    int 0x80
+
+    mov esp, ebp
+    pop ebp
+    ret

@@ -306,6 +306,12 @@ void* sys$open_ipc(struct interrupt_frame * frame) {
     return 0;
 }
 
+void* sys$getpid(struct interrupt_frame* frame)
+{
+    (void)(frame);
+    return reinterpret_cast<void*>(task_current()->process->id);
+}
+
 void syscall_init()
 {
     syscall_register(SYSCALL_PUTSTRING, sys$putstring);
@@ -324,4 +330,5 @@ void syscall_init()
     syscall_register(SYSCALL_FSEEK, sys$fseek);
     syscall_register(SYSCALL_FCLOSE, sys$fclose);
     syscall_register(SYSCALL_OPENIPC, sys$open_ipc);
+    syscall_register(SYSCALL_GETPID, sys$getpid);
 }

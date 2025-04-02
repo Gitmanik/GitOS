@@ -14,7 +14,7 @@ struct process
     /**
      * @brief Process ID
      */
-    uint16_t id;
+    uint8_t id;
 
     /**
      * @brief Path to process

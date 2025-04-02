@@ -42,6 +42,18 @@ void pic_Remap(uint8_t offset1, uint8_t offset2)
 }
 
 /**
+ * @brief Sets PIT Channel 0 frequency
+ * @param hz Desired PIT Hz
+ */
+void pic_SetHz(uint16_t hz)
+{
+    uint16_t divisor = 1193182 / hz;
+    outb(0x43, 0x36);  // Channel 0, lobyte/hibyte, square wave
+    outb(0x40, divisor & 0xFF);
+    outb(0x40, (divisor >> 8) & 0xFF);
+}
+
+/**
  * @brief Sends End Of Interrupt to PIC
  * 
  * @param irq Number of IRQ to EOI

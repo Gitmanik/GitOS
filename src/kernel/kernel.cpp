@@ -268,6 +268,7 @@ void kernel_main(uint32_t magic, void* info_ptr)
     // Remap PIC
     kprintf("Remapping PIC..");
 
+    pic_SetHz(1000);
     pic_Remap(0x20, 0x28);
 
     kprintf(" OK\r\n");

@@ -10,7 +10,7 @@
 
 void pic_Remap(uint8_t offset1, uint8_t offset2);
 void pic_EOI(unsigned char irq);
-
+void pic_SetHz(uint16_t hz);
 /* 
 
 8259A Input pin	Interrupt Number	Description

@@ -13,5 +13,6 @@ var searchData=
   ['minor_10',['minor',['../structmultiboot__tag__smbios.html#a68f889a87c85c50254541ee29f12d5c6',1,'multiboot_tag_smbios']]],
   ['mod_5fend_11',['mod_end',['../structmultiboot__tag__module.html#a21601a9be52f45ed07caf61c1bf0092a',1,'multiboot_tag_module']]],
   ['mod_5fstart_12',['mod_start',['../structmultiboot__tag__module.html#a8a5a4751040e84cc5829accced5bdaa7',1,'multiboot_tag_module']]],
-  ['mounted_13',['mounted',['../file_8c.html#a3f4174f7f447fab45238fa207e13bee4',1,'file.c']]]
+  ['mounted_13',['mounted',['../file_8c.html#a3f4174f7f447fab45238fa207e13bee4',1,'file.c']]],
+  ['moving_14',['moving',['../structwindow.html#afdd7df977b812f9a8192fab08773efca',1,'window']]]
 ];

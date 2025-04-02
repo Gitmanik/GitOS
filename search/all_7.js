@@ -44,7 +44,7 @@ var searchData=
   ['granularity_41',['granularity',['../_git_boot_8hpp.html#a42ce7dd2bb0db3b053ba4d02272886e4',1,'GitBoot.hpp']]],
   ['graphics_42',['Graphics',['../class_graphics.html',1,'']]],
   ['graphics_2ehpp_43',['graphics.hpp',['../graphics_8hpp.html',1,'']]],
-  ['green_44',['green',['../structmultiboot__color.html#a1d77a290700a8ea3e4ae6f44f2e72e85',1,'multiboot_color::green'],['../class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaaa60bd322f93178d68184e30e162571ca',1,'Graphics::GREEN']]],
+  ['green_44',['green',['../class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaaa60bd322f93178d68184e30e162571ca',1,'Graphics::GREEN'],['../structmultiboot__color.html#a1d77a290700a8ea3e4ae6f44f2e72e85',1,'multiboot_color::green']]],
   ['greenmask_45',['greenMask',['../_git_boot_8hpp.html#aba3331ae4fa9205f6a65a76ba76e32b2',1,'GitBoot.hpp']]],
   ['greenposition_46',['greenPosition',['../_git_boot_8hpp.html#ad011feab5bcdd62db5d41e7e5688d2d6',1,'GitBoot.hpp']]],
   ['grey_47',['GREY',['../class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa38566822dbd9408c447abfd3ed4a85d2',1,'Graphics']]],

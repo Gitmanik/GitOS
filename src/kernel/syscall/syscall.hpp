@@ -31,4 +31,5 @@ enum syscalls
     SYSCALL_FSEEK,
     SYSCALL_FCLOSE,
     SYSCALL_FWRITE,
+    SYSCALL_OPENIPC
 };

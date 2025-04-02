@@ -1,6 +1,7 @@
 #include "syscall.hpp"
 
 #include <drivers/graphics/vbe/vbe_graphics.hpp>
+#include <fs/pipe/PipeFS.hpp>
 
 extern "C" {
 #include <fs/file.h>
@@ -283,6 +284,28 @@ void * sys$fseek(struct interrupt_frame * frame) {
     return res;
 }
 
+void* sys$open_ipc(struct interrupt_frame * frame) {
+    (void)(frame);
+
+    void* filename_ptr = task_peek_stack(task_current(), 0);
+    char filename[MAX_PATH] = {0};
+
+    task_copy_string_from(task_current(), filename_ptr, filename, MAX_PATH);
+
+    uint32_t packet_size = (int) task_peek_stack(task_current(), 1);
+    uint32_t count = (int) task_peek_stack(task_current(), 2);
+
+    PipeFS* pipe = new PipeFS(packet_size * count);
+
+    char* path = new char[MAX_PATH];
+    strcpy(path, "0:/ipc/");
+    strcpy(path + strlen(path), filename);
+
+    mount(path, pipe->get_struct(), pipe);
+
+    return 0;
+}
+
 void syscall_init()
 {
     syscall_register(SYSCALL_PUTSTRING, sys$putstring);
@@ -300,4 +323,5 @@ void syscall_init()
     syscall_register(SYSCALL_FSTAT, sys$fstat);
     syscall_register(SYSCALL_FSEEK, sys$fseek);
     syscall_register(SYSCALL_FCLOSE, sys$fclose);
+    syscall_register(SYSCALL_OPENIPC, sys$open_ipc);
 }

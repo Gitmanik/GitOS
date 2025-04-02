@@ -13,7 +13,7 @@ extern "C" {
 }
 
 int pipe_close([[maybe_unused]] void* data) {
-    assert_not_reached();
+    // assert_not_reached();
     return 0;
 }
 

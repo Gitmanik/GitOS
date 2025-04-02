@@ -12,5 +12,6 @@ var pic_8c =
     [ "ICW4_BUF_SLAVE", "pic_8c.html#af5443900cdd9096e97898e5584c316bb", null ],
     [ "ICW4_SFNM", "pic_8c.html#a0ecb67a3f71d1d10502fbd834b0292f1", null ],
     [ "pic_EOI", "pic_8c.html#a1e4ae4c99f1fd304a8d92e06e19a5f71", null ],
-    [ "pic_Remap", "pic_8c.html#a2611c9dff1c5cd31c1a86baba5253e9d", null ]
+    [ "pic_Remap", "pic_8c.html#a2611c9dff1c5cd31c1a86baba5253e9d", null ],
+    [ "pic_SetHz", "pic_8c.html#abc13f4fc0725d276da32d094703e6bd4", null ]
 ];

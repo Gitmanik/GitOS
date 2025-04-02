@@ -130,6 +130,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a2611c9dff1c5cd31c1a86baba5253e9d" id="r_a2611c9dff1c5cd31c1a86baba5253e9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pic_8c.html#a2611c9dff1c5cd31c1a86baba5253e9d">pic_Remap</a> (uint8_t offset1, uint8_t offset2)</td></tr>
 <tr class="memdesc:a2611c9dff1c5cd31c1a86baba5253e9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remaps master PIC and slave PIC to specified interupts numbers.  <br /></td></tr>
 <tr class="separator:a2611c9dff1c5cd31c1a86baba5253e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc13f4fc0725d276da32d094703e6bd4" id="r_abc13f4fc0725d276da32d094703e6bd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pic_8c.html#abc13f4fc0725d276da32d094703e6bd4">pic_SetHz</a> (uint16_t hz)</td></tr>
+<tr class="memdesc:abc13f4fc0725d276da32d094703e6bd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets PIT Channel 0 frequency.  <br /></td></tr>
+<tr class="separator:abc13f4fc0725d276da32d094703e6bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e4ae4c99f1fd304a8d92e06e19a5f71" id="r_a1e4ae4c99f1fd304a8d92e06e19a5f71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pic_8c.html#a1e4ae4c99f1fd304a8d92e06e19a5f71">pic_EOI</a> (unsigned char irq)</td></tr>
 <tr class="memdesc:a1e4ae4c99f1fd304a8d92e06e19a5f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends End Of Interrupt to PIC.  <br /></td></tr>
 <tr class="separator:a1e4ae4c99f1fd304a8d92e06e19a5f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -354,6 +357,34 @@ Functions</h2></td></tr>
 </dl>
 
 <p class="reference">References <a class="el" href="pic_8c.html#a964d12193d2b36e8a7ec7fa57438e313">ICW1_ICW4</a>, <a class="el" href="pic_8c.html#a286dc251f3d73c08e08a53a4696f31ef">ICW1_INIT</a>, <a class="el" href="pic_8c.html#a42803c5ddcec9e120a6dbf7bc5c1b7af">ICW4_8086</a>, <a class="el" href="io_8c.html#a8bf7a9af91c08e6f876aaffeccd48ff3">outb()</a>, <a class="el" href="pic_8h.html#ad1ba81484ab03e762d2e09f851c0901f">PIC1_COMMAND</a>, <a class="el" href="pic_8h.html#af27e966ec947ca1172f30ae301c5f24b">PIC1_DATA</a>, <a class="el" href="pic_8h.html#a11d8793812c9d340e9a64cce26ee0570">PIC2_COMMAND</a>, and <a class="el" href="pic_8h.html#ab6d3b9f6f427357310896adf176145f1">PIC2_DATA</a>.</p>
+
+</div>
+</div>
+<a id="abc13f4fc0725d276da32d094703e6bd4" name="abc13f4fc0725d276da32d094703e6bd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc13f4fc0725d276da32d094703e6bd4">&#9670;&#160;</a></span>pic_SetHz()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pic_SetHz </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>hz</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets PIT Channel 0 frequency. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hz</td><td>Desired PIT Hz </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="io_8c.html#a8bf7a9af91c08e6f876aaffeccd48ff3">outb()</a>.</p>
 
 </div>
 </div>

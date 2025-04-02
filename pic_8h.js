@@ -7,5 +7,6 @@ var pic_8h =
     [ "PIC2_COMMAND", "pic_8h.html#a11d8793812c9d340e9a64cce26ee0570", null ],
     [ "PIC2_DATA", "pic_8h.html#ab6d3b9f6f427357310896adf176145f1", null ],
     [ "pic_EOI", "pic_8h.html#a1e4ae4c99f1fd304a8d92e06e19a5f71", null ],
-    [ "pic_Remap", "pic_8h.html#a2611c9dff1c5cd31c1a86baba5253e9d", null ]
+    [ "pic_Remap", "pic_8h.html#a2611c9dff1c5cd31c1a86baba5253e9d", null ],
+    [ "pic_SetHz", "pic_8h.html#abc13f4fc0725d276da32d094703e6bd4", null ]
 ];

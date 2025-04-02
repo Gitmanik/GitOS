@@ -1,5 +1,6 @@
 var class_framebuffer_graphics =
 [
+    [ "FramebufferGraphics", "class_framebuffer_graphics.html#a0506b1d9f2177a91fe9e977737fe136d", null ],
     [ "clear_screen", "class_framebuffer_graphics.html#a4953d1edcbbfc7e420c423ded1d5621a", null ],
     [ "draw_char", "class_framebuffer_graphics.html#a34eba760465b3700e8618dfc1c2aabb6", null ],
     [ "draw_pixel", "class_framebuffer_graphics.html#ac63b980a7996a7b9bb47fb872b948178", null ],

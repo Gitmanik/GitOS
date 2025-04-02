@@ -33,9 +33,10 @@ var searchData=
   ['sys_24get_5fprocess_5farguments_30',['sys$get_process_arguments',['../syscall_8cpp.html#abe3d50c458631cc5a7e520bd1db63237',1,'syscall.cpp']]],
   ['sys_24getchar_31',['sys$getchar',['../syscall_8cpp.html#a8c655982452cee3da6b3db2dc27e5228',1,'syscall.cpp']]],
   ['sys_24malloc_32',['sys$malloc',['../syscall_8cpp.html#a3a6d4f9381d5e1482400afc6b31249fb',1,'syscall.cpp']]],
-  ['sys_24putchar_33',['sys$putchar',['../syscall_8cpp.html#a8f1950e8deb780e753aad44e7902d612',1,'syscall.cpp']]],
-  ['sys_24putstring_34',['sys$putstring',['../syscall_8cpp.html#a2f174f5aae0388c271e3a160262bf6c7',1,'syscall.cpp']]],
-  ['syscall_5fhandler_35',['syscall_handler',['../syscall_8cpp.html#addfc5a8429e319fd8d9b75a82a827b46',1,'syscall_handler(int syscall_id, struct interrupt_frame *frame):&#160;syscall.cpp'],['../syscall_8hpp.html#addfc5a8429e319fd8d9b75a82a827b46',1,'syscall_handler(int syscall_id, struct interrupt_frame *frame):&#160;syscall.cpp']]],
-  ['syscall_5finit_36',['syscall_init',['../syscall_8cpp.html#a581ed37968ead91b6d3a0b3b7a71da9d',1,'syscall_init():&#160;syscall.cpp'],['../syscall_8hpp.html#a581ed37968ead91b6d3a0b3b7a71da9d',1,'syscall_init():&#160;syscall.cpp']]],
-  ['syscall_5fwrapper_37',['syscall_wrapper',['../syscall_8hpp.html#a441be2490fb42a2eba6c201a42259075',1,'syscall.hpp']]]
+  ['sys_24open_5fipc_33',['sys$open_ipc',['../syscall_8cpp.html#ad80a60a85041a139282725d81af7fe7d',1,'syscall.cpp']]],
+  ['sys_24putchar_34',['sys$putchar',['../syscall_8cpp.html#a8f1950e8deb780e753aad44e7902d612',1,'syscall.cpp']]],
+  ['sys_24putstring_35',['sys$putstring',['../syscall_8cpp.html#a2f174f5aae0388c271e3a160262bf6c7',1,'syscall.cpp']]],
+  ['syscall_5fhandler_36',['syscall_handler',['../syscall_8cpp.html#addfc5a8429e319fd8d9b75a82a827b46',1,'syscall_handler(int syscall_id, struct interrupt_frame *frame):&#160;syscall.cpp'],['../syscall_8hpp.html#addfc5a8429e319fd8d9b75a82a827b46',1,'syscall_handler(int syscall_id, struct interrupt_frame *frame):&#160;syscall.cpp']]],
+  ['syscall_5finit_37',['syscall_init',['../syscall_8cpp.html#a581ed37968ead91b6d3a0b3b7a71da9d',1,'syscall_init():&#160;syscall.cpp'],['../syscall_8hpp.html#a581ed37968ead91b6d3a0b3b7a71da9d',1,'syscall_init():&#160;syscall.cpp']]],
+  ['syscall_5fwrapper_38',['syscall_wrapper',['../syscall_8hpp.html#a441be2490fb42a2eba6c201a42259075',1,'syscall.hpp']]]
 ];

@@ -14,6 +14,7 @@ var syscall_8cpp =
     [ "sys$get_process_arguments", "syscall_8cpp.html#abe3d50c458631cc5a7e520bd1db63237", null ],
     [ "sys$getchar", "syscall_8cpp.html#a8c655982452cee3da6b3db2dc27e5228", null ],
     [ "sys$malloc", "syscall_8cpp.html#a3a6d4f9381d5e1482400afc6b31249fb", null ],
+    [ "sys$open_ipc", "syscall_8cpp.html#ad80a60a85041a139282725d81af7fe7d", null ],
     [ "sys$putchar", "syscall_8cpp.html#a8f1950e8deb780e753aad44e7902d612", null ],
     [ "sys$putstring", "syscall_8cpp.html#a2f174f5aae0388c271e3a160262bf6c7", null ],
     [ "syscall_handler", "syscall_8cpp.html#addfc5a8429e319fd8d9b75a82a827b46", null ],

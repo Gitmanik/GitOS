@@ -28,6 +28,7 @@ var searchData=
   ['syscall_5fget_5fprocess_5farguments_25',['SYSCALL_GET_PROCESS_ARGUMENTS',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba3b8611ef4e1d7bc1bde1227fdf64afb9',1,'syscall.hpp']]],
   ['syscall_5fgetchar_26',['SYSCALL_GETCHAR',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba26172b0910d287f755c8d1cb088c329e',1,'syscall.hpp']]],
   ['syscall_5fmalloc_27',['SYSCALL_MALLOC',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba7189e79d1fe63ef84061466e440d52d2',1,'syscall.hpp']]],
-  ['syscall_5fputchar_28',['SYSCALL_PUTCHAR',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba639c4e2053c1b258b3fc62f20e066512',1,'syscall.hpp']]],
-  ['syscall_5fputstring_29',['SYSCALL_PUTSTRING',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba21054fd193dc32963c6cd48f505bbc4c',1,'syscall.hpp']]]
+  ['syscall_5fopenipc_28',['SYSCALL_OPENIPC',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba624faa37f8ba69f3ba0440fe6509db28',1,'syscall.hpp']]],
+  ['syscall_5fputchar_29',['SYSCALL_PUTCHAR',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba639c4e2053c1b258b3fc62f20e066512',1,'syscall.hpp']]],
+  ['syscall_5fputstring_30',['SYSCALL_PUTSTRING',['../syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba21054fd193dc32963c6cd48f505bbc4c',1,'syscall.hpp']]]
 ];

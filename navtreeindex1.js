@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"class_graphics.html#adaa07a7be639adbd579e7a244fa1ee92":[0,0,23,3],
 "class_graphics.html#ae35ebf9ced1b9254f728d6628b7ca5a6":[0,0,23,4],
 "class_graphics.html#ae4dce2e3a3f17e7172a9dd2eb9fd0ee1":[0,0,23,6],
 "class_memory_f_s.html":[0,0,29],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "functions_enum.html":[0,3,4],
 "functions_eval.html":[0,3,5],
 "functions_f.html":[0,3,0,6],
-"functions_func.html":[0,3,1],
-"functions_g.html":[0,3,0,7]
+"functions_func.html":[0,3,1]
 };

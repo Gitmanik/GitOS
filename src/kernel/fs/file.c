@@ -209,7 +209,6 @@ int fopen(const char* filename, const char* str_mode)
 
     char* reconstructed_path = kzalloc(MAX_PATH);
 
-    kdebug("Trying to search mounted for '%s'", filename);
     int relative_path_to_mounted_idx = path_sz;
     for (; relative_path_to_mounted_idx >= 0; relative_path_to_mounted_idx--) {
         memset(reconstructed_path, 0, MAX_PATH);
@@ -225,7 +224,6 @@ int fopen(const char* filename, const char* str_mode)
         for (int idx = 0; idx < MAX_MOUNTED; idx++) {
             if (mounted[idx] != 0) {
                 if (strlen(reconstructed_path) == strlen(mounted[idx]->filename) && strcmp(reconstructed_path, mounted[idx]->filename) == 0) {
-                    kdebug("Found mounted file: '%s' -> '%s', fs root: '%s'", filename, mounted[idx]->fs->name, mounted[idx]->filename);
                     void *descriptor_private_data = mounted[idx]->fs->open(mounted[idx]->data, parts[relative_path_to_mounted_idx], fmode);
 
                     assert(descriptor_private_data);

@@ -45,6 +45,7 @@ static void* syscall_handle_command(int syscall_id, struct interrupt_frame* fram
     SYSCALL func = syscalls[syscall_id];
     if (!func)
     {
+        kprintf("Task %s tried to call syscall %d but it is not registered!", task_current()->process->filename, syscall_id);
         return 0;
     }
 

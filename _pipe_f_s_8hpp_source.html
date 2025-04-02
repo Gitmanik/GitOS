@@ -120,23 +120,25 @@ $(document).ready(function(){initNavTree('_pipe_f_s_8hpp_source.html',''); initR
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="class_pipe_f_s.html#ab3846fcccb0f4c2b3a7f1661c9837016">read</a>(uint32_t <a class="code hl_variable" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>, <span class="keywordtype">char</span> *out);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="class_pipe_f_s.html#a615fa4cde24ab096fd4e504d10e6da5e">write</a>(<span class="keywordtype">char</span> *data, uint32_t <a class="code hl_variable" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="class_pipe_f_s.html#a84b95707d5cdd6db517ae3a249c04711">write</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="window_8h.html#abe222f6d3581e7920dcad5306cc906a8">data</a>, uint32_t <a class="code hl_variable" href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a>);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">char</span>* m_buffer;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordtype">size_t</span> m_buffer_size;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        uint32_t m_buffer_read_idx;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        uint32_t m_buffer_write_idx;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        uint32_t m_count;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
 </div>
 <div class="ttc" id="aclass_pipe_f_s_html"><div class="ttname"><a href="class_pipe_f_s.html">PipeFS</a></div><div class="ttdef"><b>Definition</b> PipeFS.hpp:13</div></div>
-<div class="ttc" id="aclass_pipe_f_s_html_a615fa4cde24ab096fd4e504d10e6da5e"><div class="ttname"><a href="class_pipe_f_s.html#a615fa4cde24ab096fd4e504d10e6da5e">PipeFS::write</a></div><div class="ttdeci">int write(char *data, uint32_t size)</div><div class="ttdef"><b>Definition</b> PipeFS.cpp:95</div></div>
-<div class="ttc" id="aclass_pipe_f_s_html_ab3846fcccb0f4c2b3a7f1661c9837016"><div class="ttname"><a href="class_pipe_f_s.html#ab3846fcccb0f4c2b3a7f1661c9837016">PipeFS::read</a></div><div class="ttdeci">int read(uint32_t size, char *out)</div><div class="ttdef"><b>Definition</b> PipeFS.cpp:86</div></div>
-<div class="ttc" id="aclass_pipe_f_s_html_ad1407668e40617835d91e1b1e966cb9a"><div class="ttname"><a href="class_pipe_f_s.html#ad1407668e40617835d91e1b1e966cb9a">PipeFS::get_struct</a></div><div class="ttdeci">filesystem * get_struct()</div><div class="ttdef"><b>Definition</b> PipeFS.cpp:68</div></div>
-<div class="ttc" id="aclass_pipe_f_s_html_affd65a2c308fd043fa11902663034154"><div class="ttname"><a href="class_pipe_f_s.html#affd65a2c308fd043fa11902663034154">PipeFS::get_buffer_size</a></div><div class="ttdeci">uint32_t get_buffer_size()</div><div class="ttdef"><b>Definition</b> PipeFS.cpp:82</div></div>
+<div class="ttc" id="aclass_pipe_f_s_html_a84b95707d5cdd6db517ae3a249c04711"><div class="ttname"><a href="class_pipe_f_s.html#a84b95707d5cdd6db517ae3a249c04711">PipeFS::write</a></div><div class="ttdeci">int write(const char *data, uint32_t size)</div><div class="ttdef"><b>Definition</b> PipeFS.cpp:107</div></div>
+<div class="ttc" id="aclass_pipe_f_s_html_ab3846fcccb0f4c2b3a7f1661c9837016"><div class="ttname"><a href="class_pipe_f_s.html#ab3846fcccb0f4c2b3a7f1661c9837016">PipeFS::read</a></div><div class="ttdeci">int read(uint32_t size, char *out)</div><div class="ttdef"><b>Definition</b> PipeFS.cpp:87</div></div>
+<div class="ttc" id="aclass_pipe_f_s_html_ad1407668e40617835d91e1b1e966cb9a"><div class="ttname"><a href="class_pipe_f_s.html#ad1407668e40617835d91e1b1e966cb9a">PipeFS::get_struct</a></div><div class="ttdeci">filesystem * get_struct()</div><div class="ttdef"><b>Definition</b> PipeFS.cpp:69</div></div>
+<div class="ttc" id="aclass_pipe_f_s_html_affd65a2c308fd043fa11902663034154"><div class="ttname"><a href="class_pipe_f_s.html#affd65a2c308fd043fa11902663034154">PipeFS::get_buffer_size</a></div><div class="ttdeci">uint32_t get_buffer_size()</div><div class="ttdef"><b>Definition</b> PipeFS.cpp:83</div></div>
 <div class="ttc" id="agdt_8h_html_aaba88b24a21a6c70c895c0d55f4a69a0"><div class="ttname"><a href="gdt_8h.html#aaba88b24a21a6c70c895c0d55f4a69a0">size</a></div><div class="ttdeci">uint16_t size</div><div class="ttdef"><b>Definition</b> gdt.h:0</div></div>
 <div class="ttc" id="akernel_2fs_2file_8h_html"><div class="ttname"><a href="kernel_2fs_2file_8h.html">file.h</a></div></div>
 <div class="ttc" id="astructfilesystem_html"><div class="ttname"><a href="structfilesystem.html">filesystem</a></div><div class="ttdef"><b>Definition</b> file.h:75</div></div>
+<div class="ttc" id="awindow_8h_html_abe222f6d3581e7920dcad5306cc906a8"><div class="ttname"><a href="window_8h.html#abe222f6d3581e7920dcad5306cc906a8">data</a></div><div class="ttdeci">uint8_t * data</div><div class="ttdef"><b>Definition</b> window.h:0</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

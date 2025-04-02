@@ -13,6 +13,7 @@ var syscall_8cpp =
     [ "sys$get_framebuffer_info", "syscall_8cpp.html#ae3849c90833ec5bca6ebf650bcb8692d", null ],
     [ "sys$get_process_arguments", "syscall_8cpp.html#abe3d50c458631cc5a7e520bd1db63237", null ],
     [ "sys$getchar", "syscall_8cpp.html#a8c655982452cee3da6b3db2dc27e5228", null ],
+    [ "sys$getpid", "syscall_8cpp.html#a760e5e2bd4a45ae20c7b37fd749c15f4", null ],
     [ "sys$malloc", "syscall_8cpp.html#a3a6d4f9381d5e1482400afc6b31249fb", null ],
     [ "sys$open_ipc", "syscall_8cpp.html#ad80a60a85041a139282725d81af7fe7d", null ],
     [ "sys$putchar", "syscall_8cpp.html#a8f1950e8deb780e753aad44e7902d612", null ],

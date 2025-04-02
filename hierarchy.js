@@ -83,5 +83,9 @@ var hierarchy =
     [ "PS2Mouse", "class_p_s2_mouse.html", null ],
     [ "registers", "structregisters.html", null ],
     [ "task", "structtask.html", null ],
-    [ "tss", "structtss.html", null ]
+    [ "tss", "structtss.html", null ],
+    [ "window", "structwindow.html", null ],
+    [ "window_message_framebuffer_data", "structwindow__message__framebuffer__data.html", null ],
+    [ "window_message_preamble", "structwindow__message__preamble.html", null ],
+    [ "window_message_set_size", "structwindow__message__set__size.html", null ]
 ];

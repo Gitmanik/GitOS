@@ -98,6 +98,7 @@ $(document).ready(function(){initNavTree('shell_8cpp.html',''); initResizable();
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="_b_m_p_file_8hpp_source.html">format/bmp/BMPFile.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="framebuffer_8hpp_source.html">graphics/framebuffer.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="window_8h_source.html">window/window.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="stdio_8h_source.html">stdio.h</a>&quot;</code><br />
 <code>#include &quot;string.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="misc_8h_source.html">misc.h</a>&quot;</code><br />
@@ -106,6 +107,8 @@ $(document).ready(function(){initNavTree('shell_8cpp.html',''); initResizable();
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmouse__packet.html">mouse_packet</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwindow.html">window</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -140,7 +143,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="file_8c.html#acaa8025589d6cb55085a1976b97e08b9">fopen()</a>, <a class="el" href="file_8c.html#adee556231b2610f1807f3dd2f2dd0f6a">fread()</a>, <a class="el" href="file_8c.html#a4afef177a56ef89821691c7c4df374c3">fseek()</a>, <a class="el" href="file_8c.html#a0ed36033dca44a4c90f733ed5ef33500">fstat()</a>, <a class="el" href="file_8c.html#a5e3192feef8941c44511f3a15af4b9f7">fwrite()</a>, <a class="el" href="misc_8h.html#a606bc9873b128be1978f63b5f0b10339">malloc()</a>, <a class="el" href="kernel_2fs_2file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8a7f53e3798ec48e79c0897ba5138f9b05">SEEK_SET</a>, and <a class="el" href="class_framebuffer_graphics.html#a971ddddbc452d100976e41799bcd5fc7">FramebufferGraphics::the()</a>.</p>
+<p class="reference">References <a class="el" href="window_8h.html#a4291b0e699ffa39a20f699621733a443a685f73194ad125cbc784c3210cdb3449">CLOSE</a>, <a class="el" href="window_8h.html#abe222f6d3581e7920dcad5306cc906a8">data</a>, <a class="el" href="framebuffer_8cpp.html#a8fa97b2140c7e193969379b988ac38d1">debug_printf()</a>, <a class="el" href="structwindow.html#ad25edacba00e4d0666a9959053b7cc10">window::dirty</a>, <a class="el" href="misc_8h.html#abc36e836b8b4cff17c0ba736424b1577">execprocess()</a>, <a class="el" href="structwindow.html#aaf6c8e58a87641bf89a6ba0cac1a903f">window::fd</a>, <a class="el" href="file_8c.html#acaa8025589d6cb55085a1976b97e08b9">fopen()</a>, <a class="el" href="window_8h.html#a4291b0e699ffa39a20f699621733a443a28945d1aed452fd0e6442857839a73c3">FRAMEBUFFER_DATA</a>, <a class="el" href="file_8c.html#adee556231b2610f1807f3dd2f2dd0f6a">fread()</a>, <a class="el" href="file_8c.html#a4afef177a56ef89821691c7c4df374c3">fseek()</a>, <a class="el" href="file_8c.html#a0ed36033dca44a4c90f733ed5ef33500">fstat()</a>, <a class="el" href="file_8c.html#a5e3192feef8941c44511f3a15af4b9f7">fwrite()</a>, <a class="el" href="structwindow.html#a6ad4f820ce4e75cda0686fcaad5168be">window::height</a>, <a class="el" href="misc_8h.html#a606bc9873b128be1978f63b5f0b10339">malloc()</a>, <a class="el" href="memory_8c.html#aa0c74fd405b3fbe948738ff0d47279df">memcpy()</a>, <a class="el" href="structwindow.html#a5ac083a645d964373f022d03df4849c8">window::name</a>, <a class="el" href="misc_8h.html#a4524043593d3c21ae358d8bd094d5f86">open_ipc()</a>, <a class="el" href="window_8h.html#a4291b0e699ffa39a20f699621733a443aceb7c305772dab23a260960771180df3">REGISTER</a>, <a class="el" href="kernel_2fs_2file_8h.html#a01c4b716d86207ae5aa4d335b9749bb8a7f53e3798ec48e79c0897ba5138f9b05">SEEK_SET</a>, <a class="el" href="window_8h.html#a4291b0e699ffa39a20f699621733a443aa0f9eef5276e6a060f80305df0719015">SET_SIZE</a>, <a class="el" href="class_framebuffer_graphics.html#a971ddddbc452d100976e41799bcd5fc7">FramebufferGraphics::the()</a>, <a class="el" href="structwindow.html#a325272ddd9a962f05deb905101d25cbd">window::width</a>, <a class="el" href="structwindow.html#aae8a40a17c0be29c1f06ca6b4f9e2235">window::x</a>, and <a class="el" href="structwindow.html#a9c02f93c9698e4486878867c4f265c48">window::y</a>.</p>
 
 </div>
 </div>

@@ -30,5 +30,6 @@ var searchData=
   ['get_5fstring_5ftable_27',['get_string_table',['../class_e_l_f_file.html#a774884a1a924b14bce253ab1e8114d4c',1,'ELFFile']]],
   ['get_5fstruct_28',['get_struct',['../class_pipe_f_s.html#ad1407668e40617835d91e1b1e966cb9a',1,'PipeFS::get_struct()'],['../class_memory_f_s.html#ad1407668e40617835d91e1b1e966cb9a',1,'MemoryFS::get_struct()']]],
   ['get_5fwidth_29',['get_width',['../class_framebuffer_graphics.html#a755b78350834eeec9f4bb2c5499f5c9a',1,'FramebufferGraphics::get_width()'],['../class_b_m_p_file.html#a755b78350834eeec9f4bb2c5499f5c9a',1,'BMPFile::get_width()'],['../class_v_b_e_graphics.html#a755b78350834eeec9f4bb2c5499f5c9a',1,'VBEGraphics::get_width()']]],
-  ['getc_30',['getc',['../stdio_8h.html#a12fe8585ae3714e7d4a71cae12fbb110',1,'stdio.h']]]
+  ['getc_30',['getc',['../stdio_8h.html#a12fe8585ae3714e7d4a71cae12fbb110',1,'stdio.h']]],
+  ['getpid_31',['getpid',['../misc_8h.html#a2ccdeb931b6cfcf884ca5ad73e0ba11c',1,'misc.h']]]
 ];

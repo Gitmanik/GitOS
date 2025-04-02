@@ -77,5 +77,9 @@ var annotated_dup =
     [ "task", "structtask.html", "structtask" ],
     [ "TextModeGraphics", "class_text_mode_graphics.html", "class_text_mode_graphics" ],
     [ "tss", "structtss.html", "structtss" ],
-    [ "VBEGraphics", "class_v_b_e_graphics.html", "class_v_b_e_graphics" ]
+    [ "VBEGraphics", "class_v_b_e_graphics.html", "class_v_b_e_graphics" ],
+    [ "window", "structwindow.html", "structwindow" ],
+    [ "window_message_framebuffer_data", "structwindow__message__framebuffer__data.html", "structwindow__message__framebuffer__data" ],
+    [ "window_message_preamble", "structwindow__message__preamble.html", "structwindow__message__preamble" ],
+    [ "window_message_set_size", "structwindow__message__set__size.html", "structwindow__message__set__size" ]
 ];

@@ -36,7 +36,7 @@ var fat16_8h =
     [ "fat16_seek", "fat16_8h.html#a04ed328867d7fdeee818ae25557400a0", null ],
     [ "fat16_stat", "fat16_8h.html#a26828ac940d0d1665fa27a5fa8e00923", null ],
     [ "fat16_write", "fat16_8h.html#aeb59827797d1e15a45703e9c0ee75a10", null ],
-    [ "__attribute__", "fat16_8h.html#a13f02dac00d45d95f4adab32ced6b455", null ],
+    [ "__attribute__", "fat16_8h.html#a3e6324cfedfcdd94098822c33bb97492", null ],
     [ "attribute", "fat16_8h.html#ae99e080fe352a99a12cf5b9b260ef734", null ],
     [ "bytes_per_sector", "fat16_8h.html#aad9aa4ff8c80f1bcb0ac03f23bb9701e", null ],
     [ "creation_date", "fat16_8h.html#af720492f0576616c43ffc1324f8d4592", null ],

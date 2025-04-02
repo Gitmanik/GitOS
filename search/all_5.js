@@ -10,7 +10,7 @@ var searchData=
   ['efi_5fmmap_7',['efi_mmap',['../structmultiboot__tag__efi__mmap.html#a9a7584f75b51e971186a4b19be2c4ce1',1,'multiboot_tag_efi_mmap']]],
   ['eflags_8',['eflags',['../tss_8h.html#aeedfc39703ec8e0a1f052a832e74acd3',1,'eflags:&#160;tss.h'],['../structtss.html#aeedfc39703ec8e0a1f052a832e74acd3',1,'tss::eflags']]],
   ['ei_5fclass_9',['ei_class',['../class_e_l_f_file.html#a17485b837ae67b7b0e50029b0c6a8157',1,'ELFFile::EI_CLASS'],['../class_e_l_f_file.html#ada3ab0bf24c3ee3e502ec40e624cc260',1,'ELFFile::ei_class']]],
-  ['ei_5fdata_10',['ei_data',['../class_e_l_f_file.html#a0546be993182864bd1491795b7faad99',1,'ELFFile::ei_data'],['../class_e_l_f_file.html#a7e2afb21225ba8dec72d120b0330bf4b',1,'ELFFile::EI_DATA']]],
+  ['ei_5fdata_10',['ei_data',['../class_e_l_f_file.html#a7e2afb21225ba8dec72d120b0330bf4b',1,'ELFFile::EI_DATA'],['../class_e_l_f_file.html#a0546be993182864bd1491795b7faad99',1,'ELFFile::ei_data']]],
   ['ei_5fnident_11',['EI_NIDENT',['../class_e_l_f_file.html#a7ab5a9a371ecf9ba0e05d21d1809c869',1,'ELFFile']]],
   ['einformat_12',['EINFORMAT',['../status_8h.html#ae308551ef6094853f7fc617c330668d2',1,'status.h']]],
   ['einvarg_13',['EINVARG',['../status_8h.html#ab3d8ec79ca1a1eb0d42f5bdf5c473e83',1,'status.h']]],

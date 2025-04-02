@@ -26,6 +26,17 @@ FramebufferGraphics::FramebufferGraphics() {
     clear_screen();
 }
 
+FramebufferGraphics::FramebufferGraphics(uint32_t w, uint32_t h, uint32_t bpp)
+{
+    BPP = bpp;
+    WIDTH = w;
+    HEIGHT = h;
+    PITCH = WIDTH * BPP / 8;
+    FRAMEBUFFER = (uint8_t*) malloc(PITCH * HEIGHT);
+
+    clear_screen();
+}
+
 FramebufferGraphics* FramebufferGraphics::the() {
     static FramebufferGraphics instance;
     return &instance;

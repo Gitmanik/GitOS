@@ -51,6 +51,8 @@ public:
 
     uint32_t get_offset(uint32_t x, uint32_t y);
 
+    FramebufferGraphics(uint32_t w, uint32_t h, uint32_t bpp);
+
 private:
     void scroll_screen(int i);
     FramebufferGraphics();

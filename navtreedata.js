@@ -62,7 +62,7 @@ var NAVTREEINDEX =
 "kernel_2fs_2file_8h.html#a18ee81c05ed9a26a59ba7120220a2c96",
 "ps2keyboard_8h.html#a8ccc910489590ed0143e2fed529597f8",
 "structmultiboot__header__tag__relocatable.html#af0552a5d8b097b976e4b9988b5ed9d5a",
-"syscall_8hpp.html#a01e111270f52e13b9d48a3829ffef89ba21054fd193dc32963c6cd48f505bbc4c"
+"syscall_8hpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

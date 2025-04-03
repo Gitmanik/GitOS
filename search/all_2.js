@@ -10,7 +10,7 @@ var searchData=
   ['bit_5fcount_7',['bit_count',['../_b_m_p_file_8hpp.html#a75414e78cf55c04cf1714f52c0664dc1',1,'BMPFile.hpp']]],
   ['black_8',['BLACK',['../class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaaf77fb67151d0c18d397069ad8c271ba3',1,'Graphics']]],
   ['blank_2ecpp_9',['blank.cpp',['../blank_8cpp.html',1,'']]],
-  ['blue_10',['blue',['../class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa35d6719cb4d7577c031b3d79057a1b79',1,'Graphics::BLUE'],['../structmultiboot__color.html#ae918593f219821079de921ab02aeb42d',1,'multiboot_color::blue']]],
+  ['blue_10',['blue',['../structmultiboot__color.html#ae918593f219821079de921ab02aeb42d',1,'multiboot_color::blue'],['../class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaa35d6719cb4d7577c031b3d79057a1b79',1,'Graphics::BLUE']]],
   ['bluemask_11',['blueMask',['../_git_boot_8hpp.html#a552fa0d7b39c19084a4167ef97f00245',1,'GitBoot.hpp']]],
   ['blueposition_12',['bluePosition',['../_git_boot_8hpp.html#afc13b7006e7ae2cb3e2b1f30f0038f4b',1,'GitBoot.hpp']]],
   ['bmpfile_13',['bmpfile',['../class_b_m_p_file.html#a66e3e8e5c1e850d86ca79456eb9a56bf',1,'BMPFile::BMPFile()'],['../class_b_m_p_file.html',1,'BMPFile']]],

@@ -2,7 +2,7 @@ var searchData=
 [
   ['read_0',['read',['../structfilesystem.html#af613853ed5a75afef5a37b7a16520443',1,'filesystem::read'],['../class_p_s2_mouse.html#aca3d713a4aa53d613750ec9d95d16209',1,'PS2Mouse::read()'],['../class_memory_f_s.html#ab3846fcccb0f4c2b3a7f1661c9837016',1,'MemoryFS::read()'],['../class_pipe_f_s.html#ab3846fcccb0f4c2b3a7f1661c9837016',1,'PipeFS::read()']]],
   ['realfctptr_1',['realFctPtr',['../_git_boot_8hpp.html#a1becb529c9fd3dca32f0778bb0712df3',1,'GitBoot.hpp']]],
-  ['red_2',['red',['../class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaaf80f9a890089d211842d59625e561f88',1,'Graphics::RED'],['../structmultiboot__color.html#a12954c70b802310ac40376289e3637fd',1,'multiboot_color::red']]],
+  ['red_2',['red',['../structmultiboot__color.html#a12954c70b802310ac40376289e3637fd',1,'multiboot_color::red'],['../class_graphics.html#aa7676c0e70481c4c65f2dae856a59deaaf80f9a890089d211842d59625e561f88',1,'Graphics::RED']]],
   ['redmask_3',['redMask',['../_git_boot_8hpp.html#a47caa5e6bece802c7bd1f03ea673be4e',1,'GitBoot.hpp']]],
   ['redposition_4',['redPosition',['../_git_boot_8hpp.html#a69f3de63d110aca075793519a8f4e85d',1,'GitBoot.hpp']]],
   ['register_5',['REGISTER',['../window_8h.html#a4291b0e699ffa39a20f699621733a443aceb7c305772dab23a260960771180df3',1,'window.h']]],
